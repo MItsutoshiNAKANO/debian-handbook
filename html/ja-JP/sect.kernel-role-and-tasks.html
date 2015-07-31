@@ -78,13 +78,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="para">
 				<a
-              id="idm140296541034592"
+              id="idm140711209120736"
               class="indexterm"></a> <a
-              id="idm140296541033792"
+              id="idm140711209119936"
               class="indexterm"></a> <a
-              id="idm140296541032992"
+              id="idm140711209119136"
               class="indexterm"></a> <a
-              id="idm140296541032192"
+              id="idm140711209118336"
               class="indexterm"></a> カーネルは検出されたハードウェアに関する多くの詳細を <code
               class="filename">/proc/</code> と <code
               class="filename">/sys/</code> 仮想ファイルシステムを通じて書き出します。ハードウェアの詳細をまとめて表示するツールも存在します。中でも、<code
@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">pcmciautils</span> パッケージに含まれます) は PCMCIA カードをリストします。これらのツールはデバイスの正確なモデル番号を識別するのに役立ちます。デバイスの正確なモデル番号を使えば、より的確に検索したり、より関連性の高い文書を見つけることが可能です。
 			</div><div
             class="example"><a
-              id="idm140296541026448"></a><p
+              id="idm140711209112592"></a><p
               class="title"><strong>例B.1 <code
                   class="command">lspci</code> と <code
                   class="command">lsusb</code> で提供される情報の例</strong></p><div
@@ -150,9 +150,9 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.filesystems"></a>B.4.2. ファイルシステム</h3></div></div></div><a
-            id="idm140296541011936"
+            id="idm140711209098080"
             class="indexterm"></a><a
-            id="idm140296541011008"
+            id="idm140711209097152"
             class="indexterm"></a><div
             class="para">
 				ファイルシステムはカーネルの最も目立つ側面の 1 つです。Unix システムはすべてのファイルを統合し、1 つの階層構造の中に保存します。こうすることで、ユーザ (とアプリケーション) は階層構造の中のファイルの場所を知るだけでデータにアクセスすることが可能です。
@@ -178,7 +178,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="filename">/home/</code> にマウントすると、ユーザのホームディレクトリの通常の場所からこれらのディレクトリにアクセス可能になり、<code
               class="filename">/home/rmas/Desktop/hello.txt</code> などのパスが動作するようになります。
 			</div><a
-            id="idm140296541000144"
+            id="idm140711209086288"
             class="indexterm"></a><div
             class="para">
 				ディスク上に物理的にデータを保存する方法の違いに対応して、多くのファイルシステムフォーマットが存在します。最も広く知られているファイルシステムは <span
@@ -208,7 +208,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-management"></a>B.4.4. プロセス管理</h3></div></div></div><a
-            id="idm140296540987280"
+            id="idm140711209073424"
             class="indexterm"></a><div
             class="para">
 				プロセスとはプログラムの実行中インスタンスです。プロセスはプログラム自身とその動作データを保存するためのメモリを要求します。カーネルはプロセスの作成と追跡を担当します。プログラムが実行されると、カーネルは最初に幾らかのメモリを確保し、次にファイルシステムから確保したメモリに実行可能なコードを読み込み、次にコードの実行を開始します。カーネルはプロセスに関する情報を保持します。中でも最もよく知られている情報は <span
@@ -234,7 +234,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
                   class="title"><a
                     id="sect.permissions"></a>B.4.5. 権限管理</h3></div></div></div><div
             class="para">
-				Unix 系システムはマルチユーザに対応しています。Unix 系システムはグループとユーザの別々な管理をサポートする権限管理システムを提供しています; さらに、パーミッションに基いて動作を制御することが可能です。カーネルは各プロセスに対するデータを管理し、そのデータを使ってパーミッションを制御します。ほとんどの場合、プロセスはプロセスを開始したユーザ同じ権限を持つとされます。そして、プロセスは自分を開始した所有者が実行できる動作だけを実行することが可能です。たとえば、プロセスがファイルを開く前に、カーネルによってそのプロセスの識別情報がアクセスパーミッションを持つことを確認されます (具体的な例についてのより詳しい情報は<a
+				Unix 系システムはマルチユーザに対応しています。Unix 系システムはグループとユーザの別々な管理をサポートする権限管理システムを提供しています; さらに、パーミッションに基づいて動作を制御することが可能です。カーネルは各プロセスに対するデータを管理し、そのデータを使ってパーミッションを制御します。ほとんどの場合、プロセスはプロセスを開始したユーザ同じ権限を持つとされます。そして、プロセスは自分を開始した所有者が実行できる動作だけを実行することが可能です。たとえば、プロセスがファイルを開く前に、カーネルによってそのプロセスの識別情報がアクセスパーミッションを持つことを確認されます (具体的な例についてのより詳しい情報は<a
               class="xref"
               href="sect.rights-management.html">「権限の管理」</a>をご覧ください)。
 			</div></div></div><ul

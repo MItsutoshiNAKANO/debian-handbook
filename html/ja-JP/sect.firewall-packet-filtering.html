@@ -68,17 +68,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. ファイヤーウォールとパケットフィルタリング</h2></div></div></div><a
-          id="idm140296559419216"
+          id="idm140711215107744"
           class="indexterm"></a><a
-          id="idm140296559418288"
+          id="idm140711216358896"
           class="indexterm"></a><a
-          id="idm140296559417360"
+          id="idm140711216357968"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> ファイヤーウォール</strong></p></div></div></div><a
-            id="idm140296559415344"
+            id="idm140711216355952"
             class="indexterm"></a><div
             class="para">
 			<span
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span> ファイヤーウォールの設定を簡単に行うためのツールが存在し、ツールはフィルタリングルールをグラフィカルに表現する機能を備えています。<code
             class="command">fwbuilder</code> がこの種のツールの中で最良のツールであることは疑いありません。
 		</div><a
-          id="idm140296542319104"
+          id="idm140711219141056"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -112,9 +112,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">iptables</code> が IPv4 ネットワークを取り扱うのに対し、<code
             class="command">ip6tables</code> は IPv6 ネットワークを取り扱うという点です。おそらく IPv4 と IPv6 のネットワークプロトコルスタックは長きに渡り共存するでしょうから、両方のツールを並行して実行する必要があります。
 		</div><a
-          id="idm140296542311456"
+          id="idm140711219133408"
           class="indexterm"></a><a
-          id="idm140296542310336"
+          id="idm140711219132288"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -149,11 +149,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					</div></li></ul></div><div
             class="para">
 				それぞれのテーブルには、<span
-              class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイヤーウォールは事前に定義された状況に基いてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
+              class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイヤーウォールは事前に定義された状況に基づいてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
 			</div><a
-            id="idm140296542872912"
+            id="idm140711211159392"
             class="indexterm"></a><a
-            id="idm140296542871952"
+            id="idm140711211158432"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -206,7 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="title"><strong>図14.1 <span
                   class="emphasis"><em>netfilter</em></span> チェインの呼び出される方法</strong></p></div><div
             class="para">
-				各チェインはルールのリストです; 各ルールは一連の条件とその条件に一致する場合に実行される動作です。パケットを処理する場合、ファイヤーウォールは適切なチェインを 1 つづつ検査します; あるルールの条件に一致したら、処理を続けるために特定の動作に「ジャンプ」します(このためコマンドには <code
+				各チェインはルールのリストです; 各ルールは一連の条件とその条件に一致する場合に実行される動作です。パケットを処理する場合、ファイヤーウォールは適切なチェインを 1 つずつ検査します; あるルールの条件に一致したら、処理を続けるために特定の動作に「ジャンプ」します(このためコマンドには <code
               class="literal">-j</code> オプションが存在します)。最も一般的な挙動は標準化されており、それぞれの挙動に対する専用の動作が存在します。標準的な動作が選択されると、チェインの処理は中止されます。なぜなら、パケットの運命は既に決まっているからです (以下で言及されている除外に一致しなければ):
 			</div><div
             class="sidebar"><div
@@ -228,15 +228,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				参考までに、受信バッファとは、データがネットワークから到着してカーネルがデータを処理するまでの間、そのデータを保存する小容量のメモリ区画です。このメモリ区画が満杯になると、新しいデータを受け取ることができなくなり、ICMP がこの問題を通知します。そうすれば送信側はデータの転送速度を遅くすることが可能です (理想的に言えば、暫くの後に転送速度は平衡状態に達するべきです)。
 			</div><a
-              id="idm140296562808768"
+              id="idm140711211482032"
               class="indexterm"></a><a
-              id="idm140296543062160"
+              id="idm140711211481072"
               class="indexterm"></a><a
-              id="idm140296543061232"
+              id="idm140711211480144"
               class="indexterm"></a><a
-              id="idm140296543060272"
+              id="idm140711210632400"
               class="indexterm"></a><a
-              id="idm140296543058832"
+              id="idm140711210630960"
               class="indexterm"></a><div
               class="para">
 				IPv4 ネットワークは ICMP がなくても動作しますが、IPv6 ネットワークは ICMPv6 を必須条件としています。なぜなら、ICMPv6 は IPv4 世界では ICMPv4、IGMP (<span
@@ -347,9 +347,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> オプションで操作対象のテーブルを指定します (デフォルトの場合、<code
               class="literal">filter</code> テーブルを操作します)。
 			</div><a
-            id="idm140296543018896"
+            id="idm140711210591024"
             class="indexterm"></a><a
-            id="idm140296543017776"
+            id="idm140711210589904"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -387,14 +387,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. ルール</h4></div></div></div><a
-              id="idm140296543002912"
+              id="idm140711210575040"
               class="indexterm"></a><div
               class="para">
 					それぞれのルールは <code
                 class="literal"><em
                   class="replaceable">conditions</em> -j <em
                   class="replaceable">action</em> <em
-                  class="replaceable">action_options</em></code> の形で指定します。復数の条件が同じルールとして表現された場合、復数の条件は結合 (論理 <span
+                  class="replaceable">action_options</em></code> の形で指定します。複数の条件が同じルールとして表現された場合、複数の条件は結合 (論理 <span
                 class="emphasis"><em>and</em></span>) されます。つまり、各条件の結果を更に限定することを意味します。
 				</div><div
               class="para">
@@ -498,7 +498,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">fwbuilder</code> 等の高レベルツールを使ってスクリプトを準備することも興味深いでしょう。
 			</div><div
             class="para">
-				原理は簡単です。まず最初に、実際のルールに適用するすべての要素を宣言する必要があります:
+				原理は簡単です。最初に、実際のルールに適用するすべての要素を宣言する必要があります:
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
@@ -532,7 +532,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="fwbuilder のメインウィンドウ" /></div></div><p
               class="title"><strong>図14.2 fwbuilder のメインウィンドウ</strong></p></div><a
-            id="idm140296541654064"
+            id="idm140711210056144"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -545,7 +545,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				<span
               class="distribution distribution">Squeeze</span> 以降の <span
-              class="pkg pkg">fwbuilder</span> パッケージには、グラフィカルインターフェースと様々なファイヤーウォールシステム用のモジュール (以前、これらはシステム毎に復数のパッケージに分割されていました) が含まれます:
+              class="pkg pkg">fwbuilder</span> パッケージには、グラフィカルインターフェースと様々なファイヤーウォールシステム用のモジュール (以前、これらはシステム毎に複数のパッケージに分割されていました) が含まれます:
 			</div><pre
             class="screen">
 <code

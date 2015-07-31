@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dns-principe"></a>10.6.1. 原理とメカニズム</h3></div></div></div><a
-            id="idm140296560904992"
+            id="idm140711217198320"
             class="indexterm"></a><a
-            id="idm140296560904032"
+            id="idm140711217197360"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -86,9 +86,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				DNS レコードはゾーン分けされています; それぞれのゾーンはドメイン (またはサブドメイン) か IP アドレス範囲 (なぜなら、IP アドレスは通常連続した範囲を割り当てられるからです) にマッチします。プライマリサーバはあるゾーンに含まれる内容の情報を提供する権威的なサーバです; セカンダリサーバは、通常別のマシン上でホストされ、定期的にプライマリゾーンのコピーをとります。
 			</div><a
-            id="idm140296560899136"
+            id="idm140711217192464"
             class="indexterm"></a><a
-            id="idm140296560897696"
+            id="idm140711217191024"
             class="indexterm"></a><div
             class="para">
 				各ゾーンには、様々な種類のレコード (<span
@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">A</code>: IPv4 アドレス。<a
-                    id="idm140296560893872"
+                    id="idm140711217187280"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -108,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						<code
                     class="literal">CNAME</code>: 別名 (<span
                     class="emphasis"><em>canonical name</em></span>)。<a
-                    id="idm140296560891312"
+                    id="idm140711217184720"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -119,7 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="xref"
                     href="network-services.html#sidebar.smtp"><span
                       class="emphasis"><em>BACK TO BASICS</em></span> SMTP</a>参照); 最初のサーバからの応答がなかった場合、他のサーバを優先度の高い順に試行します。<a
-                    id="idm140296560887696"
+                    id="idm140711217181104"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -128,14 +128,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">PTR</code>: ある IP アドレスに対する名前の対応付け。このレコードはある IP アドレス範囲に対して対応付けられた「逆引き DNS」ゾーンに保存されます。たとえば、<code
                     class="literal">1.168.192.in-addr.arpa</code> は <code
                     class="literal">192.168.1.0/24</code> 範囲に含まれる全アドレスの逆引き対応が保存されているゾーンです。<a
-                    id="idm140296560884064"
+                    id="idm140711217177472"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">AAAA</code>: IPv6 アドレス。<a
-                    id="idm140296560881984"
+                    id="idm140711217175392"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -146,12 +146,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">internal.falcot.com</code> が含まれます。これは <code
                     class="literal">internal.falcot.com</code> ゾーンは別のサーバが担当することを意味します。もちろん、このサーバは <code
                     class="literal">internal.falcot.com</code> ゾーンを宣言しなければいけません。<a
-                    id="idm140296560877520"
+                    id="idm140711217170928"
                     class="indexterm"></a>
 					</div></li></ul></div><a
-            id="idm140296560876400"
+            id="idm140711217169808"
             class="indexterm"></a><a
-            id="idm140296560874960"
+            id="idm140711217168368"
             class="indexterm"></a><div
             class="para">
 				標準的なネームサーバである Bind は ISC (<span
@@ -161,17 +161,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				2 番目は、Bind が DNS レコードの署名 (認証されている) に DNSSEC 標準をサポートするようになった変更です。これにより、中間者攻撃中に DNS レコードがなりすましされても、それを遮ることが可能になりました。
 			</div><a
-            id="idm140296560870960"
+            id="idm140711217164448"
             class="indexterm"></a><a
-            id="idm140296560869536"
+            id="idm140711217163024"
             class="indexterm"></a><a
-            id="idm140296560868576"
+            id="idm140711217162064"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> DNSSEC</strong></p></div></div></div><a
-              id="idm140296560866528"
+              id="idm140711217160016"
               class="indexterm"></a><div
               class="para">
 				DNSSEC の規格はかなり複雑です; DNSSEC はその複雑さにより、まだ広範囲で使われいません (DNSSEC に未対応の DNS サーバと完全に共存するにも関わらず)。一部始終を理解するには、以下の記事を参照してください。<div
@@ -195,15 +195,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CAUTION</em></span> 逆引きゾーンの名前</strong></p></div></div></div><a
-              id="idm140296560858688"
+              id="idm140711217152336"
               class="indexterm"></a><a
-              id="idm140296560857248"
+              id="idm140711217150896"
               class="indexterm"></a><a
-              id="idm140296560856288"
+              id="idm140711217149936"
               class="indexterm"></a><a
-              id="idm140296560855168"
+              id="idm140711217148816"
               class="indexterm"></a><a
-              id="idm140296560854048"
+              id="idm140711217147696"
               class="indexterm"></a><div
               class="para">
 				逆引きゾーンには特定の名前が付けられています。<code
@@ -230,14 +230,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">host <em
                   class="replaceable">ipaddress</em> localhost</code> を使うと逆引きをテストすることが可能です。
 			</div><a
-              id="idm140296560844224"
+              id="idm140711217137872"
               class="indexterm"></a></div><div
             class="para">
 				以下に Falcot のファイルから抜粋した設定を載せます。これは DNS サーバ設定の足掛かりになります:
 			</div><a
-            id="idm140296560842336"
+            id="idm140711217135984"
             class="indexterm"></a><a
-            id="idm140296560841216"
+            id="idm140711217134864"
             class="indexterm"></a><div
             class="example"><a
               id="example.bind-named.conf.local"></a><p

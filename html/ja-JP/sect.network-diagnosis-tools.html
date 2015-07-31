@@ -69,14 +69,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.network-diagnosis-tools"></a>10.8. ネットワーク診断ツール</h2></div></div></div><div
           class="para">
-			ネットワークアプリケーションが思った通りに動かない場合、中身を確かめることが重要です。すべてが問題なく動いているように見える場合でも、ネットワーク診断を実行すればすべてがあるべき姿で動いていることを確かめる手助けになります。この目的で復数の診断ツールが存在します; 各ツールは異なるレベルを診断します。
+			ネットワークアプリケーションが思った通りに動かない場合、中身を確かめることが重要です。すべてが問題なく動いているように見える場合でも、ネットワーク診断を実行すればすべてがあるべき姿で動いていることを確かめる手助けになります。この目的で複数の診断ツールが存在します; 各ツールは異なるレベルを診断します。
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.netstat"></a>10.8.1. ローカルの診断: <code
                     class="command">netstat</code></h3></div></div></div><a
-            id="idm140296560795568"
+            id="idm140711217089216"
             class="indexterm"></a><div
             class="para">
 				最初に (<span
@@ -177,7 +177,7 @@ udp6       0      0 :::5353                 :::*                                
                   class="title"><a
                     id="sect.nmap"></a>10.8.2. リモートの診断: <code
                     class="command">nmap</code></h3></div></div></div><a
-            id="idm140296560768784"
+            id="idm140711217062432"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -186,13 +186,13 @@ udp6       0      0 :::5353                 :::*                                
               class="command">nmap</code> は一部のアプリケーションを識別することが可能です。場合によってはアプリケーションのバージョン番号さえも識別することが可能です。<code
               class="command">nmap</code> に対する問題点として、<code
               class="command">nmap</code> はリモートから実行されるため、プロセスやユーザの情報を提供することができないという点が挙げられます; しかしながら、<code
-              class="command">nmap</code> は復数のターゲットに一気に実行できます。
+              class="command">nmap</code> は複数のターゲットに一気に実行できます。
 			</div><div
             class="para">
 				<code
               class="command">nmap</code> を実行する際の典型例は、<code
               class="literal">-A</code> オプション (<code
-              class="command">nmap</code> は見つかったサーバソフトウェアのバージョンを識別しようとします) だけを使い、その後ろにスキャンする 1 つか復数の IP アドレスまたは DNS 名を渡すことです。繰り返しになりますが、さらに多くのオプションが存在し、<code
+              class="command">nmap</code> は見つかったサーバソフトウェアのバージョンを識別しようとします) だけを使い、その後ろにスキャンする 1 つか複数の IP アドレスまたは DNS 名を渡すことです。繰り返しになりますが、さらに多くのオプションが存在し、<code
               class="command">nmap</code> の挙動をさらに細かく制御することが可能です。<span
               class="citerefentry"><span
                 class="refentrytitle">nmap</span>(1)</span> マニュアルページを参照してください。
@@ -263,7 +263,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
 				しばしば実際にワイヤを行き来する情報をパケット毎に見る必要がある場合があります。この際に使われるツールは「フレームアナライザ」と呼ばれ、<span
               class="emphasis"><em>スニファ</em></span> としても広く知られています。これらのツールはあるネットワークに到達したすべてのパケットを観察し、ユーザにわかりやすい方法でパケットを表示します。
 			</div><a
-            id="idm140296543184448"
+            id="idm140711211460336"
             class="indexterm"></a><div
             class="para">
 				この分野における由緒あるツールが <code
@@ -271,12 +271,12 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
               class="command">tcpdump</code> を使うと、多くの種類のネットワークトラフィックをキャプチャできますが、トラフィックの表現は比較的分かりにくいです。このため <code
               class="command">tcpdump</code> について詳しく説明しません。
 			</div><a
-            id="idm140296543181696"
+            id="idm140711211457584"
             class="indexterm"></a><div
             class="para">
 				より最近の (そしてより現代的な) ツールである <code
               class="command">wireshark</code> (<span
-              class="pkg pkg">wireshark</span> パッケージに含まれます) は、キャプチャされたパケットの解析を単純化する多くのデコーディングモジュールのお陰で、ネットワークトラフィック解析分野における新しい標準的なツールになりました。パケットはプロトコルの層に基いてグラフィカルに表示されます。<code
+              class="pkg pkg">wireshark</span> パッケージに含まれます) は、キャプチャされたパケットの解析を単純化する多くのデコーディングモジュールのお陰で、ネットワークトラフィック解析分野における新しい標準的なツールになりました。パケットはプロトコルの層に基づいてグラフィカルに表示されます。<code
               class="command">wireshark</code> を使うと、ユーザはあるパケットに関わるすべてのプロトコルを可視化することが可能です。たとえば、HTTP リクエストを含むパケットに対して、<code
               class="command">wireshark</code> は物理層、イーサネット層、IP パケット情報、TCP 接続パラメータ、最後に HTTP リクエスト自身に関連する情報を別々に表示します。
 			</div><div
@@ -298,14 +298,14 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
                         class="emphasis"><em>TIP</em></span> グラフィカルインターフェースを持たない <code
                         class="command">wireshark</code>: <code
                         class="command">tshark</code></strong></p></div></div></div><a
-              id="idm140296543172144"
+              id="idm140711211448032"
               class="indexterm"></a><div
               class="para">
 				グラフィカルインターフェースを実行できない場合や何らかの理由で実行したくない場合に備えて、<code
                 class="command">wireshark</code> のテキスト版 <code
                 class="command">tshark</code> (<span
                 class="pkg pkg">tshark</span> パッケージに分割されています) が存在します。キャプチャとデコード機能のほとんどを利用可能ですが、グラフィカルインターフェースがないことでプログラムとのやり取りが制限されます (たとえば、パケットがキャプチャされた後にフィルタをかけたり、ある TCP 接続を追跡することができません)。しかし <code
-                class="command">tshark</code> を足掛かりとして使うことが可能です。さらなる操作が必要だったり、グラフィカルインターフェースが必要な操作をを行う場合、パケットをファイルに保存して、そのファイルを別のマシンで実行されているグラフィカルな <code
+                class="command">tshark</code> を足掛かりとして使うことが可能です。さらなる操作が必要だったり、グラフィカルインターフェースが必要な操作を行う場合、パケットをファイルに保存して、そのファイルを別のマシンで実行されているグラフィカルな <code
                 class="command">wireshark</code> で読み込むことが可能です。
 			</div></div><div
             class="sidebar"><div
@@ -314,9 +314,9 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
                         class="emphasis"><em>CULTURE</em></span> <code
                         class="command">ethereal</code> と <code
                         class="command">wireshark</code></strong></p></div></div></div><a
-              id="idm140296543166128"
+              id="idm140711211442016"
               class="indexterm"></a><a
-              id="idm140296543165232"
+              id="idm140711211441120"
               class="indexterm"></a><div
               class="para">
 				<code

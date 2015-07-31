@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.how-to-migrate"></a>3.2. 移行の方法</h2></div></div></div><a
-          id="idm140296558791632"
+          id="idm140711221618672"
           class="indexterm"></a><div
           class="para">
 			サービスの継続性を保証するために、それぞれのコンピュータの移行計画を立て、計画に従って移行作業を行わなければいけません。この原則はオペレーティングシステムの種類に依存しません。
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140296567764288"></a>3.2.1. サービスの調査と確認</h3></div></div></div><div
+                    id="idm140711222973632"></a>3.2.1. サービスの調査と確認</h3></div></div></div><div
             class="para">
 				簡単そうに見えるかもしれませんが、この手順は絶対不可欠です。真面目な管理者はそれぞれのサーバの主たる役割をよく理解していますが、その役割が変わる可能性もありますし、経験豊かなユーザが「変わった」サービスをインストールしていたかもしれません。そのようなサービスが存在するとわかれば、少なくともこのようなサービスを場当たり的に削除するのではなく、どのように扱うか決めることが可能です。
 			</div><div
@@ -86,8 +86,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140296567761504"></a>3.2.1.1. ネットワークとプロセス</h4></div></div></div><a
-              id="idm140296567760736"
+                      id="idm140711222970848"></a>3.2.1.1. ネットワークとプロセス</h4></div></div></div><a
+              id="idm140711222970080"
               class="indexterm"></a><div
               class="para">
 					<code
@@ -129,7 +129,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
 				</div></div><div
               class="para">
 					サーバがユーザにシェルアカウントを提供する Unix マシンの場合、所有者不在のプロセスがバックグラウンドで実行されているかどうかを見つけ出すことは興味深いものです。<code
-                class="command">ps auxw</code> コマンドはすべてのプロセスのリストをユーザ名を含めて表示します。この情報と、ログイン中のユーザのリストを表示する <code
+                class="command">ps auxw</code> コマンドはユーザ名と一緒にすべてのプロセスのリストを表示します。この情報と、ログイン中のユーザのリストを表示する <code
                 class="command">who</code> コマンドの出力を比較することで、バックグラウンドで実行されている不正で無申告のサーバまたはプログラムを特定することが可能です。<code
                 class="filename">crontabs</code> (ユーザが定期的に予定している自動実行の一覧表) にはしばしばサーバの果たす役割に関する興味深い情報が含まれています (<code
                 class="command">cron</code> の完全な説明は<a
@@ -144,7 +144,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140296548324432"></a>3.2.2. 設定のバックアップ</h3></div></div></div><div
+                    id="idm140711224529248"></a>3.2.2. 設定のバックアップ</h3></div></div></div><div
             class="para">
 				更新後のサーバに同等の環境を作るれるようにするため、それぞれのサービスに対する設定を保存しておくのは賢明です。設定ファイルのバックアップコピーを取ることは最低限必要です。
 			</div><div
@@ -158,7 +158,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
 				データ管理サービス (データベースなど) では、新しいソフトウェアで簡単に読み込むことができる一般的なフォーマットでデータを書き出すことを強く推奨します。そのようなフォーマットは通例テキストデータで文書化されています; これはたとえば、データベースでは SQL ダンプ、LDAP サーバでは LDIF ファイルのことを指します。
 			</div><div
             class="figure"><a
-              id="idm140296554356576"></a><div
+              id="idm140711231277552"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/existing-setup-2.png"
@@ -170,12 +170,12 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140296554352736"></a>3.2.3. 既存の Debian サーバの引き継ぎ</h3></div></div></div><a
-            id="idm140296554351968"
+                    id="idm140711231273712"></a>3.2.3. 既存の Debian サーバの引き継ぎ</h3></div></div></div><a
+            id="idm140711231272944"
             class="indexterm"></a><a
-            id="idm140296554351040"
+            id="idm140711231272016"
             class="indexterm"></a><a
-            id="idm140296554350112"
+            id="idm140711231271088"
             class="indexterm"></a><div
             class="para">
 				維持管理を効率的に引き継ぐために、既に Debian が稼働中のマシンを解析する必要があるかもしれません。
@@ -227,11 +227,11 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140296553284112"></a>3.2.4. Debian のインストール</h3></div></div></div><div
+                    id="idm140711214909712"></a>3.2.4. Debian のインストール</h3></div></div></div><div
             class="para">
 				現在のサーバに関するすべての必要な情報を集め終わったら、サーバを停止させ、Debian のインストールを始めることが可能です。
 			</div><a
-            id="idm140296553282688"
+            id="idm140711214908288"
             class="indexterm"></a><div
             class="para">
 				適切なバージョンを選ぶには、コンピュータのアーキテクチャを知らなければいけません。まあまあ最近の PC ならば、アーキテクチャは十中八九 amd64 でしょう (古めの PC なら i386)。それ以外の場合、以前使っていたシステムから可能性を狭めることが可能です。
@@ -252,9 +252,9 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>HARDWARE</em></span> 64 ビット PC 対 32 ビット PC</strong></p></div></div></div><a
-              id="idm140296553255184"
+              id="idm140711228707920"
               class="indexterm"></a><a
-              id="idm140296553254224"
+              id="idm140711228706960"
               class="indexterm"></a><div
               class="para">
 				最新のコンピュータは、古めの 32 ビットプロセッサと互換性のある 64 ビット Intel もしくは AMD プロセッサを搭載しています; このため「i386」アーキテクチャ向けコンパイルされたソフトウェアが動きます。一方で、この互換モードでは新しいプロセッサの性能を十分に引き出せません。このため、Debian は「amd64」アーキテクチャを提供しています。これは最近の AMD チップおよび AMD64 によく似た Intel「em64t」プロセッサ (ほとんどの Core シリーズを含みます) に有効です。
@@ -262,12 +262,12 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140296553251840"></a>3.2.5. 選ばれたサービスのインストールと設定</h3></div></div></div><div
+                    id="idm140711228704576"></a>3.2.5. 選ばれたサービスのインストールと設定</h3></div></div></div><div
             class="para">
 				ひとたび Debian がインストールされると、我々はコンピュータがホストするすべてのサービスについて 1 つずつインストールと設定を行わなければいけません。移行を円滑に進めるためにも、新しい設定は古い設定を考慮して行われなければいけません。最初の 2 ステップで集めたすべての情報が、この作業を成功のうちに完了させるのに役立つでしょう。
 			</div><div
             class="figure"><a
-              id="idm140296553250112"></a><div
+              id="idm140711228702848"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/existing-setup-4.png"
