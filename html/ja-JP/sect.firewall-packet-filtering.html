@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">14.2. ファイヤーウォールとパケットフィルタリング</title><link
+        xmlns:d="http://docbook.org/ns/docbook">14.2. ファイアウォールとパケットフィルタリング</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
         name="keywords"
-        content="ファイヤーウォール, Netfilter, IDS/NIDS" /><link
+        content="ファイアウォール, Netfilter, IDS/NIDS" /><link
         rel="home"
         href="index.html"
         title="Debian 管理者ハンドブック" /><link
@@ -67,54 +67,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.firewall-packet-filtering"></a>14.2. ファイヤーウォールとパケットフィルタリング</h2></div></div></div><a
-          id="idm140711215107744"
+                  id="sect.firewall-packet-filtering"></a>14.2. ファイアウォールとパケットフィルタリング</h2></div></div></div><a
+          id="idm139900951719760"
           class="indexterm"></a><a
-          id="idm140711216358896"
+          id="idm139900951718832"
           class="indexterm"></a><a
-          id="idm140711216357968"
+          id="idm139900951717904"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>BACK TO BASICS</em></span> ファイヤーウォール</strong></p></div></div></div><a
-            id="idm140711216355952"
+                      class="emphasis"><em>BACK TO BASICS</em></span> ファイアウォール</strong></p></div></div></div><a
+            id="idm139900951715888"
             class="indexterm"></a><div
             class="para">
 			<span
-              class="emphasis"><em>ファイヤーウォール</em></span> はハードウェアかソフトウェアの形で提供されるコンピュータ部品の一種で、受信および送信する (ローカルネットワークに到着したり、ローカルネットワークから送信される) ネットワークパケットを仕分けて事前に定義された条件に一致するパケットだけを通過させるものです。
+              class="emphasis"><em>ファイアウォール</em></span> はハードウェアかソフトウェアの形で提供されるコンピュータ部品の一種で、受信および送信する (ローカルネットワークに到着したり、ローカルネットワークから送信される) ネットワークパケットを仕分けて事前に定義された条件に一致するパケットだけを通過させるものです。
 		</div></div><div
           class="para">
-			ファイヤーウォールはネットワークゲートウェイをフィルタするもので、ゲートウェイを通過しなければいけないパケットだけに有効です。それ故、ファイヤーウォールはパケットにとってファイヤーウォールが唯一の経路である場合だけに有効です。
+			ファイアウォールはネットワークゲートウェイをフィルタするもので、ゲートウェイを通過しなければいけないパケットだけに有効です。それ故、ファイアウォールはパケットにとってファイアウォールが唯一の経路である場合だけに有効です。
 		</div><div
           class="para">
 			標準的な設定が存在しないということは (そして「過程であって、成果ではない」モットーに従うということは) ややこしい初期設定の不要な解決策が存在しないということを意味します。しかしながら、<span
-            class="emphasis"><em>netfilter</em></span> ファイヤーウォールの設定を簡単に行うためのツールが存在し、ツールはフィルタリングルールをグラフィカルに表現する機能を備えています。<code
+            class="emphasis"><em>netfilter</em></span> ファイアウォールの設定を簡単に行うためのツールが存在し、ツールはフィルタリングルールをグラフィカルに表現する機能を備えています。<code
             class="command">fwbuilder</code> がこの種のツールの中で最良のツールであることは疑いありません。
 		</div><a
-          id="idm140711219141056"
+          id="idm139900950234448"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>SPECIFIC CASE</em></span> ローカルファイヤーウォール</strong></p></div></div></div><div
+                      class="emphasis"><em>SPECIFIC CASE</em></span> ローカルファイアウォール</strong></p></div></div></div><div
             class="para">
-			ファイヤーウォールを使って (完全なネットワークとは対照的に) 特定のマシンを制限することも可能です。この場合のファイヤーウォールの役割は、一部のサービスへのアクセスをフィルタしたり制限すること、好むと好まざるとにかかわらずユーザがインストールできる不正ソフトウェアによる外部への接続を防ぐこと、です。
+			ファイアウォールを使って (完全なネットワークとは対照的に) 特定のマシンを制限することも可能です。この場合のファイアウォールの役割は、一部のサービスへのアクセスをフィルタしたり制限すること、好むと好まざるとにかかわらずユーザがインストールできる不正ソフトウェアによる外部への接続を防ぐこと、です。
 		</div></div><div
           class="para">
 			Linux カーネルには <span
-            class="emphasis"><em>netfilter</em></span> ファイヤーウォールが組み込まれています。<code
+            class="emphasis"><em>netfilter</em></span> ファイアウォールが組み込まれています。<code
             class="command">iptables</code> と <code
             class="command">ip6tables</code> コマンドを使うことで、<span
-            class="emphasis"><em>netfilter</em></span> ファイヤーウォールをユーザ空間から制御することが可能です。<code
+            class="emphasis"><em>netfilter</em></span> ファイアウォールをユーザ空間から制御することが可能です。<code
             class="command">iptables</code> と <code
             class="command">ip6tables</code> コマンドの違いは、<code
             class="command">iptables</code> が IPv4 ネットワークを取り扱うのに対し、<code
             class="command">ip6tables</code> は IPv6 ネットワークを取り扱うという点です。おそらく IPv4 と IPv6 のネットワークプロトコルスタックは長きに渡り共存するでしょうから、両方のツールを並行して実行する必要があります。
 		</div><a
-          id="idm140711219133408"
+          id="idm139900950226800"
           class="indexterm"></a><a
-          id="idm140711219132288"
+          id="idm139900950225680"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -149,11 +149,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					</div></li></ul></div><div
             class="para">
 				それぞれのテーブルには、<span
-              class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイヤーウォールは事前に定義された状況に基づいてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
+              class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイアウォールは事前に定義された状況に基づいてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
 			</div><a
-            id="idm140711211159392"
+            id="idm139900946786880"
             class="indexterm"></a><a
-            id="idm140711211158432"
+            id="idm139900946785920"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -164,17 +164,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">INPUT</code>: 宛先がファイヤーウォール自身のパケットに関係します;
+                    class="literal">INPUT</code>: 宛先がファイアウォール自身のパケットに関係します;
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">OUTPUT</code>: ファイヤーウォールから送信されたパケットに関係します;
+                    class="literal">OUTPUT</code>: ファイアウォールから送信されたパケットに関係します;
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">FORWARD</code>: ファイヤーウォールを通過するパケットに関係します (ファイヤーウォールはパケットの送信元でも宛先でもありません)。
+                    class="literal">FORWARD</code>: ファイアウォールを通過するパケットに関係します (ファイアウォールはパケットの送信元でも宛先でもありません)。
 					</div></li></ul></div><div
             class="para">
 				<code
@@ -195,7 +195,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">OUTPUT</code>: ファイヤーウォールそれ自身によって生成されたパケットを修正します。
+                    class="literal">OUTPUT</code>: ファイアウォールそれ自身によって生成されたパケットを修正します。
 					</div></li></ul></div><div
             class="figure"><a
               id="figure.chaines-netfilter"></a><div
@@ -206,7 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="title"><strong>図14.1 <span
                   class="emphasis"><em>netfilter</em></span> チェインの呼び出される方法</strong></p></div><div
             class="para">
-				各チェインはルールのリストです; 各ルールは一連の条件とその条件に一致する場合に実行される動作です。パケットを処理する場合、ファイヤーウォールは適切なチェインを 1 つずつ検査します; あるルールの条件に一致したら、処理を続けるために特定の動作に「ジャンプ」します(このためコマンドには <code
+				各チェインはルールのリストです; 各ルールは一連の条件とその条件に一致する場合に実行される動作です。パケットを処理する場合、ファイアウォールは適切なチェインを 1 つずつ検査します; あるルールの条件に一致したら、処理を続けるために特定の動作に「ジャンプ」します(このためコマンドには <code
               class="literal">-j</code> オプションが存在します)。最も一般的な挙動は標準化されており、それぞれの挙動に対する専用の動作が存在します。標準的な動作が選択されると、チェインの処理は中止されます。なぜなら、パケットの運命は既に決まっているからです (以下で言及されている除外に一致しなければ):
 			</div><div
             class="sidebar"><div
@@ -219,29 +219,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">ping</code> コマンドは ICMP を使ってネットワークの接続性を検査します (<code
                 class="command">ping</code> コマンドは ICMP <span
                 class="emphasis"><em>echo request</em></span> メッセージを送信します。これに対して受信者は ICMP <span
-                class="emphasis"><em>echo reply</em></span> メッセージで応答することになっています)。ICMP を使えば、パケットがファイヤーウォールによって拒否されたことを通知したり、受信バッファが溢れていることを通知したり、次回パケット以降に使えるより良い経路を提案することが可能です。このプロトコルは幾つかの RFC 文書で定義されています; 最初の RFC777 と RFC792 はすぐに完成し、拡張されました。<div
+                class="emphasis"><em>echo reply</em></span> メッセージで応答することになっています)。ICMP を使えば、パケットがファイアウォールによって拒否されたことを通知したり、受信バッファが満杯になっていることを通知したり、次回パケット以降に使えるより良い経路を提案することが可能です。このプロトコルはいくつかの RFC 文書で定義されています; 最初の RFC777 と RFC792 はすぐに完成し、拡張されました。<div
                 class="url">→ <a
                   href="http://www.faqs.org/rfcs/rfc777.html">http://www.faqs.org/rfcs/rfc777.html</a></div><div
                 class="url">→ <a
                   href="http://www.faqs.org/rfcs/rfc792.html">http://www.faqs.org/rfcs/rfc792.html</a></div>
 			</div><div
               class="para">
-				参考までに、受信バッファとは、データがネットワークから到着してカーネルがデータを処理するまでの間、そのデータを保存する小容量のメモリ区画です。このメモリ区画が満杯になると、新しいデータを受け取ることができなくなり、ICMP がこの問題を通知します。そうすれば送信側はデータの転送速度を遅くすることが可能です (理想的に言えば、暫くの後に転送速度は平衡状態に達するべきです)。
+				参考までに、受信バッファとは、データがネットワークから到着してカーネルがデータを処理するまでの間、そのデータを保存する小容量のメモリ区画です。このメモリ区画が満杯になると、新しいデータを受け取ることができなくなり、ICMP がこの問題を通知します。そうすれば送信側はデータの転送速度を遅くすることが可能です (理想的に言えば、しばらくの後に転送速度は平衡状態に達するべきです)。
 			</div><a
-              id="idm140711211482032"
+              id="idm139900946269296"
               class="indexterm"></a><a
-              id="idm140711211481072"
+              id="idm139900946268336"
               class="indexterm"></a><a
-              id="idm140711211480144"
+              id="idm139900945465328"
               class="indexterm"></a><a
-              id="idm140711210632400"
+              id="idm139900945464368"
               class="indexterm"></a><a
-              id="idm140711210630960"
+              id="idm139900945462928"
               class="indexterm"></a><div
               class="para">
 				IPv4 ネットワークは ICMP がなくても動作しますが、IPv6 ネットワークは ICMPv6 を必須条件としています。なぜなら、ICMPv6 は IPv4 世界では ICMPv4、IGMP (<span
                 class="emphasis"><em>Internet Group Membership Protocol</em></span>)、ARP (<span
-                class="emphasis"><em>Address Resolution Protocol</em></span>) のように分散していた様々な機能をまとめているからです。ICMPv6 は RFC4443 で定義されています。<div
+                class="emphasis"><em>Address Resolution Protocol</em></span>) のように分散していたさまざまな機能をまとめているからです。ICMPv6 は RFC4443 で定義されています。<div
                 class="url">→ <a
                   href="http://www.faqs.org/rfcs/rfc4443.html">http://www.faqs.org/rfcs/rfc4443.html</a></div>
 			</div></div><div
@@ -323,7 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						<code
                     class="literal">REDIRECT</code> (<code
                     class="literal">nat</code> テーブル、つまり <span
-                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です): ファイヤーウォールの指定したポートに対象のパケットを転送します; これを使って、クライアント側に特別な設定をせずとも動作する透過的なウェブプロキシをセットアップすることが可能です。なぜなら、クライアントは宛先に接続していると思っていても、実際の通信はプロキシを通過しているからです。
+                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です): ファイアウォールの指定したポートに対象のパケットを転送します; これを使って、クライアント側に特別な設定をせずとも動作する透過的なウェブプロキシをセットアップすることが可能です。なぜなら、クライアントは宛先に接続していると思っていても、実際の通信はプロキシを通過しているからです。
 					</div></li></ul></div><div
             class="para">
 				その他の動作、特に <code
@@ -347,9 +347,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> オプションで操作対象のテーブルを指定します (デフォルトの場合、<code
               class="literal">filter</code> テーブルを操作します)。
 			</div><a
-            id="idm140711210591024"
+            id="idm139900945422416"
             class="indexterm"></a><a
-            id="idm140711210589904"
+            id="idm139900945421296"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -387,7 +387,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. ルール</h4></div></div></div><a
-              id="idm140711210575040"
+              id="idm139900945406192"
               class="indexterm"></a><div
               class="para">
 					それぞれのルールは <code
@@ -395,7 +395,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="replaceable">conditions</em> -j <em
                   class="replaceable">action</em> <em
                   class="replaceable">action_options</em></code> の形で指定します。複数の条件が同じルールとして表現された場合、複数の条件は結合 (論理 <span
-                class="emphasis"><em>and</em></span>) されます。つまり、各条件の結果を更に限定することを意味します。
+                class="emphasis"><em>and</em></span>) されます。つまり、各条件の結果をさらに限定することを意味します。
 				</div><div
               class="para">
 					<code
@@ -444,7 +444,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">ftp-data</code> 接続の際に便利です)。
 				</div><div
               class="para">
-					前の節で利用可能な動作を説明しましたが、その動作に対するオプションを説明していませんでした。たとえば、<code
+					前の節で利用できる動作を説明しましたが、その動作に対するオプションを説明していませんでした。たとえば、<code
                 class="literal">LOG</code> 動作は以下のオプションを持ちます:
 				</div><div
               xmlns:d="http://docbook.org/ns/docbook"
@@ -495,7 +495,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				1 つのルールを作成するには、<code
               class="command">iptables</code>/<code
               class="command">ip6tables</code> を 1 回実行する必要があります。これらのコマンドを手作業で実行することは退屈なので、通常スクリプトの形で保存しておきます。こうすることで、マシンの起動時に同じ設定を自動的に適用することが可能です。このスクリプトは手作業で書かなければいけませんが、<code
-              class="command">fwbuilder</code> 等の高レベルツールを使ってスクリプトを準備することも興味深いでしょう。
+              class="command">fwbuilder</code> などの高レベルツールを使ってスクリプトを準備することも興味深いでしょう。
 			</div><div
             class="para">
 				原理は簡単です。最初に、実際のルールに適用するすべての要素を宣言する必要があります:
@@ -504,7 +504,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
-						ネットワークインターフェースとそれを使うファイヤーウォール自身;
+						ネットワークインターフェースとそれを使うファイアウォール自身;
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -532,12 +532,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="fwbuilder のメインウィンドウ" /></div></div><p
               class="title"><strong>図14.2 fwbuilder のメインウィンドウ</strong></p></div><a
-            id="idm140711210056144"
+            id="idm139900945990528"
             class="indexterm"></a><div
             class="para">
 				<code
-              class="command">fwbuilder</code> は定義されたルールに従ってファイヤーウォールを設定するためのスクリプトを生成することが可能です。モジュール式のアーキテクチャのお陰で、<code
-              class="command">fwbuilder</code> は様々なファイヤーウォールシステム (Linux の <code
+              class="command">fwbuilder</code> は定義されたルールに従ってファイアウォールを設定するためのスクリプトを生成することが可能です。モジュール式のアーキテクチャのおかげで、<code
+              class="command">fwbuilder</code> はさまざまなファイアウォールシステム (Linux の <code
               class="command">iptables</code>、FreeBSD の <code
               class="command">ipf</code>、OpenBSD の <code
               class="command">pf</code>) を設定するためのスクリプトを生成することが可能です。
@@ -545,7 +545,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				<span
               class="distribution distribution">Squeeze</span> 以降の <span
-              class="pkg pkg">fwbuilder</span> パッケージには、グラフィカルインターフェースと様々なファイヤーウォールシステム用のモジュール (以前、これらはシステム毎に複数のパッケージに分割されていました) が含まれます:
+              class="pkg pkg">fwbuilder</span> パッケージには、グラフィカルインターフェースとさまざまなファイアウォールシステム用のモジュール (以前、これらはシステムごとに複数のパッケージに分割されていました) が含まれます:
 			</div><pre
             class="screen">
 <code
@@ -556,8 +556,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.install-rules-at-boot"></a>14.2.4. 起動時にルールを適用する</h3></div></div></div><div
             class="para">
-				ファイヤーウォールが断続的な PPP ネットワーク接続を保護するように設定されていた場合、スクリプトを <code
-              class="filename">/etc/ppp/ip-up.d/0iptables</code> に配置することが最も単純な方法です (名前にドットを含まないファイルだけが考慮されます)。ファイヤーウォールは PPP 接続が確立された時点で毎回再読込されます。
+				ファイアウォールが断続的な PPP ネットワーク接続を保護するように設定されていた場合、スクリプトを <code
+              class="filename">/etc/ppp/ip-up.d/0iptables</code> に配置することが最も単純な方法です (名前にドットを含まないファイルだけが考慮されます)。ファイアウォールは PPP 接続が確立された時点で毎回再読込されます。
 			</div><div
             class="para">
 				別のやり方として、設定スクリプトを <code
@@ -567,7 +567,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="example"><a
               id="example.network-interfaces-firewall"></a><p
-              class="title"><strong>例14.1 ファイヤーウォールスクリプト呼び出す <code
+              class="title"><strong>例14.1 ファイアウォールスクリプトを呼び出す <code
                   class="filename">interfaces</code> ファイル</strong></p><div
               class="example-contents"><pre
                 class="programlisting">auto eth0

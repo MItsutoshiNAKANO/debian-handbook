@@ -71,25 +71,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			バックアップを取ることは管理者の主要な責任の 1 つです。しかし、これは通常極めるのが難しい強力なツールを使う複雑な問題です。
 		</div><a
-          id="idm140711211886976"
+          id="idm139900948005312"
           class="indexterm"></a><a
-          id="idm140711211886208"
+          id="idm139900948004544"
           class="indexterm"></a><div
           class="para">
 			<code
             class="command">amanda</code>、<code
             class="command">bacula</code>、<code
-            class="command">BackupPC</code> 等の多くのプログラムが存在します。これらはクライアント/サーバシステムに適した多くの選択肢で、設定はかなり難しいです。幾つかは難しさを和らげるためのユーザフレンドリーなウェブインターフェースを提供しています。しかし Debian には、すべての考え得る使用事例に対応できる、他の数多くのバックアップソフトウェアが含まれています。ソフトウェアを確認するには <code
+            class="command">BackupPC</code> などの多くのプログラムが存在します。これらはクライアント/サーバシステムに適した多くの選択肢で、設定はかなり難しいです。いくつかは難しさを和らげるためのユーザフレンドリーなウェブインターフェースを提供しています。しかし Debian には、すべての考え得る使用事例に対応できる、他の数多くのバックアップソフトウェアが含まれています。ソフトウェアを確認するには <code
             class="command">apt-cache search backup</code> を使ってください。
 		</div><a
-          id="idm140711211882992"
+          id="idm139900948001312"
           class="indexterm"></a><a
-          id="idm140711211882096"
+          id="idm139900948000416"
           class="indexterm"></a><a
-          id="idm140711211881200"
+          id="idm139900947999520"
           class="indexterm"></a><div
           class="para">
-			これらのうちの幾つかを詳細に説明するのではなく、この節では、Falcot Corp 管理者がバックアップ戦略を定義する際にどのように考えたかを説明します。
+			これらのうちのいくつかを詳細に説明するのではなく、この節では、Falcot Corp 管理者がバックアップ戦略を定義する際にどのように考えたかを説明します。
 		</div><div
           class="para">
 			Falcot Corp では、バックアップには 2 つの目標があります: 誤って削除したファイルを回復することと、ハードドライブに障害が起きた際にコンピュータ (サーバおよびデスクトップ) を素早く復元することです。
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711211879008"></a>9.10.1. <code
+                    id="idm139900947997312"></a>9.10.1. <code
                     class="command">rsync</code> を使ったバックアップ</h3></div></div></div><div
             class="para">
 				テープへのバックアップは遅くて費用がかかりすぎるとみなされ、データは専用サーバのハードドライブにバックアップされることになりました。専用サーバはソフトウェア RAID (<a
@@ -105,18 +105,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="advanced-administration.html#sect.raid-soft">「ソフトウェア RAID」</a>参照) を使ってデータをハードウェア障害から守っています。デスクトップコンピュータは個別にバックアップされませんが、ユーザは部署のファイルサーバの個人アカウントはバックアップされると忠告されています。毎日 <code
               class="command">rsync</code> コマンド (同名のパッケージに含まれます) を使って、異なるサーバにバックアップを行います。
 			</div><a
-            id="idm140711211876128"
+            id="idm139900947994432"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ハードリンク、ファイルの別名</strong></p></div></div></div><a
-              id="idm140711211874336"
+              id="idm139900947992640"
               class="indexterm"></a><a
-              id="idm140711211873184"
+              id="idm139900947991488"
               class="indexterm"></a><div
               class="para">
-				ハードリンクはシンボリックリンクと異なり、リンクされたファイルと区別することができません。本質的に、ハードリンクの作成は既存のファイルに別名を与えることと同義です。そのため、ハードリンクの削除はそのファイルに関連する名前を削除するに過ぎません。他の名前がまだそのファイルに関連付けられている場合、データの実体ファイルシステムから削除されません。コピーと異なり、ハードリンクはハードドライブ上に追加的な領域を必要としない点について注意することは興味深いです。
+				ハードリンクはシンボリックリンクと異なり、リンクされたファイルと区別できません。本質的に、ハードリンクの作成は既存のファイルに別名を与えることと同義です。そのため、ハードリンクの削除はそのファイルに関連する名前を削除するに過ぎません。他の名前がまだそのファイルに関連付けられている場合、データの実体ファイルシステムから削除されません。コピーと異なり、ハードリンクはハードドライブ上に追加的な領域を必要としない点について注意することは興味深いです。
 			</div><div
               class="para">
 				ハードリンクは <code
@@ -129,15 +129,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">link</em> が同じファイルシステム上にあるときのみ作成可能です。対してシンボリックリンクはこの制限を受けません。
 			</div></div><div
             class="para">
-				利用可能なハードドライブの空き領域によっては、完全な日次バックアップができない場合があります。このため、まず <code
-              class="command">rsync</code> コマンドはバックアップの内容をハードリンクで複製します。このお陰で、ハードドライブ領域を無駄に消費することがなくなります。そして <code
+				利用できるハードドライブの空き領域によっては、完全な日次バックアップができない場合があります。このため、まず <code
+              class="command">rsync</code> コマンドはバックアップの内容をハードリンクで複製します。このおかげで、ハードドライブ領域を無駄に消費することがなくなります。そして <code
               class="command">rsync</code> プロセスは最後のバックアップ以降に変更されたファイルだけを置き換えます。このメカニズムにより、多くのバックアップを少ない領域に保存することが可能です。すべてのバックアップは素早く利用可能でアクセス可能 (たとえば、ネットワーク共有されたディレクトリの中) なので、ある日付同士の違いを素早く比較できます。
 			</div><a
-            id="idm140711211865984"
+            id="idm139900947984304"
             class="indexterm"></a><a
-            id="idm140711211865216"
+            id="idm139900947983536"
             class="indexterm"></a><a
-            id="idm140711211864064"
+            id="idm139900947982384"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -178,7 +178,7 @@ expire-rule:
               class="literal">Runall</code> はタイムスタンプを付けてバックアップするファイルセットのリストです。これにより、万が一割り当てられた時間に正確にバックアップが実行されない場合、コピーする正確な時刻を割り当てることが可能です。ここで指定する時刻は実際の実行時間の直前の時刻でなければいけません (<code
               class="filename">/etc/cron.d/dirvish</code> によれば、Debian では実際の実行時間はデフォルトで午後 10:04 です)。最後に <code
               class="literal">expire-default</code> と <code
-              class="literal">expire-rule</code> 設定でバックアップ保存期限ポリシーを定義します。上の例は、各四半期の最初の日曜日に作成されたバックアップを永久に保存し、それに当てはまらない各月の最初の日曜日作成されたバックアップを 1 年経過後に削除し、それに当てはまらない日曜日に作成されたバックアップを 3 ヶ月経過後に削除します。その他の日次バックアップは 15 日間保存されます。ルールが適用される順番が問題です。Dirvish は最後にマッチしたルールを使い、<code
+              class="literal">expire-rule</code> 設定でバックアップ保存期限ポリシーを定義します。上の例は、各四半期の最初の日曜日に作成されたバックアップを永久に保存し、それに当てはまらない各月の最初の日曜日作成されたバックアップを 1 年経過後に削除し、それに当てはまらない日曜日に作成されたバックアップを 3 カ月経過後に削除します。その他の日次バックアップは 15 日間保存されます。ルールが適用される順番が問題です。Dirvish は最後にマッチしたルールを使い、<code
               class="literal">expire-rule</code> にマッチするものがなければ <code
               class="literal">expire-default</code> を使います。
 			</div><div
@@ -187,7 +187,7 @@ expire-rule:
                     class="title"><strong><span
                         class="emphasis"><em>IN PRACTICE</em></span> 削除スケジュール</strong></p></div></div></div><div
               class="para">
-				削除ルールは削除を担当する <code
+				削除ルールは削除を担当している <code
                 class="command">dirvish-expire</code> によって使われます。実際には、新しいバックアップコピーの作成時に削除ルールが適用され、そのバックアップコピーに関連付けられた期限の切れる日が定義されます。<code
                 class="command">dirvish-expire</code> は保存されたコピーを単純に調べて、期限の過ぎているコピーを削除します。
 			</div></div><div
@@ -240,46 +240,46 @@ exclude:
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711211837360"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
+                    id="idm139900947955680"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
             class="para">
 				バックアップされていないデスクトップコンピュータに対しては <span
               class="emphasis"><em>Simple-CDD</em></span> でカスタマイズされた DVD-ROM からシステムを再インストールするのが簡単でしょう (<a
               class="xref"
-              href="sect.automated-installation.html#sect.simple-cdd">「Simple-CDD: 一体型の解決策」</a>参照)。インストールを最初からやり直すので、初回インストール後に行われたすべての設定は失われます。これは問題ではありません。なぜなら、アカウントに関して言えばシステムはすべて中央 LDAP ディレクトリの情報を参照しており、ほとんどのデスクトップアプリケーションに関して言えば dconf のお陰で事前設定されている (詳しい情報は<a
+              href="sect.automated-installation.html#sect.simple-cdd">「Simple-CDD: 一体型の解決策」</a>参照)。インストールを最初からやり直すので、初回インストール後に行われたすべての設定は失われます。これは問題ではありません。なぜなら、アカウントに関して言えばシステムはすべて中央 LDAP ディレクトリの情報を参照しており、ほとんどのデスクトップアプリケーションに関して言えば dconf のおかげで事前設定されている (詳しい情報は<a
               class="xref"
               href="sect.graphical-desktops.html#sect.gnome-desktop">「GNOME」</a>参照) からです。
 			</div><div
             class="para">
-				Falcot Corp の管理者は自分達のバックアップポリシーの限界を理解しています。バックアップサーバを、テープを耐火金庫に入れるかの如く、保護することができないため、管理者はバックアップサーバを他のサーバと別の部屋に設置しました。そうすれば災害、たとえばサーバルームの火事、が起きてもその他すべてと一緒にバックアップも破壊されることを避けられるからです。更に、管理者は 1 週間に 1 回 DVD-ROM に増分バックアップ - 最後のバックアップ以降に修正されたファイルだけのバックアップ - をとります。
+				Falcot Corp の管理者は自分たちのバックアップポリシーの限界を理解しています。バックアップサーバを、テープを耐火金庫に入れるかのように、保護することができないため、管理者はバックアップサーバを他のサーバと別の部屋に設置しました。そうすれば災害、たとえばサーバルームの火事、が起きてもその他すべてと一緒にバックアップも破壊されることを避けられるからです。さらに、管理者は 1 週間に 1 回 DVD-ROM に増分バックアップ - 最後のバックアップ以降に修正されたファイルだけのバックアップ - をとります。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> SQL と LDAP サービスのバックアップ</strong></p></div></div></div><div
               class="para">
-				多くのサービス (SQL や LDAP データベースなど) は単純にファイルをコピーするだけではバックアップできません (それらのサービスをバックアップの作成中に適切に中断しない限りバックアップできません。サービスの中断は通常問題です。なぜなら、サービスは常に利用可能であることを意図されているからです)。そのような場合、安全にバックアップ可能な「データダンプ」を作るために「エクスポート」メカニズムを使うことが必要です。データダンプは通常サイズのとても大きいファイルですが、よく圧縮できます。要求されるストレージ領域を減らすために、完全なテキストファイルを保存するのは 1 週間に 1 回、<code
+				多くのサービス (SQL や LDAP データベースなど) は単純にファイルをコピーするだけではバックアップできません (それらのサービスをバックアップの作成中に適切に中断しない限りバックアップできません。サービスの中断は通常問題です。なぜなら、サービスは常に利用可能であることを意図されているからです)。そのような場合、安全にバックアップできる「データダンプ」を作るために「エクスポート」メカニズムを使うことが必要です。データダンプは通常サイズのとても大きいファイルですが、よく圧縮できます。要求されるストレージ領域を減らすために、完全なテキストファイルを保存するのは 1 週間に 1 回、<code
                 class="command">diff</code> を保存するのは毎日にするでしょう。差分は <code
                 class="command">diff <em
                   class="replaceable">file_from_yesterday</em> <em
                   class="replaceable">file_from_today</em></code> で生成されます。バイナリダンプから増分差分を作成するには <code
                 class="command">xdelta</code> プログラムを使ってください。
 			</div><a
-              id="idm140711211829024"
+              id="idm139900947947328"
               class="indexterm"></a><a
-              id="idm140711211828128"
+              id="idm139900947946432"
               class="indexterm"></a><a
-              id="idm140711211827232"
+              id="idm139900947945536"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="emphasis"><em>TAR</em></span>、テープバックアップ用の標準規格</strong></p></div></div></div><a
-              id="idm140711211825056"
+              id="idm139900947943360"
               class="indexterm"></a><a
-              id="idm140711211823904"
+              id="idm139900947942208"
               class="indexterm"></a><a
-              id="idm140711211823136"
+              id="idm139900947941440"
               class="indexterm"></a><div
               class="para">
 				歴史的に言って、Unix で最も簡単にバックアップを作成する手段は <span

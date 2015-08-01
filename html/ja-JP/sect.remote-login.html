@@ -69,30 +69,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.remote-login"></a>9.2. リモートログイン</h2></div></div></div><div
           class="para">
-			管理者にとってコンピュータにリモートから接続できることは不可欠な要素です。専用の部屋に閉じ込められているサーバに、キーボードとモニタが常設されていることはめったにありません - しかしサーバはネットワークに繋がっています。
+			管理者にとってコンピュータにリモートから接続できることは不可欠な要素です。専用の部屋に閉じ込められているサーバに、キーボードとモニタが常設されていることはめったにありません - しかしサーバはネットワークにつながっています。
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> クライアント、サーバ</strong></p></div></div></div><a
-            id="idm140711217952432"
+            id="idm139900952551456"
             class="indexterm"></a><a
-            id="idm140711217951024"
+            id="idm139900952550048"
             class="indexterm"></a><div
             class="para">
 			複数のプロセスが互いに通信しているシステムはよく「クライアント/サーバ」に例えられます。サーバはクライアントからの要求に応じて、その要求を実行するプログラムです。操作を制御するのがクライアントで、サーバは制御の主導権を握りません。
 		</div></div><a
-          id="idm140711217948640"
+          id="idm139900952547664"
           class="indexterm"></a><a
-          id="idm140711217947232"
+          id="idm139900952546256"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh"></a>9.2.1. 安全なリモートログイン: SSH</h3></div></div></div><a
-            id="idm140711217945280"
+            id="idm139900952544304"
             class="indexterm"></a><a
-            id="idm140711217944320"
+            id="idm139900952543344"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -102,9 +102,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Telnet と RSH は時代遅れです</strong></p></div></div></div><a
-              id="idm140711217941104"
+              id="idm139900952540128"
               class="indexterm"></a><a
-              id="idm140711217939984"
+              id="idm139900952539008"
               class="indexterm"></a><div
               class="para">
 				SSH 以前、<span
@@ -135,15 +135,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">ftp</code> に似ています。<code
               class="command">sftp</code> は単一のセッションの中で、複数のファイルを転送したり、リモートのファイルを操作 (削除、リネーム、パーミッション変更など) することが可能です。
 			</div><a
-            id="idm140711217929216"
+            id="idm139900952528240"
             class="indexterm"></a><a
-            id="idm140711217928096"
+            id="idm139900952527120"
             class="indexterm"></a><div
             class="para">
 				Debian は OpenSSH を使います。OpenSSH は SSH のフリー版で <code
               class="command">OpenBSD</code> (BSD カーネルに基づき、安全性を重要視するフリーオペレーティングシステム) によって保守されており、フィンランドの SSH Communications Security Corp 社が開発した元祖 SSH ソフトウェアのフォークです。SSH Communications Security Corp 社は当初 SSH をフリーソフトウェアとして開発していましたが、結局プロプライエタリライセンスで開発を続けることを決定しました。そして OpenBSD プロジェクトが SSH のフリー版として保守するために OpenSSH を作成しました。
 			</div><a
-            id="idm140711217925456"
+            id="idm139900952524480"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -151,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>BACK TO BASICS</em></span> <span
                         class="foreignphrase"><em
                           class="foreignphrase">フォーク</em></span></strong></p></div></div></div><a
-              id="idm140711217923056"
+              id="idm139900952522080"
               class="indexterm"></a><div
               class="para">
 				ソフトウェアの分野で「フォーク」とは、既存のプロジェクトのクローンとして始まった新しいプロジェクトを意味しており、既存のプロジェクトの対抗馬です。通常、両方のソフトウェアは新しい開発という観点ですぐに別のものになっていきます。フォークは開発チーム内の意見の不一致によって起こることが多いです。
@@ -182,7 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="replaceable">server</em></code> を使って、自分の公開鍵をサーバの <code
                 class="filename">~/.ssh/authorized_keys</code> ファイルに追加します。秘密鍵を生成した際に「パスフレーズ」で保護しなかった場合、公開鍵を登録したサーバに対する以降すべてのログインでパスワードは不要です。そうでなければ、秘密鍵を使う際は毎回パスフレーズを入力して復号化しなければいけません。幸いなことに、<code
                 class="command">ssh-agent</code> を使えば秘密鍵がメモリ内に保存され、パスワードを日常的に再入力しなくても良くなります。これを実現するには、セッションが既に機能する<code
-                class="command">ssh-agent</code> のインスタンスに関連付けられている条件下で、単純に (作業セッション毎に 1 回) <code
+                class="command">ssh-agent</code> のインスタンスに関連付けられている条件下で、単純に (作業セッションごとに 1 回) <code
                 class="command">ssh-add</code> を使ってください。Debian はグラフィカルセッションではデフォルトでこれを有効化しますが、<code
                 class="filename">/etc/X11/Xsession.options</code> を変更すれば無効化することも可能です。コンソールセッションでは、<code
                 class="command">eval $(ssh-agent)</code> を使って手作業で開始できます。
@@ -209,14 +209,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     href="http://www.debian.org/security/2008/dsa-1571">http://www.debian.org/security/2008/dsa-1571</a></div>
 				</div><div
                 class="para">
-					具体的に言えば、OpenSSL を使って鍵を生成した場合、生成された鍵は常に数十万 (32,000 かける鍵長種数) の既知の範囲内に有る鍵の内の 1 つになります。この脆弱性は、たとえば OpenVPN など数多くのアプリケーションが使う SSH 鍵、SSL 鍵、X.509 証明書に、影響を与えました。クラッカーは、鍵を全種類試すだけで、不正にアクセスすることが可能でした。この問題の影響を減らす目的で、SSH デーモンは <span
+					具体的に言えば、OpenSSL を使って鍵を生成した場合、生成された鍵は常に数十万 (32,000 かける鍵長種数) の既知の範囲内に有る鍵の内の 1 つになります。この脆弱性は、たとえば OpenVPN など数多くのアプリケーションが使う SSH 鍵、SSL 鍵、X.509 証明書に、影響を与えました。クラッカーは、全種類の鍵を試すだけで、不正にアクセスすることが可能でした。この問題の影響を減らす目的で、SSH デーモンは <span
                   class="pkg pkg">openssh-blacklist</span> と <span
-                  class="pkg pkg">openssh-blacklist-extra</span> パッケージにリストされている問題の有る鍵を拒否するように変更されました。更に、<code
+                  class="pkg pkg">openssh-blacklist-extra</span> パッケージにリストされている問題の有る鍵を拒否するように変更されました。さらに、<code
                   class="command">ssh-vulnkey</code> コマンドを使えば、システム内からこの脆弱性の影響を受けているかもしれない鍵を識別することが可能です。
 				</div><div
                 class="para">
 					この出来事をいっそう詳しく調べると、これは OpenSSL プロジェクト内と Debian パッケージメンテナ双方にあった多数の (小さな) 問題の結果であるということが、明らかになります。OpenSSL のように広く使われるライブラリは - 修正せずとも - <code
-                  class="command">valgrind</code> でテストした時に警告を出すべきではありません。更に、コード (特に RNG と同様に慎重な箇所) はこのような誤解を避ける目的で詳しい注釈を付けられるべきです。Debian 側について言えば、メンテナは OpenSSL 開発者から修正に対する検証を受けることを望んでいながら、修正の検証に必要なパッチを OpenSSL 開発者に提供することもせずに自分の修正について簡単に説明しただけで、Debian 内における自分の役割を口にすることもしませんでした。最終的に、メンテナンス上の選択は最適なものではありませんでした: 元のコードに対して行った修正は文書中で明らかにされず; すべての修正は Subversion リポジトリに効果的に保存されていましたが、最終的にすべての修正はソースパッケージの作成中に 1 つのパッチにまとめられました。
+                  class="command">valgrind</code> でテストした時に警告を出すべきではありません。さらに、コード (特に RNG と同様に慎重に取り扱われるべき部分) はこのような誤解を避ける目的で詳しい注釈を付けられるべきです。Debian 側について言えば、メンテナは OpenSSL 開発者から修正に対する検証を受けることを望んでいながら、修正の検証に必要なパッチを OpenSSL 開発者に提供することもせずに自分の修正について簡単に説明しただけで、Debian 内における自分の役割を口にすることもしませんでした。最終的に、メンテナンス上の選択は最適なものではありませんでした: 元のコードに対して行った修正は文書中で明らかにされず; すべての修正は Subversion リポジトリに効果的に保存されていましたが、最終的にすべての修正はソースパッケージの作成中に 1 つのパッチにまとめられました。
 				</div><div
                 class="para">
 					このような状況下で、これと同様の出来事が繰り返されることを避けるための適切な矯正措置を見つけるのは難しいです。ここで覚えておくべき教訓は、Debian が上流開発ソフトウェアに対して導入したすべての変更は、正当化され、文書化され、可能であれば上流プロジェクトに提出され、広く公開されなければいけない、ということです。この視点から、新しいソースパッケージフォーマット (「3.0 (quilt)」) と Debian パッチ追跡システムが開発されました。<div
@@ -238,7 +238,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.ssh-port-forwarding"></a>9.2.1.3. ポート転送を使った暗号化トンネルの作成</h4></div></div></div><a
-              id="idm140711217888048"
+              id="idm139900952487024"
               class="indexterm"></a><div
               class="para">
 					<code
@@ -253,12 +253,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULARY</em></span> トンネル</strong></p></div></div></div><a
-                id="idm140711217883488"
+                id="idm139900952482240"
                 class="indexterm"></a><a
-                id="idm140711217882048"
+                id="idm139900952480800"
                 class="indexterm"></a><div
                 class="para">
-					インターネットとインターネットに接続されているほとんどの LAN はパケットモードで動作しており、接続モードで動作していません。これは、一方のコンピュータから他方のコンピュータに向かって送信されたパケットは、宛先への経路を見つけるために複数の中間ルータで止められることを意味しています。とは言っても、接続モードを模倣することも可能です。接続モードではストリームを普通の IP パケットの中にカプセル化します。これらのパケットは通常の経路を通過しますが、ストリームの宛先を変わりません。我々はこれを道路のトンネルにかけて「トンネル」と読んでいます。トンネルでは車両が入り口 (入力) から出口 (出力) まで交差点に遭遇することなくまっすぐ進むのに対し、見かけ上の経路は交差点や方向の変化を伴います。
+					インターネットとインターネットに接続されているほとんどの LAN はパケットモードで動作しており、接続モードで動作していません。これは、一方のコンピュータから他方のコンピュータに向かって送信されたパケットは、宛先への経路を見つけるために複数の中間ルータで止められることを意味しています。とは言っても、接続モードを模倣することも可能です。接続モードではストリームを普通の IP パケットの中にカプセル化します。これらのパケットは通常の経路を通過しますが、ストリームの宛先を変わりません。われわれはこれを道路のトンネルにかけて「トンネル」と読んでいます。トンネルでは車両が入り口 (入力) から出口 (出力) まで交差点に遭遇することなくまっすぐ進むのに対し、見かけ上の経路は交差点や方向の変化を伴います。
 				</div><div
                 class="para">
 					トンネルに暗号化機能を追加することが可能です: トンネルの中を流れるストリームは外から認識できませんが、トンネルの出口で復号化された形で返されます。
@@ -322,24 +322,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				VNC (Virtual Network Computing) を使うとグラフィカルデスクトップにリモートからアクセスすることが可能になります。
 			</div><a
-            id="idm140711217854784"
+            id="idm139900949626160"
             class="indexterm"></a><a
-            id="idm140711217853824"
+            id="idm139900949625200"
             class="indexterm"></a><a
-            id="idm140711217852896"
+            id="idm139900949624272"
             class="indexterm"></a><a
-            id="idm140711217851488"
+            id="idm139900949622864"
             class="indexterm"></a><a
-            id="idm140711217850560"
+            id="idm139900949621936"
             class="indexterm"></a><div
             class="para">
 				このツールは技術支援に使われることが多いです: 管理者はユーザが直面しているエラーを見ることが可能で、ユーザの側にいなくても正しい行動の仕方をユーザに示すことが可能です。
 			</div><a
-            id="idm140711217848832"
+            id="idm139900949620208"
             class="indexterm"></a><a
-            id="idm140711217847408"
+            id="idm139900949618784"
             class="indexterm"></a><a
-            id="idm140711217845984"
+            id="idm139900949617360"
             class="indexterm"></a><div
             class="para">
 				最初に、ユーザは自分のセッションの権限を共有しなければいけません。<span
@@ -348,29 +348,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">krfb</code> を使う必要があります。他のグラフィカルデスクトップ環境に対しては、<code
               class="command">x11vnc</code> コマンド (同名の Debian パッケージに含まれます) がその代わりになります; 明確なアイコンを使って、ユーザがこれを使えるようにすることが可能です。
 			</div><a
-            id="idm140711217841152"
+            id="idm139900949612528"
             class="indexterm"></a><a
-            id="idm140711217839728"
+            id="idm139900949611104"
             class="indexterm"></a><a
-            id="idm140711217838304"
+            id="idm139900949609680"
             class="indexterm"></a><a
-            id="idm140711217836880"
+            id="idm139900949608256"
             class="indexterm"></a><div
             class="para">
-				VNC がグラフィカルセッションを利用可能にしたら、管理者は VNC クライアントでセッションに接続しなければいけません。VNC クライアントとして、GNOME には <code
+				VNC がグラフィカルセッションを利用できるようにしたら、管理者は VNC クライアントでセッションに接続しなければいけません。VNC クライアントとして、GNOME には <code
               class="command">vinagre</code> と <code
               class="command">remmina</code> が、KDE には <code
               class="command">krdc</code> (<span
               class="guimenu"><strong>K</strong></span> → <span
               class="guisubmenu"><strong>インターネット</strong></span> → <span
               class="guimenuitem"><strong>リモートデスクトップクライアント</strong></span>) が用意されています。コマンドラインを使う他の VNC クライアントもあります。たとえば、同名の Debian パッケージに含まれる <code
-              class="command">xvnc4viewer</code> などです。一旦セッションに接続したら、管理者は、何が起きているか見て、リモートでマシンの作業を行い、ユーザにその様子を見せることが可能です。
+              class="command">xvnc4viewer</code> などです。ひとたびセッションに接続したら、管理者は、何が起きているか見て、リモートでマシンの作業を行い、ユーザにその様子を見せることが可能です。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>SECURITY</em></span> VNC over SSH</strong></p></div></div></div><a
-              id="idm140711217829648"
+              id="idm139900949601008"
               class="indexterm"></a><div
               class="para">
 				VNC で接続したいけれども、データを平文でネットワークに流したくない場合、SSH トンネルでデータをカプセル化することが可能です (<a
@@ -385,23 +385,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">vncviewer localhost:1</code> はローカルマシンの名前を使っているにも関わらず VNC クライアントをリモートのスクリーンに接続します。
 			</div><div
               class="para">
-				VNC セッションを閉じたら、対応する SSH セッションを終了してトンネルを閉じることも忘れないで下さい。
+				VNC セッションを閉じたら、対応する SSH セッションを終了してトンネルを閉じることも忘れないでください。
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ディスプレイマネージャ</strong></p></div></div></div><a
-              id="idm140711218653872"
+              id="idm139900949593504"
               class="indexterm"></a><a
-              id="idm140711218652752"
+              id="idm139900949592384"
               class="indexterm"></a><a
-              id="idm140711218651632"
+              id="idm139900949591264"
               class="indexterm"></a><a
-              id="idm140711218650512"
+              id="idm139900949590144"
               class="indexterm"></a><a
-              id="idm140711218649392"
+              id="idm139900949589024"
               class="indexterm"></a><a
-              id="idm140711218647984"
+              id="idm139900949587616"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -429,7 +429,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">vncviewer <em
                 class="replaceable">server</em>:50</code> でサーバの画面にログインするだけです。なぜなら、使われているポートは 5950 番だからです。
 			</div><a
-            id="idm140711218635360"
+            id="idm139900949574992"
             class="indexterm"></a></div></div><ul
         class="docnav"><li
           class="previous"><a

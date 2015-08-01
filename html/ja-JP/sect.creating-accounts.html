@@ -68,19 +68,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.creating-accounts"></a>8.5. アカウントの作成</h2></div></div></div><a
-          id="idm140711220083408"
+          id="idm139900952083552"
           class="indexterm"></a><a
-          id="idm140711220081968"
+          id="idm139900952082112"
           class="indexterm"></a><div
           class="para">
 			新しいマシンをセットアップする際に、管理者が最初にする作業の 1 つにユーザアカウントの作成作業があります。典型的に、ユーザアカウントの作成作業は <code
             class="command">adduser</code> コマンドを使って行われます。このコマンドは作成する新しいユーザのユーザ名を引数に取ります。
 		</div><a
-          id="idm140711220079264"
+          id="idm139900952079408"
           class="indexterm"></a><div
           class="para">
 			<code
-            class="command">adduser</code> コマンドはアカウントを作成する前に幾つかの質問を尋ねますが、その使い方はかなり簡単です。<code
+            class="command">adduser</code> コマンドはアカウントを作成する前にいくつかの質問を尋ねますが、その使い方はかなり簡単です。<code
             class="command">adduser</code> コマンドの設定ファイル <code
             class="filename">/etc/adduser.conf</code> には興味深い設定が含まれます: この設定ファイルは、ユーザテンプレートを作成することで自動的に新しいユーザにクォータを課したり、ユーザアカウントの場所を変更するために使われます; 後者が役に立つ場面は少ないですが、たとえば多くのユーザを管理していて、各アカウントを複数のディスクに分散させたい場合には、役立ちます。また、デフォルトシェルを別のシェルに変えることも可能です。
 		</div><div
@@ -88,7 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> クォータ</strong></p></div></div></div><a
-            id="idm140711220074480"
+            id="idm139900952074608"
             class="indexterm"></a><div
             class="para">
 			「クォータ」という用語はユーザが使えるマシンリソースの制限値を意味しています。マシンリソースとは通常ディスク領域を指します。
@@ -98,9 +98,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="filename">/etc/skel/</code> テンプレートの内容がユーザのホームディレクトリにコピーされます。<code
             class="filename">/etc/skel/</code> テンプレートには標準的なディレクトリと設定ファイルが含まれます。
 		</div><a
-          id="idm140711220071360"
+          id="idm139900952071264"
           class="indexterm"></a><a
-          id="idm140711220069920"
+          id="idm139900952069824"
           class="indexterm"></a><div
           class="para">
 			あるユーザに追加のパーミッションを与える目的で、そのユーザを (デフォルトの「メイン」グループ以外の) あるグループに所属させることは、便利なことがあります。たとえば、<span
@@ -114,30 +114,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> デバイスアクセスパーミッション</strong></p></div></div></div><a
-            id="idm140711220065056"
+            id="idm139900952064848"
             class="indexterm"></a><a
-            id="idm140711220063648"
+            id="idm139900952063440"
             class="indexterm"></a><a
-            id="idm140711220062208"
+            id="idm139900952062000"
             class="indexterm"></a><a
-            id="idm140711220060768"
+            id="idm139900952060560"
             class="indexterm"></a><a
-            id="idm140711220059328"
+            id="idm139900952059120"
             class="indexterm"></a><a
-            id="idm140711220058400"
+            id="idm139900952058192"
             class="indexterm"></a><a
-            id="idm140711220057472"
+            id="idm139900952057264"
             class="indexterm"></a><a
-            id="idm140711220056544"
+            id="idm139900952056336"
             class="indexterm"></a><div
             class="para">
 			Unix では、ハードウェア周辺機器デバイスをスペシャルファイルとして表します。スペシャルファイルは通常 <code
-              class="filename">/dev/</code> (DEVices) ツリーの下に格納されます。デバイスの性質に依存して、2 種類のスペシャルファイルが存在します: 「キャラクタモード」と「ブロックモード」ファイルです、それぞれのモードでは行える操作が限定されています。キャラクタモードでは、読み/書き操作を連動させることが制限されています。これに対してブロックモードでは、利用可能なデータを探索することを許可されています。最後に、それぞれのスペシャルファイルは (「メジャー」と「マイナー」の) 2 つの番号に関連付けられており、カーネルはこの番号を使って一意的な方法でデバイスを識別します。スペシャルファイルは <code
+              class="filename">/dev/</code> (DEVices) ツリーの下に格納されます。デバイスの性質に依存して、2 種類のスペシャルファイルが存在します: 「キャラクタモード」と「ブロックモード」ファイルです、それぞれのモードでは行える操作が限定されています。キャラクタモードでは、読み/書き操作を連動させることが制限されています。これに対してブロックモードでは、利用できるデータを探索することを許可されています。最後に、それぞれのスペシャルファイルは (「メジャー」と「マイナー」の) 2 つの番号に関連付けられており、カーネルはこの番号を使って一意的な方法でデバイスを識別します。スペシャルファイルは <code
               class="command">mknod</code> コマンドで作成され、シンボリック名 (より人間の使いやすい名前) を付けられます。
 		</div><div
             class="para">
 			スペシャルファイルのパーミッションはそのデバイスへのアクセスに必要なパーミッションを意味します。そのため、音声ミキサを表す <code
-              class="filename">/dev/mixer</code> 等のファイルには、root と <code
+              class="filename">/dev/mixer</code> などのファイルには、root と <code
               class="literal">audio</code> グループに所属するユーザの読み/書きを許可するパーミッションが与えられています。音声ミキサを操作できるのは、これらのユーザだけです。
 		</div><div
             class="para">

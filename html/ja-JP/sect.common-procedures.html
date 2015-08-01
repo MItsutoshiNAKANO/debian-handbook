@@ -68,10 +68,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.common-procedures"></a>7.2. 常套手段</h2></div></div></div><a
-          id="idm140711221157344"
+          id="idm139900963607344"
           class="indexterm"></a><div
           class="para">
-			この節の目的は、管理者が頻繁に実行する特定の操作に関する、幾つかの一般的な秘訣を示すことです。もちろんこれらの手順は包括的にすべての考え得る場合をカバーするものではありませんが、より困難な状況に直面した際の出発点として機能します。
+			この節の目的は、管理者が頻繁に実行する特定の操作に関する、いくつかの一般的なヒントを示すことです。もちろんこれらの手順は包括的にすべての考え得る場合をカバーするものではありませんが、より困難な状況に直面した際の出発点として機能します。
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -93,10 +93,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711221150016"></a>7.2.1. プログラムの設定</h3></div></div></div><a
-            id="idm140711221149248"
+                    id="idm139900963600016"></a>7.2.1. プログラムの設定</h3></div></div></div><a
+            id="idm139900963599248"
             class="indexterm"></a><a
-            id="idm140711221147840"
+            id="idm139900963597840"
             class="indexterm"></a><div
             class="para">
 				未知のパッケージを設定する場合、段階を追って進まなければいけません。最初に、パッケージメンテナの書いた文書を読んでください。<code
@@ -104,15 +104,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">package</em>/README.Debian</code> を読むことで、そのソフトウェアを簡単に使うための詳細な規定を学ぶことが可能です。このファイルには、プログラムの元の挙動 (HOWTO などの一般的な文書に書かれている挙動) からの違いが書かれているため、必ず読まなければいけない場合があります。またこのファイルには、ありふれた問題で時間を無駄にするのを避けるために、最も一般的なエラーの詳細も書かれています。
 			</div><div
             class="para">
-				その後、ソフトウェアの公式文書を確認して下さい - 既存の様々な文書源を見つける方法は前の節を参照してください。<code
+				その後、ソフトウェアの公式文書を確認してください - 既存のさまざまな文書源を見つける方法は前の節を参照してください。<code
               class="command">dpkg -L <em
-                class="replaceable">package</em></code> コマンドでパッケージに含まれるファイルのリストが表示されます; このコマンドを使えば、利用可能な文書 (と同時に <code
+                class="replaceable">package</em></code> コマンドでパッケージに含まれるファイルのリストが表示されます; このコマンドを使えば、利用できる文書 (と同時に <code
               class="filename">/etc/</code> に格納された設定ファイル) を素早く特定することが可能です。<code
               class="command">dpkg -s <em
                 class="replaceable">package</em></code> でパッケージのメタ情報が表示されるので、そこから推奨パッケージや提案パッケージが分かります; そこから、ソフトウェアの設定を簡単に行うための文書またはユーティリティを見つけることが可能です。
 			</div><div
             class="para">
-				最後に、設定ファイルには通常、各設定項目に関して設定可能な値をそれぞれ詳細に説明した説明用コメントが数多く書かれています。このため、利用可能な行を選んで有効化するだけで十分な場合もあります。また、設定ファイルの例が <code
+				最後に、設定ファイルには通常、各設定項目に関して設定可能な値をそれぞれ詳細に説明した説明用コメントが数多く書かれています。このため、利用できる行を選んで有効化するだけで十分な場合もあります。また、設定ファイルの例が <code
               class="filename">/usr/share/doc/<em
                 class="replaceable">package</em>/examples/</code> ディレクトリの中に格納されている場合もあります。設定ファイルの例は、自分の設定ファイルのたたき台になります。
 			</div><div
@@ -120,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DEBIAN POLICY</em></span> 例の場所</strong></p></div></div></div><a
-              id="idm140711221138176"
+              id="idm139900963588160"
               class="indexterm"></a><div
               class="para">
 				すべての例は必ず <code
@@ -134,24 +134,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711221133296"></a>7.2.2. デーモンの挙動を監視する</h3></div></div></div><div
+                    id="idm139900963583280"></a>7.2.2. デーモンの挙動を監視する</h3></div></div></div><div
             class="para">
-				デーモンの挙動を理解するのはやや面倒です。なぜなら、デーモンは管理者と直接的に対話するものではないからです。デーモンが実際どのような仕事をしているかを確認するには、デーモンをテストする必要があります。たとえば、Apache (ウェブサーバ) デーモンの挙動を確認するには、HTTP リクエストを使ってテストします。
+				デーモンの挙動を理解するのはやや面倒です。なぜなら、デーモンは管理者と直接的に対話するものではないからです。デーモンが実際にどのような仕事をしているかを確認するには、デーモンをテストする必要があります。たとえば、Apache (ウェブサーバ) デーモンの挙動を確認するには、HTTP リクエストを使ってテストします。
 			</div><div
             class="para">
 				テストを行うために、デーモンは通常、自分のしたことだけでなく発生したエラーも含めてすべてを、「ログファイル」や「システムログ」と呼ばれるログに記録します。ログは <code
-              class="filename">/var/log/</code> の中か、このディレクトリのサブディレクトリの中に保存されます。それぞれのデーモンの正確なログファイル名を知るには、文書を確認して下さい。注意: そのテストによって考え得る使用例のすべてが満足されない限り、テストは必ずしも 1 回で十分とは限りません; 幾つかの問題は特定の状況下でしか起こりません。
+              class="filename">/var/log/</code> の中か、このディレクトリのサブディレクトリの中に保存されます。それぞれのデーモンの正確なログファイル名を知るには、文書を確認してください。注意: そのテストによって考え得る使用例のすべてが満足されない限り、テストは必ずしも 1 回で十分とは限りません; いくつかの問題は特定の状況下でしか起こりません。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> <code
                         class="command">rsyslogd</code> デーモン</strong></p></div></div></div><a
-              id="idm140711221128416"
+              id="idm139900952345488"
               class="indexterm"></a><a
-              id="idm140711221127296"
+              id="idm139900952344368"
               class="indexterm"></a><a
-              id="idm140711221125856"
+              id="idm139900952342928"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -161,14 +161,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
               class="para">
 				C 言語にはログ送信専用の関数があるので、これを使うと <code
-                class="command">rsyslogd</code> デーモンを簡単に使えるようになります。しかしながら、幾つかのデーモンは自分でログファイルを管理します (たとえば、<code
+                class="command">rsyslogd</code> デーモンを簡単に使えるようになります。しかしながら、いくつかのデーモンは自分でログファイルを管理します (たとえば、<code
                 class="command">samba</code>、Linux 上で動く Windows 共有の実装、がその場合に当てはまります)。
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> デーモン</strong></p></div></div></div><a
-              id="idm140711221119040"
+              id="idm139900952336112"
               class="indexterm"></a><div
               class="para">
 				デーモンはユーザが明示的に呼び出すプログラムではなく、バックグラウンドで実行され、特定の状態が満足されたら作業を行うプログラムです。多くのサーバプログラムはデーモンです。専門用語の名前の最後に付けられた「d」という文字は通常それがデーモンであることを意味しています (<code
@@ -180,31 +180,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				予防手段として、管理者は日常的に最重要なサーバログを読むべきです。そうすれば、不満を抱くユーザが報告する前に問題を突き止めることができます。実際のところ、ユーザは報告の前に、問題が数日間にわたって繰り返して起こるまで待つかもしれません。多くの場合、長いログファイルの内容を分析する特定のツールが有ります。特に、ウェブサーバ (Apache 向けの <code
               class="command">analog</code>、<code
               class="command">awstats</code>、<code
-              class="command">webalizer</code>)、FTP サーバ、プロキシ/キャッシュサーバ、ファイヤーウォール、電子メールサーバ、DNS サーバ、プリンタサーバについてはそのログを解析するユーティリティが存在します。幾つかのユーティリティはモジュール式で機能し、複数のログファイルを解析できます。<code
+              class="command">webalizer</code>)、FTP サーバ、プロキシ/キャッシュサーバ、ファイアウォール、電子メールサーバ、DNS サーバ、プリンタサーバについてはそのログを解析するユーティリティが存在します。いくつかのユーティリティはモジュール式で機能し、複数のログファイルを解析できます。<code
               class="command">lire</code> や <code
               class="command">modlogan</code> がこれに相当します。他のツール、たとえば<code
               class="command">logcheck</code> (<a
               class="xref"
               href="security.html">14章<em>セキュリティ</em></a>で紹介するソフトウェア) など、はログファイルから対処が必要な警告を検索します。
 			</div><a
-            id="idm140711221110832"
+            id="idm139900952327904"
             class="indexterm"></a><a
-            id="idm140711221109712"
+            id="idm139900952326784"
             class="indexterm"></a><a
-            id="idm140711221108592"
+            id="idm139900952325664"
             class="indexterm"></a><a
-            id="idm140711221107472"
+            id="idm139900952324544"
             class="indexterm"></a><a
-            id="idm140711221106352"
+            id="idm139900952323424"
             class="indexterm"></a><a
-            id="idm140711221105232"
+            id="idm139900952322304"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711221103952"></a>7.2.3. メーリングリストで助けを求める</h3></div></div></div><div
+                    id="idm139900952321024"></a>7.2.3. メーリングリストで助けを求める</h3></div></div></div><div
             class="para">
-				色々検索しても問題の原因が判らなかった場合、他の人、より経験豊富な人、から助けを受けることも可能です。<code
+				いろいろと検索しても問題の原因が分からなかった場合、他の人、より経験豊富な人、から助けを受けることも可能です。<code
               class="email"><a
                 class="email"
                 href="mailto:debian-user@lists.debian.org">debian-user@lists.debian.org</a></code> メーリングリストはこのために用意されています。他のコミュニティと同様、このメーリングリストにも従う必要のあるルールがあります。質問の前に、メーリングリストに最近投稿された議論および公式文書の中で、自分の問題がまだ報告されていない点を確認するべきです。<div
@@ -213,9 +213,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="url">→ <a
                 href="http://lists.debian.org/debian-user/">http://lists.debian.org/debian-user/</a></div>
 			</div><a
-            id="idm140711221100400"
+            id="idm139900952317456"
             class="indexterm"></a><a
-            id="idm140711221099120"
+            id="idm139900952316176"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -237,11 +237,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				一般的に言って、電子メーリングリスト上でのやりとりはすべてネチケットを守るべきです。ネチケットとは、礼儀作法から避けるべき間違いまで、常識的なルールを指しています。<div
                 class="url">→ <a
                   href="http://tools.ietf.org/html/rfc1855">http://tools.ietf.org/html/rfc1855</a></div> <a
-                id="idm140711220418480"
+                id="idm139900952309696"
                 class="indexterm"></a>
 			</div></div><div
             class="para">
-				以下の 2 条件を満足した時点で、問題をメーリングリストに投稿してみてください。関連する情報をできる限り含めること: 実施した様々なテスト、参照した文書、その問題を診断する際に使った方法、関連するか関連する可能性のあるパッケージ、など。Debian バグ追跡システム (BTS、傍注<a
+				以下の 2 条件を満足した時点で、問題をメーリングリストに投稿してみてください。関連する情報をできる限り含めること: 実施したさまざまなテスト、参照した文書、その問題を診断する際に使った方法、関連するか関連する可能性のあるパッケージ、など。Debian バグ追跡システム (BTS、傍注<a
               class="xref"
               href="sect.debian-internals.html#sidebar.bts"><span
                 class="emphasis"><em>TOOL</em></span> バグ追跡システム</a>参照) で同様の問題がないか確認し、検索の結果を挙げ、見つかったバグへのリンクを提供すること。以下から BTS を使い始めることが可能です: <div
@@ -249,18 +249,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 href="http://www.debian.org/Bugs/index.html">http://www.debian.org/Bugs/index.html</a></div>
 			</div><div
             class="para">
-				礼儀正しく正確であればあるほど、答えを得られる (少なくとも多少の反応を得られる) チャンスが大きくなります。私信で関連する情報を受け取った場合、その情報を要約して公にすることを考えてください。そうすれば、他の人がその恩恵を受けられます。またこうすることで、様々な検索エンジンを通じて、同じ疑問を持つ人がメーリングリストのアーカイブからその解決策を得ることが可能です。
+				礼儀正しく正確であればあるほど、答えを得られる (少なくとも多少の反応を得られる) チャンスが大きくなります。私信で関連する情報を受け取った場合、その情報を要約して公にすることを考えてください。そうすれば、他の人がその恩恵を受けられます。またこうすることで、さまざまな検索エンジンを通じて、同じ疑問を持つ人がメーリングリストのアーカイブからその解決策を得ることが可能です。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711220414112"></a>7.2.4. 問題が難しすぎる場合のバグ報告</h3></div></div></div><a
-            id="idm140711220413344"
+                    id="idm139900952305328"></a>7.2.4. 問題が難しすぎる場合のバグ報告</h3></div></div></div><a
+            id="idm139900952304560"
             class="indexterm"></a><a
-            id="idm140711220412384"
+            id="idm139900952303600"
             class="indexterm"></a><div
             class="para">
-				問題を解決するために行ったすべての努力が失敗に終わった場合、問題の原因はあなたの責任の及ぶところになく、プログラムのバグかもしれません。この場合、適切な手続きは Debian にバグを報告するか、上流開発者に直接報告するかです。これを行うには、可能な限り問題を分割し、問題を再現できる最小のテスト環境を作ってください。問題の原因が明らかにプログラムにあるとわかっている場合、<code
+				問題を解決するために行ったすべての努力が失敗に終わった場合、問題の原因はあなたの責任のおよぶところになく、プログラムのバグかもしれません。この場合、適切な手続きは Debian にバグを報告するか、上流開発者に直接報告するかです。これを行うには、可能な限り問題を分割し、問題を再現できる最小のテスト環境を作ってください。問題の原因が明らかにプログラムにあるとわかっている場合、<code
               class="command">dpkg -S <em
                 class="replaceable">file_in_question</em></code> コマンドで関連するパッケージを見つけることが可能です。バグ追跡システム (<code
               class="literal">http://bugs.debian.org/<em

@@ -70,13 +70,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.dhcp"></a>10.7. DHCP</h2></div></div></div><div
           class="para">
 			DHCP (for <span
-            class="emphasis"><em>Dynamic Host Configuration Protocol</em></span>) とは、マシンが起動時にネットワーク設定を自動的に取得することを可能にするプロトコルです。DHCP のお陰で、ネットワーク設定の管理を中央集権化し、すべてのデスクトップマシンに類似した設定を行う、ことが可能になります。
+            class="emphasis"><em>Dynamic Host Configuration Protocol</em></span>) とは、マシンが起動時にネットワーク設定を自動的に取得することを可能にするプロトコルです。DHCP のおかげで、ネットワーク設定の管理を中央集権化し、すべてのデスクトップマシンに類似した設定を行う、ことが可能になります。
 		</div><a
-          id="idm140711217118576"
+          id="idm139900951785184"
           class="indexterm"></a><a
-          id="idm140711217117616"
+          id="idm139900951784224"
           class="indexterm"></a><a
-          id="idm140711217116688"
+          id="idm139900951783296"
           class="indexterm"></a><div
           class="para">
 			DHCP サーバは多くのネットワーク関連パラメータを提供します。DHCP サーバが提供する最も一般的なパラメータは IP アドレスとマシンの所属するネットワークですが、他にも DNS サーバ、WINS サーバ、NTP サーバなどの情報を提供することも可能です。
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.dhcp-config"></a>10.7.1. 設定</h3></div></div></div><div
             class="para">
 				DHCP サーバ設定ファイル (<code
-              class="filename">/etc/dhcp/dhcpd.conf</code>) で最初に編集する必要がある箇所はドメイン名と DNC サーバです。DHCP サーバがローカルネットワークに 1 台しかない (ブロードキャスト送信が定義するように) 場合、<code
+              class="filename">/etc/dhcp/dhcpd.conf</code>) で最初に編集する必要がある場所はドメイン名と DNC サーバです。DHCP サーバがローカルネットワークに 1 台しかない (ブロードキャスト送信が定義するように) 場合、<code
               class="literal">authoritative</code> 指示文を有効化しなければいけません (コメントを外さなければいけません)。また、<code
               class="literal">subnet</code> セクションを作成し、そこに提供先のローカルネットワークと設定情報を記述します。以下の例は、<code
               class="literal">192.168.0.1</code> を持つゲートウェイ担当のルータが存在する <code
@@ -142,12 +142,12 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dhcp-dns"></a>10.7.2. DHCP と DNS</h3></div></div></div><a
-            id="idm140711217102704"
+            id="idm139900951769312"
             class="indexterm"></a><div
             class="para">
-				DNS ゾーン内に DHCP クライアントを自動登録するという、便利な機能があります。この機能を使うことで、各マシンの意味のある名前を使ってアクセス可能になります (この機能を使わなければ <code
+				DNS ゾーン内に DHCP クライアントを自動登録するという、便利な機能があります。この機能を使うことで、各マシンの意味のある名前を使ってアクセスできるようになります (この機能を使わなければ <code
               class="literal">machine-192-168-0-131.internal.falcot.com</code> などの匿名性のある名前)。この機能を使うには、DNS サーバを設定して DHCP サーバから <code
-              class="literal">internal.falcot.com</code> DNS ゾーンの更新を受け入れるようにして、DHCP サーバを設定して各クライアント登録情報の更新を DNS サーバに送信するようにします。
+              class="literal">internal.falcot.com</code> DNS ゾーンの更新を受け入れるようにして、DHCP サーバを設定して各クライアントの登録情報の更新を DNS サーバに送信するようにします。
 			</div><div
             class="para">
 				<code

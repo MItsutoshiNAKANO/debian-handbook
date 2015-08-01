@@ -81,14 +81,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><strong><span
                       class="emphasis"><em>TIP</em></span> パッケージ命名規則</strong></p></div></div></div><div
             class="para">
-			幾つかのカテゴリに含まれるパッケージは従来続けられている命名規則に基づいて命名されます; この規則を知っておけば、正確なパッケージ名を推測できる場合があります。たとえば、Perl モジュールに関して、規約では <code
+			いくつかのカテゴリに含まれるパッケージは従来続けられている命名規則に基づいて命名されます; この規則を知っておけば、正確なパッケージ名を推測できる場合があります。たとえば、Perl モジュールに関して、規約では <code
               class="literal">XML::Handler::Composer</code> と呼ばれるモジュールは <span
               class="pkg pkg">libxml-handler-composer-perl</span> のようにパッケージ化されるべきであると定められています。Python から <code
               class="command">gconf</code> システムを扱うためのライブラリは <span
               class="pkg pkg">python-gconf</span> としてパッケージ化されています。不幸なことに、たとえパッケージメンテナが通常は上流開発者の選択に従おうとするとしても、すべてのパッケージに対する完全に一般的な命名規則を定義することは不可能です。
 		</div></div><div
           class="para">
-			もう少し上手い検索パターンはパッケージ名の中をプレーンテキスト検索することですが、この方法も大きな制約を受けます。通常、パッケージ説明を検索すれば結果が見つかるでしょう: なぜなら、大体のパッケージはパッケージ名だけでなく詳しい説明文を備えているからです。パッケージ説明のキーワード検索はしばしば役に立ちます。<code
+			もう少しうまい検索パターンはパッケージ名の中をプレーンテキスト検索することですが、この方法も大きな制約を受けます。通常、パッケージ説明を検索すれば結果が見つかるでしょう: なぜなら、大体のパッケージはパッケージ名だけでなく詳しい説明文を備えているからです。パッケージ説明のキーワード検索はしばしば役に立ちます。<code
             class="command">apt-cache</code> と <code
             class="command">axi-cache</code> はパッケージ説明のキーワード検索を行う際に選ぶツールです; たとえば、<code
             class="command">apt-cache search video</code> は「video」というキーワードがパッケージ説明に含まれるすべてのパッケージのリストを返します。
@@ -149,7 +149,7 @@ $ <strong
             class="pkg pkg">kino</span>、を 1 つだけ返します。
 		</div><div
           class="para">
-			このように条件が複数の検索はちょっと扱いにくいことが理由で、これはあまり使われません。そんなわけで、新しいタグ付けシステムが開発され、このシステムによって新しい検索方法が提供されました。パッケージには、「ファセット分類」として知られている様々な側面に従ってテーマ別に分類された、タグが付けられています。上に挙げた <span
+			このように条件が複数の検索はちょっと扱いにくいことが理由で、これはあまり使われません。そんなわけで、新しいタグ付けシステムが開発され、このシステムによって新しい検索方法が提供されました。パッケージには、「ファセット分類」として知られているさまざまな側面に従ってテーマ別に分類された、タグが付けられています。上に挙げた <span
             class="pkg pkg">kino</span> の場合、パッケージのタグによれば、Kino は Gnome ベースのソフトウェアで、動画データの処理に有用であり、主用途は編集であることがわかります。
 		</div><div
           class="para">
@@ -159,16 +159,16 @@ $ <strong
             class="url">→ <a
               href="http://debtags.alioth.debian.org/cloud/">http://debtags.alioth.debian.org/cloud/</a></div>
 		</div><a
-          id="idm140711218676992"
+          id="idm139900951159936"
           class="indexterm"></a><a
-          id="idm140711218675568"
+          id="idm139900951158512"
           class="indexterm"></a><div
           class="para">
 			<code
             class="literal">works-with::video</code> と <code
             class="literal">use::editing</code> タグを選ぶと、<span
             class="pkg pkg">kino</span> と <span
-            class="pkg pkg">pitivi</span> 動画編集ソフトを含む、一握りのパッケージがヒットします。分類分けのシステムは時間が経てば経つ程使われる運命にあり、パッケージマネージャはこれに基づく効率的な検索インターフェースを少しずつ提供するでしょう。
+            class="pkg pkg">pitivi</span> 動画編集ソフトウェアを含む、一握りのパッケージがヒットします。分類分けのシステムは時間がたてばたつほど使われる運命にあり、パッケージマネージャはこれに基づく効率的な検索インターフェースを少しずつ提供するでしょう。
 		</div><div
           class="para">
 			要約すると、検索したい内容の複雑さに依存して、最良の検索ツールも変わりうるということです:
@@ -188,12 +188,12 @@ $ <strong
               class="listitem"><div
                 class="para">
 					タグベースの検索が必要な場合、<code
-                  class="command">packagesearch</code> は良いツールです。これは複数の条件 (パッケージに含まれるファイルの名前も含みます) に基づいて利用可能なパッケージを検索する専用のグラフィカルインターフェースです。コマンドラインで使う場合は、<code
+                  class="command">packagesearch</code> は良いツールです。これは複数の条件 (パッケージに含まれるファイルの名前も含みます) に基づいて利用できるパッケージを検索する専用のグラフィカルインターフェースです。コマンドラインで使う場合は、<code
                   class="command">axi-cache</code> がぴったりでしょう。
 				</div><a
-                id="idm140711218665328"
+                id="idm139900951148256"
                 class="indexterm"></a><a
-                id="idm140711218663904"
+                id="idm139900951146832"
                 class="indexterm"></a></li><li
               class="listitem"><div
                 class="para">

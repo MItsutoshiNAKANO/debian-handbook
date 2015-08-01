@@ -71,9 +71,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			L'une des responsabilités principales de tout administrateur, la sauvegarde reste un sujet complexe dont les outils puissants sont en général difficiles à maîtriser.
 		</div><a
-          id="idm140344698760624"
+          id="idm139979094167776"
           class="indexterm"></a><a
-          id="idm140344698759856"
+          id="idm139979094167008"
           class="indexterm"></a><div
           class="para">
 			De nombreux logiciels existent : citons <code
@@ -82,11 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">BackupPC</code>. Il s'agit de systèmes client/serveur dotés de nombreuses options, dont la configuration peut être difficile. Certains disposent d'une interface de configuration web. Des dizaines d'autres paquets Debian sont dédiés à des solutions de sauvegarde, comme vous le montrera la commande <code
             class="command">apt-cache search backup</code>.
 		</div><a
-          id="idm140344698756864"
+          id="idm139979094164016"
           class="indexterm"></a><a
-          id="idm140344698755968"
+          id="idm139979094163120"
           class="indexterm"></a><a
-          id="idm140344698755072"
+          id="idm139979094162224"
           class="indexterm"></a><div
           class="para">
 			Plutôt que de détailler le fonctionnement de certains d'entre eux, nous prenons le parti d'exposer la réflexion menée par les administrateurs de Falcot SA pour définir leur stratégie de sauvegarde.
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140344698752944"></a>9.10.1. Sauvegarde avec <code
+                    id="idm139979094160096"></a>9.10.1. Sauvegarde avec <code
                     class="command">rsync</code></h3></div></div></div><div
             class="para">
 				Les sauvegardes sur bandes ayant été jugées trop lentes et trop coûteuses, les données seront sauvegardées sur les disques durs d'un serveur dédié, où l'emploi du RAID logiciel (détaillé dans la <a
@@ -105,15 +105,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="advanced-administration.html#sect.raid-soft">Section 12.1.1, « RAID logiciel »</a>) les protégera d'une défaillance du disque. Les ordinateurs bureautiques ne sont pas sauvegardés individuellement, mais les utilisateurs sont informés que leur compte personnel, situé sur le serveur de fichiers de leur département, sera sauvegardé. La commande <code
               class="command">rsync</code> (du paquet éponyme) sauvegarde quotidiennement ces différents serveurs.
 			</div><a
-            id="idm140344698750176"
+            id="idm139979094157328"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> Le lien dur, un deuxième nom pour le fichier</strong></p></div></div></div><a
-              id="idm140344698748384"
+              id="idm139979094155536"
               class="indexterm"></a><a
-              id="idm140344698747232"
+              id="idm139979094154384"
               class="indexterm"></a><div
               class="para">
 				A hard link, as opposed to a symbolic link, cannot be differentiated from the linked file. Creating a hard link is essentially the same as giving an existing file a second name. This is why the deletion of a hard link only removes one of the names associated with the file. As long as another name is still assigned to the file, the data therein remain present on the filesystem. It is interesting to note that, unlike a copy, the hard link does not take up additional space on the hard drive.
@@ -133,11 +133,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="foreignphrase">hard links</em></span>), qui évitent de consommer trop d'espace disque. Le processus <code
               class="command">rsync</code> ne remplacera ensuite que les fichiers modifiés depuis la dernière sauvegarde. Ce mécanisme permet de conserver un grand nombre de sauvegardes sur un volume réduit. Toutes les sauvegardes étant accessibles en même temps (par exemple dans des répertoires différents d'un même volume accessible à travers le réseau), on pourra effectuer rapidement des comparaisons entre deux dates données.
 			</div><a
-            id="idm140344698740784"
+            id="idm139979094147936"
             class="indexterm"></a><a
-            id="idm140344698740016"
+            id="idm139979094147168"
             class="indexterm"></a><a
-            id="idm140344698738864"
+            id="idm139979094146016"
             class="indexterm"></a><div
             class="para">
 				Ce mécanisme de sauvegarde se met facilement en place à l'aide du programme <code
@@ -245,7 +245,7 @@ exclude:
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140344698712400"></a>9.10.2. Restauration des machines non sauvegardées</h3></div></div></div><div
+                    id="idm139979094119552"></a>9.10.2. Restauration des machines non sauvegardées</h3></div></div></div><div
             class="para">
 				Les ordinateurs bureautiques, qui ne sont pas sauvegardés, pourront être réinstallés à partir des DVD-Rom personnalisés préparés avec <span
               class="emphasis"><em>Simple-CDD</em></span> (voir <a
@@ -270,22 +270,22 @@ exclude:
                   class="replaceable">file_from_today</em></code>. The <code
                 class="command">xdelta</code> program produces incremental differences from binary dumps.
 			</div><a
-              id="idm140344698704432"
+              id="idm139979094111584"
               class="indexterm"></a><a
-              id="idm140344698703536"
+              id="idm139979094110688"
               class="indexterm"></a><a
-              id="idm140344698702640"
+              id="idm139979094109792"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="emphasis"><em>TAR</em></span>, standard de sauvegarde sur bande</strong></p></div></div></div><a
-              id="idm140344698700336"
+              id="idm139979094107488"
               class="indexterm"></a><a
-              id="idm140344698699184"
+              id="idm139979094106336"
               class="indexterm"></a><a
-              id="idm140344698698416"
+              id="idm139979094105568"
               class="indexterm"></a><div
               class="para">
 				Historiquement, le moyen le plus simple de réaliser une sauvegarde sous Unix était de stocker sur bande une archive au format <span

@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. ブートローダの設定</h2></div></div></div><a
-          id="idm140711219964272"
+          id="idm139900950157488"
           class="indexterm"></a><a
-          id="idm140711219962832"
+          id="idm139900950156048"
           class="indexterm"></a><div
           class="para">
 			ブートローダは既に機能しているかもしれませんが、ブートローダがマスターブートレコードから消えてしまった状況に備えて、ブートローダの設定方法とイントール方法を知っておくのは常に良い考えです。この状況は、他のオペレーティングシステム、たとえば Windows などをインストールした後に、起こる場合があります。以下の情報はブートローダ設定の変更が必要になった際にそれを変更するための助けになるでしょう。
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> マスターブートレコード</strong></p></div></div></div><a
-            id="idm140711219959728"
+            id="idm139900950152944"
             class="indexterm"></a><a
-            id="idm140711219958768"
+            id="idm139900950151984"
             class="indexterm"></a><div
             class="para">
 			マスターブートレコード (MBR) は最初のハードディスクの最初の 512 バイトを専有し、 BIOS は対象のオペレーティングシステムを起動できるプログラムに操作を受け渡すために真っ先に MBR を読み込みます。一般にブートローダは MBR にインストールされ、その前に MBR にあった情報は削除されます。
@@ -102,10 +102,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="xref"
                 href="sect.creating-accounts.html#sidebar.special-files"><span
                   class="emphasis"><em>BACK TO BASICS</em></span> デバイスアクセスパーミッション</a>参照) を表す目的で、いわゆる「スペシャル」ファイルを保存する場所でした。昔 <code
-                class="filename">/dev/</code> ディレクトリには、潜在的に利用する可能性のあるすべてのスペシャルファイルが含まれていました。このやり方には多くの欠点がありました。特に、使うことのできるデバイスの数が制限されていた (ハードコードされた名前リストのために) 点、実際に使えるスペシャルファイルがどれなのか判らない点、です。
+                class="filename">/dev/</code> ディレクトリには、潜在的に利用する可能性のあるすべてのスペシャルファイルが含まれていました。このやり方には多くの欠点がありました。特に、使うことのできるデバイスの数が制限されていた (ハードコードされた名前リストのために) 点、実際に使えるスペシャルファイルがどれなのか分からない点、です。
 			</div><div
               class="para">
-				今日、スペシャルファイルの管理は完全に動的で、これはホットスワップ可能なコンピュータデバイスの性質と上手く合っています。カーネルは <span
+				今日、スペシャルファイルの管理は完全に動的で、これはホットスワップできるコンピュータデバイスの性質とうまく合っています。カーネルは <span
                 class="emphasis"><em>udev</em></span> と協力し、対応するデバイスが取り付けられたり取り外され際に、スペシャルファイルを作成したり削除したりします。この理由により <code
                 class="filename">/dev/</code> が永続的である必要はなくなり、RAM ベースのファイルシステムでは、最初このディレクトリを空にしておき、関連するエントリだけを含めるようにしています。
 			</div><div
@@ -113,7 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				カーネルは新たに追加されたデバイスに関する多くの情報をやりとりして、そのデバイスを識別するメジャー/マイナー番号の組を配布します。<code
                 class="command">udevd</code> はデバイスに必要なパーミッション設定と名前を付けたスペシャルファイルを作成します。さらに <code
                 class="command">udevd</code> は別名を作成し、追加的操作を実行することも可能です (デバイスの初期化や登録作業など)。<code
-                class="command">udevd</code> の挙動は (カスタマイズ可能な) 巨大ルール群によって決定されます。
+                class="command">udevd</code> の挙動は (カスタマイズが可能な) 巨大ルール群によって決定されます。
 			</div><div
               class="para">
 				動的に名前を付けることで、あるデバイスに常に同じ名前を持たせることが可能になります。名前は接続するコネクタや接続順に依存しないので、特に複数の USB 周辺機器を使う場合に便利です。1 台目のハードドライブの最初のパーティションは後方互換性を保つために <code
@@ -122,18 +122,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">udevd</code> を設定できるからです。
 			</div><div
               class="para">
-				古くは、一部のカーネルモジュールは関連するデバイスファイルにアクセスを試行した時点で自動的に読み込まれていました。この方針は現在使われておらず、モジュールを読み込む前に周辺機器のスペシャルファイルが存在することはありません; これは大きな問題ではありません。なぜなら、自動ハードウェア検出のお陰でほとんどのモジュールは起動時に読み込まれるからです。しかし、検出できない周辺機器 (非常に古いディスクドライブや PS/2 マウスなど) ではこの挙動が問題になります。<code
+				古くは、一部のカーネルモジュールは関連するデバイスファイルにアクセスを試行した時点で自動的に読み込まれていました。今現在この方針は使われておらず、モジュールを読み込む前に周辺機器のスペシャルファイルが存在することはありません; これは大きな問題ではありません。なぜなら、自動ハードウェア検出のおかげでほとんどのモジュールは起動時に読み込まれるからです。しかし、検出できない周辺機器 (非常に古いディスクドライブや PS/2 マウスなど) ではこの挙動が問題になります。<code
                 class="literal">floppy</code>、<code
                 class="literal">psmouse</code>、<code
                 class="literal">mousedev</code> モジュールを <code
                 class="filename">/etc/modules</code> に追加して、起動時に強制的にこれらのモジュールを読み込むことを検討してください。
 			</div></div><a
-            id="idm140711217703888"
+            id="idm139900950134112"
             class="indexterm"></a><a
-            id="idm140711217702960"
+            id="idm139900950133184"
             class="indexterm"></a><div
             class="para">
-				ブートローダを設定するには、必ず様々なハードドライブとそのパーティションを識別しなければいけません。Linux はこの目的のために <code
+				ブートローダを設定するには、必ずさまざまなハードドライブとそのパーティションを識別しなければいけません。Linux はこの目的のために <code
               class="filename">/dev/</code> ディレクトリ内で「ブロック」スペシャルファイルを使います。Debian <span
               class="distribution distribution">Squeeze</span> 以降、ハードドライブの命名規則は Linux カーネルによって統一化されました。現在、すべてのハードドライブ (IDE/PATA、SATA、SCSI、USB、IEEE 1394) は <code
               class="filename">/dev/sd*</code> と表されます。
@@ -143,13 +143,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> は 1 台目のディスクの最初のパーティションで、<code
               class="filename">/dev/sdb3</code> は 2 台目のディスクの 3 番目のパーティションです。
 			</div><a
-            id="idm140711217697360"
+            id="idm139900950127584"
             class="indexterm"></a><a
-            id="idm140711217695920"
+            id="idm139900950126144"
             class="indexterm"></a><a
-            id="idm140711217694480"
+            id="idm139900950124704"
             class="indexterm"></a><a
-            id="idm140711217693040"
+            id="idm139900950123264"
             class="indexterm"></a><div
             class="para">
 				PC アーキテクチャ (つまり「i386」およびそのいとこである「amd64」) では、長い間「MS-DOS」パーティションテーブルフォーマットを使うよう制限を受けていました。このフォーマットはディスク 1 台あたりに作れる「プライマリ」パーティションの数を 4 つに制限していました。この制限を超えるためには、プライマリパーティションの 1 つを「拡張」パーティションとして作成します。拡張パーティションには追加的な「セカンダリ」パーティションを含めることが可能です。このようなセカンダリパーティションには 5 以上の番号が割り振られます。最初のセカンダリパーティションは <code
@@ -159,9 +159,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				MS-DOS パーティションテーブルフォーマットのもう一つの制限は、2 TiB を超えるサイズのディスクを取り扱うことができないという点です。この制限は現実的な問題になりつつあります。
 			</div><a
-            id="idm140711217688672"
+            id="idm139900950118896"
             class="indexterm"></a><a
-            id="idm140711217687264"
+            id="idm139900950117488"
             class="indexterm"></a><div
             class="para">
 				GPT と呼ばれる新しいパーティションテーブルフォーマットを使うことで、上に挙げたパーティション数 (標準的な設定を使った場合、最大で 128 個のパーティション) とディスクサイズ (最大で 8 ZiB、80 億テラバイト以上です) の制限が緩和されます。1 台のディスクに多くの物理パーティションを作成する場合、ディスクのパーティショニングを行う際に、必ず GPT フォーマットでパーティションテーブルを作成するよう注意してください。
@@ -202,7 +202,7 @@ lrwxrwxrwx 1 root root 10  7月 23 08:58 wwn-0x5000c50015c4842f-part1 -&gt; ../.
 [...]
 mirexpress:/dev/disk/by-id# </code></pre><div
             class="para">
-				幾つかのディスクは複数回リストされています (なぜなら、それらは ATA ディスクであり同時に SCSI ディスクとしても振る舞うからです) が、ディスクに固有の情報は主にディスクの製品番号とシリアル番号であるという点に注意してください。ここから、目的の周辺機器のシンボリックリンクを見つけることが可能です。
+				いくつかのディスクは複数回リストされています (なぜなら、それらは ATA ディスクであり同時に SCSI ディスクとしても振る舞うからです) が、ディスクに固有の情報は主にディスクの製品番号とシリアル番号であるという点に注意してください。ここから、目的の周辺機器のシンボリックリンクを見つけることが可能です。
 			</div><div
             class="para">
 				以下の節で挙げる設定ファイルの例は、同じセットアップに基づいています: 1 台の SATA ディスクがあり、最初のパーティションに古い Windows がインストールされており、2 番目のパーティションに Debian GNU/Linux がインストールされている状態です。
@@ -211,9 +211,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. LILO の設定</h3></div></div></div><a
-            id="idm140711217676176"
+            id="idm139900950106400"
             class="indexterm"></a><a
-            id="idm140711217675216"
+            id="idm139900950105440"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -259,16 +259,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. GRUB 2 の設定</h3></div></div></div><a
-            id="idm140711217667264"
+            id="idm139900950097488"
             class="indexterm"></a><a
-            id="idm140711217666304"
+            id="idm139900950096528"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (GRand Unified Bootloader) はより新しいブートローダです。カーネル更新の後に GRUB を実行する必要はありません; <span
               class="emphasis"><em>GRUB</em></span> はファイルシステムを読む方法とディスクからカーネルを探し出す方法を知っています。GRUB を最初のディスクの MBR にインストールするためには、<code
               class="command">grub-install /dev/sda</code> を実行してください。<a
-              id="idm140711217663296"
+              id="idm139900950093520"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -293,7 +293,7 @@ other=/dev/sda1
 				GRUB 2 の設定は <code
               class="filename">/boot/grub/grub.cfg</code> に保存されていますが、このファイルは (Debian の場合) 別のファイルから生成されます。<code
               class="filename">/boot/grub/grub.cfg</code> を直接変更しないでください。なぜなら、<code
-              class="command">update-grub</code> が実行されたら (様々なパッケージの更新時に実行されることがあります) そのような部分的な変更は失われるからです。<code
+              class="command">update-grub</code> が実行されたら (さまざまなパッケージの更新時に実行されることがあります) そのような部分的な変更は失われるからです。<code
               class="filename">/boot/grub/grub.cfg</code> ファイルに対して、最も一般的な変更 (たとえば、カーネルに渡すコマンドラインパラメータを追加したり、メニューの表示される時間を変える) を加えるには、<code
               class="filename">/etc/default/grub</code> に含まれる変数を使います。メニューにエントリを追加するには、<code
               class="filename">/boot/grub/custom.cfg</code> ファイルを作成するか、<code
@@ -307,7 +307,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Macintosh コンピュータ (PowerPC) の場合: Yaboot の設定</h3></div></div></div><a
-            id="idm140711217647440"
+            id="idm139900950077648"
             class="indexterm"></a><div
             class="para">
 				Yaboot は PowerPC プロセッサを使う古い Macintosh コンピュータで使われるブートローダです。古い Macintosh コンピュータは PC のように起動せず、bootstrap パーティションを使って起動します。BIOS (または OpenFirmware) が bootstrap パーティションからローダを実行し、<code
@@ -321,7 +321,7 @@ other=/dev/sda1
 				<code
               class="command">ybin</code> を実行する前に、適切な <code
               class="filename">/etc/yaboot.conf</code> を作らなければいけません。以下は最低限の設定例です。<a
-              id="idm140711217641824"
+              id="idm139900950072032"
               class="indexterm"></a>
 			</div><div
             class="example"><a

@@ -122,22 +122,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="sect.backup.html">9.10. バックアップ</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm140711211879008">9.10.1. <code
+                      href="sect.backup.html#idm139900947997312">9.10.1. <code
                         class="command">rsync</code> を使ったバックアップ</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm140711211837360">9.10.2. バックアップなしのマシンの復元</a></span></dt></dl></dd><dt><span
+                      href="sect.backup.html#idm139900947955680">9.10.2. バックアップなしのマシンの復元</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.hotplug.html">9.11. ホットプラグ機能: <span
                     class="emphasis"><em>hotplug</em></span></a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140711211819424">9.11.1. はじめに</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm139900947937728">9.11.1. はじめに</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140711211810304">9.11.2. 命名問題</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm139900947928608">9.11.2. 命名問題</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140711211795920">9.11.3. <span
+                      href="sect.hotplug.html#idm139900947914208">9.11.3. <span
                         class="emphasis"><em>udev</em></span> の動作原理</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140711211744112">9.11.4. 具体例</a></span></dt></dl></dd><dt><span
+                      href="sect.hotplug.html#idm139900947862384">9.11.4. 具体例</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.power-management.html">9.12. 電源管理: Advanced Configuration and Power Interface (ACPI)</a></span></dt></dl></div><div
           class="highlights"><div
@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.system-boot"></a>9.1. システム起動</h2></div></div></div><a
-            id="idm140711230312864"
+            id="idm139900957653856"
             class="indexterm"></a><div
             class="para">
 			コンピュータを起動する際、コンソール画面にスクロールされる多くのメッセージには、実行されている多くの自動初期化と自動設定に関する情報が表示されます。この段階の挙動を少し変えたいと思うことがあるかもしれません。これは起動処理をよく理解する必要があることを意味しています。これがこの節の目的です。
@@ -157,7 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			最初に BIOS がコンピュータを制御し、ディスクを検出し、<span
               class="emphasis"><em>Master Boot Record</em></span> を読み込み、ブートローダを実行します。以降、ブートローダが引き継ぎ、ディスクからカーネルを見つけ、カーネルを読み込んで実行します。そして、カーネルが初期化され、root ファイルシステムを含むパーティションの検索とマウントを開始し、最後に最初のプログラム - <code
               class="command">init</code> - を実行します。実際には、「root パーティション」と <code
-              class="command">init</code> は RAM の中にだけ存在する仮想ファイルシステム (そのためこの名前は「initramfs」、以前は「初期化 RAM ディスク」という意味で「initrd」と呼ばれていました) 上に置かれていることが多いです。このファイルシステムは、多くの場合ハードドライブのファイルかネットワークから、ブートローダによってメモリに読み込まれます。このファイルシステムには、カーネルが「真の」root ファイルシステムを読み込むために必要な最低限の要素が含まれています: ハードドライブやそれなしではシステムが起動できないその他のデバイスのドライバモジュール、より頻繁にあるのが、RAID アレイを組み立て、暗号化されたパーティションを開き、LVM ボリュームを有効化するなどの初期化スクリプトとモジュールです。一度 root パーティションがマウントされたら、initramfs は制御を真の init に渡し、マシンは標準的な起動処理に戻ります。
+              class="command">init</code> は RAM の中にだけ存在する仮想ファイルシステム (そのためこの名前は「initramfs」、以前は「初期化 RAM ディスク」という意味で「initrd」と呼ばれていました) 上に置かれていることが多いです。多くの場合、このファイルシステムはハードドライブのファイルかネットワークから、ブートローダによってメモリに読み込まれます。このファイルシステムには、カーネルが「真の」root ファイルシステムを読み込むために必要な最低限の要素が含まれています: ハードドライブやそれなしではシステムが起動できないその他のデバイスのドライバモジュール、より頻繁にあるのが、RAID アレイを組み立て、暗号化されたパーティションを開き、LVM ボリュームを有効化するなどの初期化スクリプトとモジュールです。一度 root パーティションがマウントされたら、initramfs は制御を真の init に渡し、マシンは標準的な起動処理に戻ります。
 		</div><div
             class="figure"><a
               id="figure.boot-process-systemd"></a><div
@@ -207,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				Debian 上の <code
                   class="command">upstart</code> システムはまだ完全に試されていません。<code
-                  class="command">upstart</code> はイベントに基づく起動システムです: init スクリプトはもはや逐次的順序でなく、あるスクリプトが依存する他のスクリプトの完了等のイベントに応じて起動されます。Ubuntu の始めたこのシステムは Debian <span
+                  class="command">upstart</code> はイベントに基づく起動システムです: init スクリプトはもはや逐次的順序でなく、あるスクリプトが依存する他のスクリプトの完了などのイベントに応じて起動されます。Ubuntu の始めたこのシステムは Debian <span
                   class="distribution distribution">Jessie</span> に含まれますが、デフォルトではありません; 実際のところ、<code
                   class="command">upstart</code> は <span
                   class="pkg pkg">sysvinit</span> の代替として始まりました。<code
@@ -218,14 +218,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				他の起動システムや他の動作モードも存在します。たとえば <code
                   class="command">runit</code>、<code
                   class="command">minit</code>、<code
-                  class="command">initng</code> 等です。しかしこれらは比較的特殊で広く使われていません。
+                  class="command">initng</code> などです。しかしこれらは比較的特殊で広く使われていません。
 			</div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>SPECIFIC CASE</em></span> ネットワークからの起動</strong></p></div></div></div><div
                 class="para">
-				一部の設定では、BIOS が MBR を実行しないように設定され、その代わり同じものをネットワークから探すように設定されているかもしれません。こうすることで、ハードドライブなしでコンピュータを組み立てたり、起動時に毎回完全に再インストールすることが可能になります。このオプションは、すべてのハードウェアで利用可能というわけではありませんし、通常 BIOS とネットワークカードの適切な組み合わせが必要です。
+				一部の設定では、BIOS が MBR を実行しないように設定され、その代わり同じものをネットワークから探すように設定されているかもしれません。こうすることで、ハードドライブなしでコンピュータを組み立てたり、起動するたびに完全に再インストールすることが可能になります。このオプションは、すべてのハードウェアで利用できるというわけではありませんし、通常 BIOS とネットワークカードの適切な組み合わせが必要です。
 			</div><div
                 class="para">
 				ネットワークからの起動は <code
@@ -237,7 +237,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> プロセス、プログラムインスタンス</strong></p></div></div></div><a
-                id="idm140711216642432"
+                id="idm139900956408976"
                 class="indexterm"></a><div
                 class="para">
 				プロセスとは、実行中のプログラムのメモリ内表現です。プロセスには、ソフトウェアを適切に実行するために必要なすべての情報が含まれます (ソフトウェアのコードだけでなく、ソフトウェアが所有するメモリ内のデータ、ソフトウェアが開いたファイルのリスト、ソフトウェアが確立したネットワーク接続など)。単独のプログラムは複数のプロセスにインスタンス化されるかもしれませんし、異なるユーザ ID の下で実行される必要はありません。
@@ -253,7 +253,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/lib/systemd/systemd</code> へのシンボリックリンクです)。しかしながら、カーネルに <code
                   class="literal">init</code> オプションを渡して別のプログラムを開始することも可能です。
 			</div><a
-                id="idm140711231066944"
+                id="idm139900956403440"
                 class="indexterm"></a><div
                 class="para">
 				コンピュータに触ることができる人は誰でも、<span
@@ -267,17 +267,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				最後に、ほとんどの BIOS では、汎用的なパスワードが使えることに注意してください。当初、汎用パスワードはパスワードを忘れた人向けのトラブルシューティングを意図していましたが、今や汎用パスワードは公開されインターネットから入手できます (ご自分の手で、検索エンジンで「generic BIOS passwords」を検索してみてください)。これらの保護により、マシンへの不正アクセスを完全に防ぐことはできないにせよ、それを遅らせることになるでしょう。攻撃者が物理的にコンピュータにアクセスできる場合、確実にコンピュータを保護する方法はありません; 攻撃者はハードドライブを取り外して自分の制御下にあるコンピュータに接続したり、マシン本体ごと盗んだり、パスワードをリセットするために BIOS メモリを消去することも可能です…
 			</div></div><div
               class="para">
-				Systemd はシステムの設定を担当する複数のプロセスを実行します: キーボード、ドライバ、ファイルシステム、ネットワーク、サービス。Systemd はシステム全体に及ぶ包括的視点と各要素の要求条件を満足させながらこれを行います。各要素は「ユニットファイル」(これだけでは済まない場合もあります) によって定義されています; ユニットファイルの一般的な構文は広く使われている「*.ini ファイル」の構文から派生したもので、<code
+				Systemd はシステムの設定を担当している複数のプロセスを実行します: キーボード、ドライバ、ファイルシステム、ネットワーク、サービス。Systemd はシステム全体におよぶ包括的視点と各要素の要求条件を満足させながらこれを行います。各要素は「ユニットファイル」(これだけでは済まない場合もあります) によって定義されています; ユニットファイルの一般的な構文は広く使われている「*.ini ファイル」の構文から派生したもので、<code
                 class="literal">[<em
                   class="replaceable">section</em>]</code> ヘッダでグループ化された <code
                 class="literal"><em
                   class="replaceable">key</em> = <em
                   class="replaceable">value</em></code> ペアを使います。ユニットファイルは <code
                 class="filename">/lib/systemd/system/</code> と <code
-                class="filename">/etc/systemd/system/</code> の下に保存されます; ユニットファイルはいくつかの形式がありますが、我々は「service」型と「target」型に注目します。
+                class="filename">/etc/systemd/system/</code> の下に保存されます; ユニットファイルはいくつかの形式がありますが、われわれは「service」型と「target」型に注目します。
 			</div><div
               class="para">
-				systemd の「service ファイル」は systemd が管理するプロセスを記述します。「service ファイル」にはおおまかに言って古いスタイルの init スクリプトと同じ情報が含まれていますが、宣言的な方法 (そしてより簡潔な方法) を使ってその情報が記述されています。systemd は繰り返しタスク (プロセスの開始と停止、状態確認、ログ記録、特権の取り消し、など) の大部分を取り扱い、service ファイルにはプロセス特有の情報を記入する必要があります。たとえば、以下は SSH 用の service ファイルです:
+				systemd の「service ファイル」は systemd が管理するプロセスを記述します。「service ファイル」にはおおまかに言って古いスタイルの init スクリプトと同じ情報が含まれていますが、宣言的な方法 (そしてより簡潔な方法) を使ってその情報が記述されています。systemd は繰り返しタスク (プロセスの開始と停止、状態確認、ログ記録、特権の取り消し、など) の大部分を取り扱い、service ファイルにはプロセスに特有の情報を記入する必要があります。たとえば、以下は SSH 用の service ファイルです:
 			</div><pre
               class="programlisting">[Unit]
 Description=OpenBSD Secure Shell server
@@ -295,11 +295,11 @@ Restart=on-failure
 WantedBy=multi-user.target
 Alias=sshd.service</pre><div
               class="para">
-				ご覧のとおり、内容はとても少なく、ただの宣言に過ぎません。systemd は進捗報告を表示したり、プロセスを監視したり、必要なときにプロセスを再起動することを担当します。
+				ご覧のとおり、内容はとても少なく、ただの宣言に過ぎません。systemd は作業進行状況を表示したり、プロセスを監視したり、必要なときにプロセスを再起動することを担当します。
 			</div><div
               class="para">
 				systemd の「target ファイル」はシステムの状態を表現するもので、このファイルを使って利用可能状態になっていなければいけないサービス群を指定します。「target ファイル」は昔ながらのランレベルに相当するものとして考えることが可能です。target ファイルの 1 つに <code
-                class="literal">local-fs.target</code> があります; このターゲットを処理する際には、残りのシステムはすべてのローカルファイルシステムがマウントされアクセス可能になっている状態を仮定することが可能です。また別の target ファイルに <code
+                class="literal">local-fs.target</code> があります; このターゲットを処理する際には、残りのシステムはすべてのローカルファイルシステムがマウントされアクセスできるようになっている状態を仮定することが可能です。また別の target ファイルに <code
                 class="literal">network-online.target</code> と <code
                 class="literal">sound.target</code> があります。ターゲットの依存関係を指定するには target ファイルの (<code
                 class="literal">Requires=</code> 行で) リスト指定するか、<code
@@ -315,10 +315,10 @@ Alias=sshd.service</pre><div
               class="para">
 				systemd と情報をやりとりする 1 番目のユーティリティとして <code
                 class="command">systemctl</code> が挙げられます。<code
-                class="command">systemctl</code> を引数なしで実行した場合、systemd が把握しているすべてのユニットファイル (無効化されているものを除く) 及びその状態が表示されます。<code
+                class="command">systemctl</code> を引数なしで実行した場合、systemd が把握しているすべてのユニットファイル (無効化されているものを除く) およびその状態が表示されます。<code
                 class="command">systemctl status</code> を使うことで、サービスおよび関連するプロセスをよりわかりやすく表示することが可能です。サービスの名前を指定した (<code
                 class="command">systemctl status ntp.service</code> のように指定した) 場合、<code
-                class="command">systemctl</code> は更に詳しい情報および指定したサービスに関連するログの最後の (最新の) 数行を表示します。
+                class="command">systemctl</code> はさらに詳しい情報および指定したサービスに関連するログの最後の (最新の) 数行を表示します。
 			</div><div
               class="para">
 				手作業でサービスを開始するのは簡単で、<code
@@ -468,13 +468,13 @@ Alias=sshd.service</pre><div
                 class="emphasis"><em>sysinit</em></span> 段階に相当します) は <code
                 class="command">/etc/init.d/rcS</code> で、これは <code
                 class="filename">/etc/rcS.d/</code> ディレクトリに含まれるすべてのプログラムを起動するスクリプトです。<a
-                id="idm140711218032096"
+                id="idm139900952796624"
                 class="indexterm"></a> <a
-                id="idm140711218031296"
+                id="idm139900952795824"
                 class="indexterm"></a> <a
-                id="idm140711218030496"
+                id="idm139900952795024"
                 class="indexterm"></a> <a
-                id="idm140711218029696"
+                id="idm139900952794224"
                 class="indexterm"></a>
 			</div><div
               class="para">
@@ -511,7 +511,7 @@ Alias=sshd.service</pre><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> カーネルモジュールとオプション</strong></p></div></div></div><a
-                id="idm140711218020384"
+                id="idm139900952784752"
                 class="indexterm"></a><div
                 class="para">
 				カーネルモジュールにオプションを指定するには、<code
@@ -519,7 +519,7 @@ Alias=sshd.service</pre><div
                   class="literal">options <em
                     class="replaceable">module-name</em> <em
                     class="replaceable">option-name</em>=<em
-                    class="replaceable">option-value</em></code>。場合によっては、幾つかのオプションは単独の指示文で指定できます。
+                    class="replaceable">option-value</em></code>。場合によっては、いくつかのオプションは単独の指示文で指定できます。
 			</div><div
                 class="para">
 				<code
@@ -527,9 +527,9 @@ Alias=sshd.service</pre><div
                   class="command">modprobe</code> は <span
                   class="pkg pkg">kmod</span> パッケージによって提供されます。
 			</div><a
-                id="idm140711218013920"
+                id="idm139900952778160"
                 class="indexterm"></a><a
-                id="idm140711218012800"
+                id="idm139900952777040"
                 class="indexterm"></a></div><div
               class="para">
 				この段階の後、<code
@@ -538,21 +538,21 @@ Alias=sshd.service</pre><div
                 class="command">/etc/init.d/rc 2</code> を実行します。これは <code
                 class="filename">/etc/rc2.d/</code> 置かれて、「S」で始まる名前のすべてのサービスを開始するスクリプトです。「S」の後に続く 2 桁の数字は、歴史的言って、起動するサービスの順番を定義するために使われていました。しかし今やデフォルトの起動システムは <code
                 class="command">insserv</code> を使って、スクリプト同士の依存関係に従った起動順を自動的に決定します。このため、各起動スクリプトはサービスを起動または終了させる時に満足しなければいけない条件を宣言します (たとえば、あるサービスは他のサービスの前または後に起動しなければいけないなど); そして、<code
-                class="command">init</code> は条件を満足するようにサービスを起動します。このため、スクリプトの静的な番号付けはもはや考慮されません (しかしスクリプトの名前は必ず「S」で始まり、その後ろに 2 桁の番号を付け、依存関係に使われる実際のスクリプトの名前を続けなければいけません)。一般に、ベースシステム (ログ記録を担当する <code
-                class="command">rsyslog</code> やポート割り当てを担当する <code
+                class="command">init</code> は条件を満足するようにサービスを起動します。このため、スクリプトの静的な番号付けはもはや考慮されません (しかしスクリプトの名前は必ず「S」で始まり、その後ろに 2 桁の番号を付け、依存関係に使われる実際のスクリプトの名前を続けなければいけません)。一般に、ベースシステム (ログ記録を担当している <code
+                class="command">rsyslog</code> やポート割り当てを担当している <code
                 class="command">portmap</code>) が最初に起動され、その後に標準的なサービスとグラフィカルインターフェース (<code
                 class="command">gdm3</code>) が起動されます。
 			</div><div
               class="para">
-				この依存関係に基づく起動システムのお陰で、自動的な起動順の再定義が可能になります。これは手作業でやるにはちょっと退屈な作業で、人的ミスの危険性があります。なぜなら、起動順は宣言された依存関係に従って定義されるからです。別の利益として、他のサービスに依存しないサービスは並列して開始できるという点があります。このことにより、起動処理を加速することができます。
+				この依存関係に基づく起動システムのおかげで、自動的な起動順の再定義が可能になります。これは手作業でやるにはちょっと退屈な作業で、人的ミスの危険性があります。なぜなら、起動順は宣言された依存関係に従って定義されるからです。別の利益として、他のサービスに依存しないサービスは並列して開始できるという点があります。このことにより、起動処理を加速できます。
 			</div><a
-              id="idm140711218004368"
+              id="idm139900952603264"
               class="indexterm"></a><a
-              id="idm140711218003408"
+              id="idm139900952602304"
               class="indexterm"></a><div
               class="para">
 				<code
-                class="command">init</code> は幾つかのランレベルを区別します。そうすることで、<code
+                class="command">init</code> はいくつかのランレベルを区別します。そうすることで、<code
                 class="command">telinit <em
                   class="replaceable">new-level</em></code> コマンドを使ってあるランレベルから別のランレベルに切り替えることができます。即座に <code
                 class="command">init</code> は新しいランレベルで <code
@@ -577,7 +577,7 @@ Alias=sshd.service</pre><div
 					</div></li><li
                   class="listitem"><div
                     class="para">
-						レベル 2 は通常動作用のモードで、ネットワークサービス、グラフィカルインターフェース、ユーザログイン等の機能を使うことが可能です。
+						レベル 2 は通常動作用のモードで、ネットワークサービス、グラフィカルインターフェース、ユーザログインなどの機能を使うことが可能です。
 					</div></li><li
                   class="listitem"><div
                     class="para">
@@ -595,15 +595,15 @@ Alias=sshd.service</pre><div
                     src="images/startup-sysvinit.png"
                     alt="System V init を使う Linux の動くコンピュータの起動シーケンス" /></div></div><p
                 class="title"><strong>図9.2 System V init を使う Linux の動くコンピュータの起動シーケンス</strong></p></div><a
-              id="idm140711217986912"
+              id="idm139900952585952"
               class="indexterm"></a><div
               class="para">
-				様々な <code
+				さまざまな <code
                 class="filename">/etc/rc<em
                   class="replaceable">X</em>.d</code> ディレクトリに含まれるすべてのスクリプトは <code
                 class="filename">/etc/init.d/</code> に格納されたスクリプトの実体を指すシンボリックリンク - パッケージのインストール時に <code
                 class="command">update-rc.d</code> プログラムによって作られます - に過ぎません。管理者は、調整したパラメータを与えて <code
-                class="command">update-rc.d</code> を再実行して、各ランレベルで利用可能なサービスを微調整することが可能です。<code
+                class="command">update-rc.d</code> を再実行して、各ランレベルで利用できるサービスを微調整することが可能です。<code
                 class="command">update-rc.d</code> の構文は <span
                 class="citerefentry"><span
                   class="refentrytitle">update-rc.d</span>(1)</span> マニュアルページに詳しく説明されています。サービスを無効化する目的で、(<code
@@ -613,20 +613,20 @@ Alias=sshd.service</pre><div
                 class="command">rcconf</code> を使いたいと思うかもしれません。<code
                 class="command">rcconf</code> はよりユーザにとって使い勝手の良いインターフェースを提供します。
 			</div><a
-              id="idm140711217977984"
+              id="idm139900952577024"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>DEBIAN POLICY</em></span> サービスの再起動</strong></p></div></div></div><a
-                id="idm140711217975776"
+                id="idm139900952574816"
                 class="indexterm"></a><a
-                id="idm140711217974656"
+                id="idm139900952573696"
                 class="indexterm"></a><a
-                id="idm140711217973216"
+                id="idm139900952572256"
                 class="indexterm"></a><div
                 class="para">
-				Debian のメンテナスクリプトは、サービスを利用可能にするためか、特定のオプションを考慮するために、特定のサービスを再起動することがあります。サービスを操作するコマンド - <code
+				Debian のメンテナスクリプトは、サービスを利用できるようにするためか、特定のオプションを考慮するために、特定のサービスを再起動することがあります。サービスを操作するコマンド - <code
                   class="command">/etc/init.d/<em
                     class="replaceable">service</em> <em
                     class="replaceable">operation</em></code> - はランレベルを考慮しません。サービスが現在使用中であると (間違って) 仮定し、間違った操作 (故意に停止されたサービスの開始や既に停止されたサービスの停止など) を開始するかもしれません。このため Debian は <code
@@ -635,22 +635,22 @@ Alias=sshd.service</pre><div
 			</div></div><div
               class="para">
 				最後に、<code
-                class="command">init</code> は様々な仮想コンソール (<code
+                class="command">init</code> はさまざまな仮想コンソール (<code
                 class="command">getty</code>) 用の制御プログラムを開始します。この制御プログラムがプロンプトを表示し、ユーザ名の入力を待ち、セッションを開始するために <code
                 class="command">login <em
                   class="replaceable">user</em></code> を実行します。
 			</div><a
-              id="idm140711217966224"
+              id="idm139900952565264"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULARY</em></span> コンソールと端末</strong></p></div></div></div><div
                 class="para">
-				最初のコンピュータは通常、複数のとても大きな部品に分かれていました: ストレージ筐体と中央処理装置は、それらを操作するオペレータが使う周辺装置と分けられていました。分離された周辺装置、これが「コンソール」です。この用語は残りましたが、意味が変わりました。「コンソール」は「端末」と大体同義語になり、キーボードと画面を備えるようになりました。
+				最初のコンピュータは通常、複数のとても大きな部品に分かれていました: ストレージ収納装置と中央処理装置は、それらを操作するオペレータが使う周辺装置と分けられていました。分離された周辺装置、これが「コンソール」です。この用語は残りましたが、意味が変わりました。「コンソール」は「端末」と大体同義語になり、キーボードと画面を備えるようになりました。
 			</div><div
                 class="para">
-				コンピュータの開発と共に、オペレーティングシステムは、たとえもしマシンに 1 台のキーボードと画面しか接続されていなかったとしても、複数の独立したセッションを同時に取り扱う目的で、複数の仮想コンソールを提供するようになりました。多くの GNU/Linux システムでは、<span
+				コンピュータの開発とともに、オペレーティングシステムは、たとえもしマシンに 1 台のキーボードと画面しか接続されていなかったとしても、複数の独立したセッションを同時に取り扱う目的で、複数の仮想コンソールを提供するようになりました。多くの GNU/Linux システムでは、<span
                   class="keycap"><strong>Control</strong></span>+<span
                   class="keycap"><strong>Alt</strong></span>+<span
                   class="keycap"><strong>F1</strong></span> から <span

@@ -28,7 +28,7 @@
         title="付録B 簡単な補習講座" /><link
         rel="prev"
         href="sect.kernel-role-and-tasks.html"
-        title="B.4. カーネルが担当する一部の操作" /><link
+        title="B.4. カーネルが担当している一部の操作" /><link
         rel="canonical"
         href="http://l.github.io/debian-handbook/html/ja-JP/sect.user-space.html" /></head><body
       class="draft "><noscript><iframe
@@ -63,9 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.user-space"></a>B.5. ユーザ空間</h2></div></div></div><a
-          id="idm140711209060000"
+          id="idm139900945310512"
           class="indexterm"></a><a
-          id="idm140711209059040"
+          id="idm139900945309552"
           class="indexterm"></a><div
           class="para">
 			「ユーザ空間」とは通常 (カーネルに対して) プロセスの実行環境を意味します。「ユーザ空間」プロセスとは実際にユーザによって開始されたプロセスという意味ではありません。なぜなら、標準的なシステムでは通常、ユーザがセッションを開始する前から実行されている複数の「デーモン」(またはバックグラウンド) プロセスが存在するからです。デーモンプロセスもまたユーザ空間プロセスと考えられます。
@@ -74,14 +74,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-basics"></a>B.5.1. プロセス</h3></div></div></div><a
-            id="idm140711209056000"
+            id="idm139900945306512"
             class="indexterm"></a><div
             class="para">
 				カーネルはその初期化終了後に、最初のプロセス <code
               class="command">init</code> を開始します。最初のプロセス <code
               class="command">init</code> はそれ自身が役に立つことはほとんどなく、Unix 系システムは多くの追加的プロセスと一緒に動いています。
 			</div><a
-            id="idm140711209053376"
+            id="idm139900945303888"
             class="indexterm"></a><div
             class="para">
 				最初に、プロセスは自分自身を複製 (これは<span
@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="unix-services.html#sect.system-boot">「システム起動」</a>に詳しく書かれています)。
 			</div><div
             class="para">
-				プロセスが開始時に設定されたタスクを完了したら、プロセスは終了します。その後、カーネルがこのプロセスに割り当てられたメモリを回収し、カーネルはプロセスに実行時間を与えることを停止します。親プロセスは子プロセスが終了したことについて通知を受けます。このお陰で、親プロセスは子プロセスに委託したタスクの完了を待つことが可能になります。コマンドラインインタプリタ (<span
+				プロセスが開始時に設定されたタスクを完了したら、プロセスは終了します。その後、カーネルがこのプロセスに割り当てられたメモリを回収し、カーネルはプロセスに実行時間を与えることを停止します。親プロセスは子プロセスが終了したことについて通知を受けます。このおかげで、親プロセスは子プロセスに委託したタスクの完了を待つことが可能になります。コマンドラインインタプリタ (<span
               class="emphasis"><em>シェル</em></span>として知られています) ではこの挙動がはっきりと見えます。コマンドがシェルに入力された場合、コマンドの実行が終了するまでプロンプトは戻って来ません。ほとんどのシェルでは、コマンドをバックグラウンドで実行することが可能です。これを行うには、コマンドの最後に <strong
               class="userinput"><code>&amp;</code></strong> を追加するだけです。この場合、プロンプトはすぐに戻ってきます。コマンドからデータが表示される場合、このやり方は問題を引き起こすかもしれません。
 			</div></div><div
@@ -104,9 +104,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.daemons"></a>B.5.2. デーモン</h3></div></div></div><a
-            id="idm140711209044160"
+            id="idm139900945294672"
             class="indexterm"></a><a
-            id="idm140711209043200"
+            id="idm139900945293712"
             class="indexterm"></a><div
             class="para">
 				「デーモン」は起動シーケンスによって自動的に開始されるプロセスです。「デーモン」はメンテナンス作業を実行したり他のプロセスにサービスを提供するために (バックグラウンドで) 実行され続けます。ここで実際の「バックグラウンドタスク」はどんなものでも構いませんし、システムの観点から何か特別なタスクを意味しているわけではありません。簡単に言って「バックグラウンドタスク」はプロセスで、他のプロセスとよく似ており、自分に割り当てられたタイムスライスが来た時に動きます。プロセスの区別は人間の言葉に過ぎません: ユーザと対話せずに実行される (特にグラフィカルインターフェースを持たない) プロセスは「バックグラウンドで実行される」とか「デーモンとして実行される」などと表現されます。
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				<span
                 class="emphasis"><em>daemon</em></span> という用語はギリシャ神話の <span
-                class="emphasis"><em>demon</em></span> と起源を共にしているにも関わらず、<span
+                class="emphasis"><em>demon</em></span> と起源が同じにも関わらず、<span
                 class="emphasis"><em>daemon</em></span> は暗に残虐な悪魔を意味しておらず、その代わりに <span
                 class="emphasis"><em>daemon</em></span> は守り神のようなものとして理解されています。この区別は英語ではかなりわかりにくいものです; 両方の意味を同じ言葉で表している他の言語ではもっとわかりにくいです。
 			</div></div><div
@@ -131,18 +131,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipc"></a>B.5.3. プロセス間通信</h3></div></div></div><a
-            id="idm140711209034848"
+            id="idm139900945285360"
             class="indexterm"></a><a
-            id="idm140711209033888"
+            id="idm139900945284400"
             class="indexterm"></a><div
             class="para">
-				デーモンでも対話的アプリケーションでも、単独のプロセスは便利ではありません。このため、異なるプロセス同士がデータを交換したり、相互に制御し合うための様々な通信方法があります。これを意味する一般的な用語が <span
+				デーモンでも対話的アプリケーションでも、単独のプロセスは便利ではありません。このため、異なるプロセス同士がデータを交換したり、相互に制御し合うためのさまざまな通信方法があります。これを意味する一般的な用語が <span
               class="emphasis"><em>プロセス間通信</em></span> 略して IPC です。
 			</div><div
             class="para">
 				最も簡単な IPC システムではファイルを使います。データ送信側のプロセスが送信内容をファイルに書き込み (事前にファイル名を決めておく必要があります)、受信側はファイルを開いてその内容を読むだけです。
 			</div><a
-            id="idm140711209030944"
+            id="idm139900945281440"
             class="indexterm"></a><div
             class="para">
 				データをディスクに保存したくないと思っている場合、<span
@@ -178,7 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">bash</code> は <code
                 class="command">ls</code> プログラムを実行します (さらに自分自身を置き換えます)。<code
                 class="command">ls</code> は現在のディレクトリの内容をリストします。<code
-                class="command">ls</code> の書き込み先は標準出力で、この出力は予めリダイレクトされていたため、結果はパイプに送られます。
+                class="command">ls</code> の書き込み先は標準出力で、この出力はあらかじめリダイレクトされていたため、結果はパイプに送られます。
 			</div><div
               class="para">
 				2 番目のコマンドについても同様の操作が行われます: <code
@@ -190,7 +190,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">sort</code> コマンドは自分の入力をソートして結果を表示します。
 			</div><div
               class="para">
-				これで、パズルのすべてのピースが揃った状態になります: <code
+				これで、パズルのすべてのピースがそろった状態になります: <code
                 class="command">ls</code> は現在のディレクトリを読み込んで、ファイルのリストをパイプに書き込みます; <code
                 class="command">sort</code> はファイルのリストを読み込んで、アルファベット順にソートして、結果を表示します。プロセス番号 #4521 と #4522 は終了し、#4374 (操作中の他プロセスを待っていました) は制御を取り戻し、ユーザが新しいコマンドを入力するためのプロンプトを表示します。
 			</div></div><div
@@ -200,19 +200,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>pid</em></span> だけです。
 			</div><div
             class="para">
-				更に複雑な通信を行うには、プロセスが他のプロセスに対して自分が割り当てられたメモリの一部へのアクセスを開放したり、共有するメカニズムを使います。これで、プロセス間で共有されたメモリをデータ交換のために使うことが可能になります。
+				さらに複雑な通信を行うには、プロセスが他のプロセスに対して自分が割り当てられたメモリの一部へのアクセスを開放したり、共有するメカニズムを使います。これで、プロセス間で共有されたメモリをデータ交換のために使うことが可能になります。
 			</div><div
             class="para">
 				最後に、ネットワーク接続を使ってプロセス同士を通信させることが可能です; 数千キロ離れた異なるコンピュータで動いているプロセス同士でも通信可能です。
 			</div><div
             class="para">
-				典型的な Unix 系システムでは、様々なレベルでこれらのメカニズムを使っており、かなり標準的な手法になっています。
+				典型的な Unix 系システムでは、さまざまなレベルでこれらのメカニズムを使っており、かなり標準的な手法になっています。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.libraries"></a>B.5.4. ライブラリ</h3></div></div></div><a
-            id="idm140711210877792"
+            id="idm139900945255760"
             class="indexterm"></a><div
             class="para">
 				関数ライブラリは Unix 系オペレーティングシステムで重要な役割を果たします。関数ライブラリは厳密な意味でプログラムではありません。なぜなら、関数ライブラリ自体は実行できず、ただのコードの断片に過ぎないからです。しかし、標準的なプログラムは関数ライブラリを使っています。共有ライブラリの中でも特に以下のものが有名です:
@@ -234,19 +234,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="emphasis"><em>libpng</em></span> ライブラリ、これを使うことで、PNG フォーマットイメージを読み込み、編集、保存することが可能になります。
 					</div></li></ul></div><div
             class="para">
-				これらのライブラリのお陰で、アプリケーションは既存のコードを再利用することが可能です。多くのアプリケーションが同じ関数を再利用しているため、アプリケーションの開発は単純化されます。通常ライブラリはアプリケーションとは別の人によって開発されているため、システムの大域的な開発は Unix の歴史的哲学に近いものになります。
+				これらのライブラリのおかげで、アプリケーションは既存のコードを再利用することが可能です。多くのアプリケーションが同じ関数を再利用しているため、アプリケーションの開発は単純化されます。通常ライブラリはアプリケーションとは別の人によって開発されているため、システムの大域的な開発は Unix の歴史的哲学に近いものになります。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Unix 流: 一度に一つのことをせよ</strong></p></div></div></div><div
               class="para">
-				Unix 系オペレーティングシステムの根底にある基本的概念の一つとして、それぞれのツールがたった 1 つのことを担当し、それを上手くこなす、というものがあります; アプリケーションはこれらのツールを再利用して、より高度な論理をつくり上げることが可能です。この根本原理は様々な形で具現化されています。シェルスクリプトは最良の例かもしれません: シェルスクリプトは極めて簡単なツール (たとえば <code
+				Unix 系オペレーティングシステムの根底にある基本的概念の一つとして、それぞれのツールがたった 1 つのことを担当し、それをうまくこなす、というものがあります; アプリケーションはこれらのツールを再利用して、より高度な論理をつくり上げることが可能です。この根本原理はさまざまな形で具現化されています。シェルスクリプトは最良の例かもしれません: シェルスクリプトは極めて簡単なツール (たとえば <code
                 class="command">grep</code>、<code
                 class="command">wc</code>、<code
                 class="command">sort</code>、<code
                 class="command">uniq</code> など) を複雑に並べたものです。コードライブラリも基本的概念を具現化したものとして見ることが可能です: <span
-                class="emphasis"><em>libpng</em></span> ライブラリを使うことで、様々なオプションと様々な方法を使って、PNG イメージの読み込みと書き込みを行うことが可能です。しかし、<span
+                class="emphasis"><em>libpng</em></span> ライブラリを使うことで、さまざまなオプションとさまざまな方法を使って、PNG イメージの読み込みと書き込みを行うことが可能です。しかし、<span
                 class="emphasis"><em>libpng</em></span> ライブラリはそれ以上のことを行いません; イメージを表示したり編集する関数は含まれません。
 			</div></div><div
             class="para">
@@ -255,7 +255,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.kernel-role-and-tasks.html"><strong>戻る</strong>B.4. カーネルが担当する一部の操作</a></li><li
+            href="sect.kernel-role-and-tasks.html"><strong>戻る</strong>B.4. カーネルが担当している一部の操作</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>上に戻る</strong></a></li><li

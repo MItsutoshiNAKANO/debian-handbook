@@ -131,17 +131,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 			ゲートウェイは複数のネットワークを連結するシステムです。ゲートウェイは外部 IP アドレスへの経路に出るために必須のローカルネットワークの「出口」を意味する場合が多いです。ゲートウェイは相互に連結する各ネットワークに接続されており、複数のインターフェース間で IP パケットを相互に伝送するためのルータのように振る舞う。
 		</div><a
-            id="idm140711231714736"
+            id="idm139900965225856"
             class="indexterm"></a><a
-            id="idm140711229164592"
+            id="idm139900962498384"
             class="indexterm"></a><a
-            id="idm140711214682480"
+            id="idm139900963179968"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> IP パケット</strong></p></div></div></div><a
-              id="idm140711216286192"
+              id="idm139900955610416"
               class="indexterm"></a><div
               class="para">
 			今日、多くのネットワークは IP プロトコル (<span
@@ -152,17 +152,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> TCP/UDP</strong></p></div></div></div><a
-              id="idm140711231888768"
+              id="idm139900964153104"
               class="indexterm"></a><a
-              id="idm140711213665584"
+              id="idm139900964151664"
               class="indexterm"></a><a
-              id="idm140711213664144"
+              id="idm139900964150224"
               class="indexterm"></a><a
-              id="idm140711213663184"
+              id="idm139900964149264"
               class="indexterm"></a><div
               class="para">
 			多くのプログラムは、送信するデータが IP 経由で伝わる場合でさえ、個々のパケットそれ自体を取り扱いません。多くのプログラムは TCP (<span
-                class="emphasis"><em>Transmission Control Protocol</em></span>) を使います。TCP は IP 上のレイヤで、2 点間のデータストリーム専用の接続の確立することが可能です。プログラムは、接続の別の側にある出口から損失なく同じデータ (同じ順番で) が出てくると保証される、データを送り込むための入口を見るだけです。低レイヤで起きる様々なエラーは TCP で補正されます: 損失したパケットは再度転送され、順番が狂って到着したパケット (たとえば、異なる経路で到着したために) は適切な順番に揃えられます。
+                class="emphasis"><em>Transmission Control Protocol</em></span>) を使います。TCP は IP 上のレイヤで、2 点間のデータストリーム専用の接続の確立することが可能です。プログラムは、接続の別の側にある出口から損失なく同じデータ (同じ順番で) が出てくると保証される、データを送り込むための入口を見るだけです。低レイヤで起きるさまざまなエラーは TCP で補正されます: 損失したパケットは再度転送され、順番が狂って到着したパケット (たとえば、異なる経路で到着したために) は適切な順番にそろえられます。
 		</div><div
               class="para">
 			IP に依存する別のプロトコルが UDP (<span
@@ -173,24 +173,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 		</div><div
               class="para">
 			IANA (<span
-                class="emphasis"><em>Internet Assigned Numbers Authority</em></span>) が標準化した幾つかのポート番号は「well-known」とされ、ネットワークサービスに関連付けられています。たとえば、TCP ポート 25 番は一般に電子メールサーバが使うポート番号です。<div
+                class="emphasis"><em>Internet Assigned Numbers Authority</em></span>) が標準化したいくつかのポート番号は「well-known」とされ、ネットワークサービスに関連付けられています。たとえば、TCP ポート 25 番は一般に電子メールサーバが使うポート番号です。<div
                 class="url">→ <a
                   href="http://www.iana.org/assignments/port-numbers">http://www.iana.org/assignments/port-numbers</a></div>
 		</div></div><div
             class="para">
 			ローカルネットワークがプライベートアドレス (インターネットにルーティングされないアドレス) 範囲を使う場合、ゲートウェイは<span
               class="emphasis"><em>アドレスマスカレード</em></span>を実行する必要があります。<span
-              class="emphasis"><em>アドレスマスカレード</em></span>を使うことで、ローカルネットワーク上のマシンが外部と通信することが可能になります。マスカレード動作とはネットワークレベルのプロキシ動作のようなものです: 内部のマシンからの外部宛接続はゲートウェイ自身からの接続に置き替えられます (なぜなら、ゲートウェイは外部にルーティング可能なアドレスを持っているからです)。マスカレード接続を通過するデータは外部に送信され、応答として戻ってくるデータはマスカレード接続を通過して内部のマシンに送信されます。ゲートウェイはこの目的に専用の TCP ポート範囲を使います。この範囲は通常とても大きな番号 (60000 番より大きい番号) です。内部マシンからの接続はこれらの予約されたポート番号の 1 つから送信された接続として外部に送信されます。
+              class="emphasis"><em>アドレスマスカレード</em></span>を使うことで、ローカルネットワーク上のマシンが外部と通信することが可能になります。マスカレード動作とはネットワークレベルのプロキシ動作のようなものです: 内部のマシンからの外部宛接続はゲートウェイ自身からの接続に置き替えられます (なぜなら、ゲートウェイは外部にルーティングできるアドレスを持っているからです)。マスカレード接続を通過するデータは外部に送信され、応答として戻ってくるデータはマスカレード接続を通過して内部のマシンに送信されます。ゲートウェイはこの目的に専用の TCP ポート範囲を使います。この範囲は通常とても大きな番号 (60000 番より大きい番号) です。内部マシンからの接続はこれらの予約されたポート番号の 1 つから送信された接続として外部に送信されます。
 		</div><a
-            id="idm140711221519104"
+            id="idm139900963341616"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> プライベートアドレス範囲</strong></p></div></div></div><a
-              id="idm140711221517056"
+              id="idm139900963339568"
               class="indexterm"></a><a
-              id="idm140711221515616"
+              id="idm139900963338128"
               class="indexterm"></a><div
               class="para">
 			RFC 1918 では、インターネットにルーティングされずローカルネットワークにのみ使うことができる、IPv4 アドレスの範囲が定義されています。1 番目が <code
@@ -212,25 +212,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>ネットワークアドレス変換</em></span> (略して NAT) が実行されます。1 種類目は<span
               class="emphasis"><em>Destination NAT</em></span> (DNAT) で、(通常は) 到着した接続の宛先 IP アドレス (および TCP や UDP ポート) を書き換える手法です。接続追跡メカニズムによって、通信の継続性を保証するために同じ接続でそれ以降に使われるパケットの宛先が書き換えられます。NAT の 2 種類目は <span
               class="emphasis"><em>Source NAT</em></span> (SNAT) で、<span
-              class="emphasis"><em>マスカレード</em></span> は SNAT の特別な場合です; SNAT は (通常は) 出て行く接続のソース IP アドレス (および TCP や UDP ポート) を書き換えます。DNAT に関しては、出て行く接続の全パケットが接続追跡メカニズムによって適切に取り扱われます。NAT は IPv4 と IPv4 の制限されたアドレス空間だけに関連します; IPv6 では、アドレス空間が広くなったことにより、すべての「内部」アドレスは直接インターネットにルーティングできるようになるため、NAT の有用性が減ります (これは内部マシンをアクセス可能にすること意味しているのではありません。なぜなら、中間ファイヤーウォールがトラフィックをフィルタするからです)。
+              class="emphasis"><em>マスカレード</em></span> は SNAT の特別な場合です; SNAT は (通常は) 出て行く接続のソース IP アドレス (および TCP や UDP ポート) を書き換えます。DNAT に関しては、出て行く接続の全パケットが接続追跡メカニズムによって適切に取り扱われます。NAT は IPv4 と IPv4 の制限されたアドレス空間だけに関連します; IPv6 では、アドレス空間が広くなったことにより、すべての「内部」アドレスは直接インターネットにルーティングできるようになるため、NAT の有用性が減ります (これは内部マシンをアクセスできるようにすることを意味しているのではありません。なぜなら、中間ファイアウォールがトラフィックをフィルタするからです)。
 		</div><a
-            id="idm140711217805744"
+            id="idm139900949359584"
             class="indexterm"></a><a
-            id="idm140711217804784"
+            id="idm139900949358624"
             class="indexterm"></a><a
-            id="idm140711217803344"
+            id="idm139900949357184"
             class="indexterm"></a><a
-            id="idm140711217802384"
+            id="idm139900949356224"
             class="indexterm"></a><a
-            id="idm140711217801424"
+            id="idm139900949355264"
             class="indexterm"></a><a
-            id="idm140711217800464"
+            id="idm139900949354304"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ポート転送</strong></p></div></div></div><a
-              id="idm140711217798384"
+              id="idm139900949352224"
               class="indexterm"></a><div
               class="para">
 			DNAT の具体的な応用例が<span
@@ -272,7 +272,7 @@ net.ipv4.tcp_syncookies = 1</pre></div></div><div
 		</div><div
             class="para">
 			IPv4 マスカレードを設定するには少し複雑な作業で、<span
-              class="emphasis"><em>netfilter</em></span> ファイヤーウォールを設定する必要があります。
+              class="emphasis"><em>netfilter</em></span> ファイアウォールを設定する必要があります。
 		</div><div
             class="para">
 			同様に、(IPv4 で) NAT を使うには <span
@@ -280,7 +280,7 @@ net.ipv4.tcp_syncookies = 1</pre></div></div><div
               class="xref"
               href="security.html">第14章: 「<em>セキュリティ</em>」</a> に書かれています (<a
               class="xref"
-              href="sect.firewall-packet-filtering.html">「ファイヤーウォールとパケットフィルタリング」</a>参照)。
+              href="sect.firewall-packet-filtering.html">「ファイアウォールとパケットフィルタリング」</a>参照)。
 		</div></div></div><ul
         class="docnav"><li
           class="previous"><a

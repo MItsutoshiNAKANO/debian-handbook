@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.hostname-name-service"></a>8.3. ホスト名と名前解決サービスの設定</h2></div></div></div><a
-          id="idm140711220280320"
+          id="idm139900952969472"
           class="indexterm"></a><a
-          id="idm140711220278880"
+          id="idm139900952968032"
           class="indexterm"></a><div
           class="para">
 			名前を IP 番号に割り当てることで、覚えやすくなります。実際、IP アドレスはネットワークカードなどのデバイスと関連付けられたネットワークインターフェースを識別します。それぞれのマシンは複数のネットワークカードを持つことが可能ですし、それぞれのカードに複数のインターフェースを持つことが可能ですので、1 台のコンピュータはドメインネームシステムに複数の名前を持つことが可能です。
@@ -81,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">hostname</code> コマンドを通じた初期化スクリプトを使って Linux カーネルに伝えられます。マシン名の現在の値は仮想ファイルシステムの中に保存されており、<code
             class="command">cat /proc/sys/kernel/hostname</code> コマンドで値を確認できます。
 		</div><a
-          id="idm140711220274784"
+          id="idm139900952963936"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -89,13 +89,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>BACK TO BASICS</em></span> <code
                       class="filename">/proc/</code> と <code
                       class="filename">/sys/</code>、仮想ファイルシステム</strong></p></div></div></div><a
-            id="idm140711220271616"
+            id="idm139900952960768"
             class="indexterm"></a><a
-            id="idm140711220270496"
+            id="idm139900952959648"
             class="indexterm"></a><a
-            id="idm140711220269376"
+            id="idm139900952958528"
             class="indexterm"></a><a
-            id="idm140711220268256"
+            id="idm139900952957408"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 		</div><div
             class="para">
 			具体的に言うと <code
-              class="filename">/sys/</code> は、システム内の様々なデバイスを表現する内部のカーネルオブジェクトにアクセスする方法を提供するために、設計されました。そんなわけで、カーネルはこの情報の塊を共有します: それぞれのデバイスの状態 (たとえば、省エネルギーモードか否か) やリムーバブルデバイスが有るかなど。<code
+              class="filename">/sys/</code> は、システム内のさまざまなデバイスを表現する内部のカーネルオブジェクトにアクセスする方法を提供するために、設計されました。そんなわけで、カーネルはこの情報の塊を共有します: それぞれのデバイスの状態 (たとえば、省エネルギーモードか否か) やリムーバブルデバイスが有るかなど。<code
               class="filename">/sys/</code> を使えるのはカーネルバージョン 2.6 以降である点に注意してください。
 		</div></div><div
           class="para">
@@ -116,27 +116,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="programlisting">
 127.0.0.1     localhost
 192.168.0.1   arrakis.falcot.com arrakis</pre></div><a
-          id="idm140711220260704"
+          id="idm139900952949856"
           class="indexterm"></a><a
-          id="idm140711220259584"
+          id="idm139900952948736"
           class="indexterm"></a><a
-          id="idm140711220258464"
+          id="idm139900952947616"
           class="indexterm"></a><a
-          id="idm140711220257024"
+          id="idm139900952946176"
           class="indexterm"></a><a
-          id="idm140711220255584"
+          id="idm139900952944736"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.name-resolution"></a>8.3.1. 名前解決</h3></div></div></div><a
-            id="idm140711220253568"
+            id="idm139900952942720"
             class="indexterm"></a><a
-            id="idm140711220252128"
+            id="idm139900952941280"
             class="indexterm"></a><div
             class="para">
 				Linux における名前解決のメカニズムは、モジュール式で <code
-              class="filename">/etc/nsswitch.conf</code> ファイルに宣言された様々な情報源を取り扱うことが可能です。ホスト名解決に関連するエントリは <code
+              class="filename">/etc/nsswitch.conf</code> ファイルに宣言されたさまざまな情報源を取り扱うことが可能です。ホスト名解決に関連するエントリは <code
               class="literal">hosts</code> です。デフォルトで、このエントリには <code
               class="literal">files dns</code> が含まれています。これは、名前解決の際にシステムは最初に <code
               class="filename">/etc/hosts</code> ファイルを、次に DNS サーバを参照することを意味しています。NIS/NIS+ や LDAP サーバも情報源として使うことが可能です。
@@ -155,9 +155,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.dns-server-configuration"></a>8.3.1.1. DNS サーバの設定</h4></div></div></div><a
-              id="idm140711220243808"
+              id="idm139900952932960"
               class="indexterm"></a><a
-              id="idm140711220242848"
+              id="idm139900952932000"
               class="indexterm"></a><div
               class="para">
 					DNS (ドメインネームサービス) は IP アドレスと名前およびその逆を対応付ける分散型の階層的サービスです。具体的に言うと、このサービスは人間に都合の良い名前、たとえば <code
@@ -167,9 +167,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 					DNS 情報にアクセスするには、DNS サーバが要求を中継するよう設定されていなければいけません。Falcot Corp は自分の DNS サーバを持っていますが、各ユーザは自分の ISP から提供された DNS サーバを使う傾向にあります。
 				</div><a
-              id="idm140711220239552"
+              id="idm139900952928704"
               class="indexterm"></a><a
-              id="idm140711220238432"
+              id="idm139900952927584"
               class="indexterm"></a><div
               class="para">
 					以下の例のように、使われる DNS サーバは <code
@@ -189,16 +189,16 @@ nameserver 8.8.8.8</pre><div
                     class="title"><a
                       id="sect.etc-hosts"></a>8.3.1.2. <code
                       class="filename">/etc/hosts</code> ファイル</h4></div></div></div><a
-              id="idm140711220232528"
+              id="idm139900952921680"
               class="indexterm"></a><a
-              id="idm140711220231408"
+              id="idm139900952920560"
               class="indexterm"></a><div
               class="para">
 					ローカルネットワーク内にネームサーバがない場合、<code
                 class="filename">/etc/hosts</code> ファイルの中に、通常ローカルネットワークの機器向けに予約されている IP アドレスとマシンのホスト名の対応表を書くことが可能です。このファイルの構文はとても単純です: 各行は特定の IP アドレスとそれに関連する名前のリスト (最初に書く名前は「完全修飾名」でドメイン名を含みます) を表します。
 				</div><div
               class="para">
-					このファイルはネットワークが停止している場合や DNS サーバに到達できない場合にも利用可能ですが、ネットワーク上のすべてのマシンにそのファイルのコピーを配置できる場合を除けば不便です。つまり、このファイルをほんの少しでも変更すれば、すべてのマシンでファイルの内容を更新しなければいけません。このため、通常 <code
+					このファイルはネットワークが停止している場合や DNS サーバに到達できない場合にも利用できますが、ネットワーク上のすべてのマシンにそのファイルのコピーを配置できる場合を除けば不便です。つまり、このファイルをほんの少しでも変更すれば、すべてのマシンでファイルの内容を更新しなければいけません。このため、通常 <code
                 class="filename">/etc/hosts</code> には最重要のエントリだけが含まれています。
 				</div><div
               class="para">

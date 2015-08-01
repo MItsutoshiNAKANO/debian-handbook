@@ -70,18 +70,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.task-scheduling-cron-atd"></a>9.7. <code
                   class="command">cron</code> と <code
                   class="command">atd</code> を使ったスケジューリングタスク</h2></div></div></div><a
-          id="idm140711212023680"
+          id="idm139900948142304"
           class="indexterm"></a><a
-          id="idm140711212022784"
+          id="idm139900948141408"
           class="indexterm"></a><a
-          id="idm140711212021888"
+          id="idm139900948140512"
           class="indexterm"></a><a
-          id="idm140711212021120"
+          id="idm139900948139744"
           class="indexterm"></a><div
           class="para">
 			<code
-            class="command">cron</code> は定期的に (毎日、毎週、など) 実行するよう予定されたコマンドの実行を担当するデーモンです; <code
-            class="command">atd</code> は未来の特定の時間に 1 回だけ実行するよう予定されたコマンドの実行を担当するデーモンです。
+            class="command">cron</code> は定期的に (毎日、毎週、など) 実行するよう予定されたコマンドの実行を担当しているデーモンです; <code
+            class="command">atd</code> は未来の特定の時間に 1 回だけ実行するよう予定されたコマンドの実行を担当しているデーモンです。
 		</div><div
           class="para">
 			Unix システムでは、多くのタスクがは定期的に実行されるよう予定されています:
@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/etc/cron.deny</code> の中にユーザ名を書けば、1 人か 2 人の問題児だけをブロックすることが可能です。<code
               class="command">atd</code> に対しても <code
               class="filename">/etc/at.allow</code> と <code
-              class="filename">/etc/at.deny</code> ファイルを使って同等の機能が利用可能です。
+              class="filename">/etc/at.deny</code> ファイルを使って同等の機能が利用できます。
 		</div></div><div
           class="para">
 			root ユーザは自分専用の <span
@@ -137,7 +137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 		</div><div
           class="para">
 			デフォルトで <span
-            class="emphasis"><em>cron</em></span> パッケージには、幾つかのスケジュールされたコマンドが含まれています:
+            class="emphasis"><em>cron</em></span> パッケージには、いくつかのスケジュールされたコマンドが含まれています:
 		</div><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="listitem"><div
                 class="para">
 					<code
-                  class="filename">/etc/cron.monthly/</code> ディレクトリ内のプログラムは 1 ヶ月に 1 回実行されます。
+                  class="filename">/etc/cron.monthly/</code> ディレクトリ内のプログラムは 1 カ月に 1 回実行されます。
 				</div></li></ul></div><div
           class="para">
 			多くの Debian パッケージはこのサービスに頼っています: メンテナンススクリプトをこれらのディレクトリに入れて、サービスの最適な動作を保証しています。
@@ -169,7 +169,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.format-crontab"></a>9.7.1. <code
                     class="filename">crontab</code> ファイルの書式</h3></div></div></div><a
-            id="idm140711211996784"
+            id="idm139900948115216"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -178,7 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="command">cron</code> のテキストショートカット</strong></p></div></div></div><div
               class="para">
 				<code
-                class="command">cron</code> は幾つかの略語を認識します。略語は <code
+                class="command">cron</code> はいくつかの略語を認識します。略語は <code
                 class="filename">crontab</code> エントリの最初の 5 つのフィールドを置き換えます。略語は最も古典的なスケジュール化オプションに対応します:
 			</div><div
               xmlns:d="http://docbook.org/ns/docbook"
@@ -191,7 +191,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="listitem"><div
                     class="para">
 						<code
-                      class="literal">@monthly</code>: 1 ヶ月に 1 回 (毎月 1 日の 00:00);
+                      class="literal">@monthly</code>: 1 カ月に 1 回 (毎月 1 日の 00:00);
 					</div></li><li
                   class="listitem"><div
                     class="para">
@@ -320,15 +320,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.at-command"></a>9.7.2. <code
                     class="command">at</code> コマンドの利用</h3></div></div></div><a
-            id="idm140711211958720"
+            id="idm139900948077072"
             class="indexterm"></a><div
             class="para">
 				<code
               class="command">at</code> は未来の特定の時点にコマンドを実行します。<code
-              class="command">at</code> は時刻と日付をコマンドラインパラメータで受け取り、実行するコマンドを標準入力で受け取ります。このコマンドは、あたかも現在のシェルで実行されたかの如く実行されます。<code
+              class="command">at</code> は時刻と日付をコマンドラインパラメータで受け取り、実行するコマンドを標準入力で受け取ります。このコマンドは、あたかも現在のシェルで実行されたかのように実行されます。<code
               class="command">at</code> はコマンドを実行する際に現在と同じ状況を再現するために、現在の環境を保存するように気を付けます。時刻は以下のように普通の慣例に従って表現されます: <code
               class="literal">16:12</code> または <code
-              class="literal">4:12pm</code> は午後 4:12 を意味します。日付はヨーロッパと西洋で使われる幾つかの書式で指定します。<code
+              class="literal">4:12pm</code> は午後 4:12 を意味します。日付はヨーロッパと西洋で使われるいくつかの書式で指定します。<code
               class="literal">DD.MM.YY</code> (<code
               class="literal">27.07.15</code> は 2015 年 7 月 27 日を意味します)、<code
               class="literal">YYYY-MM-DD</code> (<code
@@ -380,9 +380,9 @@ job 31 at Mon Jul 27 09:00:00 2015</code></pre><div
               class="command">at</code> コマンドで予定を登録した際に表示されたものです。改めて確認するには <code
               class="command">atq</code> コマンドを実行してください。これはスケジュールされたタスクの現在のリストを表示します。
 			</div><a
-            id="idm140711211939056"
+            id="idm139900948057408"
             class="indexterm"></a><a
-            id="idm140711211938160"
+            id="idm139900948056512"
             class="indexterm"></a></div></div><ul
         class="docnav"><li
           class="previous"><a

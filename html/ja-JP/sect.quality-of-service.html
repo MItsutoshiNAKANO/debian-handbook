@@ -76,15 +76,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				<span
               class="emphasis"><em>Quality of Service (サービスの品質)</em></span> (略して <span
               class="emphasis"><em>QoS</em></span>) はアプリケーションに提供されるサービスの品質を向上させる技術群を指します。最も人気の技術は、ネットワークトラフィックをカテゴリ分けして、トラフィックの所属するカテゴリ別にその取り扱いに違いを付けることです。サービスを差別化するという概念の主な用途が<span
-              class="emphasis"><em>トラフィックシェーピング</em></span>です。これは一部のサービスおよびホストに関連する接続のデータの転送率を制限します。これを使うことで、利用可能な帯域幅が飽和することを避け、重要な他のサービスに支障が出ないようにします。トラフィックシェーピングは TCP トラフィックに対して特に有効です。なぜなら、TCP は自動的に利用可能な帯域幅に適応するからです。
+              class="emphasis"><em>トラフィックシェーピング</em></span>です。これは一部のサービスおよびホストに関連する接続のデータの転送率を制限します。これを使うことで、利用できる帯域幅が飽和することを避け、重要な他のサービスに支障が出ないようにします。トラフィックシェーピングは TCP トラフィックに対して特に有効です。なぜなら、TCP は自動的に利用できる帯域幅に適応するからです。
 			</div><a
-            id="idm140711218308368"
+            id="idm139900948285312"
             class="indexterm"></a><a
-            id="idm140711218307408"
+            id="idm139900948284352"
             class="indexterm"></a><a
-            id="idm140711218306448"
+            id="idm139900948283392"
             class="indexterm"></a><a
-            id="idm140711218305008"
+            id="idm139900948281952"
             class="indexterm"></a><div
             class="para">
 				これを使うことで、トラフィックの優先度を変更し、対話的サービス(<code
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">telnet</code> など) や小さなブロックのデータだけを取り扱うサービスに関連するパケットに高い優先順位を付けることが可能です。
 			</div><div
             class="para">
-				Debian カーネルには、 QoS 関連モジュールと一緒に QoS に必要な機能が含まれています。多くのモジュールが存在し、各モジュールが異なるサービスを提供します。中でも注目すべきは IP パケットの待ち行列用の特別なスケジューラです。このスケジューラは様々な用途に利用可能なため、考え得る様々な要求に対応できます。
+				Debian カーネルには、 QoS 関連モジュールと一緒に QoS に必要な機能が含まれています。多くのモジュールが存在し、各モジュールが異なるサービスを提供します。中でも注目すべきは IP パケットの待ち行列用の特別なスケジューラです。このスケジューラはさまざまな用途に利用できるため、考え得るさまざまな要求に対応できます。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -105,11 +105,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="url">→ <a
                   href="http://www.lartc.org/howto/">http://www.lartc.org/howto/</a></div>
 			</div><a
-              id="idm140711218297856"
+              id="idm139900948274784"
               class="indexterm"></a><a
-              id="idm140711218296416"
+              id="idm139900948273344"
               class="indexterm"></a><a
-              id="idm140711218294976"
+              id="idm139900948271904"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -120,9 +120,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">tc</code> コマンド (<span
               class="pkg pkg">iproute</span> パッケージの提供する) を使って設定します。このコマンドはインターフェースがかなり複雑なので、高レベルツールを使うことをおすすめします。
 			</div><a
-            id="idm140711218290656"
+            id="idm139900948267584"
             class="indexterm"></a><a
-            id="idm140711218289536"
+            id="idm139900948266464"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -133,11 +133,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					<code
                 class="command">wondershaper</code> (よく似た名前のパッケージに含まれます) の主目的はネットワーク負荷とは無関係に待ち時間を最小化することです。このコマンドを使うことで、全トラフィックがある値に制限されます。この値には帯域を飽和させるよりほんの少しだけ小さな値を設定します。
 				</div><a
-              id="idm140711218285616"
+              id="idm139900948262544"
               class="indexterm"></a><a
-              id="idm140711218284496"
+              id="idm139900948261424"
               class="indexterm"></a><a
-              id="idm140711218283568"
+              id="idm139900948260496"
               class="indexterm"></a><div
               class="para">
 					ネットワークインターフェースを設定した後、<code
@@ -168,7 +168,7 @@ iface eth0 inet dhcp
               class="para">
 					PPP の場合、<code
                 class="filename">/etc/ppp/ip-up.d/</code> 内に <code
-                class="command">wondershaper</code> を呼び出すスクリプトを作成することで、接続が開始された後可能な限り早い時期にトラフィック制御を行うように設定できます。
+                class="command">wondershaper</code> を呼び出すスクリプトを作成することで、接続が開始された後の可能な限り早い時期にトラフィック制御を行うように設定できます。
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -209,9 +209,9 @@ iface eth0 inet dhcp
                     class="para">
 							遅延の最小化 (16).
 						</div></li></ul></div><a
-              id="idm140711217292064"
+              id="idm139900951959664"
               class="indexterm"></a><a
-              id="idm140711217291104"
+              id="idm139900951958704"
               class="indexterm"></a><div
               class="para">
 					ToS フィールドは IP パケットを生成するアプリケーションによって設定されるか、<span

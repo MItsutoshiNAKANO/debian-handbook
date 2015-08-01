@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.setup-apt-package-repository"></a>15.3. APT 用のパッケージリポジトリの作成</h2></div></div></div><a
-          id="idm140711209926400"
+          id="idm139900946718640"
           class="indexterm"></a><a
-          id="idm140711209925472"
+          id="idm139900946717712"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp の保守する Debian パッケージの数は次第に増えました。この中には、既存のパッケージから手元で修正したパッケージや、内部データとプログラムを配布するために最初から作成したパッケージなどがあります。
@@ -82,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="programlisting">
 deb http://packages.falcot.com/ updates/
 deb http://packages.falcot.com/ internal/</pre><a
-          id="idm140711209921024"
+          id="idm139900946713264"
           class="indexterm"></a><div
           class="para">
 			このため、管理者は内部 HTTP サーバ上に仮想ホストを設定して、APT リポジトリのルートとして <code
@@ -108,14 +108,14 @@ deb http://packages.falcot.com/ internal/</pre><a
             class="literal">internal</code> または <code
             class="literal">updates</code> に設定しなければいけません。この後、<code
             class="command">mini-dinstall</code> は APT が必要とする <code
-            class="filename">Packages.gz</code> 等のファイルを生成します。
+            class="filename">Packages.gz</code> などのファイルを生成します。
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">apt-ftparchive</code></strong></p></div></div></div><a
-            id="idm140711209906752"
+            id="idm139900946698992"
             class="indexterm"></a><div
             class="para">
 			必要な Debian アーカイブが <code
@@ -196,7 +196,7 @@ release_label = Internal Packages</pre><div
           class="para">
 			<code
             class="command">mini-dinstall</code> を実行すると、バックグラウンドでデーモンが開始されます。<code
-            class="command">mini-dinstall</code> デーモンが実行されている限り、デーモンは 30 分毎に <code
+            class="command">mini-dinstall</code> デーモンが実行されている限り、デーモンは 30 分ごとに <code
             class="filename">incoming/</code> ディレクトリにアップロードされた新しいパッケージを確認します; 新しいパッケージがアップロードされると、パッケージはアーカイブに移動され、適切な <code
             class="filename">Packages.gz</code> と <code
             class="filename">Sources.gz</code> ファイルが再生成されます。デーモンの実行に問題がある場合、<code

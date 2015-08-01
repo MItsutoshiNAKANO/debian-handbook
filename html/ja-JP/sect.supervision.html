@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
         name="keywords"
-        content="ファイヤーウォール, Netfilter, IDS/NIDS" /><link
+        content="ファイアウォール, Netfilter, IDS/NIDS" /><link
         rel="home"
         href="index.html"
         title="Debian 管理者ハンドブック" /><link
@@ -28,7 +28,7 @@
         title="第14章 セキュリティ" /><link
         rel="prev"
         href="sect.firewall-packet-filtering.html"
-        title="14.2. ファイヤーウォールとパケットフィルタリング" /><link
+        title="14.2. ファイアウォールとパケットフィルタリング" /><link
         rel="next"
         href="sect.selinux.html"
         title="14.4. SELinux の紹介" /><link
@@ -68,12 +68,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.supervision"></a>14.3. 監督: 防止、検知、監査</h2></div></div></div><a
-          id="idm140711210041168"
+          id="idm139900945975280"
           class="indexterm"></a><a
-          id="idm140711210040208"
+          id="idm139900945974320"
           class="indexterm"></a><div
           class="para">
-			監視は幾つかの理由によってセキュリティポリシーの不可欠な要素になっています。中でも、セキュリティの目標には、通常データの機密性を保証するだけでなく、サービスの可用性を保証することも含まれています。そのため、すべてが思った通り稼働しているかを確認したり、様々な逸脱した挙動や提供しているサービス品質の変化をタイミング良く検知したり、することが不可欠です。監視活動のお陰で、危機的状況に陥る前に、不正侵入の試行を検知し迅速に対応することが可能です。この節では、Debian システムの様々な側面を監視するために使える幾つかのツールを概説します。この節は <a
+			監視はいくつかの理由によってセキュリティポリシーの不可欠な要素になっています。中でも、セキュリティの目標には、通常データの機密性を保証するだけでなく、サービスの可用性を保証することも含まれています。そのため、すべてが思った通り稼働しているかを確認したり、さまざまな逸脱した挙動や提供しているサービス品質の変化をタイミング良く検知したり、することが不可欠です。監視活動のおかげで、危機的状況に陥る前に、不正侵入の試行を検知し迅速に対応することが可能です。この節では、Debian システムのさまざまな側面を監視するために使えるいくつかのツールを概説します。この節は <a
             class="xref"
             href="advanced-administration.html">12章<em>高度な管理</em></a>内の一般的なシステム監視について書かれた節を補完するものです。
 		</div><div
@@ -82,11 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.logcheck"></a>14.3.1. <code
                     class="command">logcheck</code> を使ったログ監視</h3></div></div></div><a
-            id="idm140711210036144"
+            id="idm139900945969904"
             class="indexterm"></a><a
-            id="idm140711210035024"
+            id="idm139900945968784"
             class="indexterm"></a><a
-            id="idm140711210033584"
+            id="idm139900945967344"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				監視されるファイルのリストは <code
               class="filename">/etc/logcheck/logcheck.logfiles</code> に保存されています; <code
-              class="filename">/etc/syslog.conf</code> ファイルが完全に書き換えられていなければ、デフォルト値で上手く動作します。
+              class="filename">/etc/syslog.conf</code> ファイルが完全に書き換えられていなければ、デフォルト値でうまく動作します。
 			</div><div
             class="para">
 				<code
@@ -105,17 +105,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>server</em></span>、<span
               class="emphasis"><em>workstation</em></span> です。<span
               class="emphasis"><em>paranoid</em></span> モードは<span
-              class="emphasis"><em>とても</em></span>詳細で、このモードを使うのはファイヤーウォール等の特定のサーバに限定するべきです。<span
+              class="emphasis"><em>とても</em></span>詳細で、このモードを使うのはファイアウォールなどの特定のサーバに限定するべきです。<span
               class="emphasis"><em>server</em></span> モードはデフォルトで、ほとんどのサーバではこのモードを使うことを推奨します。<span
               class="emphasis"><em>workstation</em></span> モードはワークステーション用に設計されており、かなり簡潔です (より多くのメッセージをフィルタします)。
 			</div><div
             class="para">
 				管理者は毎時間のバッチ処理のたびに長くてつまらない電子メールを受け取ることを本当に望むのでなければ、3 つのモードすべてで <code
-              class="command">logcheck</code> を (インストール済みサービスに従い) カスタマイズして幾つかの余分なメッセージを除外するべきです。メッセージ選択メカニズムはかなり複雑なので、もし挑戦するなら <code
+              class="command">logcheck</code> を (インストール済みサービスに従い) カスタマイズしていくつかの余分なメッセージを除外するべきです。メッセージ選択メカニズムはかなり複雑なので、もし挑戦するなら <code
               class="filename">/usr/share/doc/logcheck-database/README.logcheck-database.gz</code> を読むと良いでしょう。
 			</div><div
             class="para">
-				適用されるルールは幾つかの種類に分かれます:
+				適用されるルールはいくつかの種類に分かれます:
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
@@ -172,17 +172,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/dev/xconsole</code> 名前付きパイプを使って直接 <code
                 class="command">syslogd</code> から取得されます。
 			</div><a
-              id="idm140711210005360"
+              id="idm139900945938432"
               class="indexterm"></a><a
-              id="idm140711210004240"
+              id="idm139900945937312"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.monitoring-activity"></a>14.3.2. 監視活動</h3></div></div></div><a
-            id="idm140711210001408"
+            id="idm139900945934480"
             class="indexterm"></a><a
-            id="idm140711209999968"
+            id="idm139900945933040"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -199,7 +199,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="keycap"><strong>r</strong></span> キーを使ってプロセスの <span
                 class="emphasis"><em>renicing</em></span> を行うことが可能です、つまり優先度を変更することが可能です。
 				</div><a
-              id="idm140711209993296"
+              id="idm139900945926368"
               class="indexterm"></a><div
               class="para">
 					システムの負荷が高過ぎる場合、<code
@@ -215,23 +215,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">qps</code> グラフィカルツールは <code
                 class="command">top</code> とよく似ており、大まかに言って同じ機能を備えています。
 				</div><a
-              id="idm140711209987488"
+              id="idm139900945920560"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.monitoring-history"></a>14.3.2.2. 歴史</h4></div></div></div><a
-              id="idm140711209985040"
+              id="idm139900945918112"
               class="indexterm"></a><div
               class="para">
 					プロセッサの負荷、ネットワークトラフィック、空きディスク領域などの情報は絶えず変わります。これらの情報の時間変化を保存しておくと、コンピュータの使われ方を明らかにするためには便利です。
 				</div><a
-              id="idm140711209983328"
+              id="idm139900945916400"
               class="indexterm"></a><a
-              id="idm140711209982368"
+              id="idm139900945915440"
               class="indexterm"></a><div
               class="para">
-					このタスクには専用のツールが沢山あります。ほとんどのツールは、この種の情報を中央に集めるために、SNMP (<span
+					このタスクには専用のツールがたくさんあります。ほとんどのツールは、この種の情報を中央に集めるために、SNMP (<span
                 class="emphasis"><em>Simple Network Management Protocol</em></span>) を介してデータを取得します。SNMP を使うことで、汎用コンピュータ以外のネットワーク要素、たとえば専用ネットワークルータやスイッチ、からデータを取得することが可能になるという恩恵があります。
 				</div><div
               class="para">
@@ -248,7 +248,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>ALTERNATIVE</em></span> <code
                           class="command">mrtg</code></strong></p></div></div></div><a
-                id="idm140711209975232"
+                id="idm139900945908224"
                 class="indexterm"></a><div
                 class="para">
 					<code
@@ -264,16 +264,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711209969152"></a>14.3.3. 変更検知</h3></div></div></div><div
+                    id="idm139900945902144"></a>14.3.3. 変更検知</h3></div></div></div><div
             class="para">
-				システムのインストールと設定が完了したら、セキュリティアップグレードを行わない限りデータ以外のほとんどのファイルとディレクトリが変化する理由はありません。このため、ファイルが変化していないことを確認することは興味深いです。このため、ファイルに対する予想外の変化は調査に値します。この節では、ファイルに対する予想外の変化に備えて、ファイルを監視して管理者に警告する (または単純に変更をリストする) 幾つかのツールを紹介します。
+				システムのインストールと設定が完了したら、セキュリティアップグレードを行わない限りデータ以外のほとんどのファイルとディレクトリが変化する理由はありません。このため、ファイルが変化していないことを確認することは興味深いです。このため、ファイルに対する予想外の変化は調査に値します。この節では、ファイルに対する予想外の変化に備えて、ファイルを監視して管理者に警告する (または単純に変更をリストする) いくつかのツールを紹介します。
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.debsums"></a>14.3.3.1. パッケージの監査: <code
                       class="command">debsums</code> とその限界</h4></div></div></div><a
-              id="idm140711209965632"
+              id="idm139900945898624"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -292,14 +292,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">debsums</code> プログラムが要求する指紋を提供しているわけではないからです (指紋が提供されているならば、指紋は <code
                 class="filename">/var/lib/dpkg/info/<em
                   class="replaceable">package</em>.md5sums</code> に保存されています)。<a
-                id="idm140711209958176"
+                id="idm139900945891088"
                 class="indexterm"></a> <a
-                id="idm140711209957536"
+                id="idm139900945890448"
                 class="indexterm"></a> <a
-                id="idm140711209956896"
+                id="idm139900945889808"
                 class="indexterm"></a> <a
-                id="idm140711209956256"
-                class="indexterm"></a> 備忘録的になりますが: ここで指紋とは、ファイルの内容に対するある種のシグネチャを含む値、通常は数 (実際は 16 進数表記です)、です。このシグネチャはあるアルゴリズムを使って計算されます。指紋計算に使われるアルゴリズムはファイルに対して行われた小さな変化により指紋が変化することがおおよそ保証されているものです (MD5 や SHA1 がよく知られている例です); これは「アバランシェ効果」として知られています。アバランシェ効果のお陰で、簡単な数字で表される指紋がファイルの内容の変化を検出するためのリトマス試験として機能することになります。指紋計算に使われるアルゴリズムは不可逆です; 言い換えれば、ほとんどの場合、指紋からその指紋が得られる内容を発見することは不可能であることが知られています。最近の数学的な進歩により、アルゴリズムの原理の絶対性が揺らいでいるように見えます。しかしこれはアルゴリズムを使うことに対して疑問を投げかけるものではありません。なぜなら、同じ指紋を持つ異なる内容を作成することはまだかなり難しい作業だからです。
+                id="idm139900945889168"
+                class="indexterm"></a> 備忘録的になりますが: ここで指紋とは、ファイルの内容に対するある種のシグネチャを含む値、通常は数 (実際は 16 進数表記です)、です。このシグネチャはあるアルゴリズムを使って計算されます。指紋計算に使われるアルゴリズムはファイルに対して行われた小さな変化により指紋が変化することがおおよそ保証されているものです (MD5 や SHA1 がよく知られている例です); これは「アバランシェ効果」として知られています。アバランシェ効果のおかげで、簡単な数字で表される指紋がファイルの内容の変化を検出するためのリトマス試験として機能することになります。指紋計算に使われるアルゴリズムは不可逆です; 言い換えれば、ほとんどの場合、指紋からその指紋が得られる内容を発見することは不可能であることが知られています。最近の数学的な進歩により、アルゴリズムの原理の絶対性が揺らいでいるように見えます。しかしこれはアルゴリズムを使うことに対して疑問を投げかけるものではありません。なぜなら、同じ指紋を持つ異なる内容を作成することはまだかなり難しい作業だからです。
 				</div><div
               class="para">
 					加えて、<code
@@ -351,8 +351,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140711211425904"></a>14.3.3.2. ファイル監視: AIDE</h4></div></div></div><a
-              id="idm140711211425136"
+                      id="idm139900947614608"></a>14.3.3.2. ファイル監視: AIDE</h4></div></div></div><a
+              id="idm139900947613840"
               class="indexterm"></a><div
               class="para">
 					AIDE ツール (<span
@@ -394,7 +394,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="pkg pkg">tripwire</span> には設定ファイルを署名するメカニズムが備わっている点です。設定ファイルを署名することで、参照データベースの示す先を異なるバージョンに差し替えることが不可能になります。
 				</div><div
                 class="para">
-					Samhain も類似の機能を提供しますが、rootkit の検知に役立つ幾つかの機能を備えています (傍注 QUICK LOOK を参照)。Samhain はネットワークを使って広範囲に配備され、中央サーバ上に履歴を (署名と一緒に) 記録することが可能です。
+					Samhain も類似の機能を提供しますが、rootkit の検知に役立ついくつかの機能を備えています (傍注 QUICK LOOK を参照)。Samhain はネットワークを使って広範囲に配備され、中央サーバ上に履歴を (署名と一緒に) 記録することが可能です。
 				</div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -403,7 +403,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="pkg pkg">checksecurity</span> と <span
                           class="pkg pkg">chkrootkit</span>/<span
                           class="pkg pkg">rkhunter</span> パッケージ</strong></p></div></div></div><a
-                id="idm140711211403600"
+                id="idm139900947592144"
                 class="indexterm"></a><div
                 class="para">
 					<span
@@ -420,23 +420,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.intrusion-detection"></a>14.3.4. 侵入検知 (IDS/NIDS)</h3></div></div></div><a
-            id="idm140711211395552"
+            id="idm139900947584096"
             class="indexterm"></a><a
-            id="idm140711211394592"
+            id="idm139900947583136"
             class="indexterm"></a><a
-            id="idm140711211393632"
+            id="idm139900947582176"
             class="indexterm"></a><a
-            id="idm140711211392672"
+            id="idm139900947581216"
             class="indexterm"></a><a
-            id="idm140711211391744"
+            id="idm139900947580288"
             class="indexterm"></a><a
-            id="idm140711211390784"
+            id="idm139900947579328"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> サービス妨害</strong></p></div></div></div><a
-              id="idm140711211388224"
+              id="idm139900947576768"
               class="indexterm"></a><div
               class="para">
 				「サービス妨害」攻撃の目的は 1 つしかありません: サービスを使用不能にすることです。そのような攻撃は、問い合わせを使ってサーバに大きな負荷を加えたり、バグを不正に活用したりすることで、実行されます。最終結果はどれも同じです: サービスはもはや使用できません。正規のユーザは迷惑しますし、標的にされたネットワークサービスをホストしている全体の評価が落ちます (たとえばサービスが電子商取引サイトの場合、さらに収入が落ちます)。
@@ -451,7 +451,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">snort</code> (同名の Debian パッケージに含まれます) は NIDS <span
               class="emphasis"><em>ネットワーク型侵入検知システム</em></span> です。NIDS の機能はネットワークをリッスンして侵入試行および敵対行為 (サービス妨害攻撃も含めて) を検知しようとします。すべてのイベントは記録され、過去 24 時間のイベントをまとめた電子メールが管理者宛に毎日送信されます。
 			</div><a
-            id="idm140711211382512"
+            id="idm139900947570976"
             class="indexterm"></a><div
             class="para">
 				snort の設定にローカルネットワークをカバーするアドレス範囲を追加します。具体的に言えば、アドレス範囲とは潜在的に攻撃対象となりうるすべてのアドレスを意味します。他の重要なパラメータは <code
@@ -469,7 +469,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				prelude を使うことでセキュリティ情報の中央集中型監視が可能になります。prelude のモジュール式設計には、サーバ (<span
                 class="pkg pkg">prelude-manager</span> に含まれる<span
-                class="emphasis"><em>マネージャ</em></span>) が含まれ、サーバは様々な種類の<span
+                class="emphasis"><em>マネージャ</em></span>) が含まれ、サーバはさまざまな種類の<span
                 class="emphasis"><em>センサー</em></span>によって生成された警告を収集します。
 			</div><div
               class="para">
@@ -481,7 +481,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="command">logcheck</code> を使ったログ監視」</a> で説明されている <code
                 class="command">logcheck</code> と同様のやり方で) ログファイルを監視します。
 			</div><a
-              id="idm140711211371664"
+              id="idm139900947559968"
               class="indexterm"></a></div><div
             class="para">
 				<code
@@ -508,7 +508,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.firewall-packet-filtering.html"><strong>戻る</strong>14.2. ファイヤーウォールとパケットフィルタリング</a></li><li
+            href="sect.firewall-packet-filtering.html"><strong>戻る</strong>14.2. ファイアウォールとパケットフィルタリング</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>上に戻る</strong></a></li><li

@@ -71,14 +71,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711209727888"></a>15.2.1. メタパッケージか偽物のパッケージ</h3></div></div></div><div
+                    id="idm139900947161136"></a>15.2.1. メタパッケージか偽物のパッケージ</h3></div></div></div><div
             class="para">
 				偽物のパッケージとメタパッケージは似ています。両者は自分のメタデータをパッケージ取り扱いスタックに置いておくためだけに存在する抜け殻です。
 			</div><div
             class="para">
 				偽物のパッケージの目的は、<code
               class="command">dpkg</code> と <code
-              class="command">apt</code> を騙して、抜け殻に過ぎない幾つかのパッケージがインストールされていると信じこませることにあります。これを使うことで、あるソフトウェアの依存関係を満足させるために必要なソフトウェアがパッケージシステムの管轄外にインストールされている場合に、そのソフトウェアの依存関係を満足させることが可能です。この方法は問題を解決しますが、これはできる限り避けるべき方法です。なぜなら、手作業でインストールされたソフトウェアが対応するパッケージと全く同様に振る舞う保証はありませんし、手作業でインストールされたソフトウェアに依存する他のパッケージが適切に動く保証もないからです。
+              class="command">apt</code> をだまして、抜け殻に過ぎないいくつかのパッケージがインストールされていると信じこませることにあります。これを使うことで、あるソフトウェアの依存関係を満足させるために必要なソフトウェアがパッケージシステムの管轄外にインストールされている場合に、そのソフトウェアの依存関係を満足させることが可能です。この方法は問題を解決しますが、これはできる限り避けるべき方法です。なぜなら、手作業でインストールされたソフトウェアが対応するパッケージと全く同様に振る舞う保証はありませんし、手作業でインストールされたソフトウェアに依存する他のパッケージが適切に動く保証もないからです。
 			</div><div
             class="para">
 				逆に、メタパッケージはほとんどの場合依存関係の集合体として機能します。メタパッケージをインストールするだけで、一連の他のパッケージがインストールされます。
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">equivs-build</code> を使う限りにおいて意味を持つものであり、生成されるパッケージのヘッダから削除されるべきです。
 			</div><div
             class="example"><a
-              id="idm140711210941920"></a><p
+              id="idm139900945847968"></a><p
               class="title"><strong>例15.2 <span
                   class="emphasis"><em>libxml-libxml-perl</em></span> 偽物のパッケージのヘッダファイル</strong></p><div
               class="example-contents"><pre
@@ -126,9 +126,9 @@ Description: Fake package - module manually installed in site_perl
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711210938064"></a>15.2.2. 単純なファイルアーカイブ</h3></div></div></div><div
+                    id="idm139900945844112"></a>15.2.2. 単純なファイルアーカイブ</h3></div></div></div><div
             class="para">
-				Falcot Corp の管理者は大量のマシン上に一連の文書を配備することを簡単に行うために Debian パッケージを作成する必要があります。この作業を担当する管理者は最初に「新メンテナーガイド」を読み、その後最初のパッケージに対する作業に着手します。<div
+				Falcot Corp の管理者は大量のマシン上に一連の文書を配備することを簡単に行うために Debian パッケージを作成する必要があります。この作業を担当している管理者は最初に「新メンテナーガイド」を読み、その後最初のパッケージに対する作業に着手します。<div
               class="url">→ <a
                 href="http://www.debian.org/doc/maint-guide/">http://www.debian.org/doc/maint-guide/</a></div>
 			</div><div
@@ -171,7 +171,7 @@ check that the falcot-data Makefiles install into $DESTDIR and not in / .
 $</code></pre><div
             class="para">
 				パッケージの種類で <span
-              class="emphasis"><em>single binary</em></span> を選ぶと、ソースパッケージから単一のバイナリパッケージをアーキテクチャ毎に (<code
+              class="emphasis"><em>single binary</em></span> を選ぶと、ソースパッケージから単一のバイナリパッケージをアーキテクチャごとに (<code
               class="literal">Architecture: any</code>) 生成します。<span
               class="emphasis"><em>indep binary</em></span> はその逆の振る舞いで、対象のアーキテクチャに依存しない (<code
               class="literal">Architecture: all</code>) 単一のバイナリを生成します。今回作成するパッケージの場合、<span
@@ -183,9 +183,9 @@ $</code></pre><div
               class="emphasis"><em>library</em></span> は特別な場合で、共有ライブラリ用に用意されています。なぜなら、共有ライブラリは厳しいパッケージ化規則に従う必要があるからです。同様に、<span
               class="emphasis"><em>kernel module</em></span> はカーネルモジュールを含むパッケージ用に用意されています。最後に、<span
               class="emphasis"><em>cdbs</em></span> は特定のパッケージビルドシステム用に用意されています; これはかなり柔軟ですが、より多くの知識が必要です。<a
-              id="idm140711210922272"
+              id="idm139900945828320"
               class="indexterm"></a> <a
-              id="idm140711210921664"
+              id="idm139900945827712"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -196,7 +196,7 @@ $</code></pre><div
 				パッケージメンテナンスに関わるほとんどのプログラムはメンテナの名前と電子メールアドレスを <code
                 class="varname">DEBFULLNAME</code> と <code
                 class="varname">DEBEMAIL</code> または <code
-                class="varname">EMAIL</code> 環境変数から取得します。たった 1 回だけこれらの環境変数を定義するだけで、これらの情報を毎回打ち込む必要がなくなります。通常のシェルが <code
+                class="varname">EMAIL</code> 環境変数から取得します。たった 1 回だけこれらの環境変数を定義するだけで、毎回これらの情報を打ち込む必要がなくなります。通常のシェルが <code
                 class="command">bash</code> の場合、<code
                 class="filename">~/.bashrc</code> と <code
                 class="filename">~/.bash_profile</code> ファイルに以下の 2 行 (当然ですが、値を自分のものに変えてくださいね!) を追加するだけで簡単にこれを行うことが可能です:
@@ -214,7 +214,7 @@ export DEBFULLNAME="Raphael Hertzog"</pre></div><div
               class="filename">copyright</code> は必須です。<code
               class="filename">.ex</code> 拡張子を持つファイルは例ファイルで、必要ならばこれらのファイルをひな形として (拡張子を削除して) 使うことが可能です。必要なければ例ファイルを削除することをおすすめします。<code
               class="filename">compat</code> ファイルはそのままにしておくべきです。なぜなら、<code
-              class="filename">compat</code> ファイルはパッケージビルド作業の様々な段階で使われる <span
+              class="filename">compat</code> ファイルはパッケージビルド作業のさまざまな段階で使われる <span
               class="emphasis"><em>debhelper</em></span> プログラムスイート (<code
               class="command">dh_</code> から始まるプログラム群) を適切に動作させるために必要だからです。
 			</div><div
@@ -233,7 +233,7 @@ export DEBFULLNAME="Raphael Hertzog"</pre></div><div
               class="literal">iceweasel | www-browser</code> を指定しました。これはパッケージ内の文書を表示するために必要なウェブブラウザがインストールされていることを保証するためです。
 			</div><div
             class="example"><a
-              id="idm140711210902912"></a><p
+              id="idm139900945808960"></a><p
               class="title"><strong>例15.3 <code
                   class="filename">control</code> ファイル</strong></p><div
               class="example-contents"><pre
@@ -257,7 +257,7 @@ Description: Internal Falcot Corp Documentation
  These documents MUST NOT leave the company.
  Their use is INTERNAL ONLY.</pre></div></div><div
             class="example"><a
-              id="idm140711210900624"></a><p
+              id="idm139900945806672"></a><p
               class="title"><strong>例15.4 <code
                   class="filename">changelog</code> ファイル</strong></p><div
               class="example-contents"><pre
@@ -271,7 +271,7 @@ falcot-data (1.0) internal; urgency=low
 
  -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Mon, 11 Apr 2011 20:46:33 +0200</pre></div></div><div
             class="example"><a
-              id="idm140711210898640"></a><p
+              id="idm139900945804688"></a><p
               class="title"><strong>例15.5 <code
                   class="filename">copyright</code> ファイル</strong></p><div
               class="example-contents"><pre
@@ -291,7 +291,7 @@ License:
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> <code
                         class="filename">Makefile</code> ファイル</strong></p></div></div></div><a
-              id="idm140711210895104"
+              id="idm139900945801152"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -317,11 +317,11 @@ target: source1 source2 ...
 			</div></div><div
             class="para">
 				<code
-              class="filename">rules</code> ファイルには、(生成されるバイナリパッケージにちなんで名付けられた) 専用のサブディレクトリ内で対象のソフトウェアを設定、ビルド、インストールするために使われる一連の規則が定義されています。このサブディレクトリの内容はあたかもサブディレクトリがファイルシステムのルートであるかの如く Debian パッケージの中に保存されます。今回の場合、ファイルは <code
+              class="filename">rules</code> ファイルには、(生成されるバイナリパッケージにちなんで名付けられた) 専用のサブディレクトリ内で対象のソフトウェアを設定、ビルド、インストールするために使われる一連の規則が定義されています。このサブディレクトリの内容はあたかもサブディレクトリがファイルシステムのルートであるかのように Debian パッケージの中に保存されます。今回の場合、ファイルは <code
               class="filename">debian/falcot-data/usr/share/falcot-data/</code> サブディレクトリにインストールされます。こうすることで、生成されたパッケージをインストールすると、ファイルが <code
               class="filename">/usr/share/falcot-data/</code> の下に配備されます。<code
               class="filename">rules</code> ファイルは <code
-              class="filename">Makefile</code> として使われ、幾つかの標準的なターゲット (定義済みの <code
+              class="filename">Makefile</code> として使われ、いくつかの標準的なターゲット (定義済みの <code
               class="literal">clean</code> と <code
               class="literal">binary</code> はそれぞれソースディレクトリを削除する場合、バイナリパッケージを生成する場合に使います) が定義されています。
 			</div><div
@@ -340,7 +340,7 @@ data/* usr/share/falcot-data/</pre><div
               class="filename">debian/menu.ex</code> の拡張子を外し、以下のとおり編集することで、単純に行われます。
 			</div><div
             class="example"><a
-              id="idm140711209941664"></a><p
+              id="idm139900946733904"></a><p
               class="title"><strong>例15.6 <code
                   class="filename">menu</code> ファイル</strong></p><div
               class="example-contents"><pre

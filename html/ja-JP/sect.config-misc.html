@@ -75,18 +75,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.timezone"></a>8.9.1. タイムゾーン</h3></div></div></div><a
-            id="idm140711217635024"
+            id="idm139900950065232"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.symbolic-link"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> シンボリックリンク</strong></p></div></div></div><a
-              id="idm140711217632608"
+              id="idm139900950062816"
               class="indexterm"></a><a
-              id="idm140711217631168"
+              id="idm139900950061376"
               class="indexterm"></a><a
-              id="idm140711217630240"
+              id="idm139900950060448"
               class="indexterm"></a><div
               class="para">
 				シンボリックリンクは他のファイルへのポインタです。シンボリックリンクにアクセスすると、シンボリックリンクの指すファイルが開かれます。シンボリックリンクを削除しても、シンボリックリンクの指すファイルは削除されません。同様に、シンボリックリンクはパーミッションを設定できませんが、シンボリックリンクの指すファイルのパーティションが適用されます。最後に、シンボリックリンクはいかなる種類のファイルを指すことも可能です: ディレクトリ、スペシャルファイル (ソケット、名前付きパイプ、デバイスファイル、など)、他のシンボリックリンクでさえ可能です。
@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">target</em> を指すシンボリックリンクを作成します。
 			</div><div
               class="para">
-				ターゲットが存在しない場合、リンクは「壊れて」おり、壊れたシンボリックリンクにアクセスするとターゲットファイルが存在しないことを示すエラーが返されます。別のシンボリックリンクにシンボリックリンクを張るとシンボリックリンクが「連鎖」し、リンク先がリンク元を指していた場合にはリンクの「循環」状態になります。この状態で、循環鎖に含まれるリンクの 1 つにアクセスした場合、特定のエラー (「シンボリックリンクの階層が多すぎます」) が返されます; これは、カーネルが、何回か循環鎖を辿った後に、それを諦めたことを意味します。
+				ターゲットが存在しない場合、リンクは「壊れて」おり、壊れたシンボリックリンクにアクセスするとターゲットファイルが存在しないことを示すエラーが返されます。別のシンボリックリンクにシンボリックリンクを張るとシンボリックリンクが「連鎖」し、リンク先がリンク元を指していた場合にはリンクの「循環」状態になります。この状態で、循環鎖に含まれるリンクの 1 つにアクセスした場合、特定のエラー (「シンボリックリンクの階層が多すぎます」) が返されます; これは、カーネルが、何回か循環鎖を巡った後に、それを諦めたことを意味します。
 			</div></div><div
             class="para">
 				タイムゾーンは最初のインストール時に設定され、<span
@@ -111,23 +111,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/etc/localtime</code> の中にコピーされます; <code
               class="filename">/etc/localtime</code> には、夏時間を使う国向けに夏時間が有効な場所で日付を左右するルールが含まれています。
 			</div><a
-            id="idm140711217619792"
+            id="idm139900950050000"
             class="indexterm"></a><a
-            id="idm140711217618672"
+            id="idm139900950048880"
             class="indexterm"></a><a
-            id="idm140711217617552"
+            id="idm139900950047760"
             class="indexterm"></a><a
-            id="idm140711217616432"
+            id="idm139900950046640"
             class="indexterm"></a><a
-            id="idm140711217615312"
+            id="idm139900950045520"
             class="indexterm"></a><a
-            id="idm140711217614352"
+            id="idm139900950044560"
             class="indexterm"></a><div
             class="para">
 				一時的にタイムゾーンを変更したい場合、<code
               class="varname">TZ</code> 環境変数を使ってください。この変数に設定した値はシステムデフォルトで設定された値よりも優先されます:
 			</div><a
-            id="idm140711217612240"
+            id="idm139900950042448"
             class="indexterm"></a><a
             id="screen.tz"></a><pre
             class="screen">
@@ -154,7 +154,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				実際は問題があります。なぜなら、CMOS クロックはただのカウンタで、タイムゾーンに関する情報を持たないからです。CMOS クロックの値を解釈する際には選ばなければいけない点があります: システムは CMOS クロックを協定世界時 (UTC、以前は GMT) かローカル時間のどちらで解釈するかを選ばなければいけません。両者は単純な補正定数の違いに過ぎないように見えますが、しかし実際はより複雑な違いがあります: 夏時間がある場合、この補正量は定数ではありません。その結果、システムは、特に夏時間が適用される期間中に、補正量の正しさを決定できません。協定世界時とタイムゾーン情報からローカル時間を再構成することは常に可能ですから、CMOS クロックを協定世界時として扱うことを推奨します。
 			</div><div
               class="para">
-				不幸なことに、Windows システムのデフォルト設定はこの推奨に従いません; Windows システムは CMOS クロックをローカル時間に保ちます。コンピュータの起動時に、夏時間中の時間変更が既に適用されているか否かを推測して、時間変更を適用します。マシン上で Windows だけが動いている場合、このやり方は比較的上手く動作します。しかし、コンピュータに複数のシステムがある場合 (「デュアルブート」設定や仮想マシンを通じて他のシステムを動かす場合)、カオスです。時間が正確か決定することは意味を成しません。どうしてもコンピュータに Windows を残さなければいけない場合、Windows を設定して CMOS クロックを UTC に保つ (<code
+				不幸なことに、Windows システムのデフォルト設定はこの推奨に従いません; Windows システムは CMOS クロックをローカル時間に保ちます。コンピュータの起動時に、夏時間中の時間変更が既に適用されているか否かを推測して、時間変更を適用します。マシン上で Windows だけが動いている場合、このやり方は比較的うまく動作します。しかし、コンピュータに複数のシステムがある場合 (「デュアルブート」設定や仮想マシンを通じて他のシステムを動かす場合)、カオスです。時間が正確か決定することは意味を成しません。どうしてもコンピュータに Windows を残さなければいけない場合、Windows を設定して CMOS クロックを UTC に保つ (<code
                 class="literal">HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal</code> レジストリキーを DWORD の「1」に設定する) か、Debian システムで <code
                 class="command">hwclock --localtime --set</code> を使いハードウェアクロックをローカル時間に保つ (そして春と秋に手作業で時計を確認) かのどちらか一方を設定してください。
 			</div></div></div><div
@@ -162,9 +162,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.time-synchronization"></a>8.9.2. 時刻同期</h3></div></div></div><a
-            id="idm140711217599040"
+            id="idm139900950029248"
             class="indexterm"></a><a
-            id="idm140711217598080"
+            id="idm139900950028288"
             class="indexterm"></a><div
             class="para">
 				時刻同期は、コンピュータ上で不必要のように見えますが、ネットワーク上でとても重要です。ユーザは日付と時間を変更することを許可されていないので、混乱を防ぐためには時刻情報を正確に保つことがとても重要です。さらに、ネットワーク上のすべてのコンピュータの時刻を同期させておけば、異なるマシン間でログから情報を相互参照しやすくなります。攻撃を受けた際に、不正アクセスを受けた複数のマシンで時系列順に操作を再構成することが簡単になります。時刻が同期されていなかった場合、統計的目的で複数のマシンからデータを集めても、意味を成しません。
@@ -173,9 +173,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> NTP</strong></p></div></div></div><a
-              id="idm140711217594256"
+              id="idm139900950024464"
               class="indexterm"></a><a
-              id="idm140711217593296"
+              id="idm139900950023504"
               class="indexterm"></a><div
               class="para">
 				NTP (Network Time Protocol) を使うことで、あるマシンが他のマシンとかなり正確に時刻同期することが可能になります。このプロトコルは、ネットワーク上で情報を移動することで起こる遅延および予想される補正を考慮しています。
@@ -198,9 +198,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="pkg pkg">ntpdate</span> パッケージをインストールします。必要なら <code
                 class="filename">/etc/default/ntpdate</code> ファイルを変更して NTP サーバを変更することも可能です。
 				</div><a
-              id="idm140711217584416"
+              id="idm139900950014624"
               class="indexterm"></a><a
-              id="idm140711217583296"
+              id="idm139900950013504"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -212,19 +212,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>pool.ntp.org</em></span> と同期し、ローカルネットワークからの要求に対して時刻を提供します。<code
                 class="filename">/etc/ntp.conf</code> ファイルを編集して NTP サーバを設定できます。最も大きな変更は、この NTP サーバがどの NTP サーバを参照するかです。ネットワークに多くのサーバがある場合、公開サーバと同期している 1 台のローカルタイムサーバを、そのネットワークの他のサーバに対する時間ソースとして使うことは興味深いかもしれません。
 				</div><a
-              id="idm140711217577856"
+              id="idm139900950008064"
               class="indexterm"></a><a
-              id="idm140711217576432"
+              id="idm139900950006640"
               class="indexterm"></a><a
-              id="idm140711217574992"
+              id="idm139900950005200"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>GOING FURTHER</em></span> GPS モジュールと他の時刻ソース</strong></p></div></div></div><a
-                id="idm140711217572464"
+                id="idm139900950002672"
                 class="indexterm"></a><a
-                id="idm140711217571504"
+                id="idm139900950001712"
                 class="indexterm"></a><div
                 class="para">
 					時刻同期がネットワークで極めて重要な要素の場合、GPS モジュール (GPS 衛星からの時刻を使う) または DCF-77 モジュール (ドイツのフランクフルト近郊の原子時計と時刻を同期する) をサーバに装備することも可能です。この場合、NTP サーバの設定はもう少し複雑で、必ず事前に文書を調査してください。
@@ -233,22 +233,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.rotation-logs"></a>8.9.3. ログファイルの循環</h3></div></div></div><a
-            id="idm140711217568048"
+            id="idm139900949998256"
             class="indexterm"></a><a
-            id="idm140711217566608"
+            id="idm139900949996816"
             class="indexterm"></a><a
-            id="idm140711217565168"
+            id="idm139900949995376"
             class="indexterm"></a><a
-            id="idm140711217564240"
+            id="idm139900949994448"
             class="indexterm"></a><div
             class="para">
 				ログファイルのサイズは素早く増加しますから、ログファイルをアーカイブに保管することが必要です。最も一般的なやり方はアーカイブを循環させることです: ログファイルは日常的にアーカイブに保管され、最新の <em
               class="replaceable">X</em> 個のアーカイブが保存されます。<code
               class="command">logrotate</code> は、<code
               class="filename">/etc/logrotate.conf</code> ファイルと <code
-              class="filename">/etc/logrotate.d/</code> ディレクトリ内に含まれるすべてのファイルに書かれた指示に従って、ログファイルの循環を担当するプログラムです。管理者が Debian の定義するログ循環ポリシーを適用したい場合、これらの設定ファイルを変更するかもしれません。<span
+              class="filename">/etc/logrotate.d/</code> ディレクトリ内に含まれるすべてのファイルに書かれた指示に従って、ログファイルの循環を担当しているプログラムです。管理者が Debian の定義するログ循環ポリシーを適用したい場合、これらの設定ファイルを変更するかもしれません。<span
               class="citerefentry"><span
-                class="refentrytitle">logrotate</span>(1)</span> man ページでは、これらの設定ファイルで利用可能なすべてのオプションが説明されています。ログ循環で保存されるファイルの数を増加させたかったり、削除せずにアーカイブ専用の特定のディレクトリにログファイルを移動させたいと思うかもしれません。また、電子メールを送信してログを別の場所にアーカイブすることも可能です。
+                class="refentrytitle">logrotate</span>(1)</span> man ページでは、これらの設定ファイルで利用できるすべてのオプションが説明されています。ログ循環で保存されるファイルの数を増加させたかったり、削除せずにアーカイブ専用の特定のディレクトリにログファイルを移動させたいと思うかもしれません。また、電子メールを送信してログを別の場所にアーカイブすることも可能です。
 			</div><div
             class="para">
 				<code
@@ -263,11 +263,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.sharing-admin-rights"></a>8.9.4. 管理者権限の共有</h3></div></div></div><a
-            id="idm140711217555424"
+            id="idm139900949985632"
             class="indexterm"></a><a
-            id="idm140711217554016"
+            id="idm139900949984224"
             class="indexterm"></a><a
-            id="idm140711217553056"
+            id="idm139900949983264"
             class="indexterm"></a><div
             class="para">
 				しばしば、複数の管理者が同じネットワーク上で仕事をする場合があります。root パスワードの共有は的確なやり方ではありません。共有することで生まれる匿名性により、root 権の乱用が可能になります。この問題の解決策が <code
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal"><em
                 class="replaceable">username</em> ALL=(ALL) ALL</code> のような行を追加することで、対象のユーザは root としてコマンドを実行することが可能になります。
 			</div><a
-            id="idm140711217544224"
+            id="idm139900949974432"
             class="indexterm"></a><a
-            id="idm140711217543104"
+            id="idm139900949973312"
             class="indexterm"></a><a
-            id="idm140711217541984"
+            id="idm139900949972192"
             class="indexterm"></a><div
             class="para">
 				より洗練された設定を使うことで、特定のコマンドに必要な権限を特定のユーザに与えることも可能です。設定可能な要素のすべての詳細を確認するには <span
@@ -302,9 +302,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fstab-mount-points"></a>8.9.5. マウントポイントのリスト</h3></div></div></div><a
-            id="idm140711217537808"
+            id="idm139900949968016"
             class="indexterm"></a><a
-            id="idm140711217536880"
+            id="idm139900949967088"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -316,10 +316,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/home/</code> ディレクトリに「マウント」されなければいけません。root ファイルシステムはカーネルによって起動時に常にマウントされます; 他のデバイスはしばしばその後に続くスタートアップシーケンス中か <code
                 class="command">mount</code> コマンドを使って手作業でマウントされます。
 			</div><a
-              id="idm140711217532048"
+              id="idm139900949962256"
               class="indexterm"></a><div
               class="para">
-				幾つかのリムーバブルデバイスは接続時に自動的にマウントされます。特に GNOME、KDE、その他のグラフィカルデスクトップ環境を使っている場合にはマウントされます。他のデバイスについては、ユーザが手作業でマウントしなければいけません。同様に、アンマウント (ファイルツリーから削除) しなければいけません。普通のユーザは通常 <code
+				いくつかのリムーバブルデバイスは接続時に自動的にマウントされます。特に GNOME、KDE、その他のグラフィカルデスクトップ環境を使っている場合にはマウントされます。他のデバイスについては、ユーザが手作業でマウントしなければいけません。同様に、アンマウント (ファイルツリーから削除) しなければいけません。普通のユーザは通常 <code
                 class="command">mount</code> や <code
                 class="command">umount</code> コマンドを実行する権限を持っていません。しかしながら、<code
                 class="literal">user</code> オプションを <code
@@ -339,9 +339,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				<code
               class="filename">/etc/fstab</code> ファイルには、起動時に自動マウントされるものやリムーバブルストレージデバイス用の手作業でマウントするものを含めて、すべての考え得るマウントポイントがリストされています。それぞれのマウントポイントは空白区切りフィールドを持つ各行によって表現されます: <a
-              id="idm140711217521696"
+              id="idm139900949951904"
               class="indexterm"></a> <a
-              id="idm140711217520896"
+              id="idm139900949951104"
               class="indexterm"></a>
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
@@ -383,11 +383,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="refentrytitle">mount</span>(8)</span> man ページからに書かれています。<code
                     class="literal">swap</code> は swap パーティション専用の特殊値です; <code
                     class="literal">auto</code> は <code
-                    class="command">mount</code> プログラムに自動的にファイルシステムを検出させるための特殊値です (この値はディスクリーダと USB メモリで特に便利です。なぜなら、機器毎に異なるファイルシステムを使っている可能性があるからです)。
+                    class="command">mount</code> プログラムに自動的にファイルシステムを検出させるための特殊値です (この値はディスクリーダと USB メモリで特に便利です。なぜなら、機器ごとに異なるファイルシステムを使っている可能性があるからです)。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						オプション: ファイルシステム毎に多くのオプションがあり、これらの値は <code
+						オプション: ファイルシステムごとに多くのオプションがあり、これらの値は <code
                     class="command">mount</code> man ページに書かれています。最もよく使われるものは
 					</div><div
                   class="itemizedlist"><ul><li
@@ -477,15 +477,15 @@ arrakis:/shared /shared         nfs     defaults        0       0</pre></div></d
                 class="command">amd</code> 自動マウントユーティリティを提供します。このユーティリティを使うと、通常のマウントポイントを通じてリムーバブルメディアにアクセスすれば、リムーバブルメディアをマウントできます。<code
                 class="command">amd</code> はリムーバブルメディアにアクセスしているプロセスがなくなればそのメディアをアンマウントします。
 			</div><a
-              id="idm140711217475072"
+              id="idm139900949905280"
               class="indexterm"></a><a
-              id="idm140711217473952"
+              id="idm139900949904160"
               class="indexterm"></a><a
-              id="idm140711217472832"
+              id="idm139900949903040"
               class="indexterm"></a><a
-              id="idm140711217471712"
+              id="idm139900949901920"
               class="indexterm"></a><a
-              id="idm140711217470592"
+              id="idm139900949900800"
               class="indexterm"></a><div
               class="para">
 				他の自動マウントユーティリティも存在します。たとえば <span
@@ -502,11 +502,11 @@ arrakis:/shared /shared         nfs     defaults        0       0</pre></div></d
                     id="sect.locate-updatedb"></a>8.9.6. <code
                     class="command">locate</code> と <code
                     class="command">updatedb</code></h3></div></div></div><a
-            id="idm140711217465136"
+            id="idm139900949895344"
             class="indexterm"></a><a
-            id="idm140711217464016"
+            id="idm139900949894224"
             class="indexterm"></a><a
-            id="idm140711217462896"
+            id="idm139900949893104"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -521,7 +521,7 @@ arrakis:/shared /shared         nfs     defaults        0       0</pre></div></d
               class="command">mlocate</code> の <code
               class="command">updatedb</code> 実装は root 権で実行されるからです) にも関わらず、コマンドを実行したユーザがアクセスできるファイルだけを返します。さらなる安全性のために、管理者は <code
               class="filename">/etc/updatedb.conf</code> の中で <code
-              class="varname">PRUNEDPATHS</code> を使って、幾つかのディレクトリのインデックス化を避けることが可能です。
+              class="varname">PRUNEDPATHS</code> を使って、いくつかのディレクトリのインデックス化を避けることが可能です。
 			</div></div></div><ul
         class="docnav"><li
           class="previous"><a

@@ -68,14 +68,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.ldap-directory"></a>11.7. LDAP ディレクトリ</h2></div></div></div><a
-          id="idm140711210349936"
+          id="idm139900946449968"
           class="indexterm"></a><a
-          id="idm140711210349168"
+          id="idm139900946449200"
           class="indexterm"></a><a
-          id="idm140711210348400"
+          id="idm139900946448432"
           class="indexterm"></a><div
           class="para">
-			OpenLDAP は LDAP プロトコルの実装です; 言い換えれば、LDAP プロトコルとはディレクトリを保存するために設計された特製データベースです。これが最もよく使われる用途は、LDAP サーバを使ってユーザアカウントと関連するパーミッションの中央管理を行う場合です。更に、LDAP データベースは簡単に複製できるので、複数の同期された LDAP サーバをセットアプすることが可能になります。ネットワークとユーザの数が急速に多くなった場合でも、複数のサーバ間で負荷のバランスをとることが可能です。
+			OpenLDAP は LDAP プロトコルの実装です; 言い換えれば、LDAP プロトコルとはディレクトリを保存するために設計された特製データベースです。これが最もよく使われる用途は、LDAP サーバを使ってユーザアカウントと関連するパーミッションの中央管理を行う場合です。さらに、LDAP データベースは簡単に複製できるので、複数の同期された LDAP サーバをセットアップすることが可能になります。ネットワークとユーザの数が急速に多くなった場合でも、複数のサーバ間で負荷のバランスをとることが可能です。
 		</div><div
           class="para">
 			LDAP データは階層的に構造化されています。データ構造は「スキーマ」によって定義され、スキーマはデータベースに保存できるオブジェクトの種類をその属性リストと一緒に説明しています。データベース内の特定のオブジェクトを参照するために使われる構文はデータ構造に依存し、構文の複雑さはデータ構造の複雑さに対応します。
@@ -83,13 +83,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711210345680"></a>11.7.1. インストール</h3></div></div></div><div
+                    id="idm139900946445712"></a>11.7.1. インストール</h3></div></div></div><div
             class="para">
 				<span
               class="pkg pkg">slapd</span> パッケージには、OpenLDAP サーバが含まれます。<span
               class="pkg pkg">ldap-utils</span> パッケージには、LDAP サーバと情報をやり取りするためのコマンドラインツールが含まれます。
 			</div><a
-            id="idm140711210343184"
+            id="idm139900946443216"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
-						OpenLDAP サーバ設定を中止しますか? もちろん No です。我々は LDAP サービスを設定します。
+						OpenLDAP サーバ設定を中止しますか? もちろん No です。われわれは LDAP サービスを設定します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -132,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						LDAPv2 プロトコルを許可しますか? いいえ、許可する意味がないからです。我々が使おうとしているツールはすべて LDAPv3 プロトコルを理解します。
+						LDAPv2 プロトコルを許可しますか? いいえ、許可する意味がないからです。われわれが使おうとしているツールはすべて LDAPv3 プロトコルを理解します。
 					</div></li></ul></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -142,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				LDIF ファイル (<span
                 class="emphasis"><em>LDAP Data Interchange Format</em></span>) は移植可能なテキストファイルで、LDAP データベース (またはデータベースの一部) の内容を説明しています。LDIF ファイルを使って、他の LDAP サーバにデータを投入することが可能です。
 			</div><a
-              id="idm140711210328928"
+              id="idm139900946428928"
               class="indexterm"></a></div><div
             class="para">
 				以下の問い合わせによって実例を示す通り、最低限のデータベースが設定されています:
@@ -188,7 +188,7 @@ result: 0 Success
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711210325072"></a>11.7.2. ディレクトリの書き込み</h3></div></div></div><div
+                    id="idm139900946425072"></a>11.7.2. ディレクトリの書き込み</h3></div></div></div><div
             class="para">
 				空っぽのデータベースは特に便利というわけではないので、すべての存在するディレクトリをデータベースに投入することにします; ディレクトリにはユーザ、グループ、サービス、ホスト名データベースが含まれます。
 			</div><div
@@ -200,7 +200,7 @@ result: 0 Success
               class="filename">/etc/services</code>、<code
               class="filename">/etc/hosts</code> など) からのデータを展開するための一連のスクリプトが含まれます。スクリプトを使ってデータを変換し、LDAP データベースに投入します。
 			</div><a
-            id="idm140711210320896"
+            id="idm139900946420896"
             class="indexterm"></a><div
             class="para">
 				パッケージをインストールしたら、必ず <code
@@ -248,12 +248,12 @@ result: 0 Success
                       align="justify">管理者識別名</td><td
                       align="justify"><code
                         class="literal">cn=admin,dc=falcot,dc=com</code></td></tr><tr><td
-                      align="justify">認証情報の紐付け</td><td
+                      align="justify">認証情報のひも付け</td><td
                       align="justify">管理用パスワード</td></tr><tr><td
                       align="justify">DUAConfigProfile を作成</td><td
                       align="justify">no</td></tr></tbody></table></div></div><div
             class="para">
-				我々は意図的に <code
+				われわれは意図的に <code
               class="filename">/etc/aliases</code> ファイルの移行を行いませんでした。なぜなら、Debian の提供する標準的なスキーマには、このスクリプトが電子メールアドレスを表現するために使う構造が含まれないからです。このデータをディレクトリに統合したい場合、標準的なスキーマに <code
               class="filename">/etc/ldap/schema/misc.schema</code> ファイルを追加するべきです。
 			</div><div
@@ -264,9 +264,9 @@ result: 0 Success
               class="para">
 				<code
                 class="command">jxplorer</code> コマンド (同名のパッケージに含まれます) は LDAP データベースを閲覧および編集することが可能なグラフィカルツールです。<code
-                class="command">jxplorer</code> コマンドは興味深いツールで、このツールを使うことで管理者は LDAP データの階層構造を判りやすく概観することが可能です。
+                class="command">jxplorer</code> コマンドは興味深いツールで、このツールを使うことで管理者は LDAP データの階層構造をわかりやすく概観することが可能です。
 			</div><a
-              id="idm140711210297952"
+              id="idm139900946397952"
               class="indexterm"></a></div><div
             class="para">
 				<code
@@ -277,9 +277,9 @@ result: 0 Success
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711210294880"></a>11.7.3. LDAP を用いたアカウントの管理</h3></div></div></div><div
+                    id="idm139900946394880"></a>11.7.3. LDAP を用いたアカウントの管理</h3></div></div></div><div
             class="para">
-				これで LDAP データベースに幾つかの実用的な情報が含まれるようになりましたので、このデータを使うように設定します。この節では、様々なシステムディレクトリが LDAP データベースを使うように Linux システムを設定する方法に注目します。
+				これで LDAP データベースにいくつかの実用的な情報が含まれるようになりましたので、このデータを使うように設定します。この節では、さまざまなシステムディレクトリが LDAP データベースを使うように Linux システムを設定する方法に注目します。
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -289,12 +289,12 @@ result: 0 Success
 					NSS システム (Name Service Switch、傍注<a
                 class="xref"
                 href="sect.user-group-databases.html#sidebar.intro-nss"><span
-                  class="emphasis"><em>GOING FURTHER</em></span> NSS とシステムデータベース</a>参照) はシステムディレクトリの情報を定義または取得するために設計されたモジュール式システムです。NSS 用のデータ源として LDAP を使うには、<span
+                  class="emphasis"><em>GOING FURTHER</em></span> NSS とシステムデータベース</a>参照) はシステムディレクトリの情報を定義したり取得するために設計されたモジュール式システムです。NSS 用のデータ源として LDAP を使うには、<span
                 class="pkg pkg">libnss-ldap</span> パッケージをインストールする必要があります。インストール中に数個の質問が行われます; その回答が<a
                 class="xref"
                 href="sect.ldap-directory.html#tab-libnss-ldap">表 11.2</a>にまとめられています。
 				</div><a
-              id="idm140711210290016"
+              id="idm139900946390000"
               class="indexterm"></a><div
               class="table"><a
                 id="tab-libnss-ldap"></a><p
@@ -334,7 +334,7 @@ result: 0 Success
                 class="command">ldap</code> モジュールを使うように NSS を設定する必要があります。
 				</div><div
               class="example"><a
-                id="idm140711210272592"></a><p
+                id="idm139900946372576"></a><p
                 class="title"><strong>例11.31 <code
                     class="filename">/etc/nsswitch.conf</code> ファイル</strong></p><div
                 class="example-contents"><pre
@@ -364,7 +364,7 @@ netgroup: ldap files</pre></div></div><div
                 class="literal">hosts</code> サービスです。なぜなら、LDAP サーバに接続するには (<code
                 class="literal">ldap.falcot.com</code> の名前解決を行うためには) 先に DNS を調べる必要があるからです<code
                 class="literal">hosts</code> サービスで最初 <code
-                class="command">ldap</code> モジュールを使うようにすると、LDAP サーバにホスト名を問い合わせることになります; 名前解決を担当する LDAP サーバに接続するには LDAP サーバの名前解決が必要なので、無限ループすることになります。
+                class="command">ldap</code> モジュールを使うようにすると、LDAP サーバにホスト名を問い合わせることになります; 名前解決を担当している LDAP サーバに接続するには LDAP サーバの名前解決が必要なので、無限ループすることになります。
 				</div><div
               class="para">
 					主に LDAP サーバを信頼する場合 (そして <code
@@ -395,18 +395,18 @@ netgroup: ldap files</pre></div></div><div
                       class="title"><strong><span
                           class="emphasis"><em>CAUTION</em></span> 破壊された認証</strong></p></div></div></div><div
                 class="para">
-					様々なプログラムが使う標準的な PAM 設定を変更することは慎重に行うべきです。1 つの間違いが認証を破壊し、これによりログイン不可能になる場合があります。このため root シェルを開けた状態に保ちながら作業を行うことが良い予防策です。そうすれば、設定エラーが起きた場合、設定を修正し、最小限の努力でサービスを再起動することが可能です。
+					さまざまなプログラムが使う標準的な PAM 設定を変更することは慎重に行うべきです。1 つの間違いが認証を破壊し、これによりログインが不可能になる場合があります。このため root シェルを開けた状態に保ちながら作業を行うことが良い予防策です。そうすれば、設定エラーが起きた場合、設定を修正し、最小限の努力でサービスを再起動することが可能です。
 				</div></div><div
               class="para">
 					PAM 用の LDAP モジュールは <span
                 class="pkg pkg">libpam-ldap</span> パッケージによって提供されます。<span
                 class="pkg pkg">libpam-ldap</span> パッケージをインストールする際に、<span
-                class="pkg pkg">libnss-ldap</span> をインストールしたにされた質問と良く似た数個の質問を尋ねられます。幾つかの設定パラメータ (LDAP サーバの URI など) は <span
+                class="pkg pkg">libnss-ldap</span> をインストールしたにされた質問と良く似た数個の質問を尋ねられます。いくつかの設定パラメータ (LDAP サーバの URI など) は <span
                 class="pkg pkg">libnss-ldap</span> パッケージと共有されます。この回答は<a
                 class="xref"
                 href="sect.ldap-directory.html#tab-libpam-ldap">表 11.3</a>にまとめられています。
 				</div><a
-              id="idm140711210257072"
+              id="idm139900946357056"
               class="indexterm"></a><div
               class="table"><a
                 id="tab-libpam-ldap"></a><p
@@ -420,7 +420,7 @@ netgroup: ldap files</pre></div></div><div
                       align="justify" /></colgroup><thead><tr><th
                         align="justify">質問</th><th
                         align="justify">回答</th></tr></thead><tbody><tr><td
-                        align="justify">LDAP 管理者がローカルの root の如く振る舞うことを許可しますか?</td><td
+                        align="justify">LDAP 管理者がローカルの root のように振る舞うことを許可しますか?</td><td
                         align="justify">はい。こうすることで、通常の <code
                           class="command">passwd</code> コマンドから LDAP データベースに保存されているパスワードを変更することが可能になります。</td></tr><tr><td
                         align="justify">LDAP データベースはログインを要求しますか?</td><td
@@ -442,23 +442,23 @@ netgroup: ldap files</pre></div></div><div
                 class="pkg pkg">libpam-runtime</span> パッケージから提供される) を使います。<code
                 class="command">pam-auth-update</code> ツールは PAM モジュールを有効化または無効化したい管理者によって実行される場合もあります。
 				</div><a
-              id="idm140711210240528"
+              id="idm139900946340496"
               class="indexterm"></a><a
-              id="idm140711210239632"
+              id="idm139900946339600"
               class="indexterm"></a><a
-              id="idm140711210238736"
+              id="idm139900946338704"
               class="indexterm"></a><a
-              id="idm140711210237840"
+              id="idm139900946337808"
               class="indexterm"></a><a
-              id="idm140711210236944"
+              id="idm139900946336912"
               class="indexterm"></a><a
-              id="idm140711210236048"
+              id="idm139900946336016"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140711210235024"></a>11.7.3.3. 安全な LDAP データ交換</h4></div></div></div><a
-              id="idm140711210234384"
+                      id="idm139900946334992"></a>11.7.3.3. 安全な LDAP データ交換</h4></div></div></div><a
+              id="idm139900946334352"
               class="indexterm"></a><div
               class="para">
 					デフォルトで、LDAP プロトコルはネットワークを平文で通信します; (暗号化された) パスワードがネットワーク上をそのまま流れます。暗号化されたパスワードをネットワークから抽出することが可能です。パスワードは辞書型攻撃に弱いです。暗号化層を設けることで、このような危険性避けることが可能です; この節の主題は、暗号化層を有効化することです。
@@ -466,10 +466,10 @@ netgroup: ldap files</pre></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140711210232336"></a>11.7.3.3.1. サーバの設定</h5></div></div></div><a
-                id="idm140711210231696"
+                        id="idm139900946332304"></a>11.7.3.3.1. サーバの設定</h5></div></div></div><a
+                id="idm139900946331664"
                 class="indexterm"></a><a
-                id="idm140711210230416"
+                id="idm139900946330384"
                 class="indexterm"></a><div
                 class="para">
 						最初に LDAP サーバ用の (公開鍵と秘密鍵から成る) 鍵ペアを作成します。Falcot 管理者は鍵ペアを生成するために <span
@@ -478,7 +478,7 @@ netgroup: ldap files</pre></div></div><div
                   href="sect.virtual-private-network.html#sect.easy-rsa">「公開鍵基盤: <span
                     class="emphasis"><em>easy-rsa</em></span>」</a>参照)。<code
                   class="command">./build-server-key ldap.falcot.com</code> を実行すると、数個の一般的な (場所、組織名、などに関する) 質問を尋ねられます。「common name」に対する回答は<span
-                  class="emphasis"><em>必ず</em></span> LDAP サーバの完全修飾ホスト名にしてください; 我々の場合 <code
+                  class="emphasis"><em>必ず</em></span> LDAP サーバの完全修飾ホスト名にしてください; われわれの場合 <code
                   class="literal">ldap.falcot.com</code> です。
 					</div><div
                 class="para">
@@ -512,7 +512,7 @@ netgroup: ldap files</pre></div></div><div
                   class="command">ldapmodify</code> が設定を更新する適切なツールです:
 					</div><div
                 class="example"><a
-                  id="idm140711210219632"></a><p
+                  id="idm139900946319600"></a><p
                   class="title"><strong>例11.32 暗号化用の <code
                       class="command">slapd</code> の設定</strong></p><div
                   class="example-contents"><pre
@@ -539,7 +539,7 @@ modifying entry "cn=config"</pre></div></div><div
                         class="title"><strong><span
                             class="emphasis"><em>TOOL</em></span> <code
                             class="command">ldapvi</code> で LDAP ディレクトリを編集する</strong></p></div></div></div><a
-                  id="idm140711210215632"
+                  id="idm139900946315600"
                   class="indexterm"></a><div
                   class="para">
 						<code
@@ -556,10 +556,10 @@ modifying entry "cn=config"</pre></div></div><div
                 class="para">
 						暗号化を有効化するための最後の作業が <code
                   class="filename">/etc/default/slapd</code> ファイル内の <code
-                  class="varname">SLAPD_SERVICES</code> 変数を変更することです。我々は大事を取って、安全対策されていない LDAP を無効化します。
+                  class="varname">SLAPD_SERVICES</code> 変数を変更することです。われわれは慎重を期して、安全対策されていない LDAP を無効化します。
 					</div><div
                 class="example"><a
-                  id="idm140711210210336"></a><p
+                  id="idm139900946310288"></a><p
                   class="title"><strong>例11.33 <code
                       class="filename">/etc/default/slapd</code> ファイル</strong></p><div
                   class="example-contents"><pre
@@ -612,7 +612,7 @@ SLAPD_OPTIONS=""</pre></div></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140711210207008"></a>11.7.3.3.2. クライアントの設定</h5></div></div></div><div
+                        id="idm139900946306960"></a>11.7.3.3.2. クライアントの設定</h5></div></div></div><div
                 class="para">
 						クライアント側で、<span
                   class="emphasis"><em>libpam-ldap</em></span> と <span
@@ -636,11 +636,11 @@ Adding debian:falcot.pem
 done.
 done.</pre><div
                 class="para">
-						最後に大事なことですが、様々なコマンドラインツールで使われるデフォルトの LDAP URI とデフォルトの DN は <code
+						最後に重要なことですが、さまざまなコマンドラインツールで使われるデフォルトの LDAP URI とデフォルトの DN は <code
                   class="filename">/etc/ldap/ldap.conf</code> を編集すれば変更することが可能です。こうすることで、タイプする量を激減させることが可能です。
 					</div><div
                 class="example"><a
-                  id="idm140711210200256"></a><p
+                  id="idm139900946300208"></a><p
                   class="title"><strong>例11.34 <code
                       class="filename">/etc/ldap/ldap.conf</code> ファイル</strong></p><div
                   class="example-contents"><pre
@@ -661,7 +661,7 @@ URI    ldaps://ldap.falcot.com
 # TLS certificates (needed for GnuTLS)
 TLS_CACERT      /etc/ssl/certs/ca-certificates.crt</pre></div></div><div
                 class="para">
-						この章では、利用可能なサーバソフトウェアの内のほんの僅かなソフトウェアだけに注目しました; しかしながら、ほとんどの一般的なネットワークサービスについて言及しました。今や、より技術的な章に入る準備が整ったと言えます: 一部の概念に関してより詳細を解説し、大規模な配備と仮想化について説明します。
+						この章では、利用できるサーバソフトウェアの内のほんのわずかなソフトウェアだけに注目しました; しかしながら、ほとんどの一般的なネットワークサービスについて言及しました。今や、より技術的な章に入る準備が整ったと言えます: 一部の概念に関してより詳細を解説し、大規模な配備と仮想化について説明します。
 					</div></div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

@@ -70,17 +70,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.nfs-file-server"></a>11.4. NFS ファイルサーバ</h2></div></div></div><div
           class="para">
 			NFS (<span
-            class="emphasis"><em>Network File System</em></span>) はネットワークを介したファイルシステムへのリモートアクセスを司るプロトコルです。すべての Unix システムは NFS プロトコルを取り扱うことが可能です; Windows システムを参加させる場合、代わりに Samba を使わなければいけません。
+            class="emphasis"><em>Network File System</em></span>) はネットワークを介したファイルシステムへのリモートアクセスをつかさどるプロトコルです。すべての Unix システムは NFS プロトコルを取り扱うことが可能です; Windows システムを参加させる場合、代わりに Samba を使わなければいけません。
 		</div><a
-          id="idm140711219578176"
+          id="idm139900950869616"
           class="indexterm"></a><a
-          id="idm140711219577216"
+          id="idm139900950868656"
           class="indexterm"></a><a
-          id="idm140711219575456"
+          id="idm139900950866896"
           class="indexterm"></a><a
-          id="idm140711219574048"
+          id="idm139900950865488"
           class="indexterm"></a><a
-          id="idm140711219572608"
+          id="idm139900950864048"
           class="indexterm"></a><div
           class="para">
 			NFS はとても便利なツールですが、特にセキュリティ問題を気にする場合、NFS の欠点に注意しなければいけません; ネットワークを通過するすべてのデータは平文です (<span
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><strong><span
                       class="emphasis"><em>DOCUMENTATION</em></span> NFS HOWTO</strong></p></div></div></div><div
             class="para">
-			NFS HOWTO は比較的古い文書ですが、性能の最適化方法などの興味深い情報に満ち溢れています。さらに SSH トンネルを使って NFS を安全に使う方法を説明しています; しかしながら、SSH トンネルを使う場合 <code
+			NFS HOWTO は比較的古い文書ですが、性能の最適化方法などの興味深い情報をたくさん載せています。さらに SSH トンネルを使って NFS を安全に使う方法を説明しています; しかしながら、SSH トンネルを使う場合 <code
               class="command">lockd</code> を使えなくなります。<div
               class="url">→ <a
                 href="http://nfs.sourceforge.net/nfs-howto/">http://nfs.sourceforge.net/nfs-howto/</a></div>
@@ -99,11 +99,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711219565984"></a>11.4.1. 安全な NFS</h3></div></div></div><a
-            id="idm140711219565184"
+                    id="idm139900950857408"></a>11.4.1. 安全な NFS</h3></div></div></div><a
+            id="idm139900950856608"
             class="indexterm"></a><div
             class="para">
-				NFS はネットワークから受け取った情報を信用するため、NFS の利用を許可されたマシンだけが種々の要求された RPC サーバに接続できるように制限することが不可欠です。ファイヤーウォールは外部のマシンが内部のマシンの如く振る舞うことを避けるために <span
+				NFS はネットワークから受け取った情報を信用するため、NFS の利用を許可されたマシンだけが種々の要求された RPC サーバに接続できるように制限することが不可欠です。ファイアウォールは外部のマシンが内部のマシンのように振る舞うことを避けるために <span
               class="emphasis"><em>IP なりすまし</em></span>をブロックし、NFS 共有にアクセスするように意図されたマシンだけが適切なポートにアクセスするように制限しなければいけません。
 			</div><div
             class="sidebar"><div
@@ -114,9 +114,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				RPC (<span
                 class="emphasis"><em>Remote Procedure Call</em></span>) はリモートサービスに関する Unix 標準です。NFS は RPC サービスの 1 つです。
 			</div><a
-              id="idm140711219560096"
+              id="idm139900950851520"
               class="indexterm"></a><a
-              id="idm140711219559136"
+              id="idm139900950850560"
               class="indexterm"></a><div
               class="para">
 				ディレクトリに登録する RPC サービスは <span
@@ -130,13 +130,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">lockd</code> などの別の RPC サービスを必要とする場合があります。しかしながら、これらの RPC サービスはデフォルトで (<span
               class="emphasis"><em>portmapper</em></span> の割り当てた) ランダムなポートを使うため、対象のサービスに関するトラフィックをフィルタすることが難しくなります。Falcot Corp 管理者はこの問題に対する次善策を見つけました。以下のようなものです。
 			</div><a
-            id="idm140711219553200"
+            id="idm139900950844624"
             class="indexterm"></a><a
-            id="idm140711219552080"
+            id="idm139900950843504"
             class="indexterm"></a><a
-            id="idm140711219550960"
+            id="idm139900950842384"
             class="indexterm"></a><a
-            id="idm140711219549840"
+            id="idm139900950841264"
             class="indexterm"></a><div
             class="para">
 				上で挙げた <code
@@ -147,16 +147,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/etc/default/nfs-kernel-server</code> と <code
               class="filename">/etc/default/nfs-common</code> を編集します。
 			</div><a
-            id="idm140711219545296"
+            id="idm139900950836720"
             class="indexterm"></a><a
-            id="idm140711219544176"
+            id="idm139900950835600"
             class="indexterm"></a><a
-            id="idm140711219543088"
+            id="idm139900950834512"
             class="indexterm"></a><a
-            id="idm140711219541968"
+            id="idm139900946623616"
             class="indexterm"></a><div
             class="example"><a
-              id="idm140711210524048"></a><p
+              id="idm139900946622720"></a><p
               class="title"><strong>例11.23 <code
                   class="filename">/etc/default/nfs-kernel-server</code> ファイル</strong></p><div
               class="example-contents"><pre
@@ -181,7 +181,7 @@ NEED_SVCGSSD=
 # Options for rpc.svcgssd.
 RPCSVCGSSDOPTS=</pre></div></div><div
             class="example"><a
-              id="idm140711210521984"></a><p
+              id="idm139900946620656"></a><p
               class="title"><strong>例11.24 <code
                   class="filename">/etc/default/nfs-common</code> ファイル</strong></p><div
               class="example-contents"><pre
@@ -219,32 +219,32 @@ NEED_GSSD=</pre></div></div><div
               class="filename">/etc/modprobe.d/lockd</code> ファイルが必要です:
 			</div><div
             class="example"><a
-              id="idm140711210515760"></a><p
+              id="idm139900946614432"></a><p
               class="title"><strong>例11.25 <code
                   class="filename">/etc/modprobe.d/lockd</code> ファイル</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 options lockd nlm_udpport=2045 nlm_tcpport=2045</pre></div></div><div
             class="para">
-				これらのパラメータを設定したら、ポート番号 111 番および 2045 番から 2049 番まで (UDP と TCP の両方) を使うアクセスをフィルタすることにより、きめ細かな設定をファイヤーウォールに適用し、NFS サービスへのアクセスを簡単に制御することが可能になります。
+				これらのパラメータを設定したら、ポート番号 111 番および 2045 番から 2049 番まで (UDP と TCP の両方) を使うアクセスをフィルタすることにより、きめ細かな設定をファイアウォールに適用し、NFS サービスへのアクセスを簡単に制御することが可能になります。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711210513456"></a>11.4.2. NFS サーバ</h3></div></div></div><div
+                    id="idm139900946612144"></a>11.4.2. NFS サーバ</h3></div></div></div><div
             class="para">
 				NFS サーバは Linux カーネルの一部です; Debian の提供するカーネルでは、NFS サーバをカーネルモジュールとしてビルドしています。NFS サーバを起動時に自動的に実行するには、<span
               class="pkg pkg">nfs-kernel-server</span> パッケージをインストールしてください; このパッケージには、対応する起動スクリプトが含まれます。
 			</div><div
             class="para">
 				NFS サーバ設定ファイル <code
-              class="filename">/etc/exports</code> には、ネットワークを介して利用可能にする (<span
-              class="emphasis"><em>エクスポートされる</em></span>) ディレクトリをリストします。各 NFS 共有について、リストされたマシンだけがアクセスを許可されます。よりきめ細かなアクセス制御をするには、幾つかのオプションを使います。<code
+              class="filename">/etc/exports</code> には、ネットワークを介して利用できるようにする (<span
+              class="emphasis"><em>エクスポートされる</em></span>) ディレクトリをリストします。各 NFS 共有について、リストされたマシンだけがアクセスを許可されます。よりきめ細かなアクセス制御を行うには、いくつかのオプションを使います。<code
               class="filename">/etc/exports</code> ファイルの構文はとても単純です:
 			</div><a
-            id="idm140711210509600"
+            id="idm139900946608272"
             class="indexterm"></a><a
-            id="idm140711210508704"
+            id="idm139900946607376"
             class="indexterm"></a><pre
             class="programlisting">
 /directory/to/share machine1(option1,option2,...) machine2(...) ...</pre><div
@@ -256,12 +256,12 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045</pre></div></div><div
 			</div><div
             class="para">
 				ディレクトリはデフォルトで (または <code
-              class="literal">ro</code> オプションを使えば) 読み込み専用として利用可能にされます。<code
+              class="literal">ro</code> オプションを使えば) 読み込み専用として利用できるようにされます。<code
               class="literal">rw</code> オプションを使えば読み書きアクセスが許可されます。典型的に NFS クライアントは root だけが使えるポート (言い換えれば、1024 番よりも低い番号のポート) から接続します; この制限をなくすには、<code
               class="literal">insecure</code> オプションを使います (<code
               class="literal">secure</code> オプションは暗黙的に有効化されていますが、明示する必要があればオプションを明示することも可能です)。
 			</div><a
-            id="idm140711210503344"
+            id="idm139900946601904"
             class="indexterm"></a><div
             class="para">
 				デフォルトの状態では、サーバが NFS 問い合わせに応答するのは、現在のディスク操作が完了した (<code
@@ -281,7 +281,7 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045</pre></div></div><div
               class="literal">nogroup</code> グループに対応します) の代わりに使う別の偽ユーザを指定することが可能です。
 			</div><div
             class="para">
-				他のオプションも利用可能です; オプションは <span
+				他のオプションも利用できます; オプションは <span
               class="citerefentry"><span
                 class="refentrytitle">exports</span>(5)</span> マニュアルページで説明されています。
 			</div><div
@@ -302,18 +302,18 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045</pre></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140711210490944"></a>11.4.3. NFS クライアント</h3></div></div></div><a
-            id="idm140711210490304"
+                    id="idm139900946589504"></a>11.4.3. NFS クライアント</h3></div></div></div><a
+            id="idm139900946588864"
             class="indexterm"></a><a
-            id="idm140711210489152"
+            id="idm139900946587712"
             class="indexterm"></a><div
             class="para">
 				他のファイルシステムと同様、NFS 共有をシステムの階層構造に統合するにはマウント作業が必要です。NFS 共有ファイルシステムは特殊なので、<code
               class="command">mount</code> コマンドと <code
-              class="filename">/etc/fstab</code> ファイルに幾つかの調整を行うパラメータを含める必要があります。
+              class="filename">/etc/fstab</code> ファイルにいくつかの調整を行うパラメータを含める必要があります。
 			</div><div
             class="example"><a
-              id="idm140711210486528"></a><p
+              id="idm139900946585088"></a><p
               class="title"><strong>例11.26 <code
                   class="command">mount</code> コマンドを用いた手作業によるマウント</strong></p><div
               class="example-contents"><pre
@@ -322,7 +322,7 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045</pre></div></div><div
                   class="computeroutput"># </code><strong
                   class="userinput"><code>mount -t nfs -o rw,nosuid arrakis.internal.falcot.com:/srv/shared /shared</code></strong></pre></div></div><div
             class="example"><a
-              id="idm140711210484608"></a><p
+              id="idm139900946583168"></a><p
               class="title"><strong>例11.27 <code
                   class="filename">/etc/fstab</code> ファイルの NFS エントリ</strong></p><div
               class="example-contents"><pre
