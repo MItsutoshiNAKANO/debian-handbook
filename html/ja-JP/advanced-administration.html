@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.virtualization.html#sect.lxc">12.2.2. LXC</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.virtualization.html#idm139900950469984">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
+                      href="sect.virtualization.html#idm140170051460256">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.automated-installation.html">12.3. 自動インストール</a></span></dt><dd><dl><dt><span
                     class="section"><a
@@ -142,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       id="sect.raid-soft"></a>12.1.1. ソフトウェア RAID</h3></div></div></div><div
               class="para">
 				RAID <a
-                id="idm139900956962320"
+                id="idm140170067348272"
                 class="indexterm"></a> は <span
                 class="emphasis"><em>Redundant Array of Independent Disks</em></span> を意味します。このシステムの目標はハードディスク障害の際にデータ損失を防ぐことです。一般的な原則は極めて単純です: データは設定可能な冗長性のレベルに基づいて 1 つではなく複数のディスクに保存されます。冗長性の量に依存して、たとえ予想外のディスク障害が起きた場合でも、データを残りのディスクから損失なく再構成することが可能です。
 			</div><div
@@ -270,7 +270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					RAID ボリュームを設定するには <span
                   class="pkg pkg">mdadm</span> <a
-                  id="idm139900951628400"
+                  id="idm140170053779456"
                   class="indexterm"></a> パッケージが必要です; <span
                   class="pkg pkg">mdadm</span> パッケージには、RAID アレイを作成したり操作するための <code
                   class="command">mdadm</code> コマンド、システムの他の部分に RAID アレイを統合するためのスクリプトやツール、監視システム、が含まれます。
@@ -678,7 +678,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                       id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><div
               class="para">
 				<a
-                id="idm139900947684336"
+                id="idm140170048558816"
                 class="indexterm"></a> LVM、<span
                 class="emphasis"><em>Logical Volume Manager</em></span>、は物理ディスクから論理ボリュームを抽象化する別のアプローチで、信頼性を増加させるのではなく柔軟性を増加させることに注目しています。LVM を使うことで、アプリケーションから見る限り透過的に論理ボリュームを変更することが可能です; たとえば LVM は、新しいディスクを追加し、データを新しいディスクに移行し、古いディスクを削除することが、ボリュームをアンマウントせずに可能です。
 			</div><div
@@ -1148,9 +1148,9 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                         class="title"><strong><span
                             class="emphasis"><em>GOING FURTHER</em></span> 上級の LVM</strong></p></div></div></div><div
                   class="para">
-					また、LVM にはさらに上級の使い方があり、多くの設定事項を手作業で指定することが可能です。たとえば、管理者は物理および論理ボリュームを形作るブロックサイズおよびボリュームの物理的な配置を微調整することが可能です。また、ブロックを PV 間で移動することも可能です。これは、たとえば性能を微調整したり、よりありふれたケースでは (別の VG に移動したり、完全に LVM から取り外すために) 対応する物理ボリュームを VG から取り外したい PV を空にする目的で行われます。コマンドを説明しているマニュアルページは基本的に明快で詳細です。取っ掛かりとしては <span
+					また、LVM にはさらに上級の使い方があり、多くの設定事項を手作業で指定することが可能です。たとえば、管理者は物理および論理ボリュームを形作るブロックサイズおよびボリュームの物理的な配置を微調整することが可能です。また、ブロックを PV 間で移動することも可能です。これは、たとえば性能を微調整したり、よりありふれたケースでは (別の VG に移動したり、完全に LVM から取り外すために) 対応する物理ボリュームを VG から取り外したい PV を空にする目的で行われます。コマンドを説明しているマニュアルページは基本的に明快で詳細です。手始めに、<span
                     class="citerefentry"><span
-                      class="refentrytitle">lvm</span>(8)</span> マニュアルページが適しています。
+                      class="refentrytitle">lvm</span>(8)</span> マニュアルページを参照することをお勧めします。
 				</div></div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
@@ -1160,7 +1160,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
 				RAID と LVM はどちらも、用途が変わらない 1 台のハードディスクを備えたデスクトップコンピュータの単純なケースではすぐに、疑う余地のない利点をもたらします。しかしながら、RAID と LVM は目標を分岐させて別々の道を歩んでいます。どちらを使うべきか悩むのは間違っていることではありません。最も適切な答えは、もちろん現在の要求と将来に予測される要求に依存します。
 			</div><div
               class="para">
-				いくつかの状況では、疑問の余地がないくらい簡単に答えを出すことが可能です。ハードウェア障害からデータを保護すことが求められる場合、ディスクの冗長性アレイ上に RAID をセットアップするのは明らかです。なぜなら LVM はこの種の問題に全く対処しないからです。逆に、柔軟なストレージ計画が必要でディスクの物理的な配置に依存せずにボリュームを構成したい場合、RAID はあまり役に立たず LVM はを選ぶのが自然です。
+				いくつかの状況では、疑問の余地がないくらい簡単に答えを出すことが可能です。ハードウェア障害からデータを保護することが求められる場合、ディスクの冗長性アレイ上に RAID をセットアップするのは明らかです。なぜなら LVM はこの種の問題に全く対処しないからです。逆に、柔軟なストレージ計画が必要でディスクの物理的な配置に依存せずにボリュームを構成したい場合、RAID はあまり役に立たず LVM を選ぶのが自然です。
 			</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -1168,7 +1168,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                           class="emphasis"><em>NOTE</em></span> 性能を重要視する場合…</strong></p></div></div></div><div
                 class="para">
 				入出力速度が最重要の場合、特にアクセス速度という意味で、LVM および RAID を組み合わせて使うと性能に少なからず影響を与え、どの方式を採用するか関する議論に影響を与えます。しかしながら、性能差は極めて少なく、この程度の性能差が無視できない場合は極めて少ないといえるでしょう。性能が重要な場合、実現可能で最良の改善方針は非回転ストレージメディア (<a
-                  id="idm139900950720336"
+                  id="idm140170051705888"
                   class="indexterm"></a><span
                   class="emphasis"><em>ソリッドステートドライブ</em></span> や SSD) を使うことです; SSD のメガバイト当たりの費用は標準的なハードディスクドライブよりも高価で、SSD の容量は通常小さいですが、SSD はランダムアクセスで素晴らしい性能を発揮します。ファイルシステムに広く分散された位置から数多くの入出力を行うような場合、たとえば複雑な問い合わせが定期的に実行されるデータベースの場合、SSD 上にデータベースを置くことは、RAID over LVM または LVM over RAID 上にデータベースを置くことよりも、良好な性能が手に入ります。このような場合、純粋な速度だけでなく他の要素も検討した上で採用の可否を決定するべきです。なぜなら、性能が必要な場合、SSD を採用することが最も短絡的な解決策だからです。
 			</div></div><div
@@ -1266,7 +1266,7 @@ Disk identifier: 0x00039a9f
                           class="emphasis"><em>NOTE</em></span> なぜ 3 種類の RAID-1 ボリュームが必要なのでしょうか?</strong></p></div></div></div><div
                 class="para">
 				<code
-                  class="filename">vg_raid</code> 用の物理ボリュームとして提供される RAID-1 ボリュームを 1 つだけセットアップすることも可能でした。にも関わらず、なぜ 3 種類の RAID-1 ボリュームを作成したのでしょうか?
+                  class="filename">vg_raid</code> 用の物理ボリュームとして提供される RAID-1 ボリュームを 1 つだけセットアップすることも可能でした。それにも関わらず、なぜ 3 種類の RAID-1 ボリュームを作成したのでしょうか?
 			</div><div
                 class="para">
 				最初の分割 (<code
