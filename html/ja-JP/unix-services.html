@@ -122,22 +122,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="sect.backup.html">9.10. バックアップ</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm140170052428448">9.10.1. <code
+                      href="sect.backup.html#idm140535289735568">9.10.1. <code
                         class="command">rsync</code> を使ったバックアップ</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm140170052379680">9.10.2. バックアップなしのマシンの復元</a></span></dt></dl></dd><dt><span
+                      href="sect.backup.html#idm140535289693936">9.10.2. バックアップなしのマシンの復元</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.hotplug.html">9.11. ホットプラグ機能: <span
                     class="emphasis"><em>hotplug</em></span></a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140170052358400">9.11.1. はじめに</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm140535289675984">9.11.1. はじめに</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140170052347392">9.11.2. 命名問題</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm140535289666864">9.11.2. 命名問題</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140170052331040">9.11.3. <span
+                      href="sect.hotplug.html#idm140535289652464">9.11.3. <span
                         class="emphasis"><em>udev</em></span> の動作原理</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140170052268752">9.11.4. 具体例</a></span></dt></dl></dd><dt><span
+                      href="sect.hotplug.html#idm140535289600640">9.11.4. 具体例</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.power-management.html">9.12. 電源管理: Advanced Configuration and Power Interface (ACPI)</a></span></dt></dl></div><div
           class="highlights"><div
@@ -148,15 +148,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.system-boot"></a>9.1. システム起動</h2></div></div></div><a
-            id="idm140170057115520"
+            id="idm140535299235376"
             class="indexterm"></a><div
             class="para">
 			コンピュータを起動する際、コンソール画面にスクロールされる多くのメッセージには、実行されている多くの自動初期化と自動設定に関する情報が表示されます。この段階の挙動を少し変えたいと思うことがあるかもしれません。これは起動処理をよく理解する必要があることを意味しています。これがこの節の目的です。
 		</div><div
             class="para">
 			最初に BIOS がコンピュータを制御し、ディスクを検出し、<span
-              class="emphasis"><em>Master Boot Record</em></span> を読み込み、ブートローダを実行します。以降、ブートローダが引き継ぎ、ディスクからカーネルを見つけ、カーネルを読み込んで実行します。そして、カーネルが初期化され、root ファイルシステムを含むパーティションの検索とマウントを開始し、最後に最初のプログラム - <code
-              class="command">init</code> - を実行します。実際には、「root パーティション」と <code
+              class="emphasis"><em>Master Boot Record</em></span> を読み込み、ブートローダを実行します。以降、ブートローダが引き継ぎ、ディスクからカーネルを見つけ、カーネルを読み込んで実行します。そして、カーネルが初期化され、root ファイルシステムを含むパーティションの検索とマウントを開始し、最後に最初のプログラム — <code
+              class="command">init</code> — を実行します。実際には、「root パーティション」と <code
               class="command">init</code> は RAM の中にだけ存在する仮想ファイルシステム (そのためこの名前は「initramfs」、以前は「初期化 RAM ディスク」という意味で「initrd」と呼ばれていました) 上に置かれていることが多いです。多くの場合、このファイルシステムはハードドライブのファイルかネットワークから、ブートローダによってメモリに読み込まれます。このファイルシステムには、カーネルが「真の」root ファイルシステムを読み込むために必要な最低限の要素が含まれています: ハードドライブやそれなしではシステムが起動できないその他のデバイスのドライバモジュール、より頻繁にあるのが、RAID アレイを組み立て、暗号化されたパーティションを開き、LVM ボリュームを有効化するなどの初期化スクリプトとモジュールです。一度 root パーティションがマウントされたら、initramfs は制御を真の init に渡し、マシンは標準的な起動処理に戻ります。
 		</div><div
             class="figure"><a
@@ -237,7 +237,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> プロセス、プログラムインスタンス</strong></p></div></div></div><a
-                id="idm140170048801312"
+                id="idm140535307421360"
                 class="indexterm"></a><div
                 class="para">
 				プロセスとは、実行中のプログラムのメモリ内表現です。プロセスには、ソフトウェアを適切に実行するために必要なすべての情報が含まれます (ソフトウェアのコードだけでなく、ソフトウェアが所有するメモリ内のデータ、ソフトウェアが開いたファイルのリスト、ソフトウェアが確立したネットワーク接続など)。単独のプログラムは複数のプロセスにインスタンス化されるかもしれませんし、異なるユーザ ID の下で実行される必要はありません。
@@ -253,7 +253,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/lib/systemd/systemd</code> へのシンボリックリンクです)。しかしながら、カーネルに <code
                   class="literal">init</code> オプションを渡して別のプログラムを開始することも可能です。
 			</div><a
-                id="idm140170048795776"
+                id="idm140535307415824"
                 class="indexterm"></a><div
                 class="para">
 				コンピュータに触ることができる人は誰でも、<span
@@ -433,7 +433,7 @@ Alias=sshd.service</pre><div
            └─1222 /usr/sbin/sshd -D
 # </code></pre><div
               class="para">
-				サービスの状態が失敗状態であることを確認した後、ログの確認作業に進みました; ログは設定ファイル内にエラーがあることを示しています。設定ファイルを編集してエラーを修正した後、SSH サービスを再起動し、SSH サービスが本当に動いていることを確認します。
+				SSH サービスの状態が失敗状態であることを確認した後、ログの確認作業に進みました; ログは設定ファイル内にエラーがあることを示しています。設定ファイルを編集してエラーを修正した後、SSH サービスを再起動し、SSH サービスが本当に動いていることを確認します。
 			</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -468,13 +468,13 @@ Alias=sshd.service</pre><div
                 class="emphasis"><em>sysinit</em></span> 段階に相当します) は <code
                 class="command">/etc/init.d/rcS</code> で、これは <code
                 class="filename">/etc/rcS.d/</code> ディレクトリに含まれるすべてのプログラムを起動するスクリプトです。<a
-                id="idm140170054480864"
+                id="idm140535309019184"
                 class="indexterm"></a> <a
-                id="idm140170054480064"
+                id="idm140535309018384"
                 class="indexterm"></a> <a
-                id="idm140170054479264"
+                id="idm140535309017584"
                 class="indexterm"></a> <a
-                id="idm140170054478464"
+                id="idm140535309016784"
                 class="indexterm"></a>
 			</div><div
               class="para">
@@ -511,7 +511,7 @@ Alias=sshd.service</pre><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> カーネルモジュールとオプション</strong></p></div></div></div><a
-                id="idm140170054469232"
+                id="idm140535309007552"
                 class="indexterm"></a><div
                 class="para">
 				カーネルモジュールにオプションを指定するには、<code
@@ -527,9 +527,9 @@ Alias=sshd.service</pre><div
                   class="command">modprobe</code> は <span
                   class="pkg pkg">kmod</span> パッケージによって提供されます。
 			</div><a
-                id="idm140170054462640"
+                id="idm140535309000960"
                 class="indexterm"></a><a
-                id="idm140170054461520"
+                id="idm140535308999840"
                 class="indexterm"></a></div><div
               class="para">
 				この段階の後、<code
@@ -546,9 +546,9 @@ Alias=sshd.service</pre><div
               class="para">
 				この依存関係に基づく起動システムのおかげで、自動的な起動順の再定義が可能になります。これは手作業でやるにはちょっと退屈な作業で、人的ミスの危険性があります。なぜなら、起動順は宣言された依存関係に従って定義されるからです。別の利益として、他のサービスに依存しないサービスは並列して開始できるという点があります。このことにより、起動処理を加速できます。
 			</div><a
-              id="idm140170054453104"
+              id="idm140535308991424"
               class="indexterm"></a><a
-              id="idm140170054452144"
+              id="idm140535308990464"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -595,14 +595,14 @@ Alias=sshd.service</pre><div
                     src="images/startup-sysvinit.png"
                     alt="System V init を使う Linux の動くコンピュータの起動シーケンス" /></div></div><p
                 class="title"><strong>図9.2 System V init を使う Linux の動くコンピュータの起動シーケンス</strong></p></div><a
-              id="idm140170054435648"
+              id="idm140535290598672"
               class="indexterm"></a><div
               class="para">
 				さまざまな <code
                 class="filename">/etc/rc<em
                   class="replaceable">X</em>.d</code> ディレクトリに含まれるすべてのスクリプトは <code
-                class="filename">/etc/init.d/</code> に格納されたスクリプトの実体を指すシンボリックリンク - パッケージのインストール時に <code
-                class="command">update-rc.d</code> プログラムによって作られます - に過ぎません。管理者は、調整したパラメータを与えて <code
+                class="filename">/etc/init.d/</code> に格納されたスクリプトの実体を指すシンボリックリンク — パッケージのインストール時に <code
+                class="command">update-rc.d</code> プログラムによって作られます — に過ぎません。管理者は、調整したパラメータを与えて <code
                 class="command">update-rc.d</code> を再実行して、各ランレベルで利用できるサービスを微調整することが可能です。<code
                 class="command">update-rc.d</code> の構文は <span
                 class="citerefentry"><span
@@ -613,23 +613,23 @@ Alias=sshd.service</pre><div
                 class="command">rcconf</code> を使いたいと思うかもしれません。<code
                 class="command">rcconf</code> はよりユーザにとって使い勝手の良いインターフェースを提供します。
 			</div><a
-              id="idm140170054426880"
+              id="idm140535290589904"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>DEBIAN POLICY</em></span> サービスの再起動</strong></p></div></div></div><a
-                id="idm140170054424672"
+                id="idm140535290587696"
                 class="indexterm"></a><a
-                id="idm140170054423552"
+                id="idm140535290586576"
                 class="indexterm"></a><a
-                id="idm140170054422112"
+                id="idm140535290585136"
                 class="indexterm"></a><div
                 class="para">
-				Debian のメンテナスクリプトは、サービスを利用できるようにするためか、特定のオプションを考慮するために、特定のサービスを再起動することがあります。サービスを操作するコマンド - <code
+				Debian のメンテナスクリプトは、サービスを利用できるようにするためか、特定のオプションを考慮するために、特定のサービスを再起動することがあります。サービスを操作するコマンド — <code
                   class="command">/etc/init.d/<em
                     class="replaceable">service</em> <em
-                    class="replaceable">operation</em></code> - はランレベルを考慮しません。サービスが現在使用中であると (間違って) 仮定し、間違った操作 (故意に停止されたサービスの開始や既に停止されたサービスの停止など) を開始するかもしれません。このため Debian は <code
+                    class="replaceable">operation</em></code> — はランレベルを考慮しません。サービスが現在使用中であると (間違って) 仮定し、間違った操作 (故意に停止されたサービスの開始や既に停止されたサービスの停止など) を開始するかもしれません。このため Debian は <code
                   class="command">invoke-rc.d</code> プログラムを導入しました: メンテナスクリプト内でサービス初期化スクリプトを実行する場合は、必ずこのプログラムを使わなければいけません。このプログラムは必要なコマンドを実行するだけです。通常の使い方と異なり、ディレクトリではなくプログラム名に <code
                   class="filename">.d</code> サフィックスが使われている点に注意してください。
 			</div></div><div
@@ -640,7 +640,7 @@ Alias=sshd.service</pre><div
                 class="command">login <em
                   class="replaceable">user</em></code> を実行します。
 			</div><a
-              id="idm140170054415120"
+              id="idm140535290578144"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p

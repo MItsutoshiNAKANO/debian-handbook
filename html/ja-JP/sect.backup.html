@@ -71,9 +71,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			バックアップを取ることは管理者の主要な責任の 1 つです。しかし、これは通常極めるのが難しい強力なツールを使う複雑な問題です。
 		</div><a
-          id="idm140170052438048"
+          id="idm140535289743568"
           class="indexterm"></a><a
-          id="idm140170052437088"
+          id="idm140535289742800"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -82,11 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">BackupPC</code> などの多くのプログラムが存在します。これらはクライアント/サーバシステムに適した多くの選択肢で、設定はかなり難しいです。いくつかは難しさを和らげるためのユーザフレンドリーなウェブインターフェースを提供しています。しかし Debian には、すべての考え得る使用事例に対応できる、他の数多くのバックアップソフトウェアが含まれています。ソフトウェアを確認するには <code
             class="command">apt-cache search backup</code> を使ってください。
 		</div><a
-          id="idm140170052433248"
+          id="idm140535289739568"
           class="indexterm"></a><a
-          id="idm140170052432128"
+          id="idm140535289738672"
           class="indexterm"></a><a
-          id="idm140170052431008"
+          id="idm140535289737776"
           class="indexterm"></a><div
           class="para">
 			これらのうちのいくつかを詳細に説明するのではなく、この節では、Falcot Corp 管理者がバックアップ戦略を定義する際にどのように考えたかを説明します。
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140170052428448"></a>9.10.1. <code
+                    id="idm140535289735568"></a>9.10.1. <code
                     class="command">rsync</code> を使ったバックアップ</h3></div></div></div><div
             class="para">
 				テープへのバックアップは遅くて費用がかかりすぎるとみなされ、データは専用サーバのハードドライブにバックアップされることになりました。専用サーバはソフトウェア RAID (<a
@@ -105,15 +105,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="advanced-administration.html#sect.raid-soft">「ソフトウェア RAID」</a>参照) を使ってデータをハードウェア障害から守っています。デスクトップコンピュータは個別にバックアップされませんが、ユーザは部署のファイルサーバの個人アカウントはバックアップされると忠告されています。毎日 <code
               class="command">rsync</code> コマンド (同名のパッケージに含まれます) を使って、異なるサーバにバックアップを行います。
 			</div><a
-            id="idm140170052425152"
+            id="idm140535289732688"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ハードリンク、ファイルの別名</strong></p></div></div></div><a
-              id="idm140170052422944"
+              id="idm140535289730896"
               class="indexterm"></a><a
-              id="idm140170052421504"
+              id="idm140535289729744"
               class="indexterm"></a><div
               class="para">
 				ハードリンクはシンボリックリンクと異なり、リンクされたファイルと区別できません。本質的に、ハードリンクの作成は既存のファイルに別名を与えることと同義です。そのため、ハードリンクの削除はそのファイルに関連する名前を削除するに過ぎません。他の名前がまだそのファイルに関連付けられている場合、データの実体ファイルシステムから削除されません。コピーと異なり、ハードリンクはハードドライブ上に追加的な領域を必要としない点について注意することは興味深いです。
@@ -133,11 +133,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">rsync</code> コマンドはバックアップの内容をハードリンクで複製します。このおかげで、ハードドライブ領域を無駄に消費することがなくなります。そして <code
               class="command">rsync</code> プロセスは最後のバックアップ以降に変更されたファイルだけを置き換えます。このメカニズムにより、多くのバックアップを少ない領域に保存することが可能です。すべてのバックアップは素早く利用可能でアクセス可能 (たとえば、ネットワーク共有されたディレクトリの中) なので、ある日付同士の違いを素早く比較できます。
 			</div><a
-            id="idm140170052413232"
+            id="idm140535289722560"
             class="indexterm"></a><a
-            id="idm140170052412304"
+            id="idm140535289721792"
             class="indexterm"></a><a
-            id="idm140170052410864"
+            id="idm140535289720640"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -240,7 +240,7 @@ exclude:
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140170052379680"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
+                    id="idm140535289693936"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
             class="para">
 				バックアップされていないデスクトップコンピュータに対しては <span
               class="emphasis"><em>Simple-CDD</em></span> でカスタマイズされた DVD-ROM からシステムを再インストールするのが簡単でしょう (<a
@@ -250,7 +250,7 @@ exclude:
               href="sect.graphical-desktops.html#sect.gnome-desktop">「GNOME」</a>参照) からです。
 			</div><div
             class="para">
-				Falcot Corp の管理者は自分たちのバックアップポリシーの限界を理解しています。バックアップサーバを、テープを耐火金庫に入れるかのように、保護することができないため、管理者はバックアップサーバを他のサーバと別の部屋に設置しました。そうすれば災害、たとえばサーバルームの火事、が起きてもその他すべてと一緒にバックアップも破壊されることを避けられるからです。さらに、管理者は 1 週間に 1 回 DVD-ROM に増分バックアップ - 最後のバックアップ以降に修正されたファイルだけのバックアップ - をとります。
+				Falcot Corp の管理者は自分たちのバックアップポリシーの限界を理解しています。バックアップサーバを、テープを耐火金庫に入れるかのように、保護することができないため、管理者はバックアップサーバを他のサーバと別の部屋に設置しました。そうすれば災害、たとえばサーバルームの火事、が起きてもその他すべてと一緒にバックアップも破壊されることを避けられるからです。さらに、管理者は 1 週間に 1 回 DVD-ROM に増分バックアップ — 最後のバックアップ以降に修正されたファイルだけのバックアップ — をとります。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -264,22 +264,22 @@ exclude:
                   class="replaceable">file_from_today</em></code> で生成されます。バイナリダンプから増分差分を作成するには <code
                 class="command">xdelta</code> プログラムを使ってください。
 			</div><a
-              id="idm140170052370208"
+              id="idm140535289685584"
               class="indexterm"></a><a
-              id="idm140170052369088"
+              id="idm140535289684688"
               class="indexterm"></a><a
-              id="idm140170052367968"
+              id="idm140535289683792"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="emphasis"><em>TAR</em></span>、テープバックアップ用の標準規格</strong></p></div></div></div><a
-              id="idm140170052365280"
+              id="idm140535289681616"
               class="indexterm"></a><a
-              id="idm140170052363840"
+              id="idm140535289680464"
               class="indexterm"></a><a
-              id="idm140170052362912"
+              id="idm140535289679696"
               class="indexterm"></a><div
               class="para">
 				歴史的に言って、Unix で最も簡単にバックアップを作成する手段は <span

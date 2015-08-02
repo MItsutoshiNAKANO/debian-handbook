@@ -72,15 +72,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			The Falcot Corp administrators decided to use the Apache HTTP server, included in Debian <span
             class="distribution distribution">Jessie</span> at version 2.4.10.
 		</div><a
-          id="idm140204191901872"
+          id="idm140009526413328"
           class="indexterm"></a><a
-          id="idm140204191900752"
+          id="idm140009526412208"
           class="indexterm"></a><a
-          id="idm140204191899312"
+          id="idm140009526410768"
           class="indexterm"></a><a
-          id="idm140204191898352"
+          id="idm140009526409808"
           class="indexterm"></a><a
-          id="idm140204191896912"
+          id="idm140009526408368"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -91,14 +91,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">nginx</span> e <span
               class="pkg pkg">lighttpd</span>, valem a pena serem investigadas.
 		</div><a
-            id="idm140204191891968"
+            id="idm140009526403424"
             class="indexterm"></a><a
-            id="idm140204191890544"
+            id="idm140009526402000"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140204191888960"></a>11.2.1. Instalação do Apache</h3></div></div></div><div
+                    id="idm140009526400416"></a>11.2.1. Instalação do Apache</h3></div></div></div><div
             class="para">
 				Por padrão, a instalação do pacote <span
               class="pkg pkg">apache2</span> faz com que a versão do <span
@@ -125,9 +125,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>SEGURANÇA</em></span> Execução sob o usuário <code
                         class="literal">www-data</code></strong></p></div></div></div><a
-              id="idm140204199099312"
+              id="idm140009535528864"
               class="indexterm"></a><a
-              id="idm140204199098192"
+              id="idm140009535527744"
               class="indexterm"></a><div
               class="para">
 				Por padrão, o Apache lida com as requisições de entrada sob a identidade de usuário <code
@@ -140,7 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="replaceable">user</em><em
                   class="replaceable">group</em></code> na configuração do Apache.
 			</div><a
-              id="idm140204199093824"
+              id="idm140009535523376"
               class="indexterm"></a><div
               class="para">
 				Another possibility is to use a dedicated MPM, such as the one provided by <span
@@ -174,9 +174,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>INDO ALÉM</em></span> Compatibilidade com SSL</strong></p></div></div></div><a
-              id="idm140204199081776"
+              id="idm140009535511328"
               class="indexterm"></a><a
-              id="idm140204199080816"
+              id="idm140009535510368"
               class="indexterm"></a><div
               class="para">
 				Apache 2.4 includes the SSL module required for secure HTTP (HTTPS) out of the box. It just needs to be enabled with <code
@@ -191,16 +191,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="url">→ <a
                   href="https://wiki.mozilla.org/Security/Server_Side_TLS#Apache">https://wiki.mozilla.org/Security/Server_Side_TLS#Apache</a></div>
 			</div><a
-              id="idm140204199074672"
+              id="idm140009535504224"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140204199073232"></a>11.2.2. Configuração de servidores virtuais</h3></div></div></div><div
+                    id="idm140009535502784"></a>11.2.2. Configuração de servidores virtuais</h3></div></div></div><div
             class="para">
 				Um servidor virtual é uma identidade adicional para o servidor web.
 			</div><a
-            id="idm140204199072016"
+            id="idm140009535501568"
             class="indexterm"></a><div
             class="para">
 				Apache considera dois tipos diferentes de hosts virtuais: aqueles que se baseiam no endereço IP (ou na porta) e aqueles que se baseiam no nome de domínio do servidor web. O primeiro método requer a alocação de um endereço IP diferente (ou porta) para cada site, enquanto o segundo pode funcionar em um único endereço IP (e porta), os sites são diferenciados pelo nome de máquina enviado pelo cliente HTTP (que só funciona na versão 1.1 do protocolo HTTP — Felizmente essa versão é antiga o bastante, e assim, é utilizada por todos os clientes).
@@ -225,7 +225,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>OLHADA RÁPIDA</em></span> Suporte Apache ao SNI</strong></p></div></div></div><a
-              id="idm140204199063984"
+              id="idm140009535493536"
               class="indexterm"></a><div
               class="para">
 				O servidor Apache suporta uma extensão do protocolo SSL chamada <span
@@ -247,7 +247,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">a2ensite www.falcot.org</code>.
 			</div><div
             class="example"><a
-              id="idm140204199057168"></a><p
+              id="idm140009535486720"></a><p
               class="title"><strong>Exemplo 11.16. o arquivo <code
                   class="filename">/etc/apache2/sites-available/www.falcot.org</code></strong></p><div
               class="example-contents"><pre
@@ -267,7 +267,7 @@ DocumentRoot /srv/www/www.falcot.org
               class="filename">/etc/apache2/sites-available/default</code>.
 			</div><div
             class="example"><a
-              id="idm140204199052160"></a><p
+              id="idm140009535481712"></a><p
               class="title"><strong>Exemplo 11.17. O arquivo <code
                   class="filename">/etc/apache2/conf.d/customlog</code></strong></p><div
               class="example-contents"><pre
@@ -281,13 +281,13 @@ CustomLog /var/log/apache2/access.log vhost
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140204199049760"></a>11.2.3. Diretivas comuns</h3></div></div></div><div
+                    id="idm140009535479312"></a>11.2.3. Diretivas comuns</h3></div></div></div><div
             class="para">
 				Essa seção revê, brevemente, algumas das diretivas comumente usadas na configuração do Apache.
 			</div><a
-            id="idm140204199048384"
+            id="idm140009535477936"
             class="indexterm"></a><a
-            id="idm140204199047424"
+            id="idm140009535476976"
             class="indexterm"></a><div
             class="para">
 				O principal arquivo de configuração inclui vários blocos <code
@@ -295,12 +295,12 @@ CustomLog /var/log/apache2/access.log vhost
               class="literal">Options</code> e <code
               class="literal">AllowOverride</code>.
 			</div><a
-            id="idm140204199044320"
+            id="idm140009535473872"
             class="indexterm"></a><a
-            id="idm140204199043040"
+            id="idm140009535472592"
             class="indexterm"></a><div
             class="example"><a
-              id="idm140204199041760"></a><p
+              id="idm140009535471312"></a><p
               class="title"><strong>Exemplo 11.18. Bloco Directory</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
@@ -314,7 +314,7 @@ DirectoryIndex index.php index.html index.htm
 				A diretiva <code
               class="literal">DirectoryIndex</code> contém uma lista de arquivos a serem experimentados quando uma requisição do cliente coincide com um diretório. O primeiro arquivo existente da lista é usado e enviado como resposta.
 			</div><a
-            id="idm140204199039072"
+            id="idm140009535468624"
             class="indexterm"></a><div
             class="para">
 				A diretiva <code
@@ -329,21 +329,21 @@ DirectoryIndex index.php index.html index.htm
                   class="para">
 						<code
                     class="literal">ExecCGI</code> indica que scripts CGI podem ser executados. <a
-                    id="idm140204199034032"
+                    id="idm140009535463584"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">FollowSymlinks</code> diz ao servidor que ligações simbólicas podem ser seguidas, e que a resposta deve conter o conteúdo do alvo de uma ligação como essa. <a
-                    id="idm140204199031504"
+                    id="idm140009535461056"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">SymlinksIfOwnerMatch</code> também diz ao servidor para seguir ligações simbólicas, mas apenas quando a ligação e seu alvo são do mesmo dono. <a
-                    id="idm140204199028992"
+                    id="idm140009535458544"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -352,7 +352,7 @@ DirectoryIndex index.php index.html index.htm
                     class="literal">Includes</code> habilita <span
                     class="emphasis"><em>Server Side Includes</em></span> (<span
                     class="emphasis"><em>SSI</em></span> para abreviar). Essas são diretivas embutidas nas páginas HTML e executadas em tempo de execução de cada requisição. <a
-                    id="idm140204199025520"
+                    id="idm140009535455072"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -360,14 +360,14 @@ DirectoryIndex index.php index.html index.htm
 						<code
                     class="literal">Indexes</code> diz ao servidor para listar o conteúdo de um diretório se a requisição HTTP enviada pelo cliente aponta para um diretório sem um arquivo index (ie, quando nenhum arquivo mencionado na diretiva <code
                     class="literal">DirectoryIndex</code> existe nesse diretório). <a
-                    id="idm140204199022496"
+                    id="idm140009535452048"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">MultiViews</code> habilita a negociação de conteúdo; isso pode ser usado pelo servidor para retornar uma página web que coincida com a língua preferida configurada no navegador. <a
-                    id="idm140204199019952"
+                    id="idm140009535449504"
                     class="indexterm"></a>
 					</div></li></ul></div><div
             class="para">
@@ -381,7 +381,7 @@ DirectoryIndex index.php index.html index.htm
 				O arquivo <code
                 class="filename">.htaccess</code> contém as diretivas de configuração do Apache que são aplicadas cada vez que uma requisição diz respeito a um elemento do diretório aonde ele é armazenado. O âmbito dessas diretivas também repercute para todos os subdiretórios dentro desse diretório.
 			</div><a
-              id="idm140204199015376"
+              id="idm140009535444928"
               class="indexterm"></a><div
               class="para">
 				A maioria das diretivas que podem ser definidas no bloco <code
@@ -395,19 +395,19 @@ DirectoryIndex index.php index.html index.htm
               class="literal">ExecCGI</code>, para que o administrador escolha quais usuários tem permissão para rodar programas sob a identidade do servidor web (o usuário <code
               class="literal">www-data</code>).
 			</div><a
-            id="idm140204199010192"
+            id="idm140009535439744"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140204199008912"></a>11.2.3.1. Autenticação obrigatória</h4></div></div></div><a
-              id="idm140204199008144"
+                      id="idm140009535438464"></a>11.2.3.1. Autenticação obrigatória</h4></div></div></div><a
+              id="idm140009535437696"
               class="indexterm"></a><div
               class="para">
 					Em algumas circunstâncias, o acesso a parte do site web precisa ser restrita, para que apenas usuários legítimos que fornecerem um nome de usuário e uma senha tenham acesso ao conteúdo.
 				</div><div
               class="example"><a
-                id="idm140204199006512"></a><p
+                id="idm140009535436064"></a><p
                 class="title"><strong>Exemplo 11.19. Arquivo <code
                     class="filename">.htaccess</code> para autenticação obrigatária</strong></p><div
                 class="example-contents"><pre
@@ -430,7 +430,7 @@ AuthUserFile /etc/apache2/authfiles/htpasswd-private
 					O arquivo <code
                 class="filename">/etc/apache2/authfiles/htpasswd-private</code> contém uma lista de usuários e senhas; ele é comumente manipulado com o comando <code
                 class="command">htpasswd</code>. Por exemplo, o seguinte comando é usado para adicionar um usuário ou alterar a senha: <a
-                id="idm140204199000112"
+                id="idm140009535429664"
                 class="indexterm"></a>
 				</div><pre
               class="screen">
@@ -447,18 +447,18 @@ Adding password for user <em
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140204198996576"></a>11.2.3.2. Restringindo Acesso</h4></div></div></div><a
-              id="idm140204198995776"
+                      id="idm140009535426128"></a>11.2.3.2. Restringindo Acesso</h4></div></div></div><a
+              id="idm140009535425328"
               class="indexterm"></a><div
               class="para">
 					The <code
                 class="literal">Require</code> directive controls access restrictions for a directory (and its subdirectories, recursively).
 				</div><a
-              id="idm140204198993808"
+              id="idm140009535423360"
               class="indexterm"></a><a
-              id="idm140204198992848"
+              id="idm140009535422400"
               class="indexterm"></a><a
-              id="idm140204198991888"
+              id="idm140009535421440"
               class="indexterm"></a><div
               class="para">
 					It can be used to restrict access based on many criteria; we will stop at describing access restriction based on the IP address of the client, but it can be made much more powerful than that, especially when several <code
@@ -466,7 +466,7 @@ Adding password for user <em
                 class="literal">RequireAll</code> block.
 				</div><div
               class="example"><a
-                id="idm140204198988992"></a><p
+                id="idm140009535418544"></a><p
                 class="title"><strong>Exemplo 11.20. Only allow from the local network</strong></p><div
                 class="example-contents"><pre
                   class="programlisting">Require ip 192.168.0.0/16
@@ -487,11 +487,11 @@ Adding password for user <em
                   class="literal">Allow from</code> e <code
                   class="literal">Deny from</code> controlam as restrições de acesso em um diretório (e seus sub-diretórios, recursivamente).
 				</div><a
-                id="idm140204198981792"
+                id="idm140009535411344"
                 class="indexterm"></a><a
-                id="idm140204198980512"
+                id="idm140009535410064"
                 class="indexterm"></a><a
-                id="idm140204198979232"
+                id="idm140009535408784"
                 class="indexterm"></a><div
                 class="para">
 					A diretiva <code
@@ -515,7 +515,7 @@ Adding password for user <em
                   class="literal">all</code>, designando todos.
 				</div><div
                 class="example"><a
-                  id="idm140204198970064"></a><p
+                  id="idm140009535399616"></a><p
                   class="title"><strong>Exemplo 11.21. Rejeita por padrão mas permite da rede local</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">
@@ -526,7 +526,7 @@ Deny from all
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140204198968128"></a>11.2.4. Analisadores de Log</h3></div></div></div><div
+                    id="idm140009535397680"></a>11.2.4. Analisadores de Log</h3></div></div></div><div
             class="para">
 				Um analisador de log é frequentemente instalado em um servidor web; já que o primeiro fornece aos administradores uma ideia precisa do padrão de uso do último.
 			</div><div
@@ -535,13 +535,13 @@ Deny from all
               class="emphasis"><em>AWStats</em></span> (<span
               class="emphasis"><em>Advanced Web Statistics</em></span>) para analisar seus arquivos de log do Apache.
 			</div><a
-            id="idm140204198965312"
+            id="idm140009535394864"
             class="indexterm"></a><a
-            id="idm140204198964192"
+            id="idm140009535393744"
             class="indexterm"></a><a
-            id="idm140204198963264"
+            id="idm140009535392816"
             class="indexterm"></a><a
-            id="idm140204198961856"
+            id="idm140009535391408"
             class="indexterm"></a><div
             class="para">
 				O primeiro passo de configuração é a customização do arquivo <code
@@ -580,7 +580,7 @@ LoadPlugin="tooltips"
               class="filename">/etc/awstats/awstats.www.falcot.org.conf</code>.
 			</div><div
             class="example"><a
-              id="idm140204198951520"></a><p
+              id="idm140009535381072"></a><p
               class="title"><strong>Exemplo 11.22. Arquivo de configuração dO AWStats para um servidor virtual</strong></p><div
               class="example-contents"><pre
                 class="programlisting">

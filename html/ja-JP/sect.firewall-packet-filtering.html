@@ -68,17 +68,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. ファイアウォールとパケットフィルタリング</h2></div></div></div><a
-          id="idm140170048869312"
+          id="idm140535302105232"
           class="indexterm"></a><a
-          id="idm140170048868384"
+          id="idm140535302104304"
           class="indexterm"></a><a
-          id="idm140170048867456"
+          id="idm140535295566912"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> ファイアウォール</strong></p></div></div></div><a
-            id="idm140170048865440"
+            id="idm140535295564896"
             class="indexterm"></a><div
             class="para">
 			<span
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span> ファイアウォールの設定を簡単に行うためのツールが存在し、ツールはフィルタリングルールをグラフィカルに表現する機能を備えています。<code
             class="command">fwbuilder</code> がこの種のツールの中で最良のツールであることは疑いありません。
 		</div><a
-          id="idm140170053755568"
+          id="idm140535287444688"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -112,9 +112,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">iptables</code> が IPv4 ネットワークを取り扱うのに対し、<code
             class="command">ip6tables</code> は IPv6 ネットワークを取り扱うという点です。おそらく IPv4 と IPv6 のネットワークプロトコルスタックは長きに渡り共存するでしょうから、両方のツールを並行して実行する必要があります。
 		</div><a
-          id="idm140170053747920"
+          id="idm140535287437040"
           class="indexterm"></a><a
-          id="idm140170053746800"
+          id="idm140535287435920"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -139,8 +139,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">mangle</code> は IP パケットに対するその他の変換に関係します (ToS - <span
-                    class="emphasis"><em>Type of Service</em></span> - フィールドやオプションを含みます);
+                    class="literal">mangle</code> は IP パケットに対するその他の変換に関係します (ToS — <span
+                    class="emphasis"><em>Type of Service</em></span> — フィールドやオプションを含みます);
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -151,9 +151,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				それぞれのテーブルには、<span
               class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイアウォールは事前に定義された状況に基づいてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
 			</div><a
-            id="idm140170055409600"
+            id="idm140535288538960"
             class="indexterm"></a><a
-            id="idm140170055408640"
+            id="idm140535288538000"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -228,15 +228,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				参考までに、受信バッファとは、データがネットワークから到着してカーネルがデータを処理するまでの間、そのデータを保存する小容量のメモリ区画です。このメモリ区画が満杯になると、新しいデータを受け取ることができなくなり、ICMP がこの問題を通知します。そうすれば送信側はデータの転送速度を遅くすることが可能です (理想的に言えば、しばらくの後に転送速度は平衡状態に達するべきです)。
 			</div><a
-              id="idm140170048508528"
+              id="idm140535291157776"
               class="indexterm"></a><a
-              id="idm140170048507568"
+              id="idm140535291156816"
               class="indexterm"></a><a
-              id="idm140170065505936"
+              id="idm140535291155888"
               class="indexterm"></a><a
-              id="idm140170065504976"
+              id="idm140535287788640"
               class="indexterm"></a><a
-              id="idm140170065503536"
+              id="idm140535287787200"
               class="indexterm"></a><div
               class="para">
 				IPv4 ネットワークは ICMP がなくても動作しますが、IPv6 ネットワークは ICMPv6 を必須条件としています。なぜなら、ICMPv6 は IPv4 世界では ICMPv4、IGMP (<span
@@ -298,7 +298,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						<code
                     class="literal">SNAT</code> (<code
                     class="literal">nat</code> テーブル、つまり <span
-                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です - IPv6 の NAT サポートは Linux 3.7 カーネルから導入されました): <span
+                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です — IPv6 の NAT サポートは Linux 3.7 カーネルから導入されました): <span
                     class="emphasis"><em>Source NAT</em></span> を適用します (追加オプションを使って適用する正確な変更を設定します);
 					</div></li><li
                 class="listitem"><div
@@ -347,9 +347,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> オプションで操作対象のテーブルを指定します (デフォルトの場合、<code
               class="literal">filter</code> テーブルを操作します)。
 			</div><a
-            id="idm140170065463584"
+            id="idm140535287746768"
             class="indexterm"></a><a
-            id="idm140170065462464"
+            id="idm140535287745648"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -387,7 +387,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. ルール</h4></div></div></div><a
-              id="idm140170065447600"
+              id="idm140535287730544"
               class="indexterm"></a><div
               class="para">
 					それぞれのルールは <code
@@ -440,7 +440,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">ipt_conntrack</code> カーネルモジュールが必要です)。<code
                 class="literal">NEW</code> 状態は新しい接続の開始するパケットを意味します; <code
                 class="literal">ESTABLISHED</code> は既に存在する接続に関連するパケットに一致します。<code
-                class="literal">RELATED</code> は既存の接続に関連する新しい接続を開始するパケットに一致します (これは FTP プロトコルの「アクティブ」モードを使った<code
+                class="literal">RELATED</code> は既存の接続に関連する新しい接続を開始するパケットに一致します (これは FTP プロトコルの「アクティブ」モードを使った <code
                 class="literal">ftp-data</code> 接続の際に便利です)。
 				</div><div
               class="para">
@@ -532,7 +532,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="fwbuilder のメインウィンドウ" /></div></div><p
               class="title"><strong>図14.2 fwbuilder のメインウィンドウ</strong></p></div><a
-            id="idm140170047858832"
+            id="idm140535287681712"
             class="indexterm"></a><div
             class="para">
 				<code

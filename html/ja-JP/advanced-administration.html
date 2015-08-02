@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.virtualization.html#sect.lxc">12.2.2. LXC</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.virtualization.html#idm140170051460256">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
+                      href="sect.virtualization.html#idm140535291407888">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.automated-installation.html">12.3. 自動インストール</a></span></dt><dd><dl><dt><span
                     class="section"><a
@@ -142,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       id="sect.raid-soft"></a>12.1.1. ソフトウェア RAID</h3></div></div></div><div
               class="para">
 				RAID <a
-                id="idm140170067348272"
+                id="idm140535304068960"
                 class="indexterm"></a> は <span
                 class="emphasis"><em>Redundant Array of Independent Disks</em></span> を意味します。このシステムの目標はハードディスク障害の際にデータ損失を防ぐことです。一般的な原則は極めて単純です: データは設定可能な冗長性のレベルに基づいて 1 つではなく複数のディスクに保存されます。冗長性の量に依存して、たとえ予想外のディスク障害が起きた場合でも、データを残りのディスクから損失なく再構成することが可能です。
 			</div><div
@@ -270,7 +270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					RAID ボリュームを設定するには <span
                   class="pkg pkg">mdadm</span> <a
-                  id="idm140170053779456"
+                  id="idm140535292390448"
                   class="indexterm"></a> パッケージが必要です; <span
                   class="pkg pkg">mdadm</span> パッケージには、RAID アレイを作成したり操作するための <code
                   class="command">mdadm</code> コマンド、システムの他の部分に RAID アレイを統合するためのスクリプトやツール、監視システム、が含まれます。
@@ -397,7 +397,7 @@ Writing superblocks and filesystem accounting information: done
                   class="command">mdadm</code> パラメータを使えば、名前付き RAID アレイを作成することも可能です。
 				</div><div
                 class="para">
-					同様のやり方を使って RAID-1 を作成します。注意するべき違いは作成後に説明します;
+					同様のやり方を使って RAID-1 を作成します。注意するべき違いは作成後に説明します:
 				</div><pre
                 class="screen"><code
                   class="computeroutput"># </code><strong
@@ -678,7 +678,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                       id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><div
               class="para">
 				<a
-                id="idm140170048558816"
+                id="idm140535291206176"
                 class="indexterm"></a> LVM、<span
                 class="emphasis"><em>Logical Volume Manager</em></span>、は物理ディスクから論理ボリュームを抽象化する別のアプローチで、信頼性を増加させるのではなく柔軟性を増加させることに注目しています。LVM を使うことで、アプリケーションから見る限り透過的に論理ボリュームを変更することが可能です; たとえば LVM は、新しいディスクを追加し、データを新しいディスクに移行し、古いディスクを削除することが、ボリュームをアンマウントせずに可能です。
 			</div><div
@@ -946,7 +946,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                     class="filename">sdb</code> 上に作成することで、ファイルサーバよりもデータベースサーバが高速にアクセスできるようにしたいとわれわれは考えています。コマンドラインは次のようになります: <code
                     class="command">lvcreate -n lv_base -L 1G vg_critical /dev/sdb2</code>。指定した PV に十分な空きエクステントがない場合、このコマンドは失敗する可能性があります。われわれの例で、このような失敗を防ぐには <code
                     class="filename">lv_files</code> の前に <code
-                    class="filename">lv_base</code>を作成するか、<code
+                    class="filename">lv_base</code> を作成するか、<code
                     class="command">pvmove</code> コマンドを使って <code
                     class="filename">sdb2</code> に多少の領域を空ける必要があるかもしれません。
 				</div></div><div
@@ -1168,7 +1168,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                           class="emphasis"><em>NOTE</em></span> 性能を重要視する場合…</strong></p></div></div></div><div
                 class="para">
 				入出力速度が最重要の場合、特にアクセス速度という意味で、LVM および RAID を組み合わせて使うと性能に少なからず影響を与え、どの方式を採用するか関する議論に影響を与えます。しかしながら、性能差は極めて少なく、この程度の性能差が無視できない場合は極めて少ないといえるでしょう。性能が重要な場合、実現可能で最良の改善方針は非回転ストレージメディア (<a
-                  id="idm140170051705888"
+                  id="idm140535291656944"
                   class="indexterm"></a><span
                   class="emphasis"><em>ソリッドステートドライブ</em></span> や SSD) を使うことです; SSD のメガバイト当たりの費用は標準的なハードディスクドライブよりも高価で、SSD の容量は通常小さいですが、SSD はランダムアクセスで素晴らしい性能を発揮します。ファイルシステムに広く分散された位置から数多くの入出力を行うような場合、たとえば複雑な問い合わせが定期的に実行されるデータベースの場合、SSD 上にデータベースを置くことは、RAID over LVM または LVM over RAID 上にデータベースを置くことよりも、良好な性能が手に入ります。このような場合、純粋な速度だけでなく他の要素も検討した上で採用の可否を決定するべきです。なぜなら、性能が必要な場合、SSD を採用することが最も短絡的な解決策だからです。
 			</div></div><div
