@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Configuración del gestor de arranque</h2></div></div></div><a
-          id="idm140106386046064"
+          id="idm139951631691536"
           class="indexterm"></a><a
-          id="idm140106386044624"
+          id="idm139951631690096"
           class="indexterm"></a><div
           class="para">
 			Probablemente ya esté funcionando, pero siempre es bueno saber cómo configurar e instalar el gestor de arranque en caso que desaparezca del registro maestro de arranque («Master Boot Record»). Esto puede ocurrir luego de la instalación de otro sistema operativo como Windows. La información a continuación también puede ayudarle a modificar la configuración del gestor de arranque si lo necesita.
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Registro maestro de arranque («Master boot record»)</strong></p></div></div></div><a
-            id="idm140106386041696"
+            id="idm139951631687168"
             class="indexterm"></a><a
-            id="idm140106386040736"
+            id="idm139951631686208"
             class="indexterm"></a><div
             class="para">
 			El registro maestro de arranque (MBR: «Master Boot Record») ocupa los primeros 512 bytes del primer disco duro y es lo primero que carga el BIOS para otorgar el control a un programa capaz de iniciar el sistema operativo deseado. En general, se instala el gestor de arranque en el MBR eliminando su contenido anterior.
@@ -126,9 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm140106386024896"
+            id="idm139951630072032"
             class="indexterm"></a><a
-            id="idm140106386023936"
+            id="idm139951630071072"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -141,13 +141,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> es la primera partición del primer disco y <code
               class="filename">/dev/sdb3</code> es la tercera partición del segundo disco.
 			</div><a
-            id="idm140106386018576"
+            id="idm139951630065712"
             class="indexterm"></a><a
-            id="idm140106386017136"
+            id="idm139951630064272"
             class="indexterm"></a><a
-            id="idm140106386015696"
+            id="idm139951630062832"
             class="indexterm"></a><a
-            id="idm140106386014256"
+            id="idm139951630061392"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -157,9 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
 			</div><a
-            id="idm140106386010272"
+            id="idm139951630057408"
             class="indexterm"></a><a
-            id="idm140106386008832"
+            id="idm139951630055968"
             class="indexterm"></a><div
             class="para">
 				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
@@ -209,9 +209,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Configuración de LILO</h3></div></div></div><a
-            id="idm140106385998368"
+            id="idm139951630045504"
             class="indexterm"></a><a
-            id="idm140106385997408"
+            id="idm139951630044544"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -257,16 +257,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Configuración de GRUB 2</h3></div></div></div><a
-            id="idm140106385989984"
+            id="idm139951630037120"
             class="indexterm"></a><a
-            id="idm140106385989024"
+            id="idm139951630036160"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (gran gestor de arranque unificado: «GRand Unified Bootloader») es más reciente. No es necesario ejecutarlo luego de cada actualización del núcleo, <span
               class="emphasis"><em>GRUB</em></span> sabe cómo leer los sistemas de archivos y encontrar la ubicación del núcleo en el disco por su cuenta. Para instalarlo en el MBR del primer disco simplemente ejecute <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm140106385986000"
+              id="idm139951630033136"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -304,7 +304,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Para equipos Macintosh (PowerPC): configuración de Yaboot</h3></div></div></div><a
-            id="idm140106385971456"
+            id="idm139951630018592"
             class="indexterm"></a><div
             class="para">
 				Yaboot es el gestor de arranque utilizado por equipos Macintosh antiguos que utilizan procesadores PowerPC. No arrancan como PCs sino que necesitan una partición de arranque desde la que el BIOS (u OpenFirmware) ejecuta el gestor y en la que el programa <code
@@ -317,7 +317,7 @@ other=/dev/sda1
 				Antes de ejecutar <code
               class="command">ybin</code> primero debe tener un archivo <code
               class="filename">/etc/yaboot.conf</code> válido. Lo que sigue es un ejemplo de configuración mínimo. <a
-              id="idm140106385966304"
+              id="idm139951630013440"
               class="indexterm"></a>
 			</div><div
             class="example"><a

@@ -70,11 +70,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.apt-frontends"></a>6.4. フロントエンド: <code
                   class="command">aptitude</code>、<code
                   class="command">synaptic</code></h2></div></div></div><a
-          id="idm140535309075152"
+          id="idm140245159039264"
           class="indexterm"></a><a
-          id="idm140535309074032"
+          id="idm140245159038144"
           class="indexterm"></a><a
-          id="idm140535309072912"
+          id="idm140245159037024"
           class="indexterm"></a><div
           class="para">
 			APT は C++ プログラムで、<code
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">apt-get</code> よりもずっと合理的で、インターフェースもより理解しやすいです。
 			</div><div
             class="figure"><a
-              id="idm140535309065856"></a><div
+              id="idm140245159029968"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/aptitude.png"
@@ -166,7 +166,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
               class="para">
 				<code
-                class="command">aptitude</code> の先進的な機能はコマンドラインからも使えます。パッケージ検索パターンは対話的インターフェースの場合と同じです。たとえば、「手作業でインストールされた」パッケージのリストを整理整頓したい場合、インストール済みでパッケージ管理下にないプログラムが特定のライブラリと Perl モジュールに依存していないと知っていれば、たった 1 つのコマンドで関連するパッケージを自動パッケージとしてマークすることが可能です:
+                class="command">aptitude</code> の先進的な機能はコマンドラインからも使えます。パッケージ検索パターンは対話型インターフェースの場合と同じです。たとえば、「手作業でインストールされた」パッケージのリストを整理整頓したい場合、インストール済みでパッケージ管理下にないプログラムが特定のライブラリと Perl モジュールに依存していないと知っていれば、たった 1 つのコマンドで関連するパッケージを自動パッケージとしてマークすることが可能です:
 			</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
@@ -183,7 +183,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140535292248304"></a>6.4.1.1. 推奨パッケージ、提案パッケージ、タスクの管理</h4></div></div></div><div
+                      id="idm140245157634432"></a>6.4.1.1. 推奨パッケージ、提案パッケージ、タスクの管理</h4></div></div></div><div
               class="para">
 					<code
                 class="command">aptitude</code> が提供するもう 1 つの興味深い特徴は、パッケージ間の推奨関係を尊重する点です。とは言え、個々の場合に応じて、推奨パッケージをインストールしないようにすることも可能です。たとえば、<span
@@ -206,17 +206,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div><div
               class="para">
 					同様の姿勢で、<code
-                class="command">aptitude</code> はタスクの概念をうまく取り扱うことを思い出してください。タスクはパッケージの画面内にカテゴリとして表示されるため、ユーザはタスクのインストール作業および削除作業を、タスク全体に対して適用するか、タスクのパッケージの一部を選択してそれらに適用するかを選ぶことが可能です。
+                class="command">aptitude</code> はタスクの概念をうまく取り扱うことを思い出してください。タスクはパッケージの画面内にカテゴリとして表示されるため、ユーザはタスクのインストールおよび削除を、タスク全体に対して適用するか、タスクのパッケージの一部を選択してそれらに適用するかを選ぶことが可能です。
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140535292234352"></a>6.4.1.2. より良いソルバアルゴリズム</h4></div></div></div><div
+                      id="idm140245157620496"></a>6.4.1.2. より良いソルバアルゴリズム</h4></div></div></div><div
               class="para">
 					この節を締め括るために、<code
                 class="command">aptitude</code> は <code
                 class="command">apt-get</code> に比べてより複雑なアルゴリズム使って難しい状況を解決する、という点に注意しましょう。一連の動作が要求され、すべての動作を適用するとシステムの一貫性が失われる場合、<code
-                class="command">aptitude</code> はいくつかの解決策を検討し、適用後の一貫性が高い順に解決策を提示します。しかしながら、このアルゴリズムは単なるケアレスミスの予防策ではありません。幸いなことに、ユーザは常に手作業で適用する動作を選択できます。現在選択された動作によって矛盾が引き起こされる場合、画面の上の方に「壊れた」パッケージの数が表示されます (パッケージの選択を直接操作するには <span
+                class="command">aptitude</code> はいくつかの解決策を検討し、適用後の一貫性が高い順に解決策を提示します。しかしながら、このアルゴリズムは単なるケアレスミスの予防策ではありません。幸いなことに、ユーザは常に手作業で適用する動作を選択できます。現在選択された動作によって矛盾が引き起こされる場合、画面の上の方に「壊れた」パッケージの数が表示されます (「壊れた」パッケージを手作業で指示するには <span
                 class="keycap"><strong>b</strong></span> を押してください)。そして、見つかった問題を手作業で解決することも可能です。具体的に言うと、単純に <span
                 class="keycap"><strong>Enter</strong></span> でパッケージを選択すれば、利用できる複数のバージョンを確認できます。複数のバージョンから 1 つ選ぶだけで問題が解決されるなら、迷わずこの機能を使うべきです。壊れたパッケージの数がゼロになったら、動作適用前の最終確認のために、保留動作の要約画面に問題なく移動できるはずです。
 				</div><div
@@ -242,14 +242,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535292221696"></a>6.4.2. <code
+                    id="idm140245157607840"></a>6.4.2. <code
                     class="command">synaptic</code></h3></div></div></div><div
             class="para">
 				<code
-              class="command">synaptic</code> は Debian 用のグラフィカルパッケージマネージャで、GTK+/GNOME を使った簡便で効率的なグラフィカルインターフェースです。数多くのすぐに使えるフィルタのおかげで、新しく利用できるようになったパッケージ、インストール済みパッケージ、アップグレード可能なパッケージ、時代遅れのパッケージなどを素早く確認できます。リストをすべて閲覧して、パッケージに対して行われる操作 (インストール、アップグレード、削除、完全消去) を選択できます; これらの操作はすぐに実行されるのではなく、まずは操作リストに追加されます。ボタンを一度クリックするだけで、操作の正当性が検証され、操作は一度に実行されます。
+              class="command">synaptic</code> は Debian 用のグラフィカルパッケージマネージャで、GTK+/GNOME を使った簡便で効率的なグラフィカルインターフェースです。数多くのすぐに使えるフィルタのおかげで、新しく利用できるようになったパッケージ、インストール済みパッケージ、アップグレードできるパッケージ、時代遅れのパッケージなどを素早く確認できます。リストをすべて閲覧して、パッケージに対して行われる操作 (インストール、アップグレード、削除、完全消去) を選択できます; これらの操作はすぐに実行されるのではなく、まずは操作リストに追加されます。ボタンを一度クリックするだけで、操作の正当性が検証され、操作は一度に実行されます。
 			</div><div
             class="figure"><a
-              id="idm140535292218928"></a><div
+              id="idm140245157605072"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/synaptic.png"

@@ -71,9 +71,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			バックアップを取ることは管理者の主要な責任の 1 つです。しかし、これは通常極めるのが難しい強力なツールを使う複雑な問題です。
 		</div><a
-          id="idm140535289743568"
+          id="idm140245150190688"
           class="indexterm"></a><a
-          id="idm140535289742800"
+          id="idm140245150189920"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -82,11 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">BackupPC</code> などの多くのプログラムが存在します。これらはクライアント/サーバシステムに適した多くの選択肢で、設定はかなり難しいです。いくつかは難しさを和らげるためのユーザフレンドリーなウェブインターフェースを提供しています。しかし Debian には、すべての考え得る使用事例に対応できる、他の数多くのバックアップソフトウェアが含まれています。ソフトウェアを確認するには <code
             class="command">apt-cache search backup</code> を使ってください。
 		</div><a
-          id="idm140535289739568"
+          id="idm140245150186688"
           class="indexterm"></a><a
-          id="idm140535289738672"
+          id="idm140245150185792"
           class="indexterm"></a><a
-          id="idm140535289737776"
+          id="idm140245150184896"
           class="indexterm"></a><div
           class="para">
 			これらのうちのいくつかを詳細に説明するのではなく、この節では、Falcot Corp 管理者がバックアップ戦略を定義する際にどのように考えたかを説明します。
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535289735568"></a>9.10.1. <code
+                    id="idm140245150182688"></a>9.10.1. <code
                     class="command">rsync</code> を使ったバックアップ</h3></div></div></div><div
             class="para">
 				テープへのバックアップは遅くて費用がかかりすぎるとみなされ、データは専用サーバのハードドライブにバックアップされることになりました。専用サーバはソフトウェア RAID (<a
@@ -105,15 +105,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="advanced-administration.html#sect.raid-soft">「ソフトウェア RAID」</a>参照) を使ってデータをハードウェア障害から守っています。デスクトップコンピュータは個別にバックアップされませんが、ユーザは部署のファイルサーバの個人アカウントはバックアップされると忠告されています。毎日 <code
               class="command">rsync</code> コマンド (同名のパッケージに含まれます) を使って、異なるサーバにバックアップを行います。
 			</div><a
-            id="idm140535289732688"
+            id="idm140245150179808"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ハードリンク、ファイルの別名</strong></p></div></div></div><a
-              id="idm140535289730896"
+              id="idm140245150178016"
               class="indexterm"></a><a
-              id="idm140535289729744"
+              id="idm140245150176864"
               class="indexterm"></a><div
               class="para">
 				ハードリンクはシンボリックリンクと異なり、リンクされたファイルと区別できません。本質的に、ハードリンクの作成は既存のファイルに別名を与えることと同義です。そのため、ハードリンクの削除はそのファイルに関連する名前を削除するに過ぎません。他の名前がまだそのファイルに関連付けられている場合、データの実体ファイルシステムから削除されません。コピーと異なり、ハードリンクはハードドライブ上に追加的な領域を必要としない点について注意することは興味深いです。
@@ -126,18 +126,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">link</em> ファイルは <em
                 class="replaceable">target</em> ファイルの新しい名前です。ハードリンクは <em
                 class="replaceable">target</em> と <em
-                class="replaceable">link</em> が同じファイルシステム上にあるときのみ作成可能です。対してシンボリックリンクはこの制限を受けません。
+                class="replaceable">link</em> が同じファイルシステム上にあるときのみ作成できます。対してシンボリックリンクはこの制限を受けません。
 			</div></div><div
             class="para">
 				利用できるハードドライブの空き領域によっては、完全な日次バックアップができない場合があります。このため、まず <code
               class="command">rsync</code> コマンドはバックアップの内容をハードリンクで複製します。このおかげで、ハードドライブ領域を無駄に消費することがなくなります。そして <code
-              class="command">rsync</code> プロセスは最後のバックアップ以降に変更されたファイルだけを置き換えます。このメカニズムにより、多くのバックアップを少ない領域に保存することが可能です。すべてのバックアップは素早く利用可能でアクセス可能 (たとえば、ネットワーク共有されたディレクトリの中) なので、ある日付同士の違いを素早く比較できます。
+              class="command">rsync</code> プロセスは最後のバックアップ以降に変更されたファイルだけを置き換えます。このメカニズムにより、多くのバックアップを少ない領域に保存することが可能です。すべてのバックアップは即座に利用できる上に即座にアクセスできるので (たとえば、ネットワーク共有されたディレクトリの中に置かれるので)、ある日付同士の違いを素早く比較できます。
 			</div><a
-            id="idm140535289722560"
+            id="idm140245150169632"
             class="indexterm"></a><a
-            id="idm140535289721792"
+            id="idm140245150168864"
             class="indexterm"></a><a
-            id="idm140535289720640"
+            id="idm140245150167712"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -240,7 +240,7 @@ exclude:
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535289693936"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
+                    id="idm140245150141008"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
             class="para">
 				バックアップされていないデスクトップコンピュータに対しては <span
               class="emphasis"><em>Simple-CDD</em></span> でカスタマイズされた DVD-ROM からシステムを再インストールするのが簡単でしょう (<a
@@ -257,29 +257,29 @@ exclude:
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> SQL と LDAP サービスのバックアップ</strong></p></div></div></div><div
               class="para">
-				多くのサービス (SQL や LDAP データベースなど) は単純にファイルをコピーするだけではバックアップできません (それらのサービスをバックアップの作成中に適切に中断しない限りバックアップできません。サービスの中断は通常問題です。なぜなら、サービスは常に利用可能であることを意図されているからです)。そのような場合、安全にバックアップできる「データダンプ」を作るために「エクスポート」メカニズムを使うことが必要です。データダンプは通常サイズのとても大きいファイルですが、よく圧縮できます。要求されるストレージ領域を減らすために、完全なテキストファイルを保存するのは 1 週間に 1 回、<code
+				多くのサービス (SQL や LDAP データベースなど) は単純にファイルをコピーするだけではバックアップできません (それらのサービスをバックアップの作成中に適切に中断しない限りバックアップできません。サービスの中断は通常問題です。なぜなら、サービスが常に利用できることを意図されているからです)。そのような場合、安全にバックアップできる「データダンプ」を作るために「エクスポート」メカニズムを使うことが必要です。データダンプは通常サイズのとても大きいファイルですが、よく圧縮できます。要求されるストレージ領域を減らすために、完全なテキストファイルを保存するのは 1 週間に 1 回、<code
                 class="command">diff</code> を保存するのは毎日にするでしょう。差分は <code
                 class="command">diff <em
                   class="replaceable">file_from_yesterday</em> <em
                   class="replaceable">file_from_today</em></code> で生成されます。バイナリダンプから増分差分を作成するには <code
                 class="command">xdelta</code> プログラムを使ってください。
 			</div><a
-              id="idm140535289685584"
+              id="idm140245150132656"
               class="indexterm"></a><a
-              id="idm140535289684688"
+              id="idm140245150131760"
               class="indexterm"></a><a
-              id="idm140535289683792"
+              id="idm140245150130864"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="emphasis"><em>TAR</em></span>、テープバックアップ用の標準規格</strong></p></div></div></div><a
-              id="idm140535289681616"
+              id="idm140245150128688"
               class="indexterm"></a><a
-              id="idm140535289680464"
+              id="idm140245150127536"
               class="indexterm"></a><a
-              id="idm140535289679696"
+              id="idm140245150126768"
               class="indexterm"></a><div
               class="para">
 				歴史的に言って、Unix で最も簡単にバックアップを作成する手段は <span

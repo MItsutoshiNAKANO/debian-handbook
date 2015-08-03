@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. <code
                   class="command">dpkg</code> を用いたパッケージの操作</h2></div></div></div><a
-          id="idm140535308779232"
+          id="idm140245161605696"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -92,10 +92,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535308771024"></a>5.4.1. パッケージのインストール</h3></div></div></div><a
-            id="idm140535308770256"
+                    id="idm140245161597488"></a>5.4.1. パッケージのインストール</h3></div></div></div><a
+            id="idm140245161596720"
             class="indexterm"></a><a
-            id="idm140535308768848"
+            id="idm140245161595312"
             class="indexterm"></a><div
             class="para">
 				中でも、<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code> オプションを使ってください。
 			</div><div
             class="example"><a
-              id="idm140535308765344"></a><p
+              id="idm140245161591808"></a><p
               class="title"><strong>例5.2 <code
                   class="command">dpkg</code> を使ったパッケージのインストール</strong></p><div
               class="example-contents"><pre
@@ -126,7 +126,7 @@ mime-support (3.58) のトリガを処理しています ...</code></pre></div><
               class="command">dpkg</code> を呼び出す回数を減らしています (なぜなら呼び出される度にデータベース、特にインストール済みファイルのリスト、をメモリに読み込むため効率が悪いからです)。
 			</div><div
             class="example"><a
-              id="idm140535308759472"></a><p
+              id="idm140245161585936"></a><p
               class="title"><strong>例5.3 解凍と設定を分けて実行</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -144,9 +144,9 @@ mime-support (3.58) のトリガを処理しています ...
                   class="computeroutput">man-db (2.7.0.2-5) を設定しています ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm140535308755568"
+            id="idm140245161582032"
             class="indexterm"></a><a
-            id="idm140535308754128"
+            id="idm140245161580592"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -175,7 +175,7 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                     class="title"><strong><span
                         class="emphasis"><em>CAUTION</em></span> <code
                         class="literal">--force-*</code> の効果的な使い方</strong></p></div></div></div><a
-              id="idm140535308743712"
+              id="idm140245161570176"
               class="indexterm"></a><div
               class="para">
 				下手をすると <code
@@ -201,7 +201,7 @@ E: missing dependencies. Try to use the option -f.
               class="para">
 				この操作は最悪の対応策であり、本当にどうしても必要な場合を除いて、絶対に使うべきではありません。多くの場合、より適切な解決策は、問題を生じさせているパッケージを再コンパイルするか (<a
                 class="xref"
-                href="debian-packaging.html#sect.rebuilding-package">「ソースからパッケージを再ビルドする」</a>をご覧ください)、<code
+                href="debian-packaging.html#sect.rebuilding-package">「ソースを使ったパッケージの再ビルド」</a>をご覧ください)、<code
                 class="literal">stable-backports</code> などのリポジトリから新しい (修正済みの可能性がある) バージョンを使うか (<a
                 class="xref"
                 href="apt.html#sect.backports">「安定版バックポート」</a>をご覧ください) です。
@@ -209,14 +209,14 @@ E: missing dependencies. Try to use the option -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535308732272"></a>5.4.2. パッケージの削除</h3></div></div></div><a
-            id="idm140535308731504"
+                    id="idm140245161558736"></a>5.4.2. パッケージの削除</h3></div></div></div><a
+            id="idm140245161557968"
             class="indexterm"></a><a
-            id="idm140535308730576"
+            id="idm140245161557040"
             class="indexterm"></a><a
-            id="idm140535308729648"
+            id="idm140245161556112"
             class="indexterm"></a><a
-            id="idm140535308728208"
+            id="idm140245161554672"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -227,7 +227,7 @@ E: missing dependencies. Try to use the option -f.
               class="literal">--purge</code> オプションつけてさらにパッケージの名前を続けてください。
 			</div><div
             class="example"><a
-              id="idm140535308723136"></a><p
+              id="idm140245161549600"></a><p
               class="title"><strong>例5.4 <span
                   class="pkg pkg">debian-cd</span> パッケージの削除と完全消去</strong></p><div
               class="example-contents"><pre
@@ -246,14 +246,14 @@ debian-cd (3.1.17) の設定ファイルを削除しています ...</code></pre
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535308718768"></a>5.4.3. <code
+                    id="idm140245161545232"></a>5.4.3. <code
                     class="command">dpkg</code> のデータベースへの問い合わせと <code
                     class="filename">.deb</code> ファイルの調査</h3></div></div></div><a
-            id="idm140535308717200"
+            id="idm140245161543664"
             class="indexterm"></a><a
-            id="idm140535308715760"
+            id="idm140245161542224"
             class="indexterm"></a><a
-            id="idm140535308714320"
+            id="idm140245161540784"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -284,7 +284,7 @@ debian-cd (3.1.17) の設定ファイルを削除しています ...</code></pre
               class="literal">-I</code>) Debian パッケージのヘッダを表示します。
 			</div><div
             class="example"><a
-              id="idm140535308550448"></a><p
+              id="idm140245161528368"></a><p
               class="title"><strong>例5.5 <code
                   class="command">dpkg</code> にさまざまな情報を問い合わせる</strong></p><div
               class="example-contents"><pre
@@ -435,9 +435,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> バージョンの比較</strong></p></div></div></div><a
-              id="idm140535308536144"
+              id="idm140245161514064"
               class="indexterm"></a><a
-              id="idm140535308535216"
+              id="idm140245161513136"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -495,7 +495,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535308516944"></a>5.4.4. <code
+                    id="idm140245161494864"></a>5.4.4. <code
                     class="command">dpkg</code> のログファイル</h3></div></div></div><div
             class="para">
 				<code
@@ -508,9 +508,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. マルチアーキテクチャサポート</h3></div></div></div><a
-            id="idm140535308511536"
+            id="idm140245161489456"
             class="indexterm"></a><a
-            id="idm140535308510608"
+            id="idm140245161488528"
             class="indexterm"></a><div
             class="para">
 				すべての Debian パッケージは <code
@@ -525,10 +525,10 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140535308505536"></a>5.4.5.1. マルチアーキテクチャの有効化</h4></div></div></div><div
+                      id="idm140245161483456"></a>5.4.5.1. マルチアーキテクチャの有効化</h4></div></div></div><div
               class="para">
 					<code
-                class="command">dpkg</code> のマルチアーキテクチャサポートのおかげで、ユーザは現在のシステムにインストール可能な「外来アーキテクチャ」を定義できます。これを行うには、以下に示す通り <code
+                class="command">dpkg</code> のマルチアーキテクチャサポートのおかげで、ユーザは現在のシステムにインストールできる「外来アーキテクチャ」を定義できます。これを行うには、以下に示す通り <code
                 class="command">dpkg --add-architecture</code> を使ってください。関連して、<code
                 class="command">dpkg --remove-architecture</code> は外来アーキテクチャのサポートを取り止めますが、取り止めたいアーキテクチャのパッケージが残っていた場合には失敗します。
 				</div><pre
@@ -597,18 +597,18 @@ gcc-4.9-base:armhf (4.9.1-19) を設定しています ...
                       class="title"><strong><span
                           class="emphasis"><em>IN PRACTICE</em></span> amd64 上でプロプライエタリな i386 バイナリを使う</strong></p></div></div></div><div
                 class="para">
-					マルチアーキテクチャには複数の使用事例がありますが、特に人気の用例は、32 ビットバイナリ (i386) が 64 ビットシステム (amd64) で実行可能になる例です。その具体的理由は、複数の人気のプロプライエタリアプリケーション (たとえば Skype) が 32 ビット版しか提供していないからです。
+					マルチアーキテクチャには複数の使用事例がありますが、特に人気の用例は、32 ビットバイナリ (i386) を 64 ビットシステム (amd64) で実行できるようにする事例です。その具体的理由は、複数の人気のプロプライエタリアプリケーション (たとえば Skype) が 32 ビット版しか提供していないからです。
 				</div><div
                 class="para">
 					マルチアーキテクチャ以前、32 ビットアプリケーションを 64 ビットシステムで実行したければ、<span
                   class="pkg pkg">ia32-libs</span> をインストールすることで、システム内に人気の高いライブラリの 32 ビット版を持つ必要がありました。このパッケージは amd64 パッケージ内の 32 ビットライブラリを再パッケージ化した大規模なハックでした。
 				</div><a
-                id="idm140535308485488"
+                id="idm140245161463392"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140535308483744"></a>5.4.5.2. マルチアーキテクチャ関連の変更</h4></div></div></div><div
+                      id="idm140245161461648"></a>5.4.5.2. マルチアーキテクチャ関連の変更</h4></div></div></div><div
               class="para">
 					マルチアーキテクチャを実際に便利で使いやすいものにするためには、ライブラリを再パッケージ化しなければいけませんでした。さらに複数のコピー (対象の異なるアーキテクチャ) を同時にインストールできるようにするために、マルチアーキテクチャ専用のディレクトリにライブラリを移動しなければいけませんでした。このようにして更新されたパッケージには、このパッケージはアーキテクチャが違っても安全に同時インストールできること (そしてこのパッケージは自分と異なるアーキテクチャのパッケージの依存関係を満足することはできないこと) をパッケージ化システムに伝えるための「<code
                 class="literal">Multi-Arch: same</code>」ヘッダフィールドが含まれていました。マルチアーキテクチャモードは Debian <span

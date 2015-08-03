@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.common-procedures"></a>7.2. 常套手段</h2></div></div></div><a
-          id="idm140535309443136"
+          id="idm140245158980160"
           class="indexterm"></a><div
           class="para">
 			この節の目的は、管理者が頻繁に実行する特定の操作に関する、いくつかの一般的なヒントを示すことです。もちろんこれらの手順は包括的にすべての考え得る場合をカバーするものではありませんが、より困難な状況に直面した際の出発点として機能します。
@@ -93,10 +93,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535309435808"></a>7.2.1. プログラムの設定</h3></div></div></div><a
-            id="idm140535309435040"
+                    id="idm140245158972832"></a>7.2.1. プログラムの設定</h3></div></div></div><a
+            id="idm140245158972064"
             class="indexterm"></a><a
-            id="idm140535309433632"
+            id="idm140245158970656"
             class="indexterm"></a><div
             class="para">
 				未知のパッケージを設定する場合、段階を追って進まなければいけません。最初に、パッケージメンテナの書いた文書を読んでください。<code
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">package</em></code> でパッケージのメタ情報が表示されるので、そこから推奨パッケージや提案パッケージが分かります; そこから、ソフトウェアの設定を簡単に行うための文書またはユーティリティを見つけることが可能です。
 			</div><div
             class="para">
-				最後に、設定ファイルには通常、各設定項目に関して設定可能な値をそれぞれ詳細に説明した説明用コメントが数多く書かれています。このため、利用できる行を選んで有効化するだけで十分な場合もあります。また、設定ファイルの例が <code
+				最後に、設定ファイルには通常、各設定項目に関して設定できる値をそれぞれ詳細に説明した説明用コメントが数多く書かれています。このため、利用できる行を選んで有効化するだけで十分な場合もあります。また、設定ファイルの例が <code
               class="filename">/usr/share/doc/<em
                 class="replaceable">package</em>/examples/</code> ディレクトリの中に格納されている場合もあります。設定ファイルの例は、自分の設定ファイルのたたき台になります。
 			</div><div
@@ -120,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DEBIAN POLICY</em></span> 例の場所</strong></p></div></div></div><a
-              id="idm140535309423952"
+              id="idm140245158960976"
               class="indexterm"></a><div
               class="para">
 				すべての例は必ず <code
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535309419072"></a>7.2.2. デーモンの挙動を監視する</h3></div></div></div><div
+                    id="idm140245158956096"></a>7.2.2. デーモンの挙動を監視する</h3></div></div></div><div
             class="para">
 				デーモンの挙動を理解するのはやや面倒です。なぜなら、デーモンは管理者と直接的に対話するものではないからです。デーモンが実際にどのような仕事をしているかを確認するには、デーモンをテストする必要があります。たとえば、Apache (ウェブサーバ) デーモンの挙動を確認するには、HTTP リクエストを使ってテストします。
 			</div><div
@@ -147,15 +147,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> <code
                         class="command">rsyslogd</code> デーモン</strong></p></div></div></div><a
-              id="idm140535309414176"
+              id="idm140245158904432"
               class="indexterm"></a><a
-              id="idm140535309413056"
+              id="idm140245158903312"
               class="indexterm"></a><a
-              id="idm140535309411616"
+              id="idm140245158901872"
               class="indexterm"></a><div
               class="para">
 				<code
-                class="command">rsyslogd</code> は特別です: このデーモンは他のプログラムが送信したログ (内部的システムメッセージ) を収集します。それぞれのログエントリはサブシステム (電子メール、カーネル、認証など) と優先度が付けられています; <code
+                class="command">rsyslogd</code> は特別です: このデーモンは他のプログラムが送信したログ (内部的なシステムメッセージ) を収集します。それぞれのログエントリはサブシステム (電子メール、カーネル、認証など) と優先度が付けられています; <code
                 class="command">rsyslogd</code> はこれら 2 つの情報を使って各エントリをどのように処理するかを決めます。ログメッセージは、複数のログファイルに記録される場合もあれば、管理者のコンソールに送信される場合もあります。設定の詳細は <code
                 class="filename">/etc/rsyslog.conf</code> 設定ファイル (同名のマニュアルページで説明されています) で定義されています。
 			</div><div
@@ -168,7 +168,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> デーモン</strong></p></div></div></div><a
-              id="idm140535309404800"
+              id="idm140245158895056"
               class="indexterm"></a><div
               class="para">
 				デーモンはユーザが明示的に呼び出すプログラムではなく、バックグラウンドで実行され、特定の状態が満足されたら作業を行うプログラムです。多くのサーバプログラムはデーモンです。専門用語の名前の最後に付けられた「d」という文字は通常それがデーモンであることを意味しています (<code
@@ -177,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">httpd</code>、など)。
 			</div></div><div
             class="para">
-				予防手段として、管理者は日常的に最重要なサーバログを読むべきです。そうすれば、不満を抱くユーザが報告する前に問題を突き止めることができます。実際のところ、ユーザは報告の前に、問題が数日間にわたって繰り返して起こるまで待つかもしれません。多くの場合、長いログファイルの内容を分析する特定のツールが有ります。特に、ウェブサーバ (Apache 向けの <code
+				予防手段として、管理者は日常的に最重要なサーバのログを読むべきです。そうすれば、不満を抱くユーザが報告する前に問題を突き止めることができます。実際のところ、ユーザは報告の前に、問題が数日間にわたって繰り返して起こるまで待つかもしれません。多くの場合、長いログファイルの内容を分析する特定のツールが有ります。特に、ウェブサーバ (Apache 向けの <code
               class="command">analog</code>、<code
               class="command">awstats</code>、<code
               class="command">webalizer</code>)、FTP サーバ、プロキシ/キャッシュサーバ、ファイアウォール、電子メールサーバ、DNS サーバ、プリンタサーバについてはそのログを解析するユーティリティが存在します。いくつかのユーティリティはモジュール式で機能し、複数のログファイルを解析できます。<code
@@ -187,22 +187,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="xref"
               href="security.html">14章<em>セキュリティ</em></a>で紹介するソフトウェア) など、はログファイルから対処が必要な警告を検索します。
 			</div><a
-            id="idm140535309396592"
+            id="idm140245158886848"
             class="indexterm"></a><a
-            id="idm140535309395472"
+            id="idm140245158885728"
             class="indexterm"></a><a
-            id="idm140535309394352"
+            id="idm140245158884608"
             class="indexterm"></a><a
-            id="idm140535309393232"
+            id="idm140245158883488"
             class="indexterm"></a><a
-            id="idm140535309392112"
+            id="idm140245158882368"
             class="indexterm"></a><a
-            id="idm140535309390992"
+            id="idm140245158881248"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535309389712"></a>7.2.3. メーリングリストで助けを求める</h3></div></div></div><div
+                    id="idm140245158879968"></a>7.2.3. メーリングリストで助けを求める</h3></div></div></div><div
             class="para">
 				いろいろと検索しても問題の原因が分からなかった場合、他の人、より経験豊富な人、から助けを受けることも可能です。<code
               class="email"><a
@@ -213,9 +213,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="url">→ <a
                 href="http://lists.debian.org/debian-user/">http://lists.debian.org/debian-user/</a></div>
 			</div><a
-            id="idm140535309386144"
+            id="idm140245158876400"
             class="indexterm"></a><a
-            id="idm140535309384864"
+            id="idm140245158875120"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -237,7 +237,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				一般的に言って、電子メーリングリスト上でのやりとりはすべてネチケットを守るべきです。ネチケットとは、礼儀作法から避けるべき間違いまで、常識的なルールを指しています。<div
                 class="url">→ <a
                   href="http://tools.ietf.org/html/rfc1855">http://tools.ietf.org/html/rfc1855</a></div> <a
-                id="idm140535309378384"
+                id="idm140245158868640"
                 class="indexterm"></a>
 			</div></div><div
             class="para">
@@ -254,10 +254,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535309374016"></a>7.2.4. 問題が難しすぎる場合のバグ報告</h3></div></div></div><a
-            id="idm140535309373248"
+                    id="idm140245158864272"></a>7.2.4. 問題が難しすぎる場合のバグ報告</h3></div></div></div><a
+            id="idm140245158863504"
             class="indexterm"></a><a
-            id="idm140535309372288"
+            id="idm140245158862544"
             class="indexterm"></a><div
             class="para">
 				問題を解決するために行ったすべての努力が失敗に終わった場合、問題の原因はあなたの責任のおよぶところになく、プログラムのバグかもしれません。この場合、適切な手続きは Debian にバグを報告するか、上流開発者に直接報告するかです。これを行うには、可能な限り問題を分割し、問題を再現できる最小のテスト環境を作ってください。問題の原因が明らかにプログラムにあるとわかっている場合、<code

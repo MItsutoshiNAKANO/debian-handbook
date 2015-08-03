@@ -72,11 +72,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			DHCP (for <span
             class="emphasis"><em>Dynamic Host Configuration Protocol</em></span>) とは、マシンが起動時にネットワーク設定を自動的に取得することを可能にするプロトコルです。DHCP のおかげで、ネットワーク設定の管理を中央集権化し、すべてのデスクトップマシンに類似した設定を行う、ことが可能になります。
 		</div><a
-          id="idm140535307705680"
+          id="idm140245158035696"
           class="indexterm"></a><a
-          id="idm140535307704720"
+          id="idm140245158034736"
           class="indexterm"></a><a
-          id="idm140535307703792"
+          id="idm140245158033808"
           class="indexterm"></a><div
           class="para">
 			DHCP サーバは多くのネットワーク関連パラメータを提供します。DHCP サーバが提供する最も一般的なパラメータは IP アドレスとマシンの所属するネットワークですが、他にも DNS サーバ、WINS サーバ、NTP サーバなどの情報を提供することも可能です。
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.dhcp-config"></a>10.7.1. 設定</h3></div></div></div><div
             class="para">
-				DHCP サーバ設定ファイル (<code
+				DHCP サーバの設定ファイル (<code
               class="filename">/etc/dhcp/dhcpd.conf</code>) で最初に編集する必要がある場所はドメイン名と DNS サーバです。DHCP サーバがローカルネットワークに 1 台しかない (ブロードキャスト送信が定義するように) 場合、<code
               class="literal">authoritative</code> 指示文を有効化しなければいけません (コメントを外さなければいけません)。また、<code
               class="literal">subnet</code> セクションを作成し、そこに提供先のローカルネットワークと設定情報を記述します。以下の例は、<code
@@ -142,7 +142,7 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dhcp-dns"></a>10.7.2. DHCP と DNS</h3></div></div></div><a
-            id="idm140535307689808"
+            id="idm140245158019824"
             class="indexterm"></a><div
             class="para">
 				DNS ゾーン内に DHCP クライアントを自動登録するという、便利な機能があります。この機能を使うことで、各マシンの意味のある名前を使ってアクセスできるようになります (この機能を使わなければ <code
@@ -159,12 +159,12 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
 allow-update { 127.0.0.1 192.168.0.1 212.94.201.10 !any };</pre><div
             class="para">
 				注意してください! <code
-              class="command">bind</code> は変更可能なゾーンに変更を加え、設定ファイルを定期的に上書きします。この自動手続きにより作成されるファイルは手作業で書かれたものよりも人間にとって読みづらいため、Falcot 管理者は権限委譲された DNS サーバを備える <code
+              class="command">bind</code> は変更することが可能なゾーンに変更を加え、設定ファイルを定期的に上書きします。この自動手続きにより作成されるファイルは手作業で書かれたものよりも人間にとって読みづらいため、Falcot 管理者は権限委譲された DNS サーバを備える <code
               class="literal">internal.falcot.com</code> ドメインを用意しています; これは <code
               class="literal">falcot.com</code> ゾーンファイルは手作業で制御することを意味します。
 			</div><div
             class="para">
-				上で引用した DHCP サーバ設定には、既に DNS ゾーン更新に必要な指示文が含まれています: 指示文はサブネットを表すブロック中の <code
+				上で引用した DHCP サーバの設定には、既に DNS ゾーンの更新に必要な指示文が含まれています: 指示文はサブネットを表すブロック中の <code
               class="literal">ddns-update-style interim;</code> と <code
               class="literal">ddns-domain-name "internal.falcot.com";</code> です。
 			</div></div></div><ul

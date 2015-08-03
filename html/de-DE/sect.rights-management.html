@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux ist eindeutig ein Mehrbenutzersystem, und daher ist es erforderlich, ein Berechtigungssystem bereitzustellen, um die genehmigten Arbeitsvorgänge an Dateien und Verzeichnissen zu kontrollieren, einschließlich aller Systemressourcen und Laufwerke (in einem Unix-System wird jedes Laufwerk als eine Datei oder ein Verzeichnis dargestellt). Dies ist allen Unix-Systemen gemein, aber eine Erinnerung ist immer sinnvoll, vor allem, da es einige sehr interessante und relativ unbekannte Verwendungen gibt.
 		</div><a
-          id="idm140641206376032"
+          id="idm140082845825504"
           class="indexterm"></a><a
-          id="idm140641206375072"
+          id="idm140082845824544"
           class="indexterm"></a><a
-          id="idm140641206374112"
+          id="idm140082845823584"
           class="indexterm"></a><a
-          id="idm140641206372672"
+          id="idm140082845822144"
           class="indexterm"></a><a
-          id="idm140641206371232"
+          id="idm140082845820704"
           class="indexterm"></a><a
-          id="idm140641206369792"
+          id="idm140082845819264"
           class="indexterm"></a><div
           class="para">
 			Jede Datei und jeder Ordner hat spezifische Berechtigungen für drei Kategorien von Benutzern:
@@ -123,13 +123,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					Ausführen (symbolisiert durch <code
                   class="literal">x</code> wie in „eXecute“).
 				</div></li></ul></div><a
-          id="idm140641206358048"
+          id="idm140082845807520"
           class="indexterm"></a><a
-          id="idm140641206357088"
+          id="idm140082845806560"
           class="indexterm"></a><a
-          id="idm140641206356128"
+          id="idm140082845805600"
           class="indexterm"></a><a
-          id="idm140641206355168"
+          id="idm140082845804640"
           class="indexterm"></a><div
           class="para">
 			Bei einer Datei sind diese Berechtigungen leicht zu verstehen: Lesezugriff erlaubt das Lesen des Inhalts (einschließlich des Kopierens), Schreibzugriff erlaubt es, sie zu verändern, und Ausführungszugriff erlaubt es Ihnen, sie auszuführen (was nur funktionieren wird, wenn sie ein Programm ist).
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> und <code
               class="literal">setgid</code> (durch den Buchstaben „s“ symbolisiert). Beachten Sie, dass wir häufig von einem „Bit“ sprechen, da jeder dieser booleschen Werte durch eine 0 oder eine 1 dargestellt werden kann. Diese beiden Berechtigungen erlauben es jedem Benutzer, das Programm mit den Rechten des Eigentümers beziehungsweise der Gruppe auszuführen. Dieses Verfahren gewährt Zugriff auf Funktionsmerkmale, die Rechte einer höheren Ebene erfordern, als Sie normalerweise haben würden.
 		</div><a
-            id="idm140641206349552"
+            id="idm140082845799024"
             class="indexterm"></a><a
-            id="idm140641206348272"
+            id="idm140082845797744"
             class="indexterm"></a><div
             class="para">
 			Da ein Root-Programm mit <code
@@ -164,14 +164,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>SICHERHEIT</em></span> <code
                       class="literal">setgid</code>-Verzeichnis und <span
                       class="emphasis"><em>Sticky-Bit</em></span></strong></p></div></div></div><a
-            id="idm140641206341840"
+            id="idm140082845791312"
             class="indexterm"></a><div
             class="para">
 			Das <code
               class="literal">setgid</code>-Bit gilt auch für Verzeichnisse. Und neu erstellte Einträge in solchen Verzeichnissen werden automatisch der Benutzergruppe des übergeordneten Verzeichnisses zugeordnet, anstatt wie gewöhnlich die Hauptgruppe des Erstellers zu übernehmen. Durch diese Einstellung wird vermieden, dass der Benutzer die Hauptgruppe des Eintrags ändern muss (mit dem Befehl <code
               class="command">newgrp</code>), wenn er in einem Verzeichnisbaum arbeitet, der von mehreren Benutzern derselben Gruppe gemeinsam genutzt wird.
 		</div><a
-            id="idm140641206338672"
+            id="idm140082845788144"
             class="indexterm"></a><div
             class="para">
 			Das „Sticky“-Bit (symbolisiert durch den Buchstaben „t“) ist ein Recht, das nur in Verzeichnissen sinnvoll ist. Es wird vor allem bei temporären Verzeichnissen verwendet, bei denen jeder Schreibzugriff hat (wie zum Beispiel bei <code
@@ -216,15 +216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code>, für „all“, deckt alle drei Benutzerkategorien ab, so dass <code
             class="literal">a=rx</code> allen drei Kategorien die gleichen Rechte gewährt (Lesen und Ausführen, aber nicht Schreiben).
 		</div><a
-          id="idm140641206322736"
+          id="idm140082845772208"
           class="indexterm"></a><a
-          id="idm140641206321616"
+          id="idm140082845771088"
           class="indexterm"></a><a
-          id="idm140641206320496"
+          id="idm140082845769968"
           class="indexterm"></a><a
-          id="idm140641206319376"
+          id="idm140082845768848"
           class="indexterm"></a><a
-          id="idm140641206318448"
+          id="idm140082845767920"
           class="indexterm"></a><div
           class="para">
 			Die (oktale) Zahlendarstellung ordnet jeder Berechtigung einen Wert zu: 4 für Lesen, 2 für Schreiben und 1 für Ausführen. Wir verknüpfen jede Kombination von Berechtigungen durch die Summe der Zahlen. Jeder Wert wird dann einer anderen Kategorie von Benutzern zugeordnet, indem sie von vorne nach hinten in der üblichen Reihenfolge (Eigentümer, Gruppe, Sonstige) angeordnet werden.
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> in einer Shell ein; Sie werden eine Maske wie zum Beispiel <code
               class="computeroutput">0022</code> sehen. Dies ist eine oktale Darstellung der Berechtigungen, die planmäßig entfernt werden (in diesem Fall die Schreibrechte für die Gruppe und sonstige Benutzer).
 		</div><a
-            id="idm140641206296336"
+            id="idm140082845745808"
             class="indexterm"></a><a
-            id="idm140641206295376"
+            id="idm140082845744848"
             class="indexterm"></a><a
-            id="idm140641206293936"
+            id="idm140082845743408"
             class="indexterm"></a><div
             class="para">
 			Wenn Sie einen neuen oktalen Wert eingeben, verändert der Befehl <code

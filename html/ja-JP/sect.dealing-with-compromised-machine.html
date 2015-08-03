@@ -74,7 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535286608704"></a>14.6.1. クラッカー不正侵入の検知と観察</h3></div></div></div><div
+                    id="idm140245146611744"></a>14.6.1. クラッカー不正侵入の検知と観察</h3></div></div></div><div
             class="para">
 				クラッキング対応の最初の段階はこうした行為を把握することです。クラッキング行為を、特に十分な監視設備がない状態で、把握することは不可能です。
 			</div><div
@@ -122,18 +122,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535286596784"></a>14.6.2. サーバをオフラインにする</h3></div></div></div><div
+                    id="idm140245146599824"></a>14.6.2. サーバをオフラインにする</h3></div></div></div><div
             class="para">
 				クラッキングが最も派手に行われる場合を除けば、クラッキングはネットワーク経由で行われ、攻撃者は目標 (機密データへのアクセス、不正ファイルの共有、踏み台としてマシンを使うことによる本人識別情報の隠匿、など) を達成するためにネットワークを必要とします。攻撃者がまだクラッキング行為を完了していない場合、ネットワークからコンピュータを切り離すことで、攻撃者は目標を達成できなくなります。
 			</div><div
             class="para">
-				サーバが物理的にアクセス可能な場合のみ、これは可能です。サーバが物凄く遠くにあるホスティングプロバイダのデータセンターでホストされていたり、サーバにその他の理由でアクセスできない場合、いくつかの重要な情報の収集 (以下の説を参照) を開始して、可能な限り多くの (通常 <code
-              class="command">sshd</code> を除くすべての) サービスをシャットダウンすることで可能な限りサーバを隔離する、ことは通常良いアイディアです。これはまだ都合が悪い状態です。なぜなら、攻撃者は管理者がしているのと同様に SSH アクセス可能だからです; このため、マシンを「きれいに」することは難しいです。
+				サーバが物理的にアクセスできる場合のみ、これは可能です。サーバが物凄く遠くにあるホスティングプロバイダのデータセンターでホストされていたり、サーバにその他の理由でアクセスできない場合、いくつかの重要な情報の収集 (以下の説を参照) を開始して、可能な限り多くの (通常 <code
+              class="command">sshd</code> を除くすべての) サービスをシャットダウンすることで可能な限りサーバを隔離する、ことは通常良いアイディアです。これはまだ都合が悪い状態です。なぜなら、攻撃者は管理者がしているのと同様に SSH アクセスできるからです; このため、マシンを「きれいに」することは難しいです。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535286593440"></a>14.6.3. 証拠として使えるすべての保存</h3></div></div></div><div
+                    id="idm140245146596480"></a>14.6.3. 証拠として使えるすべての保存</h3></div></div></div><div
             class="para">
 				攻撃を理解したり、攻撃者に対して法的手段を取るには、すべての重要な要素の複製を取ることが必要です; これには、ハードディスクの内容、すべての実行中プロセスのリスト、すべての開かれた接続のリスト、が含まれます。RAM の内容を使うことも可能ですが、実際にこれが使われることはまれです。
 			</div><div
@@ -164,10 +164,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535286583440"></a>14.6.4. 再インストール</h3></div></div></div><a
-            id="idm140535286582800"
+                    id="idm140245146586480"></a>14.6.4. 再インストール</h3></div></div></div><a
+            id="idm140245146585840"
             class="indexterm"></a><a
-            id="idm140535286582032"
+            id="idm140245146585072"
             class="indexterm"></a><div
             class="para">
 				不正侵入されたサーバを、完全に再インストールする前に、オンラインに戻すべきではありません。不正侵入が深刻な場合 (管理者権限が奪われていた場合)、再インストール以外に攻撃者が残したすべて (特に<span
@@ -179,7 +179,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535286578288"></a>14.6.5. フォレンジック解析</h3></div></div></div><div
+                    id="idm140245146581328"></a>14.6.5. フォレンジック解析</h3></div></div></div><div
             class="para">
 				サービスが回復したら、攻撃ベクトルを理解するために不正侵入されたシステムのディスクイメージの詳細な調査を開始します。これらのイメージをマウントする際に、<code
               class="literal">ro,nodev,noexec,noatime</code> オプションを使うことに注意してください。これは (ファイルにアクセスしたタイムスタンプを含めて) 内容の変更を防ぎ、誤って破壊されたプログラムを実行することを防ぐ意味合いがあります。
@@ -220,7 +220,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">grave-robber</code>、ディスクの未使用領域から興味深いデータを抽出する <code
               class="command">lazarus</code>、プロセスが使っているメモリの複製を取ることが可能な <code
               class="command">pcat</code> は注目に値します。他のデータ抽出ツールも含まれています。<a
-              id="idm140535286566128"
+              id="idm140245146569168"
               class="indexterm"></a>
 			</div><div
             class="para">
@@ -228,13 +228,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">sleuthkit</span> パッケージはファイルシステムを解析する別のツールを提供します。これは <span
               class="emphasis"><em>Autopsy Forensic Browser</em></span> グラフィカルインターフェース (<span
               class="pkg pkg">autopsy</span> パッケージに含まれます) から簡単に使うことが可能です。<a
-              id="idm140535286563376"
+              id="idm140245146566416"
               class="indexterm"></a>
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140535286562608"></a>14.6.6. 攻撃シナリオの再構成</h3></div></div></div><div
+                    id="idm140245146565648"></a>14.6.6. 攻撃シナリオの再構成</h3></div></div></div><div
             class="para">
 				解析中に収集されたすべての要素はジグソーパズルのピースのように組み合わさるべきです; 最初の疑わしいファイルの作成は破壊を証明するログと関係があります。実世界の例は長ったらしい理論よりもさらに明快なものであるべきです。
 			</div><div
