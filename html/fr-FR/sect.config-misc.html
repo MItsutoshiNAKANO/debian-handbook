@@ -75,18 +75,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.timezone"></a>8.9.1. Fuseau horaire</h3></div></div></div><a
-            id="idm140326106327728"
+            id="idm139761561033824"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.symbolic-link"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> Le lien symbolique</strong></p></div></div></div><a
-              id="idm140326106325280"
+              id="idm139761561031376"
               class="indexterm"></a><a
-              id="idm140326106323840"
+              id="idm139761561029936"
               class="indexterm"></a><a
-              id="idm140326106322880"
+              id="idm139761561028976"
               class="indexterm"></a><div
               class="para">
 				Un lien symbolique est un pointeur vers un autre fichier. Quand on y accède, c'est le fichier ainsi pointé qui est ouvert. Sa suppression n'entraîne pas la suppression du fichier pointé. De même, il ne dispose pas de droits propres, ce sont ceux de la cible qui comptent. Enfin, il peut pointer sur n'importe quel type de fichier : répertoires, fichiers spéciaux (<span
@@ -112,23 +112,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/usr/share/zoneinfo</code> directory is copied into <code
               class="filename">/etc/localtime</code>; this file contains the rules governing the dates where daylight saving time is active, for countries that use it.
 			</div><a
-            id="idm140326106313152"
+            id="idm139761561019248"
             class="indexterm"></a><a
-            id="idm140326106312032"
+            id="idm139761561018128"
             class="indexterm"></a><a
-            id="idm140326106310912"
+            id="idm139761561017008"
             class="indexterm"></a><a
-            id="idm140326106309792"
+            id="idm139761561015888"
             class="indexterm"></a><a
-            id="idm140326106308672"
+            id="idm139761561014768"
             class="indexterm"></a><a
-            id="idm140326106307712"
+            id="idm139761561013808"
             class="indexterm"></a><div
             class="para">
 				Pour changer temporairement de fuseau horaire, il est possible de mettre en place un fuseau horaire ayant la priorité sur les réglages du système avec la variable d'environnement <code
               class="varname">TZ</code>.
 			</div><a
-            id="idm140326106305616"
+            id="idm139761561011712"
             class="indexterm"></a><a
             id="screen.tz"></a><pre
             class="screen">
@@ -166,9 +166,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.time-synchronization"></a>8.9.2. Synchronisation horaire</h3></div></div></div><a
-            id="idm140326106292352"
+            id="idm139761560998448"
             class="indexterm"></a><a
-            id="idm140326106291392"
+            id="idm139761560997488"
             class="indexterm"></a><div
             class="para">
 				La synchronisation horaire, qui peut paraître superflue sur un ordinateur, prend toute son importance dans le cadre d'un réseau. Les utilisateurs n'ayant pas le droit de modifier la date et l'heure, il est important que ces informations soient exactes pour ne pas les gêner. Par ailleurs, le fait d'avoir tous les ordinateurs synchronisés permet de mieux croiser les informations obtenues à partir de logs issus de machines différentes. Ainsi, en cas d'attaque, il est plus simple de reconstituer la séquence chronologique des actions des indélicats sur les différentes machines compromises. Des données collectées sur plusieurs machines à des fins de statistiques n'ont pas non plus grand sens si leurs horodatages sont divers.
@@ -177,9 +177,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> NTP</strong></p></div></div></div><a
-              id="idm140326106287616"
+              id="idm139761560993712"
               class="indexterm"></a><a
-              id="idm140326106286656"
+              id="idm139761560992752"
               class="indexterm"></a><div
               class="para">
 				NTP (<span
@@ -203,9 +203,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="pkg pkg">ntpdate</span>. On changera au besoin le serveur NTP employé en modifiant le fichier <code
                 class="filename">/etc/default/ntpdate</code>.
 				</div><a
-              id="idm140326106277840"
+              id="idm139761560983936"
               class="indexterm"></a><a
-              id="idm140326106276720"
+              id="idm139761560982816"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -217,19 +217,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>pool.ntp.org</em></span> et fournira l'heure à qui la lui demandera sur le réseau local. On le configurera à travers le fichier <code
                 class="filename">/etc/ntp.conf</code> ; l'élément le plus intéressant à changer est le serveur NTP de référence. Si le réseau compte beaucoup de serveurs, il peut être intéressant de n'avoir qu'un seul serveur qui se synchronise sur les serveurs publics, les autres se synchronisant sur lui.
 				</div><a
-              id="idm140326106271424"
+              id="idm139761560977520"
               class="indexterm"></a><a
-              id="idm140326106270000"
+              id="idm139761560976096"
               class="indexterm"></a><a
-              id="idm140326106268560"
+              id="idm139761560974656"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>POUR ALLER PLUS LOIN</em></span> Module GPS et autres sources de temps</strong></p></div></div></div><a
-                id="idm140326106266032"
+                id="idm139761560972128"
                 class="indexterm"></a><a
-                id="idm140326106265072"
+                id="idm139761560971168"
                 class="indexterm"></a><div
                 class="para">
 					Si la synchronisation horaire est cruciale dans votre réseau, il est possible d'équiper un serveur d'un module GPS (qui demandera l'heure aux satellites GPS) ou DCF-77 (qui la captera sur une horloge atomique installée près de Francfort). Dans ces cas, la configuration du serveur NTP est un peu plus compliquée et la consultation de sa documentation un préalable absolument nécessaire.
@@ -238,13 +238,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.rotation-logs"></a>8.9.3. Rotation des fichiers de logs</h3></div></div></div><a
-            id="idm140326106261632"
+            id="idm139761560967728"
             class="indexterm"></a><a
-            id="idm140326106260192"
+            id="idm139761560966288"
             class="indexterm"></a><a
-            id="idm140326106258752"
+            id="idm139761560964848"
             class="indexterm"></a><a
-            id="idm140326106257824"
+            id="idm139761560963920"
             class="indexterm"></a><div
             class="para">
 				Les fichiers de logs prenant rapidement du volume, il est nécessaire de les archiver. On emploie en général une archive « tournante » : le fichier de log est régulièrement archivé et seules ses <em
@@ -268,11 +268,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.sharing-admin-rights"></a>8.9.4. Partage des droits d'administration</h3></div></div></div><a
-            id="idm140326106249088"
+            id="idm139761560955184"
             class="indexterm"></a><a
-            id="idm140326106247648"
+            id="idm139761560953744"
             class="indexterm"></a><a
-            id="idm140326106246688"
+            id="idm139761560952784"
             class="indexterm"></a><div
             class="para">
 				Bien souvent, plusieurs administrateurs s'occupent du réseau. Partager le mot de passe de l'utilisateur root n'est pas très élégant et ouvre la porte à des abus du fait de l'anonymat de ce compte partagé. La solution à ce problème est le programme <code
@@ -292,11 +292,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal"><em
                 class="replaceable">utilisateur</em> ALL=(ALL) ALL</code> permettra à l'utilisateur concerné d'exécuter n'importe quelle commande en tant que root.
 			</div><a
-            id="idm140326106238368"
+            id="idm139761560944464"
             class="indexterm"></a><a
-            id="idm140326106237248"
+            id="idm139761560943344"
             class="indexterm"></a><a
-            id="idm140326106236128"
+            id="idm139761560942224"
             class="indexterm"></a><div
             class="para">
 				Des configurations plus sophistiquées permettront de n'autoriser que quelques commandes particulières à certains utilisateurs. Tous les détails de ces différentes possibilités sont donnés dans la page de manuel <span
@@ -307,9 +307,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fstab-mount-points"></a>8.9.5. Liste des points de montage</h3></div></div></div><a
-            id="idm140326106231904"
+            id="idm139761560938000"
             class="indexterm"></a><a
-            id="idm140326106230944"
+            id="idm139761560937040"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -321,7 +321,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/home/</code>. Le système de fichiers racine est toujours monté par le noyau. Lors de l'initialisation de l'ordinateur, d'autres périphériques y sont souvent intégrés à l'aide de la commande <code
                 class="command">mount</code>.
 			</div><a
-              id="idm140326106226256"
+              id="idm139761560932352"
               class="indexterm"></a><div
               class="para">
 				Certains périphériques amovibles sont montés automatiquement lors de leur branchement, notamment dans les environnements de bureau GNOME et KDE. Les autres devront être montés manuellement par l'utilisateur. Il faudra également que celui-ci puisse les démonter (ou retirer de l'arborescence) ; c'est d'ailleurs un préalable nécessaire à l'éjection de certains d'entre eux, comme les CD-Rom. Les utilisateurs normaux ne sont normalement pas habilités à employer les commandes <code
@@ -344,9 +344,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Le fichier <code
               class="filename">/etc/fstab</code> donne la liste de tous les montages possibles (effectués automatiquement au démarrage ou à exécuter manuellement pour les périphériques amovibles). Chaque point de montage y est détaillé sur une ligne par plusieurs champs séparés par des blancs, qui sont : <a
-              id="idm140326106215984"
+              id="idm139761560922080"
               class="indexterm"></a> <a
-              id="idm140326106215184"
+              id="idm139761560921280"
               class="indexterm"></a>
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
@@ -484,15 +484,15 @@ arrakis:/shared /shared         nfs     defaults        0       0
                 class="emphasis"><em>am-utils</em></span> fournit l'auto-monteur <code
                 class="command">amd</code>, capable de monter les périphériques amovibles à la demande lorsqu'un utilisateur tentera d'accéder à leur point de montage habituel. Il les démontera automatiquement quand plus aucun processus n'y accédera.
 			</div><a
-              id="idm140326106170464"
+              id="idm139761560876560"
               class="indexterm"></a><a
-              id="idm140326106169344"
+              id="idm139761560875440"
               class="indexterm"></a><a
-              id="idm140326106168224"
+              id="idm139761560874320"
               class="indexterm"></a><a
-              id="idm140326106167104"
+              id="idm139761560873200"
               class="indexterm"></a><a
-              id="idm140326106165984"
+              id="idm139761560872080"
               class="indexterm"></a><div
               class="para">
 				D'autres auto-monteurs existent, par exemple <code
@@ -509,11 +509,11 @@ arrakis:/shared /shared         nfs     defaults        0       0
                     id="sect.locate-updatedb"></a>8.9.6. <code
                     class="command">locate</code> et <code
                     class="command">updatedb</code></h3></div></div></div><a
-            id="idm140326106160368"
+            id="idm139761560866464"
             class="indexterm"></a><a
-            id="idm140326106159248"
+            id="idm139761560865344"
             class="indexterm"></a><a
-            id="idm140326106158128"
+            id="idm139761560864224"
             class="indexterm"></a><div
             class="para">
 				La commande <code

@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dns-principe"></a>10.6.1. Principe et fonctionnement</h3></div></div></div><a
-            id="idm140326108329424"
+            id="idm139761560395568"
             class="indexterm"></a><a
-            id="idm140326108328464"
+            id="idm139761560394608"
             class="indexterm"></a><div
             class="para">
 				Le service de gestion des noms (<span
@@ -86,9 +86,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Les informations DNS sont regroupées par zones, correspondant chacune à un domaine ou à une plage d'adresses IP (les adresses IP sont généralement allouées par blocs d'adresses consécutives). Un serveur primaire fait autorité sur le contenu d'une zone ; un serveur secondaire, normalement hébergé sur une autre machine, se contente de proposer une copie de la zone primaire, qu'il met à jour régulièrement.
 			</div><a
-            id="idm140326108324144"
+            id="idm139761560390288"
             class="indexterm"></a><a
-            id="idm140326108322704"
+            id="idm139761560388848"
             class="indexterm"></a><div
             class="para">
 				Chaque zone peut contenir différents types d'enregistrements (<span
@@ -101,14 +101,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">A</code> : attribution d'une adresse IPv4. <a
-                    id="idm140326108318848"
+                    id="idm139761560384992"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">CNAME</code> : définition d'un alias. <a
-                    id="idm140326108316800"
+                    id="idm139761560382944"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="xref"
                     href="network-services.html#sidebar.smtp"><span
                       class="emphasis"><em>B.A.-BA</em></span> SMTP</a>). S'il ne répond pas, le deuxième serveur sera contacté, etc. <a
-                    id="idm140326108313728"
+                    id="idm139761560379872"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -127,14 +127,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">PTR</code> : correspondance adresse IP vers nom. Elle est stockée dans une zone dédiée à la résolution inverse, nommée en fonction de la plage d'adresses IP : par exemple <code
                     class="literal">1.168.192.in-addr.arpa</code> pour toutes les adresses du réseau <code
                     class="literal">192.168.1.0/24</code>. <a
-                    id="idm140326108310240"
+                    id="idm139761560376384"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">AAAA</code> : correspondance nom vers adresse IPv6. <a
-                    id="idm140326108308192"
+                    id="idm139761560374336"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -143,12 +143,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">NS</code> : correspondance nom vers serveur de noms. Chaque domaine doit compter au moins un enregistrement NS. Tous ces enregistrements pointent sur un serveur DNS capable de répondre aux requêtes portant sur ce domaine ; ils signaleront les serveurs primaires et secondaires du domaine concerné. Ces enregistrements permettent aussi de mettre en place une délégation DNS. On pourra ainsi indiquer que le domaine <code
                     class="literal">interne.falcot.com</code> est géré par un autre serveur de noms et déléguer ainsi une partie du service. Évidemment, le serveur concerné devra déclarer une zone <code
                     class="literal">interne.falcot.com</code>. <a
-                    id="idm140326108304656"
+                    id="idm139761560370800"
                     class="indexterm"></a>
 					</div></li></ul></div><a
-            id="idm140326108303536"
+            id="idm139761560369680"
             class="indexterm"></a><a
-            id="idm140326108302096"
+            id="idm139761560368240"
             class="indexterm"></a><div
             class="para">
 				Le logiciel serveur de nom de référence, Bind, est développé par l'ISC (<span
@@ -159,17 +159,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				D'autre part, elle prend en charge DNSSEC, norme qui permet de signer et donc d'authentifier les enregistrements DNS, interdisant ainsi toute falsification de ces données, par exemple par des intermédiaires mal intentionnés.
 			</div><a
-            id="idm140326108298000"
+            id="idm139761560364144"
             class="indexterm"></a><a
-            id="idm140326108296576"
+            id="idm139761560362720"
             class="indexterm"></a><a
-            id="idm140326108295616"
+            id="idm139761560361760"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> DNSSEC</strong></p></div></div></div><a
-              id="idm140326108293408"
+              id="idm139761560359552"
               class="indexterm"></a><div
               class="para">
 				La norme DNSSEC est assez complexe ; pour en comprendre tous les tenants et aboutissants, nous vous suggérons de consulter les informations disponibles sur le site du NIC France (organisme gérant l'attribution des domaines en <code
@@ -194,15 +194,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ATTENTION</em></span> Noms des zones inverses</strong></p></div></div></div><a
-              id="idm140326108285008"
+              id="idm139761560351152"
               class="indexterm"></a><a
-              id="idm140326108283568"
+              id="idm139761560349712"
               class="indexterm"></a><a
-              id="idm140326108282608"
+              id="idm139761560348752"
               class="indexterm"></a><a
-              id="idm140326108281488"
+              id="idm139761560347632"
               class="indexterm"></a><a
-              id="idm140326108280368"
+              id="idm139761560346512"
               class="indexterm"></a><div
               class="para">
 				Reverse zones have a particular name. The zone covering the <code
@@ -229,14 +229,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">host <em
                   class="replaceable">ipaddress</em> localhost</code> tests the reverse resolution.
 			</div><a
-              id="idm140326108270512"
+              id="idm139761560336656"
               class="indexterm"></a></div><div
             class="para">
 				On pourra configurer un serveur DNS en s'inspirant des extraits suivants, issus des fichiers de configuration de la société Falcot.
 			</div><a
-            id="idm140326108268624"
+            id="idm139761560334768"
             class="indexterm"></a><a
-            id="idm140326108267504"
+            id="idm139761560333648"
             class="indexterm"></a><div
             class="example"><a
               id="example.bind-named.conf.local"></a><p
