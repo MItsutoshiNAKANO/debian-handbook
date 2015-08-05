@@ -70,23 +70,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.virtualization"></a>12.2. 仮想化</h2></div></div></div><div
           class="para">
 			仮想化<a
-            id="idm139657578864256"
+            id="idm140615484926512"
             class="indexterm"></a>は最近のコンピューティングにおける最も大きな進歩の一つです。仮想化という用語は、実際のハードウェアに対するさまざまな独立性の度合いを持つ仮想コンピュータを模倣するさまざまな抽象化と技術を指します。1 台の物理的なサーバが同時かつ隔離された状態で動く複数のシステムをホストすることが可能です。仮想化アプリケーションは数多く存在し、仮想システムの隔離状態を提供します: たとえば、さまざまに設定されたテスト環境を作ったり、安全性を確保する目的で異なる仮想マシン間でホストされたサービスを分離したり、することが可能です。
 		</div><div
           class="para">
 			複数の仮想化ソリューションが存在し、それぞれが利点と欠点を持っています。本書では Xen、LXC、KVM に注目しますが、他にも以下の様な注目すべき実装が存在します:
 		</div><a
-          id="idm139657578862000"
+          id="idm140615484924256"
           class="indexterm"></a><a
-          id="idm139657578860880"
+          id="idm140615484923136"
           class="indexterm"></a><a
-          id="idm139657578859760"
+          id="idm140615484922016"
           class="indexterm"></a><a
-          id="idm139657578858640"
+          id="idm140615484920896"
           class="indexterm"></a><a
-          id="idm139657578857520"
+          id="idm140615484919776"
           class="indexterm"></a><a
-          id="idm139657578856400"
+          id="idm140615484918656"
           class="indexterm"></a><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.xen"></a>12.2.1. Xen</h3></div></div></div><div
             class="para">
 				Xen<a
-              id="idm139657578843536"
+              id="idm140615484906688"
               class="indexterm"></a> は「準仮想化」ソリューションです。Xen には薄い抽象化層が含まれ、この抽象化層は「ハイパーバイザ」と呼ばれ、ハードウェアとその上にあるシステムの間に位置します; ハイパーバイザは審判員として振る舞い、仮想マシンからハードウェアへのアクセスを制御します。しかしながら、ハイパーバイザは命令のほんの一部だけを取り扱い、残りはシステムの代わりにハードウェアによって直接的に実行されます。こうすることによる主な有効性は性能が低下せず、システムがネイティブ速度に迫る性能を発揮するという点です; 欠点は Xen ハイパーバイザ上で使いたいオペレーティングシステムのカーネルは Xen 上で実行するために修正される必要があるという点です。
 			</div><div
             class="para">
@@ -457,7 +457,7 @@ testxen login: </code></pre><div
                     id="sect.lxc"></a>12.2.2. LXC</h3></div></div></div><div
             class="para">
 				LXC<a
-              id="idm139657578733312"
+              id="idm140615484797696"
               class="indexterm"></a> は「仮想マシン」を作るために使われるにも関わらず、厳密に言うと仮想システムではなく、同じホスト上で実行されるプロセスのグループを隔離するためのシステムです。LXC は近年 Linux カーネルに対して行われた数々の機能の利点を活用しています。これらの機能はまとめて <span
               class="emphasis"><em>control groups</em></span> として知られています。<span
               class="emphasis"><em>control groups</em></span> を使うことにより、「グループ」と呼ばれるさまざまなプロセス群に対してシステム全体の特定の側面の状態を強制することが可能です。中でも最も注目すべき側面はプロセス識別子、ネットワーク接続、マウントポイントです。隔離されたプロセスのグループはシステムの他のプロセスにアクセスできませんし、グループによるファイルシステムへのアクセスを特定の一部に限定することが可能です。さらにグループはネットワークインターフェースとルーティングテーブルを持っており、グループがシステムに存在する利用できるデバイスの一部だけを見えるように設定することが可能です。
@@ -500,7 +500,7 @@ testxen login: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657578718160"></a>12.2.2.1. 準備段階</h4></div></div></div><div
+                      id="idm140615484782544"></a>12.2.2.1. 準備段階</h4></div></div></div><div
               class="para">
 					<span
                 class="pkg pkg">lxc</span> パッケージには LXC を実行するために必要なツールが含まれるため、必ずこのパッケージをインストールしなければいけません。
@@ -580,7 +580,7 @@ iface br0 inet static
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657578697040"></a>12.2.2.3. システムのセットアップ</h4></div></div></div><div
+                      id="idm140615484760944"></a>12.2.2.3. システムのセットアップ</h4></div></div></div><div
               class="para">
 					コンテナがファイルシステムを使うようにファイルシステムを設定しましょう。この「仮想マシン」はハードウェア上で直接的に実行されないため、標準的なファイルシステムに比べていくつかの微調整を必要とします。これは特にカーネル、デバイス、コンソールが該当します。幸いなことに、<span
                 class="pkg pkg">lxc</span> にはこの設定をほぼ自動化するスクリプトが含まれます。たとえば、以下のコマンド (<span
@@ -636,7 +636,7 @@ lxc.network.hwaddr = 4a:49:43:49:79:20</pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657578682752"></a>12.2.2.4. コンテナの開始</h4></div></div></div><div
+                      id="idm140615484746656"></a>12.2.2.4. コンテナの開始</h4></div></div></div><div
               class="para">
 					これで仮想マシンイメージの準備が整いました。コンテナを開始しましょう:
 				</div><pre
@@ -723,8 +723,8 @@ root@testlxc:~# </code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139657578657616"></a>12.2.3. KVM を使った仮想化</h3></div></div></div><a
-            id="idm139657578656848"
+                    id="idm140615484721424"></a>12.2.3. KVM を使った仮想化</h3></div></div></div><a
+            id="idm140615484720656"
             class="indexterm"></a><div
             class="para">
 				KVM は <span
@@ -741,16 +741,16 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657578651872"></a>12.2.3.1. 準備段階</h4></div></div></div><a
-              id="idm139657578651072"
+                      id="idm140615484715584"></a>12.2.3.1. 準備段階</h4></div></div></div><a
+              id="idm140615484714784"
               class="indexterm"></a><div
               class="para">
 					VirtualBox などのツールと異なり、KVM は仮想マシンを作成管理するためのユーザインターフェースを含みません。<span
                 class="pkg pkg">qemu-kvm</span> パッケージには、仮想マシンを開始することが可能な実行ファイルおよび適切なカーネルモジュールを読み込むための初期化スクリプトが含まれます。
 				</div><a
-              id="idm139657578648352"
+              id="idm140615484712064"
               class="indexterm"></a><a
-              id="idm139657578647392"
+              id="idm140615484711104"
               class="indexterm"></a><div
               class="para">
 					幸いなことに、Red Hat は <span
@@ -758,7 +758,7 @@ root@testlxc:~# </code></pre><div
                 class="emphasis"><em>仮想マシンマネージャ</em></span>ツールを開発することで、この問題に対処するためのツールを提供しています。libvirt により、仮想マシンを管理する方法が統一され、管理方法が裏で動く仮想システムに依存しなくなります (libvirt は現在 QEMU、KVM、Xen、LXC、OpenVZ、VirtualBox、VMWare、UML をサポートしています)。<code
                 class="command">virtual-manager</code> はグラフィルインターフェースで、仮想マシンを作成管理するために libvirt を使います。
 				</div><a
-              id="idm139657578643680"
+              id="idm140615484707392"
               class="indexterm"></a><div
               class="para">
 					最初に <code
@@ -781,7 +781,7 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657578633696"></a>12.2.3.2. ネットワーク設定</h4></div></div></div><div
+                      id="idm140615484697408"></a>12.2.3.2. ネットワーク設定</h4></div></div></div><div
               class="para">
 					Xen や LXC と同様に、最もよく使われるネットワーク設定は仮想マシンのネットワークインターフェースをグループ化するブリッジです (<a
                 class="xref"
@@ -800,9 +800,9 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657571937280"></a>12.2.3.3. <code
+                      id="idm140615484692048"></a>12.2.3.3. <code
                       class="command">virt-install</code> を使ったインストール</h4></div></div></div><a
-              id="idm139657571936384"
+              id="idm140615464213328"
               class="indexterm"></a><div
               class="para">
 					仮想マシンの作成は普通のシステムをインストールするのとよく似ています。違いは、仮想マシンの性質をコマンドラインから非常に長々と指定する点です。
@@ -1041,9 +1041,9 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657571897472"></a>12.2.3.4. <code
+                      id="idm140615464174416"></a>12.2.3.4. <code
                       class="command">virsh</code> を使ったマシンの管理</h4></div></div></div><a
-              id="idm139657571896576"
+              id="idm140615464173520"
               class="indexterm"></a><div
               class="para">
 					これでインストールが終了しました。利用できる仮想マシンを取り扱う方法に移りましょう。最初に <code
@@ -1122,7 +1122,7 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657571879248"></a>12.2.3.5. yum を使い RPM に基づくシステムを Debian の中にインストールする</h4></div></div></div><div
+                      id="idm140615464156192"></a>12.2.3.5. yum を使い RPM に基づくシステムを Debian の中にインストールする</h4></div></div></div><div
               class="para">
 					仮想マシンが Debian (または Debian 派生物) を実行することを意図している場合、システムは上で述べたとおり <code
                 class="command">debootstrap</code> を使って初期化されます。しかし、仮想マシンに RPM に基づくシステム (Fedora、CentOS、Scientific Linux など) をインストールする場合、<code
