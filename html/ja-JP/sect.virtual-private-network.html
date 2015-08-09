@@ -70,27 +70,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.virtual-private-network"></a>10.2. 仮想プライベートネットワーク</h2></div></div></div><div
           class="para">
 			<span
-            class="emphasis"><em>仮想プライベートネットワーク</em></span> (略して VPN) は 2 つの異なるローカルネットワークをインターネットに作ったトンネルを経由してつなげる方法です; トンネルは通常機密を守るために暗号化されます。VPN はリモートマシンを会社のローカルネットワークの中に参加させるために使われます。
+            class="emphasis"><em>仮想プライベートネットワーク</em></span> (略して VPN) は 2 つの異なるローカルネットワークをインターネットに作ったトンネルを経由してつなげる方法です。さらに、トンネルは通常機密を守るために暗号化されます。VPN はリモートマシンを会社のローカルネットワークの中に参加させるために使われます。
 		</div><a
-          id="idm140615484536224"
+          id="idm140198414262016"
           class="indexterm"></a><a
-          id="idm140615484534816"
+          id="idm140198428275824"
           class="indexterm"></a><a
-          id="idm140615484533856"
+          id="idm140198428274864"
           class="indexterm"></a><div
           class="para">
-			この機能を提供するツールにはさまざまなものがあります。OpenVPN は効果的な解決策で、設置と保守が簡単で、SSL/TLS に基づいています。別の可能性は IPsec を使って 2 台のマシン間の IP トラフィックを暗号化することです; この暗号化は透過的です。つまり、ホスト上で実行されているアプリケーションは VPN の存在を気にする必要がありません。SSH は伝統的な機能に加えて、VPN を提供するために使われる場合もあります。最後に、Microsoft の PPTP プロトコルを使って VPN を作ることも可能です。他にも解決策は存在しますが、本書のテーマを越えています。
+			この機能を提供するツールにはさまざまなものがあります。OpenVPN は効果的な解決策で、設置と保守が簡単で、SSL/TLS に基づいています。別の可能性は IPsec を使って 2 台のマシン間の IP トラフィックを暗号化することです。さらに、この暗号化は透過的です。つまり、ホスト上で実行されているアプリケーションは VPN の存在を気にする必要がありません。SSH は伝統的な機能に加えて、VPN を提供するために使われる場合もあります。最後に、Microsoft の PPTP プロトコルを使って VPN を作ることも可能です。他にも解決策は存在しますが、本書のテーマを越えています。
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.openvpn"></a>10.2.1. OpenVPN</h3></div></div></div><a
-            id="idm140615484530656"
+            id="idm140198428271648"
             class="indexterm"></a><div
             class="para">
-				OpenVPN は仮想プライベートネットワーク作成専用ソフトウェアの一種です。OpenVPN をセットアップするには VPN サーバ上とクライアント上に仮想ネットワークインターフェースの作成が必要です; <code
+				OpenVPN は仮想プライベートネットワーク作成専用ソフトウェアの一種です。OpenVPN をセットアップするには VPN サーバ上とクライアント上に仮想ネットワークインターフェースの作成が必要です。さらに、OpenVPN は <code
               class="literal">tun</code> (IP レベルトンネル) と <code
-              class="literal">tap</code> (イーサネットレベルトンネル) インターフェースをサポートします。具体的には、VPN クライアントをイーサネットブリッジ経由でサーバのローカルネットワークに参加させる場合を除いて、<code
+              class="literal">tap</code> (イーサネットレベルトンネル) インターフェースをサポートします。実際には、VPN クライアントをイーサネットブリッジ経由でサーバのローカルネットワークに参加させる場合を除いて、<code
               class="literal">tun</code> インターフェースが最もよく使われます。
 			</div><div
             class="para">
@@ -100,33 +100,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> SSL と TLS</strong></p></div></div></div><a
-              id="idm140615484525280"
+              id="idm140198428266176"
               class="indexterm"></a><a
-              id="idm140615484524320"
+              id="idm140198428265216"
               class="indexterm"></a><div
               class="para">
 				SSL (<span
                 class="emphasis"><em>Secure Sockets Layer</em></span>) プロトコルは、ウェブサーバとの安全な接続を確立する目的で、Netscape によって考案されました。SSL は後に TLS (<span
-                class="emphasis"><em>Transport Layer Security</em></span>) の下で IETF によって標準化されました; TLS は SSLv3 とよく似ており、違いは SSLv3 にいくつかの修正と改善を加えた点です。
+                class="emphasis"><em>Transport Layer Security</em></span>) の下で IETF によって標準化されました。さらに TLS は SSLv3 とよく似ており、違いは SSLv3 にいくつかの修正と改善を加えた点です。
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="sect.easy-rsa"></a>10.2.1.1. 公開鍵基盤: <span
+                      id="sect.easy-rsa"></a>10.2.1.1. 公開鍵基盤、<span
                       class="emphasis"><em>easy-rsa</em></span></h4></div></div></div><a
-              id="idm140615486373648"
+              id="idm140198428261008"
               class="indexterm"></a><a
-              id="idm140615486372688"
+              id="idm140198428260048"
               class="indexterm"></a><a
-              id="idm140615486371728"
+              id="idm140198430863408"
               class="indexterm"></a><a
-              id="idm140615486370768"
+              id="idm140198430862448"
               class="indexterm"></a><a
-              id="idm140615486369328"
+              id="idm140198430861008"
               class="indexterm"></a><a
-              id="idm140615486368208"
+              id="idm140198430859888"
               class="indexterm"></a><a
-              id="idm140615486367280"
+              id="idm140198430858960"
               class="indexterm"></a><div
               class="para">
 					公開鍵暗号では RSA アルゴリズムが広く使われています。公開鍵暗号は秘密鍵と公開鍵からなる「鍵ペア」を使います。2 種類の鍵は互いに密接な関係を持っており、公開鍵で暗号化されたメッセージは秘密鍵を知っている人だけが復号化できるという数学的特徴によって機密性が保証されます。逆に、秘密鍵を使って暗号化されたメッセージは公開鍵を持っている人なら誰でも復号化できます。この特徴を使うことで、メッセージの出自が本物であることを確認することが可能です。なぜなら、秘密鍵を持つものだけがその暗号化メッセージを生成できるからです。デジタルハッシュ関数 (MD5、SHA1、最近の亜種など) を関連させる場合、いかなるメッセージにも適用できる署名メカニズムになります。
@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 					Falcot Corp の管理者は <span
                 class="emphasis"><em>easy-rsa</em></span> ツールを使い、サーバおよびクライアントに必要な証明書を作ります。<span
-                class="emphasis"><em>easy-rsa</em></span> ツールを使うことで、すべてのクライアントの設定を同じ様にすることが可能です。クライアントは Falcot のプライベート認証局から来た証明書を信頼するようにセットアップしなければいけません。Falcot のプライベート認証局が最初に作成する証明書です; この目的を達成するために、管理者は認証局に必要なファイルを含むディレクトリを適切な場所にセットアップします。セットアップする場所は、認証局の秘密鍵が盗まれる危険性を和らげるために、ネットワークに接続されていないマシンが好ましいです。
+                class="emphasis"><em>easy-rsa</em></span> ツールを使うことで、すべてのクライアントの設定を同じ様にすることが可能です。クライアントは Falcot のプライベート認証局から発行された証明書を信頼するようにセットアップしなければいけません。最初に Falcot のプライベート認証局用の証明書を発行します。そして、この目的を達成するために、管理者は認証局に必要なファイルを含むディレクトリを適切な場所にセットアップします。セットアップする場所は、認証局の秘密鍵が盗まれる危険性を和らげるために、ネットワークに接続されていないマシンが好ましいです。
 				</div><pre
               class="screen">
 <code
@@ -172,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					<span
                 class="emphasis"><em>easy-rsa</em></span> ツールは必要なパラメータを <code
                 class="filename">vars</code> ファイルに保存します。パラメータには特に <code
-                class="literal">KEY_</code> 接頭辞が付けられています。これらの変数は環境変数に組み込まれます:
+                class="literal">KEY_</code> 接頭辞が付けられています。これらの変数は環境変数に組み込まれます。
 				</div><pre
               class="screen">
 <code
@@ -206,7 +206,7 @@ $ </code><strong
               class="para">
 					次に認証局の鍵ペアを作成します (この最中に、鍵ペアの 2 つの部分が <code
                 class="filename">keys/ca.crt</code> と <code
-                class="filename">keys/ca.key</code> に保存されます):
+                class="filename">keys/ca.key</code> に保存されます)。
 				</div><pre
               class="screen">
 <code
@@ -236,9 +236,9 @@ Email Address [admin@falcot.com]:
 </code></pre><div
               class="para">
 					今や VPN サーバの証明書を作ることが可能です。同様に SSL/TLS 接続のサーバ側には Diffie-Hellman パラメータが必要です。VPN サーバは DNS 名 <code
-                class="literal">vpn.falcot.com</code> で識別されます; 作成された鍵ファイルの名前に、ここで与えた DNS 名が使われます (<code
+                class="literal">vpn.falcot.com</code> で識別されます。さらに作成された鍵ファイルの名前に、ここで与えた DNS 名が使われます (<code
                 class="filename">keys/vpn.falcot.com.crt</code> は公開鍵証明書、<code
-                class="filename">keys/vpn.falcot.com.key</code> は秘密鍵):
+                class="filename">keys/vpn.falcot.com.key</code> は秘密鍵です)。
 				</div><pre
               class="screen">
 <code
@@ -301,7 +301,7 @@ This is going to take a long time
 […]
 </code></pre><div
               class="para">
-					以下では、VPN クライアント用の証明書を作成します; VPN を利用するコンピュータ 1 台ごとおよび人間 1 人ずつに 1 つの証明書が必要です:
+					以下では、VPN クライアント用の証明書を作成します。そして VPN を利用するコンピュータ 1 台ごとおよび人間 1 人ずつに 1 つの証明書が必要です。
 				</div><pre
               class="screen">
 <code
@@ -333,7 +333,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
 </code></strong><code
                 class="computeroutput">[…]</code></pre><div
               class="para">
-					すべての証明書を作ったら、証明書を適切な場所にコピーする必要があります: ルート証明書の公開鍵 (<code
+					すべての証明書を作ったら、証明書を適切な場所にコピーする必要があります。すなわち、ルート証明書の公開鍵 (<code
                 class="filename">keys/ca.crt</code>) はすべてのマシン (サーバもクライアントも) に <code
                 class="filename">/etc/ssl/certs/Falcot_CA.crt</code> という名前で保存されます。サーバの証明書はサーバにだけインストールされます (<code
                 class="filename">keys/vpn.falcot.com.crt</code> は <code
@@ -346,11 +346,11 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615486325520"></a>10.2.1.2. OpenVPN サーバの設定</h4></div></div></div><div
+                      id="idm140198430816560"></a>10.2.1.2. OpenVPN サーバの設定</h4></div></div></div><div
               class="para">
 					デフォルトで、OpenVPN 初期化スクリプトは <code
                 class="filename">/etc/openvpn/*.conf</code> で定義されたすべての仮想プライベートネットワークを開始します。このため、VPN サーバをセットアップする場合、このディレクトリ内に対応する設定ファイルを配置することになります。設定ファイルの良い足掛かりとして <code
-                class="filename">/usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz</code> が用意されています。これは比較的標準的なサーバを作るためのものです。もちろん、一部のパラメータを適切に設定しなければいけません: <code
+                class="filename">/usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz</code> が用意されています。これは比較的標準的なサーバを作るためのものです。もちろん、一部のパラメータを適切に設定しなければいけません。具体的に言えば、<code
                 class="literal">ca</code>、<code
                 class="literal">cert</code>、<code
                 class="literal">key</code>、<code
@@ -359,7 +359,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="literal">/etc/ssl/vpn.falcot.com.crt</code>、<code
                 class="literal">/etc/ssl/private/vpn.falcot.com.key</code>、<code
                 class="literal">/etc/openvpn/dh2048.pem</code>)。<code
-                class="literal">server 10.8.0.0 255.255.255.0</code> ディレクティブは VPN によって使われるサブネットを定義します; サーバにはこの範囲に含まれる最初の IP アドレス (<code
+                class="literal">server 10.8.0.0 255.255.255.0</code> ディレクティブは VPN によって使われるサブネットを定義します。そして、サーバにはこの範囲に含まれる最初の IP アドレス (<code
                 class="literal">10.8.0.1</code>) が割り当てられ、クライアントには残りの IP アドレスが割り当てられます。
 				</div><div
               class="para">
@@ -367,7 +367,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="literal">tun0</code> という名前の仮想ネットワークインターフェースが作成されます。しかしながら、ファイアウォールは OpenVPN の開始前に実ネットワークインターフェースと同時に設定される場合が多いです。このため、永続的に仮想ネットワークインターフェースを作成すると良いでしょう。OpenVPN は事前に作成された仮想インターフェースを使うように設定することを推奨します。この追加的設定により、インターフェースの名前を選ぶことが可能になります。この目的を達成するには、<code
                 class="command">openvpn --mktun --dev vpn --dev-type tun</code> を使って <code
                 class="literal">tun</code> タイプの <code
-                class="literal">vpn</code> と名付けられた仮想ネットワークインターフェースを作成します; このコマンドをファイアウォール設定スクリプトの中で使えば、簡単に設定を統合できます。つまり <code
+                class="literal">vpn</code> と名付けられた仮想ネットワークインターフェースを作成します。さらに、このコマンドをファイアウォール設定スクリプトの中で使えば、簡単に設定を統合できます。つまり <code
                 class="filename">/etc/network/interfaces</code> ファイルの <code
                 class="literal">up</code> 指示文を使います。OpenVPN 設定ファイルをファイアウォール設定に対応させるために、<code
                 class="literal">dev vpn</code> と <code
@@ -383,12 +383,12 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615486873680"></a>10.2.1.3. OpenVPN クライアントの設定</h4></div></div></div><div
+                      id="idm140198430800544"></a>10.2.1.3. OpenVPN クライアントの設定</h4></div></div></div><div
               class="para">
 					OpenVPN クライアントを設定する場合にも、<code
                 class="filename">/etc/openvpn/</code> に設定ファイルを置きます。標準的な設定の良い足掛かりとして <code
                 class="filename">/usr/share/doc/openvpn/examples/sample-config-files/client.conf</code> が用意されています。<code
-                class="literal">remote vpn.falcot.com 1194</code> 指示文は OpenVPN サーバのアドレスとポート番号を表します; <code
+                class="literal">remote vpn.falcot.com 1194</code> 指示文は OpenVPN サーバのアドレスとポート番号を表します。さらに <code
                 class="literal">ca</code>、<code
                 class="literal">cert</code>、<code
                 class="literal">key</code> も鍵ファイルの場所に合わせて設定が必要です。
@@ -411,24 +411,24 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="pkg pkg">network-manager-openvpn-gnome</span> パッケージには、Network Manager の拡張 (<a
                 class="xref"
                 href="sect.network-config.html#sect.roaming-network-config">「ローミングユーザ向けの自動ネットワーク設定」</a>参照) が含まれ、これを使うことで OpenVPN 仮想プライベートネットワークを管理することが可能です。誰もがグラフィカルに OpenVPN 接続を設定し、ネットワーク管理アイコンからこれを制御することが可能です。<a
-                id="idm140615486863008"
+                id="idm140198430485184"
                 class="indexterm"></a>
 				</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh-vpn"></a>10.2.2. SSH を使った仮想プライベートネットワーク</h3></div></div></div><a
-            id="idm140615486860464"
+            id="idm140198430482640"
             class="indexterm"></a><a
-            id="idm140615486859504"
+            id="idm140198430481680"
             class="indexterm"></a><div
             class="para">
-				SSH を使った仮想プライベートネットワークの作成法には、2 種類の方法があります。歴史的に見て重要な方法が SSH リンクの上で PPP レイヤを確立する方法です。この方法は HOWTO 文書で説明されています: <div
+				SSH を使った仮想プライベートネットワークの作成法には、2 種類の方法があります。歴史的に見て重要な方法が SSH リンクの上で PPP レイヤを確立する方法です。この方法は HOWTO 文書で説明されています。<div
               class="url">→ <a
                 href="http://www.tldp.org/HOWTO/ppp-ssh/">http://www.tldp.org/HOWTO/ppp-ssh/</a></div>
 			</div><div
             class="para">
-				2 番目の方法はより最近の方法で、OpenSSH 4.3 で導入されました; 今や、OpenSSH は SSH 接続のサーバおよびクライアント側に仮想ネットワークインターフェース (<code
+				2 番目の方法はより最近の方法で、OpenSSH 4.3 で導入されました。その結果今や、OpenSSH は SSH 接続のサーバおよびクライアント側に仮想ネットワークインターフェース (<code
               class="literal">tun*</code>) を作り、仮想インターフェースをあたかも物理インターフェースのように設定することが可能です。このトンネルシステムを有効化するにはまず、SSH サーバの設定ファイル (<code
               class="filename">/etc/ssh/sshd_config</code>) の中で <code
               class="literal">PermitTunnel</code> を「yes」に設定しなければいけません。SSH 接続を確立する際には、<code
@@ -440,7 +440,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
 				SSH を使って仮想プライベートネットワークを作成する方法は、どうちらもかなり直接的なものです。しかしながら、SSH の提供する VPN は最も効率のよい方法ではありません。特に、高レベルのトラフィックをうまく取り扱うことができません。
 			</div><div
             class="para">
-				つまり、TCP/IP スタックが TCP/IP 接続 (SSH) の中にカプセル化される場合、TCP プロトコルは 2 回使われるという点です。1 回は SSH 接続で、もう 1 回がトンネル内です。これは特に、TCP はタイムアウト遅延を変更することでネットワークの状態に接続状態を適合させる機能があることで、問題になります。以下のサイトがこの問題についてより詳しく説明しています: <div
+				つまり、TCP/IP スタックが TCP/IP 接続 (SSH) の中にカプセル化される場合、TCP プロトコルは 2 回使われるという点です。1 回は SSH 接続で、もう 1 回がトンネル内です。これは特に、TCP はタイムアウト遅延を変更することでネットワークの状態に接続状態を適合させる機能があることで、問題になります。以下のサイトがこの問題についてより詳しく説明しています。<div
               class="url">→ <a
                 href="http://sites.inka.de/sites/bigred/devel/tcp-tcp.html">http://sites.inka.de/sites/bigred/devel/tcp-tcp.html</a></div> このため、VPN over SSH はパフォーマンスに制約のない単発のトンネルに留めるべきです。
 			</div></div><div
@@ -448,18 +448,18 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipsec"></a>10.2.3. IPsec</h3></div></div></div><a
-            id="idm140615486849168"
+            id="idm140198430471328"
             class="indexterm"></a><a
-            id="idm140615486848208"
+            id="idm140198430470368"
             class="indexterm"></a><a
-            id="idm140615486847088"
+            id="idm140198430469248"
             class="indexterm"></a><div
             class="para">
-				IPsec は標準的な IP VPN の中にありますが、さらに詳しく実装を説明します。IPsec エンジンそれ自身は Linux カーネルに統合されています; 要求されるユーザ空間部分、制御と設定ツール、は <span
+				IPsec は標準的な IP VPN の中にありますが、さらに詳しく実装を説明します。IPsec エンジンそれ自身は Linux カーネルに統合されています。さらに、要求されるユーザ空間部分、制御と設定ツール、は <span
               class="pkg pkg">ipsec-tools</span> パッケージによって提供されます。具体的には、それぞれのホストの <code
               class="filename">/etc/ipsec-tools.conf</code> には、ホストが接続する <span
               class="emphasis"><em>IPsec トンネル</em></span> (IPsec 用語で <span
-              class="emphasis"><em>Security Associations</em></span>) のパラメータが含まれます; <code
+              class="emphasis"><em>Security Associations</em></span>) のパラメータが含まれます。さらに <code
               class="command">/etc/init.d/setkey</code> スクリプトを使うことで、トンネルを開始したり停止することが可能です (それぞれのトンネルは、仮想ネットワークに接続された他のホストと、安全なリンクを確立しています)。このファイルは <span
               class="citerefentry"><span
                 class="refentrytitle">setkey</span>(8)</span> マニュアルページの提供する文書を使って手作業で作ることも可能です。しかしながら、多数のマシン群にすべてのホスト用のパラメータを明示的に書くことはすぐに難しい作業になります。なぜなら、トンネルの数はすぐに増えるからです。この作業をより簡単にする、たとえば <span
@@ -467,13 +467,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="pkg pkg">strongswan</span> などの (<span
               class="emphasis"><em>IPsec Key Exchange</em></span> 用の) IKE デーモンがあります。これを使えば、一元管理による作業の簡素化と、鍵を定期的に循環することによる作業の安全化が可能になります。
 			</div><a
-            id="idm140615486838992"
+            id="idm140198430461136"
             class="indexterm"></a><a
-            id="idm140615486838032"
+            id="idm140198430460176"
             class="indexterm"></a><a
-            id="idm140615486836592"
+            id="idm140198430458736"
             class="indexterm"></a><a
-            id="idm140615486835632"
+            id="idm140198430457776"
             class="indexterm"></a><div
             class="para">
 				IPsec は標準規格という地位があるにも関わらず、その設定が複雑なことが原因で、具体的に使われることが少ないです。必要なトンネルが少なくて静的な場合は、OpenVPN に基づく解決策が通常好まれます。
@@ -483,28 +483,28 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                     class="title"><strong><span
                         class="emphasis"><em>CAUTION</em></span> IPsec と NAT</strong></p></div></div></div><div
               class="para">
-				ファイアウォールの NAT は IPsec とうまく共存しません: なぜなら、IPsec はパケットを署名し、ファイアウォールがパケットを書き換ることで署名が無効化されるからです。このようなパケットは受け取り側で拒否されます。今やさまざまな IPsec 実装が <span
+				ファイアウォールの NAT は IPsec とうまく共存しません。なぜなら、IPsec はパケットを署名し、ファイアウォールがパケットを書き換ることで署名が無効化されるからです。このようなパケットは受け取り側で拒否されます。今やさまざまな IPsec 実装が <span
                 class="emphasis"><em>NAT-T</em></span> 技術 (<span
                 class="emphasis"><em>NAT Traversal</em></span>) を含んでいます。これは基本的に IPsec パケットを標準的な UDP パケットにカプセル化するものです。
 			</div><a
-              id="idm140615486830752"
+              id="idm140198430452896"
               class="indexterm"></a><a
-              id="idm140615486829792"
+              id="idm140198430451936"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>SECURITY</em></span> IPsec とファイアウォール</strong></p></div></div></div><div
               class="para">
-				IPsec の動作の標準的モードは鍵交換に UDP ポート 500 番 (NAT-T を使用する場合 UDP ポート 4500 番) を使います。さらに、IPsec パケットは 2 種類の専用 IP プロトコルを使います。ファイアウォールはこのプロトコルを通過させなければいけません; これらのパケットの受け入れ可否はプロトコル番号、ESP は 50 番、AH は 51 番、に基づきます。
+				IPsec の動作の標準的モードは鍵交換に UDP ポート 500 番 (NAT-T を使用する場合 UDP ポート 4500 番) を使います。さらに、IPsec パケットは 2 種類の専用 IP プロトコルを使います。ファイアウォールはこのプロトコルを通過させなければいけません。さらに、これらのパケットの受け入れ可否はプロトコル番号、ESP は 50 番、AH は 51 番、に基づきます。
 			</div><a
-              id="idm140615486826656"
+              id="idm140198430448784"
               class="indexterm"></a><a
-              id="idm140615486825696"
+              id="idm140198430447824"
               class="indexterm"></a><a
-              id="idm140615486824736"
+              id="idm140198430446864"
               class="indexterm"></a><a
-              id="idm140615486823296"
+              id="idm140198430445424"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -515,13 +515,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="emphasis"><em>Point-to-Point Tunneling Protocol</em></span>) は 2 種類の通信チャンネルを使います。1 つは制御データで、もう 1 つがペイロードデータ用です。後者は GRE プロトコル (<span
               class="emphasis"><em>Generic Routing Encapsulation</em></span>) を使います。標準的な PPP リンクはデータ交換チャンネル上に確立されます。
 			</div><a
-            id="idm140615486818864"
+            id="idm140198430440992"
             class="indexterm"></a><a
-            id="idm140615486817904"
+            id="idm140198430440032"
             class="indexterm"></a><a
-            id="idm140615486816976"
+            id="idm140198430439104"
             class="indexterm"></a><a
-            id="idm140615486816016"
+            id="idm140198430438144"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -529,18 +529,18 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                       id="sect.pptp-config-client"></a>10.2.4.1. クライアントの設定</h4></div></div></div><div
               class="para">
 					<span
-                class="pkg pkg">pptp-linux</span> パッケージには、Linux 用に簡単に設定できる PPTP クライアントが含まれています。以下の説明は公式文書からヒントを得て作ったものです: <div
+                class="pkg pkg">pptp-linux</span> パッケージには、Linux 用に簡単に設定できる PPTP クライアントが含まれています。以下の説明は公式文書からヒントを得て作ったものです。<div
                 class="url">→ <a
                   href="http://pptpclient.sourceforge.net/howto-debian.phtml">http://pptpclient.sourceforge.net/howto-debian.phtml</a></div>
 				</div><a
-              id="idm140615486811552"
+              id="idm140198430433680"
               class="indexterm"></a><div
               class="para">
-					Falcot 管理者はいくつかのファイルを作成しました: <code
+					Falcot 管理者はいくつかのファイルを作成しました。すなわち <code
                 class="filename">/etc/ppp/options.pptp</code>、<code
                 class="filename">/etc/ppp/peers/falcot</code>、<code
                 class="filename">/etc/ppp/ip-up.d/falcot</code>、<code
-                class="filename">/etc/ppp/ip-down.d/falcot</code>。
+                class="filename">/etc/ppp/ip-down.d/falcot</code> を作成しました。
 				</div><div
               class="example"><a
                 id="example.ppp-options.pptp"></a><p
@@ -598,9 +598,9 @@ fi</pre></div></div><div
 					PPTP の安全性を高めるには、MPPE 機能 (<span
                   class="emphasis"><em>Microsoft Point-to-Point Encryption</em></span>) を使います。MPPE はモジュールとして公式の Debian カーネルで利用できます。
 				</div><a
-                id="idm140615486797552"
+                id="idm140198430419712"
                 class="indexterm"></a><a
-                id="idm140615486796592"
+                id="idm140198430418752"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -616,9 +616,9 @@ fi</pre></div></div><div
               class="para">
 					<code
                 class="command">pptpd</code> は Linux 用の PPTP サーバです。主設定ファイルは <code
-                class="filename">/etc/pptpd.conf</code> で、いくつかの変更が必要です: <span
+                class="filename">/etc/pptpd.conf</code> で、いくつかの変更が必要です。すなわち <span
                 class="emphasis"><em>localip</em></span> (ローカル IP アドレス) と <span
-                class="emphasis"><em>remoteip</em></span> (リモート IP アドレス) です。以下の例では、PPTP サーバは常に <code
+                class="emphasis"><em>remoteip</em></span> (リモート IP アドレス) を変更する必要があります。以下の例では、PPTP サーバは常に <code
                 class="literal">192.168.0.199</code> アドレスを使い、PPTP クライアントは <code
                 class="literal">192.168.0.200</code> から <code
                 class="literal">192.168.0.250</code> までの IP アドレスを受け取ります。
@@ -728,7 +728,7 @@ lock</pre></div></div><div
                 class="literal"><em
                   class="replaceable">DOMAIN</em>\\<em
                   class="replaceable">USER</em></code> という形で身元を語ります。このため、以下のファイルに <code
-                class="literal">FALCOT\\vpn</code> ユーザが追加されています。ユーザに割り当てる IP アドレスを明記することも可能です; IP アドレスフィールドのアスタリスクは動的にアドレスを割り当てることを意味します。
+                class="literal">FALCOT\\vpn</code> ユーザが追加されています。ユーザに割り当てる IP アドレスを明記することも可能です。さらに IP アドレスフィールドのアスタリスクは動的にアドレスを割り当てることを意味します。
 				</div><div
               class="example"><a
                 id="example.ppp-chap-secrets"></a><p
@@ -745,7 +745,7 @@ FALCOT\\vpn     pptp    f@Lc3au     *</pre></div></div><div
                       class="title"><strong><span
                           class="emphasis"><em>SECURITY</em></span> PPTP 脆弱性</strong></p></div></div></div><div
                 class="para">
-					Microsoft の最初の PPTP 実装は、多くのセキュリティ脆弱性を残していたため、さまざまな非難を浴びました; 最近のバージョンでは、そのほとんどが修正されています。この節で説明されている設定は PPTP プロトコルの最新のバージョンを使っています。サービスを脆弱にするいくつかのオプション (<code
+					Microsoft の最初の PPTP 実装は、多くのセキュリティ脆弱性を残していたため、さまざまな非難を浴びました。しかし、最近のバージョンでは、そのほとんどが修正されています。この節で説明されている設定は PPTP プロトコルの最新のバージョンを使っています。サービスを脆弱にするいくつかのオプション (<code
                   class="literal">require-mppe-128</code> や <code
                   class="literal">require-mschap-v2</code> など) を無効化しておくことに注意してください。
 				</div></div></div></div></div><ul

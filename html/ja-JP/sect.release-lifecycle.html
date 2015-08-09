@@ -68,19 +68,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.release-lifecycle"></a>1.6. リリースライフサイクル</h2></div></div></div><a
-          id="idm140615470855152"
+          id="idm140198426089728"
           class="indexterm"></a><a
-          id="idm140615470854192"
+          id="idm140198426088768"
           class="indexterm"></a><a
-          id="idm140615470852768"
+          id="idm140198426087344"
           class="indexterm"></a><a
-          id="idm140615470851344"
+          id="idm140198426085920"
           class="indexterm"></a><a
-          id="idm140615470849920"
+          id="idm140198426084496"
           class="indexterm"></a><a
-          id="idm140615470848496"
+          id="idm140198426083072"
           class="indexterm"></a><a
-          id="idm140615487649216"
+          id="idm140198426081648"
           class="indexterm"></a><div
           class="para">
 			Debian プロジェクトは同時にそれぞれのプログラムの 3 種類から 6 種類の異なるバージョンを持っており、<span
@@ -95,7 +95,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>VOCABULARY</em></span> リリース</strong></p></div></div></div><a
-            id="idm140615487641072"
+            id="idm140198426073504"
             class="indexterm"></a><div
             class="para">
 			Debian プロジェクトにおいて「リリース」という用語はディストリビューションの特定のバージョンを示しています (たとえば「不安定リリース」は「不安定版」を意味しています)。さらに、新しいバージョン (安定版) の公開を一般に発表することも意味しています。
@@ -103,22 +103,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615487639120"></a>1.6.1. <span
+                    id="idm140198426071552"></a>1.6.1. <span
                     class="distribution distribution">実験版</span>状態</h3></div></div></div><div
             class="para">
 				最初に特殊な例である<span
-              class="distribution distribution">実験版</span>ディストリビューションについて見てみましょう: これは現在開発中のソフトウェアに相当する Debian パッケージのグループで、名前の示す通り開発を終えている必要はありません。すべてのパッケージがこのステップを踏む必要はありません; 一部の開発者はより経験豊富な (優れた) ユーザからのフィードバックを得るためにパッケージをここに追加します。
+              class="distribution distribution">実験版</span>ディストリビューションについて見てみましょう。具体的に言えば、これは現在開発中のソフトウェアに相当する Debian パッケージのグループで、名前の示す通り開発を終えている必要はありません。すべてのパッケージがこのステップを踏む必要はありませんが、一部の開発者はより経験豊富な (優れた) ユーザからのフィードバックを得るためにパッケージをここに追加します。
 			</div><div
             class="para">
 				別の面では、このディストリビューションは、基盤パッケージに対する重要な変更を一時的に取り込む際に、よく使われます。深刻なバグを含む基盤パッケージを<span
-              class="distribution distribution">不安定版</span>に取り込むと深刻な影響があります。そんなわけで、このディストリビューションは完全に隔離されたディストリビューションです、ここに含まれるパッケージは決して他のバージョンに移行することはありません (メンテナまたは ftp 管理者からの介入という例外を除きます)。また、このディストリビューションは自己完結していません: <span
+              class="distribution distribution">不安定版</span>に取り込むと深刻な影響があります。そんなわけで、このディストリビューションは完全に隔離されたディストリビューションです、ここに含まれるパッケージは決して他のバージョンに移行することはありません (メンテナまたは ftp 管理者からの介入という例外を除きます)。また、このディストリビューションは自己完結していません。具体的に言えば、<span
               class="distribution distribution">実験版</span>の中には既存のパッケージの一部だけが含まれており、基盤システムは含まれません。それゆえこのディストリビューションは通常、<span
               class="distribution distribution">不安定版</span>などの自己完結している他のディストリビューションと組み合わせて利用されます。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615487632080"></a>1.6.2. <span
+                    id="idm140198434831008"></a>1.6.2. <span
                     class="distribution distribution">不安定版</span>状態</h3></div></div></div><div
             class="para">
 				典型的なパッケージの場合に戻りましょう。メンテナが<span
@@ -130,12 +130,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				ユーザはバグに遭遇すると、バグをパッケージメンテナに報告します。メンテナは定期的に修正済みバージョンを用意し、サーバにアップロードします。
 			</div><div
             class="para">
-				新たに更新されたパッケージはすべて、6 時間以内に世界中のすべての Debian ミラーで更新されます。そしてユーザが修正をテストし、変更したことで生じる別の問題を探します。いくつかの更新は素早くなされるかもしれません。これらの間、自動ビルドロボットが活動を始めます。多くの場合、メンテナは古い PC を一台だけ持っており、amd64 (または i386) アーキテクチャで自分が担当しているパッケージをコンパイルしています。自動ビルドロボットはコンパイル作業を引き受け、すべての他のアーキテクチャ向けのバージョンを自動的にコンパイルします。いくつかのコンパイルは失敗するかもしれません; メンテナは問題の内容を含んだバグ報告を受け取り、このバグは次のバージョンで修正されます。問題となっているアーキテクチャの専門家がバグを発見した場合、そのバグ報告にはすぐに使えるパッチが添えられているかもしれません。
+				新たに更新されたパッケージはすべて、6 時間以内に世界中のすべての Debian ミラーで更新されます。そしてユーザが修正をテストし、変更したことで生じる別の問題を探します。いくつかの更新は素早くなされるかもしれません。これらの間、自動ビルドロボットが活動を始めます。多くの場合、メンテナは古い PC を一台だけ持っており、amd64 (または i386) アーキテクチャで自分が担当しているパッケージをコンパイルしています。自動ビルドロボットはコンパイル作業を引き受け、すべての他のアーキテクチャ向けのバージョンを自動的にコンパイルします。いくつかのコンパイルは失敗するかもしれませんが、メンテナは問題の内容を含んだバグ報告を受け取り、このバグは次のバージョンで修正されます。問題となっているアーキテクチャの専門家がバグを発見した場合、そのバグ報告にはすぐに使えるパッチが添えられているかもしれません。
 			</div><a
-            id="idm140615487625312"
+            id="idm140198434824400"
             class="indexterm"></a><div
             class="figure"><a
-              id="idm140615487624384"></a><div
+              id="idm140198434823472"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/autobuilder.png"
@@ -146,9 +146,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>QUICK LOOK</em></span> <code
                         class="command">buildd</code>、Debian パッケージ再コンパイルロボット</strong></p></div></div></div><a
-              id="idm140615487619312"
+              id="idm140198434818400"
               class="indexterm"></a><a
-              id="idm140615487618192"
+              id="idm140198434817280"
               class="indexterm"></a><div
               class="para">
 				<span
@@ -168,29 +168,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615487611792"></a>1.6.3. <span
+                    id="idm140198434810880"></a>1.6.3. <span
                     class="distribution distribution">テスト版</span>への移行</h3></div></div></div><div
             class="para">
-				しばらくするとパッケージは成熟するでしょう; すべてのアーキテクチャ上でコンパイルされ、最近に行った変更がなくなるでしょう。こうなると、将来<span
+				しばらくするとパッケージは成熟するでしょう。さらにすべてのアーキテクチャ上でコンパイルされ、最近に行った変更がなくなるでしょう。こうなると、将来<span
               class="distribution distribution">テスト版</span>ディストリビューションに組み込まれる対象になります — <span
               class="distribution distribution">不安定版</span>に含まれる一部のパッケージが定量化できる基準に従って選ばれます。毎日あるプログラムが、一定の品質水準を保証する要素を基に、<span
-              class="distribution distribution">テスト版</span>に組み込むためのパッケージを自動的に選びます:
+              class="distribution distribution">テスト版</span>に組み込むためのパッケージを自動的に選びます。
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="orderedlist"><ol><li
                 class="listitem"><div
                   class="para">
 						深刻なバグがないこと、もしくは現時点で<span
-                    class="distribution distribution">テスト版</span>に組み込まれているバージョンよりも少ないこと;
+                    class="distribution distribution">テスト版</span>に組み込まれているバージョンよりもバグの数が少ないこと。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<span
-                    class="distribution distribution">不安定版</span>に組み込まれてから少なくとも 10 日たっていること、これは深刻な問題が発見されて報告されるのに十分な時間です;
+                    class="distribution distribution">不安定版</span>に組み込まれてから少なくとも 10 日たっていること、これは深刻な問題が発見されて報告されるのに十分な時間です。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						公式にサポートされているすべてのアーキテクチャ上でコンパイルに成功していること;
+						公式にサポートされているすべてのアーキテクチャ上でコンパイルに成功していること。
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -198,7 +198,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="distribution distribution">テスト版</span>で依存関係を満たすことができること、そうでなければ少なくとも問題となっているパッケージの準備ができたら一緒に移動することが可能です。
 					</div></li></ol></div><div
             class="para">
-				このシステムは明らかに完全無欠なものではありません; 深刻なバグは通常<span
+				このシステムは明らかに完全無欠なものではありません。それどころか、深刻なバグは通常<span
               class="distribution distribution">テスト版</span>に組み込まれたパッケージから見つかります。とはいっても、このシステムは有効で、<span
               class="distribution distribution">テスト版</span>は<span
               class="distribution distribution">不安定版</span>に比べて問題がはるかに少なく、長い間安定性と新規性の良い妥協案でした。
@@ -210,7 +210,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="distribution distribution">テスト版</span>の制限</strong></p></div></div></div><div
               class="para">
 				原理的な面白さの一方で、<span
-                class="distribution distribution">テスト版</span>は実用上いくつかの問題を抱えています: パッケージ間の相互依存性のもつれは、完全に独力で移動するのはほぼ不可能なパッケージがあるということを意味しています。パッケージ同士が互いに依存し合っていると、数多くのパッケージを同時に移行することが必要になる場合がありますが、一部のパッケージが定期的に更新されていると、それは不可能です。一方で、関連するパッケージ群を識別するスクリプトはこれを作成しようと熱心に働いています (これは NP 完全問題ですが、ありがたいことに、いくつかの良い経験則が知られています)。これが、このスクリプトと手作業で情報をやり取りしたり、パッケージのグループを示唆するか、これにより一時的に依存関係が壊れることになったとしても特定のパッケージをあるグループ内に含めるよう強要することで、スクリプトを手引きしたりしている理由です。この機能はリリースマネージャとその助手でも利用しやすいです。
+                class="distribution distribution">テスト版</span>は実用上いくつかの問題を抱えています。なぜなら、パッケージ間の相互依存性のもつれは、完全に独力で移動するのはほぼ不可能なパッケージがあるということを意味しているからです。パッケージ同士が互いに依存し合っていると、数多くのパッケージを同時に移行することが必要になる場合がありますが、一部のパッケージが定期的に更新されていると、それは不可能です。一方で、関連するパッケージ群を識別するスクリプトはこれを作成しようと熱心に働いています (これは NP 完全問題ですが、ありがたいことに、いくつかの良い経験則が知られています)。これが、このスクリプトと手作業で情報をやり取りしたり、パッケージのグループを示唆するか、これにより一時的に依存関係が壊れることになったとしても特定のパッケージをあるグループ内に含めるよう強要することで、スクリプトを手引きしたりしている理由です。この機能はリリースマネージャとその助手でも利用しやすいです。
 			</div><div
               class="para">
 				NP 完全問題はデータのサイズ (コードの長さ (桁数) や関連する要素の数が含まれます) によってはアルゴリズムに指数関数的な複雑性があるということを思い出してください。この問題を解く唯一の方法はすべての可能性を頻繁に検査することですが、そうするには膨大な財力が必要です。経験則で得られるのは近似解ですが十分な解です。
@@ -219,9 +219,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>COMMUNITY</em></span> リリースマネージャ</strong></p></div></div></div><a
-              id="idm140615487590416"
+              id="idm140198434789408"
               class="indexterm"></a><a
-              id="idm140615487589488"
+              id="idm140198434788480"
               class="indexterm"></a><div
               class="para">
 				リリースマネージャは重い責任を伴う重要な役職です。事実上、この役職を持つ人が新しい Debian 安定版のリリースを管理し、<span
@@ -234,24 +234,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615487584976"></a>1.6.4. <span
+                    id="idm140198434783968"></a>1.6.4. <span
                     class="distribution distribution">テスト版</span>から<span
                     class="distribution distribution">安定版</span>への昇格</h3></div></div></div><div
             class="para">
 				われわれのパッケージが今現在<span
               class="distribution distribution">テスト版</span>に組み込まれたと仮定しましょう。改善の余地がある限り、メンテナはパッケージを改善し続け、<span
               class="distribution distribution">不安定版</span>からの一連の手順を最初からやり直さなければいけません (その後<span
-              class="distribution distribution">テスト版</span>へは素早く取り込まれることが多いです: 大きく修正されておらず、すべての依存関係が既に利用できる場合に限ります)。パッケージが完成の域に達すると、メンテナの仕事は完了です。次のステップは<span
+              class="distribution distribution">テスト版</span>へは素早く取り込まれることが多いです。しかしこれは大きく修正されておらず、すべての依存関係が既に利用できる場合に限ります)。パッケージが完成の域に達すると、メンテナの仕事は完了です。次のステップは<span
               class="distribution distribution">安定版</span>ディストリビューションへの取り込みです、実際のところこれはリリースマネージャが選んだ時点における<span
               class="distribution distribution">テスト版</span>の単純なコピーです。理想的にはこの決断はインストーラの準備が整った時点、そしてすべての<span
               class="distribution distribution">テスト版</span>に含まれるプログラムで既知の致命的バグが解決された時点に行われます。
 			</div><div
             class="para">
-				このような理想的瞬間は絶対に来ないので、実際問題として Debian は妥協しています: メンテナが時間どおりにバグを修正できなかったパッケージを削除したり、多数のプログラムが数個のバグを抱えた状態でディストリビューションをリリースすることに同意したり、します。リリースマネージャは事前にフリーズ期間をアナウンスし、<span
+				このような理想的瞬間は絶対に来ないので、実際問題として Debian は妥協しています。具体的に言えば、メンテナが時間どおりにバグを修正できなかったパッケージを削除したり、多数のプログラムが数個のバグを抱えた状態でディストリビューションをリリースすることに同意したり、します。リリースマネージャは事前にフリーズ期間をアナウンスし、<span
               class="distribution distribution">テスト版</span>への更新はこの期間中に承認されなければいけません。フリーズ期間を設ける目的は、バージョンが新しくなる更新 (と新たなバグの混入) を禁止し、現在のバージョンに対するバグ修正の更新だけを受け入れることです。
 			</div><div
             class="figure"><a
-              id="idm140615487574832"></a><div
+              id="idm140198434773792"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/release-cycle.png"
@@ -260,18 +260,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>VOCABULARY</em></span> フリーズ: 最終工程</strong></p></div></div></div><a
-              id="idm140615487570656"
+                        class="emphasis"><em>VOCABULARY</em></span> フリーズ、最終工程</strong></p></div></div></div><a
+              id="idm140198434769616"
               class="indexterm"></a><div
               class="para">
 				フリーズ期間中、<span
-                class="distribution distribution">テスト版</span>ディストリビューションの開発は妨げられます; もはや更新は自動的に行われません。リリースマネージャだけが、自身の基準に従って、パッケージを変更する権限を持っています。この目的は新しいバージョンによって新しいバグが混入するのを防ぐことにあります; 更新は完全に検査され、重大なバグの修正を除き変更は認められません。
+                class="distribution distribution">テスト版</span>ディストリビューションの開発は妨げられます。さらに、更新が自動的に行われなくなります。リリースマネージャだけが、自身の基準に従って、パッケージを変更する権限を持っています。この目的は新しいバージョンによって新しいバグが混入するのを防ぐことにあります。加えて、更新は完全に検査され、重大なバグの修正を除き変更は認められません。
 			</div></div><div
             class="para">
-				新しい安定版のリリース後、安定版リリースマネージャがすべての追加的開発を管理します (「リビジョン」と呼ばれます、例: バージョン 7 のリビジョンは 7.1、7.2、7.3 など)。これらの更新にはすべてのセキュリティパッチが体系的に組み込まれています。更新には最も重要な修正も含まれています (パッケージのメンテナが、更新を含めてもらうためには、修正を望む問題の重大性を証明しなければいけません)。
+				新しい安定版のリリース後、安定版リリースマネージャがすべての追加的開発を管理します (これは「リビジョン」と呼ばれます。たとえばバージョン 7 のリビジョンは 7.1、7.2、7.3 などです)。これらの更新にはすべてのセキュリティパッチが体系的に組み込まれています。更新には最も重要な修正も含まれています (パッケージのメンテナが、更新を含めてもらうためには、修正を望む問題の重大性を証明しなければいけません)。
 			</div><div
             class="para">
-				最後に、仮想パッケージが安定版ディストリビューションに取り込まれます。ここに到達するまでには大変な苦労があり、Debian 安定版のリリースが極めてゆっくりと進む理由がお分かりになったと思います。この遅さは品質評価に貢献します。しかも、大多数のユーザは同時に利用できる 3 つのディストリビューションのうち 1 つを使えば満足です。システム管理者は、何よりもまず彼らのサーバの安定性を重要視しており、最新バージョンの GNOME は必要ありません; 彼らは Debian <span
+				最後に、仮想パッケージが安定版ディストリビューションに取り込まれます。ここに到達するまでには大変な苦労があり、Debian 安定版のリリースが極めてゆっくりと進む理由がお分かりになったと思います。この遅さは品質評価に貢献します。しかも、大多数のユーザは同時に利用できる 3 つのディストリビューションのうち 1 つを使えば満足です。システム管理者は、何よりもまず彼らのサーバの安定性を重要視しており、最新バージョンの GNOME は必要ありません。従って彼らは Debian <span
               class="distribution distribution">安定版</span>を選んで、それに満足するでしょう。エンドユーザは、強固な安定性よりも最新バージョンの GNOME や KDE に興味があり、Debian <span
               class="distribution distribution">テスト版</span>を選ぶでしょう。このディストリビューションは深刻な問題が少なく、比較的新しいソフトウェアが使えるという意味で両者の良い妥協点です。最後に、開発者と経験豊富なユーザは道を切り開くかもしれません。彼らは Debian <span
               class="distribution distribution">不安定版</span>になされたすべての最新の開発を真っ先にテストし、面倒事とプログラムの新しいバージョンにつきものであるバグに苦しむという危険を冒します。人それぞれ好みの Debian があるのです!
@@ -281,14 +281,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> GNOME と KDE、グラフィカルデスクトップ環境</strong></p></div></div></div><div
               class="para">
-				GNOME (GNU Network Object Model Environment) と KDE (K Desktop Environment) はフリーソフトウェア世界で最も人気のあるグラフィカルデスクトップ環境です。デスクトップ環境とは、グラフィカルインターフェースに対する最も一般的な操作を簡単に管理できるようにするための、プログラム集です。一般にデスクトップ環境には、ファイルマネージャ、オフィススイート、ウェブブラウザ、電子メールプログラム、マルチメディアアクセサリなどが含まれています。もっとも明らかな違いは使用しているグラフィカルライブラリの違いにあります: GNOME は GTK+ (LGPL のフリーソフトウェア) を使い、KDE は Qt (企業が支援するプロジェクト、現在は GPL と商用ライセンスの両方で利用できます) を使っています。<div
+				GNOME (GNU Network Object Model Environment) と KDE (K Desktop Environment) はフリーソフトウェア世界で最も人気のあるグラフィカルデスクトップ環境です。デスクトップ環境とは、グラフィカルインターフェースに対する最も一般的な操作を簡単に管理できるようにするための、プログラム集です。一般にデスクトップ環境には、ファイルマネージャ、オフィススイート、ウェブブラウザ、電子メールプログラム、マルチメディアアクセサリなどが含まれています。もっとも明らかな違いは使用しているグラフィカルライブラリの違いにあります。具体的に言えば、GNOME は GTK+ (LGPL のフリーソフトウェア) を使い、KDE は Qt (企業が支援するプロジェクト、現在は GPL と商用ライセンスの両方で利用できます) を使っています。<div
                 class="url">→ <a
                   href="http://www.gnome.org/">http://www.gnome.org/</a></div> <div
                 class="url">→ <a
                   href="http://www.kde.org/">http://www.kde.org/</a></div>
 			</div></div><div
             class="figure"><a
-              id="idm140615487558080"></a><div
+              id="idm140198434756960"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/package-lifecycle.png"
@@ -297,12 +297,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615487554720"></a>1.6.5. <span
+                    id="idm140198434753600"></a>1.6.5. <span
                     class="distribution distribution">旧安定版</span>と<span
                     class="distribution distribution">前旧安定版</span>状態</h3></div></div></div><a
-            id="idm140615487552512"
+            id="idm140198434751392"
             class="indexterm"></a><a
-            id="idm140615487551584"
+            id="idm140198434750464"
             class="indexterm"></a><div
             class="para">
 				各<span
@@ -312,7 +312,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">前旧安定版</span>になります。
 			</div><div
             class="para">
-				Debian リリースの長期サポート (LTS) は最近の新たな取り組みです: 参加している各貢献者と企業は Debian LTS チームを作成することを強要しています。Debian セキュリティチームがサポートしない古いリリースはこの新しい Debian LTS チームの管理下に移ります。
+				Debian リリースの長期サポート (LTS) は最近の新たな取り組みです。そして Debian LTS プロジェクトに参加している各貢献者と企業は Debian LTS チームを作成することに対して懸命に取り組んでいます。Debian セキュリティチームがサポートしない古いリリースはこの新しい Debian LTS チームの管理下に移ります。
 			</div><div
             class="para">
 				Debian セキュリティチームは現在の<span
@@ -332,7 +332,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Debian LTS プロジェクトを実現させるために、プロジェクトはある事実に期待しました。それは、長期サポートは特に企業にとって重要であり、企業は喜んでセキュリティサポートのコストを負担するという事実です。
 			</div><div
               class="para">
-				Debian LTS プロジェクトは 2014 年 6 月に始まりました: 雇用者が Debian LTS プロジェクトに非常勤で貢献することを認めた組織もあれば、Debian LTS プロジェクトを資金面で支援して対価を支払わない限りどの Debian 貢献者も関心を寄せることのないような作業にお金を支払うことにした組織もあります。LTS に関する作業に対して喜んで賃金を受け取るほとんどの Debian 貢献者は Freexian (Raphaël Hertzog さんの企業) が管理する明示的な財政支援の申し出を作成するために集まりました。<div
+				Debian LTS プロジェクトは 2014 年 6 月に始まりました。たとえば、雇用者が Debian LTS プロジェクトに非常勤で貢献することを認めた組織もあれば、Debian LTS プロジェクトを資金面で支援して対価を支払わない限りどの Debian 貢献者も関心を寄せることのないような作業にお金を支払うことにした組織もあります。LTS に関する作業に対して喜んで賃金を受け取るほとんどの Debian 貢献者は Freexian (Raphaël Hertzog さんの企業) が管理する明示的な財政支援の申し出を作成するために集まりました。<div
                 class="url">→ <a
                   href="http://www.freexian.com/services/debian-lts.html">http://www.freexian.com/services/debian-lts.html</a></div>
 			</div><div
@@ -340,7 +340,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Debian LTS チームはまだ Debian に含まれるすべてのパッケージを適切にサポートすることができていません。なぜなら、ボランティアは自分が関心をもつパッケージに対して作業するのに対し、有給の貢献者は自分の出資者が使っているパッケージを優先して作業するからです。
 			</div><div
               class="para">
-				Debian LTS プロジェクトは常に新しい出資者を探しています: あなたの企業はどうですか? あなたは雇用者が長期サポートに非常勤で作業することを認めることが可能ですか? セキュリティサポートにわずかな予算を割り当てることが可能ですか? <div
+				Debian LTS プロジェクトは常に新しい出資者を探しています。あなたの企業はどうですか? あなたは雇用者が長期サポートに非常勤で作業することを認めることが可能ですか? セキュリティサポートにわずかな予算を割り当てることが可能ですか? <div
                 class="url">→ <a
                   href="https://wiki.debian.org/LTS/Funding">https://wiki.debian.org/LTS/Funding</a></div>
 			</div></div></div></div><ul

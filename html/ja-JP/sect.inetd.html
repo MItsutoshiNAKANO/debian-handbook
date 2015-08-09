@@ -72,14 +72,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Inetd (通常「インターネットスーパーサーバ」と呼ばれます) はサーバのサーバです。Inetd は要求に応じてまれに使われるサーバを実行します。そうすれば、まれにしか使われないサーバを常に実行しておく必要がなくなります。
 		</div><a
-          id="idm140615466827008"
+          id="idm140198430622896"
           class="indexterm"></a><a
-          id="idm140615466826112"
+          id="idm140198430621776"
           class="indexterm"></a><div
           class="para">
 			<code
             class="filename">/etc/inetd.conf</code> ファイルには、そのようなサーバとサーバの使うポート番号が書かれています。<code
-            class="command">inetd</code> コマンドはここで書かれたすべてのポートをリッスンします; そのポートに対する接続を検出したら、<code
+            class="command">inetd</code> コマンドはここで書かれたすべてのポートをリッスンします。さらに、そのポートに対する接続を検出したら、<code
             class="command">inetd</code> は対応するサーバプログラムを実行します。
 		</div><div
           class="sidebar"><div
@@ -90,12 +90,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 			多くの場合 inetd を使うサーバのパッケージは <code
               class="filename">/etc/inetd.conf</code> ファイルに自分を登録することを望むのですが、Debian ポリシーはあるパッケージが提供する設定ファイルを他のパッケージが修正することを禁止しています。このため、<code
-              class="command">update-inetd</code> スクリプト (同名のパッケージに含まれます) が作成されました: <code
-              class="command">update-inetd</code> スクリプトは設定ファイルを管理し、他のパッケージはこれを使って、スーパーサーバの設定に新しいサーバを登録します。
+              class="command">update-inetd</code> スクリプト (同名のパッケージに含まれます) が作成されました。すなわち <code
+              class="command">update-inetd</code> スクリプトが設定ファイルを管理し、他のパッケージはこれを使って、スーパーサーバの設定に新しいサーバを登録します。
 		</div></div><div
           class="para">
 			<code
-            class="filename">/etc/inetd.conf</code> ファイルの有効な各行は (空白で区切られた) 7 つのフィールドで 1 つのサーバを表現します:
+            class="filename">/etc/inetd.conf</code> ファイルの有効な各行は (空白で区切られた) 7 つのフィールドで 1 つのサーバを表現します。
 		</div><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -106,21 +106,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div></li><li
               class="listitem"><div
                 class="para">
-					ソケットタイプ: TCP 接続の場合 <code
-                  class="literal">stream</code>、 UDP データグラムの場合 <code
-                  class="literal">dgram</code>。
+					ソケットタイプ。このフィールドは TCP 接続の場合 <code
+                  class="literal">stream</code>、UDP データグラムの場合 <code
+                  class="literal">dgram</code> を指定します。
 				</div></li><li
               class="listitem"><div
                 class="para">
-					プロトコル: <code
+					プロトコル。このフィールドは <code
                   class="literal">tcp</code> または <code
-                  class="literal">udp</code>。
+                  class="literal">udp</code> を指定します。
 				</div></li><li
               class="listitem"><div
                 class="para">
-					オプション: 設定できる値は 2 種類です: <code
+					オプション。このフィールドに指定できる値は 2 種類です。具体的に言えば <code
                   class="literal">wait</code> または <code
-                  class="literal">nowait</code> です。これは <code
+                  class="literal">nowait</code> を指定できます。これは <code
                   class="command">inetd</code> に他の接続を受け入れる前に、起動されたプロセスの終了を待つか否かを伝えます。簡単に多重送信対応できる TCP 接続の場合、通常 <code
                   class="literal">nowait</code> を使います。UDP を使って応答するプログラムに対しては、サーバが複数接続の並列化を管理する機能を持っている場合に限り <code
                   class="literal">nowait</code> を使うべきです。この後に子プロセスの最大数、さらに 1 分間に認められる接続の最大数 (デフォルトの値は 256) を指定することが可能です。
@@ -135,11 +135,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div></li><li
               class="listitem"><div
                 class="para">
-					引数: これはプログラムの引数の完全なリストで、サーバプログラムの名前 (C 言語で言えば <code
+					引数。このフィールドはプログラムの引数の完全なリストを指定し、サーバプログラムの名前 (C 言語で言えば <code
                   class="literal">argv[0]</code>) を含みます。
 				</div></li></ul></div><div
           class="para">
-			最も一般的な場合、以下の例のようになります:
+			最も一般的な場合、以下の例のようになります。
 		</div><div
           class="example"><a
             id="example.inetd-conf"></a><p
@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="programlisting">talk   dgram  udp wait    nobody.tty /usr/sbin/in.talkd in.talkd
 finger stream tcp nowait  nobody     /usr/sbin/tcpd     in.fingerd
 ident  stream tcp nowait  nobody     /usr/sbin/identd   identd -i</pre></div></div><a
-          id="idm140615466806048"
+          id="idm140198430597600"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -170,9 +170,9 @@ ident  stream tcp nowait  nobody     /usr/sbin/identd   identd -i</pre></div></d
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>COMMUNITY</em></span> Wietse Venema さん</strong></p></div></div></div><a
-            id="idm140615466798672"
+            id="idm140198430588624"
             class="indexterm"></a><a
-            id="idm140615466797904"
+            id="idm140198430587664"
             class="indexterm"></a><div
             class="para">
 			Wietse Venema さんは <code
@@ -186,11 +186,11 @@ ident  stream tcp nowait  nobody     /usr/sbin/identd   identd -i</pre></div></d
                       class="command">inetd</code> コマンド</strong></p></div></div></div><div
             class="para">
 			Debian はデフォルトで <span
-              class="pkg pkg">openbsd-inetd</span> をインストールしますが、他にも数多くの代替品があります: <span
+              class="pkg pkg">openbsd-inetd</span> をインストールしますが、他にも数多くの代替品があります。たとえば <span
               class="pkg pkg">inetutils-inetd</span>、<span
               class="pkg pkg">micro-inetd</span>、<span
               class="pkg pkg">rlinetd</span>、<span
-              class="pkg pkg">xinetd</span> などです。
+              class="pkg pkg">xinetd</span> などの代替品が存在します。
 		</div><div
             class="para">
 			<span

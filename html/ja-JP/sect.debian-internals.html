@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.debian-internals"></a>1.3. Debian プロジェクトの内部の仕組み</h2></div></div></div><a
-          id="idm140615468128448"
+          id="idm140198419596608"
           class="indexterm"></a><a
-          id="idm140615468127488"
+          id="idm140198419595648"
           class="indexterm"></a><div
           class="para">
 			Debian プロジェクトの優れた最終結果は、Debian 開発経験者によるインフラ整備作業と Debian パッケージの個々またはグループ開発者の作業の集約、そしてユーザからのフィードバックの同時進行により成り立っています。
@@ -78,8 +78,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615468125760"></a>1.3.1. Debian 開発者</h3></div></div></div><a
-            id="idm140615468124960"
+                    id="idm140198419593920"></a>1.3.1. Debian 開発者</h3></div></div></div><a
+            id="idm140198419593120"
             class="indexterm"></a><div
             class="para">
 				Debian 開発者には公式プロジェクトメンバーとしてのさまざまな責任があります。彼らはプロジェクトの方針に重大な影響を与えます。一般に Debian 開発者は最低一つのパッケージに対して責任がありますが、時間がありそうしたいと思えば、多数のチームに参加することでプロジェクト内でより重い責任を負うことも自由にできます。<div
@@ -94,9 +94,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> 開発者データベース</strong></p></div></div></div><a
-              id="idm140615468119168"
+              id="idm140198419586992"
               class="indexterm"></a><a
-              id="idm140615468117760"
+              id="idm140198419585584"
               class="indexterm"></a><div
               class="para">
 				Debian にはプロジェクトに登録されているすべての開発者と関連する情報 (アドレス、電話番号、緯度と経度などの地理座標、等々) のデータベースがあります。一部の情報 (姓名、国籍、プロジェクト内でのユーザ名、IRC ユーザ名、GnuPG 鍵、等々) は公開されておりウェブから入手することが可能です。<div
@@ -104,15 +104,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   href="http://db.debian.org/">http://db.debian.org/</a></div>
 			</div><div
               class="para">
-				この地理座標を使えば、世界中の開発者全員の位置を載せた地図が作れます。Debian は本当の意味で国際的なプロジェクトです: すべての大陸 (大部分は「欧米」ですが) に開発者がいます。
+				この地理座標を使えば、世界中の開発者全員の位置を載せた地図が作れます。Debian は本当の意味で国際的なプロジェクトです。つまり、すべての大陸 (大部分は「欧米」ですが) に開発者がいます。
 			</div><div
               class="figure"><a
-                id="idm140615468113824"></a><div
+                id="idm140198419581632"></a><div
                 class="figure-contents"><div
                   class="mediaobject"><img
                     src="images/developers-map.png"
                     alt="世界的に広がる Debian 開発者" /></div><a
-                  id="idm140615468110592"
+                  id="idm140198419578400"
                   class="indexterm"></a></div><p
                 class="title"><strong>図1.1 世界的に広がる Debian 開発者</strong></p></div></div><div
             class="para">
@@ -125,28 +125,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> パッケージメンテナンス、開発者の仕事</strong></p></div></div></div><a
-              id="idm140615468105856"
+              id="idm140198419573664"
               class="indexterm"></a><a
-              id="idm140615468104448"
+              id="idm140198419572256"
               class="indexterm"></a><div
               class="para">
 				パッケージメンテナンスとはまず初めにあるプログラムを「パッケージ化すること」を必要とします。具体的に言うと、これはあるプログラムをインストールする方法を定義することを意味しています。これのおかげで、プログラムはインストール後すぐに動作するようになり、Debian プロジェクトが自身のために設定したルールを順守するでしょう。この操作の結果が <code
                 class="filename">.deb</code> ファイルに保存されています。事実上、プログラムのインストールに必要な作業とは、圧縮されたアーカイブを展開すること、インストール前およびインストール後にスクリプトを実行すること、だけです。
 			</div><div
               class="para">
-				この最初の段階の後、メンテナンスサイクルが本当に始まります: Debian ポリシーの最新版に従うように更新を準備すること、ユーザが報告したバグを修正すること、プログラムの新しい「上流」バージョン (開発を自然に継続したバージョン) を含めること。たとえば、最初のパッケージ化の際、プログラムのバージョンは 1.2.3 だったとしましょう。数カ月の開発の後、オリジナルの作者は新しい安定版バージョン 1.4.0 を発表しました。この時点で、Debian メンテナはパッケージを更新するべきです、そうすればユーザは最新安定版の恩恵を受けられるようになります。
+				この最初の段階の後、メンテナンスサイクルが本当に始まります。ここでメンテナンスとは、Debian ポリシーの最新版に従うように更新を準備すること、ユーザが報告したバグを修正すること、プログラムの新しい「上流」バージョン (開発を自然に継続したバージョン) を含めること、です。たとえば、最初のパッケージ化の際、プログラムのバージョンは 1.2.3 だったとしましょう。数カ月の開発の後、オリジナルの作者は新しい安定版バージョン 1.4.0 を発表しました。この時点で、Debian メンテナはパッケージを更新するべきです、そうすればユーザは最新安定版の恩恵を受けられるようになります。
 			</div></div><a
-            id="idm140615468099904"
+            id="idm140198419567664"
             class="indexterm"></a><a
-            id="idm140615468098944"
+            id="idm140198419566704"
             class="indexterm"></a><a
-            id="idm140615468097984"
+            id="idm140198419565744"
             class="indexterm"></a><div
             class="para">
 				Debian プロジェクトの重要な要素である Debian ポリシーはパッケージの品質とディストリビューションの完全な相互運用性の両方を確保するための規範を定めています。このポリシーのおかげで、Debian は巨大にも関わらずその一貫性を保っています。このポリシーは決定事項ではありません、<code
               class="email"><a
                 class="email"
-                href="mailto:debian-policy@lists.debian.org">debian-policy@lists.debian.org</a></code> メーリングリストに寄せられた提案を練ることで絶え間なく進化しています。関係者全員からの同意を得た修正は承認され、編集責任を持たないメンテナの小集団がこれを文章に反映します (上に挙げたメーリングリストのメンバーである Debian 開発者ができるのは、同意された修正を盛り込むことだけです)。現在寄せられている修正の提案を読むにはバグ追跡システムをご確認ください: <div
+                href="mailto:debian-policy@lists.debian.org">debian-policy@lists.debian.org</a></code> メーリングリストに寄せられた提案を練ることで絶え間なく進化しています。関係者全員からの同意を得た修正は承認され、編集責任を持たないメンテナの小集団がこれを文章に反映します (上に挙げたメーリングリストのメンバーである Debian 開発者ができるのは、同意された修正を盛り込むことだけです)。現在寄せられている修正の提案を読むにはバグ追跡システムをご確認ください。<div
               class="url">→ <a
                 href="http://bugs.debian.org/debian-policy">http://bugs.debian.org/debian-policy</a></div>
 			</div><div
@@ -157,7 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				重要度を「wishlist」にして <span
                 class="pkg pkg">debian-policy</span> パッケージにバグ報告を投稿すれば誰でも Debian ポリシーに修正を提案できます。この手続きは <code
-                class="filename">/usr/share/doc/debian-policy/Process.html</code> に書かれています: もし Debian ポリシーに新しいルールを作ることで投稿された問題を解決しなければいけないと認知されたら、合意に達して提案が公表されるまで <code
+                class="filename">/usr/share/doc/debian-policy/Process.html</code> に書かれています。つまり、もし Debian ポリシーに新しいルールを作ることで投稿された問題を解決しなければいけないと認知されたら、合意に達して提案が公表されるまで <code
                 class="email"><a
                   class="email"
                   href="mailto:debian-policy@lists.debian.org">debian-policy@lists.debian.org</a></code> メーリングリストで議論されます。この後、誰かが要求された修正に対する草稿を書いて、承認を求めるために投稿します (パッチレビューの形で)。2 人の他の開発者が、提案された修正は以前の議論で達せられた合意を反映したものであると承認したら (彼らが修正に「賛同」したら) すぐに、<span
@@ -167,15 +167,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DEBIAN POLICY</em></span> 文書</strong></p></div></div></div><a
-              id="idm140615468088112"
+              id="idm140198419555856"
               class="indexterm"></a><a
-              id="idm140615468086672"
+              id="idm140198419554416"
               class="indexterm"></a><a
-              id="idm140615468085712"
+              id="idm140198419553456"
               class="indexterm"></a><a
-              id="idm140615468084592"
+              id="idm140198419552336"
               class="indexterm"></a><a
-              id="idm140615468083472"
+              id="idm140198419551216"
               class="indexterm"></a><div
               class="para">
 				各パッケージに関する文書は <code
@@ -185,84 +185,84 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">changelog.Debian.gz</code> ファイルにはあるバージョンから次のバージョンに更新した際に Debian メンテナが行った変更についての説明が書かれています。このファイルを <code
                 class="filename">changelog.gz</code> ファイル (または同等のファイル、上流開発者が行った変更に関する説明が書かれたファイル) と混同してはいけません。<code
                 class="filename">copyright</code> ファイルにはソフトウェアの作者とそのライセンスに関する情報が書かれています。最後に、このディレクトリに含まれる <code
-                class="filename">NEWS.Debian.gz</code> と名付けられたファイルには Debian 開発者からの更新に関する重要な情報が含まれています; <span
+                class="filename">NEWS.Debian.gz</code> と名付けられたファイルには Debian 開発者からの更新に関する重要な情報が含まれています。さらに <span
                 class="emphasis"><em>apt-listchanges</em></span> がインストール済みの場合、これらのメッセージが自動的に表示されます。その他のファイルはここで注目しているソフトウェアに固有のファイルです。特に注目すべきは <code
                 class="filename">examples</code> サブディレクトリで、ここには設定ファイルの例が含まれています。
 			</div></div><div
             class="para">
-				Debian ポリシーはパッケージ化の技術的側面の大部分をカバーしています。Debian プロジェクトの大きさは組織の問題を引き起こします; 問題は Debian 憲章にしたがって対処されます。Debian 憲章は組織体制と意思決定の手段を定めています。これは言い換えれば、組織的な管理システムといえます。
+				Debian ポリシーはパッケージ化の技術的側面の大部分をカバーしています。Debian プロジェクトの大きさは組織の問題を引き起こします。それに対して、問題は Debian 憲章に則って対処されます。Debian 憲章は組織体制と意思決定の手段を定めています。これは言い換えれば、組織的な管理システムといえます。
 			</div><a
-            id="idm140615468075376"
+            id="idm140198419543088"
             class="indexterm"></a><a
-            id="idm140615468074416"
+            id="idm140198419542128"
             class="indexterm"></a><a
-            id="idm140615468073488"
+            id="idm140198419541200"
             class="indexterm"></a><a
-            id="idm140615468072528"
+            id="idm140198419540240"
             class="indexterm"></a><a
-            id="idm140615468071088"
+            id="idm140198419538800"
             class="indexterm"></a><div
             class="para">
-				Debian 憲章は一定の役割と役職、併せてそれぞれに対する責任と権限を定義しています。特筆すべきは Debian 開発者は一般決議に投票することで最終決定を行う権限を常に持っているということです、重大な変化 (基本文書に影響を与えるようなもの) を起こすには特定多数の 4 分の 3 (75%) が投票すること必要です。しかしながら、開発者は会議で彼らを代表して、さまざまなチーム間の連携を確保する「リーダー」を毎年選びます。この選挙は常に活発な議論になります。リーダーの役割は何かの文書で正式に定義されたものではありません: 通常、この役職の候補者は役割を自分自身で定義し、それを提案します。実際のところ、リーダーの役割には開発者からの共感を得るように、メディアに対する代表者として働くこと、「内部」チーム間の連携をとること、プロジェクトに対する包括的な指導を提供すること、が含まれています: DPL の見解はプロジェクトメンバーの大多数から暗黙のうちに認められているのです。
+				Debian 憲章は一定の役割と役職、併せてそれぞれに対する責任と権限を定義しています。特筆すべきは Debian 開発者は一般決議に投票することで最終決定を行う権限を常に持っているということです、重大な変化 (基本文書に影響を与えるようなもの) を起こすには特定多数の 4 分の 3 (75%) が投票すること必要です。しかしながら、開発者は会議で彼らを代表して、さまざまなチーム間の連携を確保する「リーダー」を毎年選びます。この選挙は常に活発な議論になります。リーダーの役割は何かの文書で正式に定義されているわけではありません。なぜなら通常、この役職の候補者は役割を自分自身で定義し、それを提案するからです。実際のところ、リーダーの役割には開発者からの共感を得るように、メディアに対する代表者として働くこと、「内部」チーム間の連携をとること、プロジェクトに対する包括的な指導を提供すること、が含まれています。そして、DPL の見解は大多数のプロジェクトメンバーから暗黙のうちに容認されています。
 			</div><div
             class="para">
-				具体的にいえば、リーダーは本当の意味での権力を持っています; 賛否同数の場合にはリーダーの投票が決定票となります; リーダーはまだ誰の権限下にもなっていない案件に判決を下したり、自身の権限の一部を委任したりすることが可能です。
+				具体的に言えば、リーダーは本当の意味での権力を持っています。さらに、賛否同数の場合にはリーダーの投票が決定票となります。その上、リーダーはまだ誰の権限下にもなっていない案件に判決を下したり、自身の権限の一部を委任したりすることが可能です。
 			</div><a
-            id="idm140615468067136"
+            id="idm140198419534784"
             class="indexterm"></a><a
-            id="idm140615468066176"
+            id="idm140198419533824"
             class="indexterm"></a><a
-            id="idm140615468065216"
+            id="idm140198419532864"
             class="indexterm"></a><a
-            id="idm140615468064256"
+            id="idm140198419531904"
             class="indexterm"></a><a
-            id="idm140615468063296"
+            id="idm140198419530944"
             class="indexterm"></a><a
-            id="idm140615468062336"
+            id="idm140198419529984"
             class="indexterm"></a><a
-            id="idm140615468061376"
+            id="idm140198419529024"
             class="indexterm"></a><a
-            id="idm140615468060416"
+            id="idm140198419528064"
             class="indexterm"></a><a
-            id="idm140615468059456"
+            id="idm140198419527104"
             class="indexterm"></a><a
-            id="idm140615468058496"
+            id="idm140198419526144"
             class="indexterm"></a><a
-            id="idm140615468057536"
+            id="idm140198419525184"
             class="indexterm"></a><a
-            id="idm140615468056576"
+            id="idm140198419524224"
             class="indexterm"></a><a
-            id="idm140615468055616"
+            id="idm140198419523264"
             class="indexterm"></a><div
             class="para">
 				Debian が始まって以来ずっと、プロジェクトは Ian Murdock さん、Bruce Perens さん、Ian Jackson さん、Wichert Akkerman さん、Ben Collins さん、Bdale Garbee さん、Martin Michlmayr さん、Branden Robinson さん、Anthony Towns さん、Sam Hocevar さん、Steve McIntyre さん、Stefano Zacchiroli さん、Lucas Nussbaum さんに率いられてきました。
 			</div><a
-            id="idm140615468053792"
+            id="idm140198419521440"
             class="indexterm"></a><div
             class="para">
 				Debian 憲章では「技術委員会」もまた定義されています。技術委員会の本質的な役割とは、関係する開発者の間で合意に達しなかった場合に技術的な事柄を決定することです。技術委員会の他の役割として、責任を負っている決定で間違いを犯す開発者に対する顧問役があります。ただし、技術委員会は問題になっているグループの一員から参加するように求められた場合のみそこに参加するということに注意しなければいけません。
 			</div><a
-            id="idm140615468051776"
+            id="idm140198419519424"
             class="indexterm"></a><div
             class="para">
 				最後に、Debian 憲章では「プロジェクト秘書」の役職も定義しています、この役職はさまざまな選挙と一般決議に関連する投票の運営に責任を負っています。
 			</div><div
             class="para">
-				「一般決議」手続きは Debian 憲章の中で最初の議論期間から最後の開票まで詳細に説明されています。より詳しい情報は: <div
+				「一般決議」手続きは Debian 憲章の中で最初の議論期間から最後の開票まで詳細に説明されています。より詳しい情報は以下のページを参照してください。<div
               class="url">→ <a
                 href="http://www.debian.org/devel/constitution.en.html">http://www.debian.org/devel/constitution.en.html</a></div>
 			</div><a
-            id="idm140615468048624"
+            id="idm140198419516240"
             class="indexterm"></a><a
-            id="idm140615468047664"
+            id="idm140198419515280"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> ののしり合戦、炎上する議論</strong></p></div></div></div><a
-              id="idm140615468045616"
+              id="idm140198419513232"
               class="indexterm"></a><a
-              id="idm140615468044656"
+              id="idm140198419512272"
               class="indexterm"></a><div
               class="para">
 				「ののしり合戦」とはきわめて熱のこもった討論であり、多くの場合、双方が合理的な討論をした後、互いを攻撃して終わります。他のテーマに比べてより頻繁に論争になりやすいテーマがあります (エディタの選択、「<code
@@ -270,22 +270,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">emacs</code> のどっちが好き?」、は昔からよく議論の的にされてきました)。あるテーマに対して一家言ある人々が非常に多いこと (全員) や質問内容が極めて個人的なものであることが原因で、多くの場合極めて素早く電子メールが交換されることになります。
 			</div><div
               class="para">
-				そのような議論からは一般的で特に有益な結論は何一つ生まれません; 一般的には、そのような議論にかかわらないこと、必要なら議論の内容を素早く流し読みすること (すべての内容を読むことは多大な時間を必要としすぎるでしょうから)、をお勧めします。
+				そのような議論からは一般的で特に有益な結論は何一つ生まれません。従って一般的には、そのような議論にかかわらないこと、必要なら議論の内容を素早く流し読みすること (すべての内容を読むことは多大な時間を必要としすぎるでしょうから)、をお勧めします。
 			</div></div><div
             class="para">
-				たとえ Debian 憲章の規定する民主制が名ばかりのようなものであったとしても、毎日の現実は全く違ったものです: Debian は当然ながらフリーソフトウェアにおける能動主義 (do-ocracy) のルールに従います: 物事はそれを行った者がどの様に行うかを決めます。問題に対処するさまざまな方法のそれぞれの価値について議論することで、多くの時間が無駄にならないとも限りません; 選ばれし解決策は、機能性と要件満足度を両立する初めての解決策になるでしょう… しかしそういう解決策は有能な人物が努力した後に出てくるものです。
+				たとえ Debian 憲章の規定する民主制が名ばかりのようなものであったとしても、毎日の現実は全く違ったものです。なぜなら Debian は当然ながらフリーソフトウェアにおける能動主義 (do-ocracy) のルールに従い、物事はそれを行った者がどの様に行うかを決めるからです。問題に対処するさまざまな方法のそれぞれの価値について議論することで、多くの時間が無駄にならないとも限りません。しかしながら、選ばれし解決策は機能性と要件満足度を両立する初めての解決策になるでしょう… このような解決策は、有能な人物が努力しなければ、導き出されるものではありません。
 			</div><div
             class="para">
-				地位にふさわしい業績を上げる唯一の方法とは: 何か有益なことをして、それがうまくいったことを示すことです。多くの Debian「管理」チームは実績を上げていない者を採用しません、つまり、これまでの貢献が効果を挙げており、本人の能力が証明されているボランティアを好むということです。これらのチームの仕事は公開されており、新しい貢献者がその仕事を観察し手助けを開始するのに特権を必要としません。そのため、Debian は 「業績主義」と言われています。
+				地位にふさわしい業績を上げるにはたった一つの方法しかありません。すなわち、何か有益なことをして、それがうまくいったことを示すことです。多くの Debian「管理」チームは実績を上げていない者を採用しません、つまり、これまでの貢献が効果を挙げており、本人の能力が証明されているボランティアを好むということです。これらのチームの仕事は公開されており、新しい貢献者がその仕事を観察し手助けを開始するのに特権を必要としません。そのため、Debian は 「業績主義」と言われています。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> 業績主義、知識の統治</strong></p></div></div></div><a
-              id="idm140615471088576"
+              id="idm140198419504784"
               class="indexterm"></a><div
               class="para">
-				業績主義とは、最も高い業績をもつものが権力を行使するという政治の形態です。Debian においては、業績は能力を測る物差しであり、能力はプロジェクトの単独または複数のメンバーが過去の行動を観察して評価されます (元プロジェクトリーダーの Stefano Zacchiroli さんは「do-ocracy」の意味は「物事を成し遂げた人に与えられる権力」を意味すると言っています)。単に業績があるということで能力が一定のレベルに達していることを証明するのです; 成果は一般にソースコードが入手できるフリーソフトウェアに対するもので、同業者はソースコードから成果の品質を評価することが容易に可能です。
+				業績主義とは、最も高い業績をもつものが権力を行使するという政治の形態です。Debian においては、業績は能力を測る物差しであり、能力はプロジェクトの単独または複数のメンバーが過去の行動を観察して評価されます (元プロジェクトリーダーの Stefano Zacchiroli さんは「do-ocracy」の意味は「物事を成し遂げた人に与えられる権力」を意味すると言っています)。単に業績があるということで能力が一定のレベルに達していることを証明するのです。そして、一般に成果とはソースコードが入手できるフリーソフトウェアに対するもので、同業者はソースコードから成果の品質を評価することが容易に可能です。
 			</div></div><div
             class="para">
 				この効果的な運営方法のおかげで「重要な」Debian チーム内では貢献者の品質が保証されています。この方法は決して完璧ではありませんし、時々この運営方法を受け入れられない人もいます。チーム内で採用されている開発者の選択基準は少し気まぐれかもっと言えば不公平なものに見えるかもしれません。その上、チームから受けられるサービスに関して全員が同じ定義を共有しているとも限りません。新しい Debian パッケージを含めるのに 8 日間待たなければいけないのは受け入れがたい人もいれば、なんの問題もなく 3 週間気長に待つ人もいます。そんなわけで、いくつかのチームからは「サービス品質」の不満に関する苦情が常に寄せられています。
@@ -294,14 +294,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>COMMUNITY</em></span> 新しいメンテナの参加</strong></p></div></div></div><a
-              id="idm140615471083728"
+              id="idm140198419499920"
               class="indexterm"></a><div
               class="para">
 				新しい開発者の受け入れに責任を持つチームは最も定期的に批判されているチームです。ここ数年、Debian プロジェクトはますます開発者を要求するようになっており、さらにその要求が受け入れられるであろうことを認めなければいけません。一部の人々はこれに不公平さを見いだすかもしれません。しかしわれわれは、Debian がユーザに向けて作り出したすべての物に対する品質と整合性を保証するという点について言えば、はじめは小さな挑戦だったとしても 1,000 人を超えるコミュニティ内でその挑戦はより大きなものになる、ということを打ち明けなければいけません。
 			</div><a
-              id="idm140615471081040"
+              id="idm140198419497232"
               class="indexterm"></a><a
-              id="idm140615471080080"
+              id="idm140198419496272"
               class="indexterm"></a><div
               class="para">
 				その上、受け入れ手続きの最終的な判断は小さなチーム、Debian アカウントマネージャ、による立候補者の審査に委ねられています。マネージャはボランティアを Debian 開発者コミュニティに受け入れるか拒否するかについて最終的な決定権を持っているため、特に批判を浴びるのです。実際問題として、マネージャはプロジェクトの活動についてより多くを学ぶまでの間、ある人の受け入れを遅らせなければならないことがあります。もちろん、現在の開発者を支援することで、公式開発者として受け入れられる前に Debian に対して貢献することも可能です。
@@ -309,9 +309,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615471077600"></a>1.3.2. ユーザの積極的役割</h3></div></div></div><div
+                    id="idm140198426312688"></a>1.3.2. ユーザの積極的役割</h3></div></div></div><div
             class="para">
-				Debian プロジェクト内で働く人の中でもユーザに言及する必要があるのではないかと思うかもしれません、その答えは間違いなく yes です: ユーザは重要な役割を果たしています。「受け身」の状態から一歩進んで、 Debian の開発版を使い、問題を説明するバグ報告を出すユーザもいます。さらに深く立ち入り、重要度「wishlist」のバグ報告を出すことで改善案を投稿したり、「patches」でソースコードの修正を投稿するユーザもいます (傍注<a
+				Debian プロジェクト内で働く人の中でもユーザに言及する必要があるのではないかと思うかもしれません、その答えは間違いなく yes です。なぜなら、ユーザは重要な役割を果たしているからです。「受け身」の状態から一歩進んで、 Debian の開発版を使い、問題を説明するバグ報告を出すユーザもいます。さらに深く立ち入り、重要度「wishlist」のバグ報告を出すことで改善案を投稿したり、「patches」でソースコードの修正を投稿するユーザもいます (傍注<a
               class="xref"
               href="sect.debian-internals.html#sidebar.patch"><span
                 class="emphasis"><em>BACK TO BASICS</em></span> パッチ、修正を送る方法</a>をご覧ください)。
@@ -321,19 +321,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> バグ追跡システム</strong></p></div></div></div><a
-              id="idm140615471073840"
+              id="idm140198426308784"
               class="indexterm"></a><a
-              id="idm140615471072432"
+              id="idm140198426307376"
               class="indexterm"></a><a
-              id="idm140615471071472"
+              id="idm140198426306416"
               class="indexterm"></a><a
-              id="idm140615471070544"
+              id="idm140198426305488"
               class="indexterm"></a><div
               class="para">
-				Debian バグ追跡システム (Debian BTS) はプロジェクトで広く使われています。公開部分 (ウェブインターフェース) を使ってユーザは報告されたバグをすべて見ることが可能です、必要であれば、さまざまな基準に従ってソート済みのバグリストを表示することが可能です、たとえば: 影響を受けるパッケージ、重要度、状態、報告者のアドレス、パッケージの責任を負うメンテナのアドレス、タグ、などなど。あるバグに関連するすべての議論の完全な履歴リストを閲覧することも可能です。
+				Debian バグ追跡システム (Debian BTS) はプロジェクトで広く使われています。公開部分 (ウェブインターフェース) を使ってユーザは報告されたバグをすべて見ることが可能です、必要であれば、さまざまな基準に従ってソート済みのバグリストを表示することが可能です。ここで基準とは、影響を受けるパッケージ、重要度、状態、報告者のアドレス、パッケージの責任を負うメンテナのアドレス、タグ、などです。あるバグに関連するすべての議論の完全な履歴リストを閲覧することも可能です。
 			</div><div
               class="para">
-				内部的には Debian BTS は電子メールを基礎に使っています: 関係するさまざまな人が送信したメッセージが情報としてすべて保存されています。このため <code
+				内部的には Debian BTS は電子メールを基礎に使っています。すなわち、関係するさまざまな人が送信したメッセージが情報としてすべて保存されています。このため <code
                 class="email"><a
                   class="email"
                   href="mailto:12345@bugs.debian.org">12345@bugs.debian.org</a></code> 宛に送信された電子メールはバグ番号 12345 のバグに関する連絡履歴に割り当てられます。議論を終わらせる理由を説明したメッセージを <code
@@ -356,12 +356,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>VOCABULARY</em></span> バグの重要度</strong></p></div></div></div><a
-              id="idm140615471062240"
+              id="idm140198426297168"
               class="indexterm"></a><a
-              id="idm140615471061280"
+              id="idm140198426296208"
               class="indexterm"></a><div
               class="para">
-				バグの重要度とは堅苦しく言うと報告された問題の重要性の度合いを意味しています。実際のところ、すべてのバグの重要性は同一ではありません; たとえば、マニュアルの誤植とサーバソフトウェアのセキュリティ脆弱性を比較することは不可能です。
+				バグの重要度とは堅苦しく言うと報告された問題の重要性の度合いを意味しています。実際のところ、すべてのバグの重要性は同一ではありません。その上、たとえばマニュアルの誤植とサーバソフトウェアのセキュリティ脆弱性を比較することは不可能です。
 			</div><div
               class="para">
 				Debian はバグの重要度を類型化するために等級の意味を拡大して使用しています。それぞれのレベルは、重要度の選択がしやすいよう、明確に定義されています。<div
@@ -379,13 +379,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> i18n (国際化) と l10n (地域化) とは?</strong></p></div></div></div><a
-              id="idm140615471053440"
+              id="idm140198426288352"
               class="indexterm"></a><a
-              id="idm140615471052480"
+              id="idm140198426287392"
               class="indexterm"></a><a
-              id="idm140615471051520"
+              id="idm140198426286432"
               class="indexterm"></a><a
-              id="idm140615471050560"
+              id="idm140198426285472"
               class="indexterm"></a><div
               class="para">
 				「i18n」と「l10n」は「internationalization (国際化)」と「localization (地域化)」の略語です。それぞれの単語の最初と最後の文字を取って、真ん中の文字の数を数字で表しています。
@@ -404,11 +404,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> パッチ、修正を送る方法</strong></p></div></div></div><a
-              id="idm140615471045088"
+              id="idm140198426280000"
               class="indexterm"></a><a
-              id="idm140615471043968"
+              id="idm140198426278880"
               class="indexterm"></a><a
-              id="idm140615471043008"
+              id="idm140198426277920"
               class="indexterm"></a><div
               class="para">
 				パッチとは単独または複数のファイルに対する変更内容を記述したファイルです。具体的に言うと、パッチはコードを修正後の内容に置き換えるために、コードから削除された行と追加された行と (ときどき) それらの行位置の目印となるテキストのリスト (これは行番号が変わった場合に変更の場所を特定するためのものです) を含んでいます。
@@ -416,7 +416,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				パッチファイルの提供する修正を適用するためのツールは <code
                 class="command">patch</code> と呼ばれています。パッチファイルを作成するためのツールは <code
-                class="command">diff</code> と呼ばれており、以下のように使います:
+                class="command">diff</code> と呼ばれており、以下のように使います。
 			</div><pre
               class="screen"><code
                 class="computeroutput">$ </code><strong
@@ -426,7 +426,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">file.patch</code> ファイルには <code
                 class="filename">file.old</code> の内容を <code
                 class="filename">file.new</code> の内容に変更するための指示が含まれています。われわれはこのパッチファイルを送信することができ、受け取った人はパッチファイルを適用して <code
-                class="filename">file.new</code> を再作成することが可能です、これを行うには以下のようにします:
+                class="filename">file.new</code> を再作成することが可能です、これを行うには以下のようにします。
 			</div><pre
               class="screen"><code
                 class="computeroutput">$ </code><strong
@@ -441,11 +441,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> <code
                         class="command">reportbug</code> を使ったバグ報告</strong></p></div></div></div><a
-              id="idm140615471031888"
+              id="idm140198426266800"
               class="indexterm"></a><a
-              id="idm140615471030768"
+              id="idm140198426265680"
               class="indexterm"></a><a
-              id="idm140615471029328"
+              id="idm140198426264240"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -470,17 +470,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Debian は自己アピールによる普及キャンペーンに資金を使わないため、Debian のユーザは Debian の普及に重要な役割を果たし、Debian の評判は口コミで伝わることが保障されています。
 			</div><div
             class="para">
-				この方法は極めてうまくいきます、なぜならフリーソフトウェアコミュニティのあらゆる層に Debian の支持者がいるからです: 地域の LUG 「Linux ユーザグループ」が企画したインストールパーティ (ベテランユーザが新しいユーザにシステムのインストールの補助を行うワークショップ) から、Linux などについて取り扱う大きな技術会議のアソシエーションブースにも浸透しています。
+				この方法は極めてうまくいきます、なぜならフリーソフトウェアコミュニティのあらゆる層に Debian の支持者がいるからです。すなわち、地域の LUG「Linux ユーザグループ」が企画したインストールパーティ (ベテランユーザが新しいユーザにシステムのインストールの補助を行うワークショップ) から、Linux などについて取り扱う大きな技術会議のアソシエーションブースにも浸透しています。
 			</div><div
             class="para">
-				ボランティアがポスター、パンフレット、ステッカーなどのプロジェクトの宣伝に役立つ資料を作り、彼らは宣伝資料を誰でも利用できるようにしており、Debian はウェブサイトで宣伝資料を無制限に提供しています: <div
+				ボランティアがポスター、パンフレット、ステッカーなどのプロジェクトの宣伝に役立つ資料を作り、彼らは宣伝資料を誰でも利用できるようにしており、Debian はウェブサイトで宣伝資料を無制限に提供しています。<div
               class="url">→ <a
                 href="http://www.debian.org/events/material">http://www.debian.org/events/material</a></div>
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615471018592"></a>1.3.3. チームとサブプロジェクト</h3></div></div></div><div
+                    id="idm140198426253488"></a>1.3.3. チームとサブプロジェクト</h3></div></div></div><div
             class="para">
 				Debian は最初からずっと、ソースパッケージの概念を中心に組織化され続けており、ソースパッケージにはそのメンテナとメンテナのグループがいます。チームが担当している仕事の多くは長い時間をかけて明らかにされてきました、確実にインフラを運営すること、特定のパッケージに依存しないタスク (品質保証、Debian ポリシー、インストーラなど) を管理すること、そして最近サブプロジェクトの周りで成長している数多くのチームと一緒にそれを行うことです。
 			</div><div
@@ -495,9 +495,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULARY</em></span> サブプロジェクトと派生ディストリビューション</strong></p></div></div></div><a
-                id="idm140615471013408"
+                id="idm140198426248304"
                 class="indexterm"></a><a
-                id="idm140615471012480"
+                id="idm140198426247376"
                 class="indexterm"></a><div
                 class="para">
 					派生ディストリビューションの開発工程とは、Debian の特定のバージョンを土台としてそれにたくさんの変更を加えることです。派生ディストリビューションを支える基礎構造は Debian プロジェクトとは全く別物です。改良に貢献するポリシーを定める必要はありません。この違いは、どのようにして派生ディストリビューションはオリジナルから「分岐」する可能性があるか、なぜ派生ディストリビューションは開発の上流側でなされた改良の恩恵を受けるために自身のソースを定期的に再同期しなければいけないのか、を説明します。
@@ -511,33 +511,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   href="derivative-distributions.html">付録A <em>派生ディストリビューション</em></a>をご覧ください。
 				</div></div><div
               class="para">
-					現在のサブプロジェクトを一部抜粋したものが以下です:
+					以下は現在のサブプロジェクトを一部抜粋したものです。
 				</div><div
               xmlns:d="http://docbook.org/ns/docbook"
               class="itemizedlist"><ul><li
                   class="listitem"><div
                     class="para">
-							Debian-Junior、Ben Armstrong さんが作成し、子供向けに魅力的で使いやすい Debian システムを提供しています;
+							Debian-Junior、Ben Armstrong さんが作成し、子供向けに魅力的で使いやすい Debian システムを提供しています。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							Debian-Edu、Petter Reinholdtsen さんが作成し、学問の世界向けに特化したディストリビューションの作成を重視しています;
+							Debian-Edu、Petter Reinholdtsen さんが作成し、学問の世界向けに特化したディストリビューションの作成を重視しています。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							Debian Med、Andreas Tille さんが作成し、医療分野に特化しています;
+							Debian Med、Andreas Tille さんが作成し、医療分野に特化しています。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							Debian Multimedia、音声およびマルチメディア制作を取り扱います;
+							Debian Multimedia、音声およびマルチメディア制作を取り扱います。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							Debian-Desktop、デスクトップを重視しデフォルトテーマのアートワークを統合しています;
+							Debian-Desktop、デスクトップを重視しデフォルトテーマのアートワークを統合しています。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							Debian GIS、地理情報システムのアプリケーションとユーザを引き受けています;
+							Debian GIS、地理情報システムのアプリケーションとユーザを引き受けています。
 						</div></li><li
                   class="listitem"><div
                     class="para">
@@ -549,7 +549,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615470998544"></a>1.3.3.2. 管理チーム</h4></div></div></div><div
+                      id="idm140198426233312"></a>1.3.3.2. 管理チーム</h4></div></div></div><div
               class="para">
 					ほとんどの管理チームは比較的閉鎖的で新メンバーの採用は現メンバーからの選出で決まります。チームの一員になる最良の手段は現在のメンバーを賢明に手伝うこと、つまり自分がチームの目標と流儀を理解していることをはっきり示すことです。
 				</div><div
@@ -561,16 +561,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					管理者はまた、パッケージデータベースの中に新しいパッケージを追加する前に、Debian がこのパッケージを配布しても問題ないことを確認するために、このパッケージのライセンスを確認します。開発者がパッケージの削除を希望する場合、開発者はバグ追跡システムから <span
                 class="emphasis"><em>ftp.debian.org</em></span>「擬似パッケージ」に対してバグ報告を行い、管理者と連絡を取ります。
 				</div><a
-              id="idm140615470994272"
+              id="idm140198426229040"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULARY</em></span> 擬似パッケージ、監視ツール</strong></p></div></div></div><a
-                id="idm140615470992224"
+                id="idm140198426226992"
                 class="indexterm"></a><div
                 class="para">
-					バグ追跡システムは当初 バグ報告を Debian パッケージと関連付けるために設計されましたが、その他の問題の管理にも非常に実用的であると証明し続けています: 特定の Debian パッケージに関係しない解決すべき問題のリスト化または作業管理です。一部のチームでは「擬似パッケージ」を使うことで、チームが実在のパッケージに関連がなくとも、バグ追跡システムを使うことができています。誰でも対処が必要な問題を報告できます。たとえば、BTS の <span
+					バグ追跡システムは当初、バグ報告を Debian パッケージと関連付けるために設計されましたが、その他の問題の管理にも非常に実用的であると証明し続けています。ここでその他の問題の管理とは、特定の Debian パッケージに関係しない解決すべき問題をリストアップしたり、作業を管理することです。一部のチームでは「擬似パッケージ」を使うことで、チームが実在のパッケージに関連がなくとも、バグ追跡システムを使うことができています。誰でも対処が必要な問題を報告できます。たとえば、BTS の <span
                   class="emphasis"><em>ftp.debian.org</em></span> エントリは、公式パッケージアーカイブに関する問題を報告し追跡するため、もしくはパッケージの削除要求を出すために利用されます。同様に、<span
                   class="emphasis"><em>www.debian.org</em></span> 擬似パッケージは Debian ウェブサイトの誤りを指摘するためのもので、<span
                   class="emphasis"><em>lists.debian.org</em></span> ではメーリングリストに関するすべての問題を扱います。
@@ -579,9 +579,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>TOOL</em></span> FusionForge、共同開発における万能ナイフ</strong></p></div></div></div><a
-                id="idm140615470987264"
+                id="idm140198426221968"
                 class="indexterm"></a><a
-                id="idm140615470986144"
+                id="idm140198426220848"
                 class="indexterm"></a><div
                 class="para">
 					FusionForge は <code
@@ -609,29 +609,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="url">→ <a
                   href="https://dsa.debian.org">https://dsa.debian.org</a></div>
 				</div><a
-              id="idm140615470975696"
+              id="idm140198426210400"
               class="indexterm"></a><a
-              id="idm140615470974576"
+              id="idm140198426209280"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>TOOL</em></span> Debian パッケージトラッカー</strong></p></div></div></div><a
-                id="idm140615470972560"
+                id="idm140198426207264"
                 class="indexterm"></a><a
-                id="idm140615470971632"
+                id="idm140198426206336"
                 class="indexterm"></a><a
-                id="idm140615470970224"
+                id="idm140198426204928"
                 class="indexterm"></a><a
-                id="idm140615470969296"
+                id="idm140198426204000"
                 class="indexterm"></a><a
-                id="idm140615470967888"
+                id="idm140198426202592"
                 class="indexterm"></a><a
-                id="idm140615470966480"
+                id="idm140198426201184"
                 class="indexterm"></a><a
-                id="idm140615470965520"
+                id="idm140198426200224"
                 class="indexterm"></a><a
-                id="idm140615470964560"
+                id="idm140198426199264"
                 class="indexterm"></a><div
                 class="para">
 					これは Raphaël さんの作ったものです。基本的な考え方は、あるパッケージに対して、可能な限り多くの情報を単一のページに集中させることです。こうすることで、素早くプログラムの状態を確認し、完了させなければいけない作業を特定し、援助を提供することが可能です。そのため、このページには、すべてのバグ統計、それぞれのディストリビューションで利用できるバージョン、<span
@@ -640,7 +640,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     href="https://tracker.debian.org/">https://tracker.debian.org/</a></div>
 				</div><div
                 class="para">
-					電子メール購読サービスがこのウェブインターフェースを完全なものにします。これは、以下に示す情報を選別して自動的に送信するサービスです: バグと関連する議論、Debian サーバから新しいバージョンが利用できるか否か、査読待ちの新しい翻訳など。
+					電子メール購読サービスがこのウェブインターフェースを完全なものにします。これは情報を選別して自動的に送信するサービスです。ここで情報とは、バグと関連する議論、Debian サーバから新しいバージョンが利用できるか否か、査読待ちの新しい翻訳などを指します。
 				</div><div
                 class="para">
 					このため、上級ユーザはパッケージ追跡システムの機能を十分よく理解したら、すべての情報をしっかりと追いかけ、さらにプロジェクトに貢献することが可能です。
@@ -654,26 +654,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					これら 2 つのウェブサイトは Debian の品質保証に責任を負うグループ (このグループは Debian QA として知られています) によって開発および管理されているツールです。
 				</div><a
-                id="idm140615470956368"
+                id="idm140198426191040"
                 class="indexterm"></a><a
-                id="idm140615470954928"
+                id="idm140198426189600"
                 class="indexterm"></a></div><div
               class="para">
 					<span
                 class="emphasis"><em>listmasters</em></span> はメーリングリストを運営する電子メールサーバを管理します。彼らが新しいメーリングリストを作成し、宛先が不明なメールを処理 (配送失敗通知) し、スパムフィルタ (迷惑メールフィルタ) をメンテナンスします。
 				</div><a
-              id="idm140615470952080"
+              id="idm140198426186752"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
-                          class="emphasis"><em>CULTURE</em></span> メーリングリストの流量: いくつかの数字</strong></p></div></div></div><a
-                id="idm140615470949952"
+                          class="emphasis"><em>CULTURE</em></span> メーリングリストの流量、いくつかの数字</strong></p></div></div></div><a
+                id="idm140198426184624"
                 class="indexterm"></a><a
-                id="idm140615470948544"
+                id="idm140198426183216"
                 class="indexterm"></a><div
                 class="para">
-					メーリングリストがプロジェクトの活発度を証明する最良の方法であることは間違いありません、なぜなら、起きたことをすべて記録しているからです。われわれのメーリングリストに関するいくつかの統計 (2015 年に行われた) が雄弁に語っています: Debian は 240 を超えるメーリングリストをホストしており、合計で 212,000 個のユニークアドレスが登録されています。毎月 27,000 通のメッセージが送信され、毎日 476,000 通の電子メールが配送されています。
+					メーリングリストがプロジェクトの活発度を証明する最良の方法であることは間違いありません、なぜなら、起きたことをすべて記録しているからです。われわれのメーリングリストに関するいくつかの統計 (2015 年に行われた) が雄弁に語っています。そして Debian は 240 を超えるメーリングリストをホストしており、合計で 212,000 個のユニークアドレスが登録されています。毎月 27,000 通のメッセージが送信され、毎日 476,000 通の電子メールが配送されています。
 				</div></div><div
               class="para">
 					それぞれのサービスには自身の管理チームがあり、ほとんどの場合サービスを設置したボランティア (しばしばサービスで利用しているツールをプログラムしたボランティア) がチームのメンバーになっています。これに当てはまるケースとして、バグ追跡システム (BTS)、パッケージトラッカー、<code
@@ -686,7 +686,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615470943040"></a>1.3.3.3. 開発チーム、横断チーム</h4></div></div></div><div
+                      id="idm140198426177696"></a>1.3.3.3. 開発チーム、横断チーム</h4></div></div></div><div
               class="para">
 					管理チームとは異なり、開発チームの門戸は外部の貢献者に向けてかなり大きく開かれています。Debian の使命がソフトウェアを作成することではないとしても、目標を達成するためにはプロジェクトは特定のプログラムを必要としています。もちろん、フリーソフトウェアライセンスの下で開発されたそれらのソフトウェアはフリーソフトウェア世界の他の場所で保証されている方法を活用します。
 				</div><div
@@ -695,9 +695,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>CULTURE</em></span> Git</strong></p></div></div></div><a
-                id="idm140615470939776"
+                id="idm140198426174432"
                 class="indexterm"></a><a
-                id="idm140615470938816"
+                id="idm140198426173472"
                 class="indexterm"></a><div
                 class="para">
 					Git は複数のファイルに対して共同で作業を行う際のツールで、変更の歴史を管理するものです。対象となるファイルは通常プログラムのソースコードなどのテキストファイルです。もし数人が同じファイルに対して一緒に仕事を行った場合、<code
@@ -706,7 +706,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					Git は分散型システムで、各ユーザは変更の完全な履歴を備えたリポジトリを持ちます。中央リポジトリはプロジェクトをダウンロードしたり (<code
                   class="command">git clone</code>)、他の人と終了した作業を共有する (<code
-                  class="command">git push</code>) ために使われます。中央リポジトリにはファイルの複数のバージョンが含まれますが、ある時刻に作業することが可能なのは一つのバージョンだけです: これはワーキングコピーと呼ばれています (<code
+                  class="command">git push</code>) ために使われます。中央リポジトリにはファイルの複数のバージョンが含まれますが、ある時刻に作業することが可能なのは一つのバージョンだけです。そしてこれはワーキングコピーと呼ばれています (<code
                   class="command">git checkout</code> を使えば、ワーキングコピーを他のバージョンに変えることが可能です)。Git を使うことで、ワーキングコピーに対して行われた変更内容を表示したり (<code
                   class="command">git diff</code>)、バージョン履歴に新しいエントリを追加してリポジトリ内にワーキングコピーの状態を保存したり (<code
                   class="command">git commit</code>)、他のユーザが平行して行った変更内容を含めるためにワーキングコピーを更新したり (<code
@@ -715,9 +715,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div><div
                 class="para">
 					Git を使うことで、開発中プロジェクトの各バージョン同士を干渉させることなく、複数の並行バージョンを簡単に取り扱うことが可能になります。これは<span
-                  class="emphasis"><em>ブランチ (枝)</em></span> と呼ばれています。このように木で例えることはかなり正確です、なぜならプログラムは同じトランク (幹) に対して開発が始まっているからです。節目 (バージョン 1.0 など) に到達したら、2 つのブランチで開発が続けられます: 開発ブランチでは次のメジャーリリースを準備し、メンテナンスブランチではバージョン 1.0 に対する更新と修正を管理します。
+                  class="emphasis"><em>ブランチ (枝)</em></span> と呼ばれています。このように木で例えることはかなり正確です、なぜならプログラムは同じトランク (幹) に対して開発が始まっているからです。節目 (バージョン 1.0 など) に到達したら、2 つのブランチで開発が続けられます。具体的に言えば、開発ブランチでは次のメジャーリリースを準備し、メンテナンスブランチではバージョン 1.0 に対する更新と修正を管理します。
 				</div><a
-                id="idm140615470930048"
+                id="idm140198426164672"
                 class="indexterm"></a><div
                 class="para">
 					今日、Git は最も人気のバージョン管理システムですが、Git が唯一の選択肢というわけではありません。歴史的に言えば、CVS (並行バージョンシステム) が初めて広く使われたツールでした。しかし、CVS にあった数多くの制限により、さらに現代的なフリーの代替選択肢の出現が促されました。代替選択肢の中では特に <code
@@ -739,19 +739,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="url">→ <a
                     href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a></div>
 				</div><a
-                id="idm140615470920352"
+                id="idm140198426154976"
                 class="indexterm"></a><a
-                id="idm140615470919232"
+                id="idm140198426153856"
                 class="indexterm"></a><a
-                id="idm140615470918112"
+                id="idm140198426152736"
                 class="indexterm"></a><a
-                id="idm140615470916992"
+                id="idm140198426151616"
                 class="indexterm"></a><a
-                id="idm140615470915872"
+                id="idm140198426150496"
                 class="indexterm"></a><a
-                id="idm140615470914752"
+                id="idm140198426149376"
                 class="indexterm"></a><a
-                id="idm140615470913632"
+                id="idm140198426148256"
                 class="indexterm"></a></div><div
               class="para">
 					Debian は自分用に小さなソフトウェアを開発し続けてきましたが、一部のプログラムは重要な役割を担っており、そのようなプログラムの名声は Debian プロジェクトよりも大きく広がっています。Debian パッケージ管理プログラムの <code
@@ -774,7 +774,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">debian-cd</code> プログラム (とても小さい) のチームはさらにいっそう控えめな目的を持っています。数多くの「小」貢献者は彼らのアーキテクチャに対して責任を負います、なぜなら主開発者はすべての細かな差異や CD-ROM からインストーラを起動する正確な方法を知ることはできないからです。
 				</div><div
               class="para">
-					多くのチームは他のチームと一緒にパッケージ化を行わなければいけません: たとえば、 <code
+					多くのチームは他のチームと一緒にパッケージ化を行わなければいけません。たとえば <code
                 class="email"><a
                   class="email"
                   href="mailto:debian-qa@lists.debian.org">debian-qa@lists.debian.org</a></code> は Debian プロジェクトのあらゆるレベルで品質を保証しようと試みます。<code
@@ -787,7 +787,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="replaceable">architecture</em>@lists.debian.org</a></code>) すべてのパッケージをコンパイルし、必要ならばそれらを自分たちのアーキテクチャに適合させます。
 				</div><div
               class="para">
-					メンテナンスを保証する際に 1 チームの負担が大きくなりすぎないよう、他のチームが最も重要なパッケージを管理しています; そのようなケースとして、C ライブラリと <code
+					メンテナンスを保証する際に 1 チームの負担が大きくなりすぎないよう、最も重要なパッケージに対しては別のチームが管理しています。そのようなケースとして、C ライブラリと <code
                 class="email"><a
                   class="email"
                   href="mailto:debian-glibc@lists.debian.org">debian-glibc@lists.debian.org</a></code>、C コンパイラと <code

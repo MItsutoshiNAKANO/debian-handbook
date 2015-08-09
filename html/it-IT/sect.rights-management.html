@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux è decisamente un sistema multi-utente, per cui è necessario fornire un sistema di permessi per il controllo delle operazioni autorizzate su file e directory, che comprende tutte le risorse di sistema e i device (in un sistema Unix, qualsiasi dispositivo è rappresentato da un file o directory). Questo principio è comune a tutti i sistemi Unix, ma un promemoria è sempre utile, soprattutto perché ci sono alcuni utilizzi avanzati interessanti e relativamente sconosciuti.
 		</div><a
-          id="idm139923320451824"
+          id="idm140163724472112"
           class="indexterm"></a><a
-          id="idm139923320450864"
+          id="idm140163724471152"
           class="indexterm"></a><a
-          id="idm139923320449904"
+          id="idm140163724470192"
           class="indexterm"></a><a
-          id="idm139923320448464"
+          id="idm140163724468752"
           class="indexterm"></a><a
-          id="idm139923320447024"
+          id="idm140163724467312"
           class="indexterm"></a><a
-          id="idm139923320445584"
+          id="idm140163724465872"
           class="indexterm"></a><div
           class="para">
 			Ogni file o directory ha permessi specifici per tre categorie di utenti:
@@ -123,13 +123,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					esecuzione (simboleggiata dalla lettera <code
                   class="literal">x</code> come in «eXecute»).
 				</div></li></ul></div><a
-          id="idm139923320433664"
+          id="idm140163724453952"
           class="indexterm"></a><a
-          id="idm139923320432704"
+          id="idm140163724452992"
           class="indexterm"></a><a
-          id="idm139923320431744"
+          id="idm140163724452032"
           class="indexterm"></a><a
-          id="idm139923320430784"
+          id="idm140163724451072"
           class="indexterm"></a><div
           class="para">
 			Nel caso di un file, questi diritti sono di facile comprensione: l'accesso in lettura permette di leggerne il contenuto (incluso farne una copia), l'accesso in scrittura permette di cambiarlo, e l'accesso in esecuzione permette di eseguirlo (che funziona solo se si tratta di un programma).
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> e <code
               class="literal">setgid</code> (simboleggiati con la lettera «s»). Si noti che spesso si parla di «bit», poiché ciascuno di questi valori booleani può essere rappresentato da uno 0 o un 1. Questi due diritti consentono a qualsiasi utente di eseguire il programma con i diritti del proprietario o del gruppo, rispettivamente. Questo meccanismo garantisce l'accesso alle funzionalità che richiedono permessi di livello superiore rispetto a quelli che l'utente avrebbe di solito.
 		</div><a
-            id="idm139923320425200"
+            id="idm140163724445488"
             class="indexterm"></a><a
-            id="idm139923320423920"
+            id="idm140163724444208"
             class="indexterm"></a><div
             class="para">
 			Poiché un programma con <code
@@ -164,14 +164,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>SICUREZZA</em></span> directory <code
                       class="literal">setgid</code> e <span
                       class="emphasis"><em>sticky bit</em></span></strong></p></div></div></div><a
-            id="idm139923320417520"
+            id="idm140163724437808"
             class="indexterm"></a><div
             class="para">
 			Il bit <code
               class="literal">setgid</code> vale anche per le directory. Qualsiasi elemento appena creato in tali directory viene assegnato automaticamente al gruppo proprietario della directory genitore, invece di ereditare il gruppo principale del creatore come al solito. Questa configurazione evita che l'utente debba cambiare il suo gruppo principale (con il comando <code
               class="command">newgrp</code>) quando lavora in un albero di file condiviso tra più utenti dello stesso gruppo dedicato.
 		</div><a
-            id="idm139923320414400"
+            id="idm140163724434688"
             class="indexterm"></a><div
             class="para">
 			Lo «sticky» bit (simboleggiato dalla lettera «t») è un permesso che è utile solo nelle directory. È particolarmente utilizzato per le directory temporanee in cui tutti hanno accesso in scrittura (come <code
@@ -216,15 +216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code>, per «all» (tutti), copre tutte le tre categorie di utenti, così che <code
             class="literal">a=rx</code> garantisce a tutte e tre le categorie gli stessi diritti (lettura ed esecuzione, ma non scrittura).
 		</div><a
-          id="idm139923320398480"
+          id="idm140163724418768"
           class="indexterm"></a><a
-          id="idm139923320397360"
+          id="idm140163724417648"
           class="indexterm"></a><a
-          id="idm139923320396240"
+          id="idm140163724416528"
           class="indexterm"></a><a
-          id="idm139923320395120"
+          id="idm140163724415408"
           class="indexterm"></a><a
-          id="idm139923320394192"
+          id="idm140163724414480"
           class="indexterm"></a><div
           class="para">
 			La rappresentazione numerica (ottale) associa ogni permesso ad un valore: 4 per la lettura, 2 per la scrittura e 1 per l'esecuzione. Ogni combinazione di permessi viene associata con la somma delle cifre. I valori vengono quindi assegnati alle diverse categorie di utenti mettendoli in fila nell'ordine consueto (proprietario, gruppo, altri).
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> in una shell, si vedrà una maschera come <code
               class="computeroutput">0022</code>. Questa è semplicemente una rappresentazione ottale dei diritti automaticamente rimossi (in questo caso, il diritto di scrittura per il gruppo e altri utenti).
 		</div><a
-            id="idm139923320372528"
+            id="idm140163724392816"
             class="indexterm"></a><a
-            id="idm139923320371568"
+            id="idm140163724391856"
             class="indexterm"></a><a
-            id="idm139923320370128"
+            id="idm140163724390416"
             class="indexterm"></a><div
             class="para">
 			Se gli si fornisce un nuovo valore ottale, il comando <code

@@ -25,7 +25,7 @@
         title="Debian 管理者ハンドブック" /><link
         rel="up"
         href="network-services.html"
-        title="第11章 ネットワークサービス: Postfix、Apache、NFS、Samba、Squid、LDAP" /><link
+        title="第11章 ネットワークサービス、Postfix、Apache、NFS、Samba、Squid、LDAP" /><link
         rel="prev"
         href="sect.http-web-server.html"
         title="11.2. ウェブサーバ (HTTP)" /><link
@@ -68,33 +68,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.ftp-file-server"></a>11.3. FTP ファイルサーバ</h2></div></div></div><a
-          id="idm140615485134672"
+          id="idm140198432333008"
           class="indexterm"></a><div
           class="para">
 			FTP (<span
             class="emphasis"><em>File Transfer Protocol</em></span>) はインターネットにおける最初のプロトコルの 1 つです (RFC 959 は 1985 年に発行されました!)。FTP はウェブが生まれる前にファイルを配布するために使われました (HTTP プロトコルは 1990 年に作られ、1996 年の RFC 1945 でバージョン 1.0 が正式に定義されました)。
 		</div><div
           class="para">
-			FTP を使うことで、ファイルのアップロードとダウンロードが可能です; この理由から、現在でもインターネットサービスプロバイダによってホストされているウェブサイトの更新 (およびウェブサイトを構成する要素) を配置するために広く使われています。この場合、ユーザ識別子とパスワードを使って安全なアクセスが強制されます; 認証に成功したら、FTP サーバはそのユーザのホームディレクトリに対する読み書きアクセスを許可します。
+			FTP を使うことで、ファイルのアップロードとダウンロードが可能です。そしてこの理由から、現在でもインターネットサービスプロバイダによってホストされているウェブサイトの更新 (およびウェブサイトを構成する要素) を配置するために広く使われています。この場合、ユーザ識別子とパスワードを使って安全なアクセスが強制されます。そして認証に成功したら、FTP サーバはそのユーザのホームディレクトリに対する読み書きアクセスを許可します。
 		</div><div
           class="para">
-			他の FTP サーバは主に、一般のユーザがダウンロードできる、ファイルを配布するために使われます; これの良い例が Debian パッケージです。サーバの内容は別の、地理的に離れている、サーバから取得されます; ユーザは距離の近いサーバを使うことが可能になります。これはクライアント認証が不要になることを意味します; 結果的に、この挙動は「匿名 FTP」として知られています。完全に正しく言えば、クライアントは<code
-            class="literal">匿名の</code>ユーザ名で認証します; パスワードは、慣例的に、ユーザの電子メールアドレスですが、サーバはこれを無視します。
+			他の FTP サーバは主に、一般のユーザがダウンロードできる、ファイルを配布するために使われます。そしてこれの良い例が Debian パッケージです。サーバの内容は別の、地理的に離れている、サーバから取得されます。そしてサーバの近郊にいるユーザに向けて内容を提供します。これはクライアント認証が不要になることを意味します。結果的に、この挙動は「匿名 FTP」として知られています。完全に正しく言えば、クライアントは<code
+            class="literal">匿名の</code>ユーザ名で認証します。そしてパスワードは、慣例的に、ユーザの電子メールアドレスですが、サーバはこれを無視します。
 		</div><div
           class="para">
 			Debian では、多くの FTP サーバ (<span
             class="pkg pkg">ftpd</span>、<span
             class="pkg pkg">proftpd-basic</span>、<span
             class="pkg pkg">pyftpd</span> など) が利用できます。Falcot Corp 管理者は <span
-            class="pkg pkg">vsftpd</span> を選びました。なぜなら、管理者だけがいくつかのファイルを配布する (Debian パッケージリポジトリ用) ために FTP サーバを使うからです; 管理者は高度な機能を必要としておらず、セキュリティの観点を重視しているからです。
+            class="pkg pkg">vsftpd</span> を選びました。なぜなら、管理者だけがいくつかのファイルを配布する (Debian パッケージリポジトリ用) ために FTP サーバを使うからです。さらに、管理者は高度な機能を必要としておらず、セキュリティの観点を重視しているからです。
 		</div><a
-          id="idm140615485125280"
+          id="idm140198432323552"
           class="indexterm"></a><div
           class="para">
 			パッケージをインストールすると、<code
             class="literal">ftp</code> システムユーザが作成されます。このアカウントは匿名 FTP 接続の際に常に使われるものです。このアカウントのホームディレクトリ (<code
             class="filename">/srv/ftp/</code>) はこのサービスに接続するユーザ向けに利用できるようにされます。デフォルト設定 (<code
-            class="filename">/etc/vsftpd.conf</code>) では操作に大きな制限が加えられています: デフォルト設定では、読み込み専用アクセスだけが許可されています (<code
+            class="filename">/etc/vsftpd.conf</code>) では操作に大きな制限が加えられています。具体的に言えば、デフォルト設定では、読み込み専用アクセスだけが許可されています (<code
             class="literal">write_enable</code> と <code
             class="literal">anon_upload_enable</code> オプションが無効化されているため)。ローカルユーザは自分のユーザ名とパスワードを使って接続もできませんし、自分のファイルへのアクセスもできません (<code
             class="literal">local_enable</code> オプション)。しかしながら、このデフォルト設定は Falcot Corp のニーズによく適合します。

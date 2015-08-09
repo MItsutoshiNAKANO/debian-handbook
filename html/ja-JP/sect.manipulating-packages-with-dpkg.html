@@ -25,7 +25,7 @@
         title="Debian 管理者ハンドブック" /><link
         rel="up"
         href="packaging-system.html"
-        title="第5章 パッケージシステム: ツールと基本原則" /><link
+        title="第5章 パッケージシステム、ツールと基本原則" /><link
         rel="prev"
         href="sect.source-package-structure.html"
         title="5.3. ソースパッケージの構造" /><link
@@ -69,13 +69,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. <code
                   class="command">dpkg</code> を用いたパッケージの操作</h2></div></div></div><a
-          id="idm140615488361248"
+          id="idm140198421855216"
           class="indexterm"></a><div
           class="para">
 			<code
             class="command">dpkg</code> はシステムの Debian パッケージを操作する基礎的なコマンドです。<code
             class="filename">.deb</code> パッケージがあれば、<code
-            class="command">dpkg</code> でパッケージ内容をインストールしたり解析したりすることが可能です。しかしこのプログラムは Debian 世界のある一方向だけを見ているに過ぎません: このプログラムは、システムインストール済みのパッケージとコマンドラインで与えられたパッケージについては理解していますが、他の利用できるパッケージについては理解していません。このため、依存関係が満足されていなければパッケージを操作できません。これに対して、<code
+            class="command">dpkg</code> でパッケージ内容をインストールしたり解析したりすることが可能です。しかしこのプログラムは Debian 世界のある一方向だけを見ているに過ぎません。つまり、このプログラムは、システムインストール済みのパッケージとコマンドラインで与えられたパッケージについては理解していますが、他の利用できるパッケージについては理解していません。このため、依存関係が満足されていなければパッケージを操作できません。これに対して、<code
             class="command">apt-get</code> などのツールは、可能な限り自動的にすべてをインストールするために、依存関係のリストを作成します。
 		</div><div
           class="sidebar"><div
@@ -92,10 +92,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488353040"></a>5.4.1. パッケージのインストール</h3></div></div></div><a
-            id="idm140615488352272"
+                    id="idm140198421846992"></a>5.4.1. パッケージのインストール</h3></div></div></div><a
+            id="idm140198421846224"
             class="indexterm"></a><a
-            id="idm140615488350864"
+            id="idm140198421844816"
             class="indexterm"></a><div
             class="para">
 				中でも、<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code> オプションを使ってください。
 			</div><div
             class="example"><a
-              id="idm140615488347360"></a><p
+              id="idm140198421841312"></a><p
               class="title"><strong>例5.2 <code
                   class="command">dpkg</code> を使ったパッケージのインストール</strong></p><div
               class="example-contents"><pre
@@ -121,12 +121,12 @@ Updating database of manual pages ...
 mime-support (3.58) のトリガを処理しています ...</code></pre></div></div><div
             class="para">
 				<code
-              class="command">dpkg</code> の実行する各作業段階が見て取れます; このため、どの時点でエラーが起きたかを識別できます。インストールを 2 段階に分けて実行することも可能です: 最初が解凍、その後設定です。<code
+              class="command">dpkg</code> の実行する各作業段階が見て取れます。このため、どの時点でエラーが起きたかを識別できます。インストールを 2 段階に分けて実行することも可能です。具体的に言えば、最初が解凍、その後設定です。<code
               class="command">apt-get</code> はこれをうまく利用して、<code
               class="command">dpkg</code> を呼び出す回数を減らしています (なぜなら呼び出される度にデータベース、特にインストール済みファイルのリスト、をメモリに読み込むため効率が悪いからです)。
 			</div><div
             class="example"><a
-              id="idm140615488341488"></a><p
+              id="idm140198421835424"></a><p
               class="title"><strong>例5.3 解凍と設定を分けて実行</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -144,16 +144,16 @@ mime-support (3.58) のトリガを処理しています ...
                   class="computeroutput">man-db (2.7.0.2-5) を設定しています ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm140615488337584"
+            id="idm140198421831520"
             class="indexterm"></a><a
-            id="idm140615488336144"
+            id="idm140198421830080"
             class="indexterm"></a><div
             class="para">
 				<code
-              class="command">dpkg</code> がパッケージのインストールに失敗し、エラーを返すことがあります; ユーザが失敗を無視するように命令すれば、警告を表示するでしょう; これが異なる <code
+              class="command">dpkg</code> がパッケージのインストールに失敗し、エラーを返すことがあります。さらに、ユーザが失敗を無視するように命令すれば、警告を表示するでしょう。すなわちこれが異なる <code
               class="literal">--force-*</code> 系オプションがある理由です。このコマンドの文書によれば <code
               class="command">dpkg --force-help</code> コマンドでこれらのオプションの完全なリストを見ることが可能です。最もよくあるエラーはファイルの衝突で、遅かれ早かれこのエラーに遭遇するのは避けられません。パッケージが他のパッケージによってインストール済みのファイルを含んでいる場合、<code
-              class="command">dpkg</code> はパッケージのインストールを拒否します。以下のメッセージが表示されます:
+              class="command">dpkg</code> はパッケージのインストールを拒否します。以下のメッセージが表示されます。
 			</div><pre
             class="screen">
 <code
@@ -175,7 +175,7 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                     class="title"><strong><span
                         class="emphasis"><em>CAUTION</em></span> <code
                         class="literal">--force-*</code> の効果的な使い方</strong></p></div></div></div><a
-              id="idm140615488325728"
+              id="idm140198421819632"
               class="indexterm"></a><div
               class="para">
 				下手をすると <code
@@ -209,25 +209,25 @@ E: missing dependencies. Try to use the option -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488314288"></a>5.4.2. パッケージの削除</h3></div></div></div><a
-            id="idm140615488313520"
+                    id="idm140198421808192"></a>5.4.2. パッケージの削除</h3></div></div></div><a
+            id="idm140198421807424"
             class="indexterm"></a><a
-            id="idm140615488312592"
+            id="idm140198421806496"
             class="indexterm"></a><a
-            id="idm140615488311664"
+            id="idm140198421805568"
             class="indexterm"></a><a
-            id="idm140615488310224"
+            id="idm140198421804128"
             class="indexterm"></a><div
             class="para">
 				<code
               class="command">dpkg</code> を実行する際に、<code
               class="literal">-r</code> または <code
-              class="literal">--remove</code> オプションを付けてさらにパッケージの名前を続けると、パッケージを削除します。しかしながらこの削除は完璧ではありません: パッケージの取り扱うすべての設定ファイル、メンテナスクリプト、ログファイル (システムログ)、その他のユーザデータは残されたままです。プログラムを無効化するには、この方法でパッケージをアンインストールしてください。そうすれば、そのパッケージを同じ設定で再インストールして素早く利用できる状態にすることもまだ可能です。パッケージに関連するすべてを完全に削除するには、<code
+              class="literal">--remove</code> オプションを付けてさらにパッケージの名前を続けると、パッケージを削除します。しかしながらこの削除は完璧ではありません。具体的に言えば、パッケージの取り扱うすべての設定ファイル、メンテナスクリプト、ログファイル (システムログ)、その他のユーザデータは残されたままです。プログラムを無効化するには、この方法でパッケージをアンインストールしてください。そうすれば、そのパッケージを同じ設定で再インストールして素早く利用できる状態にすることもまだ可能です。パッケージに関連するすべてを完全に削除するには、<code
               class="literal">-P</code> または <code
               class="literal">--purge</code> オプションつけてさらにパッケージの名前を続けてください。
 			</div><div
             class="example"><a
-              id="idm140615488305152"></a><p
+              id="idm140198421799040"></a><p
               class="title"><strong>例5.4 <span
                   class="pkg pkg">debian-cd</span> パッケージの削除と完全消去</strong></p><div
               class="example-contents"><pre
@@ -246,14 +246,14 @@ debian-cd (3.1.17) の設定ファイルを削除しています ...</code></pre
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488300784"></a>5.4.3. <code
+                    id="idm140198421794672"></a>5.4.3. <code
                     class="command">dpkg</code> のデータベースへの問い合わせと <code
                     class="filename">.deb</code> ファイルの調査</h3></div></div></div><a
-            id="idm140615488299216"
+            id="idm140198421793104"
             class="indexterm"></a><a
-            id="idm140615488297776"
+            id="idm140198421791664"
             class="indexterm"></a><a
-            id="idm140615488296336"
+            id="idm140198421790224"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -267,24 +267,24 @@ debian-cd (3.1.17) の設定ファイルを削除しています ...</code></pre
               class="command">dpkg</code> のオプションについて学びましょう。表記は最初に長いオプション、そのあとに対応する短いオプション (両者は同じ引数を取るのは明らかです) です。<code
               class="literal">--listfiles <em
                 class="replaceable">package</em></code> (または <code
-              class="literal">-L</code>)、与えられたパッケージがインストールするファイルを表示します; <code
+              class="literal">-L</code>) は与えられたパッケージがインストールするファイルを表示します。<code
               class="literal">--search <em
                 class="replaceable">file</em></code> (または <code
-              class="literal">-S</code>)、ファイルを含むパッケージを探します; <code
+              class="literal">-S</code>) はファイルを含むパッケージを探します。<code
               class="literal">--status <em
                 class="replaceable">package</em></code> (または <code
-              class="literal">-s</code>)、インストールされたパッケージのヘッダを表示します; <code
+              class="literal">-s</code>) はインストールされたパッケージのヘッダを表示します。<code
               class="literal">--list</code> (または <code
-              class="literal">-l</code>)、システムが把握しているパッケージのリストとその状態を表示します; <code
+              class="literal">-l</code>) はシステムが把握しているパッケージのリストとその状態を表示します。<code
               class="literal">--contents <em
                 class="replaceable">file.deb</em></code> (または <code
-              class="literal">-c</code>)、与えられた Debian パッケージに含まれるファイルを表示します; <code
+              class="literal">-c</code>) は与えられた Debian パッケージに含まれるファイルを表示します。<code
               class="literal">--info<em
                 class="replaceable"> file.deb </em></code> (または <code
-              class="literal">-I</code>) Debian パッケージのヘッダを表示します。
+              class="literal">-I</code>) は Debian パッケージのヘッダを表示します。
 			</div><div
             class="example"><a
-              id="idm140615488283920"></a><p
+              id="idm140198421777808"></a><p
               class="title"><strong>例5.5 <code
                   class="command">dpkg</code> にさまざまな情報を問い合わせる</strong></p><div
               class="example-contents"><pre
@@ -435,22 +435,22 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> バージョンの比較</strong></p></div></div></div><a
-              id="idm140615488269616"
+              id="idm140198421763504"
               class="indexterm"></a><a
-              id="idm140615488268688"
+              id="idm140198421762576"
               class="indexterm"></a><div
               class="para">
 				<code
                 class="command">dpkg</code> は Debian パッケージを取り扱うプログラムですから、バージョン番号の比較ロジックのリファレンス実装も提供します。このため、<code
                 class="literal">--compare-versions</code> オプションがあり、外部プログラム (特に <code
-                class="command">dpkg</code> 自身が呼び出す設定スクリプト) が使いやすいようになっています。このオプションは 3 つのパラメータを要求します: バージョン番号、比較演算子、2 番目のバージョン番号です。使える演算子は <code
+                class="command">dpkg</code> 自身が呼び出す設定スクリプト) が使いやすいようになっています。このオプションは 3 つのパラメータを要求します。具体的に言えば、バージョン番号、比較演算子、2 番目のバージョン番号を要求します。使える演算子は <code
                 class="literal">lt</code> (より小さい)、<code
                 class="literal">le</code> (以下)、<code
                 class="literal">eq</code> (等しい)、<code
                 class="literal">ne</code> (等しくない)、<code
                 class="literal">ge</code> (以上)、<code
                 class="literal">gt</code> (より大きい) です。比較が正しければ <code
-                class="command">dpkg</code> は 0 (成功) を返します; 間違っていれば、非ゼロ (失敗) を返します。
+                class="command">dpkg</code> は 0 (成功) を返します。一方で間違っていれば、非ゼロ (失敗) を返します。
 			</div><pre
               class="screen">
 <code
@@ -476,7 +476,7 @@ $ </code><strong
 <code
                 class="computeroutput">1</code></pre><div
               class="para">
-				一見 0 (成功) を返すように思われる最後の比較が 1 (失敗) を返した点に注意しましょう: <code
+				一見 0 (成功) を返すように思われる最後の比較が 1 (失敗) を返した点に注意しましょう。つまり <code
                 class="command">dpkg</code> にとって、通常は事前リリースを意味する <code
                 class="literal">pre</code> には特別な意味がありません、このプログラムはアルファベット文字を数字と同じ方法で (a &lt; b &lt; c ...)、アルファベット順に、比較します。このため、「<code
                 class="literal">0pre3</code>」は「<code
@@ -495,22 +495,22 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488250416"></a>5.4.4. <code
+                    id="idm140198421744256"></a>5.4.4. <code
                     class="command">dpkg</code> のログファイル</h3></div></div></div><div
             class="para">
 				<code
               class="command">dpkg</code> は <code
               class="filename">/var/log/dpkg.log</code> に作業のすべてを記録します。このログは極めて詳細です、なぜなら <code
-              class="command">dpkg</code> がパッケージに対して行った操作の各段階すべてを詳しく記録しているからです。dpkg の挙動を追跡する方法を提供することに加えて、これはシステムの変化の歴史を保存するのに役立ちます: パッケージがインストールされたり更新された正確な日時を探すことが可能ですし、この情報は最近の挙動変化を理解するのに極めて便利です。加えて、すべてのバージョンが記録されていますから、注目しているパッケージの <code
+              class="command">dpkg</code> がパッケージに対して行った操作の各段階すべてを詳しく記録しているからです。dpkg の挙動を追跡する方法を提供することに加えて、これはシステムの変化の歴史を保存するのに役立ちます。すなわち、パッケージがインストールされたり更新された正確な日時を探すことが可能ですし、この情報は最近の挙動変化を理解するのに極めて便利です。加えて、すべてのバージョンが記録されていますから、注目しているパッケージの <code
               class="filename">changelog.Debian.gz</code> またはオンラインバグ報告と情報を簡単に照合できます。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. マルチアーキテクチャサポート</h3></div></div></div><a
-            id="idm140615488245008"
+            id="idm140198421738832"
             class="indexterm"></a><a
-            id="idm140615488244080"
+            id="idm140198421737904"
             class="indexterm"></a><div
             class="para">
 				すべての Debian パッケージは <code
@@ -525,7 +525,7 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615488239008"></a>5.4.5.1. マルチアーキテクチャの有効化</h4></div></div></div><div
+                      id="idm140198421732832"></a>5.4.5.1. マルチアーキテクチャの有効化</h4></div></div></div><div
               class="para">
 					<code
                 class="command">dpkg</code> のマルチアーキテクチャサポートのおかげで、ユーザは現在のシステムにインストールできる「外来アーキテクチャ」を定義できます。これを行うには、以下に示す通り <code
@@ -603,12 +603,12 @@ gcc-4.9-base:armhf (4.9.1-19) を設定しています ...
 					マルチアーキテクチャ以前、32 ビットアプリケーションを 64 ビットシステムで実行したければ、<span
                   class="pkg pkg">ia32-libs</span> をインストールすることで、システム内に人気の高いライブラリの 32 ビット版を持つ必要がありました。このパッケージは amd64 パッケージ内の 32 ビットライブラリを再パッケージ化した大規模なハックでした。
 				</div><a
-                id="idm140615488218944"
+                id="idm140198421712768"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615488217200"></a>5.4.5.2. マルチアーキテクチャ関連の変更</h4></div></div></div><div
+                      id="idm140198421711024"></a>5.4.5.2. マルチアーキテクチャ関連の変更</h4></div></div></div><div
               class="para">
 					マルチアーキテクチャを実際に便利で使いやすいものにするためには、ライブラリを再パッケージ化しなければいけませんでした。さらに複数のコピー (対象の異なるアーキテクチャ) を同時にインストールできるようにするために、マルチアーキテクチャ専用のディレクトリにライブラリを移動しなければいけませんでした。このようにして更新されたパッケージには、このパッケージはアーキテクチャが違っても安全に同時インストールできること (そしてこのパッケージは自分と異なるアーキテクチャのパッケージの依存関係を満足することはできないこと) をパッケージ化システムに伝えるための「<code
                 class="literal">Multi-Arch: same</code>」ヘッダフィールドが含まれていました。マルチアーキテクチャモードは Debian <span
@@ -633,7 +633,7 @@ $ <strong
 gcc-4.9-base:amd64, gcc-4.9-base:armhf: /usr/share/doc/gcc-4.9-base/copyright</pre><div
               class="para">
 					<code
-                class="literal">Multi-Arch: same</code> パッケージの場合、自分の名前にアーキテクチャの限定詞を付けて明確に識別できるようにしなければいけないことは注目に値します。このようなパッケージはアーキテクチャが異なる同じパッケージ間でファイルを共有する可能性を持っています; <code
+                class="literal">Multi-Arch: same</code> パッケージの場合、自分の名前にアーキテクチャの限定詞を付けて明確に識別できるようにしなければいけないことは注目に値します。このようなパッケージはアーキテクチャが異なる同じパッケージ間でファイルを共有する可能性を持っています。さらに <code
                 class="command">dpkg</code> は、共有されたファイルはアーキテクチャが異なる同じパッケージ間であってもビット単位で一致する、ことを期待します。最後に重要なことですが、パッケージはアーキテクチャごとにバージョンが違ってはいけません。アーキテクチャが異なるパッケージも必ず同時にアップグレードされなければいけません。
 				</div><div
               class="para">

@@ -73,23 +73,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.install-boot"></a>4.2.1. 起動とインストーラの開始</h3></div></div></div><div
             class="para">
-				BIOS が CD-ROM や DVD-ROM からの起動を開始したら、Isolinux ブートローダメニューが表示されます。この段階では Linux カーネルはまだ読み込まれていません; このメニューでは、起動させるカーネルを選択し、起動処理中にカーネルに渡すことが可能なパラメータを入力できます。
+				BIOS が CD-ROM や DVD-ROM からの起動を開始したら、Isolinux ブートローダメニューが表示されます。この段階では Linux カーネルはまだ読み込まれていません。従ってこのメニューでは、起動させるカーネルを選択し、起動処理中にカーネルに渡すことが可能なパラメータを入力できます。
 			</div><div
             class="para">
 				標準的なインストールを実行したい場合、矢印キーで「Install」もしくは「Graphical install」を選び、<span
               class="keycap"><strong>Enter</strong></span> を押して残りのインストール作業を開始します。DVD-ROM が「Multi-arch」ディスクであり、マシンが Intel または AMD の 64 ビットプロセッサを搭載している場合、「64 bit install」と「64 bit graphical install」というメニューオプションを使って 64 ビット版 (<span
               class="emphasis"><em>amd64</em></span>) をインストールすることも可能です。そうでなければデフォルトの 32 ビット版 (<span
-              class="emphasis"><em>i386</em></span>) を選んでください。実際のところ、64 ビット版を使う場合が多いでしょうでしょう: 最近のマシンの多くは 64 ビットプロセッサであり、64 ビット版では新しいコンピュータに備えられていることの多い大容量 RAM をうまく取り扱うことが可能です。
+              class="emphasis"><em>i386</em></span>) を選んでください。実際のところ、64 ビット版を使う場合が多いでしょう。なぜなら最近のマシンの多くは 64 ビットプロセッサであり、64 ビット版では新しいコンピュータに備えられていることの多い大容量 RAM をうまく取り扱うことが可能だからです。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> 32 ビットか 64 ビットか?</strong></p></div></div></div><a
-              id="idm140615469143488"
+              id="idm140198426328160"
               class="indexterm"></a><a
-              id="idm140615469142528"
+              id="idm140198426327200"
               class="indexterm"></a><a
-              id="idm140615469141600"
+              id="idm140198426326272"
               class="indexterm"></a><div
               class="para">
 				32 ビットシステムと 64 ビットシステムの本質的な差異はメモリアドレスのサイズにあります。理論的には、32 ビットシステムでは 4 GB (2<sup>32</sup> バイト) 以上の RAM を取り扱うことができません。実際上、PAE (物理アドレス拡張) 機能を扱えるプロセッサでならば、<code
@@ -102,22 +102,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">setarch</code> または <code
                 class="command">linux32</code> コマンド (<span
                 class="pkg pkg">util-linux</span> パッケージを参照) を使ってシステム環境についてアプリケーションをごまかさなければいけない場合があります。<a
-                id="idm140615469135536"
+                id="idm140198426320208"
                 class="indexterm"></a><a
-                id="idm140615469134896"
+                id="idm140198426319568"
                 class="indexterm"></a>
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>IN PRACTICE</em></span> 既存の Windows システムと共存してインストール</strong></p></div></div></div><a
-              id="idm140615469132608"
+              id="idm140198426317360"
               class="indexterm"></a><div
               class="para">
 				コンピュータで既に Windows が動いている場合、Debian をインストールするのに Windows システムを削除する必要はありません。両者を別のディスクまたはパーティションにインストールすれば、両方のシステムを同時に備えることが可能で、コンピュータの起動時に起動するシステムを選択することが可能です。この構成は「デュアルブート」と呼ばれており、Debian のインストールシステムは「デュアルブート」構成を設定できます。設定は、インストール中のハードドライブのパーティショニング段階およびブートローダの設定段階 (これを解説している節の傍注参照) で行います。
 			</div><div
               class="para">
-				既に稼働中の Windows システムがある場合、CD-ROM を使わないで済みます; Debian は軽量の Debian インストーラをダウンロードして、ハードディスクに Debian をセットアップするための Windows プログラムを提供しています。コンピュータを再起動し、Windows を通常起動するかインストールプログラムを起動するかを選択るだけです。また、プログラムは露骨な名前の専用ウェブサイトで配布されています… <div
+				既に稼働中の Windows システムがある場合、CD-ROM を使わずともインストールできます。このため Debian は軽量の Debian インストーラをダウンロードして、ハードディスクに Debian をセットアップするための Windows プログラムを提供しています。コンピュータを再起動し、Windows を通常起動するかインストールプログラムを起動するかを選択るだけです。また、プログラムは露骨な名前の専用ウェブサイトで配布されています… <div
                 class="url">→ <a
                   href="http://ftp.debian.org/debian/tools/win32-loader/stable/">http://ftp.debian.org/debian/tools/win32-loader/stable/</a></div> <div
                 class="url">→ <a
@@ -127,11 +127,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ブートローダ</strong></p></div></div></div><a
-              id="idm140615472106896"
+              id="idm140198427173568"
               class="indexterm"></a><a
-              id="idm140615472105456"
+              id="idm140198427172128"
               class="indexterm"></a><a
-              id="idm140615472104496"
+              id="idm140198427171168"
               class="indexterm"></a><div
               class="para">
 				ブートローダとは BIOS から操作を受け取った直後に Linux カーネルを起動させる低レベルプログラムです。この作業を行うために、ブートローダは起動したい Linux カーネルの格納場所を探すことができなければいけません。i386 と amd64 アーキテクチャで、ブートローダとして最も利用されているプログラムは比較的古参の LILO とその現代的な代替である GRUB です。Isolinux と Syslinux はリムーバブルメディアから起動する際によくつかわれる代替プログラムです。
@@ -146,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				「expert」モードでは (「Advanced Options」メニューの中にあります) インストール中に利用できるすべてのオプションを詳細に設定できますし、各インストールステップを自動的に次々と進むのではなく、毎回ナビゲーションを表示するようにできます。これはとても詳細なモードで、設定できる選択肢が数多く表示されすぎてわかりにくいかもしれませんので、ご注意ください。
 			</div><div
             class="figure"><a
-              id="idm140615472098288"></a><div
+              id="idm140198427164960"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-boot.png"
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-lang"></a>4.2.2. 言語の選択</h3></div></div></div><a
-            id="idm140615472092432"
+            id="idm140198427159104"
             class="indexterm"></a><div
             class="para">
 				インストールプログラムは英語で始まりますが、最初に以降のインストール作業の表示言語として使われる言語を選択します。たとえば、日本語を選択したらインストール中の表示言語はすべて日本語になります (そしてシステムも日本語に設定されます)。さらに、以降のインストール作業のデフォルト選択肢がより適切なものになります (特にキーボードレイアウト)。
@@ -177,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				グラフィカルモードでは、インストールされたグラフィカルデスクトップでやるようにマウスを使ってください。
 			</div></div><div
             class="figure"><a
-              id="idm140615472086816"></a><div
+              id="idm140198427153488"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-lang.png"
@@ -190,13 +190,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-country"></a>4.2.3. 国選択</h3></div></div></div><a
-            id="idm140615472080384"
+            id="idm140198427147056"
             class="indexterm"></a><div
             class="para">
 				2 段階目に国を選択します。インストーラは、先に選択した言語と国の情報を組み合わせて、最も適切と思われるキーボードレイアウトを提案します。さらに、国情報はタイムゾーンの設定にも影響を与えます。日本を選択した場合、標準的な QWERTY キーボードが提案され、適切なタイムゾーンが提供されます。
 			</div><div
             class="figure"><a
-              id="idm140615472078048"></a><div
+              id="idm140198427144720"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-country.png"
@@ -209,15 +209,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-keyboard"></a>4.2.4. キーボードレイアウトの選択</h3></div></div></div><a
-            id="idm140615472071648"
+            id="idm140198427138320"
             class="indexterm"></a><a
-            id="idm140615472070720"
+            id="idm140198427137392"
             class="indexterm"></a><div
             class="para">
 				提案された「日本語」キーボードは通常の QWERTY レイアウトです。
 			</div><div
             class="figure"><a
-              id="idm140615472069344"></a><div
+              id="idm140198427136016"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-keyboard.png"
@@ -258,12 +258,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-network-config"></a>4.2.8. ネットワーク設定</h3></div></div></div><a
-            id="idm140615472054816"
+            id="idm140198427120816"
             class="indexterm"></a><a
-            id="idm140615472052896"
+            id="idm140198427118896"
             class="indexterm"></a><div
             class="para">
-				可能な限り各段階を自動化するために、インストーラは DHCP (IPv4 の場合) と IPv6 のネットワーク発見機能を使って自動ネットワーク設定を行います。これに失敗した場合、多くの選択肢が提案されます: 通常の DHCP 設定で再挑戦、マシンの名前を宣言して DHCP を設定、静的なネットワークを設定。
+				可能な限り各段階を自動化するために、インストーラは DHCP (IPv4 の場合) と IPv6 のネットワーク発見機能を使って自動ネットワーク設定を行います。これに失敗した場合、多くの選択肢が提案されます。ここで提案される選択肢には、通常の DHCP 設定で再挑戦、マシンの名前を宣言して DHCP を設定、静的なネットワークを設定、があります。
 			</div><div
             class="para">
 				ここで挙げた最後の選択肢は、IP アドレス、サブネットマスク、ゲートウェイの IP アドレス、マシン名、ドメイン名、の情報が必要です。
@@ -288,14 +288,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615472429248"></a>4.2.9. 管理者パスワード</h3></div></div></div><a
-            id="idm140615472428480"
+                    id="idm140198421587456"></a>4.2.9. 管理者パスワード</h3></div></div></div><a
+            id="idm140198421586688"
             class="indexterm"></a><div
             class="para">
-				マシンの管理者用に確保されているスーパーユーザ root アカウントがインストール中に自動的に作成されます; このため、パスワードが要求されます。インストーラは確認用にもう一度パスワードを尋ねます。これは後から修正することが難しい入力ミスを避けるためです。
+				マシンの管理者用に確保されているスーパーユーザ root アカウントがインストール中に自動的に作成されます。このため、パスワードが要求されます。インストーラは確認用にもう一度パスワードを尋ねます。これは後から修正することが難しい入力ミスを避けるためです。
 			</div><div
             class="figure"><a
-              id="idm140615472426224"></a><div
+              id="idm140198421584432"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-rootpw.png"
@@ -306,7 +306,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>SECURITY</em></span> 管理者パスワード</strong></p></div></div></div><div
               class="para">
-				root ユーザのパスワードは長くて (8 文字以上で) 推測できないものであるべきです。実際、インターネットに接続されたコンピュータ (さらにサーバ) はその種類を問わず、定期的に頻繁に使われるパスワードを用いた自動接続攻撃の標的にされます。時には、単語と数字の組み合わせをパスワードとして試す、辞書攻撃にさらされるかもしれません。子供や両親の名前、誕生日などをパスワードとして使わないでください: 多くの同僚がそれを知っているかもしれませんし、そのような人にここでセットアップされている種類のコンピュータを自由に使わせたくはないでしょう。
+				root ユーザのパスワードは長くて (8 文字以上で) 推測できないものであるべきです。実際、インターネットに接続されたコンピュータ (さらにサーバ) はその種類を問わず、定期的に頻繁に使われるパスワードを用いた自動接続攻撃の標的にされます。時には、単語と数字の組み合わせをパスワードとして試す、辞書攻撃にさらされるかもしれません。子供や両親の名前、誕生日などをパスワードとして使わないでください。なぜなら、多くの同僚がそれを知っているかもしれないからです。さらに、そのような人にここでセットアップされている種類のコンピュータを自由に使わせたくはないでしょう。
 			</div><div
               class="para">
 				他のユーザのパスワードに対しても同じことが言えますが、管理権限を持たないユーザのアカウントが乗っ取られたとしても、その影響はそれほど大きくありません。
@@ -318,12 +318,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615472418768"></a>4.2.10. 1 人目ユーザの作成</h3></div></div></div><div
+                    id="idm140198421576576"></a>4.2.10. 1 人目ユーザの作成</h3></div></div></div><div
             class="para">
 				Debian は管理者に root で作業するという悪習を身に付けさせないために、強制的に標準的なユーザアカウントを作成します。この予防原則は本質的に、人的ミスによる損害を抑えるためには必要最低限の権限だけで作業する必要がある、ということを意味しています。このため、インストーラは 1 人目のユーザの完全な名前、ユーザ名、パスワード (入力ミスの危険を防ぐために 2 回) を尋ねるでしょう。
 			</div><div
             class="figure"><a
-              id="idm140615472416992"></a><div
+              id="idm140198421574800"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-username.png"
@@ -349,7 +349,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-partman"></a>4.2.13. パーティショニングツールを始める</h3></div></div></div><a
-            id="idm140615472407968"
+            id="idm140198421565552"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -365,7 +365,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				幸いなことに、パーティショニングソフトウェアは「ガイド付き」モードを備えています。このモードを使う場合、ユーザに作成するパーティショニング方法の候補が提示されます。多くの場合、ソフトウェアの提案を確認するだけで事足ります。
 			</div><div
             class="figure"><a
-              id="idm140615472402848"></a><div
+              id="idm140198421560432"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-partman.png"
@@ -375,7 +375,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				パーティショニングツールの最初の画面では、ハードドライブ全体を使ってパーティションを作成する選択肢が表示されます。(新しい) コンピュータに Linux だけをインストールする場合、このパーティショニング方法が明らかに最も単純です。この場合「ガイド - ディスク全体を使う」を選んでください。コンピュータに 2 種類のオペレーティングシステム用の 2 台のハードドライブが装備されている場合、ドライブごとにオペレーティングシステムを分けるのも解決策の 1 つです。こうすることでパーティショニングが楽になります。どちらの場合も、次の画面では、関連するエントリから Linux をインストールするディスク (たとえば「SCSI1 (0,0,0) (sda) - 12.9 GB ATA VBOX HARDDISK」) を選択します。その後、ガイド付きのパーティショニングが始まります。
 			</div><div
             class="figure"><a
-              id="idm140615472397936"></a><div
+              id="idm140198421555520"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-partman-disk.png"
@@ -391,13 +391,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.install-autopartman-mode"></a>4.2.13.1. ガイド付きパーティショニング</h4></div></div></div><a
-              id="idm140615472391936"
+              id="idm140198421549600"
               class="indexterm"></a><div
               class="para">
 					ガイド付きパーティショニングツールでは、それぞれ別の用途に適した 3 種類のパーティショニング機構を選択できます。
 				</div><div
               class="figure"><a
-                id="idm140615472389920"></a><div
+                id="idm140198421547584"></a><div
                 class="figure-contents"><div
                   class="mediaobject"><img
                     src="images/inst-autopartman-mode.png"
@@ -405,11 +405,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><strong>図4.9 ガイド付きパーティショニング</strong></p></div><div
               class="para">
 					1 番目のパーティショニング機構は「すべてのファイルを 1 つのパーティションに」です。これは、Linux システムツリー全体 (ルート <code
-                class="filename">/</code> ディレクトリ以下すべて) を単一のファイルシステムに保存します。このパーティショニングは単純かつ頑強であり、個人および単一ユーザシステム用途にぴったりです。実際には、2 つのパーティションが作られます: 1 つ目はシステム全体用、2 つ目は仮想メモリ (swap) 用です。
+                class="filename">/</code> ディレクトリ以下すべて) を単一のファイルシステムに保存します。このパーティショニングは単純かつ頑強であり、個人および単一ユーザシステム用途にぴったりです。実際には、2 つのパーティションが作られます。具体的に言えば、システム全体用と仮想メモリ (swap) 用のパーティションが作られます。
 				</div><div
               class="para">
 					2 番目のパーティショニング機構は「<code
-                class="filename">/home/</code> パーティションの分割」です。これは、1 番目のパーティショニング機構とよく似ていますが、ファイル階層を 2 つに分離します: 片方には Linux システム (<code
+                class="filename">/home/</code> パーティションの分割」です。これは、1 番目のパーティショニング機構とよく似ていますが、ファイル階層を 2 つに分離します。具体的に言えば、片方には Linux システム (<code
                 class="filename">/</code>) を、もう片方には「ホームディレクトリ」(ユーザデータ、ファイルとサブディレクトリは <code
                 class="filename">/home/</code> 以下に配置されます) を収めます。
 				</div><div
@@ -417,11 +417,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					最後のパーティショニング機構は「<code
                 class="filename">/home</code>, <code
                 class="filename">/var</code>, <code
-                class="filename">/tmp</code> パーティションを分割」です。これはサーバや複数のユーザが利用するシステムに適しています。これはファイルツリーを多くのパーティションに分離します: ルート (<code
+                class="filename">/tmp</code> パーティションを分割」です。これはサーバや複数のユーザが利用するシステムに適しています。これはファイルツリーを多くのパーティションに分離します。具体的に言えば、ルート (<code
                 class="filename">/</code>) とユーザアカウント (<code
-                class="filename">/home/</code>) パーティション、サーバソフトウェアのデータ (<code
-                class="filename">/var/</code>)、一時ファイル (<code
-                class="filename">/tmp/</code>) です。ファイルツリーが格納されるパーティションをこのように分離するとさまざまな利点を得ることが可能です。ユーザが利用できるハードドライブ領域を使い切ってしまうこと (<code
+                class="filename">/home/</code>) パーティションの分離に加え、サーバソフトウェアのデータ (<code
+                class="filename">/var/</code>) と一時ファイル (<code
+                class="filename">/tmp/</code>) 用パーティションも分離します。ファイルツリーが格納されるパーティションをこのように分離するとさまざまな利点を得ることが可能です。ユーザが利用できるハードドライブ領域を使い切ってしまうこと (<code
                 class="filename">/tmp/</code> と <code
                 class="filename">/home/</code> を満杯にすることは可能) でサーバが動かなくなることがなくなります。デーモンのデータ (とくにログ) がシステムの他の領域を圧迫することがなくなります。
 				</div><div
@@ -429,12 +429,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> ファイルシステムの選択</strong></p></div></div></div><a
-                id="idm140615472376304"
+                id="idm140198421533984"
                 class="indexterm"></a><a
-                id="idm140615472374896"
+                id="idm140198421532576"
                 class="indexterm"></a><div
                 class="para">
-					ファイルシステムはハードドライブにデータを格納する方法を定義しています。既存のファイルシステムにはそれぞれ長所と制限があります。頑強なものもあれば、効率のよいものもあります: 自分の必要としていることをよく理解している人は最も適切なファイルシステムを選択することが可能です。さまざまなファイルシステムを比較してみましょう; ReiserFS ファイルシステムは、多くの小さなファイルを読む場合は特に効率が良いとされています。また、<span
+					ファイルシステムはハードドライブにデータを格納する方法を定義しています。既存のファイルシステムにはそれぞれ長所と制限があります。頑強なものもあれば、効率のよいものもあります。すなわち、自分の必要としていることをよく理解している人は最も適切なファイルシステムを選択することが可能です。さまざまなファイルシステムを比較してみましょう。たとえば ReiserFS ファイルシステムは、多くの小さなファイルを読む場合は特に効率が良いとされています。また、<span
                   class="emphasis"><em>XFS</em></span> は巨大なファイルを高速に取り扱えます。Debian のデフォルトファイルシステムである <span
                   class="emphasis"><em>Ext4</em></span> は良い妥協点で、昔から Linux で使われてきた 3 つの古いファイルシステムの (<span
                   class="emphasis"><em>ext</em></span>、<span
@@ -451,14 +451,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="emphasis"><em>btrfs</em></span>、<span
                   class="emphasis"><em>reiserfs</em></span>、<span
                   class="emphasis"><em>xfs</em></span> など) では、突発的な障害が起きた際にディスク全体を完全に解析することなく (<span
-                  class="emphasis"><em>ext2</em></span> システムでは解析が必要でした)、ファイルシステムを以前の整合性の取れた状態に戻せるようにするために、特別な対策が取られています。実際に作業を実行する前に、その作業の内容をジャーナルに書き込むことにより、この機能は実現されています。作業が中断された場合、ジャーナルを使って作業を「再実行」することが可能です。逆に言うと、ジャーナルの更新中に障害が発生した場合、最後の作業は単純に無視されます; ジャーナルに書き込まれたデータは失われるかもしれませんが、ディスク上のデータは変更されていないので、整合性が保たれます。これはまさにファイルシステムに対するトランザクション処理と言えます。
+                  class="emphasis"><em>ext2</em></span> システムでは解析が必要でした)、ファイルシステムを以前の整合性の取れた状態に戻せるようにするために、特別な対策が取られています。実際に作業を実行する前に、その作業の内容をジャーナルに書き込むことにより、この機能は実現されています。作業が中断された場合、ジャーナルを使って作業を「再実行」することが可能です。逆に言うと、ジャーナルの更新中に障害が発生した場合、最後の作業は単純に無視されます。その結果、ジャーナルに書き込まれたデータは失われるかもしれませんが、ディスク上のデータは変更されていないので、整合性が保たれます。これはまさにファイルシステムに対するトランザクション処理と言えます。
 				</div></div><div
               class="para">
 					パーティションの種類を選択した後、インストーラはパーティショニング案を算出し、画面に提示します。必要であれば、ユーザはパーティショニング案を変更することも可能です。特に、標準的なファイルシステム (<span
                 class="emphasis"><em>ext4</em></span>) が不適切な場合は、別のファイルシステムを選択することが可能です。しかしながら多くの場合、インストーラの提示したパーティショニング案は妥当です。承諾するには「パーティショニングの終了とディスクへの変更の書き込み」エントリを選択してください。
 				</div><div
               class="figure"><a
-                id="idm140615472361936"></a><div
+                id="idm140198421519648"></a><div
                 class="figure-contents"><div
                   class="mediaobject"><img
                     src="images/inst-partman-validation.png"
@@ -467,8 +467,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615472358384"></a>4.2.13.2. 手作業のパーティショニング</h4></div></div></div><a
-              id="idm140615472357616"
+                      id="idm140198421516096"></a>4.2.13.2. 手作業のパーティショニング</h4></div></div></div><a
+              id="idm140198421515328"
               class="indexterm"></a><div
               class="para">
 					手作業でやればより柔軟にパーティショニングを実行できます (各パーティションの目的とサイズを選ぶことが可能です)。また、ソフトウェア RAID を希望する場合、手作業でパーティショニングを実行しなければいけません。
@@ -477,9 +477,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>IN PRACTICE</em></span> Windows パーティションの縮小。</strong></p></div></div></div><a
-                id="idm140615472354368"
+                id="idm140198421512080"
                 class="indexterm"></a><a
-                id="idm140615472353440"
+                id="idm140198421511152"
                 class="indexterm"></a><div
                 class="para">
 					Debian を他のオペレーティングシステム (Windows など) と共存させてインストールする場合、Debian 専用のパーティションを作成するために、他のシステムが使わないハードドライブ領域が必要です。多くの場合、Windows パーティションを縮小し、できた空き領域を再利用することになります。
@@ -488,7 +488,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					Debian インストーラでは、手作業でパーティショニングを実行すれば、この作業を行えます。Windows パーティションを選択し、新しいサイズを入力するだけです (FAT と NTFS パーティションの両方に対して縮小できます)。
 				</div></div><div
               class="para">
-					最初の画面では、利用できるディスクおよびパーティションと、パーティションを割り当てられていない空き領域が表示されます。表示されたそれぞれの要素を選択できます; <span
+					最初の画面では、利用できるディスクおよびパーティションと、パーティションを割り当てられていない空き領域が表示されます。表示されたそれぞれの要素を選択できます。さらに <span
                 class="keycap"><strong>Enter</strong></span> キーを押して、実行できる操作のリストが表示されます。
 				</div><div
               class="para">
@@ -501,9 +501,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> マウントポイント</strong></p></div></div></div><a
-                id="idm140615472346864"
+                id="idm140198421504560"
                 class="indexterm"></a><a
-                id="idm140615472345936"
+                id="idm140198421503632"
                 class="indexterm"></a><div
                 class="para">
 					マウントポイントとは、パーティション上のファイルシステムの内容を格納するディレクトリツリーです。<code
@@ -518,13 +518,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> 仮想メモリ、スワップ</strong></p></div></div></div><a
-                id="idm140615472341120"
+                id="idm140198435540352"
                 class="indexterm"></a><a
-                id="idm140615472340160"
+                id="idm140198435539392"
                 class="indexterm"></a><a
-                id="idm140615472339200"
+                id="idm140198435538432"
                 class="indexterm"></a><a
-                id="idm140615472337792"
+                id="idm140198435537024"
                 class="indexterm"></a><div
                 class="para">
 					仮想メモリのおかげでメモリ (RAM) の空き領域が不足した際に、Linux カーネルは、しばらくの間活動していない RAM の内容をハードディスクのスワップパーティションに保存して、少しの RAM 空き領域を確保することが可能です。
@@ -533,29 +533,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					このような付加的メモリを装うために、Windows ではファイルシステムに直接格納されるスワップファイルが利用されています。逆に、Linux ではこの目的専用のパーティション「スワップパーティション」が利用されています。
 				</div></div><div
               class="para">
-					パーティションを選ぶ場合、パーティションの取り扱い方を指定することが可能です:
+					パーティションを選ぶ場合、パーティションの取り扱い方を指定することが可能です。
 				</div><div
               xmlns:d="http://docbook.org/ns/docbook"
               class="itemizedlist"><ul><li
                   class="listitem"><div
                     class="para">
-							パーティションをフォーマットし、マウントポイントを指定してパーティションをファイルツリーに含めます;
+							パーティションをフォーマットし、マウントポイントを指定してパーティションをファイルツリーに含めます。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							パーティションをスワップパーティションとして使います;
+							パーティションをスワップパーティションとして使います。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							パーティションを「暗号化物理ボリューム」にします (パーティションに含まれる秘密のデータを守ります、以下を参照);
+							パーティションを「暗号化物理ボリューム」にします (パーティションに含まれる秘密のデータを守ります、以下を参照)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							パーティションを「LVM 用物理ボリューム」にします (この概念は、この章の後で詳しく議論します);
+							パーティションを「LVM 用物理ボリューム」にします (この概念は、この章の後で詳しく議論します)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							RAID デバイスとして利用します (この章の後半を参照);
+							RAID デバイスとして利用します (この章の後半を参照)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
@@ -565,11 +565,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.install-software-raid"></a>4.2.13.3. 複数ディスクデバイスの設定 (ソフトウェア RAID)</h4></div></div></div><a
-              id="idm140615472326448"
+              id="idm140198435525648"
               class="indexterm"></a><a
-              id="idm140615472325008"
+              id="idm140198435524208"
               class="indexterm"></a><a
-              id="idm140615472324048"
+              id="idm140198435523248"
               class="indexterm"></a><div
               class="para">
 					一部の RAID レベルでは、データに影響を与えるハードウェア障害が起きた際にデータの消失を防ぐために、ハードドライブに保存された情報を複製します。レベル 1 RAID は単純で、別のハードドライブにドライブの全く同じ複製をとります。これに対して、レベル 5 RAID は冗長データを複数のディスクに分散します。このため、障害の起きたドライブの完全な復元が可能です。
@@ -578,7 +578,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					実行が最も単純なレベル 1 RAID だけを説明します。最初に、全く同じサイズのパーティションを 2 つ別々のドライブに作成し、「RAID の物理ボリューム」とラベル付けします。
 				</div><div
               class="para">
-					2 つのパーティションを 1 つの仮想ディスクにまとめるためにはパーティショニングツールで「ソフトウェア RAID を設定」を選び、設定画面で「MD デバイスを作成」を選んでください。新しいデバイスに関する一連の質問に答える必要があります。最初の質問では、使用する RAID レベルを尋ねられます。今回の場合「RAID1」です。2 番目の質問では、アクティブデバイスの数を尋ねられます — 今回の場合 2 台です。これは MD デバイスに含めるパーティションの数です。3 番目の質問では、予備デバイスの数を尋ねられます — 今回の場合 0 台です; ディスク障害が起きた際に機能を代替させるためのディスクを追加する計画はありません。最後の質問では、RAID デバイス用のパーティションを尋ねられます — これは先に用意した 2 つのパーティションです (「raid」と明示されているパーティション以外は選ばないでください)。
+					2 つのパーティションを 1 つの仮想ディスクにまとめるためにはパーティショニングツールで「ソフトウェア RAID を設定」を選び、設定画面で「MD デバイスを作成」を選んでください。新しいデバイスに関する一連の質問に答える必要があります。最初の質問では、使用する RAID レベルを尋ねられます。今回の場合「RAID1」です。2 番目の質問では、アクティブデバイスの数を尋ねられます — 今回の場合 2 台です。これは MD デバイスに含めるパーティションの数です。3 番目の質問では、予備デバイスの数を尋ねられます — 今回の場合 0 台です。従ってディスク障害が起きた際に機能を代替させるためのディスクを追加する計画はありません。最後の質問では、RAID デバイス用のパーティションを尋ねられます — これは先に用意した 2 つのパーティションです (「raid」と明示されているパーティション以外は選ばないでください)。
 				</div><div
               class="para">
 					メインメニューに戻ると、新しい仮想「RAID」ディスクが表示されます。このディスクは削除できない単一のパーティションとして表示されますが、選択すればこれを使用できます (他のパーティションと同様に)。
@@ -592,26 +592,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.install-lvm"></a>4.2.13.4. 論理ボリュームマネージャ (LVM) の設定</h4></div></div></div><a
-              id="idm140615472316272"
+              id="idm140198435515456"
               class="indexterm"></a><a
-              id="idm140615472314832"
+              id="idm140198435514016"
               class="indexterm"></a><div
               class="para">
-					LVM を使うことで、複数のディスクに分散した「仮想」パーティションを作成できます。LVM を使うことの利点は 2 つあります: パーティションのサイズは、もはや個々のディスクによって制限を受けるのではなく、累積ボリュームによって制限を受けます。さらにパーティションのサイズはいつでも (ディスクを追加した後などに) 変更できます。
+					LVM を使うことで、複数のディスクに分散した「仮想」パーティションを作成できます。LVM を使うことの利点は 2 つあります。具体的に言えば、パーティションのサイズは、もはや個々のディスクによって制限を受けるのではなく、累積ボリュームによって制限を受けます。さらにパーティションのサイズはいつでも (ディスクを追加した後などに) 変更できます。
 				</div><div
               class="para">
-					LVM では特有の専門用語を使います: 仮想パーティションは「論理ボリューム」と呼びます。これは「ボリュームグループ」の一部で、複数の「物理ボリューム」群を意味します。実際のところ、それぞれの専門用語は「実」パーティション (またはソフトウェア RAID デバイス) に相当します。
+					LVM では特有の専門用語を使います。たとえば仮想パーティションは「論理ボリューム」と呼ばれます。これは「ボリュームグループ」の一部で、複数の「物理ボリューム」群を意味します。実際のところ、それぞれの専門用語は「実」パーティション (またはソフトウェア RAID デバイス) に相当します。
 				</div><a
-              id="idm140615472311616"
+              id="idm140198435510768"
               class="indexterm"></a><a
-              id="idm140615472310176"
+              id="idm140198435509328"
               class="indexterm"></a><a
-              id="idm140615472308736"
+              id="idm140198435507888"
               class="indexterm"></a><a
-              id="idm140615472307296"
+              id="idm140198435506448"
               class="indexterm"></a><div
               class="para">
-					この技法はとても単純な方法で実現されています: それぞれのボリュームは、物理でも論理でも、同じサイズのブロックに分割され、ブロックは LVM に対応付けられます。新しいディスクを追加すると新しい物理ボリュームの作成が必要で、新しいブロックは任意のボリュームグループに関連付けることが可能です。拡張されたボリュームグループ内のすべてのパーティションは、ディスク領域の許す限り拡張することが可能です。
+					この技法はとても単純な方法で実現されています。すなわち、それぞれのボリュームは、物理でも論理でも、同じサイズのブロックに分割され、ブロックは LVM に対応付けられます。新しいディスクを追加すると新しい物理ボリュームの作成が必要で、新しいブロックは任意のボリュームグループに関連付けることが可能です。拡張されたボリュームグループ内のすべてのパーティションは、ディスク領域の許す限り拡張することが可能です。
 				</div><div
               class="para">
 					パーティショニングツールは数段階で LVM を設定します。最初に、存在するディスク上に「LVM 用の物理ボリューム」となるパーティションを作成しなければいけません。LVM を稼働するためには、「論理ボリュームマネージャ (LVM) を設定」を選び、同じ設定画面で「ボリュームグループを作成」から、存在する物理ボリュームを関連付けてください。最後に、このボリュームグループ内に論理ボリュームを作成してください。自動パーティショニングシステムは全段階を自動的に実行できます。
@@ -627,21 +627,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615472301776"></a>4.2.13.5. 暗号化されたパーティションを設定</h4></div></div></div><a
-              id="idm140615472301008"
+                      id="idm140198435500912"></a>4.2.13.5. 暗号化されたパーティションを設定</h4></div></div></div><a
+              id="idm140198435500144"
               class="indexterm"></a><a
-              id="idm140615472300048"
+              id="idm140198435499184"
               class="indexterm"></a><a
-              id="idm140615472299088"
+              id="idm140198435498224"
               class="indexterm"></a><a
-              id="idm140615472297648"
+              id="idm140198435496784"
               class="indexterm"></a><a
-              id="idm140615472296720"
+              id="idm140198435495856"
               class="indexterm"></a><a
-              id="idm140615472295280"
+              id="idm140198435494416"
               class="indexterm"></a><div
               class="para">
-					データの機密性を保証するには、たとえばコンピュータやバードドライブを紛失したり盗難された時に備えて、一部のパーティションのデータを暗号化しておく必要があります。暗号化の可否はファイルシステムの種類に依存しません。なぜなら、LVM と同様に、Linux (より具体的にいえば dm-crypt ドライバ) は暗号化された形でデータを保存する下層のパーティションに仮想パーティション (この内容が保護されます) を作成するために、デバイスマッパを使っているからです (LUKS、Linux Unified Key Setup、のおかげで標準的なフォーマットが定められ、暗号化されたデータおよび使われている暗号化アルゴリズムを表すメタ情報の保存を可能になりました)。
+					データの機密性を保証するには、たとえばコンピュータやバードドライブを紛失したり盗難された時に備えて、一部のパーティションのデータを暗号化しておく必要があります。暗号化の可否はファイルシステムの種類に依存しません。なぜなら、LVM と同様に、Linux (より具体的に言えば dm-crypt ドライバ) は暗号化された形でデータを保存する下層のパーティションに仮想パーティション (この内容が保護されます) を作成するために、デバイスマッパを使っているからです (LUKS、Linux Unified Key Setup、のおかげで標準的なフォーマットが定められ、暗号化されたデータおよび使われている暗号化アルゴリズムを表すメタ情報の保存を可能になりました)。
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -659,8 +659,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615472286896"></a>4.2.14. ベースシステムのインストール</h3></div></div></div><a
-            id="idm140615488553328"
+                    id="idm140198435486032"></a>4.2.14. ベースシステムのインストール</h3></div></div></div><a
+            id="idm140198435485264"
             class="indexterm"></a><div
             class="para">
 				この段階ではユーザの入力は不要で、Debian の「ベースシステム」パッケージをインストールします。ベースシステムには Debian パッケージを管理する <code
@@ -668,7 +668,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">apt</code> ツールだけでなく、システムを起動させてシステムを使うのに必要なユーティリティが含まれています。
 			</div><div
             class="figure"><a
-              id="idm140615488550128"></a><div
+              id="idm140198435482064"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-basesystem.png"
@@ -677,11 +677,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488546576"></a>4.2.15. パッケージマネージャ (<code
+                    id="idm140198435478512"></a>4.2.15. パッケージマネージャ (<code
                     class="command">apt</code>) の設定</h3></div></div></div><a
-            id="idm140615488545328"
+            id="idm140198435477264"
             class="indexterm"></a><a
-            id="idm140615488543888"
+            id="idm140198435475824"
             class="indexterm"></a><div
             class="para">
 				追加ソフトウェアをインストールできるようにするためには、APT を設定し、Debian パッケージを探す場所を決めなければいけません。この段階は可能な限り自動化されています。パッケージを探す場所をネットワークソースにするか、CD-ROM だけにするかを尋ねる質問から始まります。
@@ -691,13 +691,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>NOTE</em></span> ドライブ中の Debian CD-ROM</strong></p></div></div></div><div
               class="para">
-				インストーラが CD/DVD ドライブに Debian のインストールディスクを検出した場合、ネットワーク上のパッケージを探しに行くように APT を設定する必要はありません: APT は自動的にリムーバブルメディアドライブからパッケージを読むように設定します。このディスクがセットの一部だった場合、ソフトウェアは他のディスクに収められているすべてパッケージを参照するために他のディスクを「探索」することを提案するでしょう。
+				インストーラが CD/DVD ドライブに Debian のインストールディスクを検出した場合、ネットワーク上のパッケージを探しに行くように APT を設定する必要はありません。なぜなら APT はリムーバブルメディアドライブからパッケージを読むように自動的に設定されているからです。このディスクがセットの一部だった場合、ソフトウェアは他のディスクに収められているすべてパッケージを参照するために他のディスクを「探索」することを提案するでしょう。
 			</div></div><div
             class="para">
 				ネットワークからパッケージを取得することを選んだ場合、次の 2 つの質問で国とその国で利用できるミラーを選択し、パッケージをダウンロードするサーバを選びます (ミラーとは Debian マスターアーカイブにあるファイルのコピーをホストしている公開サーバです)。
 			</div><div
             class="figure"><a
-              id="idm140615488538464"></a><div
+              id="idm140198435470368"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-mirror.png"
@@ -718,16 +718,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> HTTP プロキシ</strong></p></div></div></div><a
-              id="idm140615488530672"
+              id="idm140198435462576"
               class="indexterm"></a><a
-              id="idm140615488529712"
+              id="idm140198435461616"
               class="indexterm"></a><a
-              id="idm140615488528784"
+              id="idm140198435460688"
               class="indexterm"></a><a
-              id="idm140615488527856"
+              id="idm140198435459760"
               class="indexterm"></a><div
               class="para">
-				HTTP プロキシはネットワークユーザの HTTP 要求を転送するサーバです。プロキシは転送したファイルのコピーを保存することでダウンロードの高速化に寄与する場合があります (そのためこれはプロキシ/キャッシュと呼ばれます)。時として、プロキシは外部のウェブサーバにアクセスする唯一の手段である場合があります; このような場合、必ずインストール中のプロキシ関連の質問に答えてください。そうすれば、プログラムはプロキシを通じて Debian パッケージをダウンロードできるようになります。
+				HTTP プロキシはネットワークユーザの HTTP 要求を転送するサーバです。プロキシは転送したファイルのコピーを保存することでダウンロードの高速化に寄与する場合があります (そのためこれはプロキシ/キャッシュと呼ばれます)。時として、プロキシは外部のウェブサーバにアクセスする唯一の手段である場合があります。そしてこのような場合、必ずインストール中のプロキシ関連の質問に答えてください。そうすれば、プログラムはプロキシを通じて Debian パッケージをダウンロードできるようになります。
 			</div><div
               class="para">
 				Squid は Falcot Corp がプロキシサービスを提供するために使っているサーバソフトウェアの名前です。
@@ -735,7 +735,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488524816"></a>4.2.16. Debian パッケージ人気コンテスト</h3></div></div></div><div
+                    id="idm140198435456704"></a>4.2.16. Debian パッケージ人気コンテスト</h3></div></div></div><div
             class="para">
 				Debian システムには <span
               class="pkg pkg">popularity-contest</span> と呼ばれるパッケージが含まれています。<span
@@ -747,9 +747,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488520432"></a>4.2.17. インストールするパッケージの選択</h3></div></div></div><div
+                    id="idm140198435452400"></a>4.2.17. インストールするパッケージの選択</h3></div></div></div><div
             class="para">
-				以降の段階では、マシンの大まかな用途を選択します; ここで提案されている 10 個のタスクはインストールされるパッケージのリストに対応しています。後からインストールするパッケージを微調整したり仕上げる必要があるという点は変わりませんが、ここでタスクを選択して必要と思われるパッケージインストールしておくことは後の作業の良い足掛かりとなります。
+				以降の段階では、マシンの大まかな用途を選択します。ここで提案されている 10 個のタスクはインストールされるパッケージのリストに対応しています。後からインストールするパッケージを微調整したり仕上げる必要があるという点は変わりませんが、ここでタスクを選択して必要と思われるパッケージインストールしておくことは後の作業の良い足掛かりとなります。
 			</div><div
             class="para">
 				一部のパッケージは、検出されたハードウェアに基づき、自動的にインストールされます (<span
@@ -758,7 +758,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">virtualbox-guest-dkms</span> パッケージをインストールします。このパッケージは仮想マシンをホストシステムとうまく統合するためのものです。
 			</div><div
             class="figure"><a
-              id="idm140615488515792"></a><div
+              id="idm140198435447760"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-tasksel.png"
@@ -767,12 +767,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488512176"></a>4.2.18. GRUB ブートローダのインストール</h3></div></div></div><a
-            id="idm140615488511408"
+                    id="idm140198435444144"></a>4.2.18. GRUB ブートローダのインストール</h3></div></div></div><a
+            id="idm140198435443376"
             class="indexterm"></a><a
-            id="idm140615488509968"
+            id="idm140198435441936"
             class="indexterm"></a><a
-            id="idm140615488509008"
+            id="idm140198435440976"
             class="indexterm"></a><div
             class="para">
 				ブートローダは BIOS が起動する最初のプログラムです。ブートローダは Linux カーネルをメモリに読み込み、実行します。通常ブートローダはユーザに対して、読み込むカーネルまたは起動したいオペレーティングシステムを選択できるメニューを表示します。
@@ -781,7 +781,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BEWARE</em></span> ブートローダとデュアルブート</strong></p></div></div></div><a
-              id="idm140615488506144"
+              id="idm140198435438112"
               class="indexterm"></a><div
               class="para">
 				Debian インストール作業では、この段階でコンピュータに既にインストールされたオペレーティングシステムを検出し、関連するエントリをブートメニューに自動的に追加します。しかし、中にはこのような作業を行わないインストールプログラムもあります。
@@ -796,7 +796,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				デフォルトでは、GRUB の提案したメニューにはすべてのインストールされたカーネルおよび検出された他のオペレーティングシステムが含まれています。このため、GRUB はマスターブートレコード内にインストールされるべきです。最近インストールされたカーネルが欠陥品かハードウェアと相性が悪い場合に、古いカーネルバージョンを保持しておけば、同じシステムを起動できる状態が保存されるため、インストールされた古いカーネルバージョンを保持しておくことは合理的な方法です。
 			</div><div
             class="para">
-				GRUB はその技術的優位性のおかげで Debian がインストールするデフォルトのブートローダに採用されています: GRUB は多くのファイルシステムをサポートしているため、新しいカーネルのインストールの後に毎回更新する必要がありません。なぜなら、起動中に設定を読んで、新しいカーネルの正確な位置を見つけ出すからです。GRUB の バージョン 1 (現在は「Grub Legacy」として知られています) は LVM とソフトウェア RAID の組み合わせを取り扱うことができませんでした。デフォルトでインストールされるバージョン 2 はより完成度が高くなりました。LILO (別のブートローダ) のインストールが推奨される状況もまだあるかもしれません; そのような場合インストーラは自動的に LILO を提案します。
+				GRUB はその技術的優位性のおかげで Debian がインストールするデフォルトのブートローダに採用されています。そして GRUB は多くのファイルシステムをサポートしているため、新しいカーネルのインストールの後に毎回更新する必要がありません。なぜなら、起動中に設定を読んで、新しいカーネルの正確な位置を見つけ出すからです。GRUB の バージョン 1 (現在は「Grub Legacy」として知られています) は LVM とソフトウェア RAID の組み合わせを取り扱うことができませんでした。デフォルトでインストールされるバージョン 2 はより完成度が高くなりました。LILO (別のブートローダ) のインストールが推奨される状況もまだあるかもしれませんが、そのような場合、インストーラは自動的に LILO を提案します。
 			</div><div
             class="para">
 				GRUB の設定に関する詳しい情報は<a
@@ -824,7 +824,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615488490928"></a>4.2.19. インストールの完了と再起動</h3></div></div></div><div
+                    id="idm140198435422880"></a>4.2.19. インストールの完了と再起動</h3></div></div></div><div
             class="para">
 				これでインストールが完了しました。プログラムは、ドライブから CD-ROM を取り出し、コンピュータを再起動するよう促します。
 			</div></div></div><ul

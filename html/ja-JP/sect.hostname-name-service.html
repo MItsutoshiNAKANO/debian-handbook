@@ -25,7 +25,7 @@
         title="Debian 管理者ハンドブック" /><link
         rel="up"
         href="basic-configuration.html"
-        title="第8章 基本設定: ネットワーク、アカウント、印刷..." /><link
+        title="第8章 基本設定、ネットワーク、アカウント、印刷..." /><link
         rel="prev"
         href="sect.network-config.html"
         title="8.2. ネットワーク設定" /><link
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.hostname-name-service"></a>8.3. ホスト名と名前解決サービスの設定</h2></div></div></div><a
-          id="idm140615486002336"
+          id="idm140198434407808"
           class="indexterm"></a><a
-          id="idm140615486000896"
+          id="idm140198434406368"
           class="indexterm"></a><div
           class="para">
 			名前を IP 番号に割り当てることで、覚えやすくなります。実際、IP アドレスはネットワークカードなどのデバイスと関連付けられたネットワークインターフェースを識別します。それぞれのマシンは複数のネットワークカードを持つことが可能ですし、それぞれのカードに複数のインターフェースを持つことが可能ですので、1 台のコンピュータはドメインネームシステムに複数の名前を持つことが可能です。
@@ -81,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">hostname</code> コマンドを通じた初期化スクリプトを使って Linux カーネルに伝えられます。マシン名の現在の値は仮想ファイルシステムの中に保存されており、<code
             class="command">cat /proc/sys/kernel/hostname</code> コマンドで値を確認できます。
 		</div><a
-          id="idm140615485915008"
+          id="idm140198434402272"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -89,13 +89,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>BACK TO BASICS</em></span> <code
                       class="filename">/proc/</code> と <code
                       class="filename">/sys/</code>、仮想ファイルシステム</strong></p></div></div></div><a
-            id="idm140615485911840"
+            id="idm140198434399104"
             class="indexterm"></a><a
-            id="idm140615485910720"
+            id="idm140198434397984"
             class="indexterm"></a><a
-            id="idm140615485909600"
+            id="idm140198434396864"
             class="indexterm"></a><a
-            id="idm140615485908480"
+            id="idm140198434395744"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -104,35 +104,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 		</div><div
             class="para">
 			具体的に言うと <code
-              class="filename">/sys/</code> は、システム内のさまざまなデバイスを表現する内部のカーネルオブジェクトにアクセスする方法を提供するために、設計されました。そんなわけで、カーネルはこの情報の塊を共有します: それぞれのデバイスの状態 (たとえば、省エネルギーモードか否か) やリムーバブルデバイスが有るかなど。<code
+              class="filename">/sys/</code> は、システム内のさまざまなデバイスを表現する内部のカーネルオブジェクトにアクセスする方法を提供するために、設計されました。そんなわけで、カーネルはこの情報の塊を共有します。ここで情報の塊とは、それぞれのデバイスの状態 (たとえば、省エネルギーモードか否か) やリムーバブルデバイスが有るかなどを指します。<code
               class="filename">/sys/</code> を使えるのはカーネルバージョン 2.6 以降である点に注意してください。
 		</div></div><div
           class="para">
 			意外にもドメイン名は別の方法、名前解決を通じて得られるマシンの完全な名前で管理されています。マシンの完全な名前を変更するには <code
-            class="filename">/etc/hosts</code> ファイルを使います; 以下の例に示す通り、マシンの完全な名前を <code
+            class="filename">/etc/hosts</code> ファイルを使います。さらに以下の例に示す通り、マシンの完全な名前を <code
             class="filename">/etc/hosts</code> ファイルに書き込みます。リストの最初に、そのマシンのアドレスに関連付けられた名前を書きます。
 		</div><div
           class="informalexample"><pre
             class="programlisting">
 127.0.0.1     localhost
 192.168.0.1   arrakis.falcot.com arrakis</pre></div><a
-          id="idm140615485900944"
+          id="idm140198434388160"
           class="indexterm"></a><a
-          id="idm140615485899824"
+          id="idm140198434387040"
           class="indexterm"></a><a
-          id="idm140615485898704"
+          id="idm140198434385920"
           class="indexterm"></a><a
-          id="idm140615485897264"
+          id="idm140198434384480"
           class="indexterm"></a><a
-          id="idm140615485895824"
+          id="idm140198434383040"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.name-resolution"></a>8.3.1. 名前解決</h3></div></div></div><a
-            id="idm140615485893808"
+            id="idm140198434381024"
             class="indexterm"></a><a
-            id="idm140615485892368"
+            id="idm140198434379584"
             class="indexterm"></a><div
             class="para">
 				Linux における名前解決のメカニズムは、モジュール式で <code
@@ -155,9 +155,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.dns-server-configuration"></a>8.3.1.1. DNS サーバの設定</h4></div></div></div><a
-              id="idm140615485884048"
+              id="idm140198434371264"
               class="indexterm"></a><a
-              id="idm140615485883088"
+              id="idm140198434370304"
               class="indexterm"></a><div
               class="para">
 					DNS (ドメインネームサービス) は IP アドレスと名前およびその逆を対応付ける分散型の階層的サービスです。具体的に言うと、このサービスは人間に都合の良い名前、たとえば <code
@@ -167,9 +167,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 					DNS 情報にアクセスするには、DNS サーバが要求を中継するよう設定されていなければいけません。Falcot Corp は自分の DNS サーバを持っていますが、各ユーザは自分の ISP から提供された DNS サーバを使う傾向にあります。
 				</div><a
-              id="idm140615485879792"
+              id="idm140198434367008"
               class="indexterm"></a><a
-              id="idm140615485878672"
+              id="idm140198434365888"
               class="indexterm"></a><div
               class="para">
 					以下の例のように、使われる DNS サーバは <code
@@ -189,13 +189,13 @@ nameserver 8.8.8.8</pre><div
                     class="title"><a
                       id="sect.etc-hosts"></a>8.3.1.2. <code
                       class="filename">/etc/hosts</code> ファイル</h4></div></div></div><a
-              id="idm140615485872768"
+              id="idm140198434359984"
               class="indexterm"></a><a
-              id="idm140615485871648"
+              id="idm140198434358864"
               class="indexterm"></a><div
               class="para">
 					ローカルネットワーク内にネームサーバがない場合、<code
-                class="filename">/etc/hosts</code> ファイルの中に、通常ローカルネットワークの機器向けに予約されている IP アドレスとマシンのホスト名の対応表を書くことが可能です。このファイルの構文はとても単純です: 各行は特定の IP アドレスとそれに関連する名前のリスト (最初に書く名前は「完全修飾名」でドメイン名を含みます) を表します。
+                class="filename">/etc/hosts</code> ファイルの中に、通常ローカルネットワークの機器向けに予約されている IP アドレスとマシンのホスト名の対応表を書くことが可能です。このファイルの構文はとても単純です。すなわち、各行は特定の IP アドレスとそれに関連する名前のリスト (最初に書く名前は「完全修飾名」でドメイン名を含みます) を表します。
 				</div><div
               class="para">
 					このファイルはネットワークが停止している場合や DNS サーバに到達できない場合にも利用できますが、ネットワーク上のすべてのマシンにそのファイルのコピーを配置できる場合を除けば不便です。つまり、このファイルをほんの少しでも変更すれば、すべてのマシンでファイルの内容を更新しなければいけません。このため、通常 <code

@@ -72,86 +72,86 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dns-principe"></a>10.6.1. 原理とメカニズム</h3></div></div></div><a
-            id="idm140615467347808"
+            id="idm140198433349952"
             class="indexterm"></a><a
-            id="idm140615467346848"
+            id="idm140198433348992"
             class="indexterm"></a><div
             class="para">
 				<span
-              class="emphasis"><em>ドメインネームサービス</em></span> (DNS) はインターネットの基礎要素です: DNS はホスト名を IP アドレスに (その逆も) 対応付け、<code
+              class="emphasis"><em>ドメインネームサービス</em></span> (DNS) はインターネットの基礎要素です。つまり DNS はホスト名を IP アドレスに (その逆も) 対応付け、<code
               class="literal">5.153.231.4</code> や <code
               class="literal">2001:41c8:1000:21::21:4</code> の代わりに <code
               class="literal">www.debian.org</code> を使えるようにします。
 			</div><div
             class="para">
-				DNS レコードはゾーン分けされています; それぞれのゾーンはドメイン (またはサブドメイン) か IP アドレス範囲 (なぜなら、IP アドレスは通常連続した範囲を割り当てられるからです) にマッチします。プライマリサーバはあるゾーンに含まれる内容の情報を提供する権威的なサーバです; セカンダリサーバは、通常別のマシン上でホストされ、定期的にプライマリゾーンのコピーをとります。
+				DNS レコードはゾーン分けされています。そして、それぞれのゾーンはドメイン (またはサブドメイン) か IP アドレス範囲 (なぜなら、IP アドレスは通常連続した範囲を割り当てられるからです) にマッチします。プライマリサーバはあるゾーンに含まれる内容の情報を提供する権威的なサーバです。さらに、セカンダリサーバは、通常別のマシン上でホストされ、定期的にプライマリゾーンのコピーをとります。
 			</div><a
-            id="idm140615467341952"
+            id="idm140198433344064"
             class="indexterm"></a><a
-            id="idm140615467340512"
+            id="idm140198433342624"
             class="indexterm"></a><div
             class="para">
 				各ゾーンには、さまざまな種類のレコード (<span
-              class="emphasis"><em>リソースレコード</em></span>) が含まれます:
+              class="emphasis"><em>リソースレコード</em></span>) が含まれます。
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">A</code>: IPv4 アドレス。<a
-                    id="idm140615467336688"
+                    class="literal">A</code>。このレコードは IPv4 アドレスを意味しています。<a
+                    id="idm140198433338752"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">CNAME</code>: 別名 (<span
-                    class="emphasis"><em>canonical name</em></span>)。<a
-                    id="idm140615467334128"
+                    class="literal">CNAME</code>。このレコードは別名 (<span
+                    class="emphasis"><em>canonical name</em></span>) を意味しています。<a
+                    id="idm140198433336256"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">MX</code>: <span
-                    class="emphasis"><em>mail exchange</em></span>、電子メールサーバ。MX レコードは他の電子メールサーバが与えられたあるアドレス宛の電子メールの送信先を見つけるために使われます。それぞれの MX レコードには優先順位があります。最も優先順位の高いサーバ (最も低い番号のサーバ) を最初に試行します (傍注<a
+                    class="literal">MX</code>。このレコードは<span
+                    class="emphasis"><em>mail exchange</em></span>、電子メールサーバを意味しています。MX レコードは他の電子メールサーバが与えられたあるアドレス宛の電子メールの送信先を見つけるために使われます。それぞれの MX レコードには優先順位があります。最も優先順位の高いサーバ (最も低い番号のサーバ) を最初に試行します (傍注<a
                     class="xref"
                     href="network-services.html#sidebar.smtp"><span
-                      class="emphasis"><em>BACK TO BASICS</em></span> SMTP</a>参照); 最初のサーバからの応答がなかった場合、他のサーバを優先度の高い順に試行します。<a
-                    id="idm140615467330512"
+                      class="emphasis"><em>BACK TO BASICS</em></span> SMTP</a>参照)。さらに、最初のサーバからの応答がなかった場合、他のサーバを優先度の高い順に試行します。<a
+                    id="idm140198433332640"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">PTR</code>: ある IP アドレスに対する名前の対応付け。このレコードはある IP アドレス範囲に対して対応付けられた「逆引き DNS」ゾーンに保存されます。たとえば、<code
+                    class="literal">PTR</code>。このレコードはある IP アドレスに対する名前の対応付けを意味しています。このレコードはある IP アドレス範囲に対して対応付けられた「逆引き DNS」ゾーンに保存されます。たとえば、<code
                     class="literal">1.168.192.in-addr.arpa</code> は <code
                     class="literal">192.168.1.0/24</code> 範囲に含まれる全アドレスの逆引き対応が保存されているゾーンです。<a
-                    id="idm140615467326880"
+                    id="idm140198433328960"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">AAAA</code>: IPv6 アドレス。<a
-                    id="idm140615467324800"
+                    class="literal">AAAA</code>。このレコードは IPv6 アドレスを意味しています。<a
+                    id="idm140198433326832"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">NS</code>: 名前をネームサーバに対応付けます。それぞれのドメインは最低 1 つの NS レコードを持っています。NS レコードでは、このドメインに対する問い合わせに答えることができる DNS サーバを指定します; これは通常そのドメインに対するプライマリおよびセカンダリサーバです。NS レコードを使って DNS の権限委譲を指定することも可能です; たとえば、<code
+                    class="literal">NS</code>。このレコードは名前をネームサーバに対応付けるためのものです。それぞれのドメインは最低 1 つの NS レコードを持っています。NS レコードでは、このドメインに対する問い合わせに答えることができる DNS サーバを指定します。そして、これは通常そのドメインに対するプライマリおよびセカンダリサーバです。NS レコードを使って DNS の権限委譲を指定することも可能です。たとえば、<code
                     class="literal">falcot.com</code> ゾーンの NS レコードには <code
                     class="literal">internal.falcot.com</code> が含まれます。これは <code
                     class="literal">internal.falcot.com</code> ゾーンは別のサーバが担当していることを意味します。もちろん、このサーバは <code
                     class="literal">internal.falcot.com</code> ゾーンを宣言しなければいけません。<a
-                    id="idm140615467320336"
+                    id="idm140198433322320"
                     class="indexterm"></a>
 					</div></li></ul></div><a
-            id="idm140615467319216"
+            id="idm140198433321200"
             class="indexterm"></a><a
-            id="idm140615467317776"
+            id="idm140198433319760"
             class="indexterm"></a><div
             class="para">
 				標準的なネームサーバである Bind は ISC (<span
@@ -161,20 +161,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				2 番目は、Bind が DNS レコードの署名 (認証されている) に DNSSEC 標準をサポートするようになった変更です。これにより、中間者攻撃中に DNS レコードがなりすましされても、それを遮ることが可能になりました。
 			</div><a
-            id="idm140615467313776"
+            id="idm140198433315760"
             class="indexterm"></a><a
-            id="idm140615467312352"
+            id="idm140198433314336"
             class="indexterm"></a><a
-            id="idm140615467311392"
+            id="idm140198433313376"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> DNSSEC</strong></p></div></div></div><a
-              id="idm140615467309344"
+              id="idm140198433311328"
               class="indexterm"></a><div
               class="para">
-				DNSSEC の規格はかなり複雑です; DNSSEC はその複雑さにより、まだ広く使われている規格ではありません (DNSSEC に未対応の DNS サーバと完全に共存するにも関わらず)。一部始終を理解するには、以下の記事を参照してください。<div
+				DNSSEC の規格はかなり複雑です。さらに DNSSEC はその複雑さにより、まだ広く使われている規格ではありません (DNSSEC に未対応の DNS サーバと完全に共存するにも関わらず)。一部始終を理解するには、以下の記事を参照してください。<div
                 class="url">→ <a
                   href="http://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions">http://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions</a></div>
 			</div></div></div><div
@@ -195,20 +195,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CAUTION</em></span> 逆引きゾーンの名前</strong></p></div></div></div><a
-              id="idm140615467301488"
+              id="idm140198433303456"
               class="indexterm"></a><a
-              id="idm140615467300048"
+              id="idm140198433302016"
               class="indexterm"></a><a
-              id="idm140615467299088"
+              id="idm140198433301056"
               class="indexterm"></a><a
-              id="idm140615467297968"
+              id="idm140198433299936"
               class="indexterm"></a><a
-              id="idm140615467296848"
+              id="idm140198433298816"
               class="indexterm"></a><div
               class="para">
 				逆引きゾーンには特定の名前が付けられています。<code
                 class="literal">192.168.0.0/16</code> ネットワークに対する逆引きゾーンは <code
-                class="literal">168.192.in-addr.arpa</code> のように名付けなければいけません: IP アドレス部分の順序を逆にして、その後ろに <code
+                class="literal">168.192.in-addr.arpa</code> のように名付けなければいけません。具体的に言えば、IP アドレス部分の順序を逆にして、その後ろに <code
                 class="literal">in-addr.arpa</code> サフィックスを付けます。
 			</div><div
               class="para">
@@ -230,14 +230,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">host <em
                   class="replaceable">ipaddress</em> localhost</code> を使うと逆引きをテストすることが可能です。
 			</div><a
-              id="idm140615467287024"
+              id="idm140198433288960"
               class="indexterm"></a></div><div
             class="para">
-				以下に Falcot のファイルから抜粋した設定を載せます。これは DNS サーバの設定の足掛かりになります:
+				以下に Falcot のファイルから抜粋した設定を載せます。これは DNS サーバの設定の足掛かりになります。
 			</div><a
-            id="idm140615467285136"
+            id="idm140198433287072"
             class="indexterm"></a><a
-            id="idm140615467284016"
+            id="idm140198433285952"
             class="indexterm"></a><div
             class="example"><a
               id="example.bind-named.conf.local"></a><p

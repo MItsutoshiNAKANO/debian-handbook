@@ -70,29 +70,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.virtualization"></a>12.2. 仮想化</h2></div></div></div><div
           class="para">
 			仮想化<a
-            id="idm140615484926512"
-            class="indexterm"></a>は最近のコンピューティングにおける最も大きな進歩の一つです。仮想化という用語は、実際のハードウェアに対するさまざまな独立性の度合いを持つ仮想コンピュータを模倣するさまざまな抽象化と技術を指します。1 台の物理的なサーバが同時かつ隔離された状態で動く複数のシステムをホストすることが可能です。仮想化アプリケーションは数多く存在し、仮想システムの隔離状態を提供します: たとえば、さまざまに設定されたテスト環境を作ったり、安全性を確保する目的で異なる仮想マシン間でホストされたサービスを分離したり、することが可能です。
+            id="idm140198432787520"
+            class="indexterm"></a>は最近のコンピューティングにおける最も大きな進歩の一つです。仮想化という用語は、実際のハードウェアに対するさまざまな独立性の度合いを持つ仮想コンピュータを模倣するさまざまな抽象化と技術を指します。1 台の物理的なサーバが同時かつ隔離された状態で動く複数のシステムをホストすることが可能です。仮想化アプリケーションは数多く存在し、隔離された仮想システムを使うことができます。たとえば、さまざまに設定されたテスト環境を作ったり、安全性を確保する目的で異なる仮想マシン間でホストされたサービスを分離したり、することが可能です。
 		</div><div
           class="para">
-			複数の仮想化ソリューションが存在し、それぞれが利点と欠点を持っています。本書では Xen、LXC、KVM に注目しますが、他にも以下の様な注目すべき実装が存在します:
+			複数の仮想化ソリューションが存在し、それぞれが利点と欠点を持っています。本書では Xen、LXC、KVM に注目しますが、他にも以下の様な注目すべき実装が存在します。
 		</div><a
-          id="idm140615484924256"
+          id="idm140198432785248"
           class="indexterm"></a><a
-          id="idm140615484923136"
+          id="idm140198432784128"
           class="indexterm"></a><a
-          id="idm140615484922016"
+          id="idm140198432183968"
           class="indexterm"></a><a
-          id="idm140615484920896"
+          id="idm140198432182848"
           class="indexterm"></a><a
-          id="idm140615484919776"
+          id="idm140198432181728"
           class="indexterm"></a><a
-          id="idm140615484918656"
+          id="idm140198432180608"
           class="indexterm"></a><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
               class="listitem"><div
                 class="para">
-					QEMU は完全にコンピュータを模倣するソフトウェアエミュレータです; QEMU の性能はネイティブに実行した場合の速度には遠くおよびませんが、QEMU を使うことで修正されていなかったり実験的なオペレーティングシステムをエミュレートされたハードウェア上で実行することが可能です。QEMU はまた、異なるハードウェアアーキテクチャをエミュレートすることが可能です。たとえば、<span
+					QEMU は完全にコンピュータを模倣するソフトウェアエミュレータです。このため QEMU の性能はネイティブに実行した場合の速度には遠くおよびませんが、QEMU を使うことで修正されていなかったり実験的なオペレーティングシステムをエミュレートされたハードウェア上で実行することが可能です。QEMU はまた、異なるハードウェアアーキテクチャをエミュレートすることが可能です。たとえば、<span
                   class="emphasis"><em>amd64</em></span> システムで <span
                   class="emphasis"><em>arm</em></span> コンピュータをエミュレートすることが可能です。QEMU はフリーソフトウェアです。<div
                   class="url">→ <a
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div></li><li
               class="listitem"><div
                 class="para">
-					VMWare はプロプライエタリの仮想マシンです; VMWare はこの分野で最も古く、最も広く使われているソフトウェアの 1 つです。VMWare は QEMU とよく似た原理で動いています。VMWare には、たとえば実行中の仮想マシンのスナップショットなどの高度な機能が含まれています。<div
+					VMWare はプロプライエタリの仮想マシンです。そして VMWare はこの分野で最も古く、最も広く使われているソフトウェアの 1 つです。VMWare は QEMU とよく似た原理で動いています。VMWare には、たとえば実行中の仮想マシンのスナップショットなどの高度な機能が含まれています。<div
                   class="url">→ <a
                     href="http://www.vmware.com/">http://www.vmware.com/</a></div>
 				</div></li><li
@@ -121,8 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.xen"></a>12.2.1. Xen</h3></div></div></div><div
             class="para">
 				Xen<a
-              id="idm140615484906688"
-              class="indexterm"></a> は「準仮想化」ソリューションです。Xen には薄い抽象化層が含まれ、この抽象化層は「ハイパーバイザ」と呼ばれ、ハードウェアとその上にあるシステムの間に位置します; ハイパーバイザは審判員として振る舞い、仮想マシンからハードウェアへのアクセスを制御します。しかしながら、ハイパーバイザは命令のほんの一部だけを取り扱い、残りはシステムの代わりにハードウェアによって直接的に実行されます。こうすることによる主な有効性は性能が低下せず、システムがネイティブ速度に迫る性能を発揮するという点です; 欠点は Xen ハイパーバイザ上で使いたいオペレーティングシステムのカーネルは Xen 上で実行するために修正される必要があるという点です。
+              id="idm140198432167712"
+              class="indexterm"></a> は「準仮想化」ソリューションです。Xen には薄い抽象化層が含まれ、この抽象化層は「ハイパーバイザ」と呼ばれ、ハードウェアとその上にあるシステムの間に位置します。さらにハイパーバイザは審判員として振る舞い、仮想マシンからハードウェアへのアクセスを制御します。しかしながら、ハイパーバイザは命令のほんの一部だけを取り扱い、残りはシステムの代わりにハードウェアによって直接的に実行されます。こうすることによる主な有効性は性能が低下せず、システムがネイティブ速度に迫る性能を発揮するという点です。一方で欠点は Xen ハイパーバイザ上で使いたいオペレーティングシステムのカーネルは Xen 上で実行するために修正される必要があるという点です。
 			</div><div
             class="para">
 				用語について少し時間を割きましょう。ハイパーバイザはカーネルよりも下層の最も低い層に位置し、ハードウェア上で直接動きます。ハイパーバイザは残りのソフトウェアをいくつかの<span
@@ -158,7 +158,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   href="http://wiki.xenproject.org/wiki/Xen_Kernel_Feature_Matrix">http://wiki.xenproject.org/wiki/Xen_Kernel_Feature_Matrix</a></div>
 			</div></div><div
             class="para">
-				Debian の下で Xen を使うには 3 つの要素が必要です:
+				Debian の下で Xen を使うには 3 つの要素が必要です。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -172,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Xen と非 Linux カーネル</strong></p></div></div></div><div
               class="para">
-				Xen 上でオペレーティングシステムを動作させるには、いかなるオペレーティングシステムであってもそれを修正する必要があります; すべてのオペレーティングシステムのカーネルがこの点に関して同じ程度の成熟度を持っているとは限りません。多くのオペレーティングシステムは dom0 と domU の両方で完全に動きます: Linux 3.0 とそれ以降、NetBSD 4.0 とそれ以降、OpenSolaris。他のもの、たとえば OpenBSD 4.0、FreeBSD 8、Plan 9 などは domU だけで動きます。
+				Xen 上でオペレーティングシステムを動作させるには、いかなるオペレーティングシステムであってもそれを修正する必要があります。さらに、すべてのオペレーティングシステムのカーネルがこの点に関して同じ程度の成熟度を持っているとは限りません。多くのオペレーティングシステムは dom0 と domU の両方で完全に動きます。具体的に言えば、Linux 3.0 とそれ以降、NetBSD 4.0 とそれ以降、OpenSolaris は dom0 と domU の両方で完全に動きます。他のもの、たとえば OpenBSD 4.0、FreeBSD 8、Plan 9 などは domU だけで動きます。
 			</div><div
               class="para">
 				しかしながら、Xen が仮想化専用のハードウェア機能 (最近のプロセッサだけが搭載した機能) に頼っている場合や、修正されていないオペレーティングシステムは domU としてのみ動作します (Windows など)。
@@ -192,14 +192,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						i386 アーキテクチャでは、Xen を活用するための適切なパッチを取り込んだ標準的なライブラリが必要です; これは <span
+						i386 アーキテクチャでは、Xen を活用するための適切なパッチを取り込んだ標準的なライブラリが必要です。そしてこれは <span
                     class="pkg pkg">libc6-xen</span> パッケージに含まれます。
 					</div></li></ul></div><div
             class="para">
 				複数の構成要素を手作業で選択するという煩わしさを避けるために、いくつかの便利なパッケージ (<span
               class="pkg pkg">xen-linux-system-686-pae</span> と <span
-              class="pkg pkg">xen-linux-system-amd64</span>) が用意されています; これらのパッケージをインストールすることで、適切なハイパーバイザとカーネルパッケージが既知の良い組み合わせで導入されます。ハイパーバイザには <span
-              class="pkg pkg">xen-utils-4.1</span> が含まれます。このパッケージには dom0 からハイパーバイザを操作するためのツールが含まれます。同様に、このパッケージには適切な標準的ライブラリが含まれます。すべてのインストール中に、設定スクリプトは Grub ブートローダメニューに新しいエントリを作成します。こうすることで Xen dom0 から選択されたカーネルを開始することが可能です。しかしながら、通常このエントリはリストの最初に置かれないため、デフォルトで選択されません。この点に注意してください。これを望まない場合、以下のコマンドを使って変更してください;
+              class="pkg pkg">xen-linux-system-amd64</span>) が用意されています。そしてこれらのパッケージをインストールすることで、適切なハイパーバイザとカーネルパッケージが既知の良い組み合わせで導入されます。ハイパーバイザには <span
+              class="pkg pkg">xen-utils-4.1</span> が含まれます。このパッケージには dom0 からハイパーバイザを操作するためのツールが含まれます。同様に、このパッケージには適切な標準的ライブラリが含まれます。すべてのインストール中に、設定スクリプトは Grub ブートローダメニューに新しいエントリを作成します。こうすることで Xen dom0 から選択されたカーネルを開始することが可能です。しかしながら、通常このエントリはリストの最初に置かれないため、デフォルトで選択されません。この点に注意してください。これを望まない場合、以下のコマンドを使って変更してください。
 			</div><pre
             class="screen"><code
               class="computeroutput"># </code><strong
@@ -209,34 +209,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="userinput"><code>update-grub
 </code></strong></pre><div
             class="para">
-				これらの前提要件をインストールしたら、次に dom0 の挙動をテストします; これを行うには、ハイパーバイザと Xen カーネルの再起動が必要です。システムは標準的な方法で起動するべきです。初期化の早い段階でコンソールにいくつかの追加的メッセージが表示されます。
+				これらの前提要件をインストールしたら、次に dom0 の挙動をテストします。そしてこれを行うには、ハイパーバイザと Xen カーネルの再起動が必要です。システムは標準的な方法で起動するべきです。初期化の早い段階でコンソールにいくつかの追加的メッセージが表示されます。
 			</div><div
             class="para">
 				これで、有用なシステムを domU システムに実際にインストールできるようになりました。これを行うには <span
               class="pkg pkg">xen-tools</span> の提供するツールを使います。このパッケージには <code
               class="command">xen-create-image</code> コマンドが含まれます。これはタスクの大部分を自動化します。必須のパラメータは <code
-              class="literal">--hostname</code> だけで、このパラメータは domU の名前を設定します; 他のオプションは重要ですが、<code
+              class="literal">--hostname</code> だけで、このパラメータは domU の名前を設定します。他のオプションは重要ですが、<code
               class="filename">/etc/xen-tools/xen-tools.conf</code> 設定ファイルに保存することが可能です。そして、コマンドラインでオプションを指定しなくてもエラーは起きません。このため、イメージを作る前にこのファイルの内容を確認するか、<code
-              class="command">xen-create-image</code> の実行時に追加的パラメータを使うことが重要です。注目すべき重要なパラメータを以下に示します:
+              class="command">xen-create-image</code> の実行時に追加的パラメータを使うことが重要です。以下に注目すべき重要なパラメータを示します。
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">--memory</code>、新たに作成するシステム用の RAM のサイズを指定;
+                    class="literal">--memory</code>、新たに作成するシステム用の RAM のサイズを指定。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">--size</code> と <code
-                    class="literal">--swap</code>、domU で利用できる「仮想ディスク」のサイズを定義;
+                    class="literal">--swap</code>、domU で利用できる「仮想ディスク」のサイズを定義。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">--debootstrap</code>、<code
-                    class="command">debootstrap</code> を使って新しいシステムをインストール; このオプションを使う場合、<code
+                    class="command">debootstrap</code> を使って新しいシステムをインストールします。さらに、このオプションを使う場合、<code
                     class="literal">--dist</code> オプション (ディストリビューションの名前、たとえば <span
                     class="distribution distribution">wheezy</span>) を一緒に使うことが多いです。
 					</div><div
@@ -258,7 +258,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						最後に、作成されるイメージ (domU からはハードディスクドライブに見えるイメージ) の保存方法を選択します。最も簡単な方法は、対応する <code
                     class="literal">--dir</code> オプションを使い、各 domU を格納するデバイス用のファイルを dom0 上に作成する方法です。LVM を使っているシステムでは、<code
-                    class="literal">--lvm</code> オプションを使い、ボリュームグループの名前を指定しても良いでしょう; <code
+                    class="literal">--lvm</code> オプションを使い、ボリュームグループの名前を指定しても良いでしょう。そして <code
                     class="command">xen-create-image</code> は新しい論理ボリュームをグループの中に作成し、この論理ボリュームがハードディスクドライブとして domU から利用できるようにされます。
 					</div><div
                   class="sidebar"><div
@@ -271,7 +271,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="command">xen-create-image</code> を使って Xen イメージの設定ファイルを作成した後にこれを編集することでこの操作が可能です。
 					</div></div></li></ul></div><div
             class="para">
-				これらを選んだ後、将来の Xen domU 用のイメージを作成することが可能です:
+				これらを選んだ後、将来の Xen domU 用のイメージを作成することが可能です。
 			</div><pre
             class="screen"><code
               class="computeroutput"># </code><strong
@@ -306,14 +306,14 @@ Root Password   :  48su67EW
 				これで仮想マシンが作成されましたが、仮想マシンはまだ実行されていません (このため dom0 のハードディスク上の領域だけが使われています)。もちろん、異なるパラメータを使ってより多くのイメージを作成することが可能です。
 			</div><div
             class="para">
-				仮想マシンを起動する前に、仮想マシンにアクセスする方法を定義します。もちろん仮想マシンは隔離されたマシンですから、仮想マシンにアクセスする唯一の方法はシステムコンソールだけです。しかし、システムコンソールだけで要求を満足できることはほとんどないと言っても過言ではありません。ほとんどの時間、domU はリモートサーバとして機能し、ネットワークを通じてのみアクセスされます。しかしながら、各 domU 専用のネットワークカードを追加するのはかなり不便です; このため Xen は仮想インターフェースの作成機能を備えています。各ドメインは仮想インターフェースを参照し、標準的な方法で使うことが可能です。これらのネットワークカードは仮想的なものですが、ネットワークに接続したら便利に使えるという点に注意してください。Xen は複数のネットワークモデルを備えています:
+				仮想マシンを起動する前に、仮想マシンにアクセスする方法を定義します。もちろん仮想マシンは隔離されたマシンですから、仮想マシンにアクセスする唯一の方法はシステムコンソールだけです。しかし、システムコンソールだけで要求を満足できることはほとんどないと言っても過言ではありません。ほとんどの時間、domU はリモートサーバとして機能し、ネットワークを通じてのみアクセスされます。しかしながら、各 domU 専用のネットワークカードを追加するのはかなり不便です。このため Xen は仮想インターフェースの作成機能を備えています。各ドメインは仮想インターフェースを参照し、標準的な方法で使うことが可能です。これらのネットワークカードは仮想的なものですが、ネットワークに接続したら便利に使えるという点に注意してください。Xen は複数のネットワークモデルを備えています。
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
 						最も単純なモデルは <span
-                    class="emphasis"><em>bridge</em></span> モデルです; すべての eth0 ネットワークカードが (dom0 と domU システムに含まれるものも含めて) 直接的にイーサネットスイッチに接続されているかのように振る舞います。
+                    class="emphasis"><em>bridge</em></span> モデルです。この場合、すべての eth0 ネットワークカードが (dom0 と domU システムに含まれるものも含めて) 直接的にイーサネットスイッチに接続されているかのように振る舞います。
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -339,7 +339,7 @@ Root Password   :  48su67EW
               class="filename">/etc/network/interfaces</code> の中にブリッジをセットアップして (<span
               class="pkg pkg">bridge-utils</span> パッケージをインストールする必要があります。このため <span
               class="pkg pkg">bridge-utils</span> パッケージは <span
-              class="pkg pkg">xen-utils-4.1</span> パッケージの推奨パッケージになっています)、既存の eth0 エントリを置き替えます:
+              class="pkg pkg">xen-utils-4.1</span> パッケージの推奨パッケージになっています)、既存の eth0 エントリを置き替えます。
 			</div><pre
             class="programlisting">auto xenbr0
 iface xenbr0 inet dhcp
@@ -381,9 +381,9 @@ testxen                                      1   128     1     -b----      1.1</
               class="filename">testxen</code> domU は仮想メモリではなく RAM から取った真のメモリを使い、このメモリ領域は dom0 によって使われる場合もあります。この点に注意してください。このため、サーバを作ることが Xen インスタンスをホストすることを意味する場合、それに応じて物理 RAM を供給することになる点に注意が必要です。
 			</div><div
             class="para">
-				これで、仮想マシンが開始されました。仮想マシンにアクセスするには 2 種類の方法があります。通常の方法は、真のマシンに接続するのと同様に、ネットワークを介して「リモートで」仮想マシンに接続することです; これを行うには、通常別の DHCP サーバや DNS 設定をセットアップすることが必要です。別の方法は <code
+				これで、仮想マシンが開始されました。仮想マシンにアクセスするには 2 種類の方法があります。通常の方法は、真のマシンに接続するのと同様に、ネットワークを介して「リモートで」仮想マシンに接続することです。そしてこれを行うには、通常別の DHCP サーバや DNS 設定をセットアップすることが必要です。別の方法は <code
               class="command">xm console</code> コマンドから <code
-              class="filename">hvc0</code> コンソールを使う方法です。セットワーク設定が正しくない場合にはこれが唯一の方法です。
+              class="filename">hvc0</code> コンソールを使う方法です。ネットワーク設定が正しくない場合にはこれが唯一の方法です。
 			</div><pre
             class="screen"><code
               class="computeroutput"># </code><strong
@@ -404,7 +404,7 @@ testxen login: </code></pre><div
                     class="title"><strong><span
                         class="emphasis"><em>TIP</em></span> すぐにコンソールを開始する</strong></p></div></div></div><div
               class="para">
-				domU システムの開始直後にコンソールを始めたい場合があります; この希望に応えるために <code
+				domU システムの開始直後にコンソールを始めたい場合があります。そしてこの希望に応えるために <code
                 class="command">xm create</code> コマンドは <code
                 class="literal">-c</code> オプションを備えています。<code
                 class="literal">-c</code> オプションを付けて domU を開始すれば、システム起動時に表示されるすべてのメッセージを見ることが可能です。
@@ -423,7 +423,7 @@ testxen login: </code></pre><div
               class="command">xm pause</code> と <code
               class="command">xm unpause</code> コマンドを使って domU を一時的に停止したり再開することが可能です。一時的に停止された domU は全くプロセッサを使いませんが、割り当てられたメモリを開放しません。<code
               class="command">xm save</code> と <code
-              class="command">xm restore</code> コマンドを考慮することは興味深いかもしれません: domU を保存すれば domU の使っていた RAM などの資源が開放されます。domU を元に戻すとき (ついでに言えば再開するとき)、domU は時間が経過したことに全く気が付きません。dom0 を停止した時に domU が動いていた場合、パッケージに含まれるスクリプトが自動的に domU を保存し、dom0 の次回起動時に domU を自動的に再開します。もちろんこれにはラップトップコンピュータをハイバネートする場合と同様の標準的な不便さがあります。特に、domU が長い間一時停止されていた場合、ネットワーク接続が切断される可能性があります。今現在 Xen は ACPI 電源管理のほとんどに互換性がない点にも注意してください。このため、ホスト (dom0) システムを一時停止することは不可能です。
+              class="command">xm restore</code> コマンドを考慮することは興味深いかもしれません。なぜなら domU を保存すれば domU の使っていた RAM などの資源が開放されるからです。domU を元に戻すとき (ついでに言えば再開するとき)、domU は時間が経過したことに全く気が付きません。dom0 を停止した時に domU が動いていた場合、パッケージに含まれるスクリプトが自動的に domU を保存し、dom0 の次回起動時に domU を自動的に再開します。もちろんこれにはラップトップコンピュータをハイバネートする場合と同様の標準的な不便さがあります。特に、domU が長い間一時停止されていた場合、ネットワーク接続が切断される可能性があります。今現在 Xen は ACPI 電源管理のほとんどに互換性がない点にも注意してください。このため、ホスト (dom0) システムを一時停止することは不可能です。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -457,30 +457,30 @@ testxen login: </code></pre><div
                     id="sect.lxc"></a>12.2.2. LXC</h3></div></div></div><div
             class="para">
 				LXC<a
-              id="idm140615484797696"
+              id="idm140198432057216"
               class="indexterm"></a> は「仮想マシン」を作るために使われるにも関わらず、厳密に言うと仮想システムではなく、同じホスト上で実行されるプロセスのグループを隔離するためのシステムです。LXC は近年 Linux カーネルに対して行われた数々の機能の利点を活用しています。これらの機能はまとめて <span
               class="emphasis"><em>control groups</em></span> として知られています。<span
               class="emphasis"><em>control groups</em></span> を使うことにより、「グループ」と呼ばれるさまざまなプロセス群に対してシステム全体の特定の側面の状態を強制することが可能です。中でも最も注目すべき側面はプロセス識別子、ネットワーク接続、マウントポイントです。隔離されたプロセスのグループはシステムの他のプロセスにアクセスできませんし、グループによるファイルシステムへのアクセスを特定の一部に限定することが可能です。さらにグループはネットワークインターフェースとルーティングテーブルを持っており、グループがシステムに存在する利用できるデバイスの一部だけを見えるように設定することが可能です。
 			</div><div
             class="para">
 				これらの機能は <code
-              class="command">init</code> プロセスから起動されたすべてのプロセスファミリーに組み込むことが可能です。そして結果、仮想マシンにとてもよく似たものが作られます。このようなセットアップの正式名称は「コンテナ」です (LXC の名称: <span
-              class="emphasis"><em>LinuX Containers</em></span>)。Xen や KVM が提供する「真の」仮想マシンとのより重要な違いは 2 番目のカーネルがない点です; コンテナはホストシステムと同じカーネルを使います。これは利点と欠点があります: 利点はオーバーヘッドが全くないことによる素晴らしい性能と、カーネルがシステムで実行しているすべてのプロセスに対する包括的な視点を持つことです。このため 2 つの独立したけーネルが異なるタスクセットでスケジュールを行うよりも効果的なスケジューリングが可能です。欠点の最たるものはコンテナの中で異なるカーネルを動作させることができない点です (異なる Linux バージョンや異なるオペレーティングシステムを同時に動かすことができません)。
+              class="command">init</code> プロセスから起動されたすべてのプロセスファミリーに組み込むことが可能です。そして結果、仮想マシンにとてもよく似たものが作られます。このようなセットアップの正式名称は「コンテナ」です (これは LXC の名称 <span
+              class="emphasis"><em>LinuX Containers</em></span> に由来しています)。Xen や KVM が提供する「真の」仮想マシンとのより重要な違いは 2 番目のカーネルがない点です。このため、コンテナはホストシステムと同じカーネルを使います。これは利点と欠点があります。すなわち、利点はオーバーヘッドが全くないことによる素晴らしい性能と、カーネルがシステムで実行しているすべてのプロセスに対する包括的な視点を持つことです。このため 2 つの独立したけーネルが異なるタスクセットでスケジュールを行うよりも効果的なスケジューリングが可能です。欠点の最たるものはコンテナの中で異なるカーネルを動作させることができない点です (異なる Linux バージョンや異なるオペレーティングシステムを同時に動かすことができません)。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>NOTE</em></span> LXC の隔離制限</strong></p></div></div></div><div
               class="para">
-				LXC コンテナは負荷の大きなエミュレータやバーチャライザが備える隔離機能を備えていません。具体的には:
+				LXC コンテナは負荷の大きなエミュレータやバーチャライザが備える隔離機能を備えていません。以下に具体例を示します。
 			</div><div
               xmlns:d="http://docbook.org/ns/docbook"
               class="itemizedlist"><ul><li
                   class="listitem"><div
                     class="para">
 						<span
-                      class="distribution distribution">Wheezy</span> の標準的なカーネルはコンテナに対して利用を許可するメモリサイズを制限できません; この機能は存在し、カーネルに組み込まれていますが、デフォルトでは無効化されています。なぜなら、システム全体の性能に (わずかな) 影響を与えるからです; しかしながら、この機能を有効化することは簡単で、<code
-                      class="command">cgroup_enable=memory</code> カーネルコマンドラインオプションを起動時に設定するだけです;
+                      class="distribution distribution">Wheezy</span> の標準的なカーネルはコンテナに対して利用を許可するメモリサイズを制限できません。この機能は存在し、カーネルに組み込まれていますが、デフォルトでは無効化されています。なぜなら、システム全体の性能に (わずかな) 影響を与えるからです。しかしながら、この機能を有効化することは簡単で、<code
+                      class="command">cgroup_enable=memory</code> カーネルコマンドラインオプションを起動時に設定するだけです。
 					</div></li><li
                   class="listitem"><div
                     class="para">
@@ -492,15 +492,15 @@ testxen login: </code></pre><div
 					</div></li><li
                   class="listitem"><div
                     class="para">
-						ファイルシステムについて、カーネルはユーザとグループの数値的な識別子に従ってパーミッションを確認します; これらの識別子はコンテナごとに異なるユーザとグループを意味します。ファイルシステムの書き込み可能な部分がコンテナ同士で共有されている場合、この点を覚えておくべきです。
+						ファイルシステムについて、カーネルはユーザとグループの数値的な識別子に従ってパーミッションを確認します。さらに、これらの識別子はコンテナごとに異なるユーザとグループを意味します。ファイルシステムの書き込み可能な部分がコンテナ同士で共有されている場合、この点を覚えておくべきです。
 					</div></li></ul></div></div><div
             class="para">
-				隔離は単純な仮想化と異なるため、LXC コンテナを設定することは仮想マシン上で単純に debian-installer を実行するよりも複雑な作業です。このため、いくつかの必要条件を説明した後、ネットワーク設定を行います; コンテナの中で実行するシステムを実際に作成することが可能です。
+				隔離は単純な仮想化と異なるため、LXC コンテナを設定することは仮想マシン上で単純に debian-installer を実行するよりも複雑な作業です。このため、いくつかの必要条件を説明した後、ネットワーク設定を行います。こうすることで、コンテナの中で実行するシステムを実際に作成することが可能です。
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615484782544"></a>12.2.2.1. 準備段階</h4></div></div></div><div
+                      id="idm140198432041920"></a>12.2.2.1. 準備段階</h4></div></div></div><div
               class="para">
 					<span
                 class="pkg pkg">lxc</span> パッケージには LXC を実行するために必要なツールが含まれるため、必ずこのパッケージをインストールしなければいけません。
@@ -509,14 +509,14 @@ testxen login: </code></pre><div
 					LXC は <span
                 class="emphasis"><em>control groups</em></span> 設定システムを要求します。これは <code
                 class="filename">/sys/fs/cgroup</code> にマウントされる仮想ファイルシステムです。このため、<code
-                class="filename">/etc/fstab</code> に以下のエントリを含める必要があります:
+                class="filename">/etc/fstab</code> に以下のエントリを含める必要があります。
 				</div><pre
               class="programlisting scale"># /etc/fstab: static file system information.
 [...]
 cgroup            /sys/fs/cgroup           cgroup    defaults        0       0</pre><div
               class="para">
 					これで <code
-                class="filename">/sys/fs/cgroup</code> は起動時に自動的にマウントされます; すぐに再起動できない場合、<code
+                class="filename">/sys/fs/cgroup</code> は起動時に自動的にマウントされます。一方で、すぐに再起動できない場合、<code
                 class="command">mount /sys/fs/cgroup</code> を使ってファイルシステムを手作業でマウントします。
 				</div></div><div
             class="section"><div
@@ -524,19 +524,19 @@ cgroup            /sys/fs/cgroup           cgroup    defaults        0       0</
                     class="title"><a
                       id="sect.lxc.network"></a>12.2.2.2. ネットワーク設定</h4></div></div></div><div
               class="para">
-					LXC をインストールする目的は仮想マシンをセットアップすることです; もちろん、仮想マシンをネットワークから隔離するように設定したり、ファイルシステムを介してのみ情報をやり取りするように設定することも可能ですが、コンテナに対して少なくとも最低限のネットワークアクセスを提供するように設定するのが一般的です。典型的な場合、各コンテナにはブリッジを介して実際のネットワークに接続された仮想ネットワークインターフェースが備えられています。この仮想インターフェースは、直接ホスト上の物理ネットワークインターフェースに接続されているか (この場合、コンテナは直接ネットワークに接続されています)、ホスト上に定義された他の仮想インターフェースに接続されています (ホストからトラフィックをフィルタしたり配送することが可能です)。どちらの場合も、<span
+					LXC をインストールする目的は仮想マシンをセットアップすることです。もちろん、仮想マシンをネットワークから隔離するように設定したり、ファイルシステムを介してのみ情報をやり取りするように設定することも可能ですが、コンテナに対して少なくとも最低限のネットワークアクセスを提供するように設定するのが一般的です。典型的な場合、各コンテナにはブリッジを介して実際のネットワークに接続された仮想ネットワークインターフェースが備えられています。この仮想インターフェースは、直接ホスト上の物理ネットワークインターフェースに接続されているか (この場合、コンテナは直接ネットワークに接続されています)、ホスト上に定義された他の仮想インターフェースに接続されています (ホストからトラフィックをフィルタしたり配送することが可能です)。どちらの場合も、<span
                 class="pkg pkg">bridge-utils</span> パッケージが必要です。
 				</div><div
               class="para">
 					最も簡単なやり方は <code
                 class="filename">/etc/network/interfaces</code> を編集することです。物理インターフェース (たとえば <code
                 class="literal">eth0</code>) に関する設定をブリッジインターフェース (通常 <code
-                class="literal">br0</code>) に変え、物理とブリッジインターフェース間のリンクを設定します。たとえば、最初にネットワークインターフェース設定ファイルが以下のようなエントリを持っていた場合:
+                class="literal">br0</code>) に変え、物理とブリッジインターフェース間のリンクを設定します。たとえば、最初にネットワークインターフェース設定ファイルが以下のようなエントリを持っていたとします。
 				</div><pre
               class="programlisting">auto eth0
 iface eth0 inet dhcp</pre><div
               class="para">
-					このエントリを無効化し、以下のとおり書き換えます:
+					このエントリを無効化し、以下のとおり書き換えます。
 				</div><pre
               class="programlisting">#auto eth0
 #iface eth0 inet dhcp
@@ -555,8 +555,8 @@ iface br0 inet dhcp
               class="para">
 					<span
                 class="pkg pkg">bridge-utils</span> に加えて、この「ぜいたくな」設定を行うには <span
-                class="pkg pkg">vde2</span> パッケージが必要です; これで <code
-                class="filename">/etc/network/interfaces</code> ファイルは以下のようになります:
+                class="pkg pkg">vde2</span> パッケージが必要です。これで <code
+                class="filename">/etc/network/interfaces</code> ファイルは以下のようになります。
 				</div><pre
               class="programlisting"># Interface eth0 is unchanged
 auto eth0
@@ -580,12 +580,12 @@ iface br0 inet static
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615484760944"></a>12.2.2.3. システムのセットアップ</h4></div></div></div><div
+                      id="idm140198432020768"></a>12.2.2.3. システムのセットアップ</h4></div></div></div><div
               class="para">
 					コンテナがファイルシステムを使うようにファイルシステムを設定しましょう。この「仮想マシン」はハードウェア上で直接的に実行されないため、標準的なファイルシステムに比べていくつかの微調整を必要とします。これは特にカーネル、デバイス、コンソールが該当します。幸いなことに、<span
                 class="pkg pkg">lxc</span> にはこの設定をほぼ自動化するスクリプトが含まれます。たとえば、以下のコマンド (<span
                 class="pkg pkg">debootstrap</span> と <span
-                class="pkg pkg">rsync</span> パッケージが必要です) で Debian コンテナがインストールされます:
+                class="pkg pkg">rsync</span> パッケージが必要です) で Debian コンテナがインストールされます。
 				</div><pre
               class="screen"><code
                 class="computeroutput">root@mirwiz:~# </code><strong
@@ -619,26 +619,26 @@ root@mirwiz:~# </code>
               class="para">
 					これで、新規に作成されたファイルシステムが最低限の Debian システムを含むようになりました。デフォルトでこのコンテナはホストシステムとネットワークデバイスを共有します。これは全く望むべき状態ではないため、コンテナの設定ファイル (<code
                 class="filename">/var/lib/lxc/testlxc/config</code>) を編集し、いくつかの <code
-                class="literal">lxc.network.*</code> エントリを追加します:
+                class="literal">lxc.network.*</code> エントリを追加します。
 				</div><pre
               class="programlisting">lxc.network.type = veth
 lxc.network.flags = up
 lxc.network.link = br0
 lxc.network.hwaddr = 4a:49:43:49:79:20</pre><div
               class="para">
-					これらのエントリの意味するところはそれぞれ、仮想インターフェースはコンテナによって作られます; 仮想インターフェースはコンテナが開始された時に自動的に利用できる状態にされます; 仮想インターフェースはホストの <code
-                class="literal">br0</code> ブリッジに自動的に接続されます; 仮想インターフェースの MAC アドレスを指定します。最後のエントリを削除するか無効化した場合、ランダムな MAC アドレスが生成されます。
+					これらのエントリの意味するところはそれぞれ、仮想インターフェースはコンテナによって作られます。そして仮想インターフェースはコンテナが開始された時に自動的に利用できる状態にされます。そして仮想インターフェースはホストの <code
+                class="literal">br0</code> ブリッジに自動的に接続されます。さらに仮想インターフェースの MAC アドレスは指定したものになります。最後のエントリを削除するか無効化した場合、ランダムな MAC アドレスが生成されます。
 				</div><div
               class="para">
-					設定ファイル内の便利なエントリを使ってホスト名を設定することも可能です:
+					設定ファイル内の便利なエントリを使ってホスト名を設定することも可能です。
 				</div><pre
               class="programlisting">lxc.utsname = testlxc</pre></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615484746656"></a>12.2.2.4. コンテナの開始</h4></div></div></div><div
+                      id="idm140198432006416"></a>12.2.2.4. コンテナの開始</h4></div></div></div><div
               class="para">
-					これで仮想マシンイメージの準備が整いました。コンテナを開始しましょう:
+					これで仮想マシンイメージの準備が整いました。それではコンテナを開始しましょう。
 				</div><pre
               class="screen scale"
               width="94"><code
@@ -678,7 +678,7 @@ root      1412  0.0  0.0  14572   888 tty3     Ss+  09:39   0:00 /sbin/getty 384
 root      1413  0.0  0.0  14572   884 tty4     Ss+  09:39   0:00 /sbin/getty 38400 tty4 linux
 root@testlxc:~# </code></pre><div
               class="para">
-					これでコンテナの中に入りました; プロセスへのアクセスはコンテナ自身によって開始されたものだけに制限されています。同様に、ファイルシステムへのアクセスもこのコンテナ専用に割り当てられた完全なファイルシステムの一部分 (<code
+					これでコンテナの中に入りました。さらに、プロセスへのアクセスはコンテナ自身によって開始されたものだけに制限されています。同様に、ファイルシステムへのアクセスもこのコンテナ専用に割り当てられた完全なファイルシステムの一部分 (<code
                 class="filename">/var/lib/lxc/testlxc/rootfs</code>) に制限されています。コンソールを終了するには <span
                 class="keycap"><strong>Control</strong></span>+<span
                 class="keycap"><strong>a</strong></span> <span
@@ -692,9 +692,9 @@ root@testlxc:~# </code></pre><div
 				</div><div
               class="para">
 					<span
-                class="pkg pkg">lxc</span> パッケージには、ホストの起動時に自動的に 1 つまたは複数のコンテナを開始するための初期化スクリプトが含まれます; 初期化スクリプトの設定ファイルは <code
-                class="filename">/etc/default/lxc</code> で、比較的分かりやすいものです; コンテナの設定ファイルは <code
-                class="filename">/etc/lxc/auto/</code> に保存しなければいけない点に注意してください; 多くのユーザは実際の設定ファイルへのシンボリックリンクを <code
+                class="pkg pkg">lxc</span> パッケージには、ホストの起動時に自動的に 1 つまたは複数のコンテナを開始するための初期化スクリプトが含まれます。そして、初期化スクリプトの設定ファイルは <code
+                class="filename">/etc/default/lxc</code> で、比較的分かりやすいものです。さらに、コンテナの設定ファイルは <code
+                class="filename">/etc/lxc/auto/</code> に保存しなければいけない点に注意してください。また、多くのユーザは実際の設定ファイルへのシンボリックリンクを <code
                 class="filename">/etc/lxc/auto/</code> に保存する方法を選びます。シンボリックリンクを作成するには <code
                 class="command">ln -s /var/lib/lxc/testlxc/config /etc/lxc/auto/testlxc.config</code> を使います。
 				</div><div
@@ -714,22 +714,22 @@ root@testlxc:~# </code></pre><div
                   class="literal">lxc.mount.entry</code> エントリを使います。興味深い副作用として、より少ない物理メモリでプロセスを動かすことが可能になる点が挙げられます。なぜなら、カーネルはプログラムが共有されていることを検知できるからです。このことにより 1 つのコンテナを追加するためのコストを、コンテナに特有のデータに割り当てられたディスク領域と、カーネルがスケジュールと管理に使ういくつかの追加的プロセスだけに、減らすことが可能です。
 				</div><div
                 class="para">
-					もちろん、ここではすべての利用できるオプションを説明していません; より広範囲に渡る情報を入手するには、<span
+					もちろん、ここではすべての利用できるオプションを説明していません。このため、より広範囲に渡る情報を入手するには、<span
                   class="citerefentry"><span
-                    class="refentrytitle">lxc</span>(7)</span> と <span
+                    class="refentrytitle">lxc</span>(7)</span>と<span
                   class="citerefentry"><span
                     class="refentrytitle">lxc.conf</span>(5)</span> マニュアルページおよびこれらのマニュアルページから参照されている文書を参照してください。
 				</div></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615484721424"></a>12.2.3. KVM を使った仮想化</h3></div></div></div><a
-            id="idm140615484720656"
+                    id="idm140198431981104"></a>12.2.3. KVM を使った仮想化</h3></div></div></div><a
+            id="idm140198431980336"
             class="indexterm"></a><div
             class="para">
 				KVM は <span
               class="emphasis"><em>Kernel-based Virtual Machine</em></span> を意味しており、仮想化システムの使うほとんどの基礎構造を提供する、最初で最高のカーネルモジュールですが、これ自身は仮想化システムではありません。仮想化の実際の制御を行うには QEMU に基づくアプリケーションを使います。この節で <code
-              class="command">qemu-*</code> コマンドがあっても心配しないでください: これは KVM です。
+              class="command">qemu-*</code> コマンドがあっても心配しないでください。なぜならこのコマンドは KVM に関連するものだからです。
 			</div><div
             class="para">
 				他の仮想化システムと異なり、KVM は最初から Linux カーネルにマージされていました。KVM の開発者はプロセッサが備える仮想化専用命令セット (Intel-VT と AMD-V) を有効活用することを選びました。仮想化専用命令セットのおかげで、KVM は軽量で簡潔でリソースを大量に消費しないものになっています。もちろん、欠点は KVM は主に i386 と amd64 プロセッサおよびこれらの命令セットを持つ程度に最近のプロセッサで動くという点です。<code
@@ -741,16 +741,16 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615484715584"></a>12.2.3.1. 準備段階</h4></div></div></div><a
-              id="idm140615484714784"
+                      id="idm140198431975200"></a>12.2.3.1. 準備段階</h4></div></div></div><a
+              id="idm140198431974400"
               class="indexterm"></a><div
               class="para">
 					VirtualBox などのツールと異なり、KVM は仮想マシンを作成管理するためのユーザインターフェースを含みません。<span
                 class="pkg pkg">qemu-kvm</span> パッケージには、仮想マシンを開始することが可能な実行ファイルおよび適切なカーネルモジュールを読み込むための初期化スクリプトが含まれます。
 				</div><a
-              id="idm140615484712064"
+              id="idm140198431971680"
               class="indexterm"></a><a
-              id="idm140615484711104"
+              id="idm140198431970720"
               class="indexterm"></a><div
               class="para">
 					幸いなことに、Red Hat は <span
@@ -758,7 +758,7 @@ root@testlxc:~# </code></pre><div
                 class="emphasis"><em>仮想マシンマネージャ</em></span>ツールを開発することで、この問題に対処するためのツールを提供しています。libvirt により、仮想マシンを管理する方法が統一され、管理方法が裏で動く仮想システムに依存しなくなります (libvirt は現在 QEMU、KVM、Xen、LXC、OpenVZ、VirtualBox、VMWare、UML をサポートしています)。<code
                 class="command">virtual-manager</code> はグラフィルインターフェースで、仮想マシンを作成管理するために libvirt を使います。
 				</div><a
-              id="idm140615484707392"
+              id="idm140198431967008"
               class="indexterm"></a><div
               class="para">
 					最初に <code
@@ -781,7 +781,7 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615484697408"></a>12.2.3.2. ネットワーク設定</h4></div></div></div><div
+                      id="idm140198431957120"></a>12.2.3.2. ネットワーク設定</h4></div></div></div><div
               class="para">
 					Xen や LXC と同様に、最もよく使われるネットワーク設定は仮想マシンのネットワークインターフェースをグループ化するブリッジです (<a
                 class="xref"
@@ -800,9 +800,9 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615484692048"></a>12.2.3.3. <code
+                      id="idm140198431951760"></a>12.2.3.3. <code
                       class="command">virt-install</code> を使ったインストール</h4></div></div></div><a
-              id="idm140615464213328"
+              id="idm140198431950672"
               class="indexterm"></a><div
               class="para">
 					仮想マシンの作成は普通のシステムをインストールするのとよく似ています。違いは、仮想マシンの性質をコマンドラインから非常に長々と指定する点です。
@@ -962,7 +962,7 @@ to the console to complete the installation process.
                     align="left"><div
                       class="para">
 							<code
-                        class="literal">--disk</code> オプションは仮想マシンのハードディスクとして利用するイメージファイルの場所を指定します; このファイルが存在しなければ、<code
+                        class="literal">--disk</code> オプションは仮想マシンのハードディスクとして利用するイメージファイルの場所を指定します。そして、このファイルが存在しなければ、<code
                         class="literal">size</code> パラメータで指定されたサイズ (GB 単位) で作成されます。<code
                         class="literal">format</code> パラメータはイメージファイルを保存するさまざまな方法を選択します。デフォルトフォーマット (<code
                         class="literal">raw</code>) はディスクサイズと内容が全く同じ単一ファイルです。ここではより先進的なフォーマット qcow2 を選びました。qcow2 は QEMU 専用のフォーマットで、最初は小さなファイルで仮想マシンが領域を実際に利用することになった時に増加するファイルです。
@@ -1005,10 +1005,10 @@ to the console to complete the installation process.
                     align="left"><div
                       class="para">
 							<code
-                        class="literal">--vnc</code> は VNC を使ってグラフィカルコンソールを利用できるようにすることを意味します。関連する VNC サーバに対するデフォルトの挙動はローカルインターフェースだけをリッスンします; 仮想マシンを操作する VNC クライアントを別のホスト上で実行する場合、VNC 接続を確立するには SSH トンネルを設定する必要があります (<a
+                        class="literal">--vnc</code> は VNC を使ってグラフィカルコンソールを利用できるようにすることを意味します。関連する VNC サーバに対するデフォルトの挙動はローカルインターフェースだけをリッスンします。さらに仮想マシンを操作する VNC クライアントを別のホスト上で実行する場合、VNC 接続を確立するには SSH トンネルを設定する必要があります (<a
                         class="xref"
                         href="sect.remote-login.html#sect.ssh-port-forwarding">「ポート転送を使った暗号化トンネルの作成」</a>参照)。別の方法として、VNC サーバをすべてのインターフェースを介して利用できるようにするために、<code
-                        class="literal">--vnclisten=0.0.0.0</code> を使うことも可能です; この方針を取る場合、ファイアウォールを適切に設計するべきという点に注意してください。
+                        class="literal">--vnclisten=0.0.0.0</code> を使うことも可能です。しかしこの方針を取る場合、ファイアウォールを適切に設計するべきという点に注意してください。
 						</div></td></tr><tr><td
                     width="5%"
                     valign="top"
@@ -1041,13 +1041,13 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615464174416"></a>12.2.3.4. <code
+                      id="idm140198412269056"></a>12.2.3.4. <code
                       class="command">virsh</code> を使ったマシンの管理</h4></div></div></div><a
-              id="idm140615464173520"
+              id="idm140198412268160"
               class="indexterm"></a><div
               class="para">
 					これでインストールが終了しました。利用できる仮想マシンを取り扱う方法に移りましょう。最初に <code
-                class="command">libvirtd</code> を使って管理している仮想マシンのリストを確認します:
+                class="command">libvirtd</code> を使って管理している仮想マシンのリストを確認します。
 				</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
@@ -1057,7 +1057,7 @@ root@server's password: </code></pre><div
   - testkvm              shut off
 </code></strong></pre><div
               class="para">
-					テスト用仮想マシンを起動しましょう:
+					それではテスト用仮想マシンを起動しましょう。
 				</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
@@ -1066,7 +1066,7 @@ root@server's password: </code></pre><div
                 class="computeroutput">Domain testkvm started</code></pre><div
               class="para">
 					そして、グラフィカルコンソールへの接続命令を出します (接続する VNC 画面を <code
-                class="command">vncviewer</code> へのパラメータの形で指定することが可能です):
+                class="command">vncviewer</code> へのパラメータの形で指定することが可能です)。
 				</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
@@ -1075,40 +1075,40 @@ root@server's password: </code></pre><div
                 class="computeroutput">:0</code></pre><div
               class="para">
 					その他の利用できる <code
-                class="command">virsh</code> サブコマンドには以下のものが挙げられます:
+                class="command">virsh</code> サブコマンドには以下のものがあります。
 				</div><div
               xmlns:d="http://docbook.org/ns/docbook"
               class="itemizedlist"><ul><li
                   class="listitem"><div
                     class="para">
 							<code
-                      class="literal">reboot</code> は仮想マシンを再起動します;
+                      class="literal">reboot</code> は仮想マシンを再起動します。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							<code
-                      class="literal">shutdown</code> は正常なシャットダウンを行います;
+                      class="literal">shutdown</code> は仮想マシンを正常にシャットダウンします。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							<code
-                      class="literal">destroy</code> は無理やり停止します;
+                      class="literal">destroy</code> は仮想マシンを無理やり停止します。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							<code
-                      class="literal">suspend</code> は一時停止します;
+                      class="literal">suspend</code> は仮想マシンを一時停止します。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							<code
-                      class="literal">resume</code> は一時停止された仮想マシンを再開します;
+                      class="literal">resume</code> は一時停止された仮想マシンを再開します。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							<code
                       class="literal">autostart</code> はホスト起動時にこの仮想マシンを自動的に起動することを有効化します (または <code
-                      class="literal">--disable</code> オプションを付けて無効化します);
+                      class="literal">--disable</code> オプションを付けて無効化します)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
@@ -1122,7 +1122,7 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140615464156192"></a>12.2.3.5. yum を使い RPM に基づくシステムを Debian の中にインストールする</h4></div></div></div><div
+                      id="idm140198412250640"></a>12.2.3.5. yum を使い RPM に基づくシステムを Debian の中にインストールする</h4></div></div></div><div
               class="para">
 					仮想マシンが Debian (または Debian 派生物) を実行することを意図している場合、システムは上で述べたとおり <code
                 class="command">debootstrap</code> を使って初期化されます。しかし、仮想マシンに RPM に基づくシステム (Fedora、CentOS、Scientific Linux など) をインストールする場合、<code
@@ -1133,7 +1133,7 @@ root@server's password: </code></pre><div
                 class="filename">yum.conf</code> ファイルを設定する必要があります。<code
                 class="filename">yum.conf</code> ファイルには、ソース RPM リポジトリへのパス、プラグイン設定のパス、宛先フォルダが含まれます。以下の例では、環境を <code
                 class="filename">/var/tmp/yum-bootstrap</code> に保存することを仮定しています。<code
-                class="filename">/var/tmp/yum-bootstrap/yum.conf</code> ファイルは以下の様になります:
+                class="filename">/var/tmp/yum-bootstrap/yum.conf</code> ファイルは以下の様になります。
 				</div><pre
               class="programlisting">[main]
 reposdir=/var/tmp/yum-bootstrap/repos.d
@@ -1186,7 +1186,7 @@ gpgcheck=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6</pre><div
               class="para">
 					最後に、<code
-                class="filename">pluginconf.d/installonlyn.conf</code> ファイルは以下の内容を含みます:
+                class="filename">pluginconf.d/installonlyn.conf</code> ファイルは以下の内容を含みます。
 				</div><pre
               class="programlisting">[main]
 enabled=1
@@ -1194,7 +1194,7 @@ tokeep=5</pre><div
               class="para">
 					これらの設定が済んだら、<code
                 class="command">rpm --rebuilddb</code> などのコマンドを使って、<code
-                class="command">rpm</code> データベースが正しく初期化されることを確認してください。CentOS 6 をインストールするには以下のコマンドを使うだけです:
+                class="command">rpm</code> データベースが正しく初期化されることを確認してください。CentOS 6 をインストールするには以下のコマンドを使うだけです。
 				</div><pre
               class="screen"><strong
                 class="userinput"><code>yum -c /var/tmp/yum-bootstrap/yum.conf -y install coreutils basesystem centos-release yum-basearchonly initscripts</code></strong></pre></div></div></div><ul

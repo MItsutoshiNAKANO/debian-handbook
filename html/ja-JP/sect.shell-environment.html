@@ -25,7 +25,7 @@
         title="Debian 管理者ハンドブック" /><link
         rel="up"
         href="basic-configuration.html"
-        title="第8章 基本設定: ネットワーク、アカウント、印刷..." /><link
+        title="第8章 基本設定、ネットワーク、アカウント、印刷..." /><link
         rel="prev"
         href="sect.creating-accounts.html"
         title="8.5. アカウントの作成" /><link
@@ -71,13 +71,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			コマンドインタプリタ (シェル) はコンピュータのユーザが最初に触れるものですから、かなり使いやすくなければいけません。多くのシェルは、挙動 (自動補完、プロンプトテキスト、など) を設定する初期化スクリプトを使います。
 		</div><a
-          id="idm140615485684080"
+          id="idm140198434172144"
           class="indexterm"></a><a
-          id="idm140615485683152"
+          id="idm140198434171216"
           class="indexterm"></a><a
-          id="idm140615485682224"
+          id="idm140198434170288"
           class="indexterm"></a><a
-          id="idm140615485681264"
+          id="idm140198434169328"
           class="indexterm"></a><div
           class="para">
 			標準的なシェルの <code
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			単純な用語として、ログインシェルは、ローカルおよびリモートの <code
               class="command">ssh</code> 経由でコンソールにログインするか、明確に <code
               class="command">bash --login</code> コマンドを実行してログインする際に、実行されます。ログインシェルか否かに関わらず、シェルは対話的 (たとえば <code
-              class="command">xterm</code> 系ターミナルの中で実行される場合) にもなれば; 非対話的 (スクリプトとして実行される場合) にもなります。
+              class="command">xterm</code> 系ターミナルの中で実行される場合) にもなれば、一方で非対話的 (スクリプトとして実行される場合) にもなります。
 		</div></div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -103,15 +103,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			各コマンドラインインタプリタには、特別な構文が決められており、専用の設定ファイルがあります。たとえば <code
               class="command">zsh</code> は <code
               class="filename">/etc/zshrc</code> と <code
-              class="filename">/etc/zshenv</code> を使います; <code
+              class="filename">/etc/zshenv</code> を使います。一方で <code
               class="command">csh</code> は <code
               class="filename">/etc/csh.cshrc</code>、<code
               class="filename">/etc/csh.login</code>、<code
               class="filename">/etc/csh.logout</code> を使います。それぞれのプログラム用の man ページには、そのプログラムでどのファイルを使うかが書かれています。
 		</div><a
-            id="idm140615485669440"
+            id="idm140198434157536"
             class="indexterm"></a><a
-            id="idm140615485668320"
+            id="idm140198434156416"
             class="indexterm"></a></div><div
           class="para">
 			<code
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> 自動補完</strong></p></div></div></div><a
-            id="idm140615485664368"
+            id="idm140198434152464"
             class="indexterm"></a><div
             class="para">
 			多くのコマンドラインインタプリタには補完機能があります。補完機能を使うと、コマンド名や引数の一部を入力した後に <span
@@ -140,14 +140,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> チルダ記号、ホームディレクトリへのショートカット</strong></p></div></div></div><a
-            id="idm140615485657680"
+            id="idm140198434145776"
             class="indexterm"></a><a
-            id="idm140615485656720"
+            id="idm140198434144816"
             class="indexterm"></a><div
             class="para">
 			チルダ記号は通常、環境変数 <code
               class="varname">HOME</code> の指すディレクトリ (ユーザのホームディレクトリ、たとえば <code
-              class="filename">/home/rhertzog/</code>) を表すために使われます。コマンドインタプリタはチルダ記号を以下のように自動的に置換します: <code
+              class="filename">/home/rhertzog/</code>) を表すために使われます。コマンドインタプリタはチルダ記号を以下のように自動的に置換します。すなわち <code
               class="filename">~/hello.txt</code> は <code
               class="filename">/home/rhertzog/hello.txt</code> の様に置換されます。
 		</div><div
@@ -159,18 +159,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			これらの共用スクリプトに加えて、各ユーザは自分のシェルを設定するために <code
             class="filename">~/.bashrc</code> と <code
-            class="filename">~/.bash_profile</code> を作ることが可能です。最もよくある変更は、別名の追加です; コマンドの実行時に自動的に置換される単語を登録することで、コマンドを素早く実行できます。たとえば、<code
+            class="filename">~/.bash_profile</code> を作ることが可能です。最もよくある変更は、別名の追加です。コマンドの実行時に自動的に置換される単語を登録することで、コマンドを素早く実行できます。たとえば、<code
             class="command">ls -la | less</code> コマンドの別名として <code
-            class="literal">la</code> を作成することが可能です; ディレクトリの内容を細かく調査する場合、<code
+            class="literal">la</code> を作成することが可能です。そしてディレクトリの内容を細かく調査する場合、<code
             class="command">la</code> をタイプするだけです。
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> 環境変数</strong></p></div></div></div><a
-            id="idm140615485647344"
+            id="idm140198434135424"
             class="indexterm"></a><a
-            id="idm140615485645904"
+            id="idm140198434133984"
             class="indexterm"></a><div
             class="para">
 			環境変数を使うことで、呼び出されたシェルや他のプログラムに対して大域的な設定を行うことが可能です。環境変数はその場限りのものです (それぞれのプロセスは自身の環境変数を持っています) が、継承されます。この最後の性質のおかげで、すべてのプログラムの実行時に伝えられる変数をログインシェルで宣言できます。

@@ -25,7 +25,7 @@
         title="Debian 管理者ハンドブック" /><link
         rel="up"
         href="apt.html"
-        title="第6章 保守と更新: APT ツール" /><link
+        title="第6章 保守と更新、APT ツール" /><link
         rel="prev"
         href="sect.package-authentication.html"
         title="6.5. パッケージ信頼性の確認" /><link
@@ -69,14 +69,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.dist-upgrade"></a>6.6. 安定版から次のディストリビューションへのアップグレード</h2></div></div></div><div
           class="para">
-			Debian の最もよく知られた特色の 1 つに、インストールされたシステムを安定版から次のリリースにアップグレードできることが挙げられます: <span
+			Debian の最もよく知られた特色の 1 つに、インストールされたシステムを安定版から次のリリースにアップグレードできることが挙げられます。そして <span
             class="foreignphrase"><em
               class="foreignphrase">dist-upgrade</em></span> — よく知られた語句 — はプロジェクトの評判に大きく寄与し続けています。いくつかの予防措置を伴いますが、コンピュータのアップグレードに必要な時間は、パッケージリポジトリからのダウンロード速度に依存して、わずか数分から数十分です。
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615485484768"></a>6.6.1. 推奨手順</h3></div></div></div><div
+                    id="idm140198432683072"></a>6.6.1. 推奨手順</h3></div></div></div><div
             class="para">
 				Debian の安定版が進化してリリースされるまでにはかなり長い時間がかかるので、アップグレードの前にリリースノートを読むべきです。
 			</div><div
@@ -88,7 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				オペレーティングシステムの (より一般的に言えば、ソフトウェアの) リリースノートはソフトウェアの概観と、あるバージョンに固有な点の詳細を説明する文書です。リリースノートは通常、完全な文書に比べて短く、前のバージョン以降導入された機能をリストアップしています。加えて、アップグレード手順の詳細、以前のバージョンのユーザに対する警告、そして時々正誤表を含んでいます。与える。
 			</div><div
               class="para">
-				リリースノートはオンライン上で利用できます: 現在の安定版に対するリリースノートには専用の URL が割り当てられ、古いリリースに対するリリースノートにはコードネームを含んだ URL が割り当てられています: <div
+				リリースノートはオンライン上で利用できます。そして、現在の安定版に対するリリースノートには専用の URL が割り当てられ、古いリリースに対するリリースノートにはコードネームを含んだ URL が割り当てられています。<div
                 class="url">→ <a
                   href="http://www.debian.org/releases/stable/releasenotes">http://www.debian.org/releases/stable/releasenotes</a></div> <div
                 class="url">→ <a
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				この節では、特に <span
               class="distribution distribution">Wheezy</span> システムを <span
-              class="distribution distribution">Jessie</span> にアップグレードを行う場合について解説します。システムのアップグレードはシステムに甚大な変更を加えます; このため、危険が全くないわけではありません、すべての重要なデータをバックアップする前にアップグレードを実行するべきではありません。
+              class="distribution distribution">Jessie</span> にアップグレードを行う場合について解説します。システムのアップグレードはシステムに甚大な変更を加えます。このため、危険が全くないわけではありません、すべての重要なデータをバックアップする前にアップグレードを実行するべきではありません。
 			</div><div
             class="para">
 				アップグレードを簡単に (短く) 実行するために身に付けるべき良い癖の 1 つに、インストール済みパッケージを整理整頓し、本当に必要なものだけを残すことがあります。これを行う便利なツールが <code
@@ -106,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">debfoster</code> (<a
               class="xref"
               href="sect.apt-get.html#sect.automatic-tracking">「自動的にインストールされたパッケージの追跡」</a>参照) です。たとえば以下のコマンドを実行した後、<code
-              class="command">aptitude</code> の対話型モードで削除予定としてマークされたパッケージの再確認と微調整を行うことができます:
+              class="command">aptitude</code> の対話型モードで削除予定としてマークされたパッケージの再確認と微調整を行うことができます。
 			</div><pre
             class="screen"># <strong
               class="userinput"><code>deborphan | xargs aptitude --schedule-only remove</code></strong></pre><div
@@ -128,13 +128,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				最小アップグレードが終了したら、<code
               class="command">apt-get dist-upgrade</code>、<code
               class="command">aptitude</code>、<code
-              class="command">synaptic</code> のうちどれか 1 つを使って、ディストリビューション全体のアップグレードを行います。提案された動作を適用する前に注意深く確認するべきです: 提案パッケージを追加したい場合や、推奨されたけれども使いにくいと知っているパッケージを除外したい場合があるかもしれません。いかなる場合でもフロントエンドは、一貫性が保たれて最新の <span
+              class="command">synaptic</code> のうちどれか 1 つを使って、ディストリビューション全体のアップグレードを行います。提案された動作を適用する前に注意深く確認するべきです。具体的に言えば、提案パッケージを追加したい場合や、推奨されたけれども使いにくいと知っているパッケージを除外したい場合があるかもしれません。いかなる場合でもフロントエンドは、一貫性が保たれて最新の <span
               class="distribution distribution">Jessie</span> システムになるような、解決策を用意します。管理者に要求されるのは、パッケージがダウンロードされるまで待って、Debconf とマシンに合わせて変更された設定ファイルの保存可否に関する質問に答え、APT が仕事を終えるまで見ているだけです。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615485461360"></a>6.6.2. アップグレードの後から問題を取り扱う</h3></div></div></div><div
+                    id="idm140198432659616"></a>6.6.2. アップグレードの後から問題を取り扱う</h3></div></div></div><div
             class="para">
 				Debian メンテナの最大限の努力にも関わらず、システムのメジャー更新は常に望んだ通りに順調に進むわけではありません。新しいソフトウェアバージョンは古いものと互換性がないかもしれません (たとえば、デフォルト動作やデータフォーマットが変わっているかもしれません)。また、いくつかのバグは Debian リリースに先んじるテスト段階を経たにもかかわらず見過ごされているかもしれません。
 			</div><div
@@ -147,18 +147,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">apt-listchanges</span> を通じて) 読めば、予期しない驚きを避けることが可能です。
 			</div><div
             class="para">
-				あるソフトウェアの新しいバージョンが全く動かないことに気付くことがあるかもしれません。これは通常、そのアプリケーションがそれほど人気ではない場合や十分にテストされていない場合に起こります; リリース直前の更新によって、それまでに存在しなかった不具合を混入することがあり、この不具合は安定版がリリースされた後に見つかります。どちらの場合でも、最初にやることはバグ追跡システム <code
+				あるソフトウェアの新しいバージョンが全く動かないことに気付くことがあるかもしれません。これは通常、そのアプリケーションがそれほど人気ではない場合や十分にテストされていない場合に起こります。さらに、リリース直前の更新によって、それまでに存在しなかった不具合を混入することがあり、この不具合は安定版がリリースされた後に見つかります。どちらの場合でも、最初にやることはバグ追跡システム <code
               class="literal">http://bugs.debian.org/<em
                 class="replaceable">package</em></code> でこの問題が既に報告されているか確認することです。まだ報告されていなければ、<code
-              class="command">reportbug</code> を使って自分で報告するべきです。既に報告されていれば、バグ報告と関連メッセージは通常バグに関連する情報の素晴らしいソースです:
+              class="command">reportbug</code> を使って自分で報告するべきです。既に報告されていれば、バグ報告と関連メッセージは通常バグに関連する情報の素晴らしいソースです。
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
-						パッチが既に存在し、バグ報告からそれを入手できることがあります; 壊れたパッケージの修正されたバージョンを再コンパイルすることが可能です (<a
+						パッチが既に存在し、バグ報告からそれを入手できることがあります。このため、壊れたパッケージの修正されたバージョンを再コンパイルすることが可能です (<a
                     class="xref"
-                    href="debian-packaging.html#sect.rebuilding-package">「ソースを使ったパッケージの再ビルド」</a>をご覧ください);
+                    href="debian-packaging.html#sect.rebuilding-package">「ソースを使ったパッケージの再ビルド」</a>をご覧ください)。
 					</div></li><li
                 class="listitem"><div
                   class="para">

@@ -31,7 +31,7 @@
         title="9.9. クォータ" /><link
         rel="next"
         href="sect.hotplug.html"
-        title="9.11. ホットプラグ機能: hotplug" /><link
+        title="9.11. ホットプラグ機能、hotplug" /><link
         rel="canonical"
         href="http://l.github.io/debian-handbook/html/ja-JP/sect.backup.html" /></head><body
       class="draft "><noscript><iframe
@@ -71,9 +71,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			バックアップを取ることは管理者の主要な責任の 1 つです。しかし、これは通常極めるのが難しい強力なツールを使う複雑な問題です。
 		</div><a
-          id="idm140615466648304"
+          id="idm140198414562544"
           class="indexterm"></a><a
-          id="idm140615466647536"
+          id="idm140198414561776"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -82,22 +82,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">BackupPC</code> などの多くのプログラムが存在します。これらはクライアント/サーバシステムに適した多くの選択肢で、設定はかなり難しいです。いくつかは難しさを和らげるためのユーザフレンドリーなウェブインターフェースを提供しています。しかし Debian には、すべての考え得る使用事例に対応できる、他の数多くのバックアップソフトウェアが含まれています。ソフトウェアを確認するには <code
             class="command">apt-cache search backup</code> を使ってください。
 		</div><a
-          id="idm140615466644304"
+          id="idm140198414558544"
           class="indexterm"></a><a
-          id="idm140615466643408"
+          id="idm140198414557648"
           class="indexterm"></a><a
-          id="idm140615466642512"
+          id="idm140198414556752"
           class="indexterm"></a><div
           class="para">
 			これらのうちのいくつかを詳細に説明するのではなく、この節では、Falcot Corp 管理者がバックアップ戦略を定義する際にどのように考えたかを説明します。
 		</div><div
           class="para">
-			Falcot Corp では、バックアップには 2 つの目標があります: 誤って削除したファイルを回復することと、ハードドライブに障害が起きた際にコンピュータ (サーバおよびデスクトップ) を素早く復元することです。
+			Falcot Corp では、バックアップには 2 つの目標があります。具体的に言えば、誤って削除したファイルを回復することと、ハードドライブに障害が起きた際にコンピュータ (サーバおよびデスクトップ) を素早く復元することです。
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615466640304"></a>9.10.1. <code
+                    id="idm140198414554512"></a>9.10.1. <code
                     class="command">rsync</code> を使ったバックアップ</h3></div></div></div><div
             class="para">
 				テープへのバックアップは遅くて費用がかかりすぎるとみなされ、データは専用サーバのハードドライブにバックアップされることになりました。専用サーバはソフトウェア RAID (<a
@@ -105,15 +105,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="advanced-administration.html#sect.raid-soft">「ソフトウェア RAID」</a>参照) を使ってデータをハードウェア障害から守っています。デスクトップコンピュータは個別にバックアップされませんが、ユーザは部署のファイルサーバの個人アカウントはバックアップされると忠告されています。毎日 <code
               class="command">rsync</code> コマンド (同名のパッケージに含まれます) を使って、異なるサーバにバックアップを行います。
 			</div><a
-            id="idm140615466637424"
+            id="idm140198414551632"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ハードリンク、ファイルの別名</strong></p></div></div></div><a
-              id="idm140615466635632"
+              id="idm140198414549840"
               class="indexterm"></a><a
-              id="idm140615466634480"
+              id="idm140198414548688"
               class="indexterm"></a><div
               class="para">
 				ハードリンクはシンボリックリンクと異なり、リンクされたファイルと区別できません。本質的に、ハードリンクの作成は既存のファイルに別名を与えることと同義です。そのため、ハードリンクの削除はそのファイルに関連する名前を削除するに過ぎません。他の名前がまだそのファイルに関連付けられている場合、データの実体ファイルシステムから削除されません。コピーと異なり、ハードリンクはハードドライブ上に追加的な領域を必要としない点について注意することは興味深いです。
@@ -133,11 +133,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">rsync</code> コマンドはバックアップの内容をハードリンクで複製します。このおかげで、ハードドライブ領域を無駄に消費することがなくなります。そして <code
               class="command">rsync</code> プロセスは最後のバックアップ以降に変更されたファイルだけを置き換えます。このメカニズムにより、多くのバックアップを少ない領域に保存することが可能です。すべてのバックアップは即座に利用できる上に即座にアクセスできるので (たとえば、ネットワーク共有されたディレクトリの中に置かれるので)、ある日付同士の違いを素早く比較できます。
 			</div><a
-            id="idm140615466627248"
+            id="idm140198414541456"
             class="indexterm"></a><a
-            id="idm140615466626480"
+            id="idm140198414540688"
             class="indexterm"></a><a
-            id="idm140615466625328"
+            id="idm140198414539536"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -208,7 +208,7 @@ exclude:
     /var/tmp/**
     *.bak</pre></div></div><div
             class="para">
-				上の例は、バックアップするファイルセットを指定します: バックアップ対象は <span
+				上の例は、バックアップするファイルセットを指定します。具体的に言えば、バックアップ対象は <span
               class="emphasis"><em>rivendell.falcot.com</em></span> マシン (ローカルデータをバックアップするには、単純に <code
               class="command">hostname</code> の出力するローカルマシンの名前を指定します) にあり、特にルートツリーの内容 (<code
               class="literal">tree: /</code>) から、<code
@@ -240,12 +240,12 @@ exclude:
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615466598624"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
+                    id="idm140198414512800"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
             class="para">
 				バックアップされていないデスクトップコンピュータに対しては <span
               class="emphasis"><em>Simple-CDD</em></span> でカスタマイズされた DVD-ROM からシステムを再インストールするのが簡単でしょう (<a
               class="xref"
-              href="sect.automated-installation.html#sect.simple-cdd">「Simple-CDD: 一体型の解決策」</a>参照)。インストールを最初からやり直すので、初回インストール後に行われたすべての設定は失われます。これは問題ではありません。なぜなら、アカウントに関して言えばシステムはすべて中央 LDAP ディレクトリの情報を参照しており、ほとんどのデスクトップアプリケーションに関して言えば dconf のおかげで事前設定されている (詳しい情報は<a
+              href="sect.automated-installation.html#sect.simple-cdd">「Simple-CDD、一体型の解決策」</a>参照)。インストールを最初からやり直すので、初回インストール後に行われたすべての設定は失われます。これは問題ではありません。なぜなら、アカウントに関して言えばシステムはすべて中央 LDAP ディレクトリの情報を参照しており、ほとんどのデスクトップアプリケーションに関して言えば dconf のおかげで事前設定されている (詳しい情報は<a
               class="xref"
               href="sect.graphical-desktops.html#sect.gnome-desktop">「GNOME」</a>参照) からです。
 			</div><div
@@ -264,22 +264,22 @@ exclude:
                   class="replaceable">file_from_today</em></code> で生成されます。バイナリダンプから増分差分を作成するには <code
                 class="command">xdelta</code> プログラムを使ってください。
 			</div><a
-              id="idm140615466590272"
+              id="idm140198414504448"
               class="indexterm"></a><a
-              id="idm140615466589376"
+              id="idm140198414503552"
               class="indexterm"></a><a
-              id="idm140615466588480"
+              id="idm140198414502656"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="emphasis"><em>TAR</em></span>、テープバックアップ用の標準規格</strong></p></div></div></div><a
-              id="idm140615466586304"
+              id="idm140198414500480"
               class="indexterm"></a><a
-              id="idm140615466585152"
+              id="idm140198414499328"
               class="indexterm"></a><a
-              id="idm140615466584384"
+              id="idm140198414498560"
               class="indexterm"></a><div
               class="para">
 				歴史的に言って、Unix で最も簡単にバックアップを作成する手段は <span
@@ -298,7 +298,7 @@ exclude:
             href="index.html"><strong>ホーム</strong></a></li><li
           class="next"><a
             accesskey="n"
-            href="sect.hotplug.html"><strong>次へ</strong>9.11. ホットプラグ機能: hotplug</a></li></ul><div
+            href="sect.hotplug.html"><strong>次へ</strong>9.11. ホットプラグ機能、hotplug</a></li></ul><div
         id="translated_pages"><ul><li><a
               href="../ar-MA/sect.backup.html">ar-MA</a></li><li><a
               href="../da-DK/sect.backup.html">da-DK</a></li><li><a

@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. ソースを使ったパッケージの再ビルド</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140615473074416">15.1.1. ソースの取得</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140198420482400">15.1.1. ソースの取得</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140615465246256">15.1.2. 修正を行う</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140198420885296">15.1.2. 修正を行う</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140615462808240">15.1.3. 再ビルドの開始</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140198411092288">15.1.3. 再ビルドの開始</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. 最初のパッケージのビルド</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140615464448576">15.2.1. メタパッケージか偽物のパッケージ</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140198411556624">15.2.1. メタパッケージか偽物のパッケージ</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140615464434480">15.2.2. 単純なファイルアーカイブ</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140198411542512">15.2.2. 単純なファイルアーカイブ</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. APT 用のパッケージリポジトリの作成</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. パッケージメンテナになる</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140615464304192">15.4.1. パッケージを作るための知識</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140198411411856">15.4.1. パッケージを作るための知識</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140615465822672">15.4.2. 受け入れ過程</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140198411336784">15.4.2. 受け入れ過程</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		Debian パッケージを標準的な方法で取り扱ってきた管理者が、いずれは自分自身のパッケージを作成したり、既存のパッケージを変更したりする必要性を感じるということは極めて普通のことです。この章では、パッケージ化に関する最も一般的な質問に答えること、最良のやり方で Debian インフラをうまく使うために必要な要素を提供すること、を目標にしています。運が良ければ、ローカルパッケージを取り扱った後、さらに進んで Debian プロジェクト自体に参加する必要性を感じるかもしれません。
@@ -103,19 +103,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.rebuilding-package"></a>15.1. ソースを使ったパッケージの再ビルド</h2></div></div></div><div
             class="para">
-			いくつかの一連の状況下では、バイナリパッケージの再ビルドが必要です。たとえば、管理者は特定のコンパイルオプションを付けてソフトウェアをソースからコンパイルすることで導入されるソフトウェアの機能を必要とする場合があります; また、インストールされた Debian のバージョン向けにパッケージ化されたソフトウェアのバージョンが古い場合があります。ソフトウェアのバージョンが古い場合、管理者は<span
+			いくつかの一連の状況下では、バイナリパッケージの再ビルドが必要です。たとえば、管理者は特定のコンパイルオプションを付けてソフトウェアをソースからコンパイルすることで導入されるソフトウェアの機能を必要とする場合があります。そしてまた、インストールされた Debian のバージョン向けにパッケージ化されたソフトウェアのバージョンが古い場合があります。ソフトウェアのバージョンが古い場合、管理者は<span
               class="distribution distribution">テスト版</span>や<span
               class="distribution distribution">不安定版</span>などの Debian の新しいバージョンから取得したより新しいパッケージをビルドすることが多いです。こうすることで、新しいパッケージを<span
-              class="distribution distribution">安定版</span>ディストリビューションで動かすことが可能です; この操作は「バックポート」と呼ばれています。いつも通り、バックポート作業の前に、既にバックポート作業が実行されているか否かを注意深く確認するべきです。パッケージのパッケージ追跡システムページを一読するだけでこの種の情報が明らかになります。<div
+              class="distribution distribution">安定版</span>ディストリビューションで動かすことが可能です。さらにこの操作は「バックポート」と呼ばれています。いつも通り、バックポート作業の前に、既にバックポート作業が実行されているか否かを注意深く確認するべきです。パッケージのパッケージ追跡システムページを一読するだけでこの種の情報が明らかになります。<div
               class="url">→ <a
                 href="http://packages.qa.debian.org/">http://packages.qa.debian.org/</a></div><a
-              id="idm140615469822976"
+              id="idm140198420464336"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140615473074416"></a>15.1.1. ソースの取得</h3></div></div></div><div
+                      id="idm140198420482400"></a>15.1.1. ソースの取得</h3></div></div></div><div
               class="para">
 				Debian パッケージの再ビルドはパッケージのソースコードを取得することから始まります。最も簡単な方法は <code
                 class="command">apt-get source <em
@@ -151,10 +151,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140615465246256"></a>15.1.2. 修正を行う</h3></div></div></div><div
+                      id="idm140198420885296"></a>15.1.2. 修正を行う</h3></div></div></div><div
               class="para">
 				これでパッケージのソースがソースパッケージとバージョンを基に名付けられたディレクトリの中で利用できるようになりました (たとえば、<span
-                class="emphasis"><em>samba-3.6.16</em></span> など); このディレクトリ内でわれわれは修正作業を行います。
+                class="emphasis"><em>samba-3.6.16</em></span> など)。そしてこのディレクトリ内でわれわれは修正作業を行います。
 			</div><div
               class="para">
 				最初にパッケージのバージョン番号を変更します。こうすることで、再ビルドされたパッケージを Debian の提供する元パッケージと区別することが可能です。現在のバージョンが <code
@@ -191,7 +191,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
               class="para">
 				もしあなたが、指定されているビルド依存関係が厳しすぎることが間違いないと分かっている場合、手元で自由に依存関係を緩和することが可能です。対象のソフトウェアをビルドする標準的な方法について説明している <code
-                class="filename">INSTALL</code> ファイルを読むことは適切な依存関係を明らかにする助けになります。理想的に言えば、再ビルドに使うディストリビューションの要素を使って、すべての依存関係を満足するべきです; それが無理ならば、対象のパッケージをバックポートする前に、再帰的に <code
+                class="filename">INSTALL</code> ファイルを読むことは適切な依存関係を明らかにする助けになります。理想的に言えば、再ビルドに使うディストリビューションの要素を使って、すべての依存関係を満足するべきです。しかしそれが無理ならば、対象のパッケージをバックポートする前に、再帰的に <code
                 class="literal">Build-Depends</code> フィールドで言及されているパッケージを必ずバックポートしなければいけません。一部のパッケージはバックポートの必要がなく、ビルド作業中に現状のままインストールできます (特筆すべき例は <span
                 class="pkg pkg">debhelper</span> です)。バックポート作業は気を付けないとすぐに複雑になる点に注意してください。それゆえ、バックポートは可能な限り厳密に必要最低限に留めるべきです。
 			</div><div
@@ -202,7 +202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="literal">Build-Depends</code> のインストール</strong></p></div></div></div><div
                 class="para">
 				<a
-                  id="idm140615465953040"
+                  id="idm140198411096432"
                   class="indexterm"></a><code
                   class="command">apt-get</code> を使うことで、あるソースパッケージの <code
                   class="literal">Build-Depends</code> フィールドに指定されているすべてのパッケージをインストールすることが可能です。ここで、<code
@@ -214,14 +214,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140615462808240"></a>15.1.3. 再ビルドの開始</h3></div></div></div><div
+                      id="idm140198411092288"></a>15.1.3. 再ビルドの開始</h3></div></div></div><div
               class="para">
 				ソースに対するすべての必要な変更が完了したら、実際のバイナリパッケージ (<code
                 class="filename">.deb</code> ファイル) を生成します。すべてのプロセスは <code
                 class="command">dpkg-buildpackage</code> コマンドで管理されます。
 			</div><div
               class="example"><a
-                id="idm140615462805968"></a><p
+                id="idm140198411090016"></a><p
                 class="title"><strong>例15.1 パッケージの再ビルド</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -236,8 +236,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="emphasis"><em>TOOL</em></span> <code
                           class="command">fakeroot</code></strong></p></div></div></div><div
                 class="para">
-				基本的に、パッケージ作成作業とは存在する (ビルドされた) ファイル群を 1 つのアーカイブにまとめるという単純な作業に過ぎません; ほとんどのファイルは最終的にアーカイブ中で <span
-                  class="emphasis"><em>root</em></span> によって所有されることになります。しかしながら、パッケージ全体を root で作ると暗黙のうちにリスクが増加します; 幸いなことに、<code
+				基本的に、パッケージ作成作業とは存在する (ビルドされた) ファイル群を 1 つのアーカイブにまとめるという単純な作業に過ぎません。さらにほとんどのファイルは最終的にアーカイブ中で <span
+                  class="emphasis"><em>root</em></span> によって所有されることになります。しかしながら、パッケージ全体を root で作ると暗黙のうちにリスクが増加します。しかし幸いなことに、<code
                   class="command">fakeroot</code> コマンドを使うことでこれを避けることが可能です。<code
                   class="command">fakeroot</code> はプログラムを実行したり、<span
                   class="emphasis"><em>root</em></span> として実行し任意の所有者とパーミッションを持つファイルを作成するするという印象を与えるために使うことが可能です。<code
@@ -257,11 +257,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">Build-Depends</code> フィールドが更新されていなかったり、関連するパッケージがインストールされていなかった場合、<code
                 class="command">dpkg-buildpackage</code> コマンドは失敗します。そのような場合、<code
                 class="command">dpkg-buildpackage</code> に <code
-                class="literal">-d</code> オプションを指定して、依存関係確認を行わないようにすることも可能です。しかしながら、依存関係を明示的に無視すると、後々の段階でビルド作業が失敗する恐れがあります。さらに悪いことに、パッケージが正常にビルドされたように見えても、正しく動かない可能性があります: 一部のプログラムは、必要なライブラリがビルド時に利用できない場合、一部の機能を自動的に無効化します。
+                class="literal">-d</code> オプションを指定して、依存関係確認を行わないようにすることも可能です。しかしながら、依存関係を明示的に無視すると、後々の段階でビルド作業が失敗する恐れがあります。さらに悪いことに、パッケージが正常にビルドされたように見えても、正しく動かない可能性があります。なぜなら一部のプログラムは、必要なライブラリがビルド時に利用できない場合、一部の機能を自動的に無効化するからです。
 			</div><div
               class="para">
 				しばしば、Debian 開発者は <code
-                class="command">debuild</code> などの高レベルプログラムを使います; <code
+                class="command">debuild</code> などの高レベルプログラムを使います。<code
                 class="command">debuild</code> は通常通り <code
                 class="command">dpkg-buildpackage</code> を実行しますが、加えて生成されたパッケージの Debian ポリシーに対する妥当性を確認するプログラムを実行します。このスクリプトは、手元の環境変数がパッケージビルドを「汚染」しないように、ビルド環境を整えます。<code
                 class="command">debuild</code> コマンドは <span
@@ -272,7 +272,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>QUICK LOOK</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140615465372528"
+                id="idm140198411996976"
                 class="indexterm"></a><div
                 class="para">
 				<code
@@ -287,7 +287,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				<code
                   class="command">pbuilder</code> ツールを使うことで、ビルド作業をユーザの操作によって変更されない環境の中で行うことが可能になります。さらに、<code
                   class="command">pbuilder</code> ツールを使うことで、満足されていないビルド依存関係を素早く検出することが可能になります (なぜなら、適切な依存関係が指定されていなければビルドは失敗するからです)。最後に、<code
-                  class="command">pbuilder</code> ツールを使うことで、システム用に使われている Debian バージョン以外の Debian バージョン向けのパッケージをビルドすることが可能になります: マシンは通常の作業用に<span
+                  class="command">pbuilder</code> ツールを使うことで、システム用に使われている Debian バージョン以外の Debian バージョン向けのパッケージをビルドすることが可能になります。つまり、マシンは通常の作業用に<span
                   class="distribution distribution">安定版</span>を使うことが可能です。そして、同じマシン上で動作する <code
                   class="command">pbuilder</code> はパッケージビルド専用に<span
                   class="distribution distribution">不安定版</span>を使うことが可能です。

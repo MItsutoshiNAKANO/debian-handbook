@@ -25,7 +25,7 @@
         title="Debian 管理者ハンドブック" /><link
         rel="up"
         href="apt.html"
-        title="第6章 保守と更新: APT ツール" /><link
+        title="第6章 保守と更新、APT ツール" /><link
         rel="prev"
         href="sect.automatic-upgrades.html"
         title="6.8. 自動アップグレード" /><link
@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.searching-packages"></a>6.9. パッケージの検索</h2></div></div></div><div
           class="para">
-			Debian に含まれるソフトウェアの数は多くさらに増加し続けていることが原因でパラドックスが生じます: Debian には通常ほとんどの作業に適したツールが用意されていますが、無数のパッケージからその作業に適したツールを見つけることがとても難しくなります。適切なツールを検索する (発見する) ための良い方法がない点は長い間問題とされていました。幸いなことに、この問題はほぼ解決されています。
+			Debian に含まれるソフトウェアの数は多くさらに増加し続けていることが原因でパラドックスが生じます。すなわち Debian には通常ほとんどの作業に適したツールが用意されているにもかかわらず、無数のパッケージからその作業に適したツールを見つけることがとても難しくなります。適切なツールを検索する (発見する) ための良い方法がない点は長い間問題とされていました。幸いなことに、この問題はほぼ解決されています。
 		</div><div
           class="para">
 			最も普通な検索方法の候補は正確なパッケージ名を調べることです。<code
@@ -81,16 +81,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><strong><span
                       class="emphasis"><em>TIP</em></span> パッケージ命名規則</strong></p></div></div></div><div
             class="para">
-			いくつかのカテゴリに含まれるパッケージは従来続けられている命名規則に基づいて命名されます; この規則を知っておけば、正確なパッケージ名を推測できる場合があります。たとえば、Perl モジュールに関して、規約では <code
+			いくつかのカテゴリに含まれるパッケージは従来続けられている命名規則に基づいて命名されます。従って、この規則を知っておけば、正確なパッケージ名を推測できる場合があります。たとえば、Perl モジュールに関して、規約では <code
               class="literal">XML::Handler::Composer</code> と呼ばれるモジュールは <span
               class="pkg pkg">libxml-handler-composer-perl</span> のようにパッケージ化されるべきであると定められています。Python から <code
               class="command">gconf</code> システムを扱うためのライブラリは <span
               class="pkg pkg">python-gconf</span> としてパッケージ化されています。不幸なことに、たとえパッケージメンテナが通常は上流開発者の選択に従おうとするとしても、すべてのパッケージに対する完全に一般的な命名規則を定義することは不可能です。
 		</div></div><div
           class="para">
-			もう少しうまい検索パターンはパッケージ名の中をプレーンテキスト検索することですが、この方法も大きな制約を受けます。通常、パッケージ説明を検索すれば結果が見つかるでしょう: なぜなら、大体のパッケージはパッケージ名だけでなく詳しい説明文を備えているからです。パッケージ説明のキーワード検索はしばしば役に立ちます。<code
+			もう少しうまい検索パターンはパッケージ名の中をプレーンテキスト検索することですが、この方法も大きな制約を受けます。通常、パッケージ説明を検索すれば結果が見つかるでしょう。なぜなら、大体のパッケージはパッケージ名だけでなく詳しい説明文を備えているからです。パッケージ説明のキーワード検索はしばしば役に立ちます。<code
             class="command">apt-cache</code> と <code
-            class="command">axi-cache</code> はパッケージ説明のキーワード検索を行う際に選ぶツールです; たとえば、<code
+            class="command">axi-cache</code> はパッケージ説明のキーワード検索を行う際に選ぶツールです。従って、たとえば <code
             class="command">apt-cache search video</code> は「video」というキーワードがパッケージ説明に含まれるすべてのパッケージのリストを返します。
 		</div><div
           class="para">
@@ -153,15 +153,15 @@ $ <strong
             class="pkg pkg">kino</span> の場合、パッケージのタグによれば、Kino は Gnome ベースのソフトウェアで、動画データの処理に有用であり、主用途は編集であることがわかります。
 		</div><div
           class="para">
-			この分類は既知の必要性に関連するパッケージを検索するのに便利です; たとえ大量の (少しの) パッケージがヒットした場合でも、残りの検索は手作業でできます。これを行うには <code
+			この分類は既知の必要性に関連するパッケージを検索するのに便利です。さらにたとえ大量の (少しの) パッケージがヒットした場合でも、残りの検索は手作業でできます。これを行うには <code
             class="command">aptitude</code> で <code
-            class="literal">~G</code> 検索パターンを使いますが、タグを管理しているサイトを見て回るほうがおそらく簡単です: <div
+            class="literal">~G</code> 検索パターンを使いますが、タグを管理しているサイトを見て回るほうがおそらく簡単です。<div
             class="url">→ <a
               href="http://debtags.alioth.debian.org/cloud/">http://debtags.alioth.debian.org/cloud/</a></div>
 		</div><a
-          id="idm140615485346864"
+          id="idm140198432544864"
           class="indexterm"></a><a
-          id="idm140615485345440"
+          id="idm140198432543440"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -171,19 +171,19 @@ $ <strong
             class="pkg pkg">pitivi</span> 動画編集ソフトウェアを含む、一握りのパッケージがヒットします。分類分けのシステムは時間がたてばたつほど使われる運命にあり、パッケージマネージャはこれに基づく効率的な検索インターフェースを少しずつ提供するでしょう。
 		</div><div
           class="para">
-			要約すると、検索したい内容の複雑さに依存して、最良の検索ツールも変わりうるということです:
+			要約すると、検索したい内容の複雑さに依存して、最良の検索ツールも変わりうるということです。
 		</div><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
               class="listitem"><div
                 class="para">
 					パッケージ名とパッケージ説明だけを検索し、数個のキーワードにマッチする特定のパッケージを探す場合、<code
-                  class="command">apt-cache</code> がとても便利です;
+                  class="command">apt-cache</code> がとても便利です。
 				</div></li><li
               class="listitem"><div
                 class="para">
 					検索条件にパッケージ間の関連性やたとえばメンテナの名前などのメタ情報を含めたい場合には、<code
-                  class="command">synaptic</code> が便利でしょう;
+                  class="command">synaptic</code> が便利でしょう。
 				</div></li><li
               class="listitem"><div
                 class="para">
@@ -191,14 +191,14 @@ $ <strong
                   class="command">packagesearch</code> は良いツールです。これは複数の条件 (パッケージに含まれるファイルの名前も含みます) に基づいて利用できるパッケージを検索する専用のグラフィカルインターフェースです。コマンドラインで使う場合は、<code
                   class="command">axi-cache</code> がぴったりでしょう。
 				</div><a
-                id="idm140615485335184"
+                id="idm140198432533184"
                 class="indexterm"></a><a
-                id="idm140615485333760"
+                id="idm140198432531760"
                 class="indexterm"></a></li><li
               class="listitem"><div
                 class="para">
 					最後に、論理演算を組み合わせた複雑な表現で検索したい場合、<code
-                  class="command">aptitude</code> の検索パターン構文を使うことになるでしょう。これはいささか分かりにくいですが非常に協力です; これはコマンドラインと対話型モードの両方で使えます。
+                  class="command">aptitude</code> の検索パターン構文を使うことになるでしょう。これはいささか分かりにくいですが非常に強力です。さらに、これはコマンドラインと対話型モードの両方で使えます。
 				</div></li></ul></div></div><ul
         class="docnav"><li
           class="previous"><a

@@ -31,7 +31,7 @@
         title="10.7. DHCP" /><link
         rel="next"
         href="network-services.html"
-        title="第11章 ネットワークサービス: Postfix、Apache、NFS、Samba、Squid、LDAP" /><link
+        title="第11章 ネットワークサービス、Postfix、Apache、NFS、Samba、Squid、LDAP" /><link
         rel="canonical"
         href="http://l.github.io/debian-handbook/html/ja-JP/sect.network-diagnosis-tools.html" /></head><body
       class="draft "><noscript><iframe
@@ -69,54 +69,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.network-diagnosis-tools"></a>10.8. ネットワーク診断ツール</h2></div></div></div><div
           class="para">
-			ネットワークアプリケーションが思った通りに動かない場合、中身を確かめることが重要です。すべてが問題なく動いているように見える場合でも、ネットワーク診断を実行すればすべてがあるべき姿で動いていることを確かめる手助けになります。この目的で複数の診断ツールが存在します; 各ツールは異なるレベルを診断します。
+			ネットワークアプリケーションが思った通りに動かない場合、中身を確かめることが重要です。すべてが問題なく動いているように見える場合でも、ネットワーク診断を実行すればすべてがあるべき姿で動いていることを確かめる手助けになります。この目的で複数の診断ツールが存在します。そして、各ツールは異なるレベルを診断します。
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.netstat"></a>10.8.1. ローカルの診断: <code
+                    id="sect.netstat"></a>10.8.1. ローカルの診断、<code
                     class="command">netstat</code></h3></div></div></div><a
-            id="idm140615467238336"
+            id="idm140198433240192"
             class="indexterm"></a><div
             class="para">
 				最初に (<span
               class="pkg pkg">net-tools</span> パッケージに含まれる) <code
-              class="command">netstat</code> コマンドを紹介します; これはマシンのその瞬間のネットワーク活動に関する要約を表示します。何も引数を渡さずに実行した場合、このコマンドは開けられた接続をリストします;このリストはとても長くなる場合があります。なぜなら、このリストには多くの Unix ドメインソケット (デーモンによって広く使われている) が含まれるからです。Unix ドメインソケットはネットワークに関与しません (たとえば、<code
+              class="command">netstat</code> コマンドを紹介しましょう。<code
+              class="command">netstat</code> コマンドはマシンのその瞬間のネットワーク活動に関する要約を表示します。何も引数を渡さずに実行した場合、このコマンドは開けられた接続をリストします;このリストはとても長くなる場合があります。なぜなら、このリストには多くの Unix ドメインソケット (デーモンによって広く使われている) が含まれるからです。Unix ドメインソケットはネットワークに関与しません (たとえば、<code
               class="literal">dbus</code> 通信、<code
               class="literal">X11</code> トラフィック、仮想ファイルシステムとデスクトップ間の通信などです)。
 			</div><div
             class="para">
 				<code
-              class="command">netstat</code> を実行する際には一般的に標準の挙動を変更するオプションを使います。最も頻繁に使われるオプションを以下に挙げます:
+              class="command">netstat</code> を実行する際には一般的に標準の挙動を変更するオプションを使います。最も頻繁に使われるオプションを以下に挙げます。
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">-t</code>、TCP 接続のみを表示します;
+                    class="literal">-t</code>。このオプションを使うことで、TCP 接続だけが表示されます。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">-u</code>、UDP 接続のみを表示します; これらのオプションは同時に使えます、Unix ドメインソケットの表示を抑制するにはどちらか一方を使うだけで十分です;
+                    class="literal">-u</code>。このオプションを使うことで、UDP 接続だけが表示されます。<code
+                    class="literal">-t</code> と <code
+                    class="literal">-u</code> オプションは同時に使えます、Unix ドメインソケットの表示を抑制するにはどちらか一方を使うだけで十分です。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">-a</code>、リッスンしている (入って来る接続を待っている) ソケットも表示します;
+                    class="literal">-a</code>。このオプションを使うことで、リッスンしている (入って来る接続を待っている) ソケットも表示されます。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">-n</code>、結果を数値的に表示します: IP アドレス (DNS で名前解決しない)、ポート番号 (<code
-                    class="filename">/etc/services</code> の定義する別名を使わない)、ユーザ id (ログイン名なし) を使います;
+                    class="literal">-n</code>。このオプションを使うことで、結果が数値的に表示されます。すなわち、IP アドレス (DNS で名前解決しない)、ポート番号 (<code
+                    class="filename">/etc/services</code> の定義する別名を使わない)、ユーザ id (ログイン名なし) を使って表示されます。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">-p</code>、関係付けられたプロセスを表示します; <code
-                    class="command">netstat</code> を root 権限で実行した場合にのみ、このオプションは便利です。なぜなら、普通のユーザは自分のプロセス以外を見ることができないからです;
+                    class="literal">-p</code>。このオプションを使うことで、関係付けられたプロセスが表示されます。したがって、<code
+                    class="command">netstat</code> を root 権限で実行した場合にのみ、このオプションは便利です。なぜなら、普通のユーザは自分のプロセス以外を見ることができないからです。
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -126,8 +129,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				<span
               class="citerefentry"><span
-                class="refentrytitle">netstat</span>(8)</span> マニュアルページに書かれている他のオプションを使えば、表示される結果をさらに細かく制御することが可能です。具体的にいえば、上に挙げたオプションの内最初の 5 種類を組み合わせて使うことが多いため、結果としてシステムとネットワークの管理者は事実上 <code
-              class="command">netstat -tupan</code> を習得します。負荷の高くないマシンでは、以下の様な典型的な結果を返します:
+                class="refentrytitle">netstat</span>(8)</span> マニュアルページに書かれている他のオプションを使えば、表示される結果をさらに細かく制御することが可能です。具体的に言えば、上に挙げたオプションの内最初の 5 種類を組み合わせて使うことが多いため、結果としてシステムとネットワークの管理者は事実上 <code
+              class="command">netstat -tupan</code> を習得します。負荷の高くないマシンでは、以下の様な典型的な結果を返します。
 			</div><pre
             class="screen scale">
 <code
@@ -175,9 +178,9 @@ udp6       0      0 :::5353                 :::*                                
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.nmap"></a>10.8.2. リモートの診断: <code
+                    id="sect.nmap"></a>10.8.2. リモートの診断、<code
                     class="command">nmap</code></h3></div></div></div><a
-            id="idm140615467211536"
+            id="idm140198433211824"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -185,7 +188,7 @@ udp6       0      0 :::5353                 :::*                                
               class="command">netstat</code> に相当します。これは 1 台または数台のリモートサーバに対して「well-known」ポート群をスキャンし、入ってきた接続に応答したアプリケーションの見つかったポートをリストします。さらに、<code
               class="command">nmap</code> は一部のアプリケーションを識別することが可能です。場合によってはアプリケーションのバージョン番号さえも識別することが可能です。<code
               class="command">nmap</code> に対する問題点として、<code
-              class="command">nmap</code> はリモートから実行されるため、プロセスやユーザの情報を提供することができないという点が挙げられます; しかしながら、<code
+              class="command">nmap</code> はリモートから実行されるため、プロセスやユーザの情報を提供することができないという点が挙げられます。しかしながら、<code
               class="command">nmap</code> は複数のターゲットに一気に実行できます。
 			</div><div
             class="para">
@@ -247,7 +250,7 @@ OS and Service detection performed. Please report any incorrect results at http:
 Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
 </code></pre><div
             class="para">
-				予想通り、SSH と Exim4 アプリケーションが表示されます。すべてのアプリケーションがすべての IP アドレスをリッスンしているわけではない点に注意してください; Exim4 は <code
+				予想通り、SSH と Exim4 アプリケーションが表示されます。すべてのアプリケーションがすべての IP アドレスをリッスンしているわけではない点に注意してください。すなわち、Exim4 は <code
               class="literal">lo</code> ループバックインターフェースからのみアクセスできますから、<code
               class="literal">localhost</code> の解析にのみ表示され、<code
               class="literal">mirtuel</code> (これは同じマシンの <code
@@ -256,14 +259,14 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.sniffers"></a>10.8.3. スニファ: <code
+                    id="sect.sniffers"></a>10.8.3. スニファ、<code
                     class="command">tcpdump</code> と <code
                     class="command">wireshark</code></h3></div></div></div><div
             class="para">
 				しばしば実際にワイヤを行き来する情報をパケットごとに見る必要がある場合があります。この際に使われるツールは「フレームアナライザ」と呼ばれ、<span
               class="emphasis"><em>スニファ</em></span> としても広く知られています。これらのツールはあるネットワークに到達したすべてのパケットを観察し、ユーザにわかりやすい方法でパケットを表示します。
 			</div><a
-            id="idm140615466236160"
+            id="idm140198414203136"
             class="indexterm"></a><div
             class="para">
 				この分野における由緒あるツールが <code
@@ -271,7 +274,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
               class="command">tcpdump</code> を使うと、多くの種類のネットワークトラフィックをキャプチャできますが、トラフィックの表現は比較的分かりにくいです。このため <code
               class="command">tcpdump</code> について詳しく説明しません。
 			</div><a
-            id="idm140615466233408"
+            id="idm140198414200384"
             class="indexterm"></a><div
             class="para">
 				より最近の (そしてより現代的な) ツールである <code
@@ -296,9 +299,9 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TIP</em></span> グラフィカルインターフェースを持たない <code
-                        class="command">wireshark</code>: <code
+                        class="command">wireshark</code>、<code
                         class="command">tshark</code></strong></p></div></div></div><a
-              id="idm140615466223856"
+              id="idm140198414190832"
               class="indexterm"></a><div
               class="para">
 				グラフィカルインターフェースを実行できない場合や何らかの理由で実行したくない場合に備えて、<code
@@ -314,16 +317,16 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
                         class="emphasis"><em>CULTURE</em></span> <code
                         class="command">ethereal</code> と <code
                         class="command">wireshark</code></strong></p></div></div></div><a
-              id="idm140615466217856"
+              id="idm140198414184832"
               class="indexterm"></a><a
-              id="idm140615466216960"
+              id="idm140198414183936"
               class="indexterm"></a><div
               class="para">
 				<code
-                class="command">wireshark</code> は比較的若いように見えます; しかしながら、<code
+                class="command">wireshark</code> は比較的若いように見えます。しかしながら、<code
                 class="command">wireshark</code> は <code
                 class="command">ethereal</code> として知られていたソフトウェアの新しい名前に過ぎません。<code
-                class="command">ethereal</code> の主開発者は雇用されていた会社を離れた時、登録済みの商標の移動を手配できませんでした。代案として、彼は名前を変えました; 実際のところ、<code
+                class="command">ethereal</code> の主開発者は雇用されていた会社を離れた時、登録済みの商標の移動を手配できませんでした。代案として、彼は名前を変えました。したがって実際のところ、<code
                 class="command">wireshark</code> は <code
                 class="command">ethereal</code> の名前とアイコンだけを変えたものに過ぎません。
 			</div></div></div></div><ul
@@ -339,7 +342,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
             href="index.html"><strong>ホーム</strong></a></li><li
           class="next"><a
             accesskey="n"
-            href="network-services.html"><strong>次へ</strong>第11章 ネットワークサービス: Postfix、Apache、NFS、Samba、Squid、L...</a></li></ul><div
+            href="network-services.html"><strong>次へ</strong>第11章 ネットワークサービス、Postfix、Apache、NFS、Samba、Squid、LD...</a></li></ul><div
         id="translated_pages"><ul><li><a
               href="../ar-MA/sect.network-diagnosis-tools.html">ar-MA</a></li><li><a
               href="../da-DK/sect.network-diagnosis-tools.html">da-DK</a></li><li><a

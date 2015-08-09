@@ -25,7 +25,7 @@
         title="Debian 管理者ハンドブック" /><link
         rel="up"
         href="network-services.html"
-        title="第11章 ネットワークサービス: Postfix、Apache、NFS、Samba、Squid、LDAP" /><link
+        title="第11章 ネットワークサービス、Postfix、Apache、NFS、Samba、Squid、LDAP" /><link
         rel="prev"
         href="sect.windows-file-server-with-samba.html"
         title="11.5. Samba を使った Windows 共有のセットアップ" /><link
@@ -69,31 +69,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.http-ftp-proxy"></a>11.6. HTTP/FTP プロキシ</h2></div></div></div><div
           class="para">
-			HTTP/FTP プロキシは HTTP または FTP 接続の仲介者として機能します。HTTP/FTP プロキシの役割は 2 種類あります:
+			HTTP/FTP プロキシは HTTP または FTP 接続の仲介者として機能します。HTTP/FTP プロキシの役割は 2 種類あります。
 		</div><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
               class="listitem"><div
                 class="para">
-					キャッシュ: 最近ダウンロードされた文書をローカルにコピーします。これはダウンロード重複して行うことを避ける役割を果たします。
+					キャッシュ。これは最近ダウンロードされた文書をローカルにコピーします。これはダウンロード重複して行うことを避ける役割を果たします。
 				</div></li><li
               class="listitem"><div
                 class="para">
-					サーバのフィルタリング: プロキシの利用が強制されている場合 (そしてプロキシを介さない外部への接続がブロックされる場合)、プロキシは接続要求を許可するか否かを決定することが可能です。
+					サーバのフィルタリング。これはプロキシの利用が強制されている場合 (そしてプロキシを介さない外部への接続がブロックされる場合)、プロキシは接続要求を許可するか否かを決定することが可能です。
 				</div></li></ul></div><a
-          id="idm140615465089904"
+          id="idm140198413072320"
           class="indexterm"></a><a
-          id="idm140615465089136"
+          id="idm140198413071552"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp はプロキシサーバとして Squid を選びました。
 		</div><a
-          id="idm140615465087888"
+          id="idm140198413070304"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615465087120"></a>11.6.1. インストール</h3></div></div></div><div
+                    id="idm140198413069536"></a>11.6.1. インストール</h3></div></div></div><div
             class="para">
 				<span
               class="pkg pkg">squid3</span> Debian パッケージには、モジュール式 (キャッシュ) プロキシだけが含まれます。Squid をフィルタリングサーバとして使うには、追加で <span
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615465081552"></a>11.6.2. キャッシュの設定</h3></div></div></div><div
+                    id="idm140198413063968"></a>11.6.2. キャッシュの設定</h3></div></div></div><div
             class="para">
 				キャッシュサーバを有効化するには、<code
-              class="filename">/etc/squid3/squid.conf</code> 設定ファイルを編集し、ローカルネットワークからのマシンがプロキシを介して問い合わせを実行することを許可するだけで簡単に可能です。以下の例は Falcot Corp 管理者の行った変更を表わしています:
+              class="filename">/etc/squid3/squid.conf</code> 設定ファイルを編集し、ローカルネットワークからのマシンがプロキシを介して問い合わせを実行することを許可するだけで簡単に可能です。以下の例は Falcot Corp 管理者の行った変更を表わしています。
 			</div><div
             class="example"><a
-              id="idm140615465079776"></a><p
+              id="idm140198413062192"></a><p
               class="title"><strong>例11.30 <code
                   class="filename">/etc/squid3/squid.conf</code> ファイル (抜粋)</strong></p><div
               class="example-contents"><pre
@@ -133,16 +133,16 @@ http_access deny all</pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140615465077840"></a>11.6.3. フィルタの設定</h3></div></div></div><div
+                    id="idm140198413060256"></a>11.6.3. フィルタの設定</h3></div></div></div><div
             class="para">
 				<code
-              class="command">squid</code> 自身はフィルタリングを実行しません; フィルタリング作業は <code
+              class="command">squid</code> 自身はフィルタリングを実行しません。このためフィルタリング作業は <code
               class="command">squidGuard</code> に委任されています。<code
               class="command">squid</code> を設定して <code
               class="command">squidGuard</code> と協力するようにしなければいけません。これを行うには、以下の指示文を <code
-              class="filename">/etc/squid/squid.conf</code> ファイルに追加します:
+              class="filename">/etc/squid/squid.conf</code> ファイルに追加します。
 			</div><a
-            id="idm140615465074672"
+            id="idm140198413057072"
             class="indexterm"></a><pre
             class="programlisting">
 redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf</pre><div
@@ -165,19 +165,19 @@ redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf</pre><div
             class="para">
 				<code
               class="command">squidGuard</code> 設定ファイル (またはその中で言及しているドメインまたは URL のリストの 1 つ) を変更したら、毎回 <code
-              class="command">update-squidguard</code> を使って作業データベースを再生成しなければいけません。設定ファイルの構文は以下のウェブサイトで説明されています: <div
+              class="command">update-squidguard</code> を使って作業データベースを再生成しなければいけません。設定ファイルの構文は以下のウェブサイトで説明されています。<div
               class="url">→ <a
                 href="http://www.squidguard.org/Doc/configure.html">http://www.squidguard.org/Doc/configure.html</a></div>
 			</div><a
-            id="idm140615465065616"
+            id="idm140198413048016"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> DansGuardian</strong></p></div></div></div><a
-              id="idm140615465063824"
+              id="idm140198413046224"
               class="indexterm"></a><a
-              id="idm140615465062688"
+              id="idm140198413045088"
               class="indexterm"></a><div
               class="para">
 				<span

@@ -68,21 +68,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.setup-apt-package-repository"></a>15.3. APT 用のパッケージリポジトリの作成</h2></div></div></div><a
-          id="idm140615464359344"
+          id="idm140198411467088"
           class="indexterm"></a><a
-          id="idm140615464358416"
+          id="idm140198411466160"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp の保守する Debian パッケージの数は次第に増えました。この中には、既存のパッケージから手元で修正したパッケージや、内部データとプログラムを配布するために最初から作成したパッケージなどがあります。
 		</div><div
           class="para">
 			パッケージの配備を簡単にするために、管理者はこれらのパッケージを APT から直接使うことが可能なパッケージアーカイブに統合したいと思っています。明らかなメンテナンス上の理由により、管理者は内部パッケージと手元で再ビルドしたパッケージを別にしたいと思っています。目標は <code
-            class="filename">/etc/apt/sources.list</code> ファイル内のエントリを以下のようにすることです:
+            class="filename">/etc/apt/sources.list</code> ファイル内のエントリを以下のようにすることです。
 		</div><pre
           class="programlisting">
 deb http://packages.falcot.com/ updates/
 deb http://packages.falcot.com/ internal/</pre><a
-          id="idm140615464353968"
+          id="idm140198411461712"
           class="indexterm"></a><div
           class="para">
 			このため、管理者は内部 HTTP サーバ上に仮想ホストを設定して、APT リポジトリのルートとして <code
@@ -90,7 +90,7 @@ deb http://packages.falcot.com/ internal/</pre><a
             class="command">mini-dinstall</code> コマンド (よく似た名前のパッケージに含まれます) に委託されます。<code
             class="command">mini-dinstall</code> ツールは <code
             class="filename">incoming/</code> ディレクトリ (今回の場合、<code
-            class="filename">/srv/vhosts/packages/mini-dinstall/incoming/</code>) を監視して、新しいパッケージがこのディレクトリにアップロードされることを待ちます; パッケージがアップロードされたら、<code
+            class="filename">/srv/vhosts/packages/mini-dinstall/incoming/</code>) を監視して、新しいパッケージがこのディレクトリにアップロードされることを待ちます。そしてパッケージがアップロードされたら、<code
             class="filename">/srv/vhosts/packages/</code> の Debian アーカイブにインストールされます。<code
             class="command">mini-dinstall</code> コマンドは Debian パッケージが生成された時に作成される <code
             class="filename">*.changes</code> ファイルを読みます。<code
@@ -115,7 +115,7 @@ deb http://packages.falcot.com/ internal/</pre><a
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">apt-ftparchive</code></strong></p></div></div></div><a
-            id="idm140615464339696"
+            id="idm140198411447424"
             class="indexterm"></a><div
             class="para">
 			必要な Debian アーカイブが <code
@@ -125,7 +125,7 @@ deb http://packages.falcot.com/ internal/</pre><a
               class="filename">Packages</code> ファイルを (標準出力に) 表示します。Falcot Corp の場合、管理者はパッケージを直接 <code
               class="filename">/srv/vhosts/packages/updates/</code> や <code
               class="filename">/srv/vhosts/packages/internal/</code> にアップロードすることが可能です。その後以下のコマンドを実行して <code
-              class="filename">Packages.gz</code> ファイルを作成します:
+              class="filename">Packages.gz</code> ファイルを作成します。
 		</div><pre
             class="screen">
 <code
@@ -151,7 +151,7 @@ deb http://packages.falcot.com/ internal/</pre><a
           class="para">
 			<code
             class="command">mini-dinstall</code> を設定するには、<code
-            class="filename">~/.mini-dinstall.conf</code> ファイルのセットアップが必要です; Falcot Corp の場合、内容は以下の通りです。
+            class="filename">~/.mini-dinstall.conf</code> ファイルのセットアップが必要です。そして Falcot Corp の場合、内容は以下の通りです。
 		</div><pre
           class="programlisting">
 [DEFAULT]
@@ -189,7 +189,7 @@ release_label = Internal Packages</pre><div
               class="command">mini-dinstall</code> を使って再度パッケージの出自を再確認する必要もなくなります。このため、パラメータ <code
               class="literal">verify_sigs = 0</code> が設定されています (これは <code
               class="command">mini-dinstall</code> が署名を確認する必要がないことを意味します)。しかしながら、パッケージの内容が機密に関わるものであれば、この設定を逆にして、パッケージ作成担当者の公開鍵を含む鍵束 (<code
-              class="literal">extra_keyrings</code> パラメータを使って設定されます) を使ってパッケージの出自を確認するように設定することが可能です; このように設定した場合、<code
+              class="literal">extra_keyrings</code> パラメータを使って設定されます) を使ってパッケージの出自を確認するように設定することが可能です。そしてこのように設定した場合、<code
               class="command">mini-dinstall</code> は <code
               class="filename">*.changes</code> ファイルに統合された署名を解析することによってアップロードされた各パッケージの出自を確認します。
 		</div></div><div
@@ -197,7 +197,7 @@ release_label = Internal Packages</pre><div
 			<code
             class="command">mini-dinstall</code> を実行すると、バックグラウンドでデーモンが開始されます。<code
             class="command">mini-dinstall</code> デーモンが実行されている限り、デーモンは 30 分ごとに <code
-            class="filename">incoming/</code> ディレクトリにアップロードされた新しいパッケージを確認します; 新しいパッケージがアップロードされると、パッケージはアーカイブに移動され、適切な <code
+            class="filename">incoming/</code> ディレクトリにアップロードされた新しいパッケージを確認します。そして新しいパッケージがアップロードされると、パッケージはアーカイブに移動され、適切な <code
             class="filename">Packages.gz</code> と <code
             class="filename">Sources.gz</code> ファイルが再生成されます。デーモンの実行に問題がある場合、<code
             class="filename">incoming/</code> ディレクトリにパッケージをアップロードしたら毎回、手作業で <code
@@ -223,7 +223,7 @@ release_label = Internal Packages</pre><div
               class="literal">release_signscript</code> 設定オプションが含まれます。<span
               class="pkg pkg">mini-dinstall</span> パッケージによって提供された <code
               class="filename">/usr/share/doc/mini-dinstall/examples/</code> 内に含まれる <code
-              class="filename">sign-release.sh</code> スクリプトが良い足掛かりとなるでしょう; 手元で修正が必要かもしれません。
+              class="filename">sign-release.sh</code> スクリプトが良い足掛かりとなるでしょう。さらに手元で修正が必要になるかもしれません。
 		</div></div></div><ul
         class="docnav"><li
           class="previous"><a

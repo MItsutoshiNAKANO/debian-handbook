@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.administration-interfaces"></a>9.4. 管理インターフェース</h2></div></div></div><a
-          id="idm140615486986992"
+          id="idm140198430764304"
           class="indexterm"></a><a
-          id="idm140615486985616"
+          id="idm140198430762928"
           class="indexterm"></a><div
           class="para">
 			管理にグラフィカルインターフェースを使うことはさまざまな状況で興味深いです。管理者はすべてのサービスのすべての設定の詳細を知る必要はありませんし、常に問題に関連する文書を探し出すための時間があるというわけでもありません。管理用のグラフィカルインターフェースを使うと、新しいサービスを素早く配置できるようになります。さらに、設定の難しいサービスのセットアップを単純に行うことが可能です。
@@ -84,9 +84,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.webmin"></a>9.4.1. ウェブインターフェースを使った管理: <code
+                    id="sect.webmin"></a>9.4.1. ウェブインターフェースを使った管理、<code
                     class="command">webmin</code></h3></div></div></div><a
-            id="idm140615486980384"
+            id="idm140198430757696"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -103,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="para">
 				しかしながら、非公式パッケージが <code
-              class="literal">webmin.com</code> ウェブサイトから配布されています。元の Debian パッケージと異なり、このパッケージは柔軟性に欠けています; 対応するサービスがマシンにインストールされているか否かに関わらず、すべての設定モジュールがインストールされ、デフォルトで有効化されます。
+              class="literal">webmin.com</code> ウェブサイトから配布されています。元の Debian パッケージと異なり、このパッケージは柔軟性に欠けています。さらに対応するサービスがマシンにインストールされているか否かに関わらず、すべての設定モジュールがインストールされ、デフォルトで有効化されます。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -124,47 +124,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Webmin はウェブインターフェースを通じて使われますが、Apache をインストールする必要はありません。元から Webmin には統合された小さなウェブサーバが含まれています。このサーバはデフォルトでポート 10000 番をリッスンし、安全な HTTP 接続を受け入れます。
 			</div><div
             class="para">
-				導入されたモジュールは多種多様なサービスをカバーしています、たとえば:
+				導入されたモジュールは多種多様なサービスをカバーしています。たとえば以下はそのリストです。
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
-						すべての基本的サービス: ユーザとグループの作成、<code
-                    class="filename">crontab</code> ファイルの管理、init スクリプト、ログの閲覧など。
+						すべての基本的サービス。このモジュールはユーザとグループの作成、<code
+                    class="filename">crontab</code> ファイルの管理、init スクリプト、ログの閲覧などを担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						bind: DNS サーバの設定 (ネームサービス);
+						bind。このモジュールは DNS サーバの設定 (ネームサービス) を担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						postfix: SMTP サーバの設定 (電子メール);
+						postfix。このモジュールは SMTP サーバの設定 (電子メール) を担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						inetd: <code
-                    class="command">inetd</code> スーパーサーバの設定;
+						inetd。このモジュールは <code
+                    class="command">inetd</code> スーパーサーバの設定を担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						quota: ユーザクォータの管理;
+						quota。このモジュールはユーザクォータの管理を担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						dhcpd: DHCP サーバの設定;
+						dhcpd。このモジュールは DHCP サーバの設定を担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						proftpd: FTP サーバの設定;
+						proftpd。このモジュールは FTP サーバの設定を担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						samba: Samba ファイルサーバの設定;
+						samba。このモジュールは Samba ファイルサーバの設定を担当します。
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						ソフトウェア: Debian パッケージを使ったソフトウェアのインストールと削除、システム更新。
+						ソフトウェア。このモジュールは Debian パッケージを使ったソフトウェアのインストールと削除、システム更新を担当します。
 					</div></li></ul></div><div
             class="para">
 				ウェブブラウザで <code
@@ -174,22 +174,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> GNOME コントロールセンター</strong></p></div></div></div><a
-              id="idm140615486953664"
+              id="idm140198430730176"
               class="indexterm"></a><div
               class="para">
 				GNOME プロジェクトは、通常右上に位置するユーザメニューの「設定」エントリから利用できる、複数の管理インターフェースを提供します。<code
                 class="command">gnome-control-center</code> は複数の管理インターフェースをひとまとめにしたメインプログラムですが、システム共通設定ツールの多くは他のパッケージによって提供されています (<span
                 class="pkg pkg">accountsservice</span>、<span
-                class="pkg pkg">system-config-printer</span> など)。これらのアプリケーションは使いやすいのですが、基本サービスの一部だけしかカバーされません: ユーザ管理、時間設定、ネットワーク設定、プリンタ設定、など。
+                class="pkg pkg">system-config-printer</span> など)。これらのアプリケーションは使いやすいのですが、基本サービスの一部だけしかカバーされません。たとえば、ユーザ管理、時間設定、ネットワーク設定、プリンタ設定、などがカバーされます。
 			</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.debconf"></a>9.4.2. パッケージの設定: <code
+                    id="sect.debconf"></a>9.4.2. パッケージの設定、<code
                     class="command">debconf</code></h3></div></div></div><a
-            id="idm140615486947344"
+            id="idm140198430723824"
             class="indexterm"></a><a
-            id="idm140615486946224"
+            id="idm140198430722704"
             class="indexterm"></a><div
             class="para">
 				多くのパッケージが、インストール中 Debconf ツールを使ってわずかな質問をした後に、自動的に設定されるようになっています。そのようなパッケージは <code
@@ -197,20 +197,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">package</em></code> を実行すれば再設定できます。
 			</div><div
             class="para">
-				ほとんどの場合、これらの設定はとても簡素です; 設定ファイル中のわずかな重要変数だけが変更されます。これらの重要変数は多くの場合 2 つの「境界」線で挟まれています。そうすれば、パッケージを再設定しても影響を受けるのは境界線で挟まれた範囲だけに限定されるからです。「境界」線で挟まれていない場合、スクリプトが手作業で設定ファイルが変更されたことを検出したら、人間による設定変更を上書きしないよう、再設定しても何も変更されません (なぜなら、スクリプトは自分の修正が既存の設定を破壊しないことを保証できないからです)。
+				ほとんどの場合、これらの設定はとても簡素です。従って、設定ファイル中のわずかな重要変数だけが変更されます。これらの重要変数は多くの場合 2 つの「境界」線で挟まれています。そうすれば、パッケージを再設定しても影響を受けるのは境界線で挟まれた範囲だけに限定されるからです。「境界」線で挟まれていない場合、スクリプトが手作業で設定ファイルが変更されたことを検出したら、人間による設定変更を上書きしないよう、再設定しても何も変更されません (なぜなら、スクリプトは自分の修正が既存の設定を破壊しないことを保証できないからです)。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DEBIAN POLICY</em></span> 変更の保存</strong></p></div></div></div><div
               class="para">
-				Debian ポリシーには、スクリプトは設定ファイルに対して行われた手作業の変更を保護するように作業を実行しなければいけないことが、明確に規定されています。このため、ますます多くのスクリプトが設定ファイルを編集する際に事前注意を出します。一般的な原則は単純です: スクリプトが修正を行うのは、設定ファイルの状態を検証して、修正しても問題ないと判断した場合だけです。設定ファイルの状態検証は、最後に自動的に生成された設定ファイルのチェックサムと現在の設定ファイルのチェックサムを比較することで行います。両者のチェックサムが同じ場合、スクリプトは設定ファイルを変更する権限を与えられます。チェックサムが違った場合、設定ファイルが変更されたと判断し、対応 (新しいファイルをインストールする、古いファイルを保存する、新しい変更を既存のファイルと統合しようとする) を尋ねます。この事前注意の原則は長きに渡り Debian に固有の原則でしたが、他のディストリビューションもこの原則を採用し始めています。
+				Debian ポリシーには、スクリプトは設定ファイルに対して行われた手作業の変更を保護するように作業を実行しなければいけないことが、明確に規定されています。このため、ますます多くのスクリプトが設定ファイルを編集する際に事前注意を出します。一般的な原則は単純です。すなわち、スクリプトが修正を行うのは、設定ファイルの状態を検証して、修正しても問題ないと判断した場合だけです。設定ファイルの状態検証は、最後に自動的に生成された設定ファイルのチェックサムと現在の設定ファイルのチェックサムを比較することで行います。両者のチェックサムが同じ場合、スクリプトは設定ファイルを変更する権限を与えられます。チェックサムが違った場合、設定ファイルが変更されたと判断し、対応 (新しいファイルをインストールする、古いファイルを保存する、新しい変更を既存のファイルと統合しようとする) を尋ねます。この事前注意の原則は長きに渡り Debian に固有の原則でしたが、他のディストリビューションもこの原則を採用し始めています。
 			</div><div
               class="para">
 				<code
                 class="command">ucf</code> プログラム (同名の Debian パッケージに含まれます) はこの原則を実行に移すために使われます。
 			</div><a
-              id="idm140615486938464"
+              id="idm140198430714912"
               class="indexterm"></a></div></div></div><ul
         class="docnav"><li
           class="previous"><a
