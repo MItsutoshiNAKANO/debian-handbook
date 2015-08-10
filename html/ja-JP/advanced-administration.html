@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.virtualization.html#sect.lxc">12.2.2. LXC</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.virtualization.html#idm140198431981104">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
+                      href="sect.virtualization.html#idm139680310811168">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.automated-installation.html">12.3. 自動インストール</a></span></dt><dd><dl><dt><span
                     class="section"><a
@@ -142,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       id="sect.raid-soft"></a>12.1.1. ソフトウェア RAID</h3></div></div></div><div
               class="para">
 				RAID<a
-                id="idm140198422411184"
+                id="idm139680312421120"
                 class="indexterm"></a> は <span
                 class="emphasis"><em>Redundant Array of Independent Disks</em></span> を意味します。このシステムの目標はハードディスク障害の際にデータ損失を防ぐことです。一般的な原則は極めて単純です。すなわち、データは設定できる冗長性のレベルに基づいて 1 つではなく複数のディスクに保存されます。冗長性の量に依存して、たとえ予想外のディスク障害が起きた場合でも、データを残りのディスクから損失なく再構成することが可能です。
 			</div><div
@@ -157,7 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				当初、RAID の I は <span
                   class="emphasis"><em>inexpensive</em></span> を意味していました。なぜなら、RAID は高価な高性能ディスクへ投資することなくデータの安全性を劇的に高めることが可能だったからです。しかしながらおそらく心証的な懸念から、現在 RAID の I は通例 <span
-                  class="emphasis"><em>independent</em></span> を意味するものとされます。 <span
+                  class="emphasis"><em>independent</em></span> を意味するものとされます。<span
                   class="emphasis"><em>independent</em></span> には安価であることに対する良くない印象がありません。
 			</div></div><div
               class="para">
@@ -189,7 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="term">RAID-0</span></dt><dd><div
                       class="para">
 								RAID-0 レベルも冗長性を提供しませんが、順番通り単純に物理ディスクを連結する構成ではありません。すなわち、物理ディスクは<span
-                        class="emphasis"><em>ストライプ状</em></span>に分割され、仮想デバイスのブロックは互い違いになった物理ディスクのストライプに保存されます。たとえば 2 台構成の RAID-0 セットアップでは、偶数を付番されたブロックは最初の物理ディスクに保存され、奇数を付番されたブロックは 2 番目の物理ディスクに保存されます。
+                        class="emphasis"><em>ストライプ状</em></span>に分割され、仮想デバイスのブロックは互い違いになった物理ディスクのストライプに保存されます。たとえば 2 台のディスクから構成されている RAID-0 セットアップでは、偶数を付番されたブロックは最初の物理ディスクに保存され、奇数を付番されたブロックは 2 番目の物理ディスクに保存されます。
 							</div><div
                       class="para">
 								RAID-0 システムは信頼性を向上させることではなく、性能を向上させることを目標にしています。システムの信頼性、データの可用性は (リニア RAID と同様に) ディスク障害があればすぐに脅かされるからです。つまり隣接した巨大なデータにシーケンシャルアクセスする場合、カーネルは両方のディスクから平行して読み込む (書き込む) ことが可能でしょう。このことにより、データの転送率が増加します。しかしながら、RAID-0 が使われる機会は減り、代わりに LVM (後から説明します) が使われるようになっています。
@@ -270,7 +270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					RAID ボリュームを設定するには <span
                   class="pkg pkg">mdadm</span><a
-                  id="idm140198413289152"
+                  id="idm139680307551376"
                   class="indexterm"></a> パッケージが必要です。さらに <span
                   class="pkg pkg">mdadm</span> パッケージには、RAID アレイを作成したり操作するための <code
                   class="command">mdadm</code> コマンド、システムの他の部分に RAID アレイを統合するためのスクリプトやツール、監視システム、が含まれます。
@@ -678,7 +678,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                       id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><div
               class="para">
 				<a
-                id="idm140198432948560"
+                id="idm139680311523472"
                 class="indexterm"></a>LVM、<span
                 class="emphasis"><em>Logical Volume Manager</em></span>、は物理ディスクから論理ボリュームを抽象化する別のアプローチで、信頼性を増加させるのではなく柔軟性を増加させることに注目しています。LVM を使うことで、アプリケーションから見る限り透過的に論理ボリュームを変更することが可能です。さらに、たとえば LVM は、新しいディスクを追加し、データを新しいディスクに移行し、古いディスクを削除することが、ボリュームをアンマウントせずに可能です。
 			</div><div
@@ -707,7 +707,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
 					重要な事柄は、VG を LV に分割する場合に物理的要素 (PV) はいかなる制約も要求しないという点です。1 つの物理的要素 (たとえばディスク) から構成される VG は複数の論理ボリュームに分割できます。したがって同様に、VG に複数の物理ディスクを参加させ、VG を 1 つの大きな論理ボリュームとして提供することが可能です。明らかに、たった 1 つの制約事項は各 LV に割り当てるサイズの合計が、LV が所属するボリュームグループの PV の合計サイズを超えることができないという点です。
 				</div><div
                 class="para">
-					しかしながら、 VG を構成する物理的要素の特徴を一致させること、各論理ボリュームの用途に対する要求性能を考慮しながら VG を論理ボリュームに分割すること、は通常理にかなった方針です。たとえば、利用できるハードウェアに高速なディスクと低速なディスクがある場合、高速なディスクから構成される VG と低速なディスクから構成される VG に分けることが可能です。このため、高速なディスクから構成される VG に含まれる論理ボリュームを高速なデータアクセスを必要とするアプリケーションに割り当て、低速なディスクから構成される VG に含まれる論理ボリュームを負荷の少ない作業用に割り当てます。
+					しかしながら、VG を構成する物理的要素の特徴を一致させること、各論理ボリュームの用途に対する要求性能を考慮しながら VG を論理ボリュームに分割すること、は通常理にかなった方針です。たとえば、利用できるハードウェアに高速なディスクと低速なディスクがある場合、高速なディスクから構成される VG と低速なディスクから構成される VG に分けることが可能です。このため、高速なディスクから構成される VG に含まれる論理ボリュームを高速なデータアクセスを必要とするアプリケーションに割り当て、低速なディスクから構成される VG に含まれる論理ボリュームを負荷の少ない作業用に割り当てます。
 				</div><div
                 class="para">
 					如何なる場合でも、LV は特定の PV に所属しないということを覚えておいてください。ある LV に含まれるデータが物理的に保存されている場所を操作することも可能ですが、普通に使っている限りその必要はありません。逆に、VG を構成する一連の物理的要素が変化する場合、特定の LV に対応する物理ストレージの場所をディスク上で変化させることが可能です (もちろん、変化の範囲は対象の VG を構成する PV の中に限られます)。
@@ -742,7 +742,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                       class="para">
 							<code
                         class="filename">sdf</code> ディスク上に、<code
-                        class="filename">sdf1</code> パーティション、4 GB。 および <code
+                        class="filename">sdf1</code> パーティション、4 GB。および <code
                         class="filename">sdf2</code> パーティション、5 GB。
 						</div></li></ul></div><div
                 class="para">
@@ -1168,7 +1168,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                           class="emphasis"><em>NOTE</em></span> 性能を重要視する場合…</strong></p></div></div></div><div
                 class="para">
 				入出力速度が最重要の場合、特にアクセス速度という意味で、LVM および RAID を組み合わせて使うと性能に少なからず影響を与え、どの方式を採用するか関する議論に影響を与えます。しかしながら、性能差は極めて少なく、この程度の性能差が無視できない場合は極めて少ないといえるでしょう。性能が重要な場合、実現できる最良の改善方針は非回転ストレージメディア (<a
-                  id="idm140198432831312"
+                  id="idm139680311062112"
                   class="indexterm"></a><span
                   class="emphasis"><em>ソリッドステートドライブ</em></span>や SSD) を使うことです。SSD のメガバイト当たりの費用は標準的なハードディスクドライブよりも高価で、SSD の容量は通常小さいですが、SSD はランダムアクセスで素晴らしい性能を発揮します。ファイルシステムに広く分散された位置から数多くの入出力を行うような場合、たとえば複雑な問い合わせが定期的に実行されるデータベースの場合、SSD 上にデータベースを置くことは、RAID over LVM または LVM over RAID 上にデータベースを置くことよりも、良好な性能が手に入ります。このような場合、純粋な速度だけでなく他の要素も検討した上で採用の可否を決定するべきです。なぜなら、性能が必要な場合、SSD を採用することが最も短絡的な解決策だからです。
 			</div></div><div

@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. Rebuilding a Package from its Sources</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140176017208528">15.1.1. Getting the Sources</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140161924617600">15.1.1. Getting the Sources</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140176027435488">15.1.2. Making Changes</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140161931813104">15.1.2. Making Changes</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140176033311840">15.1.3. Starting the Rebuild</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140161918689424">15.1.3. Starting the Rebuild</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. Building your First Package</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140176032638448">15.2.1. Meta-Packages or Fake Packages</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140161939209920">15.2.1. Meta-Packages or Fake Packages</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140176013090688">15.2.2. Simple File Archive</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140161918894640">15.2.2. Simple File Archive</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. Creating a Package Repository for APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. Becoming a Package Maintainer</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140176013471296">15.4.1. Learning to Make Packages</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140161917985504">15.4.1. Learning to Make Packages</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140176013404896">15.4.2. Acceptance Process</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140161917919104">15.4.2. Acceptance Process</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		It is quite common, for an administrator who has been handling Debian packages in a regular fashion, to eventually feel the need to create their own packages, or to modify an existing package. This chapter aims to answer the most common questions in this field, and provide the required elements to take advantage of the Debian infrastructure in the best way. With any luck, after trying your hand for local packages, you may even feel the need to go further than that and join the Debian project itself!
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span> distribution; this operation is called “backporting”. As usual, care should be taken, before undertaking such a task, to check whether it has been done already — a quick look on the Package Tracking System's page for that package will reveal that information. <div
               class="url">→ <a
                 href="http://packages.qa.debian.org/">http://packages.qa.debian.org/</a></div> <a
-              id="idm140176018460736"
+              id="idm140161922262304"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140176017208528"></a>15.1.1. Getting the Sources</h3></div></div></div><div
+                      id="idm140161924617600"></a>15.1.1. Getting the Sources</h3></div></div></div><div
               class="para">
 				Rebuilding a Debian package starts with getting its source code. The easiest way is to use the <code
                 class="command">apt-get source <em
@@ -151,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140176027435488"></a>15.1.2. Making Changes</h3></div></div></div><div
+                      id="idm140161931813104"></a>15.1.2. Making Changes</h3></div></div></div><div
               class="para">
 				The source of the package is now available in a directory named after the source package and its version (for instance, <span
                 class="emphasis"><em>samba-3.6.16</em></span>); this is where we'll work on our local changes.
@@ -196,7 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="literal">Build-Depends</code></strong></p></div></div></div><div
                 class="para">
 				<a
-                  id="idm140176015200432"
+                  id="idm140161918693488"
                   class="indexterm"></a> <code
                   class="command">apt-get</code> allows installing all packages mentioned in the <code
                   class="literal">Build-Depends</code> fields of a source package available in a distribution mentioned in a <code
@@ -208,14 +208,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140176033311840"></a>15.1.3. Starting the Rebuild</h3></div></div></div><div
+                      id="idm140161918689424"></a>15.1.3. Starting the Rebuild</h3></div></div></div><div
               class="para">
 				When all the needed changes have been applied to the sources, we can start generating the actual binary package (<code
                 class="filename">.deb</code> file). The whole process is managed by the <code
                 class="command">dpkg-buildpackage</code> command.
 			</div><div
               class="example"><a
-                id="idm140176033309536"></a><p
+                id="idm140161918687120"></a><p
                 class="title"><strong>Örnek 15.1. Rebuilding a package</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -262,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>QUICK LOOK</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140176032646496"
+                id="idm140161939217968"
                 class="indexterm"></a><div
                 class="para">
 				The <code
