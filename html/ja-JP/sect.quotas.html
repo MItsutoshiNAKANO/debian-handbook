@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.quotas"></a>9.9. クォータ</h2></div></div></div><a
-          id="idm139680309419248"
+          id="idm140633235148240"
           class="indexterm"></a><div
           class="para">
 			クォータシステムを使うことで、ユーザまたはユーザグループに割り当てられたディスク領域を制限することが可能です。クォータを設定するには、クォータをサポートする (<code
@@ -79,7 +79,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			あるファイルシステムでクォータを有効化するには、<code
             class="filename">/etc/fstab</code> の中でそれぞれユーザやグループクォータに対応する <code
             class="literal">usrquota</code> や <code
-            class="literal">grpquota</code> オプションを使います。この後コンピュータを再起動すると、ディスク活動のないときに (これは既に利用されているディスク領域を適切に計量する必要条件です)、クォータが更新されます。
+            class="literal">grpquota</code> オプションを使います。この後コンピュータを再起動すると、ディスク活動のない時に (これは既に利用されているディスク領域を適切に計量する必要条件です)、クォータが更新されます。
 		</div><div
           class="para">
 			<code
@@ -88,13 +88,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">edquota -g <em
               class="replaceable">group</em></code>) コマンドを使うと、現在のディスク領域使用量を検査している最中に、制限を変更することが可能です。
 		</div><a
-          id="idm139680309412784"
+          id="idm140633235140848"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>GOING FURTHER</em></span> スクリプトを使ったクォータの定義</strong></p></div></div></div><a
-            id="idm139680309410992"
+            id="idm140633235138640"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -125,9 +125,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>VOCABULARY</em></span> ブロックと i ノード</strong></p></div></div></div><a
-            id="idm139680309401728"
+            id="idm140633235127808"
             class="indexterm"></a><a
-            id="idm139680309400960"
+            id="idm140633235126880"
             class="indexterm"></a><div
             class="para">
 			ファイルシステムはハードドライブをブロック — 小さく連続した領域 — に分割します。ブロックのサイズはファイルシステムの作成時に定義され、一般的に 1 から 8 キロバイトまでの範囲を取ります。
@@ -135,11 +135,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 			ブロックはファイルの実データまたはファイルシステムの使うメタデータのどちらか一方を保存するために使われます。メタデータの中でも特に、i ノードについて説明します。1 つの i ノードはハードドライブ上の 1 ブロックを使い (しかし、このブロックはブロッククォータに考慮されず、i ノードクォータだけに考慮されます)、その i ノードに対応するファイルの情報 (名前、所有者、パーミッション、など) と実際に使われるデータブロックへのポインタ情報の両方を含みます。単一の i ノードで対応できないくらい多くのブロックを専有するとても大きなファイルのために、間接ブロックシステムがあります。この場合の i ノードは、実データではなく別のブロックのリストを保存しているブロックのリストを参照します。
 		</div></div><a
-          id="idm139680309397984"
+          id="idm140633235123552"
           class="indexterm"></a><div
           class="para">
 			<code
-            class="command">edquota -t</code> コマンドを使って、ソフトリミットの超過を許す「猶予期間」の最長値を定義することが可能です。この期間の後、ソフトリミットはハードリミットと同じ様に扱われます。ユーザがハードドライブに何かを書き込むには、ディスク領域の使用量を減らしてクォータの制限内に収めなければいけません。
+            class="command">edquota -t</code> コマンドを使って、ソフトリミットの超過を許す「猶予期間」の最長値を定義することが可能です。この期間の後、ソフトリミットはハードリミットと同様に扱われます。ユーザがハードドライブに何かを書き込むには、ディスク領域の使用量を減らしてクォータの制限内に収めなければいけません。
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p

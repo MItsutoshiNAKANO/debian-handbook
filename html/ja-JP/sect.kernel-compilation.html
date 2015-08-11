@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. カーネルのコンパイル</h2></div></div></div><a
-          id="idm139680310345840"
+          id="idm140633236160400"
           class="indexterm"></a><a
-          id="idm139680310344688"
+          id="idm140633236158960"
           class="indexterm"></a><div
           class="para">
 			Debian の提供するカーネルには、既存のハードウェア構成の広い領域をカバーするために、最も多くの考え得る機能およびドライバが含まれています。このため、一部のユーザは、本当に必要なものだけを含める目的で、カーネルを再コンパイルすることを好みます。カーネルを再コンパイルする理由は 2 つあります。1 つ目は、メモリ消費量を最適化できるかもしれないからです。全く使われないカーネルコードは無駄にメモリを専有するため (カーネルコードは決してスワップ領域に「移動」されません、なぜなら、カーネルコードはスワップ領域を実際の RAM として使っているからです)、全システムのパフォーマンスを低下させます。2 つ目は、ローカルでコンパイルされたカーネルはセキュリティ問題の危険性を限定することが可能だからです。カーネルコードのごく一部がコンパイルされ実行されます。
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>GOING FURTHER</em></span> Debian カーネルハンドブック</strong></p></div></div></div><a
-            id="idm139680310338688"
+            id="idm140633236152064"
             class="indexterm"></a><div
             class="para">
 			Debian カーネルチームは、カーネル関連の作業と公式の Debian カーネルパッケージが取り扱われる方法に関する包括的文書である、「Debian カーネルハンドブック」(<span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="pkg pkg">kernel-package</span> の古き良き時代</strong></p></div></div></div><a
-              id="idm139680310329008"
+              id="idm140633236140624"
               class="indexterm"></a><div
               class="para">
 				Linux ビルドシステムに適切な Debian パッケージをビルドする能力がなかった時代、Debian パッケージをビルドするのに推奨されていた方法は <span
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. ソースを入手</h3></div></div></div><a
-            id="idm139680310325136"
+            id="idm140633236135824"
             class="indexterm"></a><a
-            id="idm139680310324368"
+            id="idm140633236134896"
             class="indexterm"></a><a
-            id="idm139680310323216"
+            id="idm140633236133456"
             class="indexterm"></a><div
             class="para">
 				Debian システム上で便利に使えるプログラムと同様に、Linux カーネルソースはパッケージとして提供されています。Linux カーネルソースを手に入れるには、<span
@@ -175,11 +175,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-noyau"></a>8.10.3. カーネルの設定</h3></div></div></div><a
-            id="idm139680310307104"
+            id="idm140633236114816"
             class="indexterm"></a><a
-            id="idm139680310305952"
+            id="idm140633236113376"
             class="indexterm"></a><a
-            id="idm139680310304800"
+            id="idm140633236111936"
             class="indexterm"></a><div
             class="para">
 				次の段階で、必要性に応じてカーネルを設定します。完全な手順はその目標に依存します。
@@ -223,7 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">libgtk2.0-dev</span> が必要です。
 			</div><div
             class="para">
-				これらの設定インターフェースの内 1 つを使う場合、合理的なデフォルト設定から始めるのが良いアイディアです。カーネルのデフォルト設定は <code
+				これらの設定インターフェースのうち 1 つを使う場合、合理的なデフォルト設定から始めるのが良いアイディアです。カーネルのデフォルト設定は <code
               class="filename">arch/<em
                 class="replaceable">arch</em>/configs/*_defconfig</code> に置かれています。この設定ファイルを適切な場所に置くには、<code
               class="command">make x86_64_defconfig</code> (64 ビット PC の場合) や <code
@@ -245,7 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. パッケージのコンパイルとビルド</h3></div></div></div><a
-            id="idm139680310282176"
+            id="idm140633236085920"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -299,11 +299,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. 外部モジュールのコンパイル</h3></div></div></div><a
-            id="idm139680310265872"
+            id="idm140633236066640"
             class="indexterm"></a><a
-            id="idm139680310264720"
+            id="idm140633236065200"
             class="indexterm"></a><a
-            id="idm139680310263568"
+            id="idm140633236063792"
             class="indexterm"></a><div
             class="para">
 				いくつかのモジュールは公式の Linux カーネルの外で保守されています。このようなモジュールを使うには、適合するカーネルと一緒にモジュールをコンパイルしなければいけません。Debian は専用パッケージの形で数多くのサードパーティ製モジュールを配布しています。たとえば、<span
@@ -365,7 +365,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm139680310249328"
+              id="idm140633236047216"
               class="indexterm"></a><div
               class="para">
 				DKMS 以前、カーネルモジュールをビルドして配置する最も簡単な解決策は <span
@@ -378,9 +378,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. カーネルパッチの適用</h3></div></div></div><a
-            id="idm139680310244144"
+            id="idm140633236040976"
             class="indexterm"></a><a
-            id="idm139680310242992"
+            id="idm140633236039536"
             class="indexterm"></a><div
             class="para">
 				十分に成熟していなかったり、カーネルメンテナとの意見の不一致が原因で、標準的なカーネルに含まれない機能もあれば、カーネルソースに対して自由に適用できるようにするために、パッチとして配布される機能もあります。
@@ -394,7 +394,7 @@ description:    Xtables: per-IP accounting for large prefixes
 			</div><div
             class="para">
 				インストール済みパッチをカーネルに適用するには、ソースディレクトリの中で <code
-              class="command">patch</code> コマンドを使い、上で述べたとおり、カーネルのコンパイルを始めてください。
+              class="command">patch</code> コマンドを使い、上で述べた通り、カーネルのコンパイルを始めてください。
 			</div><pre
             class="screen">
 <code

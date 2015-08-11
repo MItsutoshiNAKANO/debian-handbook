@@ -76,13 +76,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.netstat"></a>10.8.1. ローカルの診断、<code
                     class="command">netstat</code></h3></div></div></div><a
-            id="idm139680309753136"
+            id="idm140633235792544"
             class="indexterm"></a><div
             class="para">
 				最初に (<span
               class="pkg pkg">net-tools</span> パッケージに含まれる) <code
               class="command">netstat</code> コマンドを紹介しましょう。<code
-              class="command">netstat</code> コマンドはマシンのその瞬間のネットワーク活動に関する要約を表示します。何も引数を渡さずに実行した場合、このコマンドは開けられた接続をリストします;このリストはとても長くなる場合があります。なぜなら、このリストには多くの Unix ドメインソケット (デーモンによって広く使われている) が含まれるからです。Unix ドメインソケットはネットワークに関与しません (たとえば、<code
+              class="command">netstat</code> コマンドはマシンのその瞬間のネットワーク活動に関する要約を表示します。何も引数を渡さずに実行した場合、このコマンドは開かれた接続をリストします;このリストはとても長くなる場合があります。なぜなら、このリストには多くの Unix ドメインソケット (デーモンによって広く使われている) が含まれるからです。Unix ドメインソケットはネットワークに関与しません (たとえば、<code
               class="literal">dbus</code> 通信、<code
               class="literal">X11</code> トラフィック、仮想ファイルシステムとデスクトップ間の通信などです)。
 			</div><div
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="listitem"><div
                   class="para">
 						<code
-                    class="literal">-p</code>。このオプションを使うことで、関係付けられたプロセスが表示されます。したがって、<code
+                    class="literal">-p</code>。このオプションを使うことで、関連付けられたプロセスが表示されます。従って、<code
                     class="command">netstat</code> を root 権限で実行した場合にのみ、このオプションは便利です。なぜなら、普通のユーザは自分のプロセス以外を見ることができないからです。
 					</div></li><li
                 class="listitem"><div
@@ -129,7 +129,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				<span
               class="citerefentry"><span
-                class="refentrytitle">netstat</span>(8)</span> マニュアルページに書かれている他のオプションを使えば、表示される結果をさらに細かく制御することが可能です。具体的に言えば、上に挙げたオプションの内最初の 5 種類を組み合わせて使うことが多いため、結果としてシステムとネットワークの管理者は事実上 <code
+                class="refentrytitle">netstat</span>(8)</span> マニュアルページに書かれている他のオプションを使えば、表示される結果をさらに細かく制御することが可能です。具体的に言えば、上に挙げたオプションのうち、最初の 5 種類を組み合わせて使うことが多いため、結果としてシステムとネットワークの管理者は事実上 <code
               class="command">netstat -tupan</code> を習得します。負荷の高くないマシンでは、以下の様な典型的な結果を返します。
 			</div><pre
             class="screen scale">
@@ -180,7 +180,7 @@ udp6       0      0 :::5353                 :::*                                
                   class="title"><a
                     id="sect.nmap"></a>10.8.2. リモートの診断、<code
                     class="command">nmap</code></h3></div></div></div><a
-            id="idm139680309724768"
+            id="idm140633235764192"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -266,7 +266,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
 				しばしば実際にワイヤを行き来する情報をパケットごとに見る必要がある場合があります。この際に使われるツールは「フレームアナライザ」と呼ばれ、<span
               class="emphasis"><em>スニファ</em></span> としても広く知られています。これらのツールはあるネットワークに到達したすべてのパケットを観察し、ユーザにわかりやすい方法でパケットを表示します。
 			</div><a
-            id="idm139680308929040"
+            id="idm140633232376128"
             class="indexterm"></a><div
             class="para">
 				この分野における由緒あるツールが <code
@@ -274,7 +274,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
               class="command">tcpdump</code> を使うと、多くの種類のネットワークトラフィックをキャプチャできますが、トラフィックの表現は比較的分かりにくいです。このため <code
               class="command">tcpdump</code> について詳しく説明しません。
 			</div><a
-            id="idm139680308926288"
+            id="idm140633232373376"
             class="indexterm"></a><div
             class="para">
 				より最近の (そしてより現代的な) ツールである <code
@@ -301,7 +301,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
                         class="emphasis"><em>TIP</em></span> グラフィカルインターフェースを持たない <code
                         class="command">wireshark</code>、<code
                         class="command">tshark</code></strong></p></div></div></div><a
-              id="idm139680308916736"
+              id="idm140633232363824"
               class="indexterm"></a><div
               class="para">
 				グラフィカルインターフェースを実行できない場合や何らかの理由で実行したくない場合に備えて、<code
@@ -317,16 +317,16 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
                         class="emphasis"><em>CULTURE</em></span> <code
                         class="command">ethereal</code> と <code
                         class="command">wireshark</code></strong></p></div></div></div><a
-              id="idm139680308910736"
+              id="idm140633232357824"
               class="indexterm"></a><a
-              id="idm139680308909840"
+              id="idm140633232356928"
               class="indexterm"></a><div
               class="para">
 				<code
                 class="command">wireshark</code> は比較的若いように見えます。しかしながら、<code
                 class="command">wireshark</code> は <code
                 class="command">ethereal</code> として知られていたソフトウェアの新しい名前に過ぎません。<code
-                class="command">ethereal</code> の主開発者は雇用されていた会社を離れた時、登録済みの商標の移動を手配できませんでした。代案として、彼は名前を変えました。したがって実際のところ、<code
+                class="command">ethereal</code> の主開発者は雇用されていた会社を離れた時、登録済みの商標の移動を手配できませんでした。代案として、彼は名前を変えました。従って実際のところ、<code
                 class="command">wireshark</code> は <code
                 class="command">ethereal</code> の名前とアイコンだけを変えたものに過ぎません。
 			</div></div></div></div><ul

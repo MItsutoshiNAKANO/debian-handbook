@@ -68,17 +68,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. ファイアウォールとパケットフィルタリング</h2></div></div></div><a
-          id="idm139680313032176"
+          id="idm140633234898352"
           class="indexterm"></a><a
-          id="idm139680313031248"
+          id="idm140633236812048"
           class="indexterm"></a><a
-          id="idm139680319991296"
+          id="idm140633236811120"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> ファイアウォール</strong></p></div></div></div><a
-            id="idm139680319989280"
+            id="idm140633236809104"
             class="indexterm"></a><div
             class="para">
 			<span
@@ -92,14 +92,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span> ファイアウォールの設定を簡単に行うためのツールが存在し、ツールはフィルタリングルールをグラフィカルに表現する機能を備えています。<code
             class="command">fwbuilder</code> がこの種のツールの中で最良のツールであることは疑いありません。
 		</div><a
-          id="idm139680311095504"
+          id="idm140633236499872"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>SPECIFIC CASE</em></span> ローカルファイアウォール</strong></p></div></div></div><div
             class="para">
-			ファイアウォールを使って (完全なネットワークとは対照的に) 特定のマシンを制限することも可能です。この場合のファイアウォールの役割は、一部のサービスへのアクセスをフィルタしたり制限すること、好むと好まざるとにかかわらずユーザがインストールできる不正ソフトウェアによる外部への接続を防ぐこと、です。
+			ファイアウォールを使って (完全なネットワークとは対照的に) 特定のマシンを制限することも可能です。この場合のファイアウォールの役割は、一部のサービスへのアクセスをフィルタしたり制限すること、好むと好まざるとに関わらずユーザがインストールできる不正ソフトウェアによる外部への接続を防ぐこと、です。
 		</div></div><div
           class="para">
 			Linux カーネルには <span
@@ -110,11 +110,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">iptables</code> と <code
             class="command">ip6tables</code> コマンドの違いは、<code
             class="command">iptables</code> が IPv4 ネットワークを取り扱うのに対し、<code
-            class="command">ip6tables</code> は IPv6 ネットワークを取り扱うという点です。おそらく IPv4 と IPv6 のネットワークプロトコルスタックは長きに渡り共存するでしょうから、両方のツールを並行して実行する必要があります。
+            class="command">ip6tables</code> は IPv6 ネットワークを取り扱うという点です。おそらく IPv4 と IPv6 のネットワークプロトコルスタックは長きにわたり共存するでしょうから、両方のツールを並行して実行する必要があります。
 		</div><a
-          id="idm139680311087856"
+          id="idm140633236492208"
           class="indexterm"></a><a
-          id="idm139680311086736"
+          id="idm140633236491088"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -151,9 +151,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				それぞれのテーブルには、<span
               class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイアウォールは事前に定義された状況に基づいてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
 			</div><a
-            id="idm139680311141024"
+            id="idm140633230359456"
             class="indexterm"></a><a
-            id="idm139680311140064"
+            id="idm140633230358496"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -228,15 +228,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				参考までに、受信バッファとは、データがネットワークから到着してカーネルがデータを処理するまでの間、そのデータを保存する小容量のメモリ区画です。このメモリ区画が満杯になると、新しいデータを受け取ることができなくなり、ICMP がこの問題を通知します。そうすれば送信側はデータの転送速度を遅くすることが可能です (理想的に言えば、しばらくの後に転送速度は平衡状態に達するべきです)。
 			</div><a
-              id="idm139680305775696"
+              id="idm140633231546592"
               class="indexterm"></a><a
-              id="idm139680305774736"
+              id="idm140633231545632"
               class="indexterm"></a><a
-              id="idm139680305773808"
+              id="idm140633231544704"
               class="indexterm"></a><a
-              id="idm139680305772848"
+              id="idm140633231543744"
               class="indexterm"></a><a
-              id="idm139680305771408"
+              id="idm140633231542304"
               class="indexterm"></a><div
               class="para">
 				IPv4 ネットワークは ICMP がなくても動作しますが、IPv6 ネットワークは ICMPv6 を必須条件としています。なぜなら、ICMPv6 は IPv4 世界では ICMPv4、IGMP (<span
@@ -348,9 +348,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> オプションで操作対象のテーブルを指定します (デフォルトの場合、<code
               class="literal">filter</code> テーブルを操作します)。
 			</div><a
-            id="idm139680309674608"
+            id="idm140633231455536"
             class="indexterm"></a><a
-            id="idm139680309673488"
+            id="idm140633231454416"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -388,7 +388,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. ルール</h4></div></div></div><a
-              id="idm139680309658592"
+              id="idm140633231031440"
               class="indexterm"></a><div
               class="para">
 					それぞれのルールは <code
@@ -533,7 +533,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="fwbuilder のメインウィンドウ" /></div></div><p
               class="title"><strong>図14.2 fwbuilder のメインウィンドウ</strong></p></div><a
-            id="idm139680307246192"
+            id="idm140633230982608"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -558,7 +558,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.install-rules-at-boot"></a>14.2.4. 起動時にルールを適用する</h3></div></div></div><div
             class="para">
 				ファイアウォールが断続的な PPP ネットワーク接続を保護するように設定されていた場合、スクリプトを <code
-              class="filename">/etc/ppp/ip-up.d/0iptables</code> に配置することが最も単純な方法です (名前にドットを含まないファイルだけが考慮されます)。ファイアウォールは PPP 接続が確立された時点で毎回再読込されます。
+              class="filename">/etc/ppp/ip-up.d/0iptables</code> に配置することが最も単純な方法です (名前にドットを含まないファイルだけが考慮されます)。ファイアウォールは PPP 接続が確立された時点で毎回再読み込みされます。
 			</div><div
             class="para">
 				別のやり方として、設定スクリプトを <code

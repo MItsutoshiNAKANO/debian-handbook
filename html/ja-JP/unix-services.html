@@ -122,22 +122,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="sect.backup.html">9.10. バックアップ</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm139680309382448">9.10.1. <code
+                      href="sect.backup.html#idm140633235104976">9.10.1. <code
                         class="command">rsync</code> を使ったバックアップ</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm139680309340736">9.10.2. バックアップなしのマシンの復元</a></span></dt></dl></dd><dt><span
+                      href="sect.backup.html#idm140633235056224">9.10.2. バックアップなしのマシンの復元</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.hotplug.html">9.11. ホットプラグ機能、<span
                     class="emphasis"><em>hotplug</em></span></a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139680309322784">9.11.1. はじめに</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm140633235034944">9.11.1. 前書き</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139680309313568">9.11.2. 命名問題</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm140633235023840">9.11.2. 命名問題</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139680309299120">9.11.3. <span
+                      href="sect.hotplug.html#idm140633235007440">9.11.3. <span
                         class="emphasis"><em>udev</em></span> の動作原理</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139680309246576">9.11.4. 具体例</a></span></dt></dl></dd><dt><span
+                      href="sect.hotplug.html#idm140633234944720">9.11.4. 具体例</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.power-management.html">9.12. 電源管理、Advanced Configuration and Power Interface (ACPI)</a></span></dt></dl></div><div
           class="highlights"><div
@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.system-boot"></a>9.1. システム起動</h2></div></div></div><a
-            id="idm139680321178064"
+            id="idm140633239786192"
             class="indexterm"></a><div
             class="para">
 			コンピュータを起動する際、コンソール画面にスクロールされる多くのメッセージには、実行されている多くの自動初期化と自動設定に関する情報が表示されます。この段階の挙動を少し変えたいと思うことがあるかもしれません。これは起動処理をよく理解する必要があることを意味しています。これがこの節の目的です。
@@ -237,7 +237,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> プロセス、プログラムインスタンス</strong></p></div></div></div><a
-                id="idm139680316907600"
+                id="idm140633245385088"
                 class="indexterm"></a><div
                 class="para">
 				プロセスとは、実行中のプログラムのメモリ内表現です。プロセスには、ソフトウェアを適切に実行するために必要なすべての情報が含まれます (ソフトウェアのコードだけでなく、ソフトウェアが所有するメモリ内のデータ、ソフトウェアが開いたファイルのリスト、ソフトウェアが確立したネットワーク接続など)。単独のプログラムは複数のプロセスにインスタンス化されるかもしれませんし、異なるユーザ ID の下で実行される必要はありません。
@@ -253,7 +253,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/lib/systemd/systemd</code> へのシンボリックリンクです)。しかしながら、カーネルに <code
                   class="literal">init</code> オプションを渡して別のプログラムを開始することも可能です。
 			</div><a
-                id="idm139680316902064"
+                id="idm140633245379552"
                 class="indexterm"></a><div
                 class="para">
 				コンピュータに触ることができる人は誰でも、<span
@@ -277,7 +277,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/systemd/system/</code> の下に保存されます。さらにユニットファイルはいくつかの形式がありますが、われわれは「service」型と「target」型に注目します。
 			</div><div
               class="para">
-				systemd の「service ファイル」は systemd が管理するプロセスを記述します。「service ファイル」にはおおまかに言って古いスタイルの init スクリプトと同じ情報が含まれていますが、宣言的な方法 (そしてより簡潔な方法) を使ってその情報が記述されています。systemd は繰り返しタスク (プロセスの開始と停止、状態確認、ログ記録、特権の取り消し、など) の大部分を取り扱い、service ファイルにはプロセスに特有の情報を記入する必要があります。たとえば以下は SSH 用の service ファイルです。
+				systemd の「service ファイル」は systemd が管理するプロセスを記述します。「service ファイル」には大雑把に言って古いスタイルの init スクリプトと同じ情報が含まれていますが、宣言的な方法 (そしてより簡潔な方法) を使ってその情報が記述されています。systemd は繰り返しタスク (プロセスの開始と停止、状態確認、ログ記録、特権の取り消し、など) の大部分を取り扱い、service ファイルにはプロセスに特有の情報を記入する必要があります。たとえば以下は SSH 用の service ファイルです。
 			</div><pre
               class="programlisting">[Unit]
 Description=OpenBSD Secure Shell server
@@ -295,7 +295,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 Alias=sshd.service</pre><div
               class="para">
-				ご覧のとおり、内容はとても少なく、ただの宣言に過ぎません。systemd は作業進行状況を表示したり、プロセスを監視したり、必要なときにプロセスを再起動することを担当します。
+				ご覧の通り、内容はとても少なく、ただの宣言に過ぎません。systemd は作業進行状況を表示したり、プロセスを監視したり、必要な時にプロセスを再起動することを担当します。
 			</div><div
               class="para">
 				systemd の「target ファイル」はシステムの状態を表現するもので、このファイルを使って利用できる状態にされていなければならないサービス群を指定します。「target ファイル」は昔ながらのランレベルに相当するものとして考えることが可能です。target ファイルの 1 つに <code
@@ -310,10 +310,10 @@ Alias=sshd.service</pre><div
                 class="literal">printer.target</code> を処理する前に CUPS が実行されていることを保証するでしょう。
 			</div><div
               class="para">
-				ユニットファイルは宣言型の設定ファイルでありスクリプトやプログラムではないため、直接実行することは不可能で、systemd によってのみ解釈されます。いくつかのユーティリティを使うことで、管理者は systemd と情報をやりとりして、システムおよびシステム部品の状態を制御することが可能です。
+				ユニットファイルは宣言型の設定ファイルでありスクリプトやプログラムではないため、直接実行することは不可能で、systemd によってのみ解釈されます。いくつかのユーティリティを使うことで、管理者は systemd と情報をやり取りして、システムおよびシステム部品の状態を制御することが可能です。
 			</div><div
               class="para">
-				systemd と情報をやりとりする 1 番目のユーティリティとして <code
+				systemd と情報をやり取りする 1 番目のユーティリティとして <code
                 class="command">systemctl</code> が挙げられます。<code
                 class="command">systemctl</code> を引数なしで実行した場合、systemd が把握しているすべてのユニットファイル (無効化されているものを除く) およびその状態が表示されます。<code
                 class="command">systemctl status</code> を使うことで、サービスおよび関連するプロセスをよりわかりやすく表示することが可能です。サービスの名前を指定した (<code
@@ -340,7 +340,7 @@ Alias=sshd.service</pre><div
 				systemd の興味深い機能として、<code
                 class="command">journald</code> と名付けられたログ記録部品が挙げられます。<code
                 class="command">journald</code> は <code
-                class="command">syslogd</code> などのより伝統的なログ記録ファイルシステムを補完するために誕生しましたが、サービスとサービスが生成したメッセージ間を正しく結びつけたり、初期化シーケンスが生成するエラーメッセージを捕捉する能力などの興味深い機能を追加しています。<code
+                class="command">syslogd</code> などのより伝統的なログ記録ファイルシステムを補完するために誕生しましたが、サービスとサービスが生成したメッセージ間を正しく結び付けたり、初期化シーケンスが生成するエラーメッセージを保存する能力などの興味深い機能を追加しています。<code
                 class="command">journalctl</code> コマンドの助けを借りれば、メッセージを後から表示することも可能です。引数なしで実行した場合、<code
                 class="command">journalctl</code> は起動後に発生したすべてのログメッセージを表示しますが、引数を与えずに実行することはほとんどないでしょう。ほとんどの場合、サービス識別子を与えて <code
                 class="command">journalctl</code> を実行することが多いでしょう。
@@ -368,7 +368,7 @@ Alias=sshd.service</pre><div
               class="para">
 				サービスが期待通りに動いていないように見える場合、プログラムをデバッグするために、サービスが本当に <code
                 class="command">systemctl status</code> を使って実行されているか否かを真っ先に確認します。そしてサービスが実行されていなくて、<code
-                class="command">systemctl status</code> の表示したメッセージが問題の原因を突き止めるのに十分でない場合、journald が収集したサービスに関連するログを確認します。たとえば、SSH サービスが動いていないと仮定します。
+                class="command">systemctl status</code> の表示したメッセージが問題の原因を解明するのに十分でない場合、journald が収集したサービスに関連するログを確認します。たとえば、SSH サービスが動いていないと仮定します。
 			</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
@@ -446,7 +446,7 @@ Alias=sshd.service</pre><div
                 class="itemizedlist"><ul><li
                     class="listitem"><div
                       class="para">
-						ソケットの活性化。「socket」型のユニットファイルを使えば、systemd が管理するネットワークや Unix ソケットを表現することが可能です。これは systemd がソケットを作成し、実際のサービスは実際の接続要求を受信した時に要求に応じて開始されることを意味しています。この機能はおおまかに言って <code
+						ソケットの活性化。「socket」型のユニットファイルを使えば、systemd が管理するネットワークや Unix ソケットを表現することが可能です。これは systemd がソケットを作成し、実際のサービスは実際の接続要求を受信した時に要求に応じて開始されることを意味しています。この機能は大雑把に言って <code
                         class="command">inetd</code> の機能群を再現するものです。
 					</div></li><li
                     class="listitem"><div
@@ -468,13 +468,13 @@ Alias=sshd.service</pre><div
                 class="emphasis"><em>sysinit</em></span> 段階に相当します) は <code
                 class="command">/etc/init.d/rcS</code> で、これは <code
                 class="filename">/etc/rcS.d/</code> ディレクトリに含まれるすべてのプログラムを起動するスクリプトです。<a
-                id="idm139680317984496"
+                id="idm140633238848688"
                 class="indexterm"></a><a
-                id="idm139680317983856"
+                id="idm140633238848048"
                 class="indexterm"></a><a
-                id="idm139680317983216"
+                id="idm140633238847408"
                 class="indexterm"></a><a
-                id="idm139680317982576"
+                id="idm140633238846768"
                 class="indexterm"></a>
 			</div><div
               class="para">
@@ -511,7 +511,7 @@ Alias=sshd.service</pre><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> カーネルモジュールとオプション</strong></p></div></div></div><a
-                id="idm139680317973104"
+                id="idm140633238837456"
                 class="indexterm"></a><div
                 class="para">
 				カーネルモジュールにオプションを指定するには、<code
@@ -527,9 +527,9 @@ Alias=sshd.service</pre><div
                   class="command">modprobe</code> は <span
                   class="pkg pkg">kmod</span> パッケージによって提供されます。
 			</div><a
-                id="idm139680317966512"
+                id="idm140633238830864"
                 class="indexterm"></a><a
-                id="idm139680317965392"
+                id="idm140633238829744"
                 class="indexterm"></a></div><div
               class="para">
 				この段階の後、<code
@@ -546,9 +546,9 @@ Alias=sshd.service</pre><div
               class="para">
 				この依存関係に基づく起動システムのおかげで、自動的な起動順の再定義が可能になります。これは手作業でやるにはちょっと退屈な作業で、人的ミスの危険性があります。なぜなら、起動順は宣言された依存関係に従って定義されるからです。別の利益として、他のサービスに依存しないサービスは並列して開始できるという点があります。このことにより、起動処理を加速できます。
 			</div><a
-              id="idm139680317956976"
+              id="idm140633238821328"
               class="indexterm"></a><a
-              id="idm139680317956016"
+              id="idm140633238820368"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -569,7 +569,7 @@ Alias=sshd.service</pre><div
               class="itemizedlist"><ul><li
                   class="listitem"><div
                     class="para">
-						レベル 0 はコンピュータの電源を切る祭に一時的に使われるだけです。このため「K」スクリプトしか含まれません。
+						レベル 0 はコンピュータの電源を切る際に一時的に使われるだけです。このため「K」スクリプトしか含まれません。
 					</div></li><li
                   class="listitem"><div
                     class="para">
@@ -584,7 +584,7 @@ Alias=sshd.service</pre><div
 						レベル 6 はレベル 0 と似ていますが、再起動前のシャットダウン段階中に使われる点が異なります。
 					</div></li></ul></div><div
               class="para">
-				他のレベル、特に 3 から 5 まで、も存在します。デフォルトでこれらのランレベルはレベル 2 と同じ様に動作しますが、管理者はこれを変えて (ランレベルに対応する <code
+				他のレベル、特に 3 から 5 まで、も存在します。デフォルトでこれらのランレベルはレベル 2 と同様に動作しますが、管理者はこれを変えて (ランレベルに対応する <code
                 class="filename">/etc/rc<em
                   class="replaceable">X</em>.d</code> ディレクトリにスクリプトを追加したりおよび削除したりすることで) 特定の要求に順応させることが可能です。
 			</div><div
@@ -595,7 +595,7 @@ Alias=sshd.service</pre><div
                     src="images/startup-sysvinit.png"
                     alt="System V init を使う Linux の動くコンピュータの起動シーケンス" /></div></div><p
                 class="title"><strong>図9.2 System V init を使う Linux の動くコンピュータの起動シーケンス</strong></p></div><a
-              id="idm139680317939344"
+              id="idm140633238441040"
               class="indexterm"></a><div
               class="para">
 				さまざまな <code
@@ -613,17 +613,17 @@ Alias=sshd.service</pre><div
                 class="command">rcconf</code> を使いたいと思うかもしれません。<code
                 class="command">rcconf</code> はよりユーザにとって使い勝手の良いインターフェースを提供します。
 			</div><a
-              id="idm139680317930416"
+              id="idm140633238432112"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>DEBIAN POLICY</em></span> サービスの再起動</strong></p></div></div></div><a
-                id="idm139680317928208"
+                id="idm140633238429904"
                 class="indexterm"></a><a
-                id="idm139680317927088"
+                id="idm140633238428784"
                 class="indexterm"></a><a
-                id="idm139680317925648"
+                id="idm140633238427344"
                 class="indexterm"></a><div
                 class="para">
 				Debian のメンテナスクリプトは、サービスを利用できるようにするためか、特定のオプションを考慮するために、特定のサービスを再起動することがあります。サービスを操作するコマンド — <code
@@ -640,7 +640,7 @@ Alias=sshd.service</pre><div
                 class="command">login <em
                   class="replaceable">user</em></code> を実行します。
 			</div><a
-              id="idm139680317918640"
+              id="idm140633238420336"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
