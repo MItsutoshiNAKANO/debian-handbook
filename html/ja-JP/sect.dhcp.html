@@ -72,11 +72,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			DHCP (for <span
             class="emphasis"><em>Dynamic Host Configuration Protocol</em></span>) とは、マシンが起動時にネットワーク設定を自動的に取得することを可能にするプロトコルです。DHCP のおかげで、ネットワーク設定の管理を中央集権化し、すべてのデスクトップマシンに類似した設定を行う、ことが可能になります。
 		</div><a
-          id="idm140633235822016"
+          id="idm139774332602768"
           class="indexterm"></a><a
-          id="idm140633235821056"
+          id="idm139774332601808"
           class="indexterm"></a><a
-          id="idm140633235820128"
+          id="idm139774332600880"
           class="indexterm"></a><div
           class="para">
 			DHCP サーバは多くのネットワーク関連パラメータを提供します。DHCP サーバが提供する最も一般的なパラメータは IP アドレスとマシンの所属するネットワークですが、他にも DNS サーバ、WINS サーバ、NTP サーバなどの情報を提供することも可能です。
@@ -142,7 +142,7 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dhcp-dns"></a>10.7.2. DHCP と DNS</h3></div></div></div><a
-            id="idm140633235806144"
+            id="idm139774332586896"
             class="indexterm"></a><div
             class="para">
 				DNS ゾーン内に DHCP クライアントを自動登録するという、便利な機能があります。この機能を使うことで、各マシンの意味のある名前を使ってアクセスできるようになります (この機能を使わなければ <code
@@ -153,7 +153,7 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
 				<code
               class="command">bind</code> の場合、DHCP サーバからの更新を受け入れる各ゾーンに <code
               class="literal">allow-update</code> 指示文を追加する必要があります (<code
-              class="literal">internal.falcot.com</code> ドメインの 1 つと逆引きゾーンの両方に追加する)。この指示文は更新要求を受け入れる IP アドレスをリストします。つまり、考え得る DHCP サーバの全アドレスを列挙します (そうすることが適切なら、ローカルアドレスと公開アドレスの両方)。
+              class="literal">internal.falcot.com</code> ドメインの 1 つと逆引きゾーンの両方に追加する必要があります)。この指示文は更新要求を受け入れる IP アドレスをリストします。つまり、考え得る DHCP サーバの全アドレスを列挙します (そうすることが適切なら、ローカルアドレスと公開アドレスの両方)。
 			</div><pre
             class="programlisting">
 allow-update { 127.0.0.1 192.168.0.1 212.94.201.10 !any };</pre><div

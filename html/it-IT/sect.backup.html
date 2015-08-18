@@ -71,9 +71,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Fare copie di backup è uno dei compiti principali di ogni amministratore, ma rappresenta un argomento complesso, che coinvolge potenti strumenti che sono spesso difficili da padroneggiare.
 		</div><a
-          id="idm140517676170544"
+          id="idm139680066931120"
           class="indexterm"></a><a
-          id="idm140517676169776"
+          id="idm139680066930352"
           class="indexterm"></a><div
           class="para">
 			Esistono molti programmi, come <code
@@ -82,11 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">BackupPC</code>. Sono sistemi client/server con molte opzioni, la cui configurazione è piuttosto difficile. Alcuni di essi forniscono interfacce web facili da usare per mitigare il problema. Debian tuttavia contiene decine di altri software per i backup che coprono tutti i casi d'uso, come si può facilmente confermare con <code
             class="command">apt-cache search backup</code>.
 		</div><a
-          id="idm140517676166768"
+          id="idm139680066927344"
           class="indexterm"></a><a
-          id="idm140517676165872"
+          id="idm139680066926448"
           class="indexterm"></a><a
-          id="idm140517676164976"
+          id="idm139680066925552"
           class="indexterm"></a><div
           class="para">
 			Invece di descriverne in dettaglio alcuni, questa sezione esporrà i pensieri degli amministratori della Falcot Corp quando definirono la loro strategia di backup.
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140517676162912"></a>9.10.1. Backup con <code
+                    id="idm139680066923488"></a>9.10.1. Backup con <code
                     class="command">rsync</code></h3></div></div></div><div
             class="para">
 				Dato che i backup su nastro sono stati ritenuti troppo lenti e costosi, il backup dei dati viene fatto su hard disk su un server dedicato, in cui l'uso di RAID software (vedere la <a
@@ -105,15 +105,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="advanced-administration.html#sect.raid-soft">Sezione 12.1.1, «RAID software»</a>) proteggerà i dati da guasti del disco rigido. I backup dei computer desktop non vengono fatti singolarmente, ma gli utenti sono avvisati che verrà eseguito il backup del loro account personale sul file server del proprio dipartimento. Il comando <code
               class="command">rsync</code> (dal pacchetto omonimo) viene utilizzato quotidianamente per eseguire il backup di questi server diversi.
 			</div><a
-            id="idm140517676160144"
+            id="idm139680066920720"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>FONDAMENTALI</em></span> Il collegamento fisico, un secondo nome per il file</strong></p></div></div></div><a
-              id="idm140517676158352"
+              id="idm139680066918928"
               class="indexterm"></a><a
-              id="idm140517676157200"
+              id="idm139680066917776"
               class="indexterm"></a><div
               class="para">
 				A hard link, as opposed to a symbolic link, cannot be differentiated from the linked file. Creating a hard link is essentially the same as giving an existing file a second name. This is why the deletion of a hard link only removes one of the names associated with the file. As long as another name is still assigned to the file, the data therein remain present on the filesystem. It is interesting to note that, unlike a copy, the hard link does not take up additional space on the hard drive.
@@ -131,11 +131,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">rsync</code> è preceduto da una duplicazione del contenuto del backup precedente con collegamenti fisici, il che impedisce l'utilizzo eccessivo di spazio su disco. Il processo <code
               class="command">rsync</code> quindi sostituisce solo i file che sono stati modificati dall'ultimo backup. Con questo meccanismo un gran numero di backup può essere mantenuto in una piccola quantità di spazio. Dal momento che tutti i backup sono immediatamente disponibili e accessibili (per esempio, in diverse directory di una determinata condivisione della rete), è possibile fare rapidamente paragoni tra due date.
 			</div><a
-            id="idm140517676151104"
+            id="idm139680066911680"
             class="indexterm"></a><a
-            id="idm140517676150336"
+            id="idm139680066910912"
             class="indexterm"></a><a
-            id="idm140517676149184"
+            id="idm139680066909760"
             class="indexterm"></a><div
             class="para">
 				Questo meccanismo di backup viene facilmente implementato con il programma <code
@@ -237,7 +237,7 @@ exclude:
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140517676124560"></a>9.10.2. ﻿Ripristino di macchine senza backup</h3></div></div></div><div
+                    id="idm139680066885136"></a>9.10.2. ﻿Ripristino di macchine senza backup</h3></div></div></div><div
             class="para">
 				I computer desktop, di cui non esiste il backup, saranno facile da reinstallare da DVD-ROM personalizzati preparati con <span
               class="emphasis"><em>Simple-CDD</em></span> (vedere la <a
@@ -261,22 +261,22 @@ exclude:
                   class="replaceable">file_from_today</em></code>. The <code
                 class="command">xdelta</code> program produces incremental differences from binary dumps.
 			</div><a
-              id="idm140517676116960"
+              id="idm139680066877536"
               class="indexterm"></a><a
-              id="idm140517676116064"
+              id="idm139680066876640"
               class="indexterm"></a><a
-              id="idm140517676115168"
+              id="idm139680066875744"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> <span
                         class="emphasis"><em>TAR</em></span>, lo standard per i backup su nastro</strong></p></div></div></div><a
-              id="idm140517676112992"
+              id="idm139680066873568"
               class="indexterm"></a><a
-              id="idm140517676111840"
+              id="idm139680066872416"
               class="indexterm"></a><a
-              id="idm140517676111072"
+              id="idm139680066871648"
               class="indexterm"></a><div
               class="para">
 				Storicamente, il mezzo più semplice per fare un backup in Unix era quello di memorizzare un archivio <span

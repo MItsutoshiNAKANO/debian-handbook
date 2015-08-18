@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140633235034944"></a>9.11.1. 前書き</h3></div></div></div><div
+                    id="idm139774330046224"></a>9.11.1. 前書き</h3></div></div></div><div
             class="para">
 				<span
               class="emphasis"><em>hotplug</em></span> カーネルサブシステムはデバイスの追加と削除を、適切なドライバを読み込んだり関連するデバイスファイルを作成する (<code
@@ -84,22 +84,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> は対応するエントリを <code
               class="filename">/dev/</code> 内に作成します。
 			</div><a
-            id="idm140633235029920"
+            id="idm139774330041872"
             class="indexterm"></a><a
-            id="idm140633235028800"
+            id="idm139774330040976"
             class="indexterm"></a><a
-            id="idm140633235027840"
+            id="idm139774330040208"
             class="indexterm"></a><a
-            id="idm140633235026880"
+            id="idm139774330039440"
             class="indexterm"></a><a
-            id="idm140633235025920"
+            id="idm139774330038672"
             class="indexterm"></a><a
-            id="idm140633235024960"
+            id="idm139774330037904"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140633235023840"></a>9.11.2. 命名問題</h3></div></div></div><div
+                    id="idm139774330037008"></a>9.11.2. 命名問題</h3></div></div></div><div
             class="para">
 				ホットプラグ接続の出現前、デバイスに固定された名前を割り当てることは簡単でした。名前は単純にデバイスが接続されたバスの位置を基にしていました。しかしこのやり方では、デバイスが接続されるバスの位置が決まっていない場合に、問題です。典型的な例は、コンピュータがディスクドライブとして認識するデジタルカメラや USB メモリを使う場合です。最初に接続されたデバイスは <code
               class="filename">/dev/sdb</code>、2 番目に接続されたデバイスは <code
@@ -143,7 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140633235007440"></a>9.11.3. <span
+                    id="idm139774330022560"></a>9.11.3. <span
                     class="emphasis"><em>udev</em></span> の動作原理</h3></div></div></div><div
             class="para">
 				<span
@@ -155,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>udev</em></span> は <code
               class="filename">/etc/udev/rules.d/</code> と <code
               class="filename">/lib/udev/rules.d/</code> に含まれるすべてのルールを調査します。この過程で <span
-              class="emphasis"><em>udev</em></span> は、どのような名前をデバイスに割り当てるか、どのような名前でシンボリックリンクを作成するか (別名を与えるために)、どのようなコマンドを実行するか、を決定します。これらのファイルすべてが調査され、ルールがすべて順番に評価されます (「GOTO」ディレクティブを使う場合を除いて)。そのため、与えられたイベントに対応する複数のルールが有るかもしれません。
+              class="emphasis"><em>udev</em></span> は、どのような名前をデバイスに割り当てるか、どのような名前でシンボリックリンクを作成するか (別名を与えるために)、どのようなコマンドを実行するか、を決定します。これらのファイルすべてが調査され、ルールがすべて順番に評価されます (「GOTO」ディレクティブを使う場合を除きます)。そのため、与えられたイベントに対応する複数のルールが有るかもしれません。
 			</div><div
             class="para">
 				ルールの構文はとても単純です。つまり各行には、選択基準と変数代入命令が含まれます。選択基準は反応を必要とするイベントを選ぶのに使われ、変数代入命令はイベントに対して行う動作を定義します。選択基準と変数代入命令は単純にコンマで区切られており、演算子を使って選択基準 (<code
@@ -327,7 +327,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140633234944720"></a>9.11.4. 具体例</h3></div></div></div><div
+                    id="idm139774329970016"></a>9.11.4. 具体例</h3></div></div></div><div
             class="para">
 				単純な USB メモリに固定された名前を割り当てる場合を考えましょう。最初に、一意的な方法で USB メモリを識別するために必要な要素を見つけなければいけません。このために、USB メモリを取り付け、<code
               class="command">udevadm info -a -n /dev/sdc</code> を実行してください (ここで、<em
