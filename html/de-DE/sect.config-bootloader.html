@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Den Boot-Loader konfigurieren</h2></div></div></div><a
-          id="idm140226742512960"
+          id="idm140608873477392"
           class="indexterm"></a><a
-          id="idm140226742511520"
+          id="idm140608873475952"
           class="indexterm"></a><div
           class="para">
 			Er funktioniert wahrscheinlich schon, aber trotzdem ist es immer empfehlenswert zu wissen, wie der Boot-Loader konfiguriert und installiert wird für den Fall, dass er aus dem Master Boot Record verschwindet. Dies kann nach der Installierung eines anderen Betriebssystems, wie zum Beispiel Windows, passieren. Die folgenden Informationen können auch dabei helfen, die Konfiguration des Boot-Loaders, falls nötig, zu verändern.
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ZURÜCK ZU DEN GRUNDLAGEN</em></span> Master Boot Record</strong></p></div></div></div><a
-            id="idm140226742508576"
+            id="idm140608873473008"
             class="indexterm"></a><a
-            id="idm140226742507616"
+            id="idm140608873472048"
             class="indexterm"></a><div
             class="para">
 			Der Master Boot Record (MBR) belegt die ersten 512 Bytes der ersten Festplatte und ist die erste Sache, die vom BIOS geladen wird, um die Kontrolle an ein Programm zu übergeben, das in der Lage ist, das gewünschte Betriebssystem hochzufahren. Im allgemeinen wird der Boot-Loader in den MBR installiert und damit sein bisheriger Inhalt überschrieben.
@@ -126,9 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm140226740698352"
+            id="idm140608871359968"
             class="indexterm"></a><a
-            id="idm140226740697392"
+            id="idm140608871359200"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -141,13 +141,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> die erste Partition auf der ersten Platte, und <code
               class="filename">/dev/sdb3</code> ist die dritte Partition auf der zweiten Platte.
 			</div><a
-            id="idm140226740692016"
+            id="idm140608871354656"
             class="indexterm"></a><a
-            id="idm140226740690576"
+            id="idm140608871353504"
             class="indexterm"></a><a
-            id="idm140226740689136"
+            id="idm140608871352352"
             class="indexterm"></a><a
-            id="idm140226740687696"
+            id="idm140608871351200"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -157,9 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
 			</div><a
-            id="idm140226740683712"
+            id="idm140608871347824"
             class="indexterm"></a><a
-            id="idm140226740682272"
+            id="idm140608871346672"
             class="indexterm"></a><div
             class="para">
 				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
@@ -209,9 +209,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. LILO konfigurieren</h3></div></div></div><a
-            id="idm140226740671696"
+            id="idm140608871337376"
             class="indexterm"></a><a
-            id="idm140226740670736"
+            id="idm140608871336608"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -257,16 +257,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Konfigurierung von GRUB 2</h3></div></div></div><a
-            id="idm140226740663264"
+            id="idm140608871330320"
             class="indexterm"></a><a
-            id="idm140226740662304"
+            id="idm140608871329552"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (GRand Unified Bootloader) ist neueren Datums. Man muss ihn nicht nach jeder Kernelaktualisierung aufrufen; <span
               class="emphasis"><em>GRUB</em></span> kann die Dateisysteme lesen und die Position des Kernels auf der Platte selbst finden. Um ihn in den MBR der ersten Platte zu installieren, geben Sie einfach <code
               class="command">grub-install /dev/sda</code> ein. <a
-              id="idm140226740659344"
+              id="idm140608871327072"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -304,7 +304,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Für Macintosh-Computer (PowerPC): Yaboot konfigurieren</h3></div></div></div><a
-            id="idm140226740644768"
+            id="idm140608871314752"
             class="indexterm"></a><div
             class="para">
 				Yaboot ist der von alten Macintosh-Rechnern mit PowerPC-Prozessoren verwendete Boot-Loader. Sie fahren nicht wie PCs hoch, sondern stützen sich auf eine “Bootstrap“-Partition, von der aus das BIOS (oder OpenFirmware) den Loader ausführt, und auf dem das Programm <code
@@ -317,7 +317,7 @@ other=/dev/sda1
 				Bevor <code
               class="command">ybin</code> ausgeführt wird, muss man zunächst eine gültige Version der Datei <code
               class="filename">/etc/yaboot.conf</code> haben. Das Folgende ist ein Beispiel einer minimalen Konfiguration. <a
-              id="idm140226740639424"
+              id="idm140608871310496"
               class="indexterm"></a>
 			</div><div
             class="example"><a

@@ -69,11 +69,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.syslog"></a>9.5. <code
                   class="command">syslog</code> システムイベント</h2></div></div></div><a
-          id="idm139774330818416"
+          id="idm140337418427888"
           class="indexterm"></a><a
-          id="idm139774330817296"
+          id="idm140337418426768"
           class="indexterm"></a><a
-          id="idm139774330815856"
+          id="idm140337418425328"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -222,10 +222,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal"><em
                   class="replaceable">subsystem</em>.<em
                   class="replaceable">priority</em></code> の組からなるセミコロン区切りリストです (たとえば <code
-                class="literal">auth.notice;mail.info</code> など)。アスタリスクはすべてのサブシステムまたはすべての優先順位を表します (たとえば <code
+                class="literal">auth.notice;mail.info</code> などです)。アスタリスクはすべてのサブシステムまたはすべての優先順位を表します (たとえば <code
                 class="literal">*.alert</code>、<code
-                class="literal">mail.*</code> など)。コンマで区切れば複数のサブシステムをグループ化することが可能です (たとえば <code
-                class="literal">auth,mail.info</code> など)。優先度は同じかより高い優先度を持つメッセージを意味しています。このため <code
+                class="literal">mail.*</code> などのように使います)。コンマで区切れば複数のサブシステムをグループ化することが可能です (たとえば <code
+                class="literal">auth,mail.info</code> などのように使います)。優先度は同じかより高い優先度を持つメッセージを意味しています。このため <code
                 class="literal">auth.alert</code> は <code
                 class="literal">alert</code> および <code
                 class="literal">emerg</code> 優先度を持つ <code
@@ -255,9 +255,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> 名前付きパイプ、永続的なパイプ</strong></p></div></div></div><a
-                id="idm139774330753088"
+                id="idm140337417063968"
                 class="indexterm"></a><a
-                id="idm139774330752128"
+                id="idm140337417063008"
                 class="indexterm"></a><div
                 class="para">
 					名前付きパイプは特殊なファイル型で、古典的なパイプ (コマンドラインで「|」文字を使って表すパイプ) のように振る舞いますが、ファイルを経由します。名前付きパイプのメカニズムは 2 つの別々のプロセスを関連付けることが可能という利点を持っています。別のプロセスが名前付きパイプに書き込まれたデータを読む準備を整えるまで、名前付きパイプに書き込むプロセスはブロックされます。読み込み側のプロセスが書き込み側のプロセスの書き込んだデータを読み込むと、書き込み側のプロセスのブロックが解除されます。
@@ -274,39 +274,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="listitem"><div
                     class="para">
 							ファイルにメッセージを追記します (たとえば <code
-                      class="filename">/var/log/messages</code> など)。
+                      class="filename">/var/log/messages</code> などのように指定します)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							メッセージをリモートの <code
                       class="command">syslog</code> サーバに送信します (たとえば <code
-                      class="literal">@log.falcot.com</code> など)。
+                      class="literal">@log.falcot.com</code> などのように指定します)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							既存の名前付きパイプにメッセージを送信します (たとえば <code
-                      class="literal">|/dev/xconsole</code> など)。
+                      class="literal">|/dev/xconsole</code> などのように指定します)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							ログイン中の 1 人かそれ以上のユーザにメッセージを送信します (たとえば <code
-                      class="literal">root,rhertzog</code> など)。
+                      class="literal">root,rhertzog</code> などのように指定します)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							ログイン中の全ユーザにメッセージを送信します (たとえば <code
-                      class="literal">*</code> など)。
+                      class="literal">*</code> などのように指定します)。
 						</div></li><li
                   class="listitem"><div
                     class="para">
 							テキストコンソールにメッセージを書き込みます (たとえば <code
-                      class="literal">/dev/tty8</code> など)。
+                      class="literal">/dev/tty8</code> などのように指定します)。
 						</div></li></ul></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>SECURITY</em></span> ログの転送</strong></p></div></div></div><a
-                id="idm139774330737376"
+                id="idm140337417048448"
                 class="indexterm"></a><div
                 class="para">
 					最重要のログを別のマシン (ログ記録専用マシン) に記録することは良い考えです。なぜなら、そうすることで侵入者に不正侵入の形跡を削除されないようにすることが可能だからです (これを削除するにはもちろん、ログを記録させた別のマシンに不正アクセスするしかありません)。さらに、深刻な問題 (カーネルクラッシュなど) が起きた場合に、他のマシンにログを記録しておけば、クラッシュを引き起こす一連の出来事を決定できる可能性を増やすことが可能です。

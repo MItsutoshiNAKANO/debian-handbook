@@ -71,9 +71,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			バックアップを取ることは管理者の主要な責任の 1 つです。しかし、これは通常極めるのが難しい強力なツールを使う複雑な問題です。
 		</div><a
-          id="idm139774330113920"
+          id="idm140337416827088"
           class="indexterm"></a><a
-          id="idm139774330113152"
+          id="idm140337416826128"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -82,11 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">BackupPC</code> などの多くのプログラムが存在します。これらはクライアント/サーバシステムに適した多くの選択肢で、設定はかなり難しいです。いくつかは難しさを和らげるためのユーザフレンドリーなウェブインターフェースを提供しています。しかし Debian には、すべての考え得る使用事例に対応できる、他の数多くのバックアップソフトウェアが含まれています。ソフトウェアを確認するには <code
             class="command">apt-cache search backup</code> を使ってください。
 		</div><a
-          id="idm139774330109920"
+          id="idm140337416822288"
           class="indexterm"></a><a
-          id="idm139774330109024"
+          id="idm140337416821168"
           class="indexterm"></a><a
-          id="idm139774330108128"
+          id="idm140337416820048"
           class="indexterm"></a><div
           class="para">
 			これらのうちのいくつかを詳細に説明するのではなく、この節では、Falcot Corp 管理者がバックアップ戦略を定義する際にどのように考えたかを説明します。
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139774330105888"></a>9.10.1. <code
+                    id="idm140337416817456"></a>9.10.1. <code
                     class="command">rsync</code> を使ったバックアップ</h3></div></div></div><div
             class="para">
 				テープへのバックアップは遅くて費用がかかりすぎるとみなされ、データは専用サーバのハードドライブにバックアップされることになりました。専用サーバはソフトウェア RAID (<a
@@ -105,15 +105,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="advanced-administration.html#sect.raid-soft">「ソフトウェア RAID」</a>参照) を使ってデータをハードウェア障害から守っています。デスクトップコンピュータは個別にバックアップされませんが、ユーザは部署のファイルサーバの個人アカウントはバックアップされると忠告されています。毎日 <code
               class="command">rsync</code> コマンド (同名のパッケージに含まれます) を使って、異なるサーバにバックアップを行います。
 			</div><a
-            id="idm139774330103008"
+            id="idm140337416814160"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> ハードリンク、ファイルの別名</strong></p></div></div></div><a
-              id="idm139774330101216"
+              id="idm140337416811952"
               class="indexterm"></a><a
-              id="idm139774330100064"
+              id="idm140337416810512"
               class="indexterm"></a><div
               class="para">
 				ハードリンクはシンボリックリンクと異なり、リンクされたファイルと区別できません。本質的に、ハードリンクの作成は既存のファイルに別名を与えることと同義です。そのため、ハードリンクの削除はそのファイルに関連する名前を削除するに過ぎません。他の名前がまだそのファイルに関連付けられている場合、データの実体ファイルシステムから削除されません。コピーと異なり、ハードリンクはハードドライブ上に追加的な領域を必要としない点について注意することは興味深いです。
@@ -133,11 +133,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">rsync</code> コマンドはバックアップの内容をハードリンクで複製します。このおかげで、ハードドライブ領域を無駄に消費することがなくなります。そして <code
               class="command">rsync</code> プロセスは最後のバックアップ以降に変更されたファイルだけを置き換えます。このメカニズムにより、多くのバックアップを少ない領域に保存することが可能です。すべてのバックアップは即座に利用できる上に即座にアクセスできるので (たとえば、ネットワーク共有されたディレクトリの中に置かれるので)、ある日付同士の違いを素早く比較できます。
 			</div><a
-            id="idm139774330092832"
+            id="idm140337416802192"
             class="indexterm"></a><a
-            id="idm139774330092064"
+            id="idm140337416801264"
             class="indexterm"></a><a
-            id="idm139774330090912"
+            id="idm140337416799824"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -213,10 +213,10 @@ exclude:
               class="command">hostname</code> の出力するローカルマシンの名前を指定します) にあり、特にルートツリーの内容 (<code
               class="literal">tree: /</code>) から、<code
               class="literal">exclude</code> に含まれるものを除外したファイルです。さらに、バックアップは <code
-              class="literal">tree</code> と同一のファイルシステムの内容に制限されます (<code
-              class="literal">xdev: 1</code>)。他のマウントポイントのファイルはバックアップされません。保存されたファイルのインデックスが生成され (<code
-              class="literal">index: gzip</code>)、イメージには現在の日付に関連する名前が付けられます (<code
-              class="literal">image-default: %Y%m%d</code>)。
+              class="literal">tree</code> と同一のファイルシステムの内容 (<code
+              class="literal">xdev: 1</code>) に制限されます。他のマウントポイントのファイルはバックアップされません。保存されたファイルのインデックス (<code
+              class="literal">index: gzip</code>) が生成され、イメージには現在の日付に関連する名前 (<code
+              class="literal">image-default: %Y%m%d</code>) が付けられます。
 			</div><div
             class="para">
 				多くのオプションがあり、すべては <span
@@ -235,17 +235,17 @@ exclude:
                 class="command">ssh</code> を使ってリモートマシンに接続し、<code
                 class="command">rsync</code> をサーバとして開始します。この場合、root ユーザは自動的にリモートマシンに接続できなければいけません。これを実現するには、SSH 認証鍵を使ってください (<a
                 class="xref"
-                href="sect.remote-login.html#sect.ssh-key-based-auth">「鍵認証方式」</a>参照)。
+                href="sect.remote-login.html#sect.ssh-key-based-auth">「鍵認証方式」</a>を参照してください)。
 			</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139774330064176"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
+                    id="idm140337416768752"></a>9.10.2. バックアップなしのマシンの復元</h3></div></div></div><div
             class="para">
 				バックアップされていないデスクトップコンピュータに対しては <span
               class="emphasis"><em>Simple-CDD</em></span> でカスタマイズされた DVD-ROM からシステムを再インストールするのが簡単でしょう (<a
               class="xref"
-              href="sect.automated-installation.html#sect.simple-cdd">「Simple-CDD、一体型の解決策」</a>参照)。インストールを最初からやり直すので、初回インストール後に行われたすべての設定は失われます。これは問題ではありません。なぜなら、アカウントに関して言えばシステムはすべて中央 LDAP ディレクトリの情報を参照しており、ほとんどのデスクトップアプリケーションに関して言えば dconf のおかげで事前設定されている (詳しい情報は<a
+              href="sect.automated-installation.html#sect.simple-cdd">「Simple-CDD、一体型の解決策」</a>を参照してください)。インストールを最初からやり直すので、初回インストール後に行われたすべての設定は失われます。これは問題ではありません。なぜなら、アカウントに関して言えばシステムはすべて中央 LDAP ディレクトリの情報を参照しており、ほとんどのデスクトップアプリケーションに関して言えば dconf のおかげで事前設定されている (詳しい情報は<a
               class="xref"
               href="sect.graphical-desktops.html#sect.gnome-desktop">「GNOME」</a>参照) からです。
 			</div><div
@@ -264,22 +264,22 @@ exclude:
                   class="replaceable">file_from_today</em></code> で生成されます。バイナリダンプから増分差分を作成するには <code
                 class="command">xdelta</code> プログラムを使ってください。
 			</div><a
-              id="idm139774330055824"
+              id="idm140337416759248"
               class="indexterm"></a><a
-              id="idm139774330054928"
+              id="idm140337416758128"
               class="indexterm"></a><a
-              id="idm139774330054032"
+              id="idm140337416757008"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="emphasis"><em>TAR</em></span>、テープバックアップ用の標準規格</strong></p></div></div></div><a
-              id="idm139774330051856"
+              id="idm140337416754320"
               class="indexterm"></a><a
-              id="idm139774330050704"
+              id="idm140337416752880"
               class="indexterm"></a><a
-              id="idm139774330049936"
+              id="idm140337416751952"
               class="indexterm"></a><div
               class="para">
 				歴史的に言って、Unix で最も簡単にバックアップを作成する手段は <span

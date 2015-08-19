@@ -74,7 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			<span
             class="emphasis"><em>Munin</em></span> は最初の範囲をカバーします。<span
-            class="emphasis"><em>Munin</em></span> はいくつかのパラメータの経時変化をグラフィカルに図示します (使用された RAM、専有されたディスク領域、プロセッサの負荷、ネットワークトラフィック、Apache/MySQL の負荷、など)。<span
+            class="emphasis"><em>Munin</em></span> はいくつかのパラメータの経時変化をグラフィカルに図示します (使用された RAM、専有されたディスク領域、プロセッサの負荷、ネットワークトラフィック、Apache/MySQL の負荷、などを図示します)。<span
             class="emphasis"><em>Nagios</em></span> は 2 番目の範囲をカバーします。<span
             class="emphasis"><em>Nagios</em></span> はサービスの稼働状態と利用可能状態を定期的に確認し、適切な経路 (電子メール、テキストメッセージ、など) を通じて警告を送信します。<span
             class="emphasis"><em>Munin</em></span> と <span
@@ -84,7 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> Zabbix、統合監視ツール</strong></p></div></div></div><a
-            id="idm139774327537584"
+            id="idm140337393846736"
             class="indexterm"></a><div
             class="para">
 			Munin と Nagios はとてもよく使われていますが、監視分野における唯一の選択肢というわけではありませんし、両者が担当している範囲は監視タスクの半分 (片方がグラフ化、もう一方が警告) に留まっています。これに対して、Zabbix は監視タスクの両方を統合しています。さらに Zabbix には、最もよく使われる側面を設定するためのウェブインターフェースがあります。Zabbix は最近の数年間で急速に成長し続けており、今や Munin と Nagios の対抗馬と考えられています。しかし残念なことに、Zabbix はリリース作業のタイミングの問題で Debian <span
@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> Icinga、Nagios のフォーク</strong></p></div></div></div><a
-            id="idm139774327533136"
+            id="idm140337393842288"
             class="indexterm"></a><div
             class="para">
 			Nagios の開発モデル (開発は企業によって管理されています) に関する意見の食い違いが引き金となり、多数の開発者が Nagios をフォークし、新しい名前として Icinga を使っています。現時点で Icinga はまだ Nagios の設定およびプラグインと互換性を持っています。しかし、Icinga にはいくつかの機能が追加されています。<div
@@ -107,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.munin"></a>12.4.1. Munin のセットアップ</h3></div></div></div><a
-            id="idm139774327529792"
+            id="idm140337393838944"
             class="indexterm"></a><div
             class="para">
 				Munin の目的は多くのマシンを監視することです。そしてこのため、Munin は当然クライアント/サーバアーキテクチャを採用しています。中央ホスト — グラフ化担当マシン — はすべての監視されているホストからデータを収集し、データの履歴グラフを生成します。
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139774327528256"></a>12.4.1.1. 監視対象ホストの設定</h4></div></div></div><div
+                      id="idm140337393837408"></a>12.4.1.1. 監視対象ホストの設定</h4></div></div></div><div
               class="para">
 					最初の段階は <span
                 class="pkg pkg">munin-node</span> パッケージをインストールすることです。このパッケージによってインストールされるデーモンはポート 4949 番をリッスンし、すべての動作しているプラグインによって収集されたデータを送り返します。それぞれのプラグインは収集されたデータの説明および最新の計測値を返す簡単なプログラムです。プラグインは <code
@@ -186,7 +186,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139774327508704"></a>12.4.1.2. グラフ化担当マシンの設定</h4></div></div></div><div
+                      id="idm140337393817856"></a>12.4.1.2. グラフ化担当マシンの設定</h4></div></div></div><div
               class="para">
 					「グラフ化担当マシン」はデータを集計し対応するグラを生成する単純なコンピュータです。要求されるソフトウェアは <span
                 class="pkg pkg">munin</span> パッケージに含まれます。標準的な設定は <code
@@ -217,7 +217,7 @@ load.info 5 minute load average
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.nagios"></a>12.4.2. Nagios のセットアップ</h3></div></div></div><a
-            id="idm139774327498864"
+            id="idm140337393808016"
             class="indexterm"></a><div
             class="para">
 				Munin と異なり、Nagios の場合、必ずしも監視対象のホストに何かをインストールする必要はありません。そしてほとんどの場合、Nagios はネットワークサービスの可用性を確認するために使われます。たとえば、Nagios を使うことで、ウェブサーバに接続し、あるウェブページがある時間内に取得できるかを確認することが可能です。
@@ -225,7 +225,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139774327497248"></a>12.4.2.1. インストール</h4></div></div></div><div
+                      id="idm140337393806400"></a>12.4.2.1. インストール</h4></div></div></div><div
               class="para">
 					Nagios をセットアップには、最初に <span
                 class="pkg pkg">nagios3</span>、<span
@@ -266,7 +266,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139774327485248"></a>12.4.2.2. 設定</h4></div></div></div><div
+                      id="idm140337393794400"></a>12.4.2.2. 設定</h4></div></div></div><div
               class="para">
 					Nagios のウェブインターフェースはかなり良くできていますが、設定もできませんし、監視対象のホストやサービスの追加もできません。全体の設定は中央設定ファイル <code
                 class="filename">/etc/nagios3/nagios.cfg</code> から参照されているファイルを使って管理されます。
@@ -337,7 +337,7 @@ load.info 5 minute load average
 					Falcot Corp の管理者は以下の設定を使います。
 				</div><div
               class="example"><a
-                id="idm139774327466480"></a><p
+                id="idm140337393775632"></a><p
                 class="title"><strong>例12.3 <code
                     class="filename">/etc/nagios3/conf.d/falcot.cfg</code> ファイル</strong></p><div
                 class="example-contents"><pre

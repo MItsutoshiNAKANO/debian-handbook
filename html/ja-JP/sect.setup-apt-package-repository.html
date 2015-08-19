@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.setup-apt-package-repository"></a>15.3. APT 用のパッケージリポジトリの作成</h2></div></div></div><a
-          id="idm139774329378096"
+          id="idm140337394285104"
           class="indexterm"></a><a
-          id="idm139774329377168"
+          id="idm140337394284176"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp の保守する Debian パッケージの数は次第に増えました。この中には、既存のパッケージから手元で修正したパッケージや、内部データとプログラムを配布するために最初から作成したパッケージなどがあります。
@@ -82,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="programlisting">
 deb http://packages.falcot.com/ updates/
 deb http://packages.falcot.com/ internal/</pre><a
-          id="idm139774329372720"
+          id="idm140337394279728"
           class="indexterm"></a><div
           class="para">
 			このため、管理者は内部 HTTP サーバ上に仮想ホストを設定して、APT リポジトリのルートとして <code
@@ -115,7 +115,7 @@ deb http://packages.falcot.com/ internal/</pre><a
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">apt-ftparchive</code></strong></p></div></div></div><a
-            id="idm139774329358432"
+            id="idm140337394265200"
             class="indexterm"></a><div
             class="para">
 			必要な Debian アーカイブが <code
@@ -175,7 +175,7 @@ release_label = Internal Packages</pre><div
             class="filename">Release</code> ファイルを作成することに決めた点は注目に値します。こうすることで、<code
             class="filename">/etc/apt/preferences</code> 設定ファイルを使ってパッケージインストール優先度を管理することに役立ちます (詳細は<a
             class="xref"
-            href="sect.apt-get.html#sect.apt.priorities">「パッケージ優先度の管理」</a>参照)。
+            href="sect.apt-get.html#sect.apt.priorities">「パッケージ優先度の管理」</a>を参照してください)。
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -215,7 +215,7 @@ release_label = Internal Packages</pre><div
 			APT スイートは対象のパッケージをインストールする前にそのパッケージに含まれる一連の暗号署名を確認し (<span
               class="distribution distribution">Etch</span> 以降、APT は署名を確認するようになりました)、そのパッケージの信頼性を確かめます (<a
               class="xref"
-              href="sect.package-authentication.html">「パッケージ信頼性の確認」</a>参照)。この挙動はプライベート APT アーカイブにとって問題です。なぜなら、プライベート APT アーカイブを使うマシンでは署名されていないパッケージに関する警告が表示され続けるからです。真面目な管理者は安全な APT メカニズムを使ってプライベート APT アーカイブを統合するでしょう。
+              href="sect.package-authentication.html">「パッケージ信頼性の確認」</a>を参照してください)。この挙動はプライベート APT アーカイブにとって問題です。なぜなら、プライベート APT アーカイブを使うマシンでは署名されていないパッケージに関する警告が表示され続けるからです。真面目な管理者は安全な APT メカニズムを使ってプライベート APT アーカイブを統合するでしょう。
 		</div><div
             class="para">
 			この作業を助けるために、<code

@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. Configuring the System for Another Language</h2></div></div></div><a
-            id="idm139722650807632"
+            id="idm139829153968240"
             class="indexterm"></a><div
             class="para">
 			If the system was installed using French, the machine will probably already have French set as the default language. But it is good to know what the installer does to set the language, so that later, if the need arises, you can change it.
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. Setting the Default Language</h3></div></div></div><a
-              id="idm139722667478560"
+              id="idm139829164364672"
               class="indexterm"></a><a
-              id="idm139722667477600"
+              id="idm139829164382832"
               class="indexterm"></a><a
-              id="idm139722667476640"
+              id="idm139829165213680"
               class="indexterm"></a><div
               class="para">
 				A locale is a group of regional settings. This includes not only the language for text, but also the format for displaying numbers, dates, times, and monetary sums, as well as the alphabetical comparison rules (to properly account for accented characters). Although each of these parameters can be specified independently from the others, we generally use a locale, which is a coherent set of values for these parameters corresponding to a “region” in the broadest sense. These locales are usually indicated under the form, <code
@@ -208,17 +208,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>CULTURE</em></span> Character sets</strong></p></div></div></div><a
-                id="idm139722653760656"
+                id="idm139829157382480"
                 class="indexterm"></a><a
-                id="idm139722653759696"
+                id="idm139829157381520"
                 class="indexterm"></a><a
-                id="idm139722653758736"
+                id="idm139829157380560"
                 class="indexterm"></a><a
-                id="idm139722653757776"
+                id="idm139829157379600"
                 class="indexterm"></a><a
-                id="idm139722653756816"
+                id="idm139829157378640"
                 class="indexterm"></a><a
-                id="idm139722650724160"
+                id="idm139829157377680"
                 class="indexterm"></a><div
                 class="para">
 				Historically, each locale has an associated “character set” (group of known characters) and a preferred “encoding” (internal representation for characters within the computer).
@@ -231,11 +231,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it's the default encoding in XML documents.
 			</div><a
-                id="idm139722650719680"
+                id="idm139829144781488"
                 class="indexterm"></a><a
-                id="idm139722650718720"
+                id="idm139829144780528"
                 class="indexterm"></a><a
-                id="idm139722650717760"
+                id="idm139829144779568"
                 class="indexterm"></a><div
                 class="para">
 				This is the encoding that should generally be used, and is thus the default on Debian systems.
@@ -260,11 +260,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it's picked up by all user sessions since PAM will inject its content in the <code
                 class="varname">LANG</code> environment variable.
 			</div><a
-              id="idm139722653440400"
+              id="idm139829153720896"
               class="indexterm"></a><a
-              id="idm139722651310592"
+              id="idm139829153719936"
               class="indexterm"></a><a
-              id="idm139722651309632"
+              id="idm139829157539392"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -291,32 +291,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/etc/default/locale</code> file works in a similar manner, but contains only the <code
                   class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it's generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
 			</div><a
-                id="idm139722651300688"
+                id="idm139829157530448"
                 class="indexterm"></a><a
-                id="idm139722651299728"
+                id="idm139829157529488"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. Configuring the Keyboard</h3></div></div></div><a
-              id="idm139722651297264"
+              id="idm139829157527024"
               class="indexterm"></a><a
-              id="idm139722651296304"
+              id="idm139829157526064"
               class="indexterm"></a><div
               class="para">
 				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it's based on debconf and is implemented in the <span
                 class="pkg pkg">keyboard-configuration</span> package. Thus the <code
                 class="command">dpkg-reconfigure keyboard-configuration</code> command can be used at any time to reset the keyboard layout.
 			</div><a
-              id="idm139722666456848"
+              id="idm139829162274560"
               class="indexterm"></a><a
-              id="idm139722666455728"
+              id="idm139829162273440"
               class="indexterm"></a><a
-              id="idm139722666454608"
+              id="idm139829162272320"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm139722666453168"
+                id="idm139829162270880"
                 class="indexterm"></a>The questions are relevant to the physical keyboard layout (a standard PC keyboard in the US will be a “Generic 104 key”), then the layout to choose (generally “US”), and then the position of the AltGr key (right Alt). Finally comes the question of the key to use for the “Compose key”, which allows for entering special characters by combining keystrokes. Type successively <span
                 class="keycap"><strong>Compose</strong></span> <span
                 class="keycap"><strong>'</strong></span> <span
@@ -324,13 +324,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/usr/share/X11/locale/en_US.UTF-8/Compose</code> file (or another file, determined according to the current locale indicated by <code
                 class="filename">/usr/share/X11/locale/compose.dir</code>).
 			</div><a
-              id="idm139722666449536"
+              id="idm139829162267248"
               class="indexterm"></a><a
-              id="idm139722666448256"
+              id="idm139829162265968"
               class="indexterm"></a><a
-              id="idm139722666446976"
+              id="idm139829162264688"
               class="indexterm"></a><a
-              id="idm139722666445376"
+              id="idm139829162263088"
               class="indexterm"></a><div
               class="para">
 				Note that the keyboard configuration for graphical mode described here only affects the default layout; the GNOME and KDE environments, among others, provide a keyboard control panel in their preferences allowing each user to have their own configuration. Some additional options regarding the behavior of some particular keys are also available in these control panels.
