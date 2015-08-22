@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux is definitely a multi-user system, so it is necessary to provide a permission system to control the set of authorized operations on files and directories, which includes all the system resources and devices (on a Unix system, any device is represented by a file or directory). This principle is common to all Unix systems, but a reminder is always useful, especially as there are some interesting and relatively unknown advanced uses.
 		</div><a
-          id="idm140420396300768"
+          id="idm139921726225504"
           class="indexterm"></a><a
-          id="idm140420396299808"
+          id="idm139921726224544"
           class="indexterm"></a><a
-          id="idm140420396298848"
+          id="idm139921726223584"
           class="indexterm"></a><a
-          id="idm140420396297408"
+          id="idm139921726222144"
           class="indexterm"></a><a
-          id="idm140420396295968"
+          id="idm139921726220704"
           class="indexterm"></a><a
-          id="idm140420396294528"
+          id="idm139921726219264"
           class="indexterm"></a><div
           class="para">
 			Each file or directory has specific permissions for three categories of users:
@@ -123,13 +123,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					executing (symbolized by <code
                   class="literal">x</code> as in “eXecute”).
 				</div></li></ul></div><a
-          id="idm140420396282896"
+          id="idm139921726207632"
           class="indexterm"></a><a
-          id="idm140420396281936"
+          id="idm139921726206672"
           class="indexterm"></a><a
-          id="idm140420396280976"
+          id="idm139921726205712"
           class="indexterm"></a><a
-          id="idm140420396280016"
+          id="idm139921726204752"
           class="indexterm"></a><div
           class="para">
 			In the case of a file, these rights are easily understood: read access allows reading the content (including copying), write access allows changing it, and execute access allows you to run it (which will only work if it's a program).
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> and <code
               class="literal">setgid</code> (symbolized with the letter “s”). Note that we frequently speak of “bit”, since each of these boolean values can be represented by a 0 or a 1. These two rights allow any user to execute the program with the rights of the owner or the group, respectively. This mechanism grants access to features requiring higher level permissions than those you would usually have.
 		</div><a
-            id="idm140420396274416"
+            id="idm139921726199152"
             class="indexterm"></a><a
-            id="idm140420396273136"
+            id="idm139921726197872"
             class="indexterm"></a><div
             class="para">
 			Since a <code
@@ -164,14 +164,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>SECURITY</em></span> <code
                       class="literal">setgid</code> directory and <span
                       class="emphasis"><em>sticky bit</em></span></strong></p></div></div></div><a
-            id="idm140420396266784"
+            id="idm139921726191520"
             class="indexterm"></a><div
             class="para">
 			The <code
               class="literal">setgid</code> bit also applies to directories. Any newly-created item in such directories is automatically assigned the owner group of the parent directory, instead of inheriting the creator's main group as usual. This setup avoids the user having to change its main group (with the <code
               class="command">newgrp</code> command) when working in a file tree shared between several users of the same dedicated group.
 		</div><a
-            id="idm140420396263728"
+            id="idm139921726188464"
             class="indexterm"></a><div
             class="para">
 			The “sticky” bit (symbolized by the letter “t”) is a permission that is only useful in directories. It is especially used for temporary directories where everybody has write access (such as <code
@@ -216,15 +216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code>, for “all”, covers all three categories of users, so that <code
             class="literal">a=rx</code> grants all three categories the same rights (read and execute, but not write).
 		</div><a
-          id="idm140420396247968"
+          id="idm139921726172704"
           class="indexterm"></a><a
-          id="idm140420396246848"
+          id="idm139921726171584"
           class="indexterm"></a><a
-          id="idm140420396245728"
+          id="idm139921726170464"
           class="indexterm"></a><a
-          id="idm140420396244608"
+          id="idm139921726169344"
           class="indexterm"></a><a
-          id="idm140420396243680"
+          id="idm139921726168416"
           class="indexterm"></a><div
           class="para">
 			The (octal) numeric representation associates each right with a value: 4 for read, 2 for write, and 1 for execute. We associate each combination of rights with the sum of the figures. Each value is then assigned to different categories of users by putting them end to end in the usual order (owner, group, others).
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> in a shell; you will see a mask such as <code
               class="computeroutput">0022</code>. This is simply an octal representation of the rights to be systematically removed (in this case, the write right for the group and other users).
 		</div><a
-            id="idm140420396221904"
+            id="idm139921726146640"
             class="indexterm"></a><a
-            id="idm140420396220944"
+            id="idm139921726145680"
             class="indexterm"></a><a
-            id="idm140420396219504"
+            id="idm139921726144240"
             class="indexterm"></a><div
             class="para">
 			If you give it a new octal value, the <code

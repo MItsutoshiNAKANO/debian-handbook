@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automated-installation"></a>12.3. 自動インストール</h2></div></div></div><a
-          id="idm140337393982112"
+          id="idm140421802081744"
           class="indexterm"></a><a
-          id="idm140337393981344"
+          id="idm140421802080976"
           class="indexterm"></a><div
           class="para">
 			巨大な IT サービスの管理者と同様、Falcot Corp の管理者もまた、可能であれば自動的に新しいマシンへ素早くインストール (または再インストール) するツールを必要とします。
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fai"></a>12.3.1. Fully Automatic Installer (FAI)</h3></div></div></div><a
-            id="idm140337393972224"
+            id="idm140421802071856"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -192,9 +192,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.d-i-preseeding"></a>12.3.2. Debian-Installer の preseed</h3></div></div></div><a
-            id="idm140337393945936"
+            id="idm140421802045568"
             class="indexterm"></a><a
-            id="idm140337393945168"
+            id="idm140421802044800"
             class="indexterm"></a><div
             class="para">
 				結局のところ、Debian システムをインストールする最良のツールは必然的に公式の Debian インストーラということになるでしょう。このため、当初から debian-installer は <span
@@ -206,7 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> 集中型データベースを用いる Debconf</strong></p></div></div></div><a
-              id="idm140337393940752"
+              id="idm140421802040384"
               class="indexterm"></a><div
               class="para">
 				Preseed を使うことで、インストール時に尋ねられる Debconf 質問に対する回答を事前に提供することが可能です。しかし、これらの回答は静的なもので、時間経過に従い変化しません。既にインストールされたマシンは更新が必要かもしれませんし、新しい回答が必要かもしれません。このため <code
@@ -217,7 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140337393936976"></a>12.3.2.1. Preseed ファイルの利用</h4></div></div></div><div
+                      id="idm140421802036608"></a>12.3.2.1. Preseed ファイルの利用</h4></div></div></div><div
               class="para">
 					インストーラが preseeding ファイルを取得することが可能な場所にはいくつかあります。
 				</div><div
@@ -249,7 +249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140337393927728"></a>12.3.2.2. preseed ファイルの作成</h4></div></div></div><div
+                      id="idm140421802027360"></a>12.3.2.2. preseed ファイルの作成</h4></div></div></div><div
               class="para">
 					preseed ファイルはプレーンテキストファイルで、各行に 1 つの Debconf 質問に対する回答が含まれます。行は空白 (スペースかタブ) で区切られた 4 種類のフィールドに分割されます。たとえば <code
                 class="literal">d-i mirror/suite string stable</code> のようになります。
@@ -292,14 +292,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140337393915872"></a>12.3.2.3. カスタマイズされた起動メディアの作成</h4></div></div></div><div
+                      id="idm140421802015504"></a>12.3.2.3. カスタマイズされた起動メディアの作成</h4></div></div></div><div
               class="para">
 					preseed ファイルを保存する場所を知ることは誠に結構なことですが、場所がすべてではありません。なぜなら、起動パラメータを変更し preseed ファイルを追加するためには、いずれにせよインストール用の起動メディアを改造しなければいけないからです。
 				</div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140337393914480"></a>12.3.2.3.1. ネットワークからの起動</h5></div></div></div><div
+                        id="idm140421802014112"></a>12.3.2.3.1. ネットワークからの起動</h5></div></div></div><div
                 class="para">
 						コンピュータをネットワークから起動する場合、初期化要素を送信するサーバが起動パラメータを定義します。このため、変更は起動サーバの PXE 設定の中で行う必要があります。より具体的に言えば <code
                   class="filename">/tftpboot/pxelinux.cfg/default</code> 設定ファイルの中で設定します。そして、事前にネットワーク起動をセットアップすることが必要です。詳しくはインストールガイドをご覧ください。<div
@@ -309,7 +309,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140337393911616"></a>12.3.2.3.2. 起動可能な USB メモリの準備</h5></div></div></div><div
+                        id="idm140421802011248"></a>12.3.2.3.2. 起動可能な USB メモリの準備</h5></div></div></div><div
                 class="para">
 						起動可能な USB メモリを用意した場合 (<a
                   class="xref"
@@ -329,7 +329,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="filename">/media/usbdisk/syslinux.cfg</code> を編集して、必要な起動パラメータを追加します (以下の例をご覧ください)。
 							</div></li></ul></div><div
                 class="example"><a
-                  id="idm140337393906720"></a><p
+                  id="idm140421802006352"></a><p
                   class="title"><strong>例12.2 syslinux.cfg ファイルと preseeding パラメータ</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">default vmlinuz
@@ -337,8 +337,8 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140337393905232"></a>12.3.2.3.3. CD-ROM イメージの作成</h5></div></div></div><a
-                id="idm140337393904592"
+                        id="idm140421802004864"></a>12.3.2.3.3. CD-ROM イメージの作成</h5></div></div></div><a
+                id="idm140421802004224"
                 class="indexterm"></a><div
                 class="para">
 						USB メモリは読み書きメディアなので、ファイルを追加したりいくつかのパラメータを変更することが簡単に可能です。CD-ROM の場合、この操作はさらに複雑になります。なぜなら、完全な ISO イメージを再生成する必要があるからです。<span
@@ -367,7 +367,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.simple-cdd"></a>12.3.3. Simple-CDD、一体型の解決策</h3></div></div></div><a
-            id="idm140337393892880"
+            id="idm140421801992512"
             class="indexterm"></a><div
             class="para">
 				単純に preseed を使うだけでは、大規模な配備に要求されるすべてを満足させることはできません。preseed を使うことで、通常のインストール作業の最後にいくつかのスクリプトを実行することが可能とは言うものの、インストールするパッケージ群の選択にはまだ大きな制限があります (基本的に「tasks」を選択できるだけです)。それどころかより重要なこととして、preseed は公式の Debian パッケージをインストールすることは可能ですが、その場で生成されたものをインストールすることは不可能です。
@@ -382,7 +382,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140337393888176"></a>12.3.3.1. プロファイルの作成</h4></div></div></div><div
+                      id="idm140421801987808"></a>12.3.3.1. プロファイルの作成</h4></div></div></div><div
               class="para">
 					Simple-CDD は FAI における「クラス」の概念に対応する「プロファイル」を定義し、マシンは (インストール時に定義される) 複数のプロファイルを持つことが可能です。プロファイルは <code
                 class="filename">profiles/<em
@@ -435,9 +435,9 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140337393873888"></a>12.3.3.2. <code
+                      id="idm140421801973520"></a>12.3.3.2. <code
                       class="command">build-simple-cdd</code> の設定と利用</h4></div></div></div><a
-              id="idm140337393872992"
+              id="idm140421801972624"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -504,7 +504,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140337393855168"></a>12.3.3.3. ISO イメージの生成</h4></div></div></div><div
+                      id="idm140421801954800"></a>12.3.3.3. ISO イメージの生成</h4></div></div></div><div
               class="para">
 					設定ファイルの記述と自分のプロファイルの定義が完了したら、<code
                 class="command">build-simple-cdd --conf simple-cdd.conf</code> を実行します。数分後、必要なイメージが <code
