@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-it-IT-1.0-1" /><meta
@@ -70,13 +70,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.task-scheduling-cron-atd"></a>9.7. Pianificare attività con <code
                   class="command">cron</code> e <code
                   class="command">atd</code></h2></div></div></div><a
-          id="idm140687195447568"
+          id="idm140183123103152"
           class="indexterm"></a><a
-          id="idm140687195446672"
+          id="idm140183123102256"
           class="indexterm"></a><a
-          id="idm140687195445776"
+          id="idm140183123101360"
           class="indexterm"></a><a
-          id="idm140687195445008"
+          id="idm140183123100592"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -168,7 +168,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.format-crontab"></a>9.7.1. Formato del file <code
                     class="filename">crontab</code></h3></div></div></div><a
-            id="idm140687195422336"
+            id="idm140183123077920"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -279,16 +279,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="title"><strong>Esempio 9.2. Esempio di file <code
                   class="filename">crontab</code></strong></p><div
               class="example-contents"><pre
-                class="programlisting">#Format
-#min hour day mon dow  command
+                class="programlisting">#Formato
+#min ora gior mes g-sett  comando
 
-# Download data every night at 7:25 pm
+# Scaricare i dati ogni sera alle 19.25
  25  19   *   *   *    $HOME/bin/get.pl
 
-# 8:00 am, on weekdays (Monday through Friday)
- 00  08   *   *   1-5  $HOME/bin/dosomething
+# 8.00, nei giorni lavorativi (da lunedì a venerdì)
+ 00  08   *   *   1-5  $HOME/bin/faiqualcosa
 
-# Restart the IRC proxy after each reboot
+# Riavviare il proxy IRC dopo ogni riavvio
 @reboot /usr/bin/dircproxy
 </pre></div></div><div
             class="sidebar"><div
@@ -318,7 +318,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.at-command"></a>9.7.2. Utilizzo del comando <code
                     class="command">at</code></h3></div></div></div><a
-            id="idm140687195386528"
+            id="idm140183123041520"
             class="indexterm"></a><div
             class="para">
 				The <code
@@ -376,9 +376,9 @@ job 31 at Mon Jul 27 09:00:00 2015</code></pre><div
               class="command">at</code> quando la si pianifica, ma è possibile ritrovarlo con il comando <code
               class="command">atq</code>, che mostra l'attuale elenco di operazioni pianificate.
 			</div><a
-            id="idm140687195368176"
+            id="idm140183123023168"
             class="indexterm"></a><a
-            id="idm140687195367280"
+            id="idm140183123022272"
             class="indexterm"></a></div></div><ul
         class="docnav"><li
           class="previous"><a

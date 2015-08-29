@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-it-IT-1.0-1" /><meta
@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. Rigenerare un pacchetto dai suoi sorgenti</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140687216141264">15.1.1. Ottenere i sorgenti</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140183138609552">15.1.1. Ottenere i sorgenti</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140687196530864">15.1.2. Apportare modifiche</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140183142073152">15.1.2. Apportare modifiche</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140687193129216">15.1.3. Iniziare la rigenerazione del pacchetto</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140183126315120">15.1.3. Iniziare la rigenerazione del pacchetto</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. Creare il primo pacchetto</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140687193033952">15.2.1. Meta-pacchetti o pacchetti finti</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140183126619072">15.2.1. Meta-pacchetti o pacchetti finti</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140687194122416">15.2.2. Semplice file di archivio</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140183122225952">15.2.2. Semplice file di archivio</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. Creazione di un repository di pacchetti per APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. Diventare un maintainer di pacchetti</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140687193999232">15.4.1. Imparare a creare pacchetti</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140183122103408">15.4.1. Imparare a creare pacchetti</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140687192005056">15.4.2. Processo di accettazione</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140183121172144">15.4.2. Processo di accettazione</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		È abbastanza comune, per un amministratore che gestisce regolarmente i pacchetti Debian, sentire la necessità di creare dei propri pacchetti, o di modificarne uno già esistente. Questo capitolo serve proprio a rispondere alle domande più comuni sulla pacchettizzazione e fornire gli elementi necessari per utilizzare l'infrastruttura Debian nel migliore dei modi. Con po' di fortuna, dopo essersi cimentati con i pacchetti locali, si può anche sentire il bisogno di andare oltre e aderire al progetto Debian!
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span>; questa operazione è chiamata «backporting». Come al solito, prima di cominciare, è necessario controllare se qualcun altro ha già effettuato quest'attività. Uno sguardo veloce alle pagine del sistema di tracciamento dei pacchetti può darci le informazioni che cerchiamo. <div
               class="url">→ <a
                 href="http://packages.qa.debian.org/">http://packages.qa.debian.org/</a></div> <a
-              id="idm140687208104656"
+              id="idm140183142863136"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140687216141264"></a>15.1.1. Ottenere i sorgenti</h3></div></div></div><div
+                      id="idm140183138609552"></a>15.1.1. Ottenere i sorgenti</h3></div></div></div><div
               class="para">
 				La prima cosa da fare per rigenerare un pacchetto Debian è quella di procurarsi i sorgenti. Il modo più semplice è quello di utilizzare il comando <code
                 class="command">apt-get source <em
@@ -151,24 +151,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140687196530864"></a>15.1.2. Apportare modifiche</h3></div></div></div><div
+                      id="idm140183142073152"></a>15.1.2. Apportare modifiche</h3></div></div></div><div
               class="para">
 				Adesso si avrà il sorgente del pacchetto in una directory con lo stesso nome del pacchetto sorgente e della sua versione (per esempio, <span
                 class="emphasis"><em>samba-3.6.16</em></span>); qui verranno effettuate tutte le modifiche locali.
 			</div><div
               class="para">
-				La prima cosa da fare è cambiare il numero di versione del pacchetto, in modo che i pacchetti rigenerati possano essere distinti dai pacchetti originali forniti da Debian. Supponendo che la versione corrente sia la <code
-                class="literal">3.6.16-2</code>, si utilizzerà la versione <code
-                class="literal">3.6.16-2falcot1</code>, che indica chiaramente l'origine del pacchetto. In questo modo il numero di versione del pacchetto sarà superiore a quello fornito da Debian, così il pacchetto verrà installato come un aggiornamento del pacchetto originale. Questa modifica può essere effettuata dal comando <code
-                class="command">dch</code> (<span
-                class="emphasis"><em>Debian CHangelog</em></span>) del pacchetto <span
-                class="pkg pkg">devscripts</span>, eseguendolo in questo modo: <code
-                class="command">dch --local falcot</code>. Questo comando richiama un editor di testo (<code
-                class="command">sensible-editor</code>, dovrebbe essere l'editor preferito se è stato impostato nelle variabili d'ambiente <code
-                class="varname">VISUAL</code> o <code
-                class="varname">EDITOR</code> altrimenti verrà utilizzato quello predefinito) per permettere di documentare le modifiche effettuate da questa rigenerazione del pacchetto. Questo editor mostra che <code
-                class="command">dch</code> ha modificato veramente il file <code
-                class="filename">debian/changelog</code>.
+				The first thing to do is to change the package version number, so that the rebuilt packages can be distinguished from the original packages provided by Debian. Assuming the current version is <code
+                class="literal">3.6.16-2</code>, we can create version <code
+                class="literal">3.6.16-2falcot1</code>, which clearly indicates the origin of the package. This makes the package version number higher than the one provided by Debian, so that the package will easily install as an update to the original package. Such a change is best effected with the <code
+                class="command">dch</code> command (<span
+                class="emphasis"><em>Debian CHangelog</em></span>) from the <span
+                class="pkg pkg">devscripts</span> package, with an command such as <code
+                class="command">dch --local falcot</code>. This invokes a text editor (<code
+                class="command">sensible-editor</code> — this should be your favorite editor if it's mentioned in the <code
+                class="varname">VISUAL</code> or <code
+                class="varname">EDITOR</code> environment variables, and the default editor otherwise) to allow documenting the differences brought by this rebuild. This editor shows us that <code
+                class="command">dch</code> really did change the <code
+                class="filename">debian/changelog</code> file.
 			</div><div
               class="para">
 				Quando è necessario cambiare delle opzioni di compilazione, devono essere apportate delle modifiche al file <code
@@ -196,7 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="literal">Build-Depends</code></strong></p></div></div></div><div
                 class="para">
 				<a
-                  id="idm140687193133280"
+                  id="idm140183123142928"
                   class="indexterm"></a> <code
                   class="command">apt-get</code> permette d'installare tutti i pacchetti nei campi <code
                   class="literal">Build-Depends</code> di un pacchetto sorgente disponibile nella distribuzione indicata nella riga <code
@@ -208,14 +208,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140687193129216"></a>15.1.3. Iniziare la rigenerazione del pacchetto</h3></div></div></div><div
+                      id="idm140183126315120"></a>15.1.3. Iniziare la rigenerazione del pacchetto</h3></div></div></div><div
               class="para">
 				Quando sono state apportate tutte le modifiche necessarie ai sorgenti, si può iniziare a generare il pacchetto binario (il file <code
                 class="filename">.deb</code>). L'intero processo è gestito dal comando <code
                 class="command">dpkg-buildpackage</code>.
 			</div><div
               class="example"><a
-                id="idm140687193126928"></a><p
+                id="idm140183126312832"></a><p
                 class="title"><strong>Esempio 15.1. Rigenerazione di un pacchetto</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -262,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>APPROFONDIMENTI</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140687192304272"
+                id="idm140183126627328"
                 class="indexterm"></a><div
                 class="para">
 				Il programma <code

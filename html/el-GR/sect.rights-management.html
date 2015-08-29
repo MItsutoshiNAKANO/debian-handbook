@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-el-GR-1.0-1" /><meta
@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux is definitely a multi-user system, so it is necessary to provide a permission system to control the set of authorized operations on files and directories, which includes all the system resources and devices (on a Unix system, any device is represented by a file or directory). This principle is common to all Unix systems, but a reminder is always useful, especially as there are some interesting and relatively unknown advanced uses.
 		</div><a
-          id="idm139917136587424"
+          id="idm139856848239744"
           class="indexterm"></a><a
-          id="idm139917136586464"
+          id="idm139856848238784"
           class="indexterm"></a><a
-          id="idm139917136585504"
+          id="idm139856848237824"
           class="indexterm"></a><a
-          id="idm139917136584064"
+          id="idm139856848236384"
           class="indexterm"></a><a
-          id="idm139917136582624"
+          id="idm139856848234944"
           class="indexterm"></a><a
-          id="idm139917136581184"
+          id="idm139856848233504"
           class="indexterm"></a><div
           class="para">
 			Each file or directory has specific permissions for three categories of users:
@@ -123,13 +123,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					executing (symbolized by <code
                   class="literal">x</code> as in “eXecute”).
 				</div></li></ul></div><a
-          id="idm139917136569552"
+          id="idm139856848221872"
           class="indexterm"></a><a
-          id="idm139917136568592"
+          id="idm139856848220912"
           class="indexterm"></a><a
-          id="idm139917136567632"
+          id="idm139856848219952"
           class="indexterm"></a><a
-          id="idm139917136566672"
+          id="idm139856848218992"
           class="indexterm"></a><div
           class="para">
 			In the case of a file, these rights are easily understood: read access allows reading the content (including copying), write access allows changing it, and execute access allows you to run it (which will only work if it's a program).
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> and <code
               class="literal">setgid</code> (symbolized with the letter “s”). Note that we frequently speak of “bit”, since each of these boolean values can be represented by a 0 or a 1. These two rights allow any user to execute the program with the rights of the owner or the group, respectively. This mechanism grants access to features requiring higher level permissions than those you would usually have.
 		</div><a
-            id="idm139917136561072"
+            id="idm139856848213392"
             class="indexterm"></a><a
-            id="idm139917136559792"
+            id="idm139856848212112"
             class="indexterm"></a><div
             class="para">
 			Since a <code
@@ -164,14 +164,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>SECURITY</em></span> <code
                       class="literal">setgid</code> directory and <span
                       class="emphasis"><em>sticky bit</em></span></strong></p></div></div></div><a
-            id="idm139917136553440"
+            id="idm139856848205760"
             class="indexterm"></a><div
             class="para">
 			The <code
               class="literal">setgid</code> bit also applies to directories. Any newly-created item in such directories is automatically assigned the owner group of the parent directory, instead of inheriting the creator's main group as usual. This setup avoids the user having to change its main group (with the <code
               class="command">newgrp</code> command) when working in a file tree shared between several users of the same dedicated group.
 		</div><a
-            id="idm139917136550384"
+            id="idm139856848202704"
             class="indexterm"></a><div
             class="para">
 			The “sticky” bit (symbolized by the letter “t”) is a permission that is only useful in directories. It is especially used for temporary directories where everybody has write access (such as <code
@@ -216,15 +216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code>, for “all”, covers all three categories of users, so that <code
             class="literal">a=rx</code> grants all three categories the same rights (read and execute, but not write).
 		</div><a
-          id="idm139917136534624"
+          id="idm139856848186944"
           class="indexterm"></a><a
-          id="idm139917136533504"
+          id="idm139856848185824"
           class="indexterm"></a><a
-          id="idm139917136532384"
+          id="idm139856848184704"
           class="indexterm"></a><a
-          id="idm139917136531264"
+          id="idm139856848183584"
           class="indexterm"></a><a
-          id="idm139917136530336"
+          id="idm139856848182656"
           class="indexterm"></a><div
           class="para">
 			The (octal) numeric representation associates each right with a value: 4 for read, 2 for write, and 1 for execute. We associate each combination of rights with the sum of the figures. Each value is then assigned to different categories of users by putting them end to end in the usual order (owner, group, others).
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> in a shell; you will see a mask such as <code
               class="computeroutput">0022</code>. This is simply an octal representation of the rights to be systematically removed (in this case, the write right for the group and other users).
 		</div><a
-            id="idm139917136508560"
+            id="idm139856848160880"
             class="indexterm"></a><a
-            id="idm139917136507600"
+            id="idm139856848159920"
             class="indexterm"></a><a
-            id="idm139917136506160"
+            id="idm139856848158480"
             class="indexterm"></a><div
             class="para">
 			If you give it a new octal value, the <code

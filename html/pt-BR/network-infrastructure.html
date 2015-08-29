@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pt-BR-1.0-1" /><meta
@@ -131,17 +131,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 			Um gateway é um sistema de ligação de várias redes. Este termo frequentemente se refere ao "ponto de saída" de uma rede local no caminho obrigatório para endereços IP externos. O gateway está ligado a cada uma das redes que une e atua como um roteador para transmitir pacotes IP entre suas várias interfaces.
 		</div><a
-            id="idm140242487822464"
+            id="idm140651074540848"
             class="indexterm"></a><a
-            id="idm140242469326096"
+            id="idm140651075322384"
             class="indexterm"></a><a
-            id="idm140242489283040"
+            id="idm140651087098656"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> pacote IP</strong></p></div></div></div><a
-              id="idm140242483569440"
+              id="idm140651075082560"
               class="indexterm"></a><div
               class="para">
 			A maioria das redes atualmente utiliza o protocolo IP (<span
@@ -152,13 +152,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> TCP/UDP</strong></p></div></div></div><a
-              id="idm140242488803424"
+              id="idm140651073344880"
               class="indexterm"></a><a
-              id="idm140242488900240"
+              id="idm140651077100096"
               class="indexterm"></a><a
-              id="idm140242488898800"
+              id="idm140651077098656"
               class="indexterm"></a><a
-              id="idm140242488897840"
+              id="idm140651077097696"
               class="indexterm"></a><div
               class="para">
 			Muitos programas não manipulam os pacotes individuais por si sós, mesmo que os dados que eles transmitam trafegem sobre IP; Eles geralmente usam TCP (<span
@@ -181,15 +181,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			Quando uma rede local usa um intervalo de endereços privado (não roteável na Internet), o gateway precisa implementar <span
               class="emphasis"><em>mascaramento de endereço</em></span> para que as máquinas na rede possam se comunicar com o mundo exterior. A operação de mascaramento é um tipo de operação de proxy no nível de rede: cada conexão saindo de uma máquina interna é substituída com uma conexão do próprio gateway (já que o gateway tem um endereço externo e roteável), os dados passando pela conexão mascarada são enviados para a nova, e os dados voltando como resposta são enviados através da conexão mascarada para a máquina interna. O gateway usa um intervalo de portas TCP dedicadas para este objetivo, normalmente com números bastante altos (acima de 60000). Cada conexão vindo de uma máquina interna aparece então para o mundo exterior como uma conexão vindo de uma destas portas reservadas.
 		</div><a
-            id="idm140242469333952"
+            id="idm140651072422736"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> Série de Endereços Privados</strong></p></div></div></div><a
-              id="idm140242472481760"
+              id="idm140651072420688"
               class="indexterm"></a><a
-              id="idm140242472480320"
+              id="idm140651072419248"
               class="indexterm"></a><div
               class="para">
 			A RFC 1918 define três intervalos de endereços IPv4 que não devem ser roteados na Internet mas apenas usados em redes locais. O primeiro, <code
@@ -213,23 +213,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>Source NAT</em></span> ou NAT na origem), do qual <span
               class="emphasis"><em>masquerading</em></span> (ou mascaramento) é um caso particular; SNAT altera o endereço IP de origem (e/ou a porta TCP ou UDP) de uma conexão (geramente) saindo. Assim como no DNAT, todos os pacotes na conexão são apropriadamente manipulados pelo mecanismo de rastreio de conexão. Observe que o NAT só é relevante para o IPv4 e seu espaço de endereços limitado; no IPv6, a ampla disponibilidade de endereços reduz grandemente a utilidade de NAT permitindo que todo endereço "interno" possa ser diretamente roteável na Internet (isto não implica que as máquinas internas serão acessíveis, uma vez que firewalls intermediários possam filtrar o tráfego).
 		</div><a
-            id="idm140242472317248"
+            id="idm140651089165632"
             class="indexterm"></a><a
-            id="idm140242472316288"
+            id="idm140651089164672"
             class="indexterm"></a><a
-            id="idm140242472314880"
+            id="idm140651089163264"
             class="indexterm"></a><a
-            id="idm140242472313920"
+            id="idm140651089162304"
             class="indexterm"></a><a
-            id="idm140242472312960"
+            id="idm140651089161344"
             class="indexterm"></a><a
-            id="idm140242472312000"
+            id="idm140651089160384"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> Encaminhamento de porta</strong></p></div></div></div><a
-              id="idm140242472309952"
+              id="idm140651089158336"
               class="indexterm"></a><div
               class="para">
 			Uma aplicação concreta do DNAT é o <span

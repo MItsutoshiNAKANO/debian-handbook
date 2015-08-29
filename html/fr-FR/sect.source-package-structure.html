@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -68,21 +68,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.source-package-structure"></a>5.3. Structure d'un paquet source</h2></div></div></div><a
-          id="idm139907197736432"
+          id="idm139924344547840"
           class="indexterm"></a><a
-          id="idm139907197734992"
+          id="idm139924344546400"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907197733552"></a>5.3.1. Format</h3></div></div></div><a
-            id="idm139907197732752"
+                    id="idm139924344544960"></a>5.3.1. Format</h3></div></div></div><a
+            id="idm139924344544160"
             class="indexterm"></a><a
-            id="idm139907197731792"
+            id="idm139924344543200"
             class="indexterm"></a><a
-            id="idm139907197730512"
+            id="idm139924344541920"
             class="indexterm"></a><a
-            id="idm139907197729232"
+            id="idm139924344540640"
             class="indexterm"></a><div
             class="para">
 				Un paquet source est habituellement constitué de 3 fichiers : un <code
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="sect.package-authentication.html">Section 6.5, « Vérification d'authenticité des paquets »</a> pour plus de détails à ce sujet.
 			</div><div
             class="example"><a
-              id="idm139907197721616"></a><p
+              id="idm139924344533024"></a><p
               class="title"><strong>Exemple 5.1. Un fichier <code
                   class="filename">.dsc</code></strong></p><div
               class="example-contents"><pre
@@ -149,7 +149,7 @@ oltfl05z/AI+vYsW482YrCz0fxNAKAvkyuPhDebYI8jnKWeAANoqmKpsNc/HYyvT
 edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
 =Wtoa
 -----END PGP SIGNATURE-----</pre></div></div><a
-            id="idm139907197718304"
+            id="idm139924344529712"
             class="indexterm"></a><div
             class="para">
 				On notera au passage que le paquet source compte lui aussi des dépendances (<code
@@ -220,22 +220,23 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>OUTIL</em></span> Décompresser un paquet source</strong></p></div></div></div><a
-              id="idm139907197690224"
+              id="idm139924344501632"
               class="indexterm"></a><a
-              id="idm139907197689104"
+              id="idm139924344500512"
               class="indexterm"></a><a
-              id="idm139907197688176"
+              id="idm139924344499584"
               class="indexterm"></a><a
-              id="idm139907197687248"
+              id="idm139924344498656"
               class="indexterm"></a><div
               class="para">
 				If you have a source package, you can use the <code
                 class="command">dpkg-source</code> command (from the <span
                 class="pkg pkg">dpkg-dev</span> package) to decompress it:
 			</div><pre
-              class="screen"><code
+              class="screen">
+<code
                 class="computeroutput">$ </code><strong
-                class="userinput"><code>dpkg-source -x package_0.7-1.dsc</code></strong></pre><div
+                class="userinput"><code>dpkg-source -x paquet_0.7-1.dsc</code></strong></pre><div
               class="para">
 				You can also use <code
                 class="command">apt-get</code> to download a source package and unpack it right away. It requires that the appropriate <code
@@ -248,11 +249,11 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
               class="screen"><code
                 class="computeroutput">$ </code><strong
                 class="userinput"><code>apt-get source <em
-                    class="replaceable">package</em></code></strong></pre></div></div><div
+                    class="replaceable">paquet</em></code></strong></pre></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907197678912"></a>5.3.2. Utilité chez Debian</h3></div></div></div><div
+                    id="idm139924344490160"></a>5.3.2. Utilité chez Debian</h3></div></div></div><div
             class="para">
 				Le paquet source est à la base de tout chez Debian. Tous les paquets Debian proviennent d'un paquet source et chaque changement dans un paquet Debian est la conséquence d'une modification réalisée au niveau du paquet source. Les mainteneurs Debian travaillent au niveau du paquet source, en connaissant cependant les conséquences de leurs actions sur les paquets binaires. Le fruit de leur travail se retrouve donc dans les paquets sources disponibles chez Debian : on peut y remonter facilement et tout en découle.
 			</div><div

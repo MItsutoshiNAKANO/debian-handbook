@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-es-ES-1.0-1" /><meta
@@ -72,11 +72,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			DHCP (<span
             class="emphasis"><em>procolo de configuración dinámica de equipos</em></span>: «Dynamic Host Configuration Protocol») es un protocolo mediante el cual una máquina puede obtener su configuración de red automáticamente al iniciar. Esto permite centralizar la administración de las configuraciones de red y asegurar que todos los equipos de escritorio obtengan configuraciones similares.
 		</div><a
-          id="idm140549202405248"
+          id="idm140401141574944"
           class="indexterm"></a><a
-          id="idm140549202404288"
+          id="idm140401141573984"
           class="indexterm"></a><a
-          id="idm140549202403360"
+          id="idm140401141573056"
           class="indexterm"></a><div
           class="para">
 			Un servidor DHCP provee muchos parámetros relacionados con la red. Los más comunes son una dirección IP y la red a la que pertenece el equipo, pero también puede proveer otra información como servidores DNS, servidores WINS, servidores NTP y más.
@@ -107,31 +107,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="example-contents"><pre
                 class="programlisting">
 #
-# Sample configuration file for ISC dhcpd for Debian
+# Archivo de configuración de ejemplo para el dhcpd ISC para Debian
 #
 
-# The ddns-updates-style parameter controls whether or not the server will
-# attempt to do a DNS update when a lease is confirmed. We default to the
-# behavior of the version 2 packages ('none', since DHCP v2 didn't
-# have support for DDNS.)
+# El parámetro ddns-updates-style controla si el servidor intentará o no
+# una actualización de DNS cuando se confirme la asignación. Utilizamos
+# el comportamiento predeterminado de la versión 2 de paquetes ('none', 
+# ya que DHCP v2 no era compatible con DDNS).
 ddns-update-style interim;
 
-# option definitions common to all supported networks...
+# definición de opciones comunes a todas las redes...
 option domain-name "internal.falcot.com";
 option domain-name-servers ns.internal.falcot.com;
 
 default-lease-time 600;
 max-lease-time 7200;
 
-# If this DHCP server is the official DHCP server for the local
-# network, the authoritative directive should be uncommented.
+# Si este servidor DHCP es el servidor DHCP oficial para la red local,
+# debe descomentar la directiva «authoritative».
 authoritative;
 
-# Use this to send dhcp log messages to a different log file (you also
-# have to hack syslog.conf to complete the redirection).
+# Utilice esto para enviar mensajes de registro dhcp a un archivo de
+# registro distinto (también deberá modificar syslog.conf para completar
+# la redirección).
 log-facility local7;
 
-# My subnet
+# Mi subred
 subnet 192.168.0.0 netmask 255.255.255.0 {
     option routers 192.168.0.1;
     option broadcast-address 192.168.0.255;
@@ -143,7 +144,7 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dhcp-dns"></a>10.7.2. DHCP y DNS</h3></div></div></div><a
-            id="idm140549202389744"
+            id="idm140401141559376"
             class="indexterm"></a><div
             class="para">
 				Una buena funcionalidad es el registro automatizado de clientes DHCP en la zona DNS para que cada máquina obtenga un nombre significativo (en lugar de algo impersonal como <code

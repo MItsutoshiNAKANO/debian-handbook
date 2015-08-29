@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907182991008"></a>15.2.1. Méta-paquet ou faux paquet</h3></div></div></div><div
+                    id="idm139924329982368"></a>15.2.1. Méta-paquet ou faux paquet</h3></div></div></div><div
             class="para">
 				Faux paquet et méta-paquet se concrétisent tous deux par un paquet vide qui n'existe que pour les effets de ses informations d'en-têtes sur la chaîne logicielle de gestion des paquets.
 			</div><div
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">equivs-build</code>, ils disparaîtront des en-têtes réels du paquet généré.
 			</div><div
             class="example"><a
-              id="idm139907183891408"></a><p
+              id="idm139924329973136"></a><p
               class="title"><strong>Exemple 15.2. Fichier d'en-têtes d'un faux paquet <span
                   class="emphasis"><em>libxml-libxml-perl</em></span></strong></p><div
               class="example-contents"><pre
@@ -127,7 +127,7 @@ Description: Fake package - module manually installed in site_perl
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907183887632"></a>15.2.2. Simple archive de fichiers</h3></div></div></div><div
+                    id="idm139924347620656"></a>15.2.2. Simple archive de fichiers</h3></div></div></div><div
             class="para">
 				Les administrateurs de Falcot SA souhaitent créer un paquet Debian pour déployer facilement un ensemble de documents sur un grand nombre de machines. Après avoir étudié le guide du nouveau mainteneur, l'administrateur en charge de cette tâche se lance dans la création de son premier paquet. <div
               class="url">→ <a
@@ -191,9 +191,9 @@ $</code></pre><div
                 class="foreignphrase">kernel module</em></span>, réservé aux paquets contenant des modules noyau. <span
               class="foreignphrase"><em
                 class="foreignphrase">cdbs</em></span> est un système de construction de paquets assez souple mais nécessitant un certain apprentissage. <a
-              id="idm139907183872288"
+              id="idm139924347605312"
               class="indexterm"></a> <a
-              id="idm139907183871648"
+              id="idm139924347604672"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -240,7 +240,7 @@ export DEBFULLNAME="Raphael Hertzog"
               class="literal">iceweasel | www-browser</code> pour garantir la présence d'un navigateur web capable de consulter les documents ainsi diffusés.
 			</div><div
             class="example"><a
-              id="idm139907183854960"></a><p
+              id="idm139924347587984"></a><p
               class="title"><strong>Exemple 15.3. Le fichier <code
                   class="filename">control</code></strong></p><div
               class="example-contents"><pre
@@ -255,17 +255,17 @@ Standards-Version: 3.8.4
 Package: falcot-data
 Architecture: all
 Depends: iceweasel | www-browser, ${misc:Depends}
-Description: Internal Falcot Corp Documentation
- This package provides several documents describing the internal
- structure at Falcot Corp.  This includes:
-  - organization diagram
-  - contacts for each department.
+Description: Documentation interne de Falcot SA
+ Ce paquet fournit plusieurs documents décrivant
+ la structure interne de Falcot SA. Cela comprend:
+  - l'organigramme
+  - les contacts pour chaque département
  .
- These documents MUST NOT leave the company.
- Their use is INTERNAL ONLY.
+ Ces documents NE DOIVENT PAS sortir de la société.
+ Ils sont réservés à un USAGE INTERNE.
 </pre></div></div><div
             class="example"><a
-              id="idm139907183852672"></a><p
+              id="idm139924347585680"></a><p
               class="title"><strong>Exemple 15.4. Le fichier <code
                   class="filename">changelog</code></strong></p><div
               class="example-contents"><pre
@@ -273,24 +273,25 @@ Description: Internal Falcot Corp Documentation
 falcot-data (1.0) internal; urgency=low
 
   * Initial Release.
-  * Let's start with few documents:
-    - internal company structure;
-    - contacts for each department.
+  * Commençons avec peu de documents:
+    - la structure interne de la société
+    - les contacts de chaque département
 
  -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Mon, 11 Apr 2011 20:46:33 +0200
 </pre></div></div><div
             class="example"><a
-              id="idm139907183850688"></a><p
+              id="idm139924347583680"></a><p
               class="title"><strong>Exemple 15.5. Le fichier <code
                   class="filename">copyright</code></strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-This work was packaged for Debian by Raphael Hertzog &lt;hertzog@debian.org&gt;
-on Mon, 11 Apr 2011 20:46:33 +0200
+This work was packaged for Debian by:
+
+    Raphael Hertzog &lt;hertzog@debian.org&gt; on Mon, 11 Apr 2011 20:46:33 +0200
 
 Copyright:
 
-    Copyright (C) 2004-2011 Falcot Corp
+    Copyright (C) 2004-2011 Falcot SA
 
 License:
 
@@ -301,7 +302,7 @@ License:
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> Fichier <code
                         class="filename">Makefile</code></strong></p></div></div></div><a
-              id="idm139907183847312"
+              id="idm139924347580288"
               class="indexterm"></a><div
               class="para">
 				Un fichier <code
@@ -309,10 +310,9 @@ License:
                 class="command">make</code> les règles nécessaires pour reconstruire des fichiers issus d'un réseau de dépendances (un programme, fruit de la compilation de fichiers sources, en est un exemple). Le fichier <code
                 class="filename">Makefile</code> contient la liste de ces règles en respectant le format suivant :
 			</div><pre
-              class="programlisting">
-target: source1 source2 ...
-        command1
-        command2
+              class="programlisting">cible: source1 source2 ...
+        commande1
+        commande2
 </pre><div
               class="para">
 				Cette règle peut se traduire ainsi : si l'un des fichiers <code
@@ -353,16 +353,16 @@ data/* usr/share/falcot-data/
               class="filename">debian/menu.ex</code> et l'enregistrent sans l'extension.
 			</div><div
             class="example"><a
-              id="idm139907184452080"></a><p
+              id="idm139924347563968"></a><p
               class="title"><strong>Exemple 15.6. Le fichier <code
                   class="filename">menu</code></strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 ?package(falcot-data):needs=X11|wm section=Help\
-  title="Internal Falcot Corp Documentation" \
+  title="Documentation interne à Falcot SA" \
   command="/usr/bin/x-www-browser /usr/share/falcot-data/index.html"
 ?package(falcot-data):needs=text section=Help\
-  title="Internal Falcot Corp Documentation" \
+  title="Documentation interne à Falcot SA" \
   command="/usr/bin/www-browser /usr/share/falcot-data/index.html"
 </pre></div></div><div
             class="para">

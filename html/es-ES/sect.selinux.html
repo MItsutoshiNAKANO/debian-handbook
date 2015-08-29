@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-es-ES-1.0-1" /><meta
@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.selinux"></a>14.4. Introducción a SELinux</h2></div></div></div><a
-          id="idm140549201417520"
+          id="idm140401133872640"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>dominio</em></span> que el usuario tenía en ese momento. Los permisos realmente dependen del dominio, pero los roles controlan la transición entre dominios. Por último, las transiciones posibles entre roles dependen de la identidad.
 			</div><div
             class="figure"><a
-              id="idm140549201408624"></a><div
+              id="idm140401133863744"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-context.png"
@@ -127,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">ssh_t</code>). Este mecanismo de transición automática de dominios permite otorgar exclusivamente los permisos que requiere cada programa. Es un principio fundamental de SELinux.
 			</div><div
             class="figure"><a
-              id="idm140549201395840"></a><div
+              id="idm140401133850960"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-transitions.png"
@@ -137,11 +137,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>EN LA PRÁCTICA</em></span> Averiguar el contexto de seguridad</strong></p></div></div></div><a
-              id="idm140549201391360"
+              id="idm140401133846480"
               class="indexterm"></a><a
-              id="idm140549201390400"
+              id="idm140401133845520"
               class="indexterm"></a><a
-              id="idm140549201389440"
+              id="idm140401133844560"
               class="indexterm"></a><div
               class="para">
 				Para averiguar el contexto de seguridad de un proceso, debe utilizar la opción <code
@@ -217,9 +217,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.selinux-management"></a>14.4.3. Gestión de un sistema SELinux</h3></div></div></div><a
-            id="idm140549201365424"
+            id="idm140401133820544"
             class="indexterm"></a><a
-            id="idm140549201364304"
+            id="idm140401133819424"
             class="indexterm"></a><div
             class="para">
 				La política SELinux consiste en un conjunto de reglas modular, y su instalación detecta y habilita automáticamente todos los módulos necesarios en función de los servicios que se encuentren instalados. El sistema, por lo tanto, se encuentra operativo de forma inmediata. Sin embargo, cuando instale un servicio después de haber instalado la política SELinux deberá habilitar el módulo correspondiente manualmente. Para ello existe el programa <code
@@ -250,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549201353952"></a>14.4.3.1. Gestión de módulos SELinux</h4></div></div></div><div
+                      id="idm140401133809072"></a>14.4.3.1. Gestión de módulos SELinux</h4></div></div></div><div
               class="para">
 					Los módulos SELinux disponibles se almacenan en el directorio <code
                 class="filename">/usr/share/selinux/default/</code>. Para habilitar uno de estos módulos en la configuración actual debe ejecutar <code
@@ -297,7 +297,7 @@ apm     1.7.0
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549201341328"></a>14.4.3.2. Gestión de identidades</h4></div></div></div><div
+                      id="idm140401133796448"></a>14.4.3.2. Gestión de identidades</h4></div></div></div><div
               class="para">
 					Cada vez que un usuario inicia sesión, se le asigna una identidad SELinux. Esta identidad determina los roles que puede adoptar. Puede configurar estas correspondencias (entre el usuario y la identidad y entre la identidad y los roles) con el programa <code
                 class="command">semanage</code>.
@@ -330,8 +330,7 @@ apm     1.7.0
                 class="userinput"><code>semanage login -l</code></strong>
 <code
                 class="computeroutput">
-Login Name                SELinux User              MLS/MCS Range
-
+Nombre de Ingreso         Usuario SELinux           Rango MLS/MCS
 __default__               unconfined_u              s0-s0:c0.c1023
 rhertzog                  user_u                    None
 root                      unconfined_u              s0-s0:c0.c1023
@@ -363,8 +362,8 @@ system_u                  system_u                  s0-s0:c0.c1023
                 class="userinput"><code>semanage user -l</code></strong>
 <code
                 class="computeroutput">
-                Labeling   MLS/       MLS/
-SELinux User    Prefix     MCS Level  MCS Range        SELinux Roles
+                Etiquetado MLS/       MLS/                          
+Usuario SELinux Prefijo    Nivel MCS  Rango MCS        Roles SELinux
 
 root            sysadm     s0         s0-s0:c0.c1023   staff_r sysadm_r system_r
 staff_u         staff      s0         s0-s0:c0.c1023   staff_r sysadm_r
@@ -378,7 +377,7 @@ user_u          user       s0         s0               user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549201318400"></a>14.4.3.3. Gestión de contextos de archivos, puertos y valores booleanos</h4></div></div></div><div
+                      id="idm140401133773504"></a>14.4.3.3. Gestión de contextos de archivos, puertos y valores booleanos</h4></div></div></div><div
               class="para">
 					Cada módulo de SELinux proporciona un conjunto de reglas de etiquetado de archivos, pero también es posible crear reglas de etiquetado personalizadas para adaptarse a algún caso específico. Por ejemplo, si desea que el servidor web sea capaz de leer archivos en el directorio <code
                 class="filename">/srv/www/</code>, podría ejecutar <code
@@ -449,27 +448,27 @@ user_u          user       s0         s0               user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549201295072"></a>14.4.4.1. Creación de un archivo <code
+                      id="idm140401133750176"></a>14.4.4.1. Creación de un archivo <code
                       class="filename">.fc</code></h4></div></div></div><div
               class="para">
 					Leer el ejemplo a continuación debería ser suficiente para entender la estructura de este tipo de archivos. Puede utilizar expresiones regulares para asignar el mismo contexto de seguridad a múltiples archivos, o incluso a un árbol de directorios completo.
 				</div><div
               class="example"><a
-                id="idm140549201293248"></a><p
+                id="idm140401133748352"></a><p
                 class="title"><strong>Ejemplo 14.2. Archivo <code
                     class="filename">example.fc</code></strong></p><div
                 class="example-contents"><pre
-                  class="programlisting scale"># myapp executable will have:
-# label: system_u:object_r:myapp_exec_t
-# MLS sensitivity: s0
-# MCS categories: &lt;none&gt;
+                  class="programlisting scale"># El ejecutable myapp tendrá:
+# etiqueta: system_u:object_r:myapp_exec_t
+# Sensibilidad MLS: s0
+# Categorías MCS: &lt;none&gt;
 
 /usr/sbin/myapp         --      gen_context(system_u:object_r:myapp_exec_t,s0)
 </pre></div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549201290848"></a>14.4.4.2. Creación de un archivo <code
+                      id="idm140401133745936"></a>14.4.4.2. Creación de un archivo <code
                       class="filename">.if</code></h4></div></div></div><div
               class="para">
 					En el ejemplo a continuación, la primera interfaz («<code
@@ -482,23 +481,24 @@ user_u          user       s0         s0               user_r
                 class="literal">gen_require</code>) y utilizar directivas estándar para otorgar permisos. Sepa que puede utilizar interfaces proporcionadas por otros módulos. La siguiente sección dará más explicaciones sobre cómo expresar estos permisos.
 				</div><div
               class="example"><a
-                id="idm140549201286576"></a><p
+                id="idm140401133741664"></a><p
                 class="title"><strong>Ejemplo 14.3. Archivo <code
                     class="filename">ejemplo.if</code></strong></p><div
                 class="example-contents"><pre
-                  class="programlisting">## &lt;summary&gt;Myapp example policy&lt;/summary&gt;
+                  class="programlisting">## &lt;summary&gt;Política de ejemplo de Myapp&lt;/summary&gt;
 ## &lt;desc&gt;
 ##      &lt;p&gt;
-##              More descriptive text about myapp.  The &lt;desc&gt;
-##              tag can also use &lt;p&gt;, &lt;ul&gt;, and &lt;ol&gt;
-##              html tags for formatting.
+##              Texto más descriptivo de myapp. La etiqueta &lt;desc&gt;
+##              también puede utilizar etiquetas HTML &lt;p&gt;,
+##              &lt;ul&gt;, and &lt;ol&gt; para dar formato.
 ##      &lt;/p&gt;
 ##      &lt;p&gt;
-##              This policy supports the following myapp features:
+##              Esta política es compatible con las siguientes 
+##              funcionalidades de myapp:
 ##              &lt;ul&gt;
-##              &lt;li&gt;Feature A&lt;/li&gt;
-##              &lt;li&gt;Feature B&lt;/li&gt;
-##              &lt;li&gt;Feature C&lt;/li&gt;
+##              &lt;li&gt;Funcionalidad A&lt;/li&gt;
+##              &lt;li&gt;Funcionalidad B&lt;/li&gt;
+##              &lt;li&gt;Funcionalidad C&lt;/li&gt;
 ##              &lt;/ul&gt;
 ##      &lt;/p&gt;
 ## &lt;/desc&gt;
@@ -506,10 +506,10 @@ user_u          user       s0         s0               user_r
 
 ########################################
 ## &lt;summary&gt;
-##      Execute a domain transition to run myapp.
+##      Ejecutar una transición de dominio para ejecutar myapp.
 ## &lt;/summary&gt;
 ## &lt;param name="domain"&gt;
-##      Domain allowed to transition.
+##      Dominio permitido para la transición
 ## &lt;/param&gt;
 #
 interface(`myapp_domtrans',`
@@ -522,10 +522,10 @@ interface(`myapp_domtrans',`
 
 ########################################
 ## &lt;summary&gt;
-##      Read myapp log files.
+##      Leer archivos de registro de myapp.
 ## &lt;/summary&gt;
 ## &lt;param name="domain"&gt;
-##      Domain allowed to read the log files.
+##      Dominio al que se le permite leer archivos de registro.
 ## &lt;/param&gt;
 #
 interface(`myapp_read_log',`
@@ -551,7 +551,7 @@ interface(`myapp_read_log',`
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549201279680"></a>14.4.4.3. Escritura de un archivo <code
+                      id="idm140401133734640"></a>14.4.4.3. Escritura de un archivo <code
                       class="filename">.te</code></h4></div></div></div><div
               class="para">
 					Revise el archivo <code
@@ -582,7 +582,7 @@ interface(`myapp_read_log',`
 
 ########################################
 #
-# Declarations
+# Declaraciones
 #
 
 type myapp_t; <span
@@ -610,7 +610,7 @@ files_tmp_file(myapp_tmp_t)
 
 ########################################
 #
-# Myapp local policy
+# Política local de Myapp
 #
 
 allow myapp_t myapp_log_t:file { read_file_perms append_file_perms }; <span
@@ -725,7 +725,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
 					Para entender mejor este mensaje, estudiémoslo parte por parte.
 				</div><div
               class="table"><a
-                id="idm140549201246016"></a><p
+                id="idm140401133700976"></a><p
                 class="title"><strong>Tabla 14.1. Análisis de una traza SELinux</strong></p><div
                 class="table-contents"><table
                   xmlns:d="http://docbook.org/ns/docbook"
@@ -760,15 +760,15 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
                 class="para">
 					Puede parecerle extraño que no se mencionen roles cuando se crean nuevas reglas. SELinux sólo utiliza los dominios para saber qué operaciones están permitidas. El rol sólo interviene indirectamente permitiéndole al usuario cambiar a otro dominio. SELinux está basado en una teoría conocida como <span
                   class="emphasis"><em>forzado de tipos</em></span> («Type Enforcement») y el tipo es el único elemento que importa al otorgar permisos. <a
-                  id="idm140549198453632"
+                  id="idm140401132183072"
                   class="indexterm"></a> <a
-                  id="idm140549198453120"
+                  id="idm140401132182560"
                   class="indexterm"></a>
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549198452224"></a>14.4.4.4. Compilación de los archivos</h4></div></div></div><div
+                      id="idm140401132181664"></a>14.4.4.4. Compilación de los archivos</h4></div></div></div><div
               class="para">
 					Una vez que los 3 archivos (<code
                 class="filename">ejemplo.if</code>, <code

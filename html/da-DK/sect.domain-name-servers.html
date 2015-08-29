@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-da-DK-1.0-1" /><meta
@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dns-principe"></a>10.6.1. Principle and Mechanism</h3></div></div></div><a
-            id="idm139921726762400"
+            id="idm139714954667952"
             class="indexterm"></a><a
-            id="idm139921726761440"
+            id="idm139714954666992"
             class="indexterm"></a><div
             class="para">
 				The <span
@@ -86,9 +86,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				DNS records are organized in zones; each zone matches either a domain (or a subdomain) or an IP address range (since IP addresses are generally allocated in consecutive ranges). A primary server is authoritative on the contents of a zone; secondary servers, usually hosted on separate machines, provide regularly refreshed copies of the primary zone.
 			</div><a
-            id="idm139921726756672"
+            id="idm139714954662224"
             class="indexterm"></a><a
-            id="idm139921726755232"
+            id="idm139714954660784"
             class="indexterm"></a><div
             class="para">
 				Each zone can contain records of various kinds (<span
@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">A</code>: IPv4 address. <a
-                    id="idm139921726751424"
+                    id="idm139714954656976"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -108,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						<code
                     class="literal">CNAME</code>: alias (<span
                     class="emphasis"><em>canonical name</em></span>). <a
-                    id="idm139921726748864"
+                    id="idm139714954654416"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -119,7 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="xref"
                     href="network-services.html#sidebar.smtp"><span
                       class="emphasis"><em>BACK TO BASICS</em></span> SMTP</a>); other servers are contacted in order of decreasing priority if the first one does not reply. <a
-                    id="idm139921726745376"
+                    id="idm139714954650928"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -128,14 +128,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">PTR</code>: mapping of an IP address to a name. Such a record is stored in a “reverse DNS” zone named after the IP address range. For example, <code
                     class="literal">1.168.192.in-addr.arpa</code> is the zone containing the reverse mapping for all addresses in the <code
                     class="literal">192.168.1.0/24</code> range. <a
-                    id="idm139921726741840"
+                    id="idm139714954647392"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">AAAA</code>: IPv6 address. <a
-                    id="idm139921726739760"
+                    id="idm139714954645312"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -146,12 +146,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">internal.falcot.com</code>, which means that the <code
                     class="literal">internal.falcot.com</code> zone is handled by another server. Of course, this server must declare an <code
                     class="literal">internal.falcot.com</code> zone. <a
-                    id="idm139921726735552"
+                    id="idm139714954641104"
                     class="indexterm"></a>
 					</div></li></ul></div><a
-            id="idm139921726734432"
+            id="idm139714954639984"
             class="indexterm"></a><a
-            id="idm139921726732992"
+            id="idm139714954638544"
             class="indexterm"></a><div
             class="para">
 				The reference name server, Bind, was developed and is maintained by ISC (<span
@@ -161,17 +161,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Furthermore, Bind supports the DNSSEC standard for signing (and therefore authenticating) DNS records, which allows blocking any spoofing of this data during man-in-the-middle attacks.
 			</div><a
-            id="idm139921726729456"
+            id="idm139714954635008"
             class="indexterm"></a><a
-            id="idm139921726728032"
+            id="idm139714954633584"
             class="indexterm"></a><a
-            id="idm139921726727072"
+            id="idm139714954632624"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> DNSSEC</strong></p></div></div></div><a
-              id="idm139921726725024"
+              id="idm139714954630576"
               class="indexterm"></a><div
               class="para">
 				The DNSSEC norm is quite complex; this partly explains why it's not in widespread usage yet (even if it perfectly coexists with DNS servers unaware of DNSSEC). To understand all the ins and outs, you should check the following article. <div
@@ -195,15 +195,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CAUTION</em></span> Names of reverse zones</strong></p></div></div></div><a
-              id="idm139921726717376"
+              id="idm139714954622928"
               class="indexterm"></a><a
-              id="idm139921726715936"
+              id="idm139714954621488"
               class="indexterm"></a><a
-              id="idm139921726714976"
+              id="idm139714954620528"
               class="indexterm"></a><a
-              id="idm139921726713856"
+              id="idm139714954619408"
               class="indexterm"></a><a
-              id="idm139921726712736"
+              id="idm139714954618288"
               class="indexterm"></a><div
               class="para">
 				Reverse zones have a particular name. The zone covering the <code
@@ -230,14 +230,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">host <em
                   class="replaceable">ipaddress</em> localhost</code> tests the reverse resolution.
 			</div><a
-              id="idm139921726702912"
+              id="idm139714954608464"
               class="indexterm"></a></div><div
             class="para">
 				The following configuration excerpts, taken from the Falcot files, can serve as starting points to configure a DNS server:
 			</div><a
-            id="idm139921726701040"
+            id="idm139714954606592"
             class="indexterm"></a><a
-            id="idm139921726699920"
+            id="idm139714954605472"
             class="indexterm"></a><div
             class="example"><a
               id="example.bind-named.conf.local"></a><p

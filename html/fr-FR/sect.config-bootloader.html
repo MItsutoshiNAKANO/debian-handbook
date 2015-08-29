@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Configuration du chargeur d'amorçage</h2></div></div></div><a
-          id="idm139907199263808"
+          id="idm139924331649808"
           class="indexterm"></a><a
-          id="idm139907199262368"
+          id="idm139924331648368"
           class="indexterm"></a><div
           class="para">
 			Il est probablement déjà fonctionnel, mais il est toujours bon de savoir configurer et installer un chargeur d'amorçage au cas où celui-ci disparaîtrait du <span
@@ -83,9 +83,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>B.A.-BA</em></span> <span
                       class="foreignphrase"><em
                         class="foreignphrase">Master Boot Record</em></span></strong></p></div></div></div><a
-            id="idm139907200963920"
+            id="idm139924346140208"
             class="indexterm"></a><a
-            id="idm139907200962960"
+            id="idm139924346139248"
             class="indexterm"></a><div
             class="para">
 			Le <span
@@ -132,9 +132,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm139907200946032"
+            id="idm139924346122320"
             class="indexterm"></a><a
-            id="idm139907200945072"
+            id="idm139924346121360"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -147,13 +147,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> est donc la première partition du premier disque et <code
               class="filename">/dev/sdb3</code> la troisième partition du deuxième disque.
 			</div><a
-            id="idm139907200939712"
+            id="idm139924346116000"
             class="indexterm"></a><a
-            id="idm139907200938272"
+            id="idm139924346114560"
             class="indexterm"></a><a
-            id="idm139907200936832"
+            id="idm139924346113120"
             class="indexterm"></a><a
-            id="idm139907200935392"
+            id="idm139924346111680"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -163,9 +163,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
 			</div><a
-            id="idm139907200931408"
+            id="idm139924346107696"
             class="indexterm"></a><a
-            id="idm139907200929968"
+            id="idm139924346106256"
             class="indexterm"></a><div
             class="para">
 				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
@@ -181,28 +181,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="userinput"><code>ls -l</code></strong><code
               class="computeroutput">
 total 0
-lrwxrwxrwx 1 root root  9 23 jul. 08:58 ata-STM3500418AS_9VM3L3KP -&gt; ../../sda
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 ata-STM3500418AS_9VM3L3KP-part1 -&gt; ../../sda1
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 ata-STM3500418AS_9VM3L3KP-part2 -&gt; ../../sda2
+lrwxrwxrwx 1 root root  9 23 juil. 08:58 ata-STM3500418AS_9VM3L3KP -&gt; ../../sda
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 ata-STM3500418AS_9VM3L3KP-part1 -&gt; ../../sda1
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 ata-STM3500418AS_9VM3L3KP-part2 -&gt; ../../sda2
 [...]
-lrwxrwxrwx 1 root root  9 23 jul. 08:58 ata-WDC_WD5001AALS-00L3B2_WD-WCAT00241697 -&gt; ../../sdb
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 ata-WDC_WD5001AALS-00L3B2_WD-WCAT00241697-part1 -&gt; ../../sdb1
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 ata-WDC_WD5001AALS-00L3B2_WD-WCAT00241697-part2 -&gt; ../../sdb2
+lrwxrwxrwx 1 root root  9 23 juil. 08:58 ata-WDC_WD5001AALS-00L3B2_WD-WCAT00241697 -&gt; ../../sdb
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 ata-WDC_WD5001AALS-00L3B2_WD-WCAT00241697-part1 -&gt; ../../sdb1
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 ata-WDC_WD5001AALS-00L3B2_WD-WCAT00241697-part2 -&gt; ../../sdb2
 [...]
-lrwxrwxrwx 1 root root  9 23 jul. 08:58 scsi-SATA_STM3500418AS_9VM3L3KP -&gt; ../../sda
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 scsi-SATA_STM3500418AS_9VM3L3KP-part1 -&gt; ../../sda1
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 scsi-SATA_STM3500418AS_9VM3L3KP-part2 -&gt; ../../sda2
+lrwxrwxrwx 1 root root  9 23 juil. 08:58 scsi-SATA_STM3500418AS_9VM3L3KP -&gt; ../../sda
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 scsi-SATA_STM3500418AS_9VM3L3KP-part1 -&gt; ../../sda1
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 scsi-SATA_STM3500418AS_9VM3L3KP-part2 -&gt; ../../sda2
 [...]
-lrwxrwxrwx 1 root root  9 23 jul. 08:58 scsi-SATA_WDC_WD5001AALS-_WD-WCAT00241697 -&gt; ../../sdb
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 scsi-SATA_WDC_WD5001AALS-_WD-WCAT00241697-part1 -&gt; ../../sdb1
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 scsi-SATA_WDC_WD5001AALS-_WD-WCAT00241697-part2 -&gt; ../../sdb2
+lrwxrwxrwx 1 root root  9 23 juil. 08:58 scsi-SATA_WDC_WD5001AALS-_WD-WCAT00241697 -&gt; ../../sdb
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 scsi-SATA_WDC_WD5001AALS-_WD-WCAT00241697-part1 -&gt; ../../sdb1
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 scsi-SATA_WDC_WD5001AALS-_WD-WCAT00241697-part2 -&gt; ../../sdb2
 [...]
-lrwxrwxrwx 1 root root  9 23 jul. 16:48 usb-LaCie_iamaKey_3ed00e26ccc11a-0:0 -&gt; ../../sdc
-lrwxrwxrwx 1 root root 10 23 jul. 16:48 usb-LaCie_iamaKey_3ed00e26ccc11a-0:0-part1 -&gt; ../../sdc1
-lrwxrwxrwx 1 root root 10 23 jul. 16:48 usb-LaCie_iamaKey_3ed00e26ccc11a-0:0-part2 -&gt; ../../sdc2
+lrwxrwxrwx 1 root root  9 23 juil. 16:48 usb-LaCie_iamaKey_3ed00e26ccc11a-0:0 -&gt; ../../sdc
+lrwxrwxrwx 1 root root 10 23 juil. 16:48 usb-LaCie_iamaKey_3ed00e26ccc11a-0:0-part1 -&gt; ../../sdc1
+lrwxrwxrwx 1 root root 10 23 juil. 16:48 usb-LaCie_iamaKey_3ed00e26ccc11a-0:0-part2 -&gt; ../../sdc2
 [...]
-lrwxrwxrwx 1 root root  9 23 jul. 08:58 wwn-0x5000c50015c4842f -&gt; ../../sda
-lrwxrwxrwx 1 root root 10 23 jul. 08:58 wwn-0x5000c50015c4842f-part1 -&gt; ../../sda1
+lrwxrwxrwx 1 root root  9 23 juil. 08:58 wwn-0x5000c50015c4842f -&gt; ../../sda
+lrwxrwxrwx 1 root root 10 23 juil. 08:58 wwn-0x5000c50015c4842f-part1 -&gt; ../../sda1
 [...]
 mirexpress:/dev/disk/by-id# </code></pre><div
             class="para">
@@ -215,9 +215,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Configuration de LILO</h3></div></div></div><a
-            id="idm139907200919456"
+            id="idm139924346095728"
             class="indexterm"></a><a
-            id="idm139907200918496"
+            id="idm139924346094768"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -235,29 +235,29 @@ mirexpress:/dev/disk/by-id# </code></pre><div
               class="title"><strong>Exemple 8.3. Fichier de configuration de LILO</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-# The disk on which LILO should be installed.
-# By indicating the disk and not a partition.
-# you order LILO to be installed on the MBR.
+# Le disque sur lequel LILO doit s'installer.
+# En indiquant le disque et non pas une partition,
+# on ordonne à LILO de s'installer sur le MBR.
 boot=/dev/sda
-# the partition that contains Debian
+# la partition qui contient Debian
 root=/dev/sda2
-# the item to be loaded by default
+# l'élément à charger par défaut
 default=Linux
 
-# the most recent kernel image
+# Noyau le plus récent
 image=/vmlinuz
   label=Linux
   initrd=/initrd.img
   read-only
 
-# Old kernel (if the newly installed kernel doesn't boot)
+# Ancien noyau (si le noyau nouvellement installé ne démarre pas)
 image=/vmlinuz.old
   label=LinuxOLD
   initrd=/initrd.img.old
   read-only
   optional
 
-# only for Linux/Windows dual boot
+# Seulement pour un double amorçage Linux/Windows
 other=/dev/sda1
   label=Windows
 </pre></div></div></div><div
@@ -265,9 +265,9 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Configuration de GRUB 2</h3></div></div></div><a
-            id="idm139907200910416"
+            id="idm139924346086656"
             class="indexterm"></a><a
-            id="idm139907200909456"
+            id="idm139924346085696"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -275,7 +275,7 @@ other=/dev/sda1
               class="foreignphrase"><em
                 class="foreignphrase">GRand Unified Bootloader</em></span>, ou grand chargeur d'amorçage unifié) est plus récent. Il n'est pas nécessaire de l'invoquer après chaque mise à jour du noyau puisqu'il sait lire les systèmes de fichiers et retrouver tout seul la position du noyau sur le disque. Pour l'installer dans le MBR du premier disque, on saisira simplement <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm139907200906480"
+              id="idm139924346082720"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -313,7 +313,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Cas des Macintosh (PowerPC) : configuration de Yaboot</h3></div></div></div><a
-            id="idm139907200892000"
+            id="idm139924346068240"
             class="indexterm"></a><div
             class="para">
 				Yaboot est le chargeur de démarrage employé par les anciens Macintosh utilisant des processeurs PowerPC. Ils n'amorcent pas comme les PC, mais recourent à une partition d'amorçage (<span
@@ -332,7 +332,7 @@ other=/dev/sda1
 				Avant d'exécuter <code
               class="command">ybin</code>, il faut disposer d'un fichier <code
               class="filename">/etc/yaboot.conf</code> valide. L'exemple ci-dessous pourrait constituer un fichier minimal. <a
-              id="idm139907200885520"
+              id="idm139924346061760"
               class="indexterm"></a>
 			</div><div
             class="example"><a
@@ -340,38 +340,38 @@ other=/dev/sda1
               class="title"><strong>Exemple 8.4. Fichier de configuration de Yaboot</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-# bootstrap partition
+# La partition de bootstrap
 boot=/dev/sda2
-# the disk
+# Le disque
 device=hd:
-# the Linux partition
+# La partition Linux
 partition=3
 root=/dev/sda3
-# boot after 3 seconds of inactivity
-# (timeout is in tenths of seconds)
+# Démarre après 3 sec. d'inactivité 
+# (timeout est en dixièmes de secondes)
 timeout=30
 
 install=/usr/lib/yaboot/yaboot
 magicboot=/usr/lib/yaboot/ofboot
 enablecdboot
 
-# last kernel installed
+# Dernier noyau installé
 image=/vmlinux
         label=linux
         initrd=/initrd.img
         read-only
 
-# old kernel
+# Ancien noyau 
 image=/vmlinux.old
         label=old
         initrd=/initrd.img.old
         read-only
 
-# only for Linux/Mac OSX dual-boot
+# Uniquement pour un double amorçage Linux/Mac OS X
 macosx=/dev/sda5
 
-# bsd=/dev/sdaX and macos=/dev/sdaX
-# are also possible
+# bsd=/dev/sdaX et macos=/dev/sdaX
+# sont également possibles
 </pre></div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

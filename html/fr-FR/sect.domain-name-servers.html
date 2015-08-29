@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dns-principe"></a>10.6.1. Principe et fonctionnement</h3></div></div></div><a
-            id="idm139907199095376"
+            id="idm139924331327520"
             class="indexterm"></a><a
-            id="idm139907199094416"
+            id="idm139924331326560"
             class="indexterm"></a><div
             class="para">
 				Le service de gestion des noms (<span
@@ -86,9 +86,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Les informations DNS sont regroupées par zones, correspondant chacune à un domaine ou à une plage d'adresses IP (les adresses IP sont généralement allouées par blocs d'adresses consécutives). Un serveur primaire fait autorité sur le contenu d'une zone ; un serveur secondaire, normalement hébergé sur une autre machine, se contente de proposer une copie de la zone primaire, qu'il met à jour régulièrement.
 			</div><a
-            id="idm139907199090096"
+            id="idm139924331322240"
             class="indexterm"></a><a
-            id="idm139907199088656"
+            id="idm139924331320800"
             class="indexterm"></a><div
             class="para">
 				Chaque zone peut contenir différents types d'enregistrements (<span
@@ -101,14 +101,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">A</code> : attribution d'une adresse IPv4. <a
-                    id="idm139907199084800"
+                    id="idm139924331316944"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">CNAME</code> : définition d'un alias. <a
-                    id="idm139907199082752"
+                    id="idm139924331314896"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="xref"
                     href="network-services.html#sidebar.smtp"><span
                       class="emphasis"><em>B.A.-BA</em></span> SMTP</a>). S'il ne répond pas, le deuxième serveur sera contacté, etc. <a
-                    id="idm139907199079680"
+                    id="idm139924331311824"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -127,14 +127,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">PTR</code> : correspondance adresse IP vers nom. Elle est stockée dans une zone dédiée à la résolution inverse, nommée en fonction de la plage d'adresses IP : par exemple <code
                     class="literal">1.168.192.in-addr.arpa</code> pour toutes les adresses du réseau <code
                     class="literal">192.168.1.0/24</code>. <a
-                    id="idm139907199076192"
+                    id="idm139924331308336"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">AAAA</code> : correspondance nom vers adresse IPv6. <a
-                    id="idm139907199074144"
+                    id="idm139924331306288"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -143,12 +143,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">NS</code> : correspondance nom vers serveur de noms. Chaque domaine doit compter au moins un enregistrement NS. Tous ces enregistrements pointent sur un serveur DNS capable de répondre aux requêtes portant sur ce domaine ; ils signaleront les serveurs primaires et secondaires du domaine concerné. Ces enregistrements permettent aussi de mettre en place une délégation DNS. On pourra ainsi indiquer que le domaine <code
                     class="literal">interne.falcot.com</code> est géré par un autre serveur de noms et déléguer ainsi une partie du service. Évidemment, le serveur concerné devra déclarer une zone <code
                     class="literal">interne.falcot.com</code>. <a
-                    id="idm139907199070608"
+                    id="idm139924331302752"
                     class="indexterm"></a>
 					</div></li></ul></div><a
-            id="idm139907199069488"
+            id="idm139924331301632"
             class="indexterm"></a><a
-            id="idm139907199068048"
+            id="idm139924331300192"
             class="indexterm"></a><div
             class="para">
 				Le logiciel serveur de nom de référence, Bind, est développé par l'ISC (<span
@@ -159,17 +159,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				D'autre part, elle prend en charge DNSSEC, norme qui permet de signer et donc d'authentifier les enregistrements DNS, interdisant ainsi toute falsification de ces données, par exemple par des intermédiaires mal intentionnés.
 			</div><a
-            id="idm139907199063952"
+            id="idm139924331296096"
             class="indexterm"></a><a
-            id="idm139907199062528"
+            id="idm139924331294672"
             class="indexterm"></a><a
-            id="idm139907199061568"
+            id="idm139924331293712"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> DNSSEC</strong></p></div></div></div><a
-              id="idm139907199059360"
+              id="idm139924331291504"
               class="indexterm"></a><div
               class="para">
 				La norme DNSSEC est assez complexe ; pour en comprendre tous les tenants et aboutissants, nous vous suggérons de consulter les informations disponibles sur le site du NIC France (organisme gérant l'attribution des domaines en <code
@@ -194,15 +194,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ATTENTION</em></span> Noms des zones inverses</strong></p></div></div></div><a
-              id="idm139907199050960"
+              id="idm139924331283104"
               class="indexterm"></a><a
-              id="idm139907199049520"
+              id="idm139924331281664"
               class="indexterm"></a><a
-              id="idm139907199048560"
+              id="idm139924331280704"
               class="indexterm"></a><a
-              id="idm139907199047440"
+              id="idm139924331279584"
               class="indexterm"></a><a
-              id="idm139907199046320"
+              id="idm139924331278464"
               class="indexterm"></a><div
               class="para">
 				Reverse zones have a particular name. The zone covering the <code
@@ -229,14 +229,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">host <em
                   class="replaceable">ipaddress</em> localhost</code> tests the reverse resolution.
 			</div><a
-              id="idm139907199036464"
+              id="idm139924331268608"
               class="indexterm"></a></div><div
             class="para">
 				On pourra configurer un serveur DNS en s'inspirant des extraits suivants, issus des fichiers de configuration de la société Falcot.
 			</div><a
-            id="idm139907199034576"
+            id="idm139924331266720"
             class="indexterm"></a><a
-            id="idm139907199033456"
+            id="idm139924331265600"
             class="indexterm"></a><div
             class="example"><a
               id="example.bind-named.conf.local"></a><p
@@ -254,9 +254,9 @@ zone "falcot.com" {
         };
 };
 
-zone "internal.falcot.com" {
+zone "interne.falcot.com" {
         type master;
-        file "/etc/bind/db.internal.falcot.com";
+        file "/etc/bind/db.interne.falcot.com";
         allow-query { 192.168.0.0/16; };
 };
 
@@ -271,8 +271,9 @@ zone "168.192.in-addr.arpa" {
               class="title"><strong>Exemple 10.13. Extrait du fichier <code
                   class="filename">/etc/bind/db.falcot.com</code></strong></p><div
               class="example-contents"><pre
-                class="programlisting">; falcot.com Zone 
-; admin.falcot.com. =&gt; zone contact: admin@falcot.com
+                class="programlisting">
+; Zone falcot.com
+; admin.falcot.com. =&gt; contact pour la zone: admin@falcot.com
 $TTL    604800
 @       IN      SOA     falcot.com. admin.falcot.com. (
                         20040121        ; Serial
@@ -281,13 +282,13 @@ $TTL    604800
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-; The @ refers to the zone name ("falcot.com" here)
-; or to $ORIGIN if that directive has been used
+; Le @ fait référence au nom de la zone («falcot.com.» en l'occurrence)
+; ou à $ORIGIN si cette directive a été employée
 ;
 @       IN      NS      ns
 @       IN      NS      ns0.xname.org.
 
-internal IN      NS      192.168.0.2
+interne IN      NS      192.168.0.2
 
 @       IN      A       212.94.201.10
 @       IN      MX      5 mail
@@ -317,25 +318,26 @@ dns     IN      CNAME   ns
               class="title"><strong>Exemple 10.14. Extrait du fichier <code
                   class="filename">/etc/bind/db.192.168</code></strong></p><div
               class="example-contents"><pre
-                class="programlisting">; Reverse zone for 192.168.0.0/16
-; admin.falcot.com. =&gt; zone contact: admin@falcot.com
+                class="programlisting">
+; Zone inverse pour 192.168.0.0/16
+; admin.falcot.com. =&gt; contact pour la zone: admin@falcot.com
 $TTL    604800
-@       IN      SOA     ns.internal.falcot.com. admin.falcot.com. (
+@       IN      SOA     ns.interne.falcot.com. admin.falcot.com. (
                         20040121        ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 
-        IN      NS      ns.internal.falcot.com.
+        IN      NS      ns.interne.falcot.com.
 
 ; 192.168.0.1 -&gt; arrakis
-1.0     IN      PTR     arrakis.internal.falcot.com.
+1.0     IN      PTR     arrakis.interne.falcot.com.
 ; 192.168.0.2 -&gt; neptune
-2.0     IN      PTR     neptune.internal.falcot.com.
+2.0     IN      PTR     neptune.interne.falcot.com.
 
 ; 192.168.3.1 -&gt; pau
-1.3     IN      PTR     pau.internal.falcot.com.
+1.3     IN      PTR     pau.interne.falcot.com.
 </pre></div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

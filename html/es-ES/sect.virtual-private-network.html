@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-es-ES-1.0-1" /><meta
@@ -72,11 +72,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			Una <span
             class="emphasis"><em>red virtual privada</em></span> (VPN: «Virtual Private Network») es una forma de enlazar dos redes locales diferentes a través de Internet utilizando un túnel; el túnel generalmente está cifrado para confidencialidad. Usualmente se utilizan VPNs para integrar una máquina remota a la red local de una empresa.
 		</div><a
-          id="idm140549203140304"
+          id="idm140401138852512"
           class="indexterm"></a><a
-          id="idm140549203138864"
+          id="idm140401136579184"
           class="indexterm"></a><a
-          id="idm140549203137904"
+          id="idm140401136578224"
           class="indexterm"></a><div
           class="para">
 			Muchas herramientas lo proveen. OpenVPN es una solución eficiente, fácil de desplegar y mantener, basada en SSL/TLS. Otra posibilidad es utilizar IPsec para cifrar el tráfico IP entre dos máquinas; este cifrado es transparente, lo que significa que no necesita modificar las aplicaciones ejecutando en estos equipos para tener en cuenta la VPN. También puede utilizar SSH, además de para sus funcionalidades más convencionales, para proveer una VPN. Finalmente, puede establecer una VPN utilizando el protocolo PPTP de Microsoft. Existen otras soluciones, pero están más allá del alcance de este libro.
@@ -85,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.openvpn"></a>10.2.1. OpenVPN</h3></div></div></div><a
-            id="idm140549203134800"
+            id="idm140401136575120"
             class="indexterm"></a><div
             class="para">
 				OpenVPN es un pedazo de software dedicado a crear redes privadas virtuales. Su configuración involucra crear interfaces de red virtuales en el servidor VPN y en los clientes; es compatible con interfaces <code
@@ -100,9 +100,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> SSL y TLS</strong></p></div></div></div><a
-              id="idm140549206034368"
+              id="idm140401136569968"
               class="indexterm"></a><a
-              id="idm140549206033408"
+              id="idm140401136569008"
               class="indexterm"></a><div
               class="para">
 				Netscape inventó el protocolo SSL (<span
@@ -114,19 +114,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><a
                       id="sect.easy-rsa"></a>10.2.1.1. Infraestructura de llave pública: <span
                       class="emphasis"><em>easy-rsa</em></span></h4></div></div></div><a
-              id="idm140549206029392"
+              id="idm140401136564992"
               class="indexterm"></a><a
-              id="idm140549206028464"
+              id="idm140401136564064"
               class="indexterm"></a><a
-              id="idm140549206027536"
+              id="idm140401142263936"
               class="indexterm"></a><a
-              id="idm140549206026576"
+              id="idm140401142262976"
               class="indexterm"></a><a
-              id="idm140549206025136"
+              id="idm140401142261536"
               class="indexterm"></a><a
-              id="idm140549206024016"
+              id="idm140401142260416"
               class="indexterm"></a><a
-              id="idm140549206023056"
+              id="idm140401142259456"
               class="indexterm"></a><div
               class="para">
 					El algoritmo RSA es ampliamente utilizado en criptografía de llave pública. Involucra un «par de llaves», compuestas de una llave privada y una llave pública. Las dos llaves están fuertemente relacionadas entre ellas y sus propiedades matemáticas son tales que un mensaje cifrado con la llave pública sólo puede ser descifrado por alguien que conozca la llave privada, lo que asegura confidencialidad. En la dirección opuesta, un mensaje cifrado con la clave privada puede ser descifrado por cualquiera que conozca la llave pública, lo que permite autenticar el origen del mensaje ya que sólo pudo haber sido generado por alguien con acceso a la llave privada. Cuando se asocie una función de hash digital (MD5, SHA1 o una variante más reciente), esto lleva a un mecanismo de firma que puede aplicarse a cualquier mensaje.
@@ -342,7 +342,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549205983808"></a>10.2.1.2. Configuración del servidor OpenVPN</h4></div></div></div><div
+                      id="idm140401142220208"></a>10.2.1.2. Configuración del servidor OpenVPN</h4></div></div></div><div
               class="para">
 					El script de inicialización de OpenVPN intenta, de forma predeterminada, iniciar todas las redes privadas virtuales definidas en <code
                 class="filename">/etc/openvpn/*.conf</code>. Configurar un servidor VPN entonces es cuestión de almacenar el archivo de configuración correspondiente en este directorio. Un buen punto de partida es <code
@@ -379,7 +379,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140549202730496"></a>10.2.1.3. Configuración del cliente OpenVPN</h4></div></div></div><div
+                      id="idm140401142205584"></a>10.2.1.3. Configuración del cliente OpenVPN</h4></div></div></div><div
               class="para">
 					Para configurar un cliente OpenVPN también necesita crear un archivo de configuración en <code
                 class="filename">/etc/openvpn/</code>. Puede conseguir una configuración estándar utilizando <code
@@ -407,16 +407,16 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="pkg pkg">network-manager-openvpn-gnome</span> contiene una extensión para Network Manager (revise la <a
                 class="xref"
                 href="sect.network-config.html#sect.roaming-network-config">Sección 8.2.4, “Configuración de red automática para usuarios errantes”</a>) que permite administrar redes privadas virtuales OpenVPN. Esto permite que cada usuario configure gráficamente sus conexiones OpenVPN y las controle desde el ícono del gestor de red. <a
-                id="idm140549202719808"
+                id="idm140401141309872"
                 class="indexterm"></a>
 				</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh-vpn"></a>10.2.2. Red privada virtual con SSH</h3></div></div></div><a
-            id="idm140549202717344"
+            id="idm140401141307408"
             class="indexterm"></a><a
-            id="idm140549202716384"
+            id="idm140401141306448"
             class="indexterm"></a><div
             class="para">
 				En realidad existen dos formas de crear una red privada virtual con SSH. La histórica involucra establecer una capa PPP sobre el enlace SSH. Se describe este método en el siguiente «howto»: <div
@@ -444,11 +444,11 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipsec"></a>10.2.3. IPsec</h3></div></div></div><a
-            id="idm140549202706608"
+            id="idm140401141296672"
             class="indexterm"></a><a
-            id="idm140549202705648"
+            id="idm140401141295712"
             class="indexterm"></a><a
-            id="idm140549202704528"
+            id="idm140401141294592"
             class="indexterm"></a><div
             class="para">
 				IPsec, despite being the standard in IP VPNs, is rather more involved in its implementation. The IPsec engine itself is integrated in the Linux kernel; the required user-space parts, the control and configuration tools, are provided by the <span
@@ -463,13 +463,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="pkg pkg">racoon</span> or <span
               class="pkg pkg">strongswan</span> makes the process much simpler by bringing administration together at a central point, and more secure by rotating the keys periodically.
 			</div><a
-            id="idm140549202696672"
+            id="idm140401141286736"
             class="indexterm"></a><a
-            id="idm140549202695712"
+            id="idm140401141285776"
             class="indexterm"></a><a
-            id="idm140549202694272"
+            id="idm140401141284336"
             class="indexterm"></a><a
-            id="idm140549202693312"
+            id="idm140401141283376"
             class="indexterm"></a><div
             class="para">
 				A pesar de su estado como referencia, la complejidad de configuración de IPsec restringe su uso en la práctica. Generalmente se preferirán soluciones basadas en OpenVPN cuando los túneles necesarios no sean muchos ni demasiado dinámicos.
@@ -483,9 +483,9 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="emphasis"><em>NAT-T</em></span> (<span
                 class="emphasis"><em>NAT Traversal</em></span>), que básicamente encapsula un paquete IP en un paquete UDP estándar.
 			</div><a
-              id="idm140549202688704"
+              id="idm140401141278768"
               class="indexterm"></a><a
-              id="idm140549202687744"
+              id="idm140401141277808"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -494,13 +494,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="para">
 				The standard mode of operation of IPsec involves data exchanges on UDP port 500 for key exchanges (also on UDP port 4500 in the case that NAT-T is in use). Moreover, IPsec packets use two dedicated IP protocols that the firewall must let through; reception of these packets is based on their protocol numbers, 50 (ESP) and 51 (AH).
 			</div><a
-              id="idm140549202684704"
+              id="idm140401141274768"
               class="indexterm"></a><a
-              id="idm140549202683744"
+              id="idm140401141273808"
               class="indexterm"></a><a
-              id="idm140549202682784"
+              id="idm140401141272848"
               class="indexterm"></a><a
-              id="idm140549202681344"
+              id="idm140401141271408"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -511,13 +511,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="emphasis"><em>protocolo de túneles punto a punto</em></span>: «Point-to-Point Tunneling Protocol») utiliza dos canales de comunicación, uno para datos de control y otro para los datos; este último utiliza el protocolo GRE (<span
               class="emphasis"><em>encapsulación genérica de enrutamiento</em></span>: «Generic Routing Encapsulation»). Luego se establece un enlace PPP estándar sobre el canal de intercambio de datos.
 			</div><a
-            id="idm140549202676896"
+            id="idm140401141266960"
             class="indexterm"></a><a
-            id="idm140549202675936"
+            id="idm140401141266000"
             class="indexterm"></a><a
-            id="idm140549202675008"
+            id="idm140401141265072"
             class="indexterm"></a><a
-            id="idm140549202674048"
+            id="idm140401141264112"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -529,7 +529,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="url">→ <a
                   href="http://pptpclient.sourceforge.net/howto-debian.phtml">http://pptpclient.sourceforge.net/howto-debian.phtml</a></div>
 				</div><a
-              id="idm140549202669632"
+              id="idm140401141259584"
               class="indexterm"></a><div
               class="para">
 					Los administradores de Falcot crearon varios archivos: <code
@@ -544,7 +544,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                     class="filename">/etc/ppp/options.pptp</code></strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
-# PPP options used for a PPTP connection
+# opciones PPP utilizadas en una conexión PPTP
 lock
 noauth
 nobsdcomp
@@ -556,12 +556,12 @@ nodeflate
                     class="filename">/etc/ppp/peers/falcot</code></strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
-# vpn.falcot.com is the PPTP server
+# vpn.falcot.com es el servidor PPTP
 pty "pptp vpn.falcot.com --nolaunchpppd"
-# the connection will identify as the "vpn" user
+# el usuario «vpn» identificará a la conexión
 user vpn
 remotename pptp
-# encryption is needed
+# necesita cifrado
 require-mppe-128
 file /etc/ppp/options.pptp
 ipparam falcot
@@ -572,9 +572,9 @@ ipparam falcot
                     class="filename">/etc/ppp/ip-up.d/falcot</code></strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
-# Create the route to the Falcot network
+# Crear la ruta a la red Falcot
 if [ "$6" = "falcot" ]; then
-  # 192.168.0.0/24 is the (remote) Falcot network
+  # 192.168.0.0/24 es la red Falcot (remota)
   route add -net 192.168.0.0 netmask 255.255.255.0 dev $1
 fi
 </pre></div></div><div
@@ -584,9 +584,9 @@ fi
                     class="filename">/etc/ppp/ip-down.d/falcot</code></strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
-# Delete the route to the Falcot network
+# Eliminar la ruta a la red Falcot
 if [ "$6" = "falcot" ]; then
-  # 192.168.0.0/24 is the (remote) Falcot network
+  # 192.168.0.0/24 es la red Falcot (remota)
   route del -net 192.168.0.0 netmask 255.255.255.0 dev $1
 fi
 </pre></div></div><div
@@ -598,9 +598,9 @@ fi
 					Asegurar PPTP involucra utilizar la funcionalidad MPPE (<span
                   class="emphasis"><em>cifrado punto a punto de Microsoft</em></span>: «Microsoft Point-to-Point Encryption»), disponible como un módulo en los núcleos Debian oficiales.
 				</div><a
-                id="idm140549202655552"
+                id="idm140401141244944"
                 class="indexterm"></a><a
-                id="idm140549202654592"
+                id="idm140401141243984"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -629,49 +629,49 @@ fi
                     class="filename">/etc/pptpd.conf</code></strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
-# TAG: speed
+# ETIQUETA: speed
 #
-#       Specifies the speed for the PPP daemon to talk at.
+#       Especifica la velocidad a la que se comunica el demonio PPP.
 #
 speed 115200
 
-# TAG: option
+# ETIQUETA: option
 #
-#       Specifies the location of the PPP options file.
-#       By default PPP looks in '/etc/ppp/options'
+#       Especifica la ubicación del archivo de opciones PPP
+#       De forma predeterminada, se lo busca en «/etc/ppp/options»
 #
 option /etc/ppp/pptpd-options
 
-# TAG: debug
+# ETIQUETA: debug
 #
-#       Turns on (more) debugging to syslog
+#       Activa (más) depuración al registro del sistema
 #
 # debug
 
-# TAG: localip
-# TAG: remoteip
+# ETIQUETA: localip
+# ETIQUETA: remoteip
 #
-#       Specifies the local and remote IP address ranges.
+#       Especifica los rangos de direcciones IP local y remoto
 #
-#       You can specify single IP addresses separated by commas or you can
-#       specify ranges, or both. For example:
+#       Puede especificar direcciones IP individuales separadas por coma o
+#       rangos o ambos. Por ejemplo:
 #
 #               192.168.0.234,192.168.0.245-249,192.168.0.254
 #
-#       IMPORTANT RESTRICTIONS:
+#       RESTRICCIONES IMPORTANTESIMPORTANT RESTRICTIONS:
 #
-#       1. No spaces are permitted between commas or within addresses.
+#       1. No se permiten espacios entre las comas o en las direcciones.
 #
-#       2. If you give more IP addresses than MAX_CONNECTIONS, it will
-#          start at the beginning of the list and go until it gets
-#          MAX_CONNECTIONS IPs. Others will be ignored.
+#       2. Si provee más direcciones IP que MAX_CONNECTIONS, comenzará al
+#          principio de la lista y continuará hasta que obtenga
+#          MAX_CONNECTIONS direcciones IPs. De lo contrario será ignorado.
 #
-#       3. No shortcuts in ranges! ie. 234-8 does not mean 234 to 238,
-#          you must type 234-238 if you mean this.
+#       3. ¡Sin atajos en los rangos! Es decir que 234-8 no significa 234
+#          a 238, para esto debe tipear 234-238.
 #
-#       4. If you give a single localIP, that's ok - all local IPs will
-#          be set to the given one. You MUST still give at least one remote
-#          IP for each simultaneous client.
+#       4. Está bien si provee sólo una IP local - se configurarán todas 
+#          las IPs locales como la provista. DEBE proveer al menos una IP
+#          remota para cada cliente simultáneo.
 #
 #localip 192.168.0.234-238,192.168.0.245
 #remoteip 192.168.1.234-238,192.168.1.245
@@ -692,32 +692,32 @@ remoteip 192.168.0.200-250
                     class="filename">/etc/ppp/pptpd-options</code></strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
-## turn pppd syslog debugging on
+## activar la depuración de pppd en el registro del sistema
 #debug
 
-## change 'servername' to whatever you specify as your server name in chap-secrets
+## modifique «servername» a lo que sea que especificó como su nombre de servidor en chap-secrets
 name pptp
-## change the domainname to your local domain
+## modifique el nombre del dominio a su dominio local
 domain falcot.com
 
-## these are reasonable defaults for WinXXXX clients
-## for the security related settings
-# The Debian pppd package now supports both MSCHAP and MPPE, so enable them
-# here. Please note that the kernel support for MPPE must also be present!
+## estos son valores predeterminados razonables para clientes WinXXXX
+## para las configuraciones relacionadas con seguridad
+# El paquete pppd de Debian ahora es compatible tanto con MSCHAP como con MPPE, actívelos aquí.
+# ¡Necesita tener también el módulo de núcleo para MPPE!
 auth
 require-chap
 require-mschap
 require-mschap-v2
 require-mppe-128
 
-## Fill in your addresses
+## Complete con sus direcciones
 ms-dns 192.168.0.1
 ms-wins 192.168.0.1
 
-## Fill in your netmask
+## Complete con su máscara de red
 netmask 255.255.255.0
 
-## some defaults
+## algunos valores predeterminados
 nodefaultroute
 proxyarp
 lock
@@ -738,10 +738,10 @@ lock
                     class="filename">/etc/ppp/chap-secrets</code></strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
-# Secrets for authentication using CHAP
-# client        server  secret      IP addresses
-vpn             pptp    f@Lc3au     *
-FALCOT\\vpn     pptp    f@Lc3au     *
+# Secretos para autenticación utilizando CHAP
+# cliente       servidor secreto     dirección IP
+vpn             pptp     f@Lc3au     *
+FALCOT\\vpn     pptp     f@Lc3au     *
 </pre></div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p

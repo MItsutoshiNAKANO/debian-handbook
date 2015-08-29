@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Compilation d'un noyau</h2></div></div></div><a
-          id="idm139907200700944"
+          id="idm139924345877104"
           class="indexterm"></a><a
-          id="idm139907200699504"
+          id="idm139924345875664"
           class="indexterm"></a><div
           class="para">
 			Les noyaux fournis par Debian intègrent le plus grand nombre possible de fonctionnalités ainsi qu'un maximum de pilotes, afin de couvrir le plus grand spectre de configurations matérielles existantes. C'est pourquoi certains utilisateurs préfèrent recompiler le noyau pour n'y inclure que le strict nécessaire. Il existe deux raisons à ce choix. Premièrement, cela peut être pour optimiser la consommation de mémoire, puisque le code du noyau, même s'il n'est jamais utilisé, occupe de la mémoire pour rien (et ne « descend » jamais sur l'espace d'échange, donc c'est de vraie mémoire vive qu'il s'agit), ce qui peut diminuer les performances globales du système. Il peut également s'agir de limiter le risque de failles de sécurité (le code compilé portant alors sur une fraction plus faible du code existant).
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>POUR ALLER PLUS LOIN</em></span> Le Manuel du noyau Debian</strong></p></div></div></div><a
-            id="idm139907200692992"
+            id="idm139924345869152"
             class="indexterm"></a><div
             class="para">
 			L'équipe en charge du noyau dans Debian maintient le « Manuel du noyau Debian » (également disponible dans le paquet <span
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Le bon vieux temps de <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm139907200682240"
+              id="idm139924345858400"
               class="indexterm"></a><div
               class="para">
 				À l'époque où le système de compilation du noyau Linux ne permettait pas encore de créer directement des paquets Debian, la manière recommandée de créer ces paquets était d'utiliser l'outil <code
@@ -128,11 +128,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Récupérer les sources</h3></div></div></div><a
-            id="idm139907200677392"
+            id="idm139924345853552"
             class="indexterm"></a><a
-            id="idm139907200676432"
+            id="idm139924345852592"
             class="indexterm"></a><a
-            id="idm139907200674992"
+            id="idm139924345851152"
             class="indexterm"></a><div
             class="para">
 				Comme tout ce qui peut être utile sur un système Debian, les sources du noyau Linux sont disponibles en paquet. Pour les récupérer, il faudra donc installer un paquet <span
@@ -176,11 +176,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-noyau"></a>8.10.3. Configuration du noyau</h3></div></div></div><a
-            id="idm139907200658016"
+            id="idm139924345834176"
             class="indexterm"></a><a
-            id="idm139907200656576"
+            id="idm139924345832736"
             class="indexterm"></a><a
-            id="idm139907200655136"
+            id="idm139924345831296"
             class="indexterm"></a><div
             class="para">
 				La prochaine étape consiste à configurer le noyau conformément à ses besoins. Le mode opératoire dépend des objectifs.
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Compilation et génération du paquet</h3></div></div></div><a
-            id="idm139907200631248"
+            id="idm139924345807408"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -281,26 +281,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=1</code></strong>
+              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=$(make kernelversion)-1</code></strong>
 [...]
 <code
               class="computeroutput">$ </code><strong
               class="userinput"><code>ls ../*.deb</code></strong>
 <code
-              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot-dbg_1_amd64.deb
-../linux-libc-dev_1_amd64.deb
+              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot-dbg_3.16.7-1_amd64.deb
+../linux-libc-dev_3.16.7-1_amd64.deb
 </code></pre></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Compilation de modules externes</h3></div></div></div><a
-            id="idm139907200612448"
+            id="idm139924345788192"
             class="indexterm"></a><a
-            id="idm139907200611008"
+            id="idm139924345786752"
             class="indexterm"></a><a
-            id="idm139907200609568"
+            id="idm139924345785312"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -362,7 +362,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm139907200593904"
+              id="idm139924345769648"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -374,9 +374,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Emploi d'un patch sur le noyau</h3></div></div></div><a
-            id="idm139907200588560"
+            id="idm139924345764304"
             class="indexterm"></a><a
-            id="idm139907200587120"
+            id="idm139924345762864"
             class="indexterm"></a><div
             class="para">
 				Certaines fonctionnalités ne sont pas intégrées au noyau standard faute de stabilité ou d'accord des mainteneurs du noyau. Dans ce cas, il arrive qu'elles soient diffusées sous la forme de correctif (ou patch), que chacun est alors libre d'appliquer sur les sources du noyau.

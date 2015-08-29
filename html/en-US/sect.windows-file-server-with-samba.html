@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-en-US-1.0-1" /><meta
@@ -71,15 +71,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Samba is a suite of tools handling the SMB protocol (also known as “CIFS”) on Linux. This protocol is used by Windows for network shares and shared printers.
 		</div><a
-          id="idm140700867872064"
+          id="idm140401014501632"
           class="indexterm"></a><a
-          id="idm140700867871296"
+          id="idm140401014500864"
           class="indexterm"></a><a
-          id="idm140700867870528"
+          id="idm140401014500096"
           class="indexterm"></a><a
-          id="idm140700867869760"
+          id="idm140401014499328"
           class="indexterm"></a><a
-          id="idm140700867868992"
+          id="idm140401014498560"
           class="indexterm"></a><div
           class="para">
 			Samba can also act as an Windows domain controller. This is an outstanding tool for ensuring seamless integration of Linux servers and the office desktop machines still running Windows.
@@ -87,16 +87,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140700867867248"></a>11.5.1. Samba Server</h3></div></div></div><div
+                    id="idm140401014496816"></a>11.5.1. Samba Server</h3></div></div></div><div
             class="para">
 				The <span
               class="pkg pkg">samba</span> package contains the main two servers of Samba 4, <code
               class="command">smbd</code> and <code
               class="command">nmbd</code>.
 			</div><a
-            id="idm140700867864832"
+            id="idm140401014494400"
             class="indexterm"></a><a
-            id="idm140700867863936"
+            id="idm140401014493504"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -105,9 +105,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				The Samba server is extremely configurable and versatile, and can address a great many different use cases matching very different requirements and network architectures. This book only focuses on the use case where Samba is used as main domain controller, but it can also be a simple server on the domain and delegate authentication to the main controller (which could be a Windows server).
 			</div><a
-              id="idm140700867861344"
+              id="idm140401014490912"
               class="indexterm"></a><a
-              id="idm140700867860576"
+              id="idm140401014490144"
               class="indexterm"></a><div
               class="para">
 				The <span
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Winbind gives system administrators the option of using a Windows server as an authentication server. Winbind also integrates cleanly with PAM and NSS. This allows setting up Linux machines where all users of a Windows domain automatically get an account.
 			</div><a
-              id="idm140700867856720"
+              id="idm140401014486288"
               class="indexterm"></a><div
               class="para">
 				More information can be found in the <code
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140700867855056"></a>11.5.1.1. Configuring with <code
+                      id="idm140401014484624"></a>11.5.1.1. Configuring with <code
                       class="command">debconf</code></h4></div></div></div><div
               class="para">
 					The package sets up a minimal configuration based on the answers to a few Debconf questions asked during the initial installation; this configuration step can be replayed later with <code
@@ -143,16 +143,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 					The package also proposes identifying the WINS server from the information provided by the DHCP daemon. The Falcot Corp administrators rejected this option, since they intend to use the Samba server itself as the WINS server.
 				</div><a
-              id="idm140700867851312"
+              id="idm140401014480880"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140700867850416"></a>11.5.1.2. Configuring Manually</h4></div></div></div><div
+                      id="idm140401014479984"></a>11.5.1.2. Configuring Manually</h4></div></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140700867849776"></a>11.5.1.2.1. Changes to <code
+                        id="idm140401014479344"></a>11.5.1.2.1. Changes to <code
                         class="filename">smb.conf</code></h5></div></div></div><div
                 class="para">
 						The requirements at Falcot require other options to be modified in the <code
@@ -280,7 +280,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140700867838672"></a>11.5.1.2.2. Adding Users</h5></div></div></div><div
+                        id="idm140401014468240"></a>11.5.1.2.2. Adding Users</h5></div></div></div><div
                 class="para">
 						Each Samba user needs an account on the server; the Unix accounts must be created first, then the user needs to be registered in Samba's database. The Unix step is done quite normally (using <code
                   class="command">adduser</code> for instance).
@@ -302,13 +302,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140700867833600"></a>11.5.1.2.3. Switching to Domain Controller</h5></div></div></div><div
+                        id="idm140401014462912"></a>11.5.1.2.3. Switching to Domain Controller</h5></div></div></div><div
                 class="para">
 						This section documents how the Falcot administrators went even further, by turning the Samba server into a domain controller providing roaming profiles (which allow users to find their desktop no matter what machine they connect to).
 					</div><a
-                id="idm140700867832320"
+                id="idm140401014461632"
                 class="indexterm"></a><a
-                id="idm140700867831552"
+                id="idm140401014460864"
                 class="indexterm"></a><div
                 class="para">
 						They first added a few extra directives in the <code
@@ -378,7 +378,7 @@ logon script = scripts/logon.bat <span
 								The commands used most widely in these scripts allow the automatic creation of network drives and synchronizing the system time.
 							</div><div
                         class="example"><a
-                          id="idm140700867822272"></a><p
+                          id="idm140401014451584"></a><p
                           class="title"><strong>Example 11.28. The <code
                               class="filename">logon.bat</code> file</strong></p><div
                           class="example-contents"><pre
@@ -412,20 +412,20 @@ profile acls = Yes
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140700867817712"></a>11.5.2. Samba Client</h3></div></div></div><div
+                    id="idm140401014447024"></a>11.5.2. Samba Client</h3></div></div></div><div
             class="para">
 				The client features in Samba allow a Linux machine to access Windows shares and shared printers. The required programs are available in the <span
               class="pkg pkg">cifs-utils</span> and <span
               class="pkg pkg">smbclient</span> packages.
 			</div><a
-            id="idm140700867815280"
+            id="idm140401014444592"
             class="indexterm"></a><a
-            id="idm140700867814384"
+            id="idm140401014443696"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140700867813488"></a>11.5.2.1. The <code
+                      id="idm140401014442800"></a>11.5.2.1. The <code
                       class="command">smbclient</code> Program</h4></div></div></div><div
               class="para">
 					The <code
@@ -441,19 +441,19 @@ profile acls = Yes
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140700867809008"></a>11.5.2.2. Mounting Windows Shares</h4></div></div></div><div
+                      id="idm140401014438320"></a>11.5.2.2. Mounting Windows Shares</h4></div></div></div><div
               class="para">
 					The <code
                 class="command">mount</code> command allows mounting a Windows share into the Linux filesystem hierarchy (with the help of <code
                 class="command">mount.cifs</code> provided by <span
                 class="pkg pkg">cifs-utils</span>).
 				</div><a
-              id="idm140700867806480"
+              id="idm140401014435792"
               class="indexterm"></a><a
-              id="idm140700867805584"
+              id="idm140401014434896"
               class="indexterm"></a><div
               class="example"><a
-                id="idm140700867804816"></a><p
+                id="idm140401014434128"></a><p
                 class="title"><strong>Example 11.29. Mounting a Windows share</strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
@@ -491,12 +491,12 @@ password = <em
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140700867796720"></a>11.5.2.3. Printing on a Shared Printer</h4></div></div></div><div
+                      id="idm140401014426032"></a>11.5.2.3. Printing on a Shared Printer</h4></div></div></div><div
               class="para">
 					CUPS is an elegant solution for printing from a Linux workstation to a printer shared by a Windows machine. When the <span
                 class="pkg pkg">smbclient</span> is installed, CUPS allows installing Windows shared printers automatically.
 				</div><a
-              id="idm140700867794832"
+              id="idm140401014424144"
               class="indexterm"></a><div
               class="para">
 					Here are the required steps:

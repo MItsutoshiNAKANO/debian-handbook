@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-de-DE-1.0-1" /><meta
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Einen Kernel kompilieren</h2></div></div></div><a
-          id="idm140086258380496"
+          id="idm140023744717120"
           class="indexterm"></a><a
-          id="idm140086258379056"
+          id="idm140023744715968"
           class="indexterm"></a><div
           class="para">
 			Die von Debian bereitgestellten Kernel umfassen die größtmögliche Anzahl an Leistungsmerkmalen wie auch ein Maximum an Treibern, um ein möglichst breites Spektrum der existierenden Hardware-Konfigurationen abzudecken. Daher ziehen es einige Anwender vor, den Kernel neu zu kompilieren, um so genau nur das einzuschließen, was sie wirklich brauchen. Es gibt zwei Gründe für diese Entscheidung. Zum einen kann es darum gehen, den Speicherverbrauch zu optimieren, da der Kernelcode, selbst wenn er niemals gebraucht wird, unnötig Speicher belegt (und niemals in den Swap „hinuntergeht“, da es wirkliches RAM ist, das er benutzt), wodurch sich die Gesamtleistung des Systems verringern kann. Ein lokal kompilierter Kernel kann außerdem das Risiko von Sicherheitsproblemen reduzieren, da nur ein Bruchteil des Kernelcodes kompiliert wird und läuft.
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>WEITERGEHENDE SCHRITTE</em></span> Das Debian Kernel Handbuch</strong></p></div></div></div><a
-            id="idm140086258372416"
+            id="idm140023744710224"
             class="indexterm"></a><div
             class="para">
 			Das Debian Kernel Team verwaltet "Das Debian Kernel Handbuch" (auch im Paket <span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Die guten alten Zeiten des <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm140086258361712"
+              id="idm140023744701184"
               class="indexterm"></a><div
               class="para">
 				Bevor die Umgebung zur Erstellung eines Linux-Systems die Fähigkeit erhielt, saubere Debian-Pakete zu bauen, war der empfohlene Weg, <code
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Die Quellen besorgen</h3></div></div></div><a
-            id="idm140086258356960"
+            id="idm140023744697360"
             class="indexterm"></a><a
-            id="idm140086258356000"
+            id="idm140023744696592"
             class="indexterm"></a><a
-            id="idm140086258354560"
+            id="idm140023744695440"
             class="indexterm"></a><div
             class="para">
 				Wie alles, was auf einem Debian-System nützlich ist, stehen die Linux-Kernelquellen in einem Paket zu Verfügung. Um sie zu erhalten, installiert man einfach das Paket <span
@@ -174,11 +174,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-noyau"></a>8.10.3. Den Kernel konfigurieren</h3></div></div></div><a
-            id="idm140086258337584"
+            id="idm140023744681024"
             class="indexterm"></a><a
-            id="idm140086258336144"
+            id="idm140023744679872"
             class="indexterm"></a><a
-            id="idm140086258334704"
+            id="idm140023744678720"
             class="indexterm"></a><div
             class="para">
 				Der nächste Schritt besteht darin, den Kernel Ihren Bedürfnissen entsprechend zu kompilieren. Das genaue Vorgehen hängt von den Zielen ab.
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Das Paket kompilieren und erstellen</h3></div></div></div><a
-            id="idm140086258309936"
+            id="idm140023744658256"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -281,26 +281,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=1</code></strong>
+              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=$(make kernelversion)-1</code></strong>
 [...]
 <code
               class="computeroutput">$ </code><strong
               class="userinput"><code>ls ../*.deb</code></strong>
 <code
-              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot-dbg_1_amd64.deb
-../linux-libc-dev_1_amd64.deb
+              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot-dbg_3.16.7-1_amd64.deb
+../linux-libc-dev_3.16.7-1_amd64.deb
 </code></pre></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Externe Module kompilieren</h3></div></div></div><a
-            id="idm140086258291072"
+            id="idm140023744642304"
             class="indexterm"></a><a
-            id="idm140086258289632"
+            id="idm140023744641152"
             class="indexterm"></a><a
-            id="idm140086258288192"
+            id="idm140023744640000"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -362,7 +362,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140086258272464"
+              id="idm140023744626576"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -374,9 +374,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Einen Kernel-Patch anwenden</h3></div></div></div><a
-            id="idm140086258267120"
+            id="idm140023744622192"
             class="indexterm"></a><a
-            id="idm140086258265680"
+            id="idm140023744621040"
             class="indexterm"></a><div
             class="para">
 				Einige Funktionen sind im Standardkernel nicht enthalten, da sie entweder noch nicht ausgereift sind, oder auch wegen fehlender Übereinstimmung mit dem Entwickler. Solche Funktionen können als Patches verteilt werden, die dann jeder auf die Kernelquellen anwenden kann.

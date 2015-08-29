@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-es-ES-1.0-1" /><meta
@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. Configuración del sistema en otro idioma</h2></div></div></div><a
-            id="idm140549208602784"
+            id="idm140401136659392"
             class="indexterm"></a><div
             class="para">
 			Si instaló el sistema utilizando el idioma francés, el equipo probablemente ya tenga configurado al francés como idioma predeterminado. Pero es bueno saber lo que realiza el instalador al configurar el idioma para que, luego si lo necesita, pueda cambiarlo.
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. Configuración del idioma predeterminado</h3></div></div></div><a
-              id="idm140549208718032"
+              id="idm140401151244016"
               class="indexterm"></a><a
-              id="idm140549208717072"
+              id="idm140401151254880"
               class="indexterm"></a><a
-              id="idm140549208716112"
+              id="idm140401145599408"
               class="indexterm"></a><div
               class="para">
 				Un locale es un grupo de configuraciones regionales. Incluyen no sólo el idioma para el texto, también el formato para mostrar números, fechas, marcas temporales y cantidades de dinero así como también reglas de comparación alfabética (para considerar caracteres acentuados correctamente). Aunque puede especificar cada uno de estos parámetros independientemente de los demás, generalmente utilizaremos un locale que es un conjunto coherente de valores para estos parámetros que corresponde con una «región» en el sentido amplio de la palabra. Generalmente se indican los locales en la forma <code
@@ -208,17 +208,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>CULTURA</em></span> Juegos de caracteres</strong></p></div></div></div><a
-                id="idm140549221161824"
+                id="idm140401137597344"
                 class="indexterm"></a><a
-                id="idm140549221160864"
+                id="idm140401137596384"
                 class="indexterm"></a><a
-                id="idm140549221159904"
+                id="idm140401137595424"
                 class="indexterm"></a><a
-                id="idm140549221158944"
+                id="idm140401137594464"
                 class="indexterm"></a><a
-                id="idm140549208714704"
+                id="idm140401137593504"
                 class="indexterm"></a><a
-                id="idm140549210955296"
+                id="idm140401137592544"
                 class="indexterm"></a><div
                 class="para">
 				Históricamente, cada locale tiene asociado un «conjunto de caracteres» (grupo de caracteres conocidos) y una «codificación» preferida (representación interna de los caracteres para el equipo).
@@ -231,11 +231,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				Trabajar con idiomas extranjeros generalmente implica cambios frecuentes entre varias codificaciones y conjuntos de caracteres. Lo que es más, escribir documentos en varios idiomas causó problemas más grandes y casi intratables. Se creó Unicode (un supercatálogo de casi todos los sistemas de escritura de todos los idiomas del mundo) para evitar este problema. Una de las codificaciones de Unicode, UTF-8, mantiene los 128 símbolos ASCII (códigos de 7 bits), pero maneja los demás caracteres de forma diferente. Los cuales son precedidos por una secuencia «escape» de unos pocos bits, que define implícitamente la longitud del carácter. Esto permite codificar todos los caracteres Unicode en una secuencia de uno o más bytes. Se popularizó su uso debido a que es la codificación predeterminada en documentos XML.
 			</div><a
-                id="idm140549210950688"
+                id="idm140401136797520"
                 class="indexterm"></a><a
-                id="idm140549210949728"
+                id="idm140401136796560"
                 class="indexterm"></a><a
-                id="idm140549210948768"
+                id="idm140401136795600"
                 class="indexterm"></a><div
                 class="para">
 				Generalmente esta es la codificación que debería utilizar y es, por lo tanto, la predeterminada en sistemas Debian.
@@ -260,11 +260,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/default/locale</code> para almacenar esta elección. Desde ese momento, todas las sesiones de usuario estáran al tanto del cambio ya que PAM agregará su contenido en la variable de entorno <code
                 class="varname">LANG</code>.
 			</div><a
-              id="idm140549216349824"
+              id="idm140401144107424"
               class="indexterm"></a><a
-              id="idm140549216348864"
+              id="idm140401144106464"
               class="indexterm"></a><a
-              id="idm140549216347904"
+              id="idm140401144105504"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -291,32 +291,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/etc/default/locale</code> funciona de manera similar pero sólo contiene la variable de entorno <code
                   class="varname">LANG</code>. Gracias a esta división, algunos usuarios PAM pueden heredar un entorno completo sin localización. De hecho, generalmente no se recomienda ejecutar programas de servidor con localización activada; por el otro lado, se recomienda utilizar las configuraciones regionales y de localización en programas que abren sesiones de usuario.
 			</div><a
-                id="idm140549203329568"
+                id="idm140401141093392"
                 class="indexterm"></a><a
-                id="idm140549203328608"
+                id="idm140401141092432"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. Configuración del teclado</h3></div></div></div><a
-              id="idm140549203326144"
+              id="idm140401141089968"
               class="indexterm"></a><a
-              id="idm140549203325216"
+              id="idm140401141089040"
               class="indexterm"></a><div
               class="para">
 				Aún cuando se gestiona la distribución del teclado de formas diferentes en una consola y en el modo gráfico, debian ofrece una interfaz de configuración única que funciona para ambos: está basada en debconf y la implementa el paquete <span
                 class="pkg pkg">keyboard-configuration</span>. Por lo tanto, puede ejecutar <code
                 class="command">dpkg-reconfigure keyboard-configuration</code> para reiniciar la distribución de teclado.
 			</div><a
-              id="idm140549203322528"
+              id="idm140401141086352"
               class="indexterm"></a><a
-              id="idm140549203321408"
+              id="idm140401141085232"
               class="indexterm"></a><a
-              id="idm140549203320288"
+              id="idm140401141084112"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm140549203318848"
+                id="idm140401141082672"
                 class="indexterm"></a> Las preguntas son relevantes para la distribución física del teclado (un teclado de PC estándar en los Estados Unidos sería «Genérico 104 Teclas»), luego la distribución a utilizar (generalmente «US»), y luego la posición de la tecla AltGr (Alt derecho). Finalmente pregunta por la tecla a utilizar para «Compose» que permite ingresar caracteres especiales combinando teclas. Presionar sucesivamente <span
                 class="keycap"><strong>Compose</strong></span> <span
                 class="keycap"><strong>'</strong></span> <span
@@ -324,13 +324,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/usr/share/X11/locale/en_US.UTF-8/Compose</code> (u otro archivo según el locale actual indicado por <code
                 class="filename">/usr/share/X11/locale/compose.dir</code>).
 			</div><a
-              id="idm140549220909856"
+              id="idm140401141079008"
               class="indexterm"></a><a
-              id="idm140549220908576"
+              id="idm140401146444784"
               class="indexterm"></a><a
-              id="idm140549220907296"
+              id="idm140401146443504"
               class="indexterm"></a><a
-              id="idm140549220905696"
+              id="idm140401146441904"
               class="indexterm"></a><div
               class="para">
 				La configuración de teclado para el modo gráfico aquí descripta sólo afecta la distribución predeterminada; los entornos GNOME y KDE, entre otros, proveen un panel de control de teclado entre sus preferencias que le permite a cada usuario tener su propia configuración. Éstos paneles de control también proveen algunas opciones adicionales sobre el comportamiento de algunas teclas particulares.
@@ -369,26 +369,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><pre
               class="screen"><code
                 class="computeroutput">$ </code><strong
-                class="userinput"><code>ls travail/</code></strong>
+                class="userinput"><code>ls trabajo/</code></strong>
 <code
-                class="computeroutput">Ic?nes  ?l?ments graphiques  Textes
+                class="computeroutput">?conos  Elementos gr?ficos  Textos
 $ </code><strong
-                class="userinput"><code>convmv -r -f iso-8859-15 -t utf-8 travail/</code></strong>
+                class="userinput"><code>convmv -r -f iso-8859-15 -t utf-8 trabajo/</code></strong>
 <code
                 class="computeroutput">Starting a dry run without changes...
-mv "travail/�l�ments graphiques"        "travail/Éléments graphiques"
-mv "travail/Ic�nes"     "travail/Icônes"
+mv "trabajo/Elementos gr�ficos"        "trabajo/Elementos gráficos"
+mv "trabajo/�conos"     "trabajo/Íconos"
 No changes to your files done. Use --notest to finally rename the files.
 $ </code><strong
-                class="userinput"><code>convmv -r --notest -f iso-8859-15 -t utf-8 travail/</code></strong>
+                class="userinput"><code>convmv -r --notest -f iso-8859-15 -t utf-8 trabajo/</code></strong>
 <code
-                class="computeroutput">mv "travail/�l�ments graphiques"        "travail/Éléments graphiques"
-mv "travail/Ic�nes"     "travail/Icônes"
+                class="computeroutput">mv "trabajo/Elementos gr�ficos"        "trabajo/Elementos gráficos"
+mv "trabajo/�conos"     "trabajo/Íconos"
 Ready!
 $ </code><strong
-                class="userinput"><code>ls travail/</code></strong>
+                class="userinput"><code>ls trabajo/</code></strong>
 <code
-                class="computeroutput">Éléments graphiques  Icônes  Textes</code></pre><div
+                class="computeroutput">Elementos gráficos  Íconos  Textos</code></pre><div
               class="para">
 				Para el contenido de los archivos, los procedimientos de conversión son más complejos debido a la cantidad de formatos de archivo existentes. Algunos formatos de archivos incluyen información de codificación que facilita las tareas al software con el que se los trata; es suficiente entonces abrir estos archivos y volver a guardarlos especificando la condificación UTF-8. En otros casos, debe especificar la codificación original al abrir el archivo (ISO-8859-1 o «Western», o ISO-8859-15 o «Western (Euro)» según el caso).
 			</div><div

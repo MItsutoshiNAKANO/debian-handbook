@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux est résolument multi-utilisateur ; il est donc nécessaire de prévoir un système de permissions contrôlant les opérations autorisées pour chacun sur les fichiers et répertoires, recouvrant toutes les ressources du système (y compris les périphériques : sur un système Unix, tout périphérique est représenté par un fichier ou répertoire). Ce principe est commun à tous les Unix mais un rappel est toujours utile, d'autant qu'il existe quelques usages avancés méconnus et relativement intéressants.
 		</div><a
-          id="idm139907200273488"
+          id="idm139924345617536"
           class="indexterm"></a><a
-          id="idm139907200272528"
+          id="idm139924345616576"
           class="indexterm"></a><a
-          id="idm139907200271568"
+          id="idm139924345615616"
           class="indexterm"></a><a
-          id="idm139907200270128"
+          id="idm139924345614176"
           class="indexterm"></a><a
-          id="idm139907200268688"
+          id="idm139924345612736"
           class="indexterm"></a><a
-          id="idm139907200267248"
+          id="idm139924345611296"
           class="indexterm"></a><div
           class="para">
 			Chaque fichier ou répertoire dispose de permissions spécifiques pour trois catégories d'utilisateurs :
@@ -135,13 +135,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="foreignphrase"><em
                     class="foreignphrase">eXecute</em></span>).
 				</div></li></ul></div><a
-          id="idm139907200252448"
+          id="idm139924345596496"
           class="indexterm"></a><a
-          id="idm139907200251488"
+          id="idm139924345595536"
           class="indexterm"></a><a
-          id="idm139907200250528"
+          id="idm139924345594576"
           class="indexterm"></a><a
-          id="idm139907200249568"
+          id="idm139924345593616"
           class="indexterm"></a><div
           class="para">
 			Dans le cas d'un fichier, ces droits sont faciles à interpréter : l'accès en lecture permet d'en consulter le contenu (et notamment de le copier), l'accès en écriture de le modifier et l'accès en exécution permet de tenter de l'exécuter (ce qui ne fonctionnera que s'il s'agit d'un programme).
@@ -157,9 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> et le droit <code
               class="literal">setgid</code> (symbolisés par la lettre « s »). Remarquons qu'on parle souvent de « bit » car chacune de ces informations booléennes se représente individuellement par un 0 ou un 1. Ces deux droits permettent à n'importe quel utilisateur d'exécuter le programme en question avec respectivement les droits de son propriétaire ou de son groupe propriétaire. Ce mécanisme donne accès à des fonctionnalités requérant des droits plus élevés que ceux dont on dispose habituellement.
 		</div><a
-            id="idm139907200244032"
+            id="idm139924345588080"
             class="indexterm"></a><a
-            id="idm139907200242752"
+            id="idm139924345586800"
             class="indexterm"></a><div
             class="para">
 			Un programme <code
@@ -175,14 +175,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><strong><span
                       class="emphasis"><em>SÉCURITÉ</em></span> Répertoire <code
                       class="literal">setgid</code> et sticky bit</strong></p></div></div></div><a
-            id="idm139907200236688"
+            id="idm139924345580736"
             class="indexterm"></a><div
             class="para">
 			Le bit <code
               class="literal">setgid</code> s'applique également aux répertoires. Toutes les entrées qu'on y créera recevront alors pour groupe propriétaire celui du répertoire, au lieu de prendre comme c'est l'habitude le groupe principal de leur créateur. Cela évitera à celui-ci de changer de groupe principal (par la commande <code
               class="command">newgrp</code>) lors d'un travail dans une arborescence partagée entre plusieurs utilisateurs d'un même groupe dédié.
 		</div><a
-            id="idm139907200233584"
+            id="idm139924345577632"
             class="indexterm"></a><div
             class="para">
 			Le bit <code
@@ -230,15 +230,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="foreignphrase">all</em></span>, recouvre les trois catégories d'utilisateurs, de sorte que <code
             class="literal">a=rx</code> donne aux trois catégories les mêmes droits (lecture et exécution, mais pas écriture).
 		</div><a
-          id="idm139907200216592"
+          id="idm139924345560640"
           class="indexterm"></a><a
-          id="idm139907200215472"
+          id="idm139924345559520"
           class="indexterm"></a><a
-          id="idm139907200214352"
+          id="idm139924345558400"
           class="indexterm"></a><a
-          id="idm139907200213232"
+          id="idm139924345557280"
           class="indexterm"></a><a
-          id="idm139907200212304"
+          id="idm139924345556352"
           class="indexterm"></a><div
           class="para">
 			La représentation numérique octale associe chaque droit à une valeur : 4 pour la lecture, 2 pour l'écriture et 1 pour l'exécution. On associe à chaque combinaison de droits la somme de ces chiffres, valeurs qu'on attribue ensuite aux différentes catégories d'utilisateurs en les mettant bout à bout dans l'ordre habituel (propriétaire, groupe, autres).
@@ -301,11 +301,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> dans un shell ; vous observerez un masque tel que <code
               class="computeroutput">0022</code>. Ce n'est qu'une représentation octale des droits à retirer systématiquement (en l'occurrence, les droits en écriture pour le groupe et les autres utilisateurs).
 		</div><a
-            id="idm139907200190272"
+            id="idm139924345534320"
             class="indexterm"></a><a
-            id="idm139907200189152"
+            id="idm139924345533200"
             class="indexterm"></a><a
-            id="idm139907200187712"
+            id="idm139924345531760"
             class="indexterm"></a><div
             class="para">
 			Si on lui passe une nouvelle valeur octale, la commande <code

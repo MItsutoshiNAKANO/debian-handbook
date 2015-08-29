@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-de-DE-1.0-1" /><meta
@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140086254730896"></a>15.2.1. Meta-Pakete oder vorgetäuschte Pakete</h3></div></div></div><div
+                    id="idm140023760347488"></a>15.2.1. Meta-Pakete oder vorgetäuschte Pakete</h3></div></div></div><div
             class="para">
 				Vorgetäuschte Pakete und Meta-Pakete sind insofern ähnlich, als sie leere Hüllen sind, die nur um des Effektes willen existieren, den ihre Meta-Daten auf den Paketverarbeitungsstapel haben.
 			</div><div
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">equivs-build</code> Sinn und bleiben nicht in den Kopfzeilen des erstellten Pakets erhalten.
 			</div><div
             class="example"><a
-              id="idm140086254721360"></a><p
+              id="idm140023760337952"></a><p
               class="title"><strong>Beispiel 15.2. Header-Datei des vorgetäuschten Pakets <span
                   class="emphasis"><em>libxml-libxml-perl</em></span></strong></p><div
               class="example-contents"><pre
@@ -127,7 +127,7 @@ Description: Fake package - module manually installed in site_perl
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140086257686928"></a>15.2.2. Einfaches Dateiarchiv</h3></div></div></div><div
+                    id="idm140023740530896"></a>15.2.2. Einfaches Dateiarchiv</h3></div></div></div><div
             class="para">
 				Die Falcot-Corp.-Administratoren müssen ein Debian-Paket erstellen, um die Bereitstellung einer Reihe von Dokumenten auf einer großen Anzahl von Rechnern zu erleichtern. Der für diese Aufgabe zuständige Administrator liest zunächst den „Leitfaden für neue Debian-Betreuer“ und beginnt dann, an seinem ersten Paket zu arbeiten. <div
               class="url">→ <a
@@ -183,9 +183,9 @@ $</code></pre><div
               class="emphasis"><em>library</em></span> ist ein Sonderfall und für dynamische Bibliotheken nützlich, da diese strengen Erstellungsregeln folgen müssen. In ähnlicher Weise sollte <span
               class="emphasis"><em>kernel module</em></span> auf Pakete beschränkt bleiben, die Kernel-Module enthalten. <span
               class="emphasis"><em>cdbs</em></span> ist schließlich ein besonderes Paketerstellungssystem; es ist recht flexibel, erfordert jedoch einigen Lernaufwand. <a
-              id="idm140086257671888"
+              id="idm140023740515856"
               class="indexterm"></a> <a
-              id="idm140086257671248"
+              id="idm140023740515216"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -233,7 +233,7 @@ export DEBFULLNAME="Raphael Hertzog"
               class="literal">iceweasel | www-browser</code> ergänzt, um die Verfügbarkeit eines Web-Browsers, der die in dem Paket enthaltenen Dokumente darstellen kann, sicherzustellen.
 			</div><div
             class="example"><a
-              id="idm140086257653312"></a><p
+              id="idm140023740497280"></a><p
               class="title"><strong>Beispiel 15.3. The Datei <code
                   class="filename">control</code></strong></p><div
               class="example-contents"><pre
@@ -258,7 +258,7 @@ Description: Internal Falcot Corp Documentation
  Their use is INTERNAL ONLY.
 </pre></div></div><div
             class="example"><a
-              id="idm140086257651024"></a><p
+              id="idm140023740494992"></a><p
               class="title"><strong>Beispiel 15.4. Die Datei <code
                   class="filename">changelog</code></strong></p><div
               class="example-contents"><pre
@@ -273,7 +273,7 @@ falcot-data (1.0) internal; urgency=low
  -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Mon, 11 Apr 2011 20:46:33 +0200
 </pre></div></div><div
             class="example"><a
-              id="idm140086257649040"></a><p
+              id="idm140023740493008"></a><p
               class="title"><strong>Beispiel 15.5. Die Datei <code
                   class="filename">copyright</code></strong></p><div
               class="example-contents"><pre
@@ -294,7 +294,7 @@ License:
                     class="title"><strong><span
                         class="emphasis"><em>ZURÜCK ZU DEN GRUNDLAGEN</em></span> Die Datei <code
                         class="filename">Makefile</code></strong></p></div></div></div><a
-              id="idm140086257645696"
+              id="idm140023740489664"
               class="indexterm"></a><div
               class="para">
 				Eine <code
@@ -303,7 +303,7 @@ License:
                 class="filename">Makefile</code> beschreibt diese Regeln in folgendem Format:
 			</div><pre
               class="programlisting">
-target: source1 source2 ...
+target: source1 source2
         command1
         command2
 </pre><div
@@ -343,7 +343,7 @@ data/* usr/share/falcot-data/
               class="filename">debian/menu.ex</code> umbenennen, indem wir ihre Erweiterung entfernen, und sie dann wie folgt editieren:
 			</div><div
             class="example"><a
-              id="idm140086257630032"></a><p
+              id="idm140023740474000"></a><p
               class="title"><strong>Beispiel 15.6. Die Datei <code
                   class="filename">menu</code></strong></p><div
               class="example-contents"><pre

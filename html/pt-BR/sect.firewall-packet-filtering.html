@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pt-BR-1.0-1" /><meta
@@ -68,17 +68,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. Firewall ou Filtragem de pacotes</h2></div></div></div><a
-          id="idm140242469503776"
+          id="idm140651089546544"
           class="indexterm"></a><a
-          id="idm140242483360656"
+          id="idm140651084815024"
           class="indexterm"></a><a
-          id="idm140242483359696"
+          id="idm140651084814064"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>DE VOLTA AO BASICO</em></span> Firewall</strong></p></div></div></div><a
-            id="idm140242483357616"
+            id="idm140651084811984"
             class="indexterm"></a><div
             class="para">
 			Um <span
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span>, com uma representação gráfica das regras de filtragem. <code
             class="command">fwbuilder</code> está, sem dúvida entre os melhores delas.
 		</div><a
-          id="idm140242469688944"
+          id="idm140651088044608"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -107,9 +107,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">iptables</code> e <code
             class="command">ip6tables</code>. A diferença entre estes dois comandos é que o primeiro atua sobre rede IPv4, enquanto que o último sobre o IPv6. Uma vez que ambas pilhas de protocolo de rede provavelmente estarão circulando por muitos anos, ambas as ferramentas serão utilizadas em paralelo.
 		</div><a
-          id="idm140242469683632"
+          id="idm140651088039296"
           class="indexterm"></a><a
-          id="idm140242469682512"
+          id="idm140651088038176"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -146,9 +146,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Cada tabela contém listas das chamadas regras <span
               class="emphasis"><em>cadeias</em></span>. O firewall usa padrão para lidar com cadeias de pacotes com base em circunstâncias pré-definidas. O administrador pode criar outras cadeias, o que só será usado quando referido por uma das cadeias padrão.
 			</div><a
-            id="idm140242464865584"
+            id="idm140651072304160"
             class="indexterm"></a><a
-            id="idm140242464864624"
+            id="idm140651072303200"
             class="indexterm"></a><div
             class="para">
 				A tabela <code
@@ -222,15 +222,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Para referência, um buffer de recepção é uma pequena região de memória para armazenamento de dados entre o tempo que chega na rede e o tempo que o kernel o manipula. Se esta regiao está cheia, os novos dados não podem ser recebidos, e o ICMP sinaliza o problema, de modo que o emissor possa abrandar a sua taxa de transferência (que devem, idealmente, chegar a um equilíbrio após algum tempo).
 			</div><a
-              id="idm140242464841040"
+              id="idm140651072279616"
               class="indexterm"></a><a
-              id="idm140242464840080"
+              id="idm140651072278656"
               class="indexterm"></a><a
-              id="idm140242464839152"
+              id="idm140651072277728"
               class="indexterm"></a><a
-              id="idm140242464838192"
+              id="idm140651072276768"
               class="indexterm"></a><a
-              id="idm140242464836752"
+              id="idm140651072275328"
               class="indexterm"></a><div
               class="para">
 				Observe que, embora uma rede IPv4 possa funcionar sem ICMP, ICMPv6 é estritamente necessário para uma rede IPv6, uma vez que combina várias funções que eram, no mundo IPv4, espalhados por ICMPv4, IGMP (<span
@@ -340,9 +340,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">tabela</em> -t</code> indica em qual tabela operar (por padrão, <code
               class="literal">filtro</code>).
 			</div><a
-            id="idm140242464797936"
+            id="idm140651067944608"
             class="indexterm"></a><a
-            id="idm140242464796816"
+            id="idm140651067943488"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -380,7 +380,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. Regras</h4></div></div></div><a
-              id="idm140242466099504"
+              id="idm140651067928848"
               class="indexterm"></a><div
               class="para">
 					Cada regra é expressa como <code
@@ -445,9 +445,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="listitem"><div
                     class="para">
 							<code
-                      class="literal">--log-priority</code>, com valor padrão <code
-                      class="literal">aviso</code>, indica a prioridade da mensagem <code
-                      class="command">syslog</code>;
+                      class="literal">--log-level</code>, with default value <code
+                      class="literal">warning</code>, indicates the <code
+                      class="command">syslog</code> severity level;
 						</div></li><li
                   class="listitem"><div
                     class="para">
@@ -524,7 +524,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="janela principal do Fwbuilder" /></div></div><p
               class="title"><strong>Figura 14.2. janela principal do Fwbuilder</strong></p></div><a
-            id="idm140242466053264"
+            id="idm140651067882176"
             class="indexterm"></a><div
             class="para">
 				<code

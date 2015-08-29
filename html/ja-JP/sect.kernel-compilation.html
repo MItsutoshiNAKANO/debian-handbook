@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. カーネルのコンパイル</h2></div></div></div><a
-          id="idm140421808663584"
+          id="idm140378005689840"
           class="indexterm"></a><a
-          id="idm140421808662144"
+          id="idm140378005688400"
           class="indexterm"></a><div
           class="para">
 			Debian の提供するカーネルには、既存のハードウェア構成の広い領域をカバーするために、最も多くの考え得る機能およびドライバが含まれています。このため、一部のユーザは、本当に必要なものだけを含める目的で、カーネルを再コンパイルすることを好みます。カーネルを再コンパイルする理由は 2 つあります。1 つ目は、メモリ消費量を最適化できるかもしれないからです。全く使われないカーネルコードは無駄にメモリを専有するため (カーネルコードは決してスワップ領域に「移動」されません、なぜなら、カーネルコードはスワップ領域を実際の RAM として使っているからです)、全システムのパフォーマンスを低下させます。2 つ目は、ローカルでコンパイルされたカーネルはセキュリティ問題の危険性を限定することが可能だからです。カーネルコードのごく一部がコンパイルされ実行されます。
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>GOING FURTHER</em></span> Debian カーネルハンドブック</strong></p></div></div></div><a
-            id="idm140421808655248"
+            id="idm140378005681504"
             class="indexterm"></a><div
             class="para">
 			Debian カーネルチームは、カーネル関連の作業と公式の Debian カーネルパッケージが取り扱われる方法に関する包括的文書である、「Debian カーネルハンドブック」(<span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="pkg pkg">kernel-package</span> の古き良き時代</strong></p></div></div></div><a
-              id="idm140421808643808"
+              id="idm140378005670064"
               class="indexterm"></a><div
               class="para">
 				Linux ビルドシステムに適切な Debian パッケージをビルドする能力がなかった時代、Debian パッケージをビルドするのに推奨されていた方法は <span
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. ソースを入手</h3></div></div></div><a
-            id="idm140421808639008"
+            id="idm140378005665264"
             class="indexterm"></a><a
-            id="idm140421808638080"
+            id="idm140378005664336"
             class="indexterm"></a><a
-            id="idm140421808636640"
+            id="idm140378005662896"
             class="indexterm"></a><div
             class="para">
 				Debian システム上で便利に使えるプログラムと同様に、Linux カーネルソースはパッケージとして提供されています。Linux カーネルソースを手に入れるには、<span
@@ -175,11 +175,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-noyau"></a>8.10.3. カーネルの設定</h3></div></div></div><a
-            id="idm140421808617968"
+            id="idm140378005644224"
             class="indexterm"></a><a
-            id="idm140421808616528"
+            id="idm140378005642784"
             class="indexterm"></a><a
-            id="idm140421808615088"
+            id="idm140378005641344"
             class="indexterm"></a><div
             class="para">
 				次の段階で、必要性に応じてカーネルを設定します。完全な手順はその目標に依存します。
@@ -245,7 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. パッケージのコンパイルとビルド</h3></div></div></div><a
-            id="idm140421808589072"
+            id="idm140378005615328"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -284,26 +284,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=1</code></strong>
+              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=$(make kernelversion)-1</code></strong>
 [...]
 <code
               class="computeroutput">$ </code><strong
               class="userinput"><code>ls ../*.deb</code></strong>
 <code
-              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot-dbg_1_amd64.deb
-../linux-libc-dev_1_amd64.deb
+              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot-dbg_3.16.7-1_amd64.deb
+../linux-libc-dev_3.16.7-1_amd64.deb
 </code></pre></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. 外部モジュールのコンパイル</h3></div></div></div><a
-            id="idm140421808569600"
+            id="idm140378005596304"
             class="indexterm"></a><a
-            id="idm140421808568160"
+            id="idm140378005594864"
             class="indexterm"></a><a
-            id="idm140421808566752"
+            id="idm140378005593456"
             class="indexterm"></a><div
             class="para">
 				いくつかのモジュールは公式の Linux カーネルの外で保守されています。このようなモジュールを使うには、適合するカーネルと一緒にモジュールをコンパイルしなければいけません。Debian は専用パッケージの形で数多くのサードパーティ製モジュールを配布しています。たとえば、<span
@@ -365,7 +365,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140421808550176"
+              id="idm140378005576880"
               class="indexterm"></a><div
               class="para">
 				DKMS 以前、カーネルモジュールをビルドして配置する最も簡単な解決策は <span
@@ -378,9 +378,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. カーネルパッチの適用</h3></div></div></div><a
-            id="idm140421808543936"
+            id="idm140378005570640"
             class="indexterm"></a><a
-            id="idm140421808542496"
+            id="idm140378005569200"
             class="indexterm"></a><div
             class="para">
 				十分に成熟していなかったり、カーネルメンテナとの意見の不一致が原因で、標準的なカーネルに含まれない機能もあれば、カーネルソースに対して自由に適用できるようにするために、パッチとして配布される機能もあります。

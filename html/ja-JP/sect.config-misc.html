@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
@@ -75,18 +75,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.timezone"></a>8.9.1. タイムゾーン</h3></div></div></div><a
-            id="idm140421808844800"
+            id="idm140378005871056"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.symbolic-link"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> シンボリックリンク</strong></p></div></div></div><a
-              id="idm140421808842384"
+              id="idm140378005868640"
               class="indexterm"></a><a
-              id="idm140421808840944"
+              id="idm140378005867200"
               class="indexterm"></a><a
-              id="idm140421808840016"
+              id="idm140378005866272"
               class="indexterm"></a><div
               class="para">
 				シンボリックリンクは他のファイルへのポインタです。シンボリックリンクにアクセスすると、シンボリックリンクの指すファイルが開かれます。シンボリックリンクを削除しても、シンボリックリンクの指すファイルは削除されません。同様に、シンボリックリンクはパーミッションを設定できませんが、シンボリックリンクの指すファイルのパーティションが適用されます。最後に、シンボリックリンクはいかなる種類のファイルを指すことも可能です。具体的に言えば、ディレクトリ、スペシャルファイル (ソケット、名前付きパイプ、デバイスファイル、など)、さらには他のシンボリックリンクでさえ指すことが可能です。
@@ -111,23 +111,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/etc/localtime</code> の中にコピーされます。さらに <code
               class="filename">/etc/localtime</code> には、夏時間を使う国向けに夏時間が有効な場所で日付を左右するルールが含まれています。
 			</div><a
-            id="idm140421808829488"
+            id="idm140378005855744"
             class="indexterm"></a><a
-            id="idm140421808828368"
+            id="idm140378005854624"
             class="indexterm"></a><a
-            id="idm140421808827248"
+            id="idm140378005853504"
             class="indexterm"></a><a
-            id="idm140421808826128"
+            id="idm140378005852384"
             class="indexterm"></a><a
-            id="idm140421808825008"
+            id="idm140378005851264"
             class="indexterm"></a><a
-            id="idm140421808824048"
+            id="idm140378005850304"
             class="indexterm"></a><div
             class="para">
 				一時的にタイムゾーンを変更したい場合、<code
               class="varname">TZ</code> 環境変数を使ってください。この変数に設定した値はシステムデフォルトで設定された値よりも優先されます。
 			</div><a
-            id="idm140421808821936"
+            id="idm140378005848192"
             class="indexterm"></a><a
             id="screen.tz"></a><pre
             class="screen">
@@ -162,9 +162,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.time-synchronization"></a>8.9.2. 時刻同期</h3></div></div></div><a
-            id="idm140421808808688"
+            id="idm140378005834944"
             class="indexterm"></a><a
-            id="idm140421808807728"
+            id="idm140378005833984"
             class="indexterm"></a><div
             class="para">
 				時刻同期は、コンピュータ上で不必要のように見えますが、ネットワーク上でとても重要です。ユーザは日付と時間を変更することを許可されていないので、混乱を防ぐためには時刻情報を正確に保つことがとても重要です。さらに、ネットワーク上のすべてのコンピュータの時刻を同期させておけば、異なるマシン間でログから情報を相互参照しやすくなります。攻撃を受けた際に、不正アクセスを受けた複数のマシンで時系列順に操作を再構成することが簡単になります。時刻が同期されていなかった場合、統計目的で複数のマシンからデータを集めても、意味を成しません。
@@ -173,9 +173,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> NTP</strong></p></div></div></div><a
-              id="idm140421808803904"
+              id="idm140378005830160"
               class="indexterm"></a><a
-              id="idm140421808802944"
+              id="idm140378005829200"
               class="indexterm"></a><div
               class="para">
 				NTP (Network Time Protocol) を使うことで、あるマシンが他のマシンとかなり正確に時刻同期することが可能になります。このプロトコルは、ネットワーク上で情報を移動することで起こる遅延および予想される補正を考慮しています。
@@ -198,9 +198,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="pkg pkg">ntpdate</span> パッケージをインストールします。必要なら <code
                 class="filename">/etc/default/ntpdate</code> ファイルを変更して NTP サーバを変更することも可能です。
 				</div><a
-              id="idm140421808794032"
+              id="idm140378005820288"
               class="indexterm"></a><a
-              id="idm140421808792912"
+              id="idm140378005819168"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -212,19 +212,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>pool.ntp.org</em></span> と同期し、ローカルネットワークからの要求に対して時刻を提供します。<code
                 class="filename">/etc/ntp.conf</code> ファイルを編集して NTP サーバを設定できます。最も大きな変更は、この NTP サーバがどの NTP サーバを参照するかです。ネットワークに多くのサーバがある場合、公開サーバと同期している 1 台のローカルタイムサーバを、そのネットワークの他のサーバに対する時間ソースとして使うことは興味深いかもしれません。
 				</div><a
-              id="idm140421808787472"
+              id="idm140378005813728"
               class="indexterm"></a><a
-              id="idm140421808786048"
+              id="idm140378005812304"
               class="indexterm"></a><a
-              id="idm140421808784608"
+              id="idm140378005810864"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>GOING FURTHER</em></span> GPS モジュールと他の時刻ソース</strong></p></div></div></div><a
-                id="idm140421808782080"
+                id="idm140378005808336"
                 class="indexterm"></a><a
-                id="idm140421808781120"
+                id="idm140378005807376"
                 class="indexterm"></a><div
                 class="para">
 					時刻同期がネットワークで極めて重要な要素の場合、GPS モジュール (GPS 衛星からの時刻を使う) または DCF-77 モジュール (ドイツのフランクフルト近郊の原子時計と時刻を同期する) をサーバに装備することも可能です。この場合、NTP サーバの設定はもう少し複雑で、必ず事前に文書を調査してください。
@@ -233,13 +233,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.rotation-logs"></a>8.9.3. ログファイルの循環</h3></div></div></div><a
-            id="idm140421808777664"
+            id="idm140378005803920"
             class="indexterm"></a><a
-            id="idm140421808776224"
+            id="idm140378005802480"
             class="indexterm"></a><a
-            id="idm140421808774784"
+            id="idm140378005801040"
             class="indexterm"></a><a
-            id="idm140421808773856"
+            id="idm140378005800112"
             class="indexterm"></a><div
             class="para">
 				ログファイルのサイズは素早く増加しますから、ログファイルをアーカイブに保管することが必要です。最も一般的なやり方はアーカイブを循環させることです。つまり、ログファイルは日常的にアーカイブに保管され、最新の <em
@@ -263,11 +263,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.sharing-admin-rights"></a>8.9.4. 管理者権限の共有</h3></div></div></div><a
-            id="idm140421808765024"
+            id="idm140378005791280"
             class="indexterm"></a><a
-            id="idm140421808763616"
+            id="idm140378005789872"
             class="indexterm"></a><a
-            id="idm140421808762656"
+            id="idm140378005788912"
             class="indexterm"></a><div
             class="para">
 				しばしば、複数の管理者が同じネットワーク上で仕事をする場合があります。root パスワードの共有は的確なやり方ではありません。共有することで生まれる匿名性により、root 権の乱用が可能になります。この問題の解決策が <code
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal"><em
                 class="replaceable">username</em> ALL=(ALL) ALL</code> のような行を追加することで、対象のユーザは root としてコマンドを実行することが可能になります。
 			</div><a
-            id="idm140421808753824"
+            id="idm140378005780080"
             class="indexterm"></a><a
-            id="idm140421808752704"
+            id="idm140378005778960"
             class="indexterm"></a><a
-            id="idm140421808751584"
+            id="idm140378005777840"
             class="indexterm"></a><div
             class="para">
 				より洗練された設定を使うことで、特定のコマンドに必要な権限を特定のユーザに与えることも可能です。設定できる要素のすべての詳細を確認するには <span
@@ -302,9 +302,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fstab-mount-points"></a>8.9.5. マウントポイントのリスト</h3></div></div></div><a
-            id="idm140421808747408"
+            id="idm140378005773664"
             class="indexterm"></a><a
-            id="idm140421808746480"
+            id="idm140378005772736"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -316,7 +316,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/home/</code> ディレクトリに「マウント」されなければいけません。root ファイルシステムはカーネルによって起動時に常にマウントされます。そして、他のデバイスはしばしばその後に続くスタートアップシーケンス中か <code
                 class="command">mount</code> コマンドを使って手作業でマウントされます。
 			</div><a
-              id="idm140421808741616"
+              id="idm140378005767872"
               class="indexterm"></a><div
               class="para">
 				いくつかのリムーバブルデバイスは接続時に自動的にマウントされます。特に GNOME、KDE、その他のグラフィカルデスクトップ環境を使っている場合にはマウントされます。他のデバイスについては、ユーザが手作業でマウントしなければいけません。同様に、アンマウント (ファイルツリーから削除) しなければいけません。普通のユーザは通常 <code
@@ -339,9 +339,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				<code
               class="filename">/etc/fstab</code> ファイルには、起動時に自動マウントされるものやリムーバブルストレージデバイス用の手作業でマウントするものを含めて、すべての考え得るマウントポイントがリストされています。それぞれのマウントポイントは空白区切りフィールドを持つ各行によって表現されます。<a
-              id="idm140421808731264"
+              id="idm140378005757520"
               class="indexterm"></a><a
-              id="idm140421808730624"
+              id="idm140378005756880"
               class="indexterm"></a>
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
@@ -477,15 +477,15 @@ arrakis:/shared /shared         nfs     defaults        0       0</pre></div></d
                 class="command">amd</code> 自動マウントユーティリティを提供します。このユーティリティを使うと、通常のマウントポイントを通じてリムーバブルメディアにアクセスすれば、リムーバブルメディアをマウントできます。<code
                 class="command">amd</code> はリムーバブルメディアにアクセスしているプロセスがなくなればそのメディアをアンマウントします。
 			</div><a
-              id="idm140421808684688"
+              id="idm140378005710944"
               class="indexterm"></a><a
-              id="idm140421808683568"
+              id="idm140378005709824"
               class="indexterm"></a><a
-              id="idm140421808682448"
+              id="idm140378005708704"
               class="indexterm"></a><a
-              id="idm140421808681328"
+              id="idm140378005707584"
               class="indexterm"></a><a
-              id="idm140421808680208"
+              id="idm140378005706464"
               class="indexterm"></a><div
               class="para">
 				他の自動マウントユーティリティも存在します。たとえば <span
@@ -502,11 +502,11 @@ arrakis:/shared /shared         nfs     defaults        0       0</pre></div></d
                     id="sect.locate-updatedb"></a>8.9.6. <code
                     class="command">locate</code> と <code
                     class="command">updatedb</code></h3></div></div></div><a
-            id="idm140421808674752"
+            id="idm140378005701008"
             class="indexterm"></a><a
-            id="idm140421808673632"
+            id="idm140378005699888"
             class="indexterm"></a><a
-            id="idm140421808672512"
+            id="idm140378005698768"
             class="indexterm"></a><div
             class="para">
 				<code

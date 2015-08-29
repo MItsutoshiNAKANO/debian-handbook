@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-id-ID-1.0-1" /><meta
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Mengompilasi sebuah Kernel</h2></div></div></div><a
-          id="idm140653700811584"
+          id="idm140027044357008"
           class="indexterm"></a><a
-          id="idm140653700810144"
+          id="idm140027044355568"
           class="indexterm"></a><div
           class="para">
 			Kernel yang disediakan oleh Debian menyertakan banyak fitur, sebagaimana penggerak (driver) penuh, agar dapat menangani spektrum yang luas konfigurasi perangkat keras. Oleh karena itu, beberapa pengguna lebih memilih mengompilasi ulang kernel agar hanya menyertakan beberapa yang mereka butuhkan saja. Ada dua alasan untuk pilihan ini. Pertama, mungkin untuk mengoptimalisasi konsumsi memori, karena kode kernel, bahkan jika tak pernah digunakan, memakan memori yang tidak berguna (dan tak pernah “hilang” pada ruang swap, karena dia menggunakan RAM sebenarnya), di mana dapat mengurangi performa sistem. Kernel lokal yang dikompilasi dapat membatasi resiko masalah keamanan karena hanya sebagian kode kernel yang dikompilasi dan dijalankan.
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>LEBIH JAUH</em></span> Buku Pegangan Kernel Debian</strong></p></div></div></div><a
-            id="idm140653700803696"
+            id="idm140027027390128"
             class="indexterm"></a><div
             class="para">
 			Tim kernel Debian mengelola “Buku Pegangan Kernel Debian” (juga tersedia dalam paket <span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>KULTUR</em></span> Hari tua yang baik dari <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm140653700792848"
+              id="idm140027027380976"
               class="indexterm"></a><div
               class="para">
 				Sebelum sistem pembangun Linux mendapatkan kemampuan untuk membangun paket Debian, cara yang direkomendasikan untuk membangun paket adalah dengan menggunakan <code
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Mendapatkan Sumber</h3></div></div></div><a
-            id="idm140653700788048"
+            id="idm140027027377136"
             class="indexterm"></a><a
-            id="idm140653700787088"
+            id="idm140027027376368"
             class="indexterm"></a><a
-            id="idm140653700785648"
+            id="idm140027027375216"
             class="indexterm"></a><div
             class="para">
 				Seperti apapun yang dapat berguna pada sebuah sistem Debian, sumber kernel Linux tersedia dalam sebuah paket. Untuk mendapatkannya, install saja paket <span
@@ -174,11 +174,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-noyau"></a>8.10.3. Mengonfigurasi Kernel</h3></div></div></div><a
-            id="idm140653700768848"
+            id="idm140027027361168"
             class="indexterm"></a><a
-            id="idm140653700767408"
+            id="idm140027027360016"
             class="indexterm"></a><a
-            id="idm140653700765968"
+            id="idm140027027358864"
             class="indexterm"></a><div
             class="para">
 				Langkah selanjutnya mengonfigurasi kernel berdasarkan kebutuhan Anda. Prosedur tepatnya tergantung pada tujuannya.
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Kompilasi dan Membangun Paket</h3></div></div></div><a
-            id="idm140653700741440"
+            id="idm140027027338592"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -281,26 +281,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=1</code></strong>
+              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=$(make kernelversion)-1</code></strong>
 [...]
 <code
               class="computeroutput">$ </code><strong
               class="userinput"><code>ls ../*.deb</code></strong>
 <code
-              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot-dbg_1_amd64.deb
-../linux-libc-dev_1_amd64.deb
+              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot-dbg_3.16.7-1_amd64.deb
+../linux-libc-dev_3.16.7-1_amd64.deb
 </code></pre></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Kompilasi Modul Eksternal</h3></div></div></div><a
-            id="idm140653700722640"
+            id="idm140027027323072"
             class="indexterm"></a><a
-            id="idm140653700721200"
+            id="idm140027027321920"
             class="indexterm"></a><a
-            id="idm140653700719760"
+            id="idm140027027320768"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -362,7 +362,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIF</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140653700704048"
+              id="idm140027027307360"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -374,9 +374,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Menerapkan Patch Kernel</h3></div></div></div><a
-            id="idm140653682785072"
+            id="idm140027027302976"
             class="indexterm"></a><a
-            id="idm140653682783920"
+            id="idm140027027301824"
             class="indexterm"></a><div
             class="para">
 				Beberapa fitur tidak disertakan dalam kernel standar karena belum maksimalnya atau ketidaksepakatan dengan maintainer kernel. Beberapa fitur mungkin didistribusikan sebagai patch di mana setiap orang bebas untuk menerapkan ke sumber kernel.

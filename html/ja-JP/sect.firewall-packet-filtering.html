@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
@@ -68,17 +68,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. ファイアウォールとパケットフィルタリング</h2></div></div></div><a
-          id="idm140421813077152"
+          id="idm140378018405584"
           class="indexterm"></a><a
-          id="idm140421813076224"
+          id="idm140378018404656"
           class="indexterm"></a><a
-          id="idm140421813075296"
+          id="idm140378018403728"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> ファイアウォール</strong></p></div></div></div><a
-            id="idm140421813073280"
+            id="idm140378018401712"
             class="indexterm"></a><div
             class="para">
 			<span
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span> ファイアウォールの設定を簡単に行うためのツールが存在し、ツールはフィルタリングルールをグラフィカルに表現する機能を備えています。<code
             class="command">fwbuilder</code> がこの種のツールの中で最良のツールであることは疑いありません。
 		</div><a
-          id="idm140421808226688"
+          id="idm140378000416672"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -112,9 +112,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">iptables</code> が IPv4 ネットワークを取り扱うのに対し、<code
             class="command">ip6tables</code> は IPv6 ネットワークを取り扱うという点です。おそらく IPv4 と IPv6 のネットワークプロトコルスタックは長きにわたり共存するでしょうから、両方のツールを並行して実行する必要があります。
 		</div><a
-          id="idm140421808219024"
+          id="idm140378000409008"
           class="indexterm"></a><a
-          id="idm140421808217904"
+          id="idm140378000407888"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -151,9 +151,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				それぞれのテーブルには、<span
               class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイアウォールは事前に定義された状況に基づいてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
 			</div><a
-            id="idm140421807887472"
+            id="idm140378001408096"
             class="indexterm"></a><a
-            id="idm140421807886512"
+            id="idm140378001407136"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -228,15 +228,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				参考までに、受信バッファとは、データがネットワークから到着してカーネルがデータを処理するまでの間、そのデータを保存する小容量のメモリ区画です。このメモリ区画が満杯になると、新しいデータを受け取ることができなくなり、ICMP がこの問題を通知します。そうすれば送信側はデータの転送速度を遅くすることが可能です (理想的に言えば、しばらくの後に転送速度は平衡状態に達するべきです)。
 			</div><a
-              id="idm140421804391472"
+              id="idm140378008465280"
               class="indexterm"></a><a
-              id="idm140421802421136"
+              id="idm140378008464320"
               class="indexterm"></a><a
-              id="idm140421802420208"
+              id="idm140378000138080"
               class="indexterm"></a><a
-              id="idm140421802419248"
+              id="idm140378000137120"
               class="indexterm"></a><a
-              id="idm140421802417808"
+              id="idm140378000135680"
               class="indexterm"></a><div
               class="para">
 				IPv4 ネットワークは ICMP がなくても動作しますが、IPv6 ネットワークは ICMPv6 を必須条件としています。なぜなら、ICMPv6 は IPv4 世界では ICMPv4、IGMP (<span
@@ -348,9 +348,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> オプションで操作対象のテーブルを指定します (デフォルトの場合、<code
               class="literal">filter</code> テーブルを操作します)。
 			</div><a
-            id="idm140421802377296"
+            id="idm140378000095168"
             class="indexterm"></a><a
-            id="idm140421802376176"
+            id="idm140378000094048"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -388,7 +388,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. ルール</h4></div></div></div><a
-              id="idm140421802361280"
+              id="idm140378000079152"
               class="indexterm"></a><div
               class="para">
 					それぞれのルールは <code
@@ -453,9 +453,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="listitem"><div
                     class="para">
 							<code
-                      class="literal">--log-priority</code> は記録する <code
-                      class="command">syslog</code> メッセージの優先度を指定します。デフォルトの場合 <code
-                      class="literal">warning</code> 以上の優先度を持つメッセージが記録されます。
+                      class="literal">--log-level</code> は記録する <code
+                      class="command">syslog</code> メッセージの重要度を指定します。デフォルトの場合 <code
+                      class="literal">warning</code> 以上の重要度を持つメッセージが記録されます。
 						</div></li><li
                   class="listitem"><div
                     class="para">
@@ -533,7 +533,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="fwbuilder のメインウィンドウ" /></div></div><p
               class="title"><strong>図14.2 fwbuilder のメインウィンドウ</strong></p></div><a
-            id="idm140421802312448"
+            id="idm140378001559536"
             class="indexterm"></a><div
             class="para">
 				<code

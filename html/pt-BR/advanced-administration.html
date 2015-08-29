@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pt-BR-1.0-1" /><meta
@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.virtualization.html#sect.lxc">12.2.2. LXC</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.virtualization.html#idm140242470048768">12.2.3. Virtualização com KVM</a></span></dt></dl></dd><dt><span
+                      href="sect.virtualization.html#idm140651088104304">12.2.3. Virtualização com KVM</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.automated-installation.html">12.3. Instalação Automatizada</a></span></dt><dd><dl><dt><span
                     class="section"><a
@@ -137,12 +137,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="sect.raid-soft"></a>12.1.1. RAID Por Software</h3></div></div></div><div
+                      id="sect.raid-soft"></a>12.1.1. RAID Por Software</h3></div></div></div><a
+              id="idm140651090866160"
+              class="indexterm"></a><div
               class="para">
-				RAID <a
-                id="idm140242481716704"
-                class="indexterm"></a> significa <span
-                class="emphasis"><em>conjunto redundante de discos independentes</em></span>. O objetivo deste sistema é evitar perda de dados em caso de falha do disco rígido. O princípio geral é bastante simples: os dados são armazenados em vários discos físicos em vez de apenas um, com um nível configurável de redundância. Dependendo desta quantidade de redundância, e mesmo no caso de uma falha de disco inesperado, dados podem ser reconstruídos sem perdas dos restantes discos.
+				RAID means <span
+                class="emphasis"><em>Redundant Array of Independent Disks</em></span>. The goal of this system is to prevent data loss in case of hard disk failure. The general principle is quite simple: data are stored on several physical disks instead of only one, with a configurable level of redundancy. Depending on this amount of redundancy, and even in the event of an unexpected disk failure, data can be losslessly reconstructed from the remaining disks.
 			</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -161,11 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				O RAID pode ser implementado tanto por hardware dedicado (módulos RAID integrados em placas controladoras SCSI ou SATA) ou por abstração de software (o núcleo). Seja por hardware ou software, um sistema RAID com redundância suficiente pode, de forma transparente, continuar operacional quando um disco falha; as camadas superiores da pilha (aplicações) podem até manter o acesso aos dados apesar da falha. Claro que, esse “modo degradado” pode ter impacto na performance, e a redundância é reduzida, então uma falha profunda do disco pode levar a perda de dados. Na prática, entretanto, um irá se esforçar para apenas ficar nesse modo degradado o tempo que for necessário para que se possa substituir o disco falho. Uma vez que o novo disco seja colocado, o sistema RAID pode reconstruir os dados necessários e então retornar ao modo seguro. As aplicações não notarão nada, fora a potencial redução da velocidade de acesso, enquanto a array estiver no modo degradado ou durante a fase de reconstrução.
 			</div><div
               class="para">
-				Quando o RAID é implementado por hardware, sua configuração geralmente acontece dentro da ferramenta de configuração da BIOS, e o núcleo irá considerar uma array RAID como um único disco, que irá funcionar como um disco físico padrão, embora o nome do dispositivo possa ser diferente. Por exemplo, o núcleo no <span
-                class="distribution distribution">Squeeze</span> disponibiliza algumas arrays de RAID de hardware como <code
-                class="filename">/dev/cciss/c0d0</code>; o núcleo no <span
-                class="distribution distribution">Wheezy</span> alterou esse nome para algo mais natural como <code
-                class="filename">/dev/sda</code>, mas outras controladoras RAID podem ainda se comportar de modo diferente.
+				When RAID is implemented by hardware, its configuration generally happens within the BIOS setup tool, and the kernel will consider a RAID array as a single disk, which will work as a standard physical disk, although the device name may be different (depending on the driver).
 			</div><div
               class="para">
 				Nós apenas focamos em RAID de software neste livro.
@@ -263,13 +259,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h4
                       class="title"><a
-                        id="sect.raid-setup"></a>12.1.1.2. Configurando um RAID</h4></div></div></div><div
+                        id="sect.raid-setup"></a>12.1.1.2. Configurando um RAID</h4></div></div></div><a
+                id="idm140651087997616"
+                class="indexterm"></a><div
                 class="para">
-					Configurar volumes RAID requer o pacote <span
-                  class="pkg pkg">mdadm</span> <a
-                  id="idm140242473308256"
-                  class="indexterm"></a>; ele provê o comando <code
-                  class="command">mdadm</code>, que permite a criação e maipulação de arrays RAID, assim como scripts e ferramentas para integração com o resto do sistema, incluindo o sistema de monitoração.
+					Setting up RAID volumes requires the <span
+                  class="pkg pkg">mdadm</span> package; it provides the <code
+                  class="command">mdadm</code> command, which allows creating and manipulating RAID arrays, as well as scripts and tools integrating it to the rest of the system, including the monitoring system.
 				</div><div
                 class="para">
 					Nossos exemplo será um servidor com um número de discos, sendo que alguns já estão em uso, e o resto está disponível para a configuração do RAID. Nós inicialmente temos os seguintes discos e partições:
@@ -323,14 +319,14 @@ mdadm: array /dev/md0 started.
 <code
                   class="computeroutput">/dev/md0:
         Version : 1.2
-  Creation Time : Thu Jan 17 15:56:55 2013
+  Creation Time : Wed May  6 09:24:34 2015
      Raid Level : raid0
      Array Size : 8387584 (8.00 GiB 8.59 GB)
    Raid Devices : 2
   Total Devices : 2
     Persistence : Superblock is persistent
 
-    Update Time : Thu Jan 17 15:56:55 2013
+    Update Time : Wed May  6 09:24:34 2015
           State : clean 
  Active Devices : 2
 Working Devices : 2
@@ -349,21 +345,11 @@ Working Devices : 2
 # </code><strong
                   class="userinput"><code>mkfs.ext4 /dev/md0</code></strong>
 <code
-                  class="computeroutput">mke2fs 1.42.5 (29-Jul-2012)
-Filesystem label=
-OS type: Linux
-Block size=4096 (log=2)
-Fragment size=4096 (log=2)
-Stride=128 blocks, Stripe width=256 blocks
-524288 inodes, 2096896 blocks
-104844 blocks (5.00%) reserved for the super user
-First data block=0
-Maximum filesystem blocks=2147483648
-64 block groups
-32768 blocks per group, 32768 fragments per group
-8192 inodes per group
+                  class="computeroutput">mke2fs 1.42.12 (29-Aug-2014)
+Creating filesystem with 2095104 4k blocks and 524288 inodes
+Filesystem UUID: fff08295-bede-41a9-9c6a-8c7580e520a6
 Superblock backups stored on blocks: 
-       32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
 
 Allocating group tables: done                            
 Writing inode tables: done                            
@@ -379,7 +365,7 @@ Writing superblocks and filesystem accounting information: done
                   class="userinput"><code>df -h /srv/raid-0</code></strong>
 <code
                   class="computeroutput">Filesystem      Size  Used Avail Use% Mounted on
-/dev/md0        7.9G  146M  7.4G   2% /srv/raid-0
+/dev/md0        7.9G   18M  7.4G   1% /srv/raid-0
 </code></pre><div
                 class="para">
 					O comando <code
@@ -419,7 +405,7 @@ mdadm: array /dev/md1 started.
 <code
                   class="computeroutput">/dev/md1:
         Version : 1.2
-  Creation Time : Thu Jan 17 16:13:04 2013
+  Creation Time : Wed May  6 09:30:19 2015
      Raid Level : raid1
      Array Size : 4192192 (4.00 GiB 4.29 GB)
   Used Dev Size : 4192192 (4.00 GiB 4.29 GB)
@@ -427,7 +413,7 @@ mdadm: array /dev/md1 started.
   Total Devices : 2
     Persistence : Superblock is persistent
 
-    Update Time : Thu Jan 17 16:13:04 2013
+    Update Time : Wed May  6 09:30:40 2015
           State : clean, resyncing (PENDING) 
  Active Devices : 2
 Working Devices : 2
@@ -461,8 +447,8 @@ Working Devices : 2
                   class="command">mdadm</code> nota que os elementos físicos possuem tamanhos diferentes; já que isso implica que algum espaço será perdido no maior elemento, uma confirmação é necessária.
 				</div><div
                 class="para">
-					Ainda mais importante, note o estado do espelhamento.O estado normal de um espelho RAID é que os dois discos tenham exatamente o mesmo conteúdo. Contudo, nada garante que esse é o caso quando o volume é criado pela primeira vez. O subsistema RAID irá, por conseguinte, prover essa garantia por si mesmo, e acontecerá uma fase de sincronização assim que o dispositivo RAID for criado. Após algum tempo (a quantidade exata irá depender do real tamanho dos discos…), a array RAID alternará para o estado “ativo”. Note que durante essa fase de reconstrução, o espelho está em modo degradado, e a redundância não é garantida. Um disco falhando durante essa janela de risco poderia levar a perda de todos os dados. Grandes quantidades de dados críticos, contudo, raramente são armazenados em uma array RAID recentemente criada, antes de sua sincronização inicial. Note que mesmo em modo degradado, o <code
-                  class="filename">/dev/md1</code> é usável, e um sistema de arquivos pode ser criado nele, assim como alguns dados podem ser copiados para ele.
+					More importantly, note the state of the mirror. The normal state of a RAID mirror is that both disks have exactly the same contents. However, nothing guarantees this is the case when the volume is first created. The RAID subsystem will therefore provide that guarantee itself, and there will be a synchronization phase as soon as the RAID device is created. After some time (the exact amount will depend on the actual size of the disks…), the RAID array switches to the “active” or “clean” state. Note that during this reconstruction phase, the mirror is in a degraded mode, and redundancy isn't assured. A disk failing during that risk window could lead to losing all the data. Large amounts of critical data, however, are rarely stored on a freshly created RAID array before its initial synchronization. Note that even in degraded mode, the <code
+                  class="filename">/dev/md1</code> is usable, and a filesystem can be created on it, as well as some data copied on it.
 				</div><div
                 class="sidebar"><div
                   class="titlepage"><div><div><p
@@ -503,8 +489,8 @@ Working Devices : 2
 <code
                   class="computeroutput">/dev/md1:
 [...]
-    Update Time : Thu Jan 17 16:14:09 2013
-          State : active, degraded 
+    Update Time : Wed May  6 09:39:39 2015
+          State : clean, degraded 
  Active Devices : 1
 Working Devices : 1
  Failed Devices : 1
@@ -516,9 +502,9 @@ Working Devices : 1
 
     Number   Major   Minor   RaidDevice State
        0       8       50        0      active sync   /dev/sdd2
-       1       0        0        1      removed
+       2       0        0        2      removed
 
-       1       8       64        -      faulty spare   /dev/sde</code></pre><div
+       1       8       64        -      faulty   /dev/sde</code></pre><div
                 class="para">
 					O conteúdo do volume ainda está acessível (e, se montado, as aplicações não notarão nada), mas a segurança dos dados não é mais garantida: se, por sua vez, o disco <code
                   class="filename">sdd</code> falhar, os dados serão perdidos. Nós queremos evitar esse risco, então nós vamos substituir o disco falho por um novo, <code
@@ -538,7 +524,7 @@ Working Devices : 1
   Total Devices : 3
     Persistence : Superblock is persistent
 
-    Update Time : Thu Jan 17 16:15:32 2013
+    Update Time : Wed May  6 09:48:49 2015
           State : clean, degraded, recovering 
  Active Devices : 1
 Working Devices : 2
@@ -555,7 +541,7 @@ Working Devices : 2
        0       8       50        0      active sync   /dev/sdd2
        2       8       80        1      spare rebuilding   /dev/sdf
 
-       1       8       64        -      faulty spare   /dev/sde
+       1       8       64        -      faulty   /dev/sde
 # </code><strong
                   class="userinput"><code>[...]</code></strong>
 <code
@@ -565,7 +551,7 @@ Working Devices : 2
 <code
                   class="computeroutput">/dev/md1:
 [...]
-    Update Time : Thu Jan 17 16:16:36 2013
+    Update Time : Wed May  6 09:49:08 2015
           State : clean 
  Active Devices : 2
 Working Devices : 2
@@ -580,7 +566,7 @@ Working Devices : 2
        0       8       50        0      active sync   /dev/sdd2
        2       8       80        1      active sync   /dev/sdf
 
-       1       8       64        -      faulty spare   /dev/sde</code></pre><div
+       1       8       64        -      faulty   /dev/sde</code></pre><div
                 class="para">
 					Aqui, mais uma vez, o núcleo automaticamente dispara uma fase de reconstrução, durante a qual o volume, embora ainda acessível, está em um modo degradado. Uma vez que a reconstrução esteja terminada, a array RAID está de volta ao estado normal. Pode-se então dizer ao sistema que o disco <code
                   class="filename">sde</code> está para ser removido da array, para que se possa terminar com um espelhamento RAID clássico nos dois discos:
@@ -663,20 +649,22 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                   class="computeroutput"># </code><strong
                   class="userinput"><code>mdadm --misc --detail --brief /dev/md?</code></strong>
 <code
-                  class="computeroutput">ARRAY /dev/md0 metadata=1.2 name=mirwiz:0 UUID=bb085b35:28e821bd:20d697c9:650152bb
-ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f67464</code></pre><div
+                  class="computeroutput">ARRAY /dev/md0 metadata=1.2 name=squeeze:0 UUID=6194b63f:69a40eb5:a79b7ad3:c91f20ee
+ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a432</code></pre><div
                 class="para">
 					O conteúdo dessas duas últimas linhas não depende da lista de discos incluídos no volume. Logo, não é necessário regenerar essas linhas quando se for substituir um disco falho por um novo. Por outro lado, tem que se tomar o cuidado de atualizar o arquivo ao se criar ou remover uma array RAID.
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><div
+                      id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><a
+              id="idm140651068624096"
+              class="indexterm"></a><a
+              id="idm140651068623136"
+              class="indexterm"></a><div
               class="para">
-				<a
-                id="idm140242469701328"
-                class="indexterm"></a> LVM, o <span
-                class="emphasis"><em>Logical Volume Manager</em></span>, é uma outra abordagem para abstrair volumes lógicos a partir de seus suportes físicos, que se concentra em aumentar a flexibilidade em vez de aumentar a confiabilidade. O LVM permite mudar um volume lógico de forma transparente, até aonde os aplicativos tem interesse ; por exemplo, é possível adicionar novos discos, migrar os dados para eles, e remover os discos velhos, sem desmontar o volume.
+				LVM, the <span
+                class="emphasis"><em>Logical Volume Manager</em></span>, is another approach to abstracting logical volumes from their physical supports, which focuses on increasing flexibility rather than increasing reliability. LVM allows changing a logical volume transparently as far as the applications are concerned; for instance, it is possible to add new disks, migrate the data to them, and remove the old disks, without unmounting the volume.
 			</div><div
               class="section"><div
                 class="titlepage"><div><div><h4
@@ -765,8 +753,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                   class="computeroutput"># </code><strong
                   class="userinput"><code>pvcreate /dev/sdb2</code></strong>
 <code
-                  class="computeroutput">  Writing physical volume data to disk "/dev/sdb2"
-  Physical volume "/dev/sdb2" successfully created
+                  class="computeroutput">  Physical volume "/dev/sdb2" successfully created
 # </code><strong
                   class="userinput"><code>pvdisplay</code></strong>
 <code
@@ -785,23 +772,19 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
 # </code><strong
                   class="userinput"><code>for i in sdc3 sdd sdf1 sdf2 ; do pvcreate /dev/$i ; done</code></strong>
 <code
-                  class="computeroutput">  Writing physical volume data to disk "/dev/sdc3"
-  Physical volume "/dev/sdc3" successfully created
-  Writing physical volume data to disk "/dev/sdd"
+                  class="computeroutput">  Physical volume "/dev/sdc3" successfully created
   Physical volume "/dev/sdd" successfully created
-  Writing physical volume data to disk "/dev/sdf1"
   Physical volume "/dev/sdf1" successfully created
-  Writing physical volume data to disk "/dev/sdf2"
   Physical volume "/dev/sdf2" successfully created
 # </code><strong
                   class="userinput"><code>pvdisplay -C</code></strong>
 <code
                   class="computeroutput">  PV         VG   Fmt  Attr PSize PFree
-  /dev/sdb2       lvm2 a--  4.00g 4.00g
-  /dev/sdc3       lvm2 a--  3.09g 3.09g
-  /dev/sdd        lvm2 a--  4.00g 4.00g
-  /dev/sdf1       lvm2 a--  4.10g 4.10g
-  /dev/sdf2       lvm2 a--  5.22g 5.22g
+  /dev/sdb2       lvm2 ---  4.00g 4.00g
+  /dev/sdc3       lvm2 ---  3.09g 3.09g
+  /dev/sdd        lvm2 ---  4.00g 4.00g
+  /dev/sdf1       lvm2 ---  4.10g 4.10g
+  /dev/sdf2       lvm2 ---  5.22g 5.22g
 </code></pre><div
                 class="para">
 					Até agora tudo bem; note que o PV (volume físico) pode ser configurado em um disco inteiro assim como em partições individuais do mesmo. Como demonstrado acima, o comando <code
@@ -818,8 +801,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                   class="computeroutput"># </code><strong
                   class="userinput"><code>vgdisplay</code></strong>
 <code
-                  class="computeroutput">  No volume groups found
-# </code><strong
+                  class="computeroutput"># </code><strong
                   class="userinput"><code>vgcreate vg_critical /dev/sdb2 /dev/sdf1</code></strong>
 <code
                   class="computeroutput">  Volume group "vg_critical" successfully created
@@ -828,7 +810,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
 <code
                   class="computeroutput">  --- Volume group ---
   VG Name               vg_critical
-  System ID             
+  System ID
   Format                lvm2
   Metadata Areas        2
   Metadata Sequence No  1
@@ -840,12 +822,12 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
   Max PV                0
   Cur PV                2
   Act PV                2
-  VG Size               8.09 GiB
-  PE Size               4.00 MiB
-  Total PE              2071
-  Alloc PE / Size       0 / 0   
-  Free  PE / Size       2071 / 8.09 GiB
-  VG UUID               bpq7zO-PzPD-R7HW-V8eN-c10c-S32h-f6rKqp
+  VG Size               8.14 GB
+  PE Size               4.00 MB
+  Total PE              2084
+  Alloc PE / Size       0 / 0
+  Free  PE / Size       2084 / 8.14 GB
+  VG UUID               6eG6BW-MmJE-KB0J-dsB2-52iL-N6eD-1paeo8
 
 # </code><strong
                   class="userinput"><code>vgcreate vg_normal /dev/sdc3 /dev/sdd /dev/sdf2</code></strong>
@@ -854,10 +836,9 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
 # </code><strong
                   class="userinput"><code>vgdisplay -C</code></strong>
 <code
-                  class="computeroutput">  VG          #PV #LV #SN Attr   VSize  VFree 
-  vg_critical   2   0   0 wz--n-  8.09g  8.09g
-  vg_normal     3   0   0 wz--n- 12.30g 12.30g
-</code></pre><div
+                  class="computeroutput">  VG          #PV #LV #SN Attr   VSize  VFree
+  vg_critical   2   0   0 wz--n-  8.14g  8.14g
+  vg_normal     3   0   0 wz--n- 12.30g 12.30g</code></pre><div
                 class="para">
 					Aqui novamente, os comandos são bem simples (e <code
                   class="command">vgdisplay</code> propõem dois formatos de saída). Note que é perfeitamente possível usar duas partições de um mesmo disco físico em dois VGs diferentes. Note também que nós usamos um prefixo <code
@@ -885,7 +866,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
   VG Name                vg_critical
   LV UUID                J3V0oE-cBYO-KyDe-5e0m-3f70-nv0S-kCWbpT
   LV Write Access        read/write
-  LV Creation host, time mirwiz, 2013-01-17 17:05:13 +0100
+  LV Creation host, time mirwiz, 2015-06-10 06:10:50 -0400
   LV Status              available
   # open                 0
   LV Size                5.00 GiB
@@ -907,7 +888,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
 # </code><strong
                   class="userinput"><code>lvdisplay -C</code></strong>
 <code
-                  class="computeroutput">  LV         VG          Attr     LSize  Pool Origin Data%  Move Log Copy%  Convert
+                  class="computeroutput">  LV         VG          Attr     LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync  Convert
   lv_base    vg_critical -wi-a---  1.00g                                           
   lv_files   vg_critical -wi-a---  5.00g                                           
   lv_backups vg_normal   -wi-a--- 12.00g</code></pre><div
@@ -953,24 +934,25 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                   class="userinput"><code>ls -l /dev/mapper</code></strong>
 <code
                   class="computeroutput">total 0
-crw------T 1 root root 10, 236 Jan 17 16:52 control
-lrwxrwxrwx 1 root root       7 Jan 17 17:05 vg_critical-lv_base -&gt; ../dm-1
-lrwxrwxrwx 1 root root       7 Jan 17 17:05 vg_critical-lv_files -&gt; ../dm-0
-lrwxrwxrwx 1 root root       7 Jan 17 17:05 vg_normal-lv_backups -&gt; ../dm-2
+crw------- 1 root root 10, 236 Jun 10 16:52 control
+lrwxrwxrwx 1 root root       7 Jun 10 17:05 vg_critical-lv_base -&gt; ../dm-1
+lrwxrwxrwx 1 root root       7 Jun 10 17:05 vg_critical-lv_files -&gt; ../dm-0
+lrwxrwxrwx 1 root root       7 Jun 10 17:05 vg_normal-lv_backups -&gt; ../dm-2
 # </code><strong
                   class="userinput"><code>ls -l /dev/dm-*</code></strong>
 <code
-                  class="computeroutput">brw-rw---T 1 root disk 253, 0 Jan 17 17:05 /dev/dm-0
-brw-rw---T 1 root disk 253, 1 Jan 17 17:05 /dev/dm-1
-brw-rw---T 1 root disk 253, 2 Jan 17 17:05 /dev/dm-2
+                  class="computeroutput">brw-rw---T 1 root disk 253, 0 Jun 10 17:05 /dev/dm-0
+brw-rw---- 1 root disk 253, 1 Jun 10 17:05 /dev/dm-1
+brw-rw---- 1 root disk 253, 2 Jun 10 17:05 /dev/dm-2
 </code></pre><div
                 class="sidebar"><div
                   class="titlepage"><div><div><p
                         class="title"><strong><span
                             class="emphasis"><em>NOTA</em></span> Auto-detectando volumes LVM</strong></p></div></div></div><div
                   class="para">
-					Quando o computador é inicializado, o script <code
-                    class="filename">/etc/init.d/lvm</code> faz uma busca nos dispositivos disponíveis; aqueles que tiverem sido inicializados como volumes físicos para o LVM são registrados em um subsistema LVM, aqueles que pertencem aos grupos de volume são montados, e os volumes lógicos relevantes são iniciados e tornados disponíveis. Não existe, portanto, necessidade de editar arquivos de configuração quando se cria ou modifica volumes LVM.
+					When the computer boots, the <code
+                    class="filename">lvm2-activation</code> systemd service unit executes <code
+                    class="command">vgchange -aay</code> to “activate” the volume groups: it scans the available devices; those that have been initialized as physical volumes for LVM are registered into the LVM subsystem, those that belong to volume groups are assembled, and the relevant logical volumes are started and made available. There is therefore no need to edit configuration files when creating or modifying LVM volumes.
 				</div><div
                   class="para">
 					Note, contudo, que o layout dos elementos LVM (volumes físicos e lógicos, e grupos de volume) tem cópia de segurança em <code
@@ -984,13 +966,13 @@ brw-rw---T 1 root disk 253, 2 Jan 17 17:05 /dev/dm-2
                   class="userinput"><code>ls -l /dev/vg_critical</code></strong>
 <code
                   class="computeroutput">total 0
-lrwxrwxrwx 1 root root 7 Jan 17 17:05 lv_base -&gt; ../dm-1
-lrwxrwxrwx 1 root root 7 Jan 17 17:05 lv_files -&gt; ../dm-0
+lrwxrwxrwx 1 root root 7 Jun 10 17:05 lv_base -&gt; ../dm-1
+lrwxrwxrwx 1 root root 7 Jun 10 17:05 lv_files -&gt; ../dm-0
 # </code><strong
                   class="userinput"><code>ls -l /dev/vg_normal</code></strong>
 <code
                   class="computeroutput">total 0
-lrwxrwxrwx 1 root root 7 Jan 17 17:05 lv_backups -&gt; ../dm-2</code></pre><div
+lrwxrwxrwx 1 root root 7 Jun 10 17:05 lv_backups -&gt; ../dm-2</code></pre><div
                 class="para">
 					Os LVs então podem ser utilizados exatamente como partições padrão:
 				</div><pre
@@ -998,10 +980,9 @@ lrwxrwxrwx 1 root root 7 Jan 17 17:05 lv_backups -&gt; ../dm-2</code></pre><div
                   class="computeroutput"># </code><strong
                   class="userinput"><code>mkfs.ext4 /dev/vg_normal/lv_backups</code></strong>
 <code
-                  class="computeroutput">mke2fs 1.42.5 (29-Jul-2012)
-Filesystem label=
-OS type: Linux
-Block size=4096 (log=2)
+                  class="computeroutput">mke2fs 1.42.12 (29-Aug-2014)
+Creating filesystem with 3145728 4k blocks and 786432 inodes
+Filesystem UUID: b5236976-e0e2-462e-81f5-0ae835ddab1d
 [...]
 Creating journal (32768 blocks): done
 Writing superblocks and filesystem accounting information: done 
@@ -1015,7 +996,7 @@ Writing superblocks and filesystem accounting information: done
                   class="userinput"><code>df -h /srv/backups</code></strong>
 <code
                   class="computeroutput">Filesystem                        Size  Used Avail Use% Mounted on
-/dev/mapper/vg_normal-lv_backups   12G  158M   12G   2% /srv/backups
+/dev/mapper/vg_normal-lv_backups   12G   30M   12G   1% /srv/backups
 # </code><strong
                   class="userinput"><code>[...]</code></strong>
 <code
@@ -1024,9 +1005,9 @@ Writing superblocks and filesystem accounting information: done
                   class="userinput"><code>cat /etc/fstab</code></strong>
 <code
                   class="computeroutput">[...]
-/dev/vg_critical/lv_base    /srv/base       ext4
-/dev/vg_critical/lv_files   /srv/files      ext4
-/dev/vg_normal/lv_backups   /srv/backups    ext4</code></pre><div
+/dev/vg_critical/lv_base    /srv/base       ext4 defaults 0 2
+/dev/vg_critical/lv_files   /srv/files      ext4 defaults 0 2
+/dev/vg_normal/lv_backups   /srv/backups    ext4 defaults 0 2</code></pre><div
                 class="para">
 					Do ponto de vista das aplicações, a miríade de pequenas partições foi abstraída em um grande volume de 12 GB, com um nome amigável.
 				</div></div><div
@@ -1050,7 +1031,7 @@ Writing superblocks and filesystem accounting information: done
 # </code><strong
                   class="userinput"><code>lvdisplay -C vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Move Log Copy%  Convert
+                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Meta%  Move Log Cpy%Sync  Convert
   lv_files vg_critical -wi-ao-- 5.00g
 # </code><strong
                   class="userinput"><code>vgdisplay -C vg_critical</code></strong>
@@ -1060,21 +1041,20 @@ Writing superblocks and filesystem accounting information: done
 # </code><strong
                   class="userinput"><code>lvresize -L 7G vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">  Extending logical volume lv_files to 7.00 GB
+                  class="computeroutput">  Size of logical volume vg_critical/lv_files changed from 5.00 GiB (1280 extents) to 7.00 GiB (1792 extents).
   Logical volume lv_files successfully resized
 # </code><strong
                   class="userinput"><code>lvdisplay -C vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Move Log Copy%  Convert
+                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Meta%  Move Log Cpy%Sync  Convert
   lv_files vg_critical -wi-ao-- 7.00g
 # </code><strong
                   class="userinput"><code>resize2fs /dev/vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">resize2fs 1.42.5 (29-Jul-2012)
+                  class="computeroutput">resize2fs 1.42.12 (29-Aug-2014)
 Filesystem at /dev/vg_critical/lv_files is mounted on /srv/files; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
-Performing an on-line resize of /dev/vg_critical/lv_files to 1835008 (4k) blocks.
-The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
+The filesystem on /dev/vg_critical/lv_files is now 1835008 (4k) blocks long.
 
 # </code><strong
                   class="userinput"><code>df -h /srv/files/</code></strong>
@@ -1098,7 +1078,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                   class="computeroutput"># </code><strong
                   class="userinput"><code>df -h /srv/base/</code></strong>
 <code
-                  class="computeroutput">Filesystem                       Size  Used Avail Use% Mounted on
+                  class="computeroutput">Sist. Arq.           Tam. Usado Disp. Uso% Montado em
 /dev/mapper/vg_critical-lv_base 1008M  854M  104M  90% /srv/base
 # </code><strong
                   class="userinput"><code>vgdisplay -C vg_critical</code></strong>
@@ -1115,8 +1095,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                   class="computeroutput"># </code><strong
                   class="userinput"><code>pvcreate /dev/sdb1</code></strong>
 <code
-                  class="computeroutput">  Writing physical volume data to disk "/dev/sdb1"
-  Physical volume "/dev/sdb1" successfully created
+                  class="computeroutput">  Physical volume "/dev/sdb1" successfully created
 # </code><strong
                   class="userinput"><code>vgextend vg_critical /dev/sdb1</code></strong>
 <code
@@ -1160,7 +1139,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                           class="emphasis"><em>NOTA</em></span> Se o desempenho importa…</strong></p></div></div></div><div
                 class="para">
 				Se a velocidade de entrada/saída é essencial, especialmente em termos de tempo de acesso, o uso do LVM e/ou RAID em uma das muitas combinações pode ter algum impacto no desempenho, e isso pode influenciar nas decisões sobre qual escolher. Contudo, essas diferenças de desempenho são realmente pequenas, e só serão mensuráveis em alguns casos de uso. Se desempenho importa, o melhor ganho a ser obtido seria no uso de mídia não rotativa (<a
-                  id="idm140242470283712"
+                  id="idm140651088345744"
                   class="indexterm"></a><span
                   class="emphasis"><em>solid-state drives</em></span> ou SSDs); seu custo por megabyte é maior que os discos rígidos padrão, e sua capacidade geralmente é menor, mas ele fornece desempenho excelente para acessos aleatórios. Se o padrão de uso inclui muitas operações de entrada/saída espalhadas por todo o sistema de arquivos, por exemplo, para bancos de dados aonde consultas complexas são executadas rotineiramente, então a vantagem de executá-las em um SSD de longe superam tudo o que pode ser ganho escolhendo LVM sobre RAID ou o contrário. Nessas situações, a escolha deveria ser determinada por outras considerações ao invés de velocidade pura, já que o aspecto desempenho é mais facilmente lidado usando SSDs.
 			</div></div><div
@@ -1183,20 +1162,20 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                 class="userinput"><code>fdisk -l /dev/sda</code></strong>
 <code
                 class="computeroutput">
-Disk /dev/hda: 300.0 GB, 300090728448 bytes
-255 heads, 63 sectors/track, 36483 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
+Disk /dev/sda: 300 GB, 300090728448 bytes, 586114704 sectors
+Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
 Disk identifier: 0x00039a9f
 
-   Device Boot      Start      End      Blocks   Id  System
-/dev/sda1   *           1      124      995998+  fd  Linux raid autodetect
-/dev/sda2             125      248      996030   82  Linux swap / Solaris
-/dev/sda3             249    36483   291057637+   5  Extended
-/dev/sda5             249    12697    99996561   fd  Linux raid autodetect
-/dev/sda6           12698    25146    99996561   fd  Linux raid autodetect
-/dev/sda7           25147    36483    91064421   8e  Linux LVM</code></pre><div
+Device    Boot     Start       End   Sectors Size Id Type
+/dev/sda1 *         2048   1992060   1990012 1.0G fd Linux raid autodetect
+/dev/sda2        1992061   3984120   1992059 1.0G 82 Linux swap / Solaris
+/dev/sda3        4000185 586099395 582099210 298G 5  Extended
+/dev/sda5        4000185 203977305 199977120 102G fd Linux raid autodetect
+/dev/sda6      203977306 403970490 199993184 102G fd Linux raid autodetect
+/dev/sda7      403970491 586099395 182128904  93G 8e Linux LVM</code></pre><div
               xmlns:d="http://docbook.org/ns/docbook"
               class="itemizedlist"><ul><li
                   class="listitem"><div
@@ -1234,14 +1213,14 @@ Disk identifier: 0x00039a9f
                 class="filename">vg_bulk</code>; por outro lado, o último será alocado em paralelo nos dois discos, o que permite altas velocidades de leitura ou escrita para arquivos grandes.
 			</div><div
               class="para">
-				Portanto nós iremos criar os LVs <code
+				We will therefore create the <code
                 class="filename">lv_usr</code>, <code
-                class="filename">lv_var</code> e <code
-                class="filename">lv_home</code> no <code
-                class="filename">vg_raid</code>, para hospedar os sistemas de arquivos correspondentes; outro grande LV, <code
-                class="filename">lv_movies</code>, será usado para hospedar as versões definitivas dos filmes após a edição. O outro VG será dividido em um grande <code
-                class="filename">lv_rushes</code>, para dados tirados de câmeras digitais de vídeo, e um <code
-                class="filename">lv_tmp</code> para arquivos temporários. A localização da área de trabalho é uma escolha menos simples de fazer: enquanto bom desempenho é necessário para esse volume, vale o risco de perda de trabalho se uma falha de disco ocorrer durante uma sessão de edição? Dependendo da resposta essa pergunta, o LV relevante será criado em um VG ou em outro.
+                class="filename">lv_var</code> and <code
+                class="filename">lv_home</code> LVs on <code
+                class="filename">vg_raid</code>, to host the matching filesystems; another large LV, <code
+                class="filename">lv_movies</code>, will be used to host the definitive versions of movies after editing. The other VG will be split into a large <code
+                class="filename">lv_rushes</code>, for data straight out of the digital video cameras, and a <code
+                class="filename">lv_tmp</code> for temporary files. The location of the work area is a less straightforward choice to make: while good performance is needed for that volume, is it worth risking losing work if a disk fails during an editing session? Depending on the answer to that question, the relevant LV will be created on one VG or the other.
 			</div><div
               class="para">
 				Nós agora temos tanto alguma redundância para dados importantes quanto muita flexibilidade no modo como o espaço disponível é dividido entre as aplicações. Para novo software que for instalado mais tarde (para edição de clips de áudio, por exemplo), o LV que hospeda <code

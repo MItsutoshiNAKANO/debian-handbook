@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-ar-MA-1.0-1" /><meta
@@ -72,17 +72,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			لينكس هو نظام متعدد المستخدمين قطعاً، ولذلك يجب توفير نظام إدارة صلاحيات للتحكم بالعمليات المسموحة على الملفات والمجلدات، التي تشمل جميع موارد وأجهزة النظام (في نظام يونكس، كل جهاز يمثل بملف أو مجلد). هذا المبدأ مشترك بين جميع نظم يونكس، لكن التذكرة بالشيء مفيدة دوماً، خصوصاً أن هناك بعض الاستخدامات المتقدمة المهمة ولكن غير معروفة نسبياً.
 		</div><a
-          id="idm139981753200704"
+          id="idm140629365128848"
           class="indexterm"></a><a
-          id="idm139981753199744"
+          id="idm140629365127888"
           class="indexterm"></a><a
-          id="idm139981753198784"
+          id="idm140629365126928"
           class="indexterm"></a><a
-          id="idm139981753197344"
+          id="idm140629365125488"
           class="indexterm"></a><a
-          id="idm139981753195904"
+          id="idm140629365124048"
           class="indexterm"></a><a
-          id="idm139981753194464"
+          id="idm140629365122608"
           class="indexterm"></a><div
           class="para">
 			كل ملف أو مجلد له صلاحيات خاصة لكل فئة من الفئات الثلاث للمستخدمين:
@@ -124,13 +124,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					التنفيذ (يرمز له بالحرف <code
                   class="literal">x</code> من كلمة ”eXecute“).
 				</div></li></ul></div><a
-          id="idm139981753182576"
+          id="idm140629365110720"
           class="indexterm"></a><a
-          id="idm139981753181648"
+          id="idm140629365109792"
           class="indexterm"></a><a
-          id="idm139981753180720"
+          id="idm140629365108864"
           class="indexterm"></a><a
-          id="idm139981753179792"
+          id="idm140629365107936"
           class="indexterm"></a><div
           class="para">
 			بالنسبة للملفات، فيمكن فهم هذه الصلاحيات بسهولة: تسمح صلاحية القراءة بقراءة المحتوى (ونسخه أيضاً)، وتسمح صلاحية الكتابة بتعديله، أما صلاحية التنفيذ فتسمح لك بتشغيله (وهذا سيعمل فقط إذا كان برنامجاً).
@@ -146,9 +146,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> و<code
               class="literal">setgid</code> (يرمز لهما بالحرف ”s“). لاحظ أننا نتحدث عادة عن ”بت“، لأنه يمكن تمثيل كل من هذه القيم البوليانية ببت واحد. تسمح هاتان الصلاحيتان للمستخدم بتنفيذ البرنامج بصلاحيات مالكه أو صلاحيات مجموعته. تتيح هذه الآلية إمكانية الوصول إلى مزايا تحتاج صلاحيات ذات مستوى أعلى من المستوى العادي للمستخدم.
 		</div><a
-            id="idm139981753174032"
+            id="idm140629365102176"
             class="indexterm"></a><a
-            id="idm139981753172752"
+            id="idm140629365100896"
             class="indexterm"></a><div
             class="para">
 			بما أن برامج الجذر التي تتمتع بصلاحية <code
@@ -165,14 +165,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>أمن</em></span> مجلدات <code
                       class="literal">setgid</code> و ”<span
                       class="emphasis"><em>البت اللاصق</em></span>“</strong></p></div></div></div><a
-            id="idm139981753165792"
+            id="idm140629365093936"
             class="indexterm"></a><div
             class="para">
 			يطبّق بت <code
               class="literal">setgid</code> على المجلدات أيضاً. أي عنصر جديد ينشأ في هذه المجلدات تُعيَّن له المجموعة المالكة للمجلد الأب، بدلاً من وراثة المجموعة الرئيسية للمستخدم الذي أنشأ الملف كما هي العادة. هذا الوضع يسمح للمستخدم بتفادي تغيير مجموعته الرئيسية (باستخدام الأمر <code
               class="command">newgrp</code>) عندما يعمل في شجرة ملفات مشتركة بين عدة مستخدمين ينتمون لنفس المجموعة الخاصة.
 		</div><a
-            id="idm139981753162528"
+            id="idm140629365090672"
             class="indexterm"></a><div
             class="para">
 			أما البت ”اللاصق“ (<span
@@ -218,15 +218,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code>، من الكلمة ”all“، فئات المستخدمين الثلاث، بالتالي تمنح العلاقة <code
             class="literal">a=rx</code> جميع الفئات الثلاث الصلاحيات نفسها (القراءة والتنفيذ، لكن دون الكتابة).
 		</div><a
-          id="idm139981753145792"
+          id="idm140629365073936"
           class="indexterm"></a><a
-          id="idm139981753144672"
+          id="idm140629365072816"
           class="indexterm"></a><a
-          id="idm139981753143552"
+          id="idm140629365071696"
           class="indexterm"></a><a
-          id="idm139981753142432"
+          id="idm140629365070576"
           class="indexterm"></a><a
-          id="idm139981753141424"
+          id="idm140629365069568"
           class="indexterm"></a><div
           class="para">
 			يربط التمثيل العددي (الثُماني) كل صلاحية مع رقم: 4 للقراءة، و2 للكتابة، و1 للتنفيذ. تُحدَّد كل مجموعة من الصلاحيات بمجموع الأرقام المقابلة لها. ثم تُسنَد كل قيمة لفئة مختلفة من المستخدمين بوضع هذه المجاميع جنباً إلى جنب بنفس الترتيب المعتاد لفئات المستخدمين (المالك، ثم المجموعة، ثم الآخرون).
@@ -290,11 +290,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> في الصدفة؛ سترى قناعاً مثل <code
               class="computeroutput">0022</code>. هذا القناع هو ببساطة تمثيل ثماني للصلاحيات التي ستزال آلياً (في هذا المثال، صلاحية الكتابة للمجموعة وللمستخدمين الآخرين).
 		</div><a
-            id="idm139981753118448"
+            id="idm140629365046592"
             class="indexterm"></a><a
-            id="idm139981753117488"
+            id="idm140629365045632"
             class="indexterm"></a><a
-            id="idm139981753116048"
+            id="idm140629365044192"
             class="indexterm"></a><div
             class="para">
 			إذا أعطيت الأمر <code

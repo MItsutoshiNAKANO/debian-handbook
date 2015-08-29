@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.virtualization.html#sect.lxc">12.2.2. LXC</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.virtualization.html#idm140421807960640">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
+                      href="sect.virtualization.html#idm140378006250672">12.2.3. KVM を使った仮想化</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.automated-installation.html">12.3. 自動インストール</a></span></dt><dd><dl><dt><span
                     class="section"><a
@@ -139,11 +139,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="sect.raid-soft"></a>12.1.1. ソフトウェア RAID</h3></div></div></div><div
+                      id="sect.raid-soft"></a>12.1.1. ソフトウェア RAID</h3></div></div></div><a
+              id="idm140378017666288"
+              class="indexterm"></a><div
               class="para">
-				RAID<a
-                id="idm140421813053984"
-                class="indexterm"></a> は <span
+				RAID は <span
                 class="emphasis"><em>Redundant Array of Independent Disks</em></span> を意味します。このシステムの目標はハードディスク障害の際にデータ損失を防ぐことです。一般的な原則は極めて単純です。すなわち、データは設定できる冗長性のレベルに基づいて 1 つではなく複数のディスクに保存されます。冗長性の量に依存して、たとえ予想外のディスク障害が起きた場合でも、データを残りのディスクから損失なく再構成することが可能です。
 			</div><div
               class="sidebar"><div
@@ -164,11 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				RAID は専用ハードウェア (SCSI や SATA コントローラカードに統合された RAID モジュール) またはソフトウェア抽象化 (カーネル) を使って実装することが可能です。ハードウェアかソフトウェアかに関わらず、十分な冗長性を備えた RAID システムはディスク障害があっても透過的に利用できる状態を継続することが可能です。従って、スタックの上層 (アプリケーション) はディスク障害にも関わらず、引き続きデータにアクセスできます。もちろん「信頼性低下状態」は性能に影響を与え、冗長性を低下させます。このため、もう一つ別のディスク障害が起きるとデータを失うことになります。それ故、具体的に言えば管理者は障害の起きたディスクを交換して、せめて信頼性低下状態よりも状態を悪くしないように努力します。新しいディスクが配備されると、RAID システムは要求されたデータを再構成することが可能です。こうすることで信頼性の高い状態に戻ります。アプリケーションは、RAID アレイが信頼性低下状態か再構成状態の間にアクセス速度が低下する可能性のある点を除いて、何も気付かないでしょう。
 			</div><div
               class="para">
-				RAID がハードウェアで実装された場合、その設定は通常 BIOS セットアップツールによってなされます。カーネルは RAID アレイを、デバイス名は違うかもしれませんが標準的な物理ディスクとして機能する、単一のディスクとみなします。たとえば、<span
-                class="distribution distribution">Squeeze</span> のカーネルは一部のハードウェア RAID アレイを <code
-                class="filename">/dev/cciss/c0d0</code> として利用できるようにします。さらに <span
-                class="distribution distribution">Wheezy</span> のカーネルはこの名前をより自然な <code
-                class="filename">/dev/sda</code> に変えましたが、RAID コントローラによっては命名規則が異なるかもしれません。
+				RAID がハードウェアで実装された場合、その設定は通常 BIOS セットアップツールによってなされます。カーネルは RAID アレイを標準的な物理ディスクとして機能する単一のディスクとみなします。RAID アレイのデバイス名は (ドライバに依存して) 違うかもしれません。
 			</div><div
               class="para">
 				本書ではソフトウェア RAID だけに注目します。
@@ -266,12 +262,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h4
                       class="title"><a
-                        id="sect.raid-setup"></a>12.1.1.2. RAID の設定</h4></div></div></div><div
+                        id="sect.raid-setup"></a>12.1.1.2. RAID の設定</h4></div></div></div><a
+                id="idm140378005009072"
+                class="indexterm"></a><div
                 class="para">
 					RAID ボリュームを設定するには <span
-                  class="pkg pkg">mdadm</span><a
-                  id="idm140421803131488"
-                  class="indexterm"></a> パッケージが必要です。さらに <span
+                  class="pkg pkg">mdadm</span> パッケージが必要です。さらに <span
                   class="pkg pkg">mdadm</span> パッケージには、RAID アレイを作成したり操作するための <code
                   class="command">mdadm</code> コマンド、システムの他の部分に RAID アレイを統合するためのスクリプトやツール、監視システム、が含まれます。
 				</div><div
@@ -327,14 +323,14 @@ mdadm: array /dev/md0 started.
 <code
                   class="computeroutput">/dev/md0:
         Version : 1.2
-  Creation Time : Thu Jan 17 15:56:55 2013
+  Creation Time : Wed May  6 09:24:34 2015
      Raid Level : raid0
      Array Size : 8387584 (8.00 GiB 8.59 GB)
    Raid Devices : 2
   Total Devices : 2
     Persistence : Superblock is persistent
 
-    Update Time : Thu Jan 17 15:56:55 2013
+    Update Time : Wed May  6 09:24:34 2015
           State : clean 
  Active Devices : 2
 Working Devices : 2
@@ -353,21 +349,11 @@ Working Devices : 2
 # </code><strong
                   class="userinput"><code>mkfs.ext4 /dev/md0</code></strong>
 <code
-                  class="computeroutput">mke2fs 1.42.5 (29-Jul-2012)
-Filesystem label=
-OS type: Linux
-Block size=4096 (log=2)
-Fragment size=4096 (log=2)
-Stride=128 blocks, Stripe width=256 blocks
-524288 inodes, 2096896 blocks
-104844 blocks (5.00%) reserved for the super user
-First data block=0
-Maximum filesystem blocks=2147483648
-64 block groups
-32768 blocks per group, 32768 fragments per group
-8192 inodes per group
+                  class="computeroutput">mke2fs 1.42.12 (29-Aug-2014)
+Creating filesystem with 2095104 4k blocks and 524288 inodes
+Filesystem UUID: fff08295-bede-41a9-9c6a-8c7580e520a6
 Superblock backups stored on blocks: 
-       32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
 
 Allocating group tables: done                            
 Writing inode tables: done                            
@@ -383,7 +369,7 @@ Writing superblocks and filesystem accounting information: done
                   class="userinput"><code>df -h /srv/raid-0</code></strong>
 <code
                   class="computeroutput">ファイルシス   サイズ  使用  残り 使用% マウント位置
-/dev/md0         7.9G  146M  7.4G    2% /srv/raid-0
+/dev/md0         7.9G   18M  7.4G    1% /srv/raid-0
 </code></pre><div
                 class="para">
 					<code
@@ -423,7 +409,7 @@ mdadm: array /dev/md1 started.
 <code
                   class="computeroutput">/dev/md1:
         Version : 1.2
-  Creation Time : Thu Jan 17 16:13:04 2013
+  Creation Time : Wed May  6 09:30:19 2015
      Raid Level : raid1
      Array Size : 4192192 (4.00 GiB 4.29 GB)
   Used Dev Size : 4192192 (4.00 GiB 4.29 GB)
@@ -431,7 +417,7 @@ mdadm: array /dev/md1 started.
   Total Devices : 2
     Persistence : Superblock is persistent
 
-    Update Time : Thu Jan 17 16:13:04 2013
+    Update Time : Wed May  6 09:30:40 2015
           State : clean, resyncing (PENDING) 
  Active Devices : 2
 Working Devices : 2
@@ -465,7 +451,7 @@ Working Devices : 2
                   class="command">mdadm</code> は物理デバイス同士のサイズが異なる点を指摘しています。さらに、このことによりサイズが大きい側のデバイスの一部の領域が使えなくなるため、確認が求められています。
 				</div><div
                 class="para">
-					さらに重要なことは、ミラーの状態に注意することです。RAID ミラーの正常な状態とは、両方のディスクが全く同じ内容を持っている状態です。しかしながら、ボリュームを最初に作成した直後、RAID ミラーは正常な状態であることを保証されません。このため、RAID サブシステムは RAID ミラーの正常な状態を保証するために、RAID デバイスが作成されたらすぐに同期化作業を始めます。しばらくの後 (必要な時間はディスクの実サイズに依存します…)、RAID アレイは「active」状態に移行します。同期化作業中、ミラーは信頼性低下状態で、冗長性は保証されない点に注意してください。同期化作業中にディスク障害が起きると、すべてのデータを失うことにつながる恐れがあります。しかしながら、最近作成された RAID アレイの最初の同期化作業の前に、大量の重要なデータがこの RAID アレイに保存されていることはほとんどないでしょう。信頼性低下状態であっても、<code
+					さらに重要なことは、ミラーの状態に注意することです。RAID ミラーの正常な状態とは、両方のディスクが全く同じ内容を持っている状態です。しかしながら、ボリュームを最初に作成した直後、RAID ミラーは正常な状態であることを保証されません。このため、RAID サブシステムは RAID ミラーの正常な状態を保証するために、RAID デバイスが作成されたらすぐに同期化作業を始めます。しばらくの後 (必要な時間はディスクの実サイズに依存します…)、RAID アレイは「active」または「clean」状態に移行します。同期化作業中、ミラーは信頼性低下状態で、冗長性は保証されない点に注意してください。同期化作業中にディスク障害が起きると、すべてのデータを失うことにつながる恐れがあります。しかしながら、最近作成された RAID アレイの最初の同期化作業の前に、大量の重要なデータがこの RAID アレイに保存されていることはほとんどないでしょう。信頼性低下状態であっても、<code
                   class="filename">/dev/md1</code> を利用することが可能で、ファイルシステムを作成したり、データのコピーを取ったりすることが可能、という点に注意してください。
 				</div><div
                 class="sidebar"><div
@@ -507,8 +493,8 @@ Working Devices : 2
 <code
                   class="computeroutput">/dev/md1:
 [...]
-    Update Time : Thu Jan 17 16:14:09 2013
-          State : active, degraded 
+    Update Time : Wed May  6 09:39:39 2015
+          State : clean, degraded 
  Active Devices : 1
 Working Devices : 1
  Failed Devices : 1
@@ -520,9 +506,9 @@ Working Devices : 1
 
     Number   Major   Minor   RaidDevice State
        0       8       50        0      active sync   /dev/sdd2
-       1       0        0        1      removed
+       2       0        0        2      removed
 
-       1       8       64        -      faulty spare   /dev/sde</code></pre><div
+       1       8       64        -      faulty   /dev/sde</code></pre><div
                 class="para">
 					ボリュームの内容はまだアクセスすることが可能 (そして、ボリュームがマウントされていた場合、アプリケーションはディスク障害に気が付きません) ですが、データの安全性はもはや保証されません。つまり <code
                   class="filename">sdd</code> ディスクに障害が発生した場合、データは失われます。この危険性を避けるために、われわれは障害の発生したディスクを新しいディスク <code
@@ -542,7 +528,7 @@ Working Devices : 1
   Total Devices : 3
     Persistence : Superblock is persistent
 
-    Update Time : Thu Jan 17 16:15:32 2013
+    Update Time : Wed May  6 09:48:49 2015
           State : clean, degraded, recovering 
  Active Devices : 1
 Working Devices : 2
@@ -559,7 +545,7 @@ Working Devices : 2
        0       8       50        0      active sync   /dev/sdd2
        2       8       80        1      spare rebuilding   /dev/sdf
 
-       1       8       64        -      faulty spare   /dev/sde
+       1       8       64        -      faulty   /dev/sde
 # </code><strong
                   class="userinput"><code>[...]</code></strong>
 <code
@@ -569,7 +555,7 @@ Working Devices : 2
 <code
                   class="computeroutput">/dev/md1:
 [...]
-    Update Time : Thu Jan 17 16:16:36 2013
+    Update Time : Wed May  6 09:49:08 2015
           State : clean 
  Active Devices : 2
 Working Devices : 2
@@ -584,7 +570,7 @@ Working Devices : 2
        0       8       50        0      active sync   /dev/sdd2
        2       8       80        1      active sync   /dev/sdf
 
-       1       8       64        -      faulty spare   /dev/sde</code></pre><div
+       1       8       64        -      faulty   /dev/sde</code></pre><div
                 class="para">
 					繰り返しになりますが、ボリュームはまだアクセスすることが可能ですが、ボリュームが信頼性低下状態ならば、カーネルは自動的に再構成作業を実行します。再構成作業が終了したら、RAID アレイは正常状態に戻ります。ここで、システムに <code
                   class="filename">sde</code> ディスクをアレイから削除することを伝えることが可能です。削除することで、2 台のディスクからなる古典的な RAID ミラーになります。
@@ -675,12 +661,14 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><div
+                      id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><a
+              id="idm140378006036368"
+              class="indexterm"></a><a
+              id="idm140378006035408"
+              class="indexterm"></a><div
               class="para">
-				<a
-                id="idm140421807755120"
-                class="indexterm"></a>LVM、<span
-                class="emphasis"><em>Logical Volume Manager</em></span>、は物理ディスクから論理ボリュームを抽象化する別のアプローチで、信頼性を増加させるのではなく柔軟性を増加させることに注目しています。LVM を使うことで、アプリケーションから見る限り透過的に論理ボリュームを変更することが可能です。さらに、たとえば LVM は、新しいディスクを追加し、データを新しいディスクに移行し、古いディスクを削除することが、ボリュームをアンマウントせずに可能です。
+				LVM、<span
+                class="emphasis"><em>論理ボリュームマネージャ</em></span>、は物理ディスクから論理ボリュームを抽象化する別のアプローチで、信頼性を増加させるのではなく柔軟性を増加させることに注目しています。LVM を使うことで、アプリケーションから見る限り透過的に論理ボリュームを変更することが可能です。さらに、たとえば LVM は、新しいディスクを追加し、データを新しいディスクに移行し、古いディスクを削除することが、ボリュームをアンマウントせずに可能です。
 			</div><div
               class="section"><div
                 class="titlepage"><div><div><h4
@@ -769,8 +757,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                   class="computeroutput"># </code><strong
                   class="userinput"><code>pvcreate /dev/sdb2</code></strong>
 <code
-                  class="computeroutput">  Writing physical volume data to disk "/dev/sdb2"
-  Physical volume "/dev/sdb2" successfully created
+                  class="computeroutput">  Physical volume "/dev/sdb2" successfully created
 # </code><strong
                   class="userinput"><code>pvdisplay</code></strong>
 <code
@@ -789,23 +776,19 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
 # </code><strong
                   class="userinput"><code>for i in sdc3 sdd sdf1 sdf2 ; do pvcreate /dev/$i ; done</code></strong>
 <code
-                  class="computeroutput">  Writing physical volume data to disk "/dev/sdc3"
-  Physical volume "/dev/sdc3" successfully created
-  Writing physical volume data to disk "/dev/sdd"
+                  class="computeroutput">  Physical volume "/dev/sdc3" successfully created
   Physical volume "/dev/sdd" successfully created
-  Writing physical volume data to disk "/dev/sdf1"
   Physical volume "/dev/sdf1" successfully created
-  Writing physical volume data to disk "/dev/sdf2"
   Physical volume "/dev/sdf2" successfully created
 # </code><strong
                   class="userinput"><code>pvdisplay -C</code></strong>
 <code
                   class="computeroutput">  PV         VG   Fmt  Attr PSize PFree
-  /dev/sdb2       lvm2 a--  4.00g 4.00g
-  /dev/sdc3       lvm2 a--  3.09g 3.09g
-  /dev/sdd        lvm2 a--  4.00g 4.00g
-  /dev/sdf1       lvm2 a--  4.10g 4.10g
-  /dev/sdf2       lvm2 a--  5.22g 5.22g
+  /dev/sdb2       lvm2 ---  4.00g 4.00g
+  /dev/sdc3       lvm2 ---  3.09g 3.09g
+  /dev/sdd        lvm2 ---  4.00g 4.00g
+  /dev/sdf1       lvm2 ---  4.10g 4.10g
+  /dev/sdf2       lvm2 ---  5.22g 5.22g
 </code></pre><div
                 class="para">
 					ここまでは順調です。さらに PV はディスク全体およびディスク上の各パーティションに対して設定することが可能です。上に示した通り、<code
@@ -889,7 +872,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
   VG Name                vg_critical
   LV UUID                J3V0oE-cBYO-KyDe-5e0m-3f70-nv0S-kCWbpT
   LV Write Access        read/write
-  LV Creation host, time mirwiz, 2013-01-17 17:05:13 +0100
+  LV Creation host, time mirwiz, 2015-06-10 06:10:50 -0400
   LV Status              available
   # open                 0
   LV Size                5.00 GiB
@@ -911,7 +894,7 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
 # </code><strong
                   class="userinput"><code>lvdisplay -C</code></strong>
 <code
-                  class="computeroutput">  LV         VG          Attr     LSize  Pool Origin Data%  Move Log Copy%  Convert
+                  class="computeroutput">  LV         VG          Attr     LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync  Convert
   lv_base    vg_critical -wi-a---  1.00g                                           
   lv_files   vg_critical -wi-a---  5.00g                                           
   lv_backups vg_normal   -wi-a--- 12.00g</code></pre><div
@@ -959,24 +942,26 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                   class="userinput"><code>ls -l /dev/mapper</code></strong>
 <code
                   class="computeroutput">合計 0
-crw------T 1 root root 10, 236  1月 17 16:52 control
-lrwxrwxrwx 1 root root       7  1月 17 17:05 vg_critical-lv_base -&gt; ../dm-1
-lrwxrwxrwx 1 root root       7  1月 17 17:05 vg_critical-lv_files -&gt; ../dm-0
-lrwxrwxrwx 1 root root       7  1月 17 17:05 vg_normal-lv_backups -&gt; ../dm-2
+crw------- 1 root root 10, 236  6月 10 16:52 control
+lrwxrwxrwx 1 root root       7  6月 10 17:05 vg_critical-lv_base -&gt; ../dm-1
+lrwxrwxrwx 1 root root       7  6月 10 17:05 vg_critical-lv_files -&gt; ../dm-0
+lrwxrwxrwx 1 root root       7  6月 10 17:05 vg_normal-lv_backups -&gt; ../dm-2
 # </code><strong
                   class="userinput"><code>ls -l /dev/dm-*</code></strong>
 <code
-                  class="computeroutput">brw-rw---T 1 root disk 253, 0  1月 17 17:05 /dev/dm-0
-brw-rw---T 1 root disk 253, 1  1月 17 17:05 /dev/dm-1
-brw-rw---T 1 root disk 253, 2  1月 17 17:05 /dev/dm-2
+                  class="computeroutput">brw-rw---T 1 root disk 253, 0  6月 10 17:05 /dev/dm-0
+brw-rw---- 1 root disk 253, 1  6月 10 17:05 /dev/dm-1
+brw-rw---- 1 root disk 253, 2  6月 10 17:05 /dev/dm-2
 </code></pre><div
                 class="sidebar"><div
                   class="titlepage"><div><div><p
                         class="title"><strong><span
                             class="emphasis"><em>NOTE</em></span> LVM ボリュームの自動検出</strong></p></div></div></div><div
                   class="para">
-					コンピュータの起動時、<code
-                    class="filename">/etc/init.d/lvm</code> スクリプトは利用できるデバイスを探します。そして LVM 用の物理ボリュームとして初期化されたデバイスは LVM サブシステムに登録され、ボリュームグループに所属するデバイスは組み上げられ、対応する論理ボリュームは開始され、利用できるようにされます。このため、LVM ボリュームを作成したり変更する際に設定ファイルを編集する必要はありません。
+					コンピュータの起動時に、<code
+                    class="filename">lvm2-activation</code> systemd サービスユニットは <code
+                    class="command">vgchange -aay</code> を実行してボリュームグループを「始動」します。つまり、<code
+                    class="filename">lvm2-activation</code> systemd サービスユニットは利用できるデバイスを探します。そして LVM 用の物理ボリュームとして初期化されたデバイスは LVM サブシステムに登録され、ボリュームグループに所属するデバイスは組み上げられ、対応する論理ボリュームは開始され、利用できるようにされます。このため、LVM ボリュームを作成したり変更する際に設定ファイルを編集する必要はありません。
 				</div><div
                   class="para">
 					しかしながら、LVM 要素の配置図 (物理ボリューム、論理ボリューム、ボリュームグループ) は <code
@@ -990,13 +975,13 @@ brw-rw---T 1 root disk 253, 2  1月 17 17:05 /dev/dm-2
                   class="userinput"><code>ls -l /dev/vg_critical</code></strong>
 <code
                   class="computeroutput">合計 0
-lrwxrwxrwx 1 root root 7  1月 17 17:05 lv_base -&gt; ../dm-1
-lrwxrwxrwx 1 root root 7  1月 17 17:05 lv_files -&gt; ../dm-0
+lrwxrwxrwx 1 root root 7  6月 10 17:05 lv_base -&gt; ../dm-1
+lrwxrwxrwx 1 root root 7  6月 10 17:05 lv_files -&gt; ../dm-0
 # </code><strong
                   class="userinput"><code>ls -l /dev/vg_normal</code></strong>
 <code
                   class="computeroutput">合計 0
-lrwxrwxrwx 1 root root 7  1月 17 17:05 lv_backups -&gt; ../dm-2</code></pre><div
+lrwxrwxrwx 1 root root 7  6月 10 17:05 lv_backups -&gt; ../dm-2</code></pre><div
                 class="para">
 					LV は標準的なパーティションと全く同様に取り扱われます。
 				</div><pre
@@ -1004,10 +989,9 @@ lrwxrwxrwx 1 root root 7  1月 17 17:05 lv_backups -&gt; ../dm-2</code></pre><di
                   class="computeroutput"># </code><strong
                   class="userinput"><code>mkfs.ext4 /dev/vg_normal/lv_backups</code></strong>
 <code
-                  class="computeroutput">mke2fs 1.42.5 (29-Jul-2012)
-Filesystem label=
-OS type: Linux
-Block size=4096 (log=2)
+                  class="computeroutput">mke2fs 1.42.12 (29-Aug-2014)
+Creating filesystem with 3145728 4k blocks and 786432 inodes
+Filesystem UUID: b5236976-e0e2-462e-81f5-0ae835ddab1d
 [...]
 Creating journal (32768 blocks): done
 Writing superblocks and filesystem accounting information: done 
@@ -1021,7 +1005,7 @@ Writing superblocks and filesystem accounting information: done
                   class="userinput"><code>df -h /srv/backups</code></strong>
 <code
                   class="computeroutput">ファイルシス                     サイズ  使用  残り 使用% マウント位置
-/dev/mapper/vg_normal-lv_backups    12G  158M   12G    2% /srv/backups
+/dev/mapper/vg_normal-lv_backups    12G   30M   12G    1% /srv/backups
 # </code><strong
                   class="userinput"><code>[...]</code></strong>
 <code
@@ -1030,9 +1014,9 @@ Writing superblocks and filesystem accounting information: done
                   class="userinput"><code>cat /etc/fstab</code></strong>
 <code
                   class="computeroutput">[...]
-/dev/vg_critical/lv_base    /srv/base       ext4
-/dev/vg_critical/lv_files   /srv/files      ext4
-/dev/vg_normal/lv_backups   /srv/backups    ext4</code></pre><div
+/dev/vg_critical/lv_base    /srv/base       ext4 defaults 0 2
+/dev/vg_critical/lv_files   /srv/files      ext4 defaults 0 2
+/dev/vg_normal/lv_backups   /srv/backups    ext4 defaults 0 2</code></pre><div
                 class="para">
 					アプリケーションにしてみれば、無数の小さなパーティションがわかり易い名前を持つ 1 つの大きな 12 GB のボリュームにまとめられたことになります。
 				</div></div><div
@@ -1056,7 +1040,7 @@ Writing superblocks and filesystem accounting information: done
 # </code><strong
                   class="userinput"><code>lvdisplay -C vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Move Log Copy%  Convert
+                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Meta%  Move Log Cpy%Sync  Convert
   lv_files vg_critical -wi-ao-- 5.00g
 # </code><strong
                   class="userinput"><code>vgdisplay -C vg_critical</code></strong>
@@ -1066,21 +1050,20 @@ Writing superblocks and filesystem accounting information: done
 # </code><strong
                   class="userinput"><code>lvresize -L 7G vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">  Extending logical volume lv_files to 7.00 GB
+                  class="computeroutput">  Size of logical volume vg_critical/lv_files changed from 5.00 GiB (1280 extents) to 7.00 GiB (1792 extents).
   Logical volume lv_files successfully resized
 # </code><strong
                   class="userinput"><code>lvdisplay -C vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Move Log Copy%  Convert
+                  class="computeroutput">  LV       VG          Attr     LSize Pool Origin Data%  Meta%  Move Log Cpy%Sync  Convert
   lv_files vg_critical -wi-ao-- 7.00g
 # </code><strong
                   class="userinput"><code>resize2fs /dev/vg_critical/lv_files</code></strong>
 <code
-                  class="computeroutput">resize2fs 1.42.5 (29-Jul-2012)
+                  class="computeroutput">resize2fs 1.42.12 (29-Aug-2014)
 Filesystem at /dev/vg_critical/lv_files is mounted on /srv/files; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
-Performing an on-line resize of /dev/vg_critical/lv_files to 1835008 (4k) blocks.
-The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
+The filesystem on /dev/vg_critical/lv_files is now 1835008 (4k) blocks long.
 
 # </code><strong
                   class="userinput"><code>df -h /srv/files/</code></strong>
@@ -1123,8 +1106,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                   class="computeroutput"># </code><strong
                   class="userinput"><code>pvcreate /dev/sdb1</code></strong>
 <code
-                  class="computeroutput">  Writing physical volume data to disk "/dev/sdb1"
-  Physical volume "/dev/sdb1" successfully created
+                  class="computeroutput">  Physical volume "/dev/sdb1" successfully created
 # </code><strong
                   class="userinput"><code>vgextend vg_critical /dev/sdb1</code></strong>
 <code
@@ -1168,7 +1150,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                           class="emphasis"><em>NOTE</em></span> 性能を重要視する場合…</strong></p></div></div></div><div
                 class="para">
 				入出力速度が最重要の場合、特にアクセス速度という意味で、LVM および RAID を組み合わせて使うと性能に少なからず影響を与え、どの方式を採用するか関する議論に影響を与えます。しかしながら、性能差は極めて少なく、この程度の性能差が無視できない場合は極めて少ないと言えるでしょう。性能が重要な場合、実現できる最良の改善方針は非回転ストレージメディア (<a
-                  id="idm140421809575536"
+                  id="idm140378006510032"
                   class="indexterm"></a><span
                   class="emphasis"><em>ソリッドステートドライブ</em></span>や SSD) を使うことです。SSD のメガバイト当たりの費用は標準的なハードディスクドライブよりも高価で、SSD の容量は通常小さいですが、SSD はランダムアクセスで素晴らしい性能を発揮します。ファイルシステムに広く分散された位置から数多くの入出力を行うような場合、たとえば複雑な問い合わせが定期的に実行されるデータベースの場合、SSD 上にデータベースを置くことは、RAID over LVM または LVM over RAID 上にデータベースを置くことよりも、良好な性能が手に入ります。このような場合、純粋な速度だけでなく他の要素も検討した上で採用の可否を決定するべきです。なぜなら、性能が必要な場合、SSD を採用することが最も短絡的な解決策だからです。
 			</div></div><div
@@ -1191,20 +1173,20 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 blocks long.
                 class="userinput"><code>fdisk -l /dev/sda</code></strong>
 <code
                 class="computeroutput">
-Disk /dev/hda: 300.0 GB, 300090728448 bytes
-255 heads, 63 sectors/track, 36483 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
+Disk /dev/sda: 300 GB, 300090728448 bytes, 586114704 sectors
+Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
 Disk identifier: 0x00039a9f
 
-   Device Boot      Start      End      Blocks   Id  System
-/dev/sda1   *           1      124      995998+  fd  Linux raid autodetect
-/dev/sda2             125      248      996030   82  Linux swap / Solaris
-/dev/sda3             249    36483   291057637+   5  Extended
-/dev/sda5             249    12697    99996561   fd  Linux raid autodetect
-/dev/sda6           12698    25146    99996561   fd  Linux raid autodetect
-/dev/sda7           25147    36483    91064421   8e  Linux LVM</code></pre><div
+Device    Boot     Start       End   Sectors Size Id Type
+/dev/sda1 *         2048   1992060   1990012 1.0G fd Linux raid autodetect
+/dev/sda2        1992061   3984120   1992059 1.0G 82 Linux swap / Solaris
+/dev/sda3        4000185 586099395 582099210 298G 5  Extended
+/dev/sda5        4000185 203977305 199977120 102G fd Linux raid autodetect
+/dev/sda6      203977306 403970490 199993184 102G fd Linux raid autodetect
+/dev/sda7      403970491 586099395 182128904  93G 8e Linux LVM</code></pre><div
               xmlns:d="http://docbook.org/ns/docbook"
               class="itemizedlist"><ul><li
                   class="listitem"><div

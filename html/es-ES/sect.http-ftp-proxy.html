@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-es-ES-1.0-1" /><meta
@@ -81,19 +81,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					Servidor de filtro: si el uso del proxy es obligatorio (y se bloquean las conexiones salientes a menos que sean a través del proxy), entonces el proxy puede determinar si se permite o no el pedido.
 				</div></li></ul></div><a
-          id="idm140549200393248"
+          id="idm140401134104176"
           class="indexterm"></a><a
-          id="idm140549200392480"
+          id="idm140401134103408"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp eligió a Squid como su servidor proxy.
 		</div><a
-          id="idm140549200391248"
+          id="idm140401134102176"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140549200390480"></a>11.6.1. Instalación</h3></div></div></div><div
+                    id="idm140401134101408"></a>11.6.1. Instalación</h3></div></div></div><div
             class="para">
 				The <span
               class="pkg pkg">squid3</span> Debian package only contains the modular (caching) proxy. Turning it into a filtering server requires installing the additional <span
@@ -109,39 +109,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140549200385200"></a>11.6.2. Configuración de un caché</h3></div></div></div><div
+                    id="idm140401134096128"></a>11.6.2. Configuración de un caché</h3></div></div></div><div
             class="para">
 				Enabling the caching server feature is a simple matter of editing the <code
               class="filename">/etc/squid3/squid.conf</code> configuration file and allowing machines from the local network to run queries through the proxy. The following example shows the modifications made by the Falcot Corp administrators:
 			</div><div
             class="example"><a
-              id="idm140549200383488"></a><p
+              id="idm140401134094416"></a><p
               class="title"><strong>Ejemplo 11.30. The <code
                   class="filename">/etc/squid3/squid.conf</code> file (excerpts)</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-# INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS
+# AGREGUE SUS PROPIAS REGLAS AQUÍ PARA PERMITIR ACCESO DE SUS CLIENTES
 
-# Example rule allowing access from your local networks. Adapt
-# to list your (internal) IP networks from where browsing should
-# be allowed
+# Regla de ejemplo que permite acceso desde su red local. Adáptela
+# para incluir sus redes IP (internas) desde las que se debe
+# permitir navegar
 acl our_networks src 192.168.1.0/24 192.168.2.0/24
 http_access allow our_networks
 http_access allow localhost
-# And finally deny all other access to this proxy
+# Finalmente, negar todo otro acceso a este proxy
 http_access deny all
 </pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140549200381424"></a>11.6.3. Configuración de un filtro</h3></div></div></div><div
+                    id="idm140401134092336"></a>11.6.3. Configuración de un filtro</h3></div></div></div><div
             class="para">
 				<code
               class="command">squid</code> en sí mismo no realiza el filtrado; esta acción es delegada a <code
               class="command">squidGuard</code>. Debe configurar el primero para que interactúe con este último. Esto incluye agregar la siguiente directiva en el archivo <code
               class="filename">/etc/squid/squid.conf</code>:
 			</div><a
-            id="idm140549200379024"
+            id="idm140401134089936"
             class="indexterm"></a><pre
             class="programlisting">
 redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
@@ -169,15 +169,15 @@ redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
               class="url">→ <a
                 href="http://www.squidguard.org/Doc/configure.html">http://www.squidguard.org/Doc/configure.html</a></div>
 			</div><a
-            id="idm140549200370160"
+            id="idm140401134081072"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVA</em></span> DansGuardian</strong></p></div></div></div><a
-              id="idm140549200368368"
+              id="idm140401134079280"
               class="indexterm"></a><a
-              id="idm140549200367232"
+              id="idm140401134078144"
               class="indexterm"></a><div
               class="para">
 				El paquete <span

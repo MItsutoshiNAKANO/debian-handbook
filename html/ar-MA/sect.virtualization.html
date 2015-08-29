@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-ar-MA-1.0-1" /><meta
@@ -68,26 +68,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.virtualization"></a>12.2. الحوسبة الظاهرية</h2></div></div></div><div
+                  id="sect.virtualization"></a>12.2. الحوسبة الظاهرية</h2></div></div></div><a
+          id="idm140629366270496"
+          class="indexterm"></a><div
           class="para">
-			<a
-            id="idm139981751975184"
-            class="indexterm"></a> الحوسبة الظاهرية (virtualization) هي إحدى أهم تطورات الحوسبة في السنوات الأخيرة. يغطي المصطلح العديد من المفاهيم والتقنيات المستخدمة لمحاكاة الحواسيب الظاهرية بدرجات متفاوتة من الاستقلال عن العتاد الفعلي. يمكن لمخدم فيزيائي واحد عندها أن يستضيف العديد من الأنظمة التي تعمل في الوقت نفسه بمعزل عن بعضها. تطبيقات هذه التقنية عديدة، وهي مشتقة غالبًا من فكرة العزل: كاختبار بيئات لها إعدادات مختلفة مثلاً، أو فصل الخدمات المقدمة عبر حواسيب ظاهرية (virtual) مختلفة لزيادة الأمن.
+			Virtualization is one of the most major advances in the recent years of computing. The term covers various abstractions and techniques simulating virtual computers with a variable degree of independence on the actual hardware. One physical server can then host several systems working at the same time and in isolation. Applications are many, and often derive from this isolation: test environments with varying configurations for instance, or separation of hosted services across different virtual machines for security.
 		</div><div
           class="para">
 			هناك الكثير من حلول الحوسبة الظاهرية، لكل منها ميزاته وعيوبه. يركز هذا الكتاب على Xen، و LXC، وKVM، لكن هناك حلول أخرى تستحق الذكر منها:
 		</div><a
-          id="idm139981751972848"
+          id="idm140629366267840"
           class="indexterm"></a><a
-          id="idm139981751971728"
+          id="idm140629366266720"
           class="indexterm"></a><a
-          id="idm139981751970608"
+          id="idm140629366265600"
           class="indexterm"></a><a
-          id="idm139981751969488"
+          id="idm140629366264480"
           class="indexterm"></a><a
-          id="idm139981751951872"
+          id="idm140629366263360"
           class="indexterm"></a><a
-          id="idm139981751950752"
+          id="idm140629366262240"
           class="indexterm"></a><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.xen"></a>12.2.1. ‏Xen</h3></div></div></div><div
             class="para">
 				Xen<a
-              id="idm139981751938096"
+              id="idm140629366249584"
               class="indexterm"></a> هو حل محاكاة ”شبه ظاهرية – paravirtualization“. يقدم Xen طبقة عزل رقيقة، تدعى ”المشرف – hypervisor“، بين العتاد والأنظمة العليا؛ تعمل بمثابة مرجع يتحكم بالوصول للعتاد من الحواسيب الظاهرية. لكنها تعالج عدداً قليلاً من التعليمات، أما البقية فتنفذ مباشرة على العتاد بالنيابة عن الأنظمة الظاهرية. الميزة الأساسية هي أن مستوى الأداء لا ينخفض، والنظم تعمل بسرعات تقترب من السرعة الأصلية؛ لكن نقطة الضعف هي أن نوى نظم التشغيل التي يمكن استخدامها مع مشرف Xen يجب تعديلها لتناسب العمل على Xen.
 			</div><div
             class="para">
@@ -143,46 +143,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   href="http://wiki.xenproject.org/wiki/XenParavirtOps">http://wiki.xenproject.org/wiki/XenParavirtOps</a></div>
 			</div><div
               class="para">
-				بما أن <span
-                class="distribution distribution">ويزي</span> تعتمد على الإصدار 3.2 من النواة لينكس، فإن الحزم النظامية <span
-                class="pkg pkg">linux-image-686-pae</span> و<span
-                class="pkg pkg">linux-image-amd64</span> تحوي الكود اللازم، والترقيع الخاص بالتوزيعة الذي كان لازماً مع <span
-                class="distribution distribution">سكويز</span> والنسخ السابقة من دبيان لم يعد مطلوباً. <div
+				Since <span
+                class="distribution distribution">Jessies</span> is based on version 3.16 of the Linux kernel, the standard <span
+                class="pkg pkg">linux-image-686-pae</span> and <span
+                class="pkg pkg">linux-image-amd64</span> packages include the necessary code, and the distribution-specific patching that was required for <span
+                class="distribution distribution">Squeeze</span> and earlier versions of Debian is no more. <div
                 class="url">→ <a
                   href="http://wiki.xenproject.org/wiki/Xen_Kernel_Feature_Matrix">http://wiki.xenproject.org/wiki/Xen_Kernel_Feature_Matrix</a></div>
 			</div></div><div
-            class="para">
-				استخدام Xen في دبيان يحتاج ثلاثة مكونات:
-			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ملاحظة</em></span> المعماريات المتوافقة مع Xen</strong></p></div></div></div><div
               class="para">
-				حاليًا Xen متوفر فقط لمعمارية i386 و amd64. بالإضافة لذلك، فهو يستخدم تعليمات للمعالج لم تكن متوفرة دومًا في جميع حواسيب i386. لاحظ أن معظم معالجات بنتيوم (أو الأحدث) التي صنعت بعد 2001 سوف تعمل، لذلك لا ينطبق هذا القيد على الكثير من الحالات.
+				Xen is currently only available for the i386, amd64, arm64 and armhf architectures.
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ثقافة</em></span> Xen والنوى المختلفة عن لينكس</strong></p></div></div></div><div
               class="para">
-				يحتاج Xen لتعديل جميع نظم التشغيل التي يريد المرء تشغيلها عليه؛ لا تتمتع جميع النوى بدرجة النضج نفسها في هذا المجال. العديد من النوى تعمل بالكامل، سواء في dom0 أو domU: لينكس 3.0 وما بعد، وNetBSD 4.0 وما بعد، وOpenSolaris. أما النوى الأخرى مثل OpenBSD 4.0، وFreeBSD 8 و Plan 9، تعمل فقط في domU.
+				Xen requires modifications to all the operating systems one wants to run on it; not all kernels have the same level of maturity in this regard. Many are fully-functional, both as dom0 and domU: Linux 3.0 and later, NetBSD 4.0 and later, and OpenSolaris. Others only work as a domU. You can check the status of each operating system in the Xen wiki: <div
+                class="url">→ <a
+                  href="http://wiki.xenproject.org/wiki/Dom0_Kernels_for_Xen">http://wiki.xenproject.org/wiki/Dom0_Kernels_for_Xen</a></div> <div
+                class="url">→ <a
+                  href="http://wiki.xenproject.org/wiki/DomU_Support_for_Xen">http://wiki.xenproject.org/wiki/DomU_Support_for_Xen</a></div>
 			</div><div
               class="para">
 				لكن إذا كان Xen يستطيع الاعتماد على تعليمات العتاد المختصة بالمحاكاة (المتوفرة فقط في المعالجات الأحدث)، فيمكن تشغيل النظم غير المعدلة أيضًا في domU (بما في ذلك Windows).
 			</div></div><div
+            class="para">
+				استخدام Xen في دبيان يحتاج ثلاثة مكونات:
+			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
                 class="listitem"><div
                   class="para">
-						المشرف نفسه. الحزمة المناسبة هي إما <span
-                    class="pkg pkg">xen-hypervisor-4.1-i386</span> أو <span
-                    class="pkg pkg">xen-hypervisor-4.1-amd64</span>. حسب العتاد المتوفر.
+						The hypervisor itself. According to the available hardware, the appropriate package will be either <span
+                    class="pkg pkg">xen-hypervisor-4.4-amd64</span>, <span
+                    class="pkg pkg">xen-hypervisor-4.4-armhf</span>, or <span
+                    class="pkg pkg">xen-hypervisor-4.4-arm64</span>.
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						نواة تعمل فوق المشرف. أي نواة أحدث من 3.0 سوف تعمل، بما في ذلك الإصدارة 3.2 المعتمدة في <span
-                    class="distribution distribution">ويزي</span>.
+						A kernel that runs on that hypervisor. Any kernel more recent than 3.0 will do, including the 3.16 version present in <span
+                    class="distribution distribution">Jessie</span>.
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -190,10 +195,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="pkg pkg">libc6-xen</span>.
 					</div></li></ul></div><div
             class="para">
-				لتفادي عناء اختيار هذه المكونات يدويًا، تم توفير عدد من الحزم المريحة للمستخدم (مثل <span
-              class="pkg pkg">xen-linux-system-686-pae</span> و<span
-              class="pkg pkg">xen-linux-system-amd64</span>)؛ كل من هذه الحزم تسحب تجميعة من حزم المشرف والنواة معروفة بتناسبها. يحضر المشرف معه أيضًا حزمة <span
-              class="pkg pkg">xen-utils-4.1</span>، التي تحوي أدوات للتحكم بالمشرف من dom0. تحضر هذه الحزمة بدورها المكتبة القياسية المناسبة. خلال تثبيت كل هذا، تنشئ سكربتات الإعداد أيضًا مدخلة جديدة في قائمة محمل الإقلاع Grub، لبدء تشغيل النواة المختارة لنطاق dom0. لكن لاحظ أن هذه المدخلة لا تكون الأولى عادة في القائمة، ولذلك لن تحدد افتراضيًا. إذا لم يكن هذا السلوك مرغوبًا، يمكن تغييره بالأوامر التالي:
+				In order to avoid the hassle of selecting these components by hand, a few convenience packages (such as <span
+              class="pkg pkg">xen-linux-system-amd64</span>) have been made available; they all pull in a known-good combination of the appropriate hypervisor and kernel packages. The hypervisor also brings <span
+              class="pkg pkg">xen-utils-4.4</span>, which contains tools to control the hypervisor from the dom0. This in turn brings the appropriate standard library. During the installation of all that, configuration scripts also create a new entry in the Grub bootloader menu, so as to start the chosen kernel in a Xen dom0. Note however that this entry is not usually set to be the first one in the list, and will therefore not be selected by default. If that is not the desired behavior, the following commands will change it:
 			</div><pre
             class="screen"><code
               class="computeroutput"># </code><strong
@@ -234,12 +238,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="listitem"><div
                   class="para">
 						<code
-                    dir="ltr"
-                    class="literal">--debootstrap</code>، لتثبيت النظام الجديد مع <code
-                    class="command">debootstrap</code>؛ في تلك الحالة، يستخدم خيار <code
-                    dir="ltr"
-                    class="literal">--dist</code> أيضًا أغلب الأحيان (مع اسم توزيعة ما مثل <span
-                    class="distribution distribution">wheezy</span>).
+                    class="literal">--debootstrap</code>, to cause the new system to be installed with <code
+                    class="command">debootstrap</code>; in that case, the <code
+                    class="literal">--dist</code> option will also most often be used (with a distribution name such as <span
+                    class="distribution distribution">jessie</span>).
 					</div><div
                   class="sidebar"><div
                     class="titlepage"><div><div><p
@@ -281,21 +283,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><pre
             class="screen"><code
               class="computeroutput"># </code><strong
-              class="userinput"><code>xen-create-image --hostname testxen --dhcp --dir /srv/testxen --size=2G --dist=wheezy --role=udev</code></strong>
+              class="userinput"><code>xen-create-image --hostname testxen --dhcp --dir /srv/testxen --size=2G --dist=jessie --role=udev</code></strong>
 <code
               class="computeroutput">
 [...]
 General Information
 --------------------
 Hostname       :  testxen
-Distribution   :  wheezy
+Distribution   :  jessie
 Mirror         :  http://ftp.debian.org/debian/
 Partitions     :  swap            128Mb (swap)
                   /               2G    (ext3)
 Image type     :  sparse
 Memory size    :  128Mb
-Kernel path    :  /boot/vmlinuz-3.2.0-4-686-pae
-Initrd path    :  /boot/initrd.img-3.2.0-4-686-pae
+Kernel path    :  /boot/vmlinuz-3.16.0-4-amd64
+Initrd path    :  /boot/initrd.img-3.16.0-4-amd64
 [...]
 Logfile produced at:
          /var/log/xen-tools/testxen.log
@@ -303,10 +305,11 @@ Logfile produced at:
 Installation Summary
 ---------------------
 Hostname        :  testxen
-Distribution    :  wheezy
+Distribution    :  jessie
+MAC Address     :  00:16:3E:8E:67:5C
 IP-Address(es)  :  dynamic
 RSA Fingerprint :  0a:6e:71:98:95:46:64:ec:80:37:63:18:73:04:dd:2b
-Root Password   :  48su67EW
+Root Password   :  adaX2jyRHNuWm8BDJS7PcEJ
 </code></pre><div
             class="para">
 				لدينا الآن حاسوب ظاهري، لكنه لا يعمل حاليًا (وبالتالي فهو لا يشغل سوى المساحة على القرص الصلب في dom0). طبعاً يمكننا إنشاء المزيد من الصور، وربما استخدمنا بارامترات أخرى.
@@ -342,13 +345,12 @@ Root Password   :  48su67EW
               class="filename">xenbr0</code>. يرتب مشرف Xen هذه الواجهات في التخطيط الذي يعرفه المستخدم، حيث يتم التحكم بأدوات من فضاء المستخدم (user-space tools). سوف نقتصر على شرح النموذج الجسري، بما أن نموذج NAT ونموذج التوجيه يناسبان بعض الحالات الخاصة فقط.
 			</div><div
             class="para">
-				الإعداد القياسي لحزم Xen لا يؤثر على إعداد الشبكة للنظام. لكن خدمة <code
-              class="command">xend</code> معدّة لدمج الواجهات الشبكية الظاهرية في أي جسر شبكة سابق (يأخذ <code
-              class="filename">xenbr0</code> الأولوية إذا كان هناك أكثر من جسر واحد). علينا إذاً إعداد جسر في <code
-              dir="ltr"
-              class="filename">/etc/network/interfaces</code> (وهذا يحتاج تثبيت حزمة <span
-              class="pkg pkg">bridge-utils</span>، ولهذا السبب توصي بها حزمة <span
-              class="pkg pkg">xen-utils-4.1</span>) لاستبدال المدخلة السابقة eth0:
+				The standard configuration of the Xen packages does not change the system-wide network configuration. However, the <code
+              class="command">xend</code> daemon is configured to integrate virtual network interfaces into any pre-existing network bridge (with <code
+              class="filename">xenbr0</code> taking precedence if several such bridges exist). We must therefore set up a bridge in <code
+              class="filename">/etc/network/interfaces</code> (which requires installing the <span
+              class="pkg pkg">bridge-utils</span> package, which is why the <span
+              class="pkg pkg">xen-utils-4.4</span> package recommends it) to replace the existing eth0 entry:
 			</div><pre
             class="programlisting">auto xenbr0
 iface xenbr0 inet dhcp
@@ -356,26 +358,40 @@ iface xenbr0 inet dhcp
     bridge_maxwait 0
 </pre><div
             class="para">
-				بعد إعادة التشغيل للتأكد أن الجسر يُنشَأ آليَّاً، يمكننا الآن تشغيل domU باستخدام أدوات التحكم بـXen، بالأخص الأمر <code
-              class="command">xm</code>. يسمح هذا الأمر بإجراء العديد من التعديلات على النطاقات، مثل سردها أو تشغيلها وإيقافها.
+				After rebooting to make sure the bridge is automatically created, we can now start the domU with the Xen control tools, in particular the <code
+              class="command">xl</code> command. This command allows different manipulations on the domains, including listing them and, starting/stopping them.
 			</div><pre
             class="screen"><code
               class="computeroutput"># </code><strong
-              class="userinput"><code>xm list</code></strong>
+              class="userinput"><code>xl list</code></strong>
 <code
               class="computeroutput">Name                                        ID   Mem VCPUs      State   Time(s)
 Domain-0                                     0   463     1     r-----      9.8
 # </code><strong
-              class="userinput"><code>xm create testxen.cfg</code></strong>
+              class="userinput"><code>xl create /etc/xen/testxen.cfg</code></strong>
 <code
-              class="computeroutput">Using config file "/etc/xen/testxen.cfg".
-Started domain testxen (id=1)
+              class="computeroutput">Parsing config from /etc/xen/testxen.cfg
 # </code><strong
-              class="userinput"><code>xm list</code></strong>
+              class="userinput"><code>xl list</code></strong>
 <code
               class="computeroutput">Name                                        ID   Mem VCPUs      State   Time(s)
 Domain-0                                     0   366     1     r-----     11.4
 testxen                                      1   128     1     -b----      1.1</code></pre><div
+            class="sidebar"><div
+              class="titlepage"><div><div><p
+                    class="title"><strong><span
+                        class="emphasis"><em>TOOL</em></span> Choice of toolstacks to manage Xen VM</strong></p></div></div></div><a
+              id="idm140629366168704"
+              class="indexterm"></a><a
+              id="idm140629366167584"
+              class="indexterm"></a><div
+              class="para">
+				In Debian 7 and older releases, <code
+                class="command">xm</code> was the reference command line tool to use to manage Xen virtual machines. It has now been replaced by <code
+                class="command">xl</code> which is mostly backwards compatible. But those are not the only available tools: <code
+                class="command">virsh</code> of libvirt and <code
+                class="command">xe</code> of XenServer's XAPI (commercial offering of Xen) are alternative tools.
+			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
@@ -390,17 +406,17 @@ testxen                                      1   128     1     -b----      1.1</
               class="filename">testxen</code> يستهلك ذاكرة حقيقية من الـRAM المتاحة للنطاق dom0، وليست ذاكرة ظاهرية. يجب أخذ الحيطة إذن عند بناء مخدم لاستضافة نسخ Xen، وتزويده بذاكرة فيزيائية مناسبة.
 			</div><div
             class="para">
-				ڤوالا! آلتنا الظاهرية قيد الإقلاع. يمكننا الوصول إليها بإحدى طريقتين. الطريقة المعتادة هي الاتصال بها ”عن بعد“ عبر الشبكة، كما كنا سنتصل بأي حاسب حقيقي؛ هذا يحتاج عادة مخدم DHCP أو بعض إعدادات DNS. الطريقة الأخرى، ولعلها الطريقة الوحيدة إذا كانت إعدادات الشبكة غير صحيحة، هي استخدام طرفية <code
-              class="filename">hvc0</code>، باستخدام الأمر <code
-              class="command">xm console</code>:
+				Voilà! Our virtual machine is starting up. We can access it in one of two modes. The usual way is to connect to it “remotely” through the network, as we would connect to a real machine; this will usually require setting up either a DHCP server or some DNS configuration. The other way, which may be the only way if the network configuration was incorrect, is to use the <code
+              class="filename">hvc0</code> console, with the <code
+              class="command">xl console</code> command:
 			</div><pre
             class="screen"><code
               class="computeroutput"># </code><strong
-              class="userinput"><code>xm console testxen</code></strong>
+              class="userinput"><code>xl console testxen</code></strong>
 <code
               class="computeroutput">[...]
 
-Debian GNU/Linux 7.0 testxen hvc0
+Debian GNU/Linux 8 testxen hvc0
 
 testxen login: </code></pre><div
             class="para">
@@ -413,43 +429,42 @@ testxen login: </code></pre><div
                     class="title"><strong><span
                         class="emphasis"><em>تلميح</em></span> الوصول للطرفية مباشرة</strong></p></div></div></div><div
               class="para">
-				أحياناً يرغب المرء بتشغيل domU والوصول إلى طرفية النظام فوراً؛ ولذلك يقبل الأمر <code
-                class="command">xm create</code> الخيار <code
-                dir="ltr"
-                class="literal">-c</code>. تشغيل domU مع هذا الخيار سوف يعرض كل الرسائل مع إقلاع النظام.
+				Sometimes one wishes to start a domU system and get to its console straight away; this is why the <code
+                class="command">xl create</code> command takes a <code
+                class="literal">-c</code> switch. Starting a domU with this switch will display all the messages as the system boots.
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>أدوات</em></span> OpenXenManager</strong></p></div></div></div><div
               class="para">
-				OpenXenManager (من الحزمة <span
-                class="pkg pkg">openxenmanager</span>) هي واجهة رسومية تسمح بإدارة نطاقات Xen عن بعد بالاستفادة من Xen API. تستطيع هذه الواجهة إذن التحكم بنطاقات Xen عن بعد، وهي توفر معظم مزايا الأمر <code
-                class="command">xm</code>.
+				OpenXenManager (in the <span
+                class="pkg pkg">openxenmanager</span> package) is a graphical interface allowing remote management of Xen domains via Xen's API. It can thus control Xen domains remotely. It provides most of the features of the <code
+                class="command">xl</code> command.
 			</div></div><div
             class="para">
-				بعد أن يعمل domU، يمكن استخدامه مثل أي مخدم آخر (بما أنه نظام غنو/لينكس في النهاية). لكن بما أنه حاسب ظاهري فهذه الحالة تسمح ببعض المزايا الإضافية. مثلاً، يمكن إيقاف عمل domU مؤقتاً ثم استكماله، بالأمرين <code
-              class="command">xm pause</code> و<code
-              class="command">xm unpause</code>. لاحظ أن الذاكرة المخصصة للنطاق domU تبقى محجوزة أثناء الإيقاف المؤقت، رغم أنه لا يستهلك أي طاقة حسابية من المعالج. الأمران <code
-              class="command">xm save</code> و<code
-              class="command">xm restore</code> جديران بالاهتمام أيضًا: حفظ domU يحرر الموارد التي كان يستهلكها، بما في ذلك ذاكرة RAM. لا يلاحظ domU عند استعادته (أو استكمال عمله) أي شيء إلا مرور الزمن. إذا كان domU يعمل عند إيقاف تشغيل dom0، فسوف تحفظ سكربتات الحزمة حالة domU آليًا، وتستعيدها عند الإقلاع التالي. هذا يؤدي طبعاً للمتاعب التي تظهر عادة عند إسبات الحاسب المحمول. على سبيل المثال؛ إذا تعلق domU لفترة طويلة، فقد تلغى اتصالاته الشبكية. لاحظ أيضًا أن Xen حتى الآن غير متوافق مع شريحة واسعة من واجهة ACPI لإدارة الطاقة، ما يحول دون إمكانية إسبات النظام المستضيف (dom0).
+				Once the domU is up, it can be used just like any other server (since it is a GNU/Linux system after all). However, its virtual machine status allows some extra features. For instance, a domU can be temporarily paused then resumed, with the <code
+              class="command">xl pause</code> and <code
+              class="command">xl unpause</code> commands. Note that even though a paused domU does not use any processor power, its allocated memory is still in use. It may be interesting to consider the <code
+              class="command">xl save</code> and <code
+              class="command">xl restore</code> commands: saving a domU frees the resources that were previously used by this domU, including RAM. When restored (or unpaused, for that matter), a domU doesn't even notice anything beyond the passage of time. If a domU was running when the dom0 is shut down, the packaged scripts automatically save the domU, and restore it on the next boot. This will of course involve the standard inconvenience incurred when hibernating a laptop computer, for instance; in particular, if the domU is suspended for too long, network connections may expire. Note also that Xen is so far incompatible with a large part of ACPI power management, which precludes suspending the host (dom0) system.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>توثيق</em></span> خيارات <code
-                        class="command">xm</code></strong></p></div></div></div><div
+                        class="emphasis"><em>DOCUMENTATION</em></span> <code
+                        class="command">xl</code> options</strong></p></div></div></div><div
               class="para">
-				تحتاج معظم أوامر <code
-                class="command">xm</code> الفرعية إلى متغير واحد أو أكثر، غالبًا هي اسم domU. هذه المتغيرات مشروحة بشكل جيد في صفحة التعليمات <span
+				Most of the <code
+                class="command">xl</code> subcommands expect one or more arguments, often a domU name. These arguments are well described in the <span
                 class="citerefentry"><span
-                  class="refentrytitle">xm</span>(1)</span>‎.
+                  class="refentrytitle">xl</span>(1)</span> manual page.
 			</div></div><div
             class="para">
-				يمكن إيقاف أو إعادة تشغيل domU إما من داخل domU نفسه (بالأمر <code
-              class="command">shutdown</code>) أو من dom0، بالأمر <code
-              class="command">xm shutdown</code> أو <code
-              class="command">xm reboot</code>.
+				Halting or rebooting a domU can be done either from within the domU (with the <code
+              class="command">shutdown</code> command) or from the dom0, with <code
+              class="command">xl shutdown</code> or <code
+              class="command">xl reboot</code>.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -463,12 +478,12 @@ testxen login: </code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.lxc"></a>12.2.2. ‏LXC </h3></div></div></div><div
+                    id="sect.lxc"></a>12.2.2. ‏LXC </h3></div></div></div><a
+            id="idm140629366134256"
+            class="indexterm"></a><div
             class="para">
-				بالرغم من أن LXC يستخدم لبناء ”حواسيب ظاهرية“، <a
-              id="idm139981751827408"
-              class="indexterm"></a> إلا أن LXC –إذا تحرينا الدقة– ليس نظام محاكاة، بل هو نظام لعزل مجموعات من العمليات عن بعضها مع أنها تعمل على نفس الحاسب المستضيف. يستفيد هذا النظام من مجموعة من التطورات الحديثة في النواة لينكس، التي تعرف باسم مجموعات التحكم—<span
-              class="emphasis"><em>control groups</em></span>، التي تسمح لعدة زمر مختلفة من العمليات التي تدعى ”المجموعات“ برؤية بعض مظاهر النظام الكلي بشكل مختلف. من أبرز هذه المظاهر هي أرقام تعريف العمليات PIDs، وإعدادات الشبكة، ونقاط الربط في نظام الملفات. لا تستطيع أي مجموعة عمليات معزولة مثل هذه الوصول بأي شكل إلى العمليات الأخرى في النظام، كما يمكن تقييد وصولها إلى نظام الملفات بجزء فرعي محدد. يمكن لها أن تملك واجهة شبكية وجدول توجيه خاصين بها، ويمكن ضبطها حتى ترى مجموعة جزئية فقط من الأجهزة المتاحة المتصلة بالنظام.
+				Even though it is used to build “virtual machines”, LXC is not, strictly speaking, a virtualization system, but a system to isolate groups of processes from each other even though they all run on the same host. It takes advantage of a set of recent evolutions in the Linux kernel, collectively known as <span
+              class="emphasis"><em>control groups</em></span>, by which different sets of processes called “groups” have different views of certain aspects of the overall system. Most notable among these aspects are the process identifiers, the network configuration, and the mount points. Such a group of isolated processes will not have any access to the other processes in the system, and its accesses to the filesystem can be restricted to a specific subset. It can also have its own network interface and routing table, and it may be configured to only see a subset of the available devices present on the system.
 			</div><div
             class="para">
 				يمكن جمع هذه المزايا لعزل عائلة كاملة من العمليات بدءاً من العملية <code
@@ -486,9 +501,9 @@ testxen login: </code></pre><div
               class="itemizedlist"><ul><li
                   class="listitem"><div
                     class="para">
-						لا تسمح نواة <span
-                      class="distribution distribution">ويزي</span> القياسية تحديد كمية الذاكرة المتاحة لكل حاوية؛ الميزة موجودة، ومبنية في النواة، لكنها معطلة افتراضيًا لأن لها كلفة (طفيفة) على أداء النظام الكلي؛ على أية حال، تفعيلها بسيط جداً بإضافة الخيار <code
-                      class="command">cgroup_enable=memory</code> لسطر أوامر النواة عند الإقلاع؛
+						the <span
+                      class="distribution distribution">Jessie</span> standard kernel does not allow limiting the amount of memory available to a container; the feature exists, and is built in the kernel, but it is disabled by default because it has a (slight) cost on overall system performance; however, enabling it is a simple matter of setting the <code
+                      class="command">cgroup_enable=memory</code> kernel command-line option at boot time;
 					</div></li><li
                   class="listitem"><div
                     class="para">
@@ -508,28 +523,15 @@ testxen login: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981751812592"></a>12.2.2.1. الخطوات الأولية</h4></div></div></div><div
+                      id="idm140629366119296"></a>12.2.2.1. الخطوات الأولية</h4></div></div></div><div
               class="para">
 					تحوي الحزمة <span
                 class="pkg pkg">lxc</span> الأدوات اللازمة لتشغيل LXC، ويجب تثبيتها إذن.
 				</div><div
               class="para">
-					يحتاج LXC أيضًا لنظام إعداد <span
-                class="emphasis"><em>control groups</em></span>، وهو نظام ملفات ظاهري يتم ربطه على <code
-                dir="ltr"
-                class="filename">/sys/fs/cgroup</code>. يجب إضافة المدخلة التالية إلى <code
-                dir="ltr"
-                class="filename">/etc/fstab</code> إذن:
-				</div><pre
-              class="programlisting scale"># /etc/fstab: static file system information.
-[...]
-cgroup            /sys/fs/cgroup           cgroup    defaults        0       0
-</pre><div
-              class="para">
-					بعدها سيتم ربط <code
-                dir="ltr"
-                class="filename">/sys/fs/cgroup</code> آليًا عند الإقلاع؛ إذا لم يكن هناك خطة لإعادة الإقلاع حالاً، فيجب ربط نظام الملفات يدوياً بالأمر <code
-                class="command">mount /sys/fs/cgroup</code>.
+					LXC also requires the <span
+                class="emphasis"><em>control groups</em></span> configuration system, which is a virtual filesystem to be mounted on <code
+                class="filename">/sys/fs/cgroup</code>. Since Debian 8 switched to systemd, which also relies on control groups, this is now done automatically at boot time without further configuration.
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -595,7 +597,7 @@ iface br0 inet static
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981751789840"></a>12.2.2.3. إعداد النظام</h4></div></div></div><div
+                      id="idm140629366100304"></a>12.2.2.3. إعداد النظام</h4></div></div></div><div
               class="para">
 					دعنا الآن نضبط نظام الملفات الذي ستستخدمه الحاوية. بما أن هذا ”الجهاز الظاهري“ لن يعمل على العتاد مباشرة، فيجب إجراء بعض التعديلات على نظام الملفات حتى يتناسب مع تنظيم أنظمة الملفات القياسية، خصوصاً بالنسبة للنواة والأجهزة والطرفيات. لحسن الحظ، تحوي <span
                 class="pkg pkg">lxc</span> سكربتات تؤتمت معظم عملية الضبط هذه. مثلاً، يمكن استخدام الأوامر التالية (التي تحتاج الحزمتين <span
@@ -606,19 +608,16 @@ iface br0 inet static
                 class="computeroutput">root@mirwiz:~# </code><strong
                 class="userinput"><code>lxc-create -n testlxc -t debian
 </code></strong><code
-                class="computeroutput">Note: Usually the template option is called with a configuration
-file option too, mostly to configure the network.
-For more information look at lxc.conf (5)
-
-debootstrap is /usr/sbin/debootstrap
-Checking cache download in /var/cache/lxc/debian/rootfs-wheezy-amd64 ... 
+                class="computeroutput">debootstrap is /usr/sbin/debootstrap
+Checking cache download in /var/cache/lxc/debian/rootfs-jessie-amd64 ... 
 Downloading debian minimal ...
-I: Retrieving Release
-I: Retrieving Release.gpg
+I: Retrieving Release 
+I: Retrieving Release.gpg 
 [...]
-Root password is 'root', please change !
-'debian' template installed
-'testlxc' created
+Download complete.
+Copying rootfs to /var/lib/lxc/testlxc/rootfs...
+[...]
+Root password is 'sSiKhMzI', please change !
 root@mirwiz:~# </code>
 </pre><div
               class="para">
@@ -635,11 +634,9 @@ root@mirwiz:~# </code>
                 class="literal">MIRROR</code> ليشير إلى مرآة دبيان محلية.
 				</div><div
               class="para">
-					يحوي نظام الملفات المنشأ حديثاً نظام دبيان أصغري، وتشترك الحاوية افتراضيًا مع النظام المستضيف على جهاز الشبكة. بما أن هذا السلوك غير مرغوب، سوف نعدل ملف إعداد الحاوية (<code
-                dir="ltr"
-                class="filename">/var/lib/lxc/testlxc/config</code>) ونضيف بضعة مدخلات <code
-                dir="ltr"
-                class="literal">lxc.network.*</code>:
+					The newly-created filesystem now contains a minimal Debian system, and by default the container has no network interface (besides the loopback one). Since this is not really wanted, we will edit the container's configuration file (<code
+                class="filename">/var/lib/lxc/testlxc/config</code>) and add a few <code
+                class="literal">lxc.network.*</code> entries:
 				</div><pre
               class="programlisting">lxc.network.type = veth
 lxc.network.flags = up
@@ -658,7 +655,7 @@ lxc.network.hwaddr = 4a:49:43:49:79:20
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981751774080"></a>12.2.2.4. تشغيل الحاوية</h4></div></div></div><div
+                      id="idm140629366085328"></a>12.2.2.4. تشغيل الحاوية</h4></div></div></div><div
               class="para">
 					الآن وبعد أن أصبحت صورة الجهاز الظاهري جاهزة، دعنا نشغل الحاوية:
 				</div><pre
@@ -670,13 +667,13 @@ lxc.network.hwaddr = 4a:49:43:49:79:20
                 class="computeroutput">root@mirwiz:~# </code><strong
                 class="userinput"><code>lxc-console -n testlxc
 </code></strong><code
-                class="computeroutput">Debian GNU/Linux 7 testlxc tty1
+                class="computeroutput">Debian GNU/Linux 8 testlxc tty1
 
 testlxc login: </code><strong
                 class="userinput"><code>root</code></strong><code
                 class="computeroutput">
 Password: 
-Linux testlxc 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1+deb7u1 x86_64
+Linux testlxc 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt11-1 (2015-05-24) x86_64
 
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the
@@ -688,16 +685,19 @@ root@testlxc:~# </code><strong
                 class="userinput"><code>ps auxwf</code></strong>
 <code
                 class="computeroutput">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root         1  0.0  0.0  10644   824 ?        Ss   09:38   0:00 init [3]  
-root      1232  0.0  0.2   9956  2392 ?        Ss   09:39   0:00 dhclient -v -pf /run/dhclient.eth0.pid 
-root      1379  0.0  0.1  49848  1208 ?        Ss   09:39   0:00 /usr/sbin/sshd
-root      1409  0.0  0.0  14572   892 console  Ss+  09:39   0:00 /sbin/getty 38400 console
-root      1410  0.0  0.1  52368  1688 tty1     Ss   09:39   0:00 /bin/login --     
-root      1414  0.0  0.1  17876  1848 tty1     S    09:42   0:00  \_ -bash
-root      1418  0.0  0.1  15300  1096 tty1     R+   09:42   0:00      \_ ps auxf
-root      1411  0.0  0.0  14572   892 tty2     Ss+  09:39   0:00 /sbin/getty 38400 tty2 linux
-root      1412  0.0  0.0  14572   888 tty3     Ss+  09:39   0:00 /sbin/getty 38400 tty3 linux
-root      1413  0.0  0.0  14572   884 tty4     Ss+  09:39   0:00 /sbin/getty 38400 tty4 linux
+root         1  0.0  0.2  28164  4432 ?        Ss   17:33   0:00 /sbin/init
+root        20  0.0  0.1  32960  3160 ?        Ss   17:33   0:00 /lib/systemd/systemd-journald
+root        82  0.0  0.3  55164  5456 ?        Ss   17:34   0:00 /usr/sbin/sshd -D
+root        87  0.0  0.1  12656  1924 tty2     Ss+  17:34   0:00 /sbin/agetty --noclear tty2 linux
+root        88  0.0  0.1  12656  1764 tty3     Ss+  17:34   0:00 /sbin/agetty --noclear tty3 linux
+root        89  0.0  0.1  12656  1908 tty4     Ss+  17:34   0:00 /sbin/agetty --noclear tty4 linux
+root        90  0.0  0.1  63300  2944 tty1     Ss   17:34   0:00 /bin/login --     
+root       117  0.0  0.2  21828  3668 tty1     S    17:35   0:00  \_ -bash
+root       268  0.0  0.1  19088  2572 tty1     R+   17:39   0:00      \_ ps auxfw
+root        91  0.0  0.1  14228  2356 console  Ss+  17:34   0:00 /sbin/agetty --noclear --keep-baud console 115200 38400 9600 vt102
+root       197  0.0  0.4  25384  7640 ?        Ss   17:38   0:00 dhclient -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.e
+root       266  0.0  0.1  12656  1840 ?        Ss   17:39   0:00 /sbin/agetty --noclear tty5 linux
+root       267  0.0  0.1  12656  1928 ?        Ss   17:39   0:00 /sbin/agetty --noclear tty6 linux
 root@testlxc:~# </code></pre><div
               class="para">
 					نحن الآن داخل الحاوية؛ ووصولنا إلى العمليات مقيد بالعمليات التي بدأت من داخل الحاوية نفسها، كما أن وصولنا إلى نظام الملفات مقيد إلى المجموعة الجزئية المعينة لهذه الحاوية من نظام الملفات الكامل (<code
@@ -708,20 +708,20 @@ root@testlxc:~# </code></pre><div
                 class="keycap"><strong>q</strong></span>.
 				</div><div
               class="para">
-					لاحظ أننا بدأنا الحاوية كعملية في الخلفية، بفضل الخيار <code
-                dir="ltr"
-                class="option">--daemon</code> للأمر <code
-                class="command">lxc-start</code>. يمكننا مقاطعة الحاوية بالأمر <code
-                class="command">lxc-kill --name=testlxc</code>.
+					Note that we ran the container as a background process, thanks to the <code
+                class="option">--daemon</code> option of <code
+                class="command">lxc-start</code>. We can interrupt the container with a command such as <code
+                class="command">lxc-stop --name=testlxc</code>.
 				</div><div
               class="para">
-					تحوي الحزمة <span
-                class="pkg pkg">lxc</span> سكربت تهيئة يستطيع تشغيل حاوية واحدة أو أكثر تلقائياً عند إقلاع المستضيف؛ إن ملف ضبط هذا السكربت، <code
-                dir="ltr"
-                class="filename">/etc/default/lxc</code>، هو واضح نسبياً. لاحظ أنه يجب تخزين ملفات ضبط الحاوية في <code
-                dir="ltr"
-                class="filename">/etc/lxc/auto/</code>؛ يفضل معظم المستخدمين استخدام الروابط الرمزية، التي يمكن إنشائها هكذا مثلاً <code
-                class="command">ln -s /var/lib/lxc/testlxc/config /etc/lxc/auto/testlxc.config</code>.
+					The <span
+                class="pkg pkg">lxc</span> package contains an initialization script that can automatically start one or several containers when the host boots (it relies on <code
+                class="command">lxc-autostart</code> which starts containers whose <code
+                class="literal">lxc.start.auto</code> option is set to 1). Finer-grained control of the startup order is possible with <code
+                class="literal">lxc.start.order</code> and <code
+                class="literal">lxc.group</code>: by default, the initialization script first starts containers which are part of the <code
+                class="literal">onboot</code> group and then the containers which are not part of any group. In both cases, the order within a group is defined by the <code
+                class="literal">lxc.start.order</code> option.
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -741,17 +741,17 @@ root@testlxc:~# </code></pre><div
                   class="literal">lxc.mount.entry</code> في ملف إعداد الحاويات. هناك أثر جانبي جميل هنا وهو أن العمليات ستستهلك ذاكرة أقل في هذه الحالة، لأن النواة تقدر على اكتشاف البرامج المشتركة. عندئذ يمكن تخفيض الكلفة الهامشية لإضافة حاوية جديدة للمساحة التخزينية المخصصة لبياناتها، والعمليات القليلة الإضافية التي ستديرها النواة وتجدولها.
 				</div><div
                 class="para">
-					لم نشرح كافة الخيارات المتاحة، بالطبع؛ يمكنك الحصول على معلومات أوسع من صفحات الكتيبات <span
+					We haven't described all the available options, of course; more comprehensive information can be obtained from the <span
                   class="citerefentry"><span
-                    class="refentrytitle">lxc</span>(7)</span>‎ و<span
+                    class="refentrytitle">lxc</span>(7)</span> and <span
                   class="citerefentry"><span
-                    class="refentrytitle">lxc.conf</span>(5)</span>‎ والصفحات التي تشيران إليها.
+                    class="refentrytitle">lxc.container.conf</span>(5)</span> manual pages and the ones they reference.
 				</div></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139981751747792"></a>12.2.3. المحاكاة في KVM</h3></div></div></div><a
-            id="idm139981751747024"
+                    id="idm140629366058608"></a>12.2.3. المحاكاة في KVM</h3></div></div></div><a
+            id="idm140629366057840"
             class="indexterm"></a><div
             class="para">
 				KVM، التي ترمز إلى <span
@@ -770,16 +770,16 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981751741424"></a>12.2.3.1. الخطوات الأولية</h4></div></div></div><a
-              id="idm139981751740656"
+                      id="idm140629366052240"></a>12.2.3.1. الخطوات الأولية</h4></div></div></div><a
+              id="idm140629366051472"
               class="indexterm"></a><div
               class="para">
 					بعكس الأدوات الأخرى مثل VirtualBox، لا تقدم KVM نفسها أي واجهة للمستخدم لإنشاء وإدارة الحواسيب الظاهرية. تقدم حزمة <span
                 class="pkg pkg">qemu-kvm</span> برنامجاً تنفيذيًا قادراً على تشغيل حاسوب ظاهري، بالإضافة إلى سكربت تهيئة يحمل وحدات النواة المناسبة.
 				</div><a
-              id="idm139981751737904"
+              id="idm140629366048720"
               class="indexterm"></a><a
-              id="idm139981751736944"
+              id="idm140629366047760"
               class="indexterm"></a><div
               class="para">
 					لحسن الحظ، توفر Red Hat أيضًا مجموعة أخرى من الأدوات لمعالجة هذه المشكلة، من خلال تطوير المكتبة <span
@@ -787,7 +787,7 @@ root@testlxc:~# </code></pre><div
                 class="emphasis"><em>virtual machine manager</em></span> المقترنة بها. تسمح libvirt بإدارة الحواسيب الظاهرية بأسلوب قياسي، بغض النظر عن نظام المحاكاة المستخدم وراء الكواليس (حاليًا هناك دعم لنظم QEMU، وKVM، وXen، وLXC، وOpenVZ، وVirtualBox، وVMWare وأيضاً UML). ‏<code
                 class="command">virtual-manager</code> هي واجهة رسومية تعتمد على libvirt لإنشاء وإدارة الحواسيب الظاهرية.
 				</div><a
-              id="idm139981751733008"
+              id="idm140629366043824"
               class="indexterm"></a><div
               class="para">
 					سوف نثبت الحزم المطلوبة أولاً، بالأمر <code
@@ -806,7 +806,7 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981751725184"></a>12.2.3.2. إعداد الشبكة</h4></div></div></div><div
+                      id="idm140629366036000"></a>12.2.3.2. إعداد الشبكة</h4></div></div></div><div
               class="para">
 					كما في Xen و LXC، أكثر الخيارات شيوعاً عند إعداد الشبكة هو استخدام جسر يجمع الواجهات الشبكية لعدة حواسيب ظاهرية (انظر <a
                 class="xref"
@@ -823,9 +823,9 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981751720560"></a>12.2.3.3. التثبيت باستخدام <code
+                      id="idm140629360171056"></a>12.2.3.3. التثبيت باستخدام <code
                       class="command">virt-install</code></h4></div></div></div><a
-              id="idm139981751719472"
+              id="idm140629360170160"
               class="indexterm"></a><div
               class="para">
 					يشبه إنشاء حاسب ظاهري تثبيت النظم العادية كثيراً، عدا أن مواصفات الحواسب الظاهري تُحدَّد في أمر طويل جداً.
@@ -880,7 +880,7 @@ root@mirwiz:~# </code></pre><div
                       class="callout"
                       src="Common_Content/images/5.png"
                       alt="5" /></span>
-               --cdrom /srv/isos/debian-7.2.0-amd64-netinst.iso  <span
+               --cdrom /srv/isos/debian-8.1.0-amd64-netinst.iso  <span
                     id="virtinst.cdrom"><img
                       class="callout"
                       src="Common_Content/images/6.png"
@@ -906,10 +906,7 @@ root@mirwiz:~# </code></pre><div
 Starting install...
 Allocating 'testkvm.qcow'             |  10 GB     00:00
 Creating domain...                    |    0 B     00:00
-Cannot open display:
-Run 'virt-viewer --help' to see a full list of available command line options.
-Domain installation still in progress. You can reconnect
-to the console to complete the installation process.
+Guest installation complete... restarting guest.
 </code></pre><div
               class="calloutlist"><table
                 border="0"
@@ -1082,9 +1079,9 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981744944816"></a>12.2.3.4. إدارة الأجهزة باستخدام <code
+                      id="idm140629360127744"></a>12.2.3.4. إدارة الأجهزة باستخدام <code
                       class="command">virsh</code></h4></div></div></div><a
-              id="idm139981744943920"
+              id="idm140629360126848"
               class="indexterm"></a><div
               class="para">
 					بعد أن انتهينا من التثبيت، دعنا نرى كيف ندير الأجهزة الظاهرية المتوفرة. أول شيئ سنجربه هو طلب قائمة بالأجهزة التي تديرها <code
@@ -1092,11 +1089,12 @@ root@server's password: </code></pre><div
 				</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>virsh -c qemu:///system list --all
+                class="userinput"><code>virsh -c qemu:///system list --all</code></strong>
  Id Name                 State
 ----------------------------------
   - testkvm              shut off
-</code></strong></pre><div
+
+</pre><div
               class="para">
 					دعنا نبدأ تشغيل جهازنا التجريبي:
 				</div><pre
@@ -1164,7 +1162,7 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139981744926688"></a>12.2.3.5. تثبيت نظام مبني على RPM في دبيان باستخدام yum</h4></div></div></div><div
+                      id="idm140629360109280"></a>12.2.3.5. تثبيت نظام مبني على RPM في دبيان باستخدام yum</h4></div></div></div><div
               class="para">
 					إذا كان الجهاز الظاهري سيعمل بنظام دبيان (أو أحد مشتقاته)، يمكن تهيئة النظام باستخدام <code
                 class="command">debootstrap</code>، كما شرحناه سابقًا. أما إذا كان الجهاز الظاهري سيعمل بنظام مبني على RPM (مثل فيدورا، أو CentOS أو Scientific Linux)، يجب إتمام التثبيت باستخدام أداة <code
@@ -1196,11 +1194,10 @@ gpgcheck=1
 plugins=1
 metadata_expire=1800</pre><div
               class="para">
-					يجب أن يحوي المجلد <code
-                dir="ltr"
-                class="filename">/var/tmp/yum-bootstrap/repos.d</code> توصيف مستودعات RPM، تماماً كما هو مجلد <code
-                dir="ltr"
-                class="filename">/etc/yum.repos.d</code> في نظام RPM مثبت. هذا مثال عن تثبيت CentOS 6:
+					The <code
+                class="filename">/var/tmp/yum-bootstrap/repos.d</code> directory should contain the descriptions of the RPM source repositories in <code
+                class="filename">*.repo</code> files, just as in <code
+                class="filename">/etc/yum.repos.d</code> in an already installed RPM-based system. Here is an example for a CentOS 6 installation:
 				</div><pre
               class="programlisting">[base]
 name=CentOS-6 - Base

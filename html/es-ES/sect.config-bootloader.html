@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-es-ES-1.0-1" /><meta
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Configuración del gestor de arranque</h2></div></div></div><a
-          id="idm140549206295984"
+          id="idm140401141903680"
           class="indexterm"></a><a
-          id="idm140549206294544"
+          id="idm140401141902240"
           class="indexterm"></a><div
           class="para">
 			Probablemente ya esté funcionando, pero siempre es bueno saber cómo configurar e instalar el gestor de arranque en caso que desaparezca del registro maestro de arranque («Master Boot Record»). Esto puede ocurrir luego de la instalación de otro sistema operativo como Windows. La información a continuación también puede ayudarle a modificar la configuración del gestor de arranque si lo necesita.
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Registro maestro de arranque («Master boot record»)</strong></p></div></div></div><a
-            id="idm140549206291616"
+            id="idm140401141899312"
             class="indexterm"></a><a
-            id="idm140549206290656"
+            id="idm140401141898352"
             class="indexterm"></a><div
             class="para">
 			El registro maestro de arranque (MBR: «Master Boot Record») ocupa los primeros 512 bytes del primer disco duro y es lo primero que carga el BIOS para otorgar el control a un programa capaz de iniciar el sistema operativo deseado. En general, se instala el gestor de arranque en el MBR eliminando su contenido anterior.
@@ -126,9 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm140549203057648"
+            id="idm140401139762752"
             class="indexterm"></a><a
-            id="idm140549203056880"
+            id="idm140401139761792"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -141,13 +141,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> es la primera partición del primer disco y <code
               class="filename">/dev/sdb3</code> es la tercera partición del segundo disco.
 			</div><a
-            id="idm140549203052352"
+            id="idm140401139756432"
             class="indexterm"></a><a
-            id="idm140549203051200"
+            id="idm140401139754992"
             class="indexterm"></a><a
-            id="idm140549203050048"
+            id="idm140401139753552"
             class="indexterm"></a><a
-            id="idm140549203048896"
+            id="idm140401139752112"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -157,9 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
 			</div><a
-            id="idm140549203045520"
+            id="idm140401139748128"
             class="indexterm"></a><a
-            id="idm140549203044368"
+            id="idm140401139746688"
             class="indexterm"></a><div
             class="para">
 				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
@@ -209,9 +209,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Configuración de LILO</h3></div></div></div><a
-            id="idm140549203035184"
+            id="idm140401139736224"
             class="indexterm"></a><a
-            id="idm140549203034416"
+            id="idm140401139735264"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -227,29 +227,29 @@ mirexpress:/dev/disk/by-id# </code></pre><div
               class="title"><strong>Ejemplo 8.3. Archivo de configuración de LILO</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-# The disk on which LILO should be installed.
-# By indicating the disk and not a partition.
-# you order LILO to be installed on the MBR.
+# El disco en el que instalar LILO
+# Indicar un disco en lugar de una partición
+# instalará LILO en el MBR.
 boot=/dev/sda
-# the partition that contains Debian
+# la partición que contiene Debian
 root=/dev/sda2
-# the item to be loaded by default
+# el elemento a cargar de forma predeterminada
 default=Linux
 
-# the most recent kernel image
+# la imagen de núcleo más reciente
 image=/vmlinuz
   label=Linux
   initrd=/initrd.img
   read-only
 
-# Old kernel (if the newly installed kernel doesn't boot)
+# Núcleo antiguo (si el recientemente instalado no inicia)
 image=/vmlinuz.old
   label=LinuxOLD
   initrd=/initrd.img.old
   read-only
   optional
 
-# only for Linux/Windows dual boot
+# sólo para inicio dual Linux/Windows
 other=/dev/sda1
   label=Windows
 </pre></div></div></div><div
@@ -257,16 +257,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Configuración de GRUB 2</h3></div></div></div><a
-            id="idm140549203028176"
+            id="idm140401139727840"
             class="indexterm"></a><a
-            id="idm140549203027408"
+            id="idm140401139726880"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (gran gestor de arranque unificado: «GRand Unified Bootloader») es más reciente. No es necesario ejecutarlo luego de cada actualización del núcleo, <span
               class="emphasis"><em>GRUB</em></span> sabe cómo leer los sistemas de archivos y encontrar la ubicación del núcleo en el disco por su cuenta. Para instalarlo en el MBR del primer disco simplemente ejecute <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm140549203024864"
+              id="idm140401139723856"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -304,7 +304,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Para equipos Macintosh (PowerPC): configuración de Yaboot</h3></div></div></div><a
-            id="idm140549203012736"
+            id="idm140401139709312"
             class="indexterm"></a><div
             class="para">
 				Yaboot es el gestor de arranque utilizado por equipos Macintosh antiguos que utilizan procesadores PowerPC. No arrancan como PCs sino que necesitan una partición de arranque desde la que el BIOS (u OpenFirmware) ejecuta el gestor y en la que el programa <code
@@ -317,7 +317,7 @@ other=/dev/sda1
 				Antes de ejecutar <code
               class="command">ybin</code> primero debe tener un archivo <code
               class="filename">/etc/yaboot.conf</code> válido. Lo que sigue es un ejemplo de configuración mínimo. <a
-              id="idm140549203008512"
+              id="idm140401139704160"
               class="indexterm"></a>
 			</div><div
             class="example"><a
@@ -325,38 +325,38 @@ other=/dev/sda1
               class="title"><strong>Ejemplo 8.4. Archivo de configuración de Yaboot</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-# bootstrap partition
+# partición de arranque
 boot=/dev/sda2
-# the disk
+# el disco
 device=hd:
-# the Linux partition
+# la partición Linux
 partition=3
 root=/dev/sda3
-# boot after 3 seconds of inactivity
-# (timeout is in tenths of seconds)
+# arrancar luego de 3 segundos de inactividad
+# (timeout es en décimas de segundo)
 timeout=30
 
 install=/usr/lib/yaboot/yaboot
 magicboot=/usr/lib/yaboot/ofboot
 enablecdboot
 
-# last kernel installed
+# último núcleo instalado
 image=/vmlinux
         label=linux
         initrd=/initrd.img
         read-only
 
-# old kernel
+# núcleo antiguo
 image=/vmlinux.old
         label=old
         initrd=/initrd.img.old
         read-only
 
-# only for Linux/Mac OSX dual-boot
+# sólo para arranque dual Linux/Mac OSX
 macosx=/dev/sda5
 
-# bsd=/dev/sdaX and macos=/dev/sdaX
-# are also possible
+# también son válidos
+# bsd=/dev/sdaX y macos=/dev/sdaX
 </pre></div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

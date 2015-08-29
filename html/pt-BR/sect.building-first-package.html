@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pt-BR-1.0-1" /><meta
@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140242465876272"></a>15.2.1. Meta-pacotes ou falsos pacotes</h3></div></div></div><div
+                    id="idm140651069279296"></a>15.2.1. Meta-pacotes ou falsos pacotes</h3></div></div></div><div
             class="para">
 				Pacotes falsos e meta-pacotes são similares, ambos são shells vazios que somente existem para efeito dos metadados que existem na pilha de gerenciamento de pacotes.
 			</div><div
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">equivs-build</code>, e eles não serão mantidos nos cabeçalhos do pacote gerados.
 			</div><div
             class="example"><a
-              id="idm140242465866832"></a><p
+              id="idm140651069269856"></a><p
               class="title"><strong>Exemplo 15.2. Cabeçalho do pacote falso <span
                   class="emphasis"><em>libxml-libxml-perl</em></span></strong></p><div
               class="example-contents"><pre
@@ -111,13 +111,13 @@ Version: 1.57-1
 Maintainer: Raphael Hertzog &lt;hertzog@debian.org&gt;
 Depends: libxml2 (&gt;= 2.6.6)
 Architecture: all
-Description: Fake package - module manually installed in site_perl
- This is a fake package to let the packaging system
- believe that this Debian package is installed. 
+Description: Fake package - módulo instalado manualmente em site_perl
+  Este é um pacote falso para deixar o sistema de empacotamento
+  acreditando que este pacote Debian está instalado.
  .
- In fact, the package is not installed since a newer version
- of the module has been manually compiled &amp; installed in the
- site_perl directory.
+Na verdade, o pacote não está instalado desde uma versão mais recente
+  do módulo que foi manualmente compilada &amp; instalada no
+  diretório site_perl.
 </pre></div></div><div
             class="para">
 				O próximo passo é gerar o pacote Debian com o comando <code
@@ -127,7 +127,7 @@ Description: Fake package - module manually installed in site_perl
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140242469839824"></a>15.2.2. Depósito Simples de Arquivos</h3></div></div></div><div
+                    id="idm140651069552928"></a>15.2.2. Depósito Simples de Arquivos</h3></div></div></div><div
             class="para">
 				Os administradores da Falcot Corp precisam criar um pacote Debian para facilitar a instalação de um conjunto de documentos em um grande número de máquina. O administrador responsável por essa tarefa primeiramente lê o “New Maintainer's Guide”, e então começa a trabalhar no seu primeiro pacote. <div
               class="url">→ <a
@@ -152,10 +152,10 @@ Description: Fake package - module manually installed in site_perl
               class="userinput"><code>dh_make --native</code></strong>
 <code
               class="computeroutput">
+Type of package: único binário, binário indep, binário múltiplo, biblioteca, módulo do kernel, patch para o kernel ou cdbs?
 Type of package: single binary, indep binary, multiple binary, library, kernel module, kernel patch or cdbs?
  [s/i/m/l/k/n/b] </code><strong
-              class="userinput"><code>i</code></strong>
-<code
+              class="userinput"><code>i</code></strong><code
               class="computeroutput">
 Maintainer name : Raphael Hertzog
 Email-Address   : hertzog@debian.org
@@ -163,12 +163,12 @@ Date            : Mon, 11 Apr 2011 15:11:36 +0200
 Package Name    : falcot-data
 Version         : 1.0
 License         : blank
-Usind dpatch    : no
-Type of Package : Independent
-Hit &lt;enter&gt; to confirm:
-Currently there is no top level Makefile. This may require additional tuning.
-Done. Please edit the files in the debian/ subdirectory now. You should also
-check that the falcot-data Makefiles install into $DESTDIR and not in / .
+Usind dpatch    : não
+Type of Package : Independente
+Pressione &lt;enter&gt; para confirmar:
+Atualmente não há nível superior Makefile. Isto pode exigir um ajuste adicional.
+Feito. Por favor, edite os arquivos no agora debian/subdiretório. Você também deve
+verificar se o instalador falcot-data Makefiles  em $DESTDIR e não em /.
 $</code></pre><div
             class="para">
 				O tipo de pacote escolhido (<span
@@ -183,9 +183,9 @@ $</code></pre><div
               class="emphasis"><em>biblioteca</em></span>, é útil para bibliotecas compartilhadas, uma vez que precisa seguir regras rígidas do empacotamento. De forma semelhante, <span
               class="emphasis"><em>módulo do kernel</em></span> deve ser restrito aos pacotes contendo módulos do kernel. Finalmente, <span
               class="emphasis"><em>cdbs</em></span> é um pacote específico sistema de construção, é bastante flexível, mas requer uma certa quantidade de aprendizagem. <a
-              id="idm140242469824912"
+              id="idm140651069538016"
               class="indexterm"></a> <a
-              id="idm140242469824272"
+              id="idm140651069537376"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -233,7 +233,7 @@ export DEBFULLNAME="Raphael Hertzog"
               class="literal">iceweasel | www-browser</code>, de modo a assegurar a disponibilidade de um navegador web capaz de exibir os documentos no pacote.
 			</div><div
             class="example"><a
-              id="idm140242469806416"></a><p
+              id="idm140651069519520"></a><p
               class="title"><strong>Exemplo 15.3. O arquivo <code
                   class="filename">control</code></strong></p><div
               class="example-contents"><pre
@@ -258,43 +258,43 @@ Description: Internal Falcot Corp Documentation
  Their use is INTERNAL ONLY.
 </pre></div></div><div
             class="example"><a
-              id="idm140242469804128"></a><p
+              id="idm140651069517232"></a><p
               class="title"><strong>Exemplo 15.4. O arquivo <code
                   class="filename">changelog</code></strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 falcot-data (1.0) internal; urgency=low
 
-  * Initial Release.
-  * Let's start with few documents:
-    - internal company structure;
-    - contacts for each department.
+  * Lançamento inicial.
+  * Comecemos por alguns documentos:
+    - estrutura interna de empresa;
+    - contatos para cada departamento.
 
  -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Mon, 11 Apr 2011 20:46:33 +0200
 </pre></div></div><div
             class="example"><a
-              id="idm140242469802144"></a><p
+              id="idm140651069515232"></a><p
               class="title"><strong>Exemplo 15.5. O arquivo <code
                   class="filename">copyright</code></strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-This work was packaged for Debian by Raphael Hertzog &lt;hertzog@debian.org&gt;
-on Mon, 11 Apr 2011 20:46:33 +0200
+Este trabalho foi empacotado para o Debian por Raphael Hertzog &lt;hertzog@debian.org&gt;
+na Seg, 11 Abril 2011 20:46:33 +0200
 
-Copyright:
+Direitos Autorais:
 
-    Copyright (C) 2004-2011 Falcot Corp
+    Direitos Autorais (C) 2004-2011 Falcot Corp
 
-License:
+Licença:
 
-    All rights reserved.
+    Todos os direitos reservados.
 </pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> arquivo <code
                         class="filename">Makefile</code></strong></p></div></div></div><a
-              id="idm140242469798768"
+              id="idm140651069511808"
               class="indexterm"></a><div
               class="para">
 				Um arquivo <code
@@ -303,9 +303,9 @@ License:
                 class="filename">Makefile</code> descrevem essas regras no seguinte formato:
 			</div><pre
               class="programlisting">
-target: source1 source2 ...
-        command1
-        command2
+alvo: fonte1 fonte2 ...
+        comando1
+        comando2
 </pre><div
               class="para">
 				A interpretação dessas regras é como segue: se um dos arquivos <code
@@ -343,7 +343,7 @@ data/* usr/share/falcot-data/
               class="filename">debian/menu.ex</code> sem sua extensão e editando o seguinte:
 			</div><div
             class="example"><a
-              id="idm140242469783440"></a><p
+              id="idm140651069496480"></a><p
               class="title"><strong>Exemplo 15.6. O arquivo <code
                   class="filename">menu</code></strong></p><div
               class="example-contents"><pre

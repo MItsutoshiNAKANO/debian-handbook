@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-it-IT-1.0-1" /><meta
@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Compilare un kernel</h2></div></div></div><a
-          id="idm140687196170576"
+          id="idm140183125964064"
           class="indexterm"></a><a
-          id="idm140687196169424"
+          id="idm140183125962624"
           class="indexterm"></a><div
           class="para">
 			I kernel forniti da Debian includono il maggior numero possibile di funzionalità, così come il massimo numero di driver, per coprire lo spettro più ampio di configurazioni hardware esistenti. Ecco perché alcuni utenti preferiscono ricompilare il kernel per includere unicamente ciò di cui necessitano. Ci sono due ragioni per questa scelta. Primo, questo può ottimizzare il consumo di memoria perché il codice del kernel anche se non viene mai utilizzato occupa memoria senza motivo (e non viene mai posto nello spazio di swap, dato che utilizza la vera RAM), cosa che può diminuire le prestazioni complessive del sistema. Inoltre un kernel compilato localmente può anche limitare i rischi di sicurezza poiché solo una frazione del codice del kernel è compilato ed eseguito.
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>GOING FURTHER</em></span> The Debian Kernel Handbook</strong></p></div></div></div><a
-            id="idm140687196163904"
+            id="idm140183125956208"
             class="indexterm"></a><div
             class="para">
 			The Debian kernel teams maintains the “Debian Kernel Handbook” (also available in the <span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> The good old days of <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm140687196154784"
+              id="idm140183125945360"
               class="indexterm"></a><div
               class="para">
 				Before the Linux build system gained the ability to build proper Debian packages, the recommended way to build such packages was to use <code
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Ottenere i sorgenti</h3></div></div></div><a
-            id="idm140687196150960"
+            id="idm140183125940576"
             class="indexterm"></a><a
-            id="idm140687196150192"
+            id="idm140183125939648"
             class="indexterm"></a><a
-            id="idm140687196149040"
+            id="idm140183125938208"
             class="indexterm"></a><div
             class="para">
 				Like anything that can be useful on a Debian system, the Linux kernel sources are available in a package. To retrieve them, just install the <span
@@ -174,11 +174,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-noyau"></a>8.10.3. Configurare il kernel</h3></div></div></div><a
-            id="idm140687196134704"
+            id="idm140183125921504"
             class="indexterm"></a><a
-            id="idm140687196133552"
+            id="idm140183125920064"
             class="indexterm"></a><a
-            id="idm140687196132400"
+            id="idm140183125918624"
             class="indexterm"></a><div
             class="para">
 				I passi successivi consistono nella configurazione del kernel secondo le proprie necessità. La procedura esatta dipende dagli obiettivi.
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Compilazione e creazione del pacchetto</h3></div></div></div><a
-            id="idm140687196111456"
+            id="idm140183125894000"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -281,26 +281,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=1</code></strong>
+              class="userinput"><code>make deb-pkg LOCALVERSION=-falcot KDEB_PKGVERSION=$(make kernelversion)-1</code></strong>
 [...]
 <code
               class="computeroutput">$ </code><strong
               class="userinput"><code>ls ../*.deb</code></strong>
 <code
-              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot_1_amd64.deb
-../linux-image-3.16.7-ckt4-falcot-dbg_1_amd64.deb
-../linux-libc-dev_1_amd64.deb
+              class="computeroutput">../linux-headers-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot_3.16.7-1_amd64.deb
+../linux-image-3.16.7-ckt4-falcot-dbg_3.16.7-1_amd64.deb
+../linux-libc-dev_3.16.7-1_amd64.deb
 </code></pre></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Compilare moduli esterni</h3></div></div></div><a
-            id="idm140687196095680"
+            id="idm140183125875312"
             class="indexterm"></a><a
-            id="idm140687196094528"
+            id="idm140183125873872"
             class="indexterm"></a><a
-            id="idm140687196093376"
+            id="idm140183125872432"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -362,7 +362,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140687196079968"
+              id="idm140183125856720"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -374,9 +374,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Applicare una patch al kernel</h3></div></div></div><a
-            id="idm140687196075584"
+            id="idm140183125851376"
             class="indexterm"></a><a
-            id="idm140687196074432"
+            id="idm140183125849936"
             class="indexterm"></a><div
             class="para">
 				Some features are not included in the standard kernel due to a lack of maturity or to some disagreement with the kernel maintainers. Such features may be distributed as patches that anyone is then free to apply to the kernel sources.

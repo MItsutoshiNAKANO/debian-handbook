@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -81,11 +81,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="pkg pkg">iputils-ping</span> et <span
             class="pkg pkg">iputils-tracepath</span>.
 		</div><a
-          id="idm139907199138928"
+          id="idm139924331371136"
           class="indexterm"></a><a
-          id="idm139907199137968"
+          id="idm139924331370176"
           class="indexterm"></a><a
-          id="idm139907199136848"
+          id="idm139924331369056"
           class="indexterm"></a><div
           class="para">
 			On peut configurer le réseau IPv6 comme un réseau IPv4, à travers le fichier <code
@@ -99,10 +99,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 iface eth0 inet6 static
     address 2001:db8:1234:5::1:1
     netmask 64
-    # Disabling auto-configuration
+    # Pour désactiver l'auto-configuration:
     # autoconf 0
-    # The router is auto-configured and has no fixed address
-    # (accept_ra 1). If it had:
+    # Le routeur est auto-configuré et n'a pas d'adresse fixe.
+    # (/proc/sys/net/ipv6/conf/all/accept_ra). Sinon pour le forcer:
     # gateway 2001:db8:1234:5::1
 </pre></div></div><div
           class="para">
@@ -125,7 +125,7 @@ iface eth0 inet6 static
             class="example-contents"><pre
               class="programlisting">
 iface eth0 inet6 auto
-    # Prefer the randomly assigned addresses for outgoing connections.
+    # Préférer l'adresse générée aléatoirement pour les connexions sortantes
     privext 2
 </pre></div></div><div
           class="sidebar"><div
@@ -138,11 +138,11 @@ iface eth0 inet6 auto
               class="url">→ <a
                 href="http://lists.debian.org/debian-ipv6/">http://lists.debian.org/debian-ipv6/</a></div>
 		</div></div><a
-          id="idm139907199121872"
+          id="idm139924331354016"
           class="indexterm"></a><a
-          id="idm139907199120912"
+          id="idm139924331353056"
           class="indexterm"></a><a
-          id="idm139907199119472"
+          id="idm139924331351616"
           class="indexterm"></a><div
           class="para">
 			Les connexions IPv6 peuvent être filtrées et restreintes comme avec IPv4 : il existe une adaptation de <code
@@ -166,9 +166,9 @@ iface eth0 inet6 auto
               class="url">→ <a
                 href="http://www.gogo6.com/freenet6/tunnelbroker">http://www.gogo6.com/freenet6/tunnelbroker</a></div>
 			</div><a
-            id="idm139907199111664"
+            id="idm139924331343808"
             class="indexterm"></a><a
-            id="idm139907199110704"
+            id="idm139924331342848"
             class="indexterm"></a><div
             class="para">
 				Pour exploiter cette possibilité, il faut s'inscrire et créer un compte Freenet6 Pro sur ce site web puis installer le paquet Debian <span
@@ -200,7 +200,7 @@ if_prefix=eth0
               class="command">ifconfig</code> dans le bloc relatif à l'interface <code
               class="literal">tun</code>).
 			</div><a
-            id="idm139907199100368"
+            id="idm139924331332512"
             class="indexterm"></a><div
             class="para">
 				Après les commandes <code

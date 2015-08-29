@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. Manipuler des paquets avec <code
                   class="command">dpkg</code></h2></div></div></div><a
-          id="idm139907197674384"
+          id="idm139924344485632"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -94,10 +94,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907197666000"></a>5.4.1. Installation de paquets</h3></div></div></div><a
-            id="idm139907197665200"
+                    id="idm139924344477248"></a>5.4.1. Installation de paquets</h3></div></div></div><a
+            id="idm139924344476448"
             class="indexterm"></a><a
-            id="idm139907197663760"
+            id="idm139924344475008"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -106,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code>.
 			</div><div
             class="example"><a
-              id="idm139907197660272"></a><p
+              id="idm139924344471520"></a><p
               class="title"><strong>Exemple 5.2. Installation d'un paquet avec <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -128,7 +128,7 @@ Processing triggers for mime-support (3.58) ...</code></pre></div></div><div
               class="command">dpkg</code> (coûteuses en raison du chargement de la base de données en mémoire — notamment la liste des fichiers déjà installés).
 			</div><div
             class="example"><a
-              id="idm139907197654608"></a><p
+              id="idm139924340758192"></a><p
               class="title"><strong>Exemple 5.3. Dépaquetage et configuration séparée</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -146,9 +146,9 @@ Processing triggers for mime-support (3.58) ...
                   class="computeroutput">Setting up man-db (2.7.0.2-5) ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm139907197650832"
+            id="idm139924340754416"
             class="indexterm"></a><a
-            id="idm139907197649392"
+            id="idm139924340752976"
             class="indexterm"></a><div
             class="para">
 				Parfois, <code
@@ -159,9 +159,9 @@ Updating database of manual pages ...
 			</div><pre
             class="screen">
 <code
-              class="computeroutput">Unpacking libgdm (from .../libgdm_3.8.3-2_amd64.deb) ...
-dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpack):
- trying to overwrite '/usr/bin/gdmflexiserver', which is also in package gdm3 3.4.1-9</code></pre><div
+              class="computeroutput">Dépaquetage de libgdm (à partir de .../libgdm_3.8.3-2_amd64.deb) ...
+dpkg: erreur de traitement de /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--install) :
+ tentative de remplacement de « /usr/bin/gdmflexiserver », qui appartient aussi au paquet gdm3 3.4.1-8</code></pre><div
             class="para">
 				Dans ce cas, si vous pensez que remplacer ce fichier ne constitue pas un risque important pour la stabilité de votre système (ce qui est presque toujours le cas), vous pouvez employer l'option <code
               class="literal">--force-overwrite</code>, qui indiquera à <code
@@ -177,7 +177,7 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                     class="title"><strong><span
                         class="emphasis"><em>ATTENTION</em></span> Du bon usage de <code
                         class="literal">--force-*</code></strong></p></div></div></div><a
-              id="idm139907197639296"
+              id="idm139924340742912"
               class="indexterm"></a><div
               class="para">
 				Si l'on n'y prend garde, l'usage d'une option <code
@@ -211,14 +211,14 @@ E: Dépendances manquantes. Essayez d'utiliser l'option -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907197628992"></a>5.4.2. Suppression de paquet</h3></div></div></div><a
-            id="idm139907197628192"
+                    id="idm139924340732608"></a>5.4.2. Suppression de paquet</h3></div></div></div><a
+            id="idm139924340731808"
             class="indexterm"></a><a
-            id="idm139907197627232"
+            id="idm139924340730848"
             class="indexterm"></a><a
-            id="idm139907197626272"
+            id="idm139924340729888"
             class="indexterm"></a><a
-            id="idm139907197624832"
+            id="idm139924340728448"
             class="indexterm"></a><div
             class="para">
 				En invoquant <code
@@ -229,7 +229,7 @@ E: Dépendances manquantes. Essayez d'utiliser l'option -f.
               class="literal">--purge</code> suivie du nom de paquet.
 			</div><div
             class="example"><a
-              id="idm139907197620032"></a><p
+              id="idm139924340723648"></a><p
               class="title"><strong>Exemple 5.4. Removal and purge of the <span
                   class="pkg pkg">debian-cd</span> package</strong></p><div
               class="example-contents"><pre
@@ -237,25 +237,25 @@ E: Dépendances manquantes. Essayez d'utiliser l'option -f.
                   class="computeroutput"># </code><strong
                   class="userinput"><code>dpkg -r debian-cd</code></strong>
 <code
-                  class="computeroutput">(Reading database ... 97747 files and directories currently installed.)
-Removing debian-cd ...
+                  class="computeroutput">(Lecture de la base de données... 182478 fichiers et répertoires déjà installés.)
+Suppression de debian-cd ...
 # </code><strong
                   class="userinput"><code>dpkg -P debian-cd</code></strong>
 <code
-                  class="computeroutput">(Reading database ... 97401 files and directories currently installed.)
-Removing debian-cd ...
-Purging configuration files for debian-cd ...</code></pre></div></div></div><div
+                  class="computeroutput">(Lecture de la base de données... 182132 fichiers et répertoires déjà installés.)
+Suppression de debian-cd ...
+Purge des fichiers de configuration de debian-cd ...</code></pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907197615712"></a>5.4.3. Consulter la base de données de <code
+                    id="idm139924340719280"></a>5.4.3. Consulter la base de données de <code
                     class="command">dpkg</code> et inspecter des fichiers <code
                     class="filename">.deb</code></h3></div></div></div><a
-            id="idm139907197614176"
+            id="idm139924340717744"
             class="indexterm"></a><a
-            id="idm139907197612736"
+            id="idm139924340716304"
             class="indexterm"></a><a
-            id="idm139907197611296"
+            id="idm139924340714864"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -286,7 +286,7 @@ Purging configuration files for debian-cd ...</code></pre></div></div></div><div
               class="literal">-I</code>), qui affiche les en-têtes de ce paquet Debian.
 			</div><div
             class="example"><a
-              id="idm139907197599168"></a><p
+              id="idm139924340702736"></a><p
               class="title"><strong>Exemple 5.5. Diverses requêtes avec <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -437,9 +437,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>POUR ALLER PLUS LOIN</em></span> Comparaison de versions</strong></p></div></div></div><a
-              id="idm139907197585120"
+              id="idm139924340688688"
               class="indexterm"></a><a
-              id="idm139907197584160"
+              id="idm139924340687728"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -509,7 +509,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907197563168"></a>5.4.4. Journal de <code
+                    id="idm139924340666736"></a>5.4.4. Journal de <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				<code
@@ -523,9 +523,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. Support multi-architecture</h3></div></div></div><a
-            id="idm139907197557424"
+            id="idm139924340660992"
             class="indexterm"></a><a
-            id="idm139907197556464"
+            id="idm139924340660032"
             class="indexterm"></a><div
             class="para">
 				Tous les paquets Debian ont un champ <code
@@ -542,7 +542,7 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139907197550640"></a>5.4.5.1. Activer le support multi-architecture</h4></div></div></div><div
+                      id="idm139924340654208"></a>5.4.5.1. Activer le support multi-architecture</h4></div></div></div><div
               class="para">
 					Le support multi-architecture de <code
                 class="command">dpkg</code> permet à l'administrateur de définir des architectures supplémentaires dont les paquets pourront être installés sur le système. Cela se fait simplement par la commande <code
@@ -620,12 +620,12 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
 					Avant le support multi-architecture, pour faire fonctionner une application 32 bits sur un système 64 bits, il fallait installer <span
                   class="pkg pkg">ia32-libs</span>. Ce paquet, qui rassemblait dans un paquet « amd64 » des versions 32 bits des bibliothèques les plus courantes, était un affreux bricolage.
 				</div><a
-                id="idm139907197531088"
+                id="idm139924340634656"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139907197529344"></a>5.4.5.2. Changements liés au support multi-architecture</h4></div></div></div><div
+                      id="idm139924340632912"></a>5.4.5.2. Changements liés au support multi-architecture</h4></div></div></div><div
               class="para">
 					To make multi-arch actually useful and usable, libraries had to be repackaged and moved to an architecture-specific directory so that multiple copies (targeting different architectures) can be installed alongside. Such updated packages contain the “<code
                 class="literal">Multi-Arch: same</code>” header field to tell the packaging system that the various architectures of the package can be safely co-installed (and that those packages can only satisfy dependencies of packages of the same architecture). Since multi-arch made its debut in Debian <span

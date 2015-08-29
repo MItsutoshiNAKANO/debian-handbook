@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907185080976"></a>9.11.1. Introduction</h3></div></div></div><div
+                    id="idm139924330338736"></a>9.11.1. Introduction</h3></div></div></div><div
             class="para">
 				Le sous-système <span
               class="emphasis"><em>hotplug</em></span> du noyau permet de charger les pilotes des périphériques et de créer les fichiers de périphériques correspondants (avec l'aide d'<code
@@ -83,22 +83,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> afin que celui-ci puisse créer l'entrée correspondante dans <code
               class="filename">/dev/</code>.
 			</div><a
-            id="idm139907185077120"
+            id="idm139924330334880"
             class="indexterm"></a><a
-            id="idm139907185076224"
+            id="idm139924330333984"
             class="indexterm"></a><a
-            id="idm139907185075456"
+            id="idm139924330333216"
             class="indexterm"></a><a
-            id="idm139907185074688"
+            id="idm139924330332448"
             class="indexterm"></a><a
-            id="idm139907185073920"
+            id="idm139924330331680"
             class="indexterm"></a><a
-            id="idm139907185073152"
+            id="idm139924330330912"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907185072256"></a>9.11.2. La problématique du nommage</h3></div></div></div><div
+                    id="idm139924330330016"></a>9.11.2. La problématique du nommage</h3></div></div></div><div
             class="para">
 				Avant l'introduction des branchements à chaud, il était simple de donner un nom fixe à un périphérique. On se basait simplement sur le positionnement des périphériques dans leur bus respectif. Mais si les périphériques apparaissent et disparaissent sur le bus, ce n'est plus possible. L'exemple typique est l'emploi d'un appareil photo numérique et d'une clé USB : tous les deux apparaissent comme des disques, le premier branché pourra être <code
               class="filename">/dev/sdb</code> et le second <code
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907185059248"></a>9.11.3. Fonctionnement de udev</h3></div></div></div><div
+                    id="idm139924330317008"></a>9.11.3. Fonctionnement de udev</h3></div></div></div><div
             class="para">
 				Lorsqu'<span
               class="emphasis"><em>udev</em></span> est informé par le noyau de l'apparition d'un nouveau périphérique, il récupère de nombreuses informations sur le périphérique en question en consultant les entrées correspondantes dans <code
@@ -323,18 +323,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139907185008432"></a>9.11.4. Cas pratique</h3></div></div></div><div
+                    id="idm139924330266192"></a>9.11.4. Cas pratique</h3></div></div></div><div
             class="para">
 				Prenons le cas d'une simple clé USB et essayons de lui affecter un nom fixe. Il faut d'abord trouver les éléments qui vont permettre de l'identifier de manière unique. Pour cela, on la branche et on exécute <code
               class="command">udevadm info -a -n /dev/sdc</code> (en remplaçant évidemment <em
               class="replaceable">/dev/sdc</em> par le nom réel affecté à la clé).
 			</div><pre
-            class="screen"><code
+            class="screen">
+<code
               class="computeroutput"># </code><strong
               class="userinput"><code>udevadm info -a -n /dev/sdc</code></strong>
 <code
               class="computeroutput">[...]
-  looking at device '/devices/pci0000:00/0000:00:10.3/usb1/1-2/1-2.2/1-2.2:1.0/host9/target9:0:0/9:0:0:0/block/sdc':
+  looking at device '/devices/pci0000:00/0000:00:10.3/usb1/1-2/1-2.2/1-2.2:1.0/host9/target9:0:0/9:0:0:0/block/sdc
+':
     KERNEL=="sdc"
     SUBSYSTEM=="block"
     DRIVER==""
@@ -363,7 +365,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
     ATTRS{max_sectors}=="240"
 [...]
   looking at parent device '/devices/pci0000:00/0000:00:10.3/usb1/1-2/1-2.2':
-    KERNELS=="9:0:0:0"
+    KERNELS=="1-2.2"
     SUBSYSTEMS=="usb"
     DRIVERS=="usb"
     ATTRS{configuration}=="iCfg"
@@ -384,8 +386,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Pour constituer une ligne de règle, on peut employer des tests sur les variables du périphérique ainsi que celles d'un seul des périphériques parents. L'exemple ci-dessus permet par exemple de créer deux règles comme celles-ci:
 			</div><pre
-            class="programlisting">KERNEL=="sd?", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+="usb_key/disk"
-KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+="usb_key/part%n"
+            class="programlisting">
+KERNEL=="sd?", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+="clef_usb/disk"
+KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+="clef_usb/part%n"
 </pre><div
             class="para">
 				Une fois ces règles placées dans un fichier nommé par exemple <code
