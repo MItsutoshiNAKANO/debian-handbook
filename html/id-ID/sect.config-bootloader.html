@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Mengonfigurasi Bootloader</h2></div></div></div><a
-          id="idm140027044616112"
+          id="idm140313357486128"
           class="indexterm"></a><a
-          id="idm140027044614672"
+          id="idm140313357484688"
           class="indexterm"></a><div
           class="para">
 			Mungkin ini telah berfungsi, namun akan lebih baik jika mengetahui bagaimana mengonfigurasi dan menginstall bootloader jika dia menghilang dari Master Boot Record. Hal ini dapat terjadi setelah instalasi sistem operasi lainnya, seperti Windows. Informasi berikut dapat pula membantu Anda untuk memodifikasi konfigurasi bootloader jika diperlukan.
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>KEMBALI KE DASAR</em></span> Master boot record</strong></p></div></div></div><a
-            id="idm140027044611776"
+            id="idm140313357481792"
             class="indexterm"></a><a
-            id="idm140027044610816"
+            id="idm140313357480832"
             class="indexterm"></a><div
             class="para">
 			Master Boot Record (MBR) menempati 512 byte pertama pada hard disk pertama, dan merupakan yang pertama dimuat oleh BIOS untuk mengambil alih kontrol ke sebuah program yang dapat mem-boot sistem operasi yang diinginkan. Umumnya, sebuah bootloader terinstall di MBR, menghapus konten sebelumnya.
@@ -126,9 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm140027044595104"
+            id="idm140313357465120"
             class="indexterm"></a><a
-            id="idm140027044594144"
+            id="idm140313357464160"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -141,13 +141,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> merupakan partisi pertama pada disk pertama, dan <code
               class="filename">/dev/sdb3</code> adalah partisi ketiga pada disk kedua.
 			</div><a
-            id="idm140027044588784"
+            id="idm140313357458800"
             class="indexterm"></a><a
-            id="idm140027044587344"
+            id="idm140313357457360"
             class="indexterm"></a><a
-            id="idm140027044585904"
+            id="idm140313357455920"
             class="indexterm"></a><a
-            id="idm140027044584464"
+            id="idm140313357454480"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -157,9 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
 			</div><a
-            id="idm140027044580480"
+            id="idm140313357450496"
             class="indexterm"></a><a
-            id="idm140027044579040"
+            id="idm140313357449056"
             class="indexterm"></a><div
             class="para">
 				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
@@ -209,9 +209,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Mengonfigurasi LILO</h3></div></div></div><a
-            id="idm140027044568848"
+            id="idm140313357438864"
             class="indexterm"></a><a
-            id="idm140027044567888"
+            id="idm140313357437904"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -257,16 +257,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Konfigurasi GRUB 2</h3></div></div></div><a
-            id="idm140027044560448"
+            id="idm140313357430464"
             class="indexterm"></a><a
-            id="idm140027044559488"
+            id="idm140313357429504"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (GRand Unified Bootloader) lebih baru. Tidak perlu menjalankannya setiap pembaruan kernel; <span
               class="emphasis"><em>GRUB</em></span> tau bagaimana cara membaca sistemberkas dan menemukan lokasi kernel pada cakram dengan sendirinya. Untuk menginstallnya pada MBR pada cakram pertama, ketikkan <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm140027044556544"
+              id="idm140313357426560"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -303,7 +303,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Untuk Komputer Macintosh (PowerPC): Mengonfigurasi Yaboot</h3></div></div></div><a
-            id="idm140027044542624"
+            id="idm140313357412640"
             class="indexterm"></a><div
             class="para">
 				Yaboot merupakan bootloader yang digunakan oleh komputer Macintosh lama menggunakan prosesor PowerPC. Mereka tidak mem-boot seperti PC, namun memercayakan pada partisi “bootstrap”, di mana BIOS (atau OpenFirmware) mengeksekusi loader, dan program <code
@@ -316,7 +316,7 @@ other=/dev/sda1
 				Sebelum mengeksekusi <code
               class="command">ybin</code>, pertama Anda harus memiliki <code
               class="filename">/etc/yaboot.conf</code> yang valid. Berikut merupakan contoh konfigurasi minimal. <a
-              id="idm140027044537536"
+              id="idm140313357407552"
               class="indexterm"></a>
 			</div><div
             class="example"><a

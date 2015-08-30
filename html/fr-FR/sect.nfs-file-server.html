@@ -73,15 +73,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="foreignphrase"><em
               class="foreignphrase">Network File System</em></span>) est un protocole qui permet d'accéder à un système de fichiers à distance par le réseau, pris en charge par tous les systèmes Unix. Pour Windows, il faudra employer Samba.
 		</div><a
-          id="idm139924346918688"
+          id="idm139679562410464"
           class="indexterm"></a><a
-          id="idm139924346917728"
+          id="idm139679562409504"
           class="indexterm"></a><a
-          id="idm139924346915968"
+          id="idm139679562407744"
           class="indexterm"></a><a
-          id="idm139924346914528"
+          id="idm139679562406304"
           class="indexterm"></a><a
-          id="idm139924346913088"
+          id="idm139679562404864"
           class="indexterm"></a><div
           class="para">
 			NFS est un outil fort utile mais il ne faut jamais oublier ses limitations, surtout en termes de sécurité : toutes les données circulent en clair sur le réseau (un <span
@@ -102,8 +102,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139924346906144"></a>11.4.1. Sécuriser NFS (au mieux)</h3></div></div></div><a
-            id="idm139924346905376"
+                    id="idm139679562397920"></a>11.4.1. Sécuriser NFS (au mieux)</h3></div></div></div><a
+            id="idm139679562397152"
             class="indexterm"></a><div
             class="para">
 				Étant donné que NFS fait confiance aux informations reçues par le réseau, il convient de s'assurer que seules les machines autorisées à l'employer peuvent se connecter aux différents serveurs RPC qui lui permettent de fonctionner. Le pare-feu doit donc prohiber le <span
@@ -119,9 +119,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="foreignphrase"><em
                   class="foreignphrase">Remote Procedure Call</em></span>, ou appel de procédure distante) est un standard Unix pour des services distants. NFS est un service RPC.
 			</div><a
-              id="idm139924346900352"
+              id="idm139679562392128"
               class="indexterm"></a><a
-              id="idm139924346899392"
+              id="idm139679562391168"
               class="indexterm"></a><div
               class="para">
 				Les services RPC s'enregistrent dans un annuaire, le <span
@@ -137,13 +137,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">lockd</code>. Malheureusement, ils emploient par défaut un port aléatoire affecté par le <code
               class="command">portmapper</code> et il est donc difficile de filtrer le trafic qui leur est destiné. Les administrateurs de Falcot SA ont trouvé une solution à ce problème.
 			</div><a
-            id="idm139924346893776"
+            id="idm139679562385552"
             class="indexterm"></a><a
-            id="idm139924346892656"
+            id="idm139679562384432"
             class="indexterm"></a><a
-            id="idm139924346891536"
+            id="idm139679562383312"
             class="indexterm"></a><a
-            id="idm139924346890416"
+            id="idm139679562382192"
             class="indexterm"></a><div
             class="para">
 				Les deux premiers services cités sont implémentés par des programmes utilisateur, démarrés respectivement par <code
@@ -152,16 +152,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/etc/default/nfs-kernel-server</code> et <code
               class="filename">/etc/default/nfs-common</code>.
 			</div><a
-            id="idm139924346886704"
+            id="idm139679562378480"
             class="indexterm"></a><a
-            id="idm139924346885584"
+            id="idm139679562377360"
             class="indexterm"></a><a
-            id="idm139924346884496"
+            id="idm139679562376272"
             class="indexterm"></a><a
-            id="idm139924346883376"
+            id="idm139679562375152"
             class="indexterm"></a><div
             class="example"><a
-              id="idm139924346882256"></a><p
+              id="idm139679562374032"></a><p
               class="title"><strong>Exemple 11.23. Fichier <code
                   class="filename">/etc/default/nfs-kernel-server</code></strong></p><div
               class="example-contents"><pre
@@ -187,7 +187,7 @@ NEED_SVCGSSD=
 RPCSVCGSSDOPTS=
 </pre></div></div><div
             class="example"><a
-              id="idm139924346879904"></a><p
+              id="idm139679562371680"></a><p
               class="title"><strong>Exemple 11.24. Fichier <code
                   class="filename">/etc/default/nfs-common</code></strong></p><div
               class="example-contents"><pre
@@ -227,7 +227,7 @@ NEED_GSSD=
               class="filename">/etc/modprobe.d/lockd</code> comme dans l'exemple ci-dessous.
 			</div><div
             class="example"><a
-              id="idm139924346872832"></a><p
+              id="idm139679562364608"></a><p
               class="title"><strong>Exemple 11.25. Fichier <code
                   class="filename">/etc/modprobe.d/lockd</code></strong></p><div
               class="example-contents"><pre
@@ -240,7 +240,7 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139924346870224"></a>11.4.2. Serveur NFS</h3></div></div></div><div
+                    id="idm139679562362000"></a>11.4.2. Serveur NFS</h3></div></div></div><div
             class="para">
 				Le serveur NFS est intégré au noyau Linux ; Debian le compile dans ses noyaux sous forme de module. Pour l'activer automatiquement à chaque démarrage, il faut installer le paquet <span
               class="pkg pkg">nfs-kernel-server</span>, qui contient les scripts d'initialisation adéquats.
@@ -249,9 +249,9 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045
 				Le fichier de configuration du serveur NFS, <code
               class="filename">/etc/exports</code>, donne les répertoires exportés à l'extérieur. À chaque partage NFS sont associées des machines qui ont le droit d'y accéder. Un certain nombre d'options permettent de dicter quelques règles d'accès. Le format de ce fichier est très simple :
 			</div><a
-            id="idm139924346866768"
+            id="idm139679562358544"
             class="indexterm"></a><a
-            id="idm139924346865648"
+            id="idm139679562357424"
             class="indexterm"></a><pre
             class="programlisting">
 /repertoire/a/partager machine1(option1,option2,...) machine2(...) ...
@@ -274,7 +274,7 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045
               class="literal">secure</code> — sûr — est implicite en l'absence de <code
               class="literal">insecure</code>, mais on peut quand même la mentionner).
 			</div><a
-            id="idm139924329046928"
+            id="idm139679559015328"
             class="indexterm"></a><div
             class="para">
 				Le serveur ne répond à une requête NFS que lorsque l'opération sur disque a été complétée (option <code
@@ -318,10 +318,10 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139924329034480"></a>11.4.3. Client NFS</h3></div></div></div><a
-            id="idm139924329033840"
+                    id="idm139679559002880"></a>11.4.3. Client NFS</h3></div></div></div><a
+            id="idm139679559002240"
             class="indexterm"></a><a
-            id="idm139924329032688"
+            id="idm139679559001088"
             class="indexterm"></a><div
             class="para">
 				Comme tous les systèmes de fichiers, il est nécessaire de le monter pour l'intégrer dans l'arborescence du système. Étant donné qu'il s'agit d'un système de fichiers un peu particulier, il a fallu adapter la syntaxe habituelle de la commande <code
@@ -329,7 +329,7 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045
               class="filename">/etc/fstab</code>.
 			</div><div
             class="example"><a
-              id="idm139924329030112"></a><p
+              id="idm139679558998512"></a><p
               class="title"><strong>Exemple 11.26. Montage manuel avec la commande <code
                   class="command">mount</code></strong></p><div
               class="example-contents"><pre
@@ -338,7 +338,7 @@ options lockd nlm_udpport=2045 nlm_tcpport=2045
                   class="computeroutput"># </code><strong
                   class="userinput"><code>mount -t nfs -o rw,nosuid arrakis.interne.falcot.com:/srv/partage /partage</code></strong></pre></div></div><div
             class="example"><a
-              id="idm139924329028192"></a><p
+              id="idm139679558996496"></a><p
               class="title"><strong>Exemple 11.27. Entrée NFS dans le fichier <code
                   class="filename">/etc/fstab</code></strong></p><div
               class="example-contents"><pre
