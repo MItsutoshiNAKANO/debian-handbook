@@ -69,9 +69,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automated-installation"></a>12.3. التثبيت المؤتمت</h2></div></div></div><a
-          id="idm140255384080048"
+          id="idm139713870693664"
           class="indexterm"></a><a
-          id="idm140255384079280"
+          id="idm139713870692896"
           class="indexterm"></a><div
           class="para">
 			يحتاج مدراء النظم في شركة فلكوت، كما هو حال مدراء النظم في العديد من شركات الخدمات التقنية الكبيرة، لأدوات تساعدهم على تثبيت (أو إعادة تثبيت) النظام على الأجهزة الجديدة بسرعة، وبصورة آلية إذا أمكن.
@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fai"></a>12.3.1. ‏Fully Automatic Installer (FAI)‎</h3></div></div></div><a
-            id="idm140255384070256"
+            id="idm139713870683872"
             class="indexterm"></a><div
             class="para">
 				لعل <span
@@ -199,9 +199,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.d-i-preseeding"></a>12.3.2. تغذية مثبت دبيان</h3></div></div></div><a
-            id="idm140255384042752"
+            id="idm139713870656368"
             class="indexterm"></a><a
-            id="idm140255384041984"
+            id="idm139713870655600"
             class="indexterm"></a><div
             class="para">
 				في النهاية، يجب –منطقياً– أن يبقى مُثبِّت دبيان الرسمي أفضل أداة لتثبيت أنظمة دبيان. ولهذا السبب تم تصميم مثبت دبيان منذ البداية للاستخدام المؤتمت، بالاستفادة من مزايا البنية التحتية التي تقدمها <span
@@ -212,19 +212,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>التعمق أكثر</em></span> Debconf مع قاعدة بيانات مركزية</strong></p></div></div></div><a
-              id="idm140255384038016"
+              id="idm139713870651632"
               class="indexterm"></a><div
               class="para">
-				تسمح التغذية بالإجابة على أسئلة Debconf التي تطرحها أثناء التثبيت، لكن هذه الأجوبة ثابتة ولا تتطور بمرور الزمن. بما أن النظم المثبتة مسبقًا قد تحتاج للترقية، وقد تطرح أسئلة جديدة أثناء العملية، فيمكن ضبط ملف الإعداد <code
-                dir="ltr"
-                class="filename">/etc/debconf.conf</code> بحيث تستخدم Debconf مصادر بيانات خارجية (مثل مخدم LDAP directory، أو ملف بعيد تصل إليه عبر NFS أو Samba). يمكن تعريف عدة مصادر خارجية للبيانات في الوقت نفسه، وسوف تكمل هذه المصادر بعضها البعض. ستبقى قاعدة البيانات المحلية قيد الاستخدام (لاستخدامها للقراءة والكتابة)، أما قواعد البيانات الخارجية فتقتصر الصلاحيات فيها على القراءة فقط عادة. تشرح صفحة التعليمات <span
+				Preseeding allows to provide a set of answers to Debconf questions at installation time, but these answers are static and do not evolve as time passes. Since already-installed machines may need upgrading, and new answers may become required, the <code
+                class="filename">/etc/debconf.conf</code> configuration file can be set up so that Debconf uses external data sources (such as an LDAP directory server, or a remote file accessed via NFS or Samba). Several external data sources can be defined at the same time, and they complement one another. The local database is still used (for read-write access), but the remote databases are usually restricted to reading. The <span
                 class="citerefentry"><span
-                  class="refentrytitle">debconf.conf</span>(5)</span>‎ كافة الاحتمالات بالتفصيل.
+                  class="refentrytitle">debconf.conf</span>(5)</span> manual page describes all the possibilities in detail (you need the <span
+                class="pkg pkg">debconf-doc</span> package).
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255384034032"></a>12.3.2.1. استخدام ملف تغذية</h4></div></div></div><div
+                      id="idm139713870647584"></a>12.3.2.1. استخدام ملف تغذية</h4></div></div></div><div
               class="para">
 					يستطيع المُثبّت الحصول على ملف التغذية من العديد من الأماكن:
 				</div><div
@@ -257,7 +257,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255384024896"></a>12.3.2.2. إنشاء ملف التغذية</h4></div></div></div><div
+                      id="idm139713870638448"></a>12.3.2.2. إنشاء ملف التغذية</h4></div></div></div><div
               class="para">
 					ملف التغذية هو ملف نصي عادي، كل سطر منه يحوي إجابة لسؤال واحد من أسئلة Debconf. يفصل السطر إلى أربعة أقسام تفصلها مسافات بيضاء (علامة مسافة space أو علامة جدولة tab)، فمثلاً <code
                 class="literal">d-i mirror/suite string stable</code>:
@@ -291,34 +291,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>توثيق</em></span> الملحق في دليل التثبيت</strong></p></div></div></div><div
                 class="para">
-					يتضمن دليل التثبيت، المتاح على شبكة الإنترنت، توثيقاً مفصلاً عن استخدام ملفات التغذية في ملحق خاص. كما يتضمن مثالاً عن ملف تغذية مفصلاً ومزوداً بالتعليقات، يمكن الاستفادة منه كأساس للتخصيصات المحلية. <div
+					The installation guide, available online, includes detailed documentation on the use of a preseed file in an appendix. It also includes a detailed and commented sample file, which can serve as a base for local customizations. <div
                   class="url">→ <a
-                    href="http://www.debian.org/releases/wheezy/amd64/apb.html">http://www.debian.org/releases/wheezy/amd64/apb.html</a></div> <div
+                    href="https://www.debian.org/releases/jessie/amd64/apb.html">https://www.debian.org/releases/jessie/amd64/apb.html</a></div> <div
                   class="url">→ <a
-                    href="http://www.debian.org/releases/wheezy/example-preseed.txt">http://www.debian.org/releases/wheezy/example-preseed.txt</a></div>
+                    href="https://www.debian.org/releases/jessie/example-preseed.txt">https://www.debian.org/releases/jessie/example-preseed.txt</a></div>
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255384013200"></a>12.3.2.3. إنشاء وسيط إقلاعي مخصص</h4></div></div></div><div
+                      id="idm139713870626880"></a>12.3.2.3. إنشاء وسيط إقلاعي مخصص</h4></div></div></div><div
               class="para">
 					من الجيد أن يعرف المرء مكان تخزين ملف التغذية، لكن مكان التخزين ليس كل شيء: يجب تعديل وسيط الإقلاع –بشكل أو بآخر– لتغيير متغيرات الإقلاع وإضافة ملف التغذية.
 				</div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140255384011856"></a>12.3.2.3.1. الإقلاع من الشبكة</h5></div></div></div><div
+                        id="idm139713870625536"></a>12.3.2.3.1. الإقلاع من الشبكة</h5></div></div></div><div
                 class="para">
-						عند إقلاع الحاسب من الشبكة، يعرف المخدم الذي يرسل عناصر التهيئة متغيرات الإقلاع أيضًا. أي يجب أن يتم التعديل على إعداد PXE لمخدم الإقلاع؛ وبالتحديد أكثر، في ملف الإعداد <code
-                  dir="ltr"
-                  class="filename">/tftpboot/pxelinux.cfg/default</code>. إن إعداد الإقلاع عبر الشبكة هو متطلب أساسي؛ انظر دليل التثبيت لمزيد من التفاصيل. <div
+						When a computer is booted from the network, the server sending the initialization elements also defines the boot parameters. Thus, the change needs to be made in the PXE configuration for the boot server; more specifically, in its <code
+                  class="filename">/tftpboot/pxelinux.cfg/default</code> configuration file. Setting up network boot is a prerequisite; see the Installation Guide for details. <div
                   class="url">→ <a
-                    href="http://www.debian.org/releases/wheezy/amd64/ch04s05.html">http://www.debian.org/releases/wheezy/amd64/ch04s05.html</a></div>
+                    href="https://www.debian.org/releases/jessie/amd64/ch04s05.html">https://www.debian.org/releases/jessie/amd64/ch04s05.html</a></div>
 					</div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140255384008768"></a>12.3.2.3.2. تحضير ذاكرة USB إقلاعية</h5></div></div></div><div
+                        id="idm139713870622800"></a>12.3.2.3.2. تحضير ذاكرة USB إقلاعية</h5></div></div></div><div
                 class="para">
 						بعد تجهيز الذاكرة الإقلاعية (انظر <a
                   class="xref"
@@ -340,17 +339,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="filename">/media/usbdisk/syslinux.cfg</code> وأضف المتغيرات الإقلاعية اللازمة (انظر المثال التالي).
 							</div></li></ul></div><div
                 class="example"><a
-                  id="idm140255384003344"></a><p
+                  id="idm139713870617376"></a><p
                   class="title"><strong>مثال 12.2. ملف syslinux.cfg وبارامترات التغذية</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">default vmlinuz
-append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap=us languagechooser/language-name=English countrychooser/shortlist=US vga=normal initrd=initrd.gz  --
+append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=us country=US vga=788 initrd=initrd.gz  --
 </pre></div></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140255384001856"></a>12.3.2.3.3. إنشاء صورة CD-ROM</h5></div></div></div><a
-                id="idm140255384001216"
+                        id="idm139713870615936"></a>12.3.2.3.3. إنشاء صورة CD-ROM</h5></div></div></div><a
+                id="idm139713870615296"
                 class="indexterm"></a><div
                 class="para">
 						ذاكرة USB هي وسيط تخزين يقبل القراءة والكتابة، لذلك كانت إضافة الملف إليها وتعديل بعض المتغيرات فيها عملية سهلة. لكن في حالة استخدام CD-ROM، فالعملية معقدة أكثر، لأننا نحتاج توليد صورة ISO كاملة. هذه المهمة تحتاج الأداة <span
@@ -362,25 +361,23 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
                   class="filename">/usr/share/debian-cd/README</code>.
 					</div><div
                 class="para">
-						تعمل debian-cd دائماً بنفس الأسلوب: يتم توليد مجلد ”صورة“ فيه محتويات القرص الليزري نفسها، ثم يحوّل إلى ملف ISO بأداة مثل <code
-                  class="command">genisoimage</code> أو <code
-                  class="command">mkisofs</code> أو <code
-                  class="command">xorriso</code>. يُختَم المجلد بعد الخطوة <code
-                  class="command">make image-trees</code> التابعة لحزمة debian-cd. عند هذه النقطة، سوف نزرع ملف التغذية في المجلد المناسب (عادة <code
-                  dir="ltr"
-                  class="filename">$TDIR/wheezy/CD1/</code>، حيث ‎$TDIR هو أحد المتغيرات التي يعرفها ملف الإعداد <code
-                  class="filename">CONF.sh</code>). تستخدم الأقراص الليزرية <code
-                  class="command">isolinux</code> كمحمل للإقلاع، ويجب ضبط ملف الإعداد ليتناسب مع ما ولدته debian-cd، وإدخال متغيرات الإقلاع المطلوبة (الملف المقصود هو <code
-                  dir="ltr"
-                  class="filename">$TDIR/wheezy/boot1/isolinux/isolinux.cfg</code>). بعدها يمكن متابعة العملية ”الاعتيادية“، ويمكننا توليد صورة ISO بالأمر <code
-                  class="command">make image CD=1</code> (أو <code
-                  class="command">make images</code> إذا كنا سنولد عدة CD-ROMs).
+						Having said that, debian-cd always operates in a similar way: an “image” directory with the exact contents of the CD-ROM is generated, then converted to an ISO file with a tool such as <code
+                  class="command">genisoimage</code>, <code
+                  class="command">mkisofs</code> or <code
+                  class="command">xorriso</code>. The image directory is finalized after debian-cd's <code
+                  class="command">make image-trees</code> step. At that point, we insert the preseed file into the appropriate directory (usually <code
+                  class="filename">$TDIR/wheezy/CD1/</code>, $TDIR being one of the parameters defined by the <code
+                  class="filename">CONF.sh</code> configuration file). The CD-ROM uses <code
+                  class="command">isolinux</code> as its bootloader, and its configuration file must be adapted from what debian-cd generated, in order to insert the required boot parameters (the specific file is <code
+                  class="filename">$TDIR/jessie/boot1/isolinux/isolinux.cfg</code>). Then the “normal” process can be resumed, and we can go on to generating the ISO image with <code
+                  class="command">make image CD=1</code> (or <code
+                  class="command">make images</code> if several CD-ROMs are generated).
 					</div></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.simple-cdd"></a>12.3.3. ‏Simple-CDD: كل الحلول في حل واحد</h3></div></div></div><a
-            id="idm140255383990352"
+            id="idm139713870605184"
             class="indexterm"></a><div
             class="para">
 				ببساطة إن استخدام ملف التغذية لا يكفي لتلبية كافة المطالب التي قد تظهر عند النشر واسع النطاق. وبالرغم أنه يمكن تنفيذ بضعة سكربتات عند نهاية عملية التثبيت العادية، إلا أن مجموعة الحزم التي ستثبت ليست مرنة بما يكفي (أساساً لا يمكن إلا اختيار ”المهام“)؛ وأهم من هذا، لا يمكن إلا تثبيت حزم دبيان الرسمية، ولا يسمح بالحزم المولدة محليًا.
@@ -395,7 +392,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255383986016"></a>12.3.3.1. تعريف البروفايلات</h4></div></div></div><div
+                      id="idm139713870600848"></a>12.3.3.1. تعريف البروفايلات</h4></div></div></div><div
               class="para">
 					يعرف Simple-CDD ”بروفايلات“ تقابل مفهوم ”الفئات – classes“ في FAI، ويمكن إعطاء الجهاز عدة بروفايلات (تُحدَّد أثناء التثبيت). يعرف البروفايل بمجموعة من ملفات <code
                 dir="ltr"
@@ -452,9 +449,9 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255383971616"></a>12.3.3.2. إعداد واستخدام <code
+                      id="idm139713870586448"></a>12.3.3.2. إعداد واستخدام <code
                       class="command">build-simple-cdd</code></h4></div></div></div><a
-              id="idm140255383970720"
+              id="idm139713870585552"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -522,11 +519,11 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255383952704"></a>12.3.3.3. توليد صورة ISO</h4></div></div></div><div
+                      id="idm139713870567536"></a>12.3.3.3. توليد صورة ISO</h4></div></div></div><div
               class="para">
-					بعدما كتبنا ملف الإعداد وعرفنا البروفايلات، تبقى خطوة استدعاء <code
-                class="command">build-simple-cdd --conf simple-cdd.conf</code>. بعد عدة دقائق، نحصل على الصورة المطلوبة في <code
-                class="filename">images/debian-7.0-amd64-CD-1.iso</code>.
+					Once we have written a configuration file and defined our profiles, the remaining step is to invoke <code
+                class="command">build-simple-cdd --conf simple-cdd.conf</code>. After a few minutes, we get the required image in <code
+                class="filename">images/debian-8.0-amd64-CD-1.iso</code>.
 				</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

@@ -69,22 +69,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.setup-apt-package-repository"></a>15.3. Creating a Package Repository for APT</h2></div></div></div><a
-          id="idm140707561610880"
+          id="idm139957976137504"
           class="indexterm"></a><a
-          id="idm140707561609920"
+          id="idm139957976136544"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp gradually started maintaining a number of Debian packages either locally modified from existing packages or created from scratch to distribute internal data and programs.
 		</div><div
           class="para">
 			To make deployment easier, they want to integrate these packages in a package archive that can be directly used by APT. For obvious maintenance reasons, they wish to separate internal packages from locally-rebuilt packages. The goal is for the matching entries in a <code
-            class="filename">/etc/apt/sources.list</code> file to be as follows:
+            class="filename">/etc/apt/sources.list.d/falcot.list</code> file to be as follows:
 		</div><pre
           class="programlisting">
 deb http://packages.falcot.com/ updates/
 deb http://packages.falcot.com/ internal/
 </pre><a
-          id="idm140707561605712"
+          id="idm139957976132368"
           class="indexterm"></a><div
           class="para">
 			The administrators therefore configure a virtual host on their internal HTTP server, with <code
@@ -115,7 +115,7 @@ deb http://packages.falcot.com/ internal/
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">apt-ftparchive</code></strong></p></div></div></div><a
-            id="idm140707561592400"
+            id="idm139957976119216"
             class="indexterm"></a><div
             class="para">
 			If <code
@@ -212,8 +212,7 @@ release_label = Internal Packages
                   class="title"><strong><span
                       class="emphasis"><em>EXTRA</em></span> Generating a signed archive</strong></p></div></div></div><div
             class="para">
-			The APT suite checks a chain of cryptographic signatures on the packages it handles before installing them (and has done so since <span
-              class="distribution distribution">Etch</span>), in order to ensure their authenticity (see <a
+			The APT suite checks a chain of cryptographic signatures on the packages it handles before installing them, in order to ensure their authenticity (see <a
               class="xref"
               href="sect.package-authentication.html">
       قسمت 6.5, “Checking Package Authenticity”

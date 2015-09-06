@@ -71,15 +71,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Le domaine des bureaux graphiques connaît deux grandes familles de logiciels : GNOME et KDE, tous deux très populaires. C'est un phénomène que l'on ne retrouve pas dans tous les domaines du logiciel libre ; les concurrents d'Apache ne sont ainsi que des serveurs web marginaux.
 		</div><a
-          id="idm139679561112080"
+          id="idm139935500106080"
           class="indexterm"></a><a
-          id="idm139679561111120"
+          id="idm139935500105120"
           class="indexterm"></a><a
-          id="idm139679561110160"
+          id="idm139935500104160"
           class="indexterm"></a><a
-          id="idm139679561109200"
+          id="idm139935500103200"
           class="indexterm"></a><a
-          id="idm139679561108240"
+          id="idm139935500102240"
           class="indexterm"></a><div
           class="para">
 			Cette diversité a une origine historique, KDE fut le premier projet de bureau graphique mais son choix de la bibliothèque graphique Qt ne convenait pas à tous. À l'époque, Qt n'était pas encore un logiciel libre et GNOME a rapidement démarré en optant pour la bibliothèque graphique GTK+. Depuis, les projets évoluent en parallèle. Qt est depuis devenu libre, mais ces deux projets n'ont pas fusionné.
@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Ils collaborent cependant : par l'intermédiaire de FreeDesktop.org, ils ont défini des normes favorisant l'interopérabilité entre les différentes applications.
 		</div><a
-          id="idm139679561105760"
+          id="idm139935500099760"
           class="indexterm"></a><div
           class="para">
 			Nous ne nous aventurerons pas à répondre à l'épineuse question du choix du bureau graphique : ce chapitre passe rapidement en revue les différentes possibilités et fournit des éléments de réflexion sur le sujet. Il est toujours préférable d'essayer les différentes possibilités avant d'en adopter une.
@@ -98,59 +98,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.gnome-desktop"></a>13.3.1. GNOME</h3></div></div></div><div
             class="para">
 				Debian <span
-              class="distribution distribution">Wheezy</span> contient la version 3.4 de GNOME, qui s'installe simplement par la commande <code
-              class="command">apt-get install gnome</code> (et qui est automatiquement installée par la tâche <span
-              class="guimenuitem"><strong>Environnement graphique de bureau</strong></span>).
+              class="distribution distribution">Jessie</span> includes GNOME version 3.14, which can be installed by a simple <code
+              class="command">apt-get install gnome</code> (it can also be installed by selecting the “Graphical desktop environment” task).
 			</div><a
-            id="idm139679561100944"
+            id="idm139935500095392"
             class="indexterm"></a><div
             class="para">
 				GNOME est intéressant de par ses efforts dans le domaine de l'ergonomie et de l'accessibilité. Des professionnels du design ont en effet rédigé des normes pour aider les développeurs à créer des interfaces graphiques satisfaisantes. Le projet est en outre encouragé par de grands acteurs de l'informatique comme Intel, IBM, Oracle, Novell, sans oublier des distributions Linux. Enfin, un grand nombre de langages de programmation sont exploitables pour développer des applications s'intégrant à GNOME.
 			</div><div
-            class="para">
-				La réalisation de toute cette infrastructure a pris beaucoup de temps au projet GNOME, qui donne parfois l'impression d'une maturité moins aboutie que celle de KDE. L'ergonomie et l'accessibilité n'ont fait que récemment l'objet d'une attention particulière et on n'en perçoit les bénéfices que depuis les dernières versions de l'environnement.
-			</div><div
             class="figure"><a
-              id="idm139679561097808"></a><div
+              id="idm139935500093088"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/gnome.png"
                   alt="Le bureau GNOME" /></div></div><p
               class="title"><strong>Figure 13.1. Le bureau GNOME</strong></p></div><div
             class="para">
-				Pour les administrateurs, GNOME semble être mieux préparé à des déploiements massifs. La configuration des applications est gérée par deux systèmes, GSettings (le standard actuel, qui stocke ses données dans DConf) et GConf (l'ancien système utilisé dans GNOME 2.x et toujours usité par quelques applications GNOME 3.x pas encore converties). Ces « bases de registres » sont interrogeables et modifiables par les utilitaires en ligne de commande <code
-              class="command">gsettings</code>, <code
-              class="command">dconf</code> et <code
-              class="command">gconftool-2</code>, ou par les interfaces graphiques <code
-              class="command">dconf-editor</code> et <code
-              class="command">gconf-editor</code>. L'administrateur peut donc modifier la configuration des utilisateurs par un simple script. Le site web suivant regroupe toutes les informations qui peuvent intéresser un administrateur en charge de stations employant GNOME : <div
+				For administrators, GNOME seems to be better prepared for massive deployments. Application configuration is handled through the GSettings interface and stores its data in the DConf database. The configuration settings can thus be queried and edited with the <code
+              class="command">gsettings</code>, and <code
+              class="command">dconf</code> command-line tools, or by the <code
+              class="command">dconf-editor</code> graphical user interfaces. The administrator can therefore change users' configuration with a simple script. The following website lists all information of interest to an administrator tasked to manage GNOME workstations: <div
               class="url">→ <a
-                href="http://library.gnome.org/admin/system-admin-guide/stable/">http://library.gnome.org/admin/system-admin-guide/stable/</a></div> <div
-              class="url">→ <a
-                href="http://library.gnome.org/admin/deployment-guide/">http://library.gnome.org/admin/deployment-guide/</a></div>
+                href="https://help.gnome.org/admin/">https://help.gnome.org/admin/</a></div>
 			</div><a
-            id="idm139679561955232"
+            id="idm139935500087072"
             class="indexterm"></a><a
-            id="idm139679561954112"
-            class="indexterm"></a><a
-            id="idm139679561952992"
-            class="indexterm"></a><a
-            id="idm139679561951872"
+            id="idm139935500085952"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139679561950592"></a>13.3.2. KDE</h3></div></div></div><div
+                    id="idm139935500084672"></a>13.3.2. KDE</h3></div></div></div><div
             class="para">
-				La version 4.8.4 de KDE, intégrée à Debian <span
-              class="distribution distribution">Wheezy</span>, s'installe facilement avec la commande <code
+				Debian <span
+              class="distribution distribution">Jessie</span> includes version 4.14 of KDE, which can be installed with <code
               class="command">apt-get install kde-standard</code>.
 			</div><div
             class="para">
 				KDE a évolué rapidement en suivant une approche très pragmatique ; ses auteurs ont très vite obtenu d'excellents résultats, ce qui leur a permis de mettre en place une importante base d'utilisateurs… contribuant elle-même à la qualité du projet. Globalement, KDE est un bureau graphique parfaitement mûr, disposant d'une très large palette d'applications.
 			</div><div
             class="figure"><a
-              id="idm139679561947408"></a><div
+              id="idm139935500081456"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/kde.png"
@@ -162,29 +150,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139679561943392"></a>13.3.3. Xfce et autres</h3></div></div></div><div
+                    id="idm139935500077440"></a>13.3.3. Xfce et autres</h3></div></div></div><div
             class="para">
 				Xfce est un bureau graphique simple et allégé qui convient parfaitement aux ordinateurs limités en ressources. Il s'installe avec la commande <code
               class="command">apt-get install xfce4</code>. Il s'appuie — comme GNOME — sur la bibliothèque graphique GTK+ et de nombreux composants sont communs avec ce dernier.
 			</div><a
-            id="idm139679561941392"
+            id="idm139935500075440"
             class="indexterm"></a><div
             class="para">
-				Contrairement à GNOME et KDE, Xfce n'est pas un projet très vaste. Outre les composants de base d'un bureau moderne (gestionnaire de fichiers, gestionnaire de fenêtres, gestionnaire de sessions, panneau démarreur d'applications, etc.), il ne fournit que quelques applications : un navigateur web très léger (Midori), un terminal, un calendrier, un visionneur d'images, un graveur de CD/DVD, un lecteur de fichiers multimédia (Parole) et un contrôleur de volume (pour le son).
+				Unlike GNOME and KDE, Xfce does not aim at being a vast project. Beyond the basic components of a modern desktop (file manager, window manager, session manager, a panel for application launchers and so on), it only provides a few specific applications: a terminal, a calendar (Orage), an image viewer, a CD/DVD burning tool, a media player (Parole), sound volume control and a text editor (mousepad).
 			</div><div
             class="figure"><a
-              id="idm139679561939472"></a><div
+              id="idm139935500073600"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/xfce.png"
                   alt="Le bureau Xfce" /></div></div><p
               class="title"><strong>Figure 13.3. Le bureau Xfce</strong></p></div><div
             class="para">
-				Un autre bureau graphique fourni dans <span
-              class="distribution distribution">Wheezy</span> est LXDE, sa caractéristique principale est sa « légèreté ». Il peut être installé avec l'aide du méta-paquet <span
-              class="pkg pkg">lxde</span>.
+				Another desktop environment provided in <span
+              class="distribution distribution">Jessie</span> is LXDE, which focuses on the “lightweight” aspect. It can be installed with the help of the <span
+              class="pkg pkg">lxde</span> meta-package.
 			</div><a
-            id="idm139679561934560"
+            id="idm139935480755328"
             class="indexterm"></a></div></div><ul
         class="docnav"><li
           class="previous"><a

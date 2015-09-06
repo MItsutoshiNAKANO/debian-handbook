@@ -71,14 +71,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140441582809328"></a>15.2.1. Meta-pacotes ou falsos pacotes</h3></div></div></div><div
+                    id="idm139983956148304"></a>15.2.1. Meta-pacotes ou falsos pacotes</h3></div></div></div><div
             class="para">
 				Pacotes falsos e meta-pacotes são similares, ambos são shells vazios que somente existem para efeito dos metadados que existem na pilha de gerenciamento de pacotes.
 			</div><div
             class="para">
-				O propósito de um pacote falso é enganar o <code
-              class="command">dpkg</code> e o <code
-              class="command">apt</code> para acreditarem que algum pacote está instalado mesmo que em realidade seja apenas um shell vazio. Isto permite satisfazer dependências num pacote quando o programa correspondente foi instalado fora do escopo do sistema de pacotes. Este método funciona, porém deve mesmo assim ser evitado sempre que possível, já que não garantias de que o programa instalado manualmente se comportará exatamente como o pacote correspondente faria e outros pacotes dependentes dele poderiam não funcionar corretamente.
+				The purpose of a fake package is to trick <code
+              class="command">dpkg</code> and <code
+              class="command">apt</code> into believing that some package is installed even though it's only an empty shell. This allows satisfying dependencies on a package when the corresponding software was installed outside the scope of the packaging system. Such a method works, but it should still be avoided whenever possible, since there is no guarantee that the manually installed software behaves exactly like the corresponding package would and other packages depending on it would not work properly.
 			</div><div
             class="para">
 				De outra maneira, um meta-pacote existe em sua maioria como uma coleção de dependências, então instalando um meta-pacote na verdade trará um conjunto de pacotes em um único passo.
@@ -97,27 +97,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">equivs-build</code>, e eles não serão mantidos nos cabeçalhos do pacote gerados.
 			</div><div
             class="example"><a
-              id="idm140441582799888"></a><p
+              id="idm139983956138896"></a><p
               class="title"><strong>Exemplo 15.2. Cabeçalho do pacote falso <span
                   class="emphasis"><em>libxml-libxml-perl</em></span></strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 Section: perl
 Priority: optional
-Standards-Version: 3.8.4
+Standards-Version: 3.9.6
 
 Package: libxml-libxml-perl
-Version: 1.57-1
+Version: 2.0116-1
 Maintainer: Raphael Hertzog &lt;hertzog@debian.org&gt;
-Depends: libxml2 (&gt;= 2.6.6)
+Depends: libxml2 (&gt;= 2.7.4)
 Architecture: all
-Description: Fake package - módulo instalado manualmente em site_perl
-  Este é um pacote falso para deixar o sistema de empacotamento
-  acreditando que este pacote Debian está instalado.
+Description: Fake package - module manually installed in site_perl
+ This is a fake package to let the packaging system
+ believe that this Debian package is installed. 
  .
-Na verdade, o pacote não está instalado desde uma versão mais recente
-  do módulo que foi manualmente compilada &amp; instalada no
-  diretório site_perl.
+ In fact, the package is not installed since a newer version
+ of the module has been manually compiled &amp; installed in the
+ site_perl directory.
 </pre></div></div><div
             class="para">
 				O próximo passo é gerar o pacote Debian com o comando <code
@@ -127,11 +127,11 @@ Na verdade, o pacote não está instalado desde uma versão mais recente
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140441583880096"></a>15.2.2. Depósito Simples de Arquivos</h3></div></div></div><div
+                    id="idm139983956135168"></a>15.2.2. Depósito Simples de Arquivos</h3></div></div></div><div
             class="para">
-				Os administradores da Falcot Corp precisam criar um pacote Debian para facilitar a instalação de um conjunto de documentos em um grande número de máquina. O administrador responsável por essa tarefa primeiramente lê o “New Maintainer's Guide”, e então começa a trabalhar no seu primeiro pacote. <div
+				The Falcot Corp administrators need to create a Debian package in order to ease deployment of a set of documents on a large number of machines. The administrator in charge of this task first reads the “New Maintainer's Guide”, then starts working on their first package. <div
               class="url">→ <a
-                href="http://www.debian.org/doc/maint-guide/">http://www.debian.org/doc/maint-guide/</a></div>
+                href="https://www.debian.org/doc/manuals/maint-guide/">https://www.debian.org/doc/manuals/maint-guide/</a></div>
 			</div><div
             class="para">
 				O primeiro passo é criar um diretório <code
@@ -152,54 +152,52 @@ Na verdade, o pacote não está instalado desde uma versão mais recente
               class="userinput"><code>dh_make --native</code></strong>
 <code
               class="computeroutput">
-Type of package: único binário, binário indep, binário múltiplo, biblioteca, módulo do kernel, patch para o kernel ou cdbs?
-Type of package: single binary, indep binary, multiple binary, library, kernel module, kernel patch or cdbs?
- [s/i/m/l/k/n/b] </code><strong
-              class="userinput"><code>i</code></strong><code
+Type of package: single binary, indep binary, multiple binary, library, kernel module, kernel patch?
+ [s/i/m/l/k/n] </code><strong
+              class="userinput"><code>i</code></strong>
+<code
               class="computeroutput">
 Maintainer name : Raphael Hertzog
 Email-Address   : hertzog@debian.org
-Date            : Mon, 11 Apr 2011 15:11:36 +0200
+Date            : Fri, 04 Sep 2015 12:09:39 -0400
 Package Name    : falcot-data
 Version         : 1.0
-License         : blank
-Usind dpatch    : não
-Type of Package : Independente
-Pressione &lt;enter&gt; para confirmar:
-Atualmente não há nível superior Makefile. Isto pode exigir um ajuste adicional.
-Feito. Por favor, edite os arquivos no agora debian/subdiretório. Você também deve
-verificar se o instalador falcot-data Makefiles  em $DESTDIR e não em /.
+License         : gpl3
+Type of Package : Independent
+Hit &lt;enter&gt; to confirm:
+Currently there is no top level Makefile. This may require additional tuning.
+Done. Please edit the files in the debian/ subdirectory now. You should also
+check that the falcot-data Makefiles install into $DESTDIR and not in / .
 $</code></pre><div
             class="para">
-				O tipo de pacote escolhido (<span
-              class="emphasis"><em>binário único</em></span>) indica que este pacote fonte irá gerar um único pacote binário dependendo da arquitetura (<code
-              class="literal">Arquitetura: qualquer</code>). <span
-              class="emphasis"><em>binário Indep</em></span> atua como contraparte, e leva a um único pacote binário que não é dependente da arquitetura alvo (<code
-              class="literal"> Arquiitetura: Todas</code>). Neste caso, a escolha último é mais relevante uma vez que o pacote contém apenas os documentos e não programas binários, para que possa ser usado de forma semelhante em computadores de todas arquitecturas.
-			</div><div
+				The selected type of package (<span
+              class="emphasis"><em>indep binary</em></span>) indicates that this source package will generate a single binary package that can be shared across all architectures (<code
+              class="literal">Architecture: all</code>). <span
+              class="emphasis"><em>single binary</em></span> acts as a counterpart, and leads to a single binary package that is dependent on the target architecture (<code
+              class="literal">Architecture: any</code>). In this case, the former choice is more relevant since the package only contains documents and no binary programs, so it can be used similarly on computers of all architectures.
+			</div><a
+            id="idm139983956122480"
+            class="indexterm"></a><a
+            id="idm139983956121520"
+            class="indexterm"></a><div
             class="para">
-				O tipo <span
-              class="emphasis"><em>múltiplo binário</em></span> corresponde a um pacote fonte levando a vários pacotes binários. Um caso particular, <span
-              class="emphasis"><em>biblioteca</em></span>, é útil para bibliotecas compartilhadas, uma vez que precisa seguir regras rígidas do empacotamento. De forma semelhante, <span
-              class="emphasis"><em>módulo do kernel</em></span> deve ser restrito aos pacotes contendo módulos do kernel. Finalmente, <span
-              class="emphasis"><em>cdbs</em></span> é um pacote específico sistema de construção, é bastante flexível, mas requer uma certa quantidade de aprendizagem. <a
-              id="idm140441583865184"
-              class="indexterm"></a> <a
-              id="idm140441583864544"
-              class="indexterm"></a>
+				The <span
+              class="emphasis"><em>multiple binary</em></span> type corresponds to a source package leading to several binary packages. A particular case, <span
+              class="emphasis"><em>library</em></span>, is useful for shared libraries, since they need to follow strict packaging rules. In a similar fashion, <span
+              class="emphasis"><em>kernel module</em></span> or <span
+              class="emphasis"><em>kernel patch</em></span> should be restricted to packages containing kernel modules.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DICA</em></span> Nome e endereço de e-mail do mantenedor</strong></p></div></div></div><div
               class="para">
-				A maioria dos programas envolvidos no pacotes de manutenção irão procurar seu nome e endereço de e-mail no <code
-                class="varname">DEBFULLNAME</code> e <code
-                class="varname">DEBEMAIL</code> ou variáveis de ambiente <code
-                class="varname">EMAIL</code>. Defini los de uma vez por todas vai evitar que você tenha de digitá-los várias vezes. Se o shell usual é o <code
-                class="command">bash</code>, é uma simples questão de adicionar as duas linhas seguintes em seus aquivos <code
-                class="filename">~/.bashrc</code> e <code
-                class="filename">~/.bash_profile</code> (você obviamente substitui os valores com os mais relevantes!):
+				Most of the programs involved in package maintenance will look for your name and email address in the <code
+                class="varname">DEBFULLNAME</code> and <code
+                class="varname">DEBEMAIL</code> or <code
+                class="varname">EMAIL</code> environment variables. Defining them once and for all will avoid you having to type them multiple times. If your usual shell is <code
+                class="command">bash</code>, it is a simple matter of adding the following two lines in your <code
+                class="filename">~/.bashrc</code> file (you will obviously replace the values with more relevant ones!):
 			</div><pre
               class="programlisting">
 export EMAIL="hertzog@debian.org"
@@ -233,7 +231,7 @@ export DEBFULLNAME="Raphael Hertzog"
               class="literal">iceweasel | www-browser</code>, de modo a assegurar a disponibilidade de um navegador web capaz de exibir os documentos no pacote.
 			</div><div
             class="example"><a
-              id="idm140441583846688"></a><p
+              id="idm139983956101504"></a><p
               class="title"><strong>Exemplo 15.3. O arquivo <code
                   class="filename">control</code></strong></p><div
               class="example-contents"><pre
@@ -242,8 +240,8 @@ Source: falcot-data
 Section: misc
 Priority: optional
 Maintainer: Raphael Hertzog &lt;hertzog@debian.org&gt;
-Build-Depends: debhelper (&gt;= 7.0.50~)
-Standards-Version: 3.8.4
+Build-Depends: debhelper (&gt;= 9)
+Standards-Version: 3.9.5
 
 Package: falcot-data
 Architecture: all
@@ -258,43 +256,40 @@ Description: Internal Falcot Corp Documentation
  Their use is INTERNAL ONLY.
 </pre></div></div><div
             class="example"><a
-              id="idm140441583844400"></a><p
+              id="idm139983956099216"></a><p
               class="title"><strong>Exemplo 15.4. O arquivo <code
                   class="filename">changelog</code></strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 falcot-data (1.0) internal; urgency=low
 
-  * Lançamento inicial.
-  * Comecemos por alguns documentos:
-    - estrutura interna de empresa;
-    - contatos para cada departamento.
+  * Initial Release.
+  * Let's start with few documents:
+    - internal company structure;
+    - contacts for each department.
 
- -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Mon, 11 Apr 2011 20:46:33 +0200
+ -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Fri, 04 Sep 2015 12:09:39 -0400
 </pre></div></div><div
             class="example"><a
-              id="idm140441583842400"></a><p
+              id="idm139983956097232"></a><p
               class="title"><strong>Exemplo 15.5. O arquivo <code
                   class="filename">copyright</code></strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-Este trabalho foi empacotado para o Debian por Raphael Hertzog &lt;hertzog@debian.org&gt;
-na Seg, 11 Abril 2011 20:46:33 +0200
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: falcot-data
 
-Direitos Autorais:
-
-    Direitos Autorais (C) 2004-2011 Falcot Corp
-
-Licença:
-
-    Todos os direitos reservados.
+Files: *
+Copyright: 2004-2015 Falcot Corp
+License: 
+ All rights reserved.
 </pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> arquivo <code
                         class="filename">Makefile</code></strong></p></div></div></div><a
-              id="idm140441583838976"
+              id="idm139983956093872"
               class="indexterm"></a><div
               class="para">
 				Um arquivo <code
@@ -339,54 +334,33 @@ alvo: fonte1 fonte2 ...
 data/* usr/share/falcot-data/
 </pre><div
             class="para">
-				Neste ponto, o pacote pode ser criado. Nós no entanto vamos adicionar um toque especial. Já que os administradores querem que os documentos sejam facilmente acessador a partir dos menus de Ajuda da interface gráfica, nós criaremos uma entrada no sistema de menu do Debian. Isto simplesmente é feito renomeando o <code
-              class="filename">debian/menu.ex</code> sem sua extensão e editando o seguinte:
+				At this point, the package can be created. We will however add a lick of paint. Since the administrators want the documents to be easily accessed from the menus of graphical desktop environments, we add a <code
+              class="filename">falcot-data.desktop</code> file and get it installed in <code
+              class="filename">/usr/share/applications</code> by adding a second line to <code
+              class="filename">debian/falcot-data.install</code>.
 			</div><div
             class="example"><a
-              id="idm140441583823648"></a><p
-              class="title"><strong>Exemplo 15.6. O arquivo <code
-                  class="filename">menu</code></strong></p><div
+              id="idm139983937677504"></a><p
+              class="title"><strong>Exemplo 15.6. The <code
+                  class="filename">falcot-data.desktop</code> file</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-?package(falcot-data):needs=X11|wm section=Help\
-  title="Internal Falcot Corp Documentation" \
-  command="/usr/bin/x-www-browser /usr/share/falcot-data/index.html"
-?package(falcot-data):needs=text section=Help\
-  title="Internal Falcot Corp Documentation" \
-  command="/usr/bin/www-browser /usr/share/falcot-data/index.html"
+[Desktop Entry]
+Name=Internal Falcot Corp Documentation
+Comment=Starts a browser to read the documentation
+Exec=x-www-browser /usr/share/falcot-data/index.html
+Terminal=false
+Type=Application
+Categories=Documentation;
 </pre></div></div><div
             class="para">
-				O campo <code
-              class="literal">needs</code>, quando definido como <code
-              class="literal">X11|wm</code> indica que esta entrada só faz sentido em uma interface gráfica. Portanto, só poderá ser integrado nos menus das aplicações (X11) e gerenciadores de janelas (por isso o <code
-              class="literal">wm</code>). O estado do campo <code
-              class="literal">section</code> onde a entrada deve ser exibida no menu. No nosso caso, a entrada será no menu Ajuda. O campo <code
-              class="literal">title</code> contém o texto que será exibido no menu. Finalmente, o campo <code
-              class="literal">command</code> descreve o comando a executar quando o usuário seleciona o item do menu.
-			</div><div
-            class="para">
-				A segunda entrada combina com a primeira, com pequenas adaptações para o modo texto do Linux.
-			</div><div
-            class="sidebar"><div
-              class="titlepage"><div><div><p
-                    class="title"><strong><span
-                        class="emphasis"><em>POLÍTICA DO DEBIAN</em></span> Organização do menu</strong></p></div></div></div><div
-              class="para">
-				O menus do Debian são organizados em uma estrutura formal, documentada no seguinte texto: <div
-                class="url">→ <a
-                  href="http://www.debian.org/doc/packaging-manuals/menu-policy/">http://www.debian.org/doc/packaging-manuals/menu-policy/</a></div>
-			</div><div
-              class="para">
-				A <code
-                class="literal">seção</code> no arquivo <code
-                class="filename">menu</code> deve ser selecionado da lista mencionada neste documento.
-			</div></div><div
-            class="para">
-				Simplesmente criando o arquivo <code
-              class="filename">debian/menu</code> é o suficiente para habilitar o menu no pacote, desde que o comando <code
-              class="command">dh_installmenu</code> seja automaticamente invocado por <code
-              class="command">dh</code> durante o processo de criação do pacote.
-			</div><div
+				The updated <code
+              class="filename">debian/falcot-data.install</code> looks like this:
+			</div><pre
+            class="programlisting">
+data/* usr/share/falcot-data/
+falcot-data.desktop usr/share/applications/
+</pre><div
             class="para">
 				Nosso pacote fonte está pronto. Tudo o que sobrou fazer é gerar um pacote binário, com o mesmo método que usamos anteriormente para construir pacotes: executamos o comando <code
               class="command">dpkg-buildpackage -us -uc</code> de dentro do diretório <code

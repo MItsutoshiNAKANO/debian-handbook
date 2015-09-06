@@ -71,14 +71,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140018547145600"></a>13.2.1. 选择显示管理器</h3></div></div></div><a
-            id="idm140018547144800"
+                    id="idm140012494894576"></a>13.2.1. 选择显示管理器</h3></div></div></div><a
+            id="idm140012494893776"
             class="indexterm"></a><a
-            id="idm140018547143360"
+            id="idm140012494892336"
             class="indexterm"></a><a
-            id="idm140018547142240"
+            id="idm140012494891216"
             class="indexterm"></a><a
-            id="idm140018547141120"
+            id="idm140012494890096"
             class="indexterm"></a><div
             class="para">
 				The graphical interface only provides display space. Running the X server by itself only leads to an empty screen, which is why most installations use a <span
@@ -89,38 +89,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">kdm</span> (<span
               class="foreignphrase"><em
                 class="foreignphrase">KDE Display Manager</em></span>) and <span
-              class="pkg pkg">xdm</span> (<span
+              class="pkg pkg">lightdm</span> (<span
               class="foreignphrase"><em
-                class="foreignphrase">X Display Manager</em></span>). Since the Falcot Corp administrators have opted to use the GNOME desktop environment, they logically picked <code
+                class="foreignphrase">Light Display Manager</em></span>). Since the Falcot Corp administrators have opted to use the GNOME desktop environment, they logically picked <code
               class="command">gdm3</code> as a display manager too. The <code
               class="filename">/etc/gdm3/daemon.conf</code> configuration file has many options (the list can be found in the <code
               class="filename">/usr/share/gdm/gdm.schemas</code> schema file) to control its behaviour while <code
-              class="filename">/etc/gdm3/greeter.gsettings</code> contains settings for the greeter “session” (more than just a login window, it's a limited desktop with power management and accessibility related tools). Note that some of the most useful settings for end-users can be tweaked with GNOME's control center.
+              class="filename">/etc/gdm3/greeter.dconf-defaults</code> contains settings for the greeter “session” (more than just a login window, it is a limited desktop with power management and accessibility related tools). Note that some of the most useful settings for end-users can be tweaked with GNOME's control center.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140018552436800"></a>13.2.2. 选择窗口管理器</h3></div></div></div><div
+                    id="idm140012498941808"></a>13.2.2. 选择窗口管理器</h3></div></div></div><div
             class="para">
 				Since each graphical desktop provides its own window manager, choosing the former usually implies software selections from the latter. GNOME uses the <code
-              class="command">mutter</code> window manager (or <code
-              class="command">metacity</code> when run in GNOME Classic mode), KDE uses <code
+              class="command">mutter</code> window manager, KDE uses <code
               class="command">kwin</code>, and Xfce (which we present later) has <code
               class="command">xfwm</code>. The Unix philosophy always allows using one's window manager of choice, but following the recommendations allows an administrator to best take advantage of the integration efforts led by each project.
 			</div><a
-            id="idm140018552433328"
+            id="idm140012498938816"
             class="indexterm"></a><a
-            id="idm140018552432208"
+            id="idm140012498937696"
             class="indexterm"></a><a
-            id="idm140018552431088"
+            id="idm140012498936576"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>回到基础</em></span> 窗口管理器</strong></p></div></div></div><a
-              id="idm140018552428848"
+              id="idm140012498934336"
               class="indexterm"></a><a
-              id="idm140018554797088"
+              id="idm140012500014560"
               class="indexterm"></a><div
               class="para">
 				Unix 传统是做一件事情就要把它做好，窗口管理器装饰当前运行程序的窗口，包括框架和标题栏。也允许减小，恢复，最大化，和隐藏窗口。大多数窗口管理器提供弹出菜单。这些弹出菜单提供了关闭窗口会话，启动新程序的方法，或者切换到其他的窗口管理器。
@@ -131,30 +130,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">x-window-manager</code> alternative with the <code
               class="command">update-alternatives --config x-window-manager</code> command.
 			</div><a
-            id="idm140018554792496"
+            id="idm140012500009968"
             class="indexterm"></a><a
-            id="idm140018554791536"
+            id="idm140012500009008"
             class="indexterm"></a><a
-            id="idm140018554790576"
+            id="idm140012500008048"
             class="indexterm"></a><a
-            id="idm140018554789616"
+            id="idm140012500007088"
             class="indexterm"></a><a
-            id="idm140018554788656"
+            id="idm140012500006128"
             class="indexterm"></a><a
-            id="idm140018554787696"
+            id="idm140012500005168"
             class="indexterm"></a><a
-            id="idm140018554786736"
+            id="idm140012500004208"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.alternatives"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DEBIAN 特性</em></span> 选择</strong></p></div></div></div><a
-              id="idm140018554784240"
+              id="idm140012500001712"
               class="indexterm"></a><a
-              id="idm140018554783120"
+              id="idm140012500000592"
               class="indexterm"></a><a
-              id="idm140018554782160"
+              id="idm140012499999632"
               class="indexterm"></a><div
               class="para">
 				Debian 政策列出了一系列标准命令来运行特殊命令。例如， <code
@@ -180,68 +179,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">c++</code>，<code
                 class="command">awk</code>，等）。
 			</div><a
-              id="idm140018544597968"
+              id="idm140012490787296"
               class="indexterm"></a><a
-              id="idm140018544596848"
+              id="idm140012490786176"
               class="indexterm"></a><a
-              id="idm140018544595728"
+              id="idm140012490785056"
               class="indexterm"></a><a
-              id="idm140018544594608"
+              id="idm140012490783936"
               class="indexterm"></a><a
-              id="idm140018544593488"
+              id="idm140012490782816"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140018544592048"></a>13.2.3. 菜单管理</h3></div></div></div><a
-            id="idm140018544591248"
+                    id="idm140012490781376"></a>13.2.3. 菜单管理</h3></div></div></div><a
+            id="idm140012490780576"
             class="indexterm"></a><a
-            id="idm140018544590128"
+            id="idm140012490779456"
             class="indexterm"></a><div
             class="para">
-				现代桌面环境和许多窗口管理器提供用户应用程序菜单列表。为了保持菜单与实际的应用程序更新一致，Debian 创建中心数据库注册所有安装的应用程序。新安装的软件包会在数据库中注册，并告知系统更新相应的菜单。该结果有 <span
-              class="pkg pkg">menu</span> 软件包处理。
+				Modern desktop environments and many window managers provide menus listing the available applications for the user. In order to keep menus up-to-date in relation to the actual set of available applications, each package usually provides a <code
+              class="filename">.desktop</code> file in <code
+              class="filename">/usr/share/applications</code>. The format of those files has been standardized by FreeDesktop.org: <div
+              class="url">→ <a
+                href="http://standards.freedesktop.org/desktop-entry-spec/latest/">http://standards.freedesktop.org/desktop-entry-spec/latest/</a></div>
 			</div><div
             class="para">
-				当软件包提供的应用程序需要在系统菜单中出现时，它会在<code
-              class="filename">/usr/share/menu/</code> 目录下生成一个文件。该文件描述应用程序的特性（包括是否属于图形应用程序），和它在菜单中的位置。软件包的安装后处理脚本运行 <code
-              class="command">update-menus</code> 命令，它会更新所有需要的文件。该命令不知道安装程序的所有菜单类型。因此，要显示菜单的软件包必须提供从菜单选项唤起的可执行脚本；脚本将把文件信息转化为应用程序可用的形式。这些脚本安装在 <code
-              class="filename">/etc/menu-methods/</code> 目录。 <a
-              id="idm140018544585424"
-              class="indexterm"></a> <a
-              id="idm140018544584624"
-              class="indexterm"></a> <a
-              id="idm140018544583824"
-              class="indexterm"></a> <a
-              id="idm140018544583024"
-              class="indexterm"></a>
+				The applications menus can be further customized by administrators through system-wide configuration files as described by the “Desktop Menu Specification”. End-users can also customize the menus with graphical tools such as <span
+              class="pkg pkg">kmenuedit</span> (in KDE), <span
+              class="pkg pkg">alacarte</span> (in GNOME) or <span
+              class="pkg pkg">menulibre</span>. <div
+              class="url">→ <a
+                href="http://standards.freedesktop.org/menu-spec/latest/">http://standards.freedesktop.org/menu-spec/latest/</a></div>
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>进阶</em></span> 菜单标准化</strong></p></div></div></div><a
-              id="idm140018544580944"
-              class="indexterm"></a><div
+                        class="emphasis"><em>HISTORY</em></span> The Debian menu system</strong></p></div></div></div><div
               class="para">
-				Debian 提供自有的菜单系统，但是 GNOME 和 KDE 也都开发了自己的菜单管理方案。两个团队统一了菜单的格式－更精确的说是，在 FreeDesktop.org umbrella 项目下一种代表菜单元素的<code
-                class="filename">.desktop</code> 文件的通用格式。 <div
-                class="url">→ <a
-                  href="http://www.freedesktop.org/">http://www.freedesktop.org/</a></div>
-			</div><div
-              class="para">
-				The Debian developers have kept a close eye on this project and <code
-                class="filename">.desktop</code> files can be generated from the Debian menu system (with the help of the <span
-                class="pkg pkg">menu-xdg</span> package). However, neither GNOME nor KDE use the Debian menu. They both prefer keeping complete control over their menus. Note that only GNOME Classic has a proper menu, the default GNOME session uses GNOME Shell which got rid of the applications menu entirely. In GNOME Classic, the menu editor (in the <span
-                class="pkg pkg">alacarte</span> package) is available by right-clicking on the panel menu, then choosing “Edit menus”.
-			</div></div><div
-            class="para">
-				The administrator can also have a say in the process and in the resulting generated menus. First, they can delete a menu element even when the matching application is installed, by simply storing in <code
-              class="filename">/etc/menu/</code> an empty file named according to the package providing the entries to be disabled. Second, the menu can be reorganized and sections renamed or grouped. The <code
-              class="filename">/etc/menu-methods/translate_menus</code> file is where this reorganization is defined and contains commented examples. Finally, new elements can be added to the menu, for example to start programs installed outside the packaging system, or to run a particular command such as starting a web browser on a particular page. These extra elements are specified in <code
-              class="filename">/etc/menu/local.<em
-                class="replaceable">element</em></code> files, which have the same format as other menu files available under <code
-              class="filename">/usr/share/menu/</code>.
-			</div></div></div><ul
+				Historically — way before the FreeDesktop.org standards emerged — Debian had invented its own menu system where each package provided a generic description of the desired menu entries in <code
+                class="filename">/usr/share/menu/</code>. This tool is still available in Debian (in the <span
+                class="pkg pkg">menu</span> package) but it is only marginally useful since package maintainers are encouraged to rely on <code
+                class="filename">.desktop</code> files instead.
+			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

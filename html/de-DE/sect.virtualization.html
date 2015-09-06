@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.virtualization"></a>12.2. Virtualisierung</h2></div></div></div><a
-          id="idm139813929896464"
+          id="idm139655500442576"
           class="indexterm"></a><div
           class="para">
 			Virtualization is one of the most major advances in the recent years of computing. The term covers various abstractions and techniques simulating virtual computers with a variable degree of independence on the actual hardware. One physical server can then host several systems working at the same time and in isolation. Applications are many, and often derive from this isolation: test environments with varying configurations for instance, or separation of hosted services across different virtual machines for security.
@@ -76,17 +76,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Es gibt zahlreiche Virtualisierungslösungen, jede mit ihren eigenen Vor- und Nachteilen. Dieses Buch konzentriert sich auf Xen, LXC und KVM, es gibt jedoch weitere bemerkenswerte Umsetzungen einschließlich der folgenden:
 		</div><a
-          id="idm139813929893824"
+          id="idm139655500439936"
           class="indexterm"></a><a
-          id="idm139813929892704"
+          id="idm139655500438816"
           class="indexterm"></a><a
-          id="idm139813929891584"
+          id="idm139655500437696"
           class="indexterm"></a><a
-          id="idm139813929890464"
+          id="idm139655500436576"
           class="indexterm"></a><a
-          id="idm139813929889344"
+          id="idm139655500435456"
           class="indexterm"></a><a
-          id="idm139813929888224"
+          id="idm139655500434336"
           class="indexterm"></a><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -110,8 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div></li><li
               class="listitem"><div
                 class="para">
-					VirtualBox ist eine virtuelle Maschine, die überwiegend aus freier Software besteht (wobei jedoch einige zusätzliche Komponenten unter einer proprietären Lizenz stehen). Sie ist jünger als VMware und auf die i386- und amd64-Architekturen beschränkt, aber sie enthält einige Snapshot- und andere Features. VirtualBox ist seit <span
-                  class="distribution distribution">Lenny</span> in Debian enthalten. <div
+					VirtualBox is a virtual machine that is mostly free software (some extra components are available under a proprietary license). Unfortunately it is in Debian's “contrib” section because it includes some precompiled files that cannot be rebuilt without a proprietary compiler. While younger than VMWare and restricted to the i386 and amd64 architectures, it still includes some snapshotting and other interesting features. <div
                   class="url">→ <a
                     href="http://www.virtualbox.org/">http://www.virtualbox.org/</a></div>
 				</div></li></ul></div><div
@@ -121,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.xen"></a>12.2.1. Xen</h3></div></div></div><div
             class="para">
 				Xen <a
-              id="idm139813929876640"
+              id="idm139655500423328"
               class="indexterm"></a> ist eine Lösung zur „Paravirtualisierung“. Es führt zwischen der Hardware und den darüber liegenden Systemen eine dünne Abstraktionsschicht ein, die „Hypervisor“ genannt wird. Diese agiert als Schiedsrichter, der den Zugang der virtuellen Rechner zur Hardware kontrolliert. Er wickelt jedoch nur einige der Instruktionen ab, der Rest wird direkt von der Hardware im Auftrag des Systems ausgeführt. Der Hauptvorteil liegt darin, dass die Leistung nicht abnimmt und die Systeme so fast dieselbe Geschwindigkeit wie bei direkter Ausführung erreichen. Die Kehrseite besteht darin, dass die Kernel der Betriebssysteme, die man mit einem Xen-Hypervisor verwenden möchte, angepasst werden müssen, um mit Xen zu funktionieren.
 			</div><div
             class="para">
@@ -372,9 +371,9 @@ testxen                                      1   128     1     -b----      1.1</
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> Choice of toolstacks to manage Xen VM</strong></p></div></div></div><a
-              id="idm139813929799568"
+              id="idm139655500345808"
               class="indexterm"></a><a
-              id="idm139813929798448"
+              id="idm139655500344688"
               class="indexterm"></a><div
               class="para">
 				In Debian 7 and older releases, <code
@@ -469,7 +468,7 @@ testxen login: </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.lxc"></a>12.2.2. LXC</h3></div></div></div><a
-            id="idm139813929765792"
+            id="idm139655500312032"
             class="indexterm"></a><div
             class="para">
 				Even though it is used to build “virtual machines”, LXC is not, strictly speaking, a virtualization system, but a system to isolate groups of processes from each other even though they all run on the same host. It takes advantage of a set of recent evolutions in the Linux kernel, collectively known as <span
@@ -513,7 +512,7 @@ testxen login: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813929751312"></a>12.2.2.1. Vorbereitende Schritte</h4></div></div></div><div
+                      id="idm139655500297552"></a>12.2.2.1. Vorbereitende Schritte</h4></div></div></div><div
               class="para">
 					Das Paket <span
                 class="pkg pkg">lxc</span> enthält die für die Ausführung von LXC erforderlichen Hilfsprogramme und muss daher installiert werden.
@@ -585,7 +584,7 @@ iface br0 inet static
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813929733376"></a>12.2.2.3. Das System einrichten</h4></div></div></div><div
+                      id="idm139655500279616"></a>12.2.2.3. Das System einrichten</h4></div></div></div><div
               class="para">
 					Lassen Sie uns jetzt das von dem Container zu verwendende Dateisystem einrichten. Da dieser „virtuelle Rechner“ nicht direkt auf der Hardware laufen wird, sind im Vergleich zu einem Standard-Dateisystem einige Feineinstellungen vorzunehmen, insbesondere was den Kernel, die Geräte und Konsolen betrifft. Glücklicherweise enthält das Paket <span
                 class="pkg pkg">lxc</span> Skripten, die diese Konfigurierung weitestgehend automatisieren. So installieren zum Beispiel die folgenden Befehle (die das Paket <span
@@ -640,7 +639,7 @@ lxc.network.hwaddr = 4a:49:43:49:79:20
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813929719728"></a>12.2.2.4. Den Container starten</h4></div></div></div><div
+                      id="idm139655500265968"></a>12.2.2.4. Den Container starten</h4></div></div></div><div
               class="para">
 					Nun, da das Abbild unseres virtuellen Rechners fertig ist, wollen wir den Container starten:
 				</div><pre
@@ -732,8 +731,8 @@ root@testlxc:~# </code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139813929693920"></a>12.2.3. Virtualisierung mit KVM</h3></div></div></div><a
-            id="idm139813929693120"
+                    id="idm139655500240352"></a>12.2.3. Virtualisierung mit KVM</h3></div></div></div><a
+            id="idm139655500239552"
             class="indexterm"></a><div
             class="para">
 				KVM, das <span
@@ -741,8 +740,8 @@ root@testlxc:~# </code></pre><div
               class="command">qemu-*</code>-Befehle spricht: er handelt dennoch von KVM.
 			</div><div
             class="para">
-				Im Gegensatz zu anderen Virtualisierungssystemen war KVM von Anfang an Teil des Linux-Kernels. Seine Entwickler entschieden sich, die für eine Virtualisierung vorgesehenen Prozessor-Befehlssätze (Intel-VT und AMD-V) zu nutzen, wodurch KVM leichtgewichtig, elegant und ressourcenschonend bleibt. Die Kehrseite ist natürlich, dass KVM hauptsächlich auf i386- und amd64-Prozessoren läuft und zwar nur auf denen, die so neu sind, dass sie über diese Befehlssätze verfügen. Sie können sicher sein, dass Sie einen derartigen Prozessor haben, wenn unter den CPU-Flags in der Datei <code
-              class="filename">/proc/cpuinfo</code> „vmx“ oder „svm“ aufgeführt ist.
+				Unlike other virtualization systems, KVM was merged into the Linux kernel right from the start. Its developers chose to take advantage of the processor instruction sets dedicated to virtualization (Intel-VT and AMD-V), which keeps KVM lightweight, elegant and not resource-hungry. The counterpart, of course, is that KVM doesn't work on any computer but only on those with appropriate processors. For x86-based computers, you can verify that you have such a processor by looking for “vmx” or “svm” in the CPU flags listed in <code
+              class="filename">/proc/cpuinfo</code>.
 			</div><div
             class="para">
 				Mit aktiver Unterstützung seiner Entwicklung durch Red Hat scheint KVM auf dem Wege zu sein, zur Referenz für Linux-Virtualisierung zu werden.
@@ -750,16 +749,16 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813929688288"></a>12.2.3.1. Vorbereitende Schritte</h4></div></div></div><a
-              id="idm139813929687488"
+                      id="idm139655500234736"></a>12.2.3.1. Vorbereitende Schritte</h4></div></div></div><a
+              id="idm139655500233936"
               class="indexterm"></a><div
               class="para">
 					Im Gegensatz zu Programmen wie VirtualBox enthält KVM selbst keine Benutzerschnittstelle zur Erstellung und Verwaltung virtueller Rechner. Das Paket <span
                 class="pkg pkg">qemu-kvm</span> stellt nur eine ausführbare Datei zum Start eines virtuellen Rechners bereit sowie ein Initialisierungsskript, das die passenden Kernel-Module lädt.
 				</div><a
-              id="idm139813929684816"
+              id="idm139655500231264"
               class="indexterm"></a><a
-              id="idm139813929683856"
+              id="idm139655500230304"
               class="indexterm"></a><div
               class="para">
 					Glücklicherweise stellt Red Hat mit der Entwicklung der Bibliothek <span
@@ -767,7 +766,7 @@ root@testlxc:~# </code></pre><div
                 class="emphasis"><em>virtual machine manager</em></span> einen weiteren Satz von Hilfsprogrammen zur Lösung dieses Problems bereit. Mit libvirt ist es möglich, virtuelle Rechner einheitlich zu verwalten unabhängig von dem Virtualisierungssystem, das hinter den Kulissen beteiligt ist (gegenwärtig unterstützt es QEMU, KVM, Xen, LXC, OpenVZ, VirtualBox, VMWare und UML). <code
                 class="command">virtual-manager</code> ist eine grafische Schnittstelle, die libvirt zur Erstellung und Verwaltung virtueller Rechner benutzt.
 				</div><a
-              id="idm139813929680080"
+              id="idm139655500226624"
               class="indexterm"></a><div
               class="para">
 					Zunächst installieren wir mit <code
@@ -786,7 +785,7 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813929672416"></a>12.2.3.2. Netzwerkkonfigurierung</h4></div></div></div><div
+                      id="idm139655500218960"></a>12.2.3.2. Netzwerkkonfigurierung</h4></div></div></div><div
               class="para">
 					Genauso wie in Xen und LXC gehört zu der häufigsten Netzwerkkonfiguration eine Bridge, mit der die Netzwerkschnittstellen der virtuellen Rechner zusammengefasst werden (siehe <a
                 class="xref"
@@ -803,9 +802,9 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813929667952"></a>12.2.3.3. Installation mit <code
+                      id="idm139655500214592"></a>12.2.3.3. Installation mit <code
                       class="command">virt-install</code></h4></div></div></div><a
-              id="idm139813929666832"
+              id="idm139655500213472"
               class="indexterm"></a><div
               class="para">
 					Die Erstellung eines virtuellen Rechners ist der Installation eines normalen Systems sehr ähnlich, außer dass die Eigenschaften des virtuellen Rechners in einer scheinbar endlosen Befehlszeile beschrieben werden.
@@ -829,6 +828,15 @@ root@testlxc:~# </code></pre><div
                 class="computeroutput">Pool srv-kvm created
 
 root@mirwiz:~# </code></pre><div
+              class="sidebar"><div
+                class="titlepage"><div><div><p
+                      class="title"><strong><span
+                          class="emphasis"><em>TIP</em></span> Add your user to the libvirt group</strong></p></div></div></div><div
+                class="para">
+					All samples in this section assume that you are running commands as root. Effectively, if you want to control a local libvirt daemon, you need either to be root or to be a member of the <code
+                  class="literal">libvirt</code> group (which is not the case by default). Thus if you want to avoid using root rights too often, you can add yoursel to the <code
+                  class="literal">libvirt</code> group and run the various commands under your user identity.
+				</div></div><div
               class="para">
 					Wir wollen jetzt mit dem Installationsprozess für den virtuellen Rechner beginnen und uns die wichtigsten Optionen des Befehls <code
                 class="command">virt-install</code> ansehen. Der Befehl registriert den virtuellen Rechner und seine Parameter in libvirtd und startet ihn dann, so dass seine Installierung fortgesetzt werden kann.
@@ -1040,9 +1048,9 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813923624112"></a>12.2.3.4. Rechner mit <code
+                      id="idm139655480430816"></a>12.2.3.4. Rechner mit <code
                       class="command">virsh</code> verwalten</h4></div></div></div><a
-              id="idm139813923623088"
+              id="idm139655480429792"
               class="indexterm"></a><div
               class="para">
 					Nachdem die Installation nunmehr erledigt ist, wollen wir sehen, wie man mit den vorhandenen virtuellen Rechnern umgeht. Zunächst soll <code
@@ -1121,84 +1129,52 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139813923606000"></a>12.2.3.5. Ein RPM-basiertes System in Debian mit yum installieren</h4></div></div></div><div
+                      id="idm139655480412960"></a>12.2.3.5. Ein RPM-basiertes System in Debian mit yum installieren</h4></div></div></div><div
               class="para">
 					Wenn auf der virtuellen Maschine ein Debian-System (oder eines seiner Derivate) laufen soll, kann das System mit <code
                 class="command">debootstrap</code> aufgesetzt werden, wie oben beschrieben. Soll aber auf der virtuellen Maschine ein RPM-basiertes System laufen, dann muss es mit dem Utility <code
                 class="command">yum</code> (aus dem gleichnamigen Paket) installiert werden.
 				</div><div
               class="para">
-					Bei deisem Vorgehen muss man eine Konfigurationsdatei <code
-                class="filename">yum.conf</code> mit den nötigen Parametern erstellen, einschließlich des Pfades zu den RPM-Repositorien mit den Quellen, dem Pfad zu der Plugin-Konfiguration und dem Ziel-Verzeichnis. Für dieses Beispiel nehmen wir an, dass die Umgebung in <code
-                class="filename">/var/tmp/yum-bootstrap</code> gespeichert ist. Die Datei <code
-                class="filename">/var/tmp/yum-bootstrap/yum.conf</code> sollte folgendermaßen aussehen:
+					The procedure requires using <code
+                class="command">rpm</code> to extract an initial set of files, including notably <code
+                class="command">yum</code> configuration files. And then calling <code
+                class="command">yum</code> to extract the remaining set of packages. But since we call <code
+                class="command">yum</code> from outside the chroot, we need to make some temporary changes. In the sample below, the target chroot is <code
+                class="filename">/srv/centos</code>.
 				</div><pre
-              class="programlisting">[main]
-reposdir=/var/tmp/yum-bootstrap/repos.d
-pluginconfpath=/var/tmp/yum-bootstrap/pluginconf.d
-cachedir=/var/cache/yum
-installroot=/path/to/destination/domU/install
-exclude=$exclude
-keepcache=1
-#debuglevel=4  
-#errorlevel=4
-pkgpolicy=newest
-distroverpkg=centos-release
-tolerant=1
-exactarch=1
-obsoletes=1
-gpgcheck=1
-plugins=1
-metadata_expire=1800</pre><div
-              class="para">
-					The <code
-                class="filename">/var/tmp/yum-bootstrap/repos.d</code> directory should contain the descriptions of the RPM source repositories in <code
-                class="filename">*.repo</code> files, just as in <code
-                class="filename">/etc/yum.repos.d</code> in an already installed RPM-based system. Here is an example for a CentOS 6 installation:
-				</div><pre
-              class="programlisting">[base]
-name=CentOS-6 - Base
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-   
-[updates]
-name=CentOS-6 - Updates
-#baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-
-[extras]
-name=CentOS-6 - Extras
-#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-
-[centosplus]
-name=CentOS-6 - Plus
-#baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-</pre><div
-              class="para">
-					Und schlussendlich sollte <code
-                class="filename">pluginconf.d/installonlyn.conf</code> folgendes enthalten:
-				</div><pre
-              class="programlisting">[main]
-enabled=1
-tokeep=5
-</pre><div
-              class="para">
-					Wenn dann alles aufgesetzt ist, muss sichergestellt werden, dass die <code
-                class="command">rpm</code>-Datenbanken richtig initialisiert sind, z.B. mit einem Befehl wie <code
-                class="command">rpm --rebuilddb</code>. Eine Installation von CentOS 6 ist dann nur noch eine Frage von:
-				</div><pre
-              class="screen"><strong
-                class="userinput"><code>yum -c /var/tmp/yum-bootstrap/yum.conf -y install coreutils basesystem centos-release yum-basearchonly initscripts</code></strong></pre></div></div></div><ul
+              class="screen">
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>rootdir="/srv/centos"</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>mkdir -p "$rootdir" /etc/rpm</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>echo "%_dbpath /var/lib/rpm" &gt; /etc/rpm/macros.dbpath</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>wget http://mirror.centos.org/centos/7/os/x86_64/Packages/centos-release-7-1.1503.el7.centos.2.8.x86_64.rpm</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>rpm --nodeps --root "$rootdir" -i centos-release-7-1.1503.el7.centos.2.8.x86_64.rpm</code></strong>
+<code
+                class="computeroutput">rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+warning: centos-release-7-1.1503.el7.centos.2.8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+</code>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>sed -i -e "s,gpgkey=file:///etc/,gpgkey=file://${rootdir}/etc/,g" $rootdir/etc/yum.repos.d/*.repo</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>yum --assumeyes --installroot $rootdir groupinstall core</code></strong>
+[...]
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>sed -i -e "s,gpgkey=file://${rootdir}/etc/,gpgkey=file:///etc/,g" $rootdir/etc/yum.repos.d/*.repo</code></strong>
+</pre></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

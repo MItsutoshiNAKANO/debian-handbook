@@ -68,14 +68,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.windows-emulation"></a>13.9. Emulación de Windows: Wine</h2></div></div></div><a
-          id="idm140546685992672"
+          id="idm140667123081984"
           class="indexterm"></a><a
-          id="idm140546685991712"
+          id="idm140667123081024"
           class="indexterm"></a><div
           class="para">
-			A pesar de todos los esfuerzos mencionados anteriormente, existen todavía herramientas sin equivalente en Linux o para las que las versiones originales son absolutamente necesarias. Aquí es donde son útiles los sistemas de emulación de Windows. El más conocido entre ellos es Wine. <div
+			In spite of all the previously mentioned efforts, there are still a number of tools without a Linux equivalent, or for which the original version is absolutely required. This is where Windows emulation systems come in handy. The most well-known among them is Wine. <div
             class="url">→ <a
-              href="http://www.winehq.com/">http://www.winehq.com/</a></div>
+              href="https://www.winehq.org/">https://www.winehq.org/</a></div>
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -87,27 +87,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="url">→ <a
                 href="http://www.codeweavers.com/products/">http://www.codeweavers.com/products/</a></div>
 		</div><a
-            id="idm140546685985872"
+            id="idm140667123075200"
             class="indexterm"></a><a
-            id="idm140546685984752"
+            id="idm140667123074080"
             class="indexterm"></a></div><div
           class="para">
-			Sin embargo, uno debe tener en cuenta que sólo es una solución entre muchas otras y que también puede enfrentar el problema con una máquina virtual o VNC, ambas soluciones son detalladas en los recuadros.
+			However, one should keep in mind that it is only a solution among others, and the problem can also be tackled with a virtual machine or VNC; both of these solutions are detailed in the sidebars.
 		</div><div
           class="para">
 			Comencemos con un recordatorio: la emulación permite ejecutar un programa (desarrollado para un sistema objetivo) en un sistema anfitrión diferente. El software de emulación utiliza el sistema anfitrión, donde ejecuta la aplicación, para imitar la funcionalidad requerida del sistema objetivo.
 		</div><a
-          id="idm140546685982192"
+          id="idm140667123071520"
           class="indexterm"></a><div
           class="para">
-			Instalemos ahora los paquetes necesarios:
+			Now let's install the required packages (<span
+            class="pkg pkg">ttf-mscorefonts-installer</span> is in the contrib section):
 		</div><pre
           class="screen">
 <code
             class="computeroutput"># </code><strong
-            class="userinput"><code>apt-get install wine ttf-mscorefonts-installer wine-doc</code></strong></pre><a
-          id="idm140546685979696"
+            class="userinput"><code>apt-get install wine ttf-mscorefonts-installer</code></strong></pre><a
+          id="idm140667123068304"
           class="indexterm"></a><div
+          class="para">
+			On a 64 bit (amd64) system, if your Windows applications are 32 bit applications, then you will have to enable multi-arch to be able to install wine32 from the i386 architecture (see <a
+            class="xref"
+            href="sect.manipulating-packages-with-dpkg.html#sect.multi-arch">Sección 5.4.5, “Compatibilidad multiarquitectura”</a>).
+		</div><div
           class="para">
 			El usuario necesita ejecutar <code
             class="command">winecfg</code> y configurar qué ubicaciones (Debian) estarán asociadas a qué dispositivos (Windows). <code
@@ -122,6 +128,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">wine <em
               class="replaceable">programa</em></code> funcionará ya que generalmente se lo instala en una ubicación donde Wine podrá encontrarlo por su cuenta.
 		</div><div
+          class="sidebar"><div
+            class="titlepage"><div><div><p
+                  class="title"><strong><span
+                      class="emphasis"><em>TIP</em></span> Working around a winecfg failure</strong></p></div></div></div><div
+            class="para">
+			In some cases, <code
+              class="command">winecfg</code> (which is just a wrapper) might fail. As a work-around, it is possible to try to run the underlying command manually: <code
+              class="command">wine64 /usr/lib/x86_64-linux-gnu/wine/wine/winecfg.exe.so</code> or <code
+              class="command">wine32 /usr/lib/i386-linux-gnu/wine/wine/winecfg.exe.so</code>.
+		</div></div><div
           class="para">
 			Sepa que no debe depender de Wine (o soluciones similares) sin probar realmente el software particular: sólo una prueba de uso real determinará sin dudas si la emulación es completamente funcional.
 		</div><div
@@ -148,11 +164,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="foreignphrase"><em
                 class="foreignphrase">Windows NT/2000 Terminal Server</em></span> utiliza para mostrar escritorios en máquinas remotas.
 		</div><a
-            id="idm140546685965520"
+            id="idm140667123049648"
             class="indexterm"></a><a
-            id="idm140546685964560"
+            id="idm140667123048688"
             class="indexterm"></a><a
-            id="idm140546685963440"
+            id="idm140667123047568"
             class="indexterm"></a><div
             class="para">
 			El software VNC provee funcionalidades similares, con el beneficio adicional de que también funciona con muchos sistemas operativos. Describimos los clientes y servidores VNC Linux en la <a

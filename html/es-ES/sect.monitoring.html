@@ -80,19 +80,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVA</em></span> Zabbix, una herramienta de monitorización integrada</strong></p></div></div></div><a
-            id="idm140546685462480"
+            id="idm140667121289408"
             class="indexterm"></a><div
             class="para">
-			Si bien Munin y Nagios son comunes, no son los únicos jugadores en el campo de la monitorización, y cada uno de ellos gestiona la mitad de la tarea (gráficos por un lado, alertas por otro). Zabbix, por su parte, integra ambas partes de la monitorización; también tiene una interfaz web para configurar los aspectos más comunes. Creció enormemente en los últimos años y ahora se lo puede considerar un contendiente viable; lamentablemente, Zabbix no está presente en Debian <span
-              class="distribution distribution">Wheezy</span> por cuestiones de tiempo en el proceso de publicación, pero se proveerán paquetes como retroadaptaciones o en repositorios no oficiales. <div
+			Although Munin and Nagios are in very common use, they are not the only players in the monitoring field, and each of them only handles half of the task (graphing on one side, alerting on the other). Zabbix, on the other hand, integrates both parts of monitoring; it also has a web interface for configuring the most common aspects. It has grown by leaps and bounds during the last few years, and can now be considered a viable contender. On the monitoring server, you would install <span
+              class="pkg pkg">zabbix-server-pgsql</span> (or <span
+              class="pkg pkg">zabbix-server-mysql</span>), possibly together with <span
+              class="pkg pkg">zabbix-frontend-php</span> to have a web interface. On the hosts to monitor you would install <span
+              class="pkg pkg">zabbix-agent</span> feeding data back to the server. <div
               class="url">→ <a
-                href="http://www.zabbix.org/">http://www.zabbix.org/</a></div>
+                href="http://www.zabbix.com/">http://www.zabbix.com/</a></div>
 		</div></div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVA</em></span> Icinga, una bifurcación de Nagios</strong></p></div></div></div><a
-            id="idm140546685458288"
+            id="idm140667121283424"
             class="indexterm"></a><div
             class="para">
 			Debido a divergencias en opiniones sobre el modelo de desarrollo de Nagios (que es controlado por una empresa), una cantidad de desarrolladores bifurcaron Nagios y utilizaron Icinga como su nuevo nombre. Icinga todavía es compatible — hasta ahora — con los plugins y configuraciones de Nagios, pero también agrega funcionalidad adicional. <div
@@ -103,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.munin"></a>12.4.1. Configuración de Munin</h3></div></div></div><a
-            id="idm140546685455024"
+            id="idm140667121280160"
             class="indexterm"></a><div
             class="para">
 				El propósito de Munin es monitorizar muchas máquinas; por lo tanto, naturalmente utiliza una arquitectura cliente/servidor. El equipo central — el graficador — recolecta datos de todos los equipos monitorizados y genera gráficos históricos.
@@ -111,7 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546685453600"></a>12.4.1.1. Configuración de los equipos a monitorizar</h4></div></div></div><div
+                      id="idm140667121278736"></a>12.4.1.1. Configuración de los equipos a monitorizar</h4></div></div></div><div
               class="para">
 					El primer paso es instalar el paquete <span
                 class="pkg pkg">munin-node</span>. El demonio que instala este paquete escucha en el puerto 4949 y envía los datos recolectados por todos los plugins activos. Cada plugin es un programa simple que devuelve una descripción de los datos recolectados y el último valor medido. Los plugins se almacenan en <code
@@ -119,28 +122,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/munin/plugins/</code>.
 				</div><div
               class="para">
-					Cuando instala el paquete, se determina un conjunto de plugins activos basados en el software disponible y la configuración actual del equipo. Sin embargo, esta configuración automática depende de una funcionalidad que debe proveer cada plugin, y generalmente es buena idea revisar y alterar el resultado a mano. Sería interesante tener una documentación completa de cada plugin, pero desafortunadamente no existe tal documentación oficial. Sin embargo, todos los plugins son scripts y la mayoría son bastante simples y están bien comentados. Revisar <code
-                class="filename">/etc/munin/plugins/</code> es, por lo tanto, una buena forma de tener una idea de lo que hace cada plugin y determinar si debe eliminarlo. Similarmente, activar un plugin interesante que se encuentre en <code
-                class="filename">/usr/share/munin/plugins/</code> es simplemente cuestión de crear un enlace simbólico con <code
+					When the package is installed, a set of active plugins is determined based on the available software and the current configuration of the host. However, this autoconfiguration depends on a feature that each plugin must provide, and it is usually a good idea to review and tweak the results by hand. Browsing the <a
+                href="http://gallery.munin-monitoring.org">Plugin Gallery</a> can be interesting even though not all plugins have comprehensive documentation. However, all plugins are scripts and most are rather simple and well-commented. Browsing <code
+                class="filename">/etc/munin/plugins/</code> is therefore a good way of getting an idea of what each plugin is about and determining which should be removed. Similarly, enabling an interesting plugin found in <code
+                class="filename">/usr/share/munin/plugins/</code> is a simple matter of setting up a symbolic link with <code
                 class="command">ln -sf /usr/share/munin/plugins/<em
-                  class="replaceable">plugin</em> /etc/munin/plugins/</code>. Sepa que cuando el nombre de un plugin finaliza con un guión bajo «_», el plugin necesita un parámetro. Debe almacenar este parámetro en el nombre del enlace simbólico; por ejemplo, el plugin «if_» debe activarse con un enlace simbólico llamado <code
-                class="filename">if_eth0</code> para monitorizar el tráfico de red en la interfaz eth0.
+                  class="replaceable">plugin</em> /etc/munin/plugins/</code>. Note that when a plugin name ends with an underscore “_”, the plugin requires a parameter. This parameter must be stored in the name of the symbolic link; for instance, the “if_” plugin must be enabled with a <code
+                class="filename">if_eth0</code> symbolic link, and it will monitor network traffic on the eth0 interface.
 				</div><div
               class="para">
-					Una vez que configuró correctamente los plugins, debe actualizar el demonio de configuración para describir el control de acceso de los datos recolectados. Esto involucra directivas <code
-                class="literal">allow</code> en el archivo <code
-                class="filename">/etc/munin/munin-node.conf</code>. La configuración predeterminada es <code
-                class="literal">allow^127\.0\.0\.1$</code>, lo que sólo permite el acceso al equipo local. Un administrador usualmente agregará una línea similar que contenga la dirección IP del equipo graficador y luego reiniciará el demonio con <code
-                class="command">invoke-rc.d munin-node restart</code>.
+					Once all plugins are correctly set up, the daemon configuration must be updated to describe access control for the collected data. This involves <code
+                class="literal">allow</code> directives in the <code
+                class="filename">/etc/munin/munin-node.conf</code> file. The default configuration is <code
+                class="literal">allow ^127\.0\.0\.1$</code>, and only allows access to the local host. An administrator will usually add a similar line containing the IP address of the grapher host, then restart the daemon with <code
+                class="command">service munin-node restart</code>.
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>YENDO MÁS ALLÁ</em></span> Creación de plugins locales</strong></p></div></div></div><div
                 class="para">
-					A pesar de la falta de documentación oficial para los plugins estándar, Munin sí incluye documentación detallada sobre cómo se deben comportar los plugins y cómo desarrollar plugins nuevos. <div
+					Munin does include detailed documentation on how plugins should behave, and how to develop new plugins. <div
                   class="url">→ <a
-                    href="http://munin-monitoring.org/wiki/Documentation">http://munin-monitoring.org/wiki/Documentation</a></div>
+                    href="http://munin-monitoring.org/wiki/plugins">http://munin-monitoring.org/wiki/plugins</a></div>
 				</div><div
                 class="para">
 					La mejor forma de probar un plugin es ejecutarlo en las mismas condiciones que lo haría munin-node; puede simularlo ejecutando <code
@@ -166,9 +170,9 @@ graph_info The load average of the machine describes how many processes are in t
 load.info 5 minute load average
 </code></pre><div
                 class="para">
-					La especificación del «protocolo de configuración», disponible en el sitio web de Munin, describe los varios campos disponibles. <div
+					The various available fields are described by the “Plugin reference” available as part of the “Munin guide”. <div
                   class="url">→ <a
-                    href="http://munin-monitoring.org/wiki/protocol-config">http://munin-monitoring.org/wiki/protocol-config</a></div>
+                    href="http://munin.readthedocs.org/en/latest/reference/plugin.html">http://munin.readthedocs.org/en/latest/reference/plugin.html</a></div>
 				</div><div
                 class="para">
 					Cuando lo ejecuta sin parámetros, un plugin simplemente devuelve el último valor medido; por ejemplo, ejecutar <code
@@ -182,7 +186,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546685435056"></a>12.4.1.2. Configuración del graficador</h4></div></div></div><div
+                      id="idm140667121259824"></a>12.4.1.2. Configuración del graficador</h4></div></div></div><div
               class="para">
 					El «graficador» es simplemente el equipo que agrupa los datos y genera los gráficos correspondientes. El software necesario se encuentra en el paquete <span
                 class="pkg pkg">munin</span>. La configuración estándar ejecuta <code
@@ -214,7 +218,7 @@ load.info 5 minute load average
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.nagios"></a>12.4.2. Configuración de Nagios</h3></div></div></div><a
-            id="idm140546685425680"
+            id="idm140667121250448"
             class="indexterm"></a><div
             class="para">
 				A diferencia de Munin, Nagios no necesita instalar algo en los equipos monitorizados; la mayoría de las veces, se utiliza Nagios para revisar la disponibilidad de servicios de red. Por ejemplo, Nagios puede conectarse a un servidor web y revisar si puede obtener una página web dada en un tiempo especificado.
@@ -222,7 +226,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546685424192"></a>12.4.2.1. Instalación</h4></div></div></div><div
+                      id="idm140667121248960"></a>12.4.2.1. Instalación</h4></div></div></div><div
               class="para">
 					El primer paso para configurar Nagios es instalar los paquetes <span
                 class="pkg pkg">nagios3</span>, <span
@@ -247,7 +251,7 @@ load.info 5 minute load average
 				</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>/etc/init.d/nagios3 stop</code></strong>
+                class="userinput"><code>service nagios3 stop</code></strong>
 <code
                 class="computeroutput">[...]
 # </code><strong
@@ -257,13 +261,13 @@ load.info 5 minute load average
                 class="userinput"><code>dpkg-statoverride --update --add nagios nagios 751 /var/lib/nagios3
 </code></strong><code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>/etc/init.d/nagios3 start</code></strong>
+                class="userinput"><code>service nagios3 start</code></strong>
 <code
                 class="computeroutput">[...]</code></pre></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546685412512"></a>12.4.2.2. Configuración</h4></div></div></div><div
+                      id="idm140667121237280"></a>12.4.2.2. Configuración</h4></div></div></div><div
               class="para">
 					La interfaz web de Nagios es bastante agradable, pero no permite configuración ni puede utilizarla para agregar equipos o servicios a monitorizar. Se administra toda la configuración a través de archivos referenciados en el archivo de configuración central, <code
                 class="filename">/etc/nagios3/nagios.cfg</code>.
@@ -334,7 +338,7 @@ load.info 5 minute load average
 					Los administradores de Falcot Corp utilizan la siguiente configuración:
 				</div><div
               class="example"><a
-                id="idm140546685394240"></a><p
+                id="idm140667121219008"></a><p
                 class="title"><strong>Ejemplo 12.3. Archivo <code
                     class="filename">/etc/nagios3/conf.d/falcot.cfg</code></strong></p><div
                 class="example-contents"><pre

@@ -68,14 +68,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.windows-emulation"></a>13.9. Windows のエミュレート、Wine</h2></div></div></div><a
-          id="idm139949004604240"
+          id="idm140338987587120"
           class="indexterm"></a><a
-          id="idm139949004603312"
+          id="idm140338987586192"
           class="indexterm"></a><div
           class="para">
 			これまでに述べてきた努力にも関わらず、まだ数多くのツールには Linux で動く同等品が用意されていませんし、用意されていても元になったバージョンが絶対に不可欠なことがあります。これが Windows エミュレーションシステムの役立つ場面です。最もよく知られている Windows エミュレーションシステムが Wine です。<div
             class="url">→ <a
-              href="http://www.winehq.com/">http://www.winehq.com/</a></div>
+              href="https://www.winehq.org/">https://www.winehq.org/</a></div>
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -87,9 +87,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="url">→ <a
                 href="http://www.codeweavers.com/products/">http://www.codeweavers.com/products/</a></div>
 		</div><a
-            id="idm139949004597408"
+            id="idm140338987580288"
             class="indexterm"></a><a
-            id="idm139949004596288"
+            id="idm140338987579168"
             class="indexterm"></a></div><div
           class="para">
 			しかしながら、Wine は数ある解決策の 1 つに過ぎず、仮想マシンや VNC でも同じ問題が起こりうることを覚えておくべきです。仮想マシンや VNC という解決策は傍注で詳しく説明しています。
@@ -97,17 +97,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			思い出すことから始めましょう。つまり、エミュレーションを使うことで異なるホストシステム上で (あるターゲットシステム向けに開発された) プログラムを実行することが可能になります。エミュレーションソフトウェアはアプリケーションを実行するホストシステムを使い、ターゲットシステムに要求される機能を模倣します。
 		</div><a
-          id="idm139949004593536"
+          id="idm140338987576416"
           class="indexterm"></a><div
           class="para">
-			それでは必要なパッケージをインストールしましょう。
+			それでは必要なパッケージをインストールしましょう (<span
+            class="pkg pkg">ttf-mscorefonts-installer</span> は contrib セクションに含まれます)。
 		</div><pre
           class="screen">
 <code
             class="computeroutput"># </code><strong
-            class="userinput"><code>apt-get install wine ttf-mscorefonts-installer wine-doc</code></strong></pre><a
-          id="idm139949004591040"
+            class="userinput"><code>apt-get install wine ttf-mscorefonts-installer</code></strong></pre><a
+          id="idm140338987573200"
           class="indexterm"></a><div
+          class="para">
+			64 ビット (amd64) システムで 32 ビットの Windows アプリケーションを使う場合、i386 アーキテクチャの wine32 パッケージをインストールするために multi-arch を有効化しなければいけません (<a
+            class="xref"
+            href="sect.manipulating-packages-with-dpkg.html#sect.multi-arch">「マルチアーキテクチャサポート」</a>を参照してください)。
+		</div><div
           class="para">
 			インストールが終了したらユーザは <code
             class="command">winecfg</code> を実行し、(Windows) ドライブに対応付ける (Debian 上の) 場所を設定しなければいけません。<code
@@ -122,6 +128,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">wine <em
               class="replaceable">program</em></code> と実行するだけで十分です。なぜなら、通常プログラムは Wine が探す場所にインストールされるからです。
 		</div><div
+          class="sidebar"><div
+            class="titlepage"><div><div><p
+                  class="title"><strong><span
+                      class="emphasis"><em>TIP</em></span> winecfg の機能不全の回避手段</strong></p></div></div></div><div
+            class="para">
+			場合によっては、<code
+              class="command">winecfg</code> (これはただのラッパーに過ぎません) が正しく動作しないことがあります。<code
+              class="command">winecfg</code> の機能不全を回避する手段として、<code
+              class="command">winecfg</code> が実際に呼び出すコマンドを手入力して実行してみることが可能です。コマンドは <code
+              class="command">wine64 /usr/lib/x86_64-linux-gnu/wine/wine/winecfg.exe.so</code> または <code
+              class="command">wine32 /usr/lib/i386-linux-gnu/wine/wine/winecfg.exe.so</code> のように入力します。
+		</div></div><div
           class="para">
 			動かしたいソフトウェアを実際にテストする前に Wine (または類似の解決策) を信頼するべきではない点に注意してください。すなわち、エミュレーションが完全に動作しているか否かは、実際にそのソフトウェアを使ってみた後に判断するしかありません。
 		</div><div
@@ -149,11 +167,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="foreignphrase"><em
                 class="foreignphrase">Windows NT/2000 Terminal Server</em></span> は RDP を使ってリモートマシンにデスクトップを表示します。
 		</div><a
-            id="idm139949004575408"
+            id="idm140338987552112"
             class="indexterm"></a><a
-            id="idm139949004574448"
+            id="idm140338987551152"
             class="indexterm"></a><a
-            id="idm139949004573328"
+            id="idm140338987550032"
             class="indexterm"></a><div
             class="para">
 			VNC ソフトウェアは同様の機能を提供します。また、VNC を使えば多くのオペレーティングシステムからアプリケーションを遠隔操作できるという恩恵があります。Linux の VNC クライアントとサーバについては<a

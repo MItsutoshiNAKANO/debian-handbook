@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.common-procedures"></a>7.2. Procédures types</h2></div></div></div><a
-          id="idm139679568315136"
+          id="idm139935502578032"
           class="indexterm"></a><div
           class="para">
 			Cette section vise à présenter quelques conseils génériques portant sur certaines opérations qu'un administrateur est souvent amené à effectuer. Ces procédures ne couvriront évidemment pas tous les cas de figure de manière exhaustive, mais pourront servir de points de départ pour les cas les plus ardus.
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>DÉCOUVERTE</em></span> Documentation en français</strong></p></div></div></div><div
+                      class="emphasis"><em>DISCOVERY</em></span> Documentation in other languages</strong></p></div></div></div><div
             class="para">
 			Il arrive fréquemment qu'une documentation traduite en français soit disponible dans un paquet séparé portant le nom du paquet correspondant suivi de <code
               class="literal">-fr</code> (code ISO officiel de la langue française).
@@ -91,10 +91,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139679568308640"></a>7.2.1. Configuration d'un logiciel</h3></div></div></div><a
-            id="idm139679568307872"
+                    id="idm139935502571536"></a>7.2.1. Configuration d'un logiciel</h3></div></div></div><a
+            id="idm139935502570768"
             class="indexterm"></a><a
-            id="idm139679568306432"
+            id="idm139935502569328"
             class="indexterm"></a><div
             class="para">
 				Face à un paquet inconnu que l'on souhaite configurer, il faut procéder par étapes. En premier lieu, il convient de lire ce que le responsable du paquet peut avoir d'intéressant à signaler. La lecture de <code
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CHARTE DEBIAN</em></span> Emplacement des exemples</strong></p></div></div></div><a
-              id="idm139679568296992"
+              id="idm139935502559888"
               class="indexterm"></a><div
               class="para">
 				Tout exemple doit être installé dans le répertoire <code
@@ -132,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139679563767104"></a>7.2.2. Surveiller l'activité des démons</h3></div></div></div><div
+                    id="idm139935502554816"></a>7.2.2. Surveiller l'activité des démons</h3></div></div></div><div
             class="para">
 				Un démon complique un peu la compréhension des situations, puisqu'il n'interagit pas directement avec l'administrateur. Pour vérifier son fonctionnement, il est donc nécessaire de le tester, par exemple avec une requête HTTP pour le démon Apache (un serveur web).
 			</div><div
@@ -145,11 +145,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>OUTIL</em></span> Le démon <code
                         class="command">rsyslogd</code></strong></p></div></div></div><a
-              id="idm139679563762640"
+              id="idm139935502550352"
               class="indexterm"></a><a
-              id="idm139679563761520"
+              id="idm139935502549232"
               class="indexterm"></a><a
-              id="idm139679563760080"
+              id="idm139935502547792"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -161,12 +161,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Certaines fonctions C, spécialisées dans l'envoi de traces, facilitent l'emploi du démon <code
                 class="command">rsyslogd</code>. Certains démons gèrent toutefois eux-mêmes leurs fichiers de logs (c'est par exemple le cas de <code
                 class="command">samba</code>, le serveur implémentant les partages Windows sur Linux).
+			</div><div
+              class="para">
+				Note that when systemd is in use, the logs are actually collected by systemd before being forwarded to <code
+                class="command">rsyslogd</code>. They are thus also available via systemd's journal and can be consulted with <code
+                class="command">journalctl</code> (see <a
+                class="xref"
+                href="unix-services.html#sect.systemd">Section 9.1.1, « The systemd init system »</a> for details).
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> Démon</strong></p></div></div></div><a
-              id="idm139679563753648"
+              id="idm139935502539264"
               class="indexterm"></a><div
               class="para">
 				Un démon (<span
@@ -177,47 +184,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">httpd</code>, etc.).
 			</div></div><div
             class="para">
-				Toute démarche préventive commence par une consultation régulière des logs des serveurs les plus importants. Vous pourrez ainsi diagnostiquer les problèmes avant même qu'ils ne soient signalés par des utilisateurs mécontents. En effet, ceux-ci attendent parfois qu'un problème se répète à de multiples reprises sur plusieurs jours pour en faire part. On pourra faire appel à un utilitaire spécifique pour analyser le contenu des fichiers de logs les plus volumineux. On trouve de tels utilitaires pour les serveurs web (citons <code
+				As a preventive operation, the administrator should regularly read the most relevant server logs. They can thus diagnose problems before they are even reported by disgruntled users. Indeed users may sometimes wait for a problem to occur repeatedly over several days before reporting it. In many cases, there are specific tools to analyze the contents of the larger log files. In particular, such utilities exist for web servers (such as <code
               class="command">analog</code>, <code
               class="command">awstats</code>, <code
-              class="command">webalizer</code> pour Apache), pour les serveurs FTP, pour les serveurs <span
-              class="foreignphrase"><em
-                class="foreignphrase">proxy/cache</em></span>, pour les pare-feu, pour les serveurs de courrier électronique, pour les serveurs DNS et même pour les serveurs d'impression. Certains de ces utilitaires fonctionnent de manière modulaire et permettent d'analyser plusieurs types de fichiers de logs. C'est le cas de <code
-              class="command">lire</code> ou encore de <code
-              class="command">modlogan</code>. D'autres outils, comme <code
-              class="command">logcheck</code> (logiciel abordé dans le <a
+              class="command">webalizer</code> for Apache), for FTP servers, for proxy/cache servers, for firewalls, for e-mail servers, for DNS servers, and even for print servers. Some of these utilities operate in a modular manner and allow analysis of several types of log files. This is the case of <code
+              class="command">lire</code>. Other tools, such as <code
+              class="command">logcheck</code> (a software discussed in <a
               class="xref"
-              href="security.html">Chapitre 14, <em>Sécurité</em></a>), permettent de scruter ces fichiers à la recherche d'alertes à traiter.
+              href="security.html">Chapitre 14, <em>Sécurité</em></a>), scan these files in search of alerts to be dealt with.
 			</div><a
-            id="idm139679563744832"
+            id="idm139935502531376"
             class="indexterm"></a><a
-            id="idm139679563743712"
+            id="idm139935502530256"
             class="indexterm"></a><a
-            id="idm139679563742592"
+            id="idm139935502529136"
             class="indexterm"></a><a
-            id="idm139679563741472"
+            id="idm139935502528016"
             class="indexterm"></a><a
-            id="idm139679563740352"
-            class="indexterm"></a><a
-            id="idm139679563739232"
+            id="idm139935502526896"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139679563737952"></a>7.2.3. Demander de l'aide sur une liste de diffusion</h3></div></div></div><div
+                    id="idm139935502525616"></a>7.2.3. Demander de l'aide sur une liste de diffusion</h3></div></div></div><div
             class="para">
-				Si vos diverses recherches ne vous ont pas permis de venir à bout d'un problème, il est possible de se faire aider par d'autres personnes, peut-être plus expérimentées. C'est tout l'intérêt de la liste de diffusion <code
+				If your various searches haven't helped you to get to the root of a problem, it is possible to get help from other, perhaps more experienced people. This is indeed the purpose of the <code
               class="email"><a
                 class="email"
-                href="mailto:debian-user-french@lists.debian.org">debian-user-french@lists.debian.org</a></code>. Comme toute communauté, elle a ses règles qu'il convient de respecter. La première est de vérifier que le problème qui vous concerne n'apparaît pas dans sa foire aux questions (voir lien en marge). Il faut également le rechercher dans les archives récentes de la liste avant de poser sa question. <div
+                href="mailto:debian-user@lists.debian.org">debian-user@lists.debian.org</a></code> mailing list. As with any community, it has rules that need to be followed. Before asking any question, you should check that your problem isn't already covered by recent discussions on the list or by any official documentation. <div
               class="url">→ <a
-                href="http://wiki.debian.org/DebFrFrenchLists">http://wiki.debian.org/DebFrFrenchLists</a></div> <div
+                href="https://wiki.debian.org/DebianMailingLists">https://wiki.debian.org/DebianMailingLists</a></div> <div
               class="url">→ <a
-                href="http://lists.debian.org/debian-user-french/">http://lists.debian.org/debian-user-french/</a></div>
+                href="https://lists.debian.org/debian-user/">https://lists.debian.org/debian-user/</a></div>
 			</div><a
-            id="idm139679563734416"
+            id="idm139935502522192"
             class="indexterm"></a><a
-            id="idm139679563733136"
+            id="idm139935502520912"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -242,8 +244,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				D'une manière générale, pour toutes les correspondances électroniques sur des listes de diffusion, il convient de respecter les règles de la Netiquette. On regroupe sous ce terme un ensemble de règles de bon sens, allant de la politesse aux erreurs à ne pas commettre. <div
                 class="url">→ <a
                   href="http://www.ccr.jussieu.fr/dsi/doc/divers/Netiquette.htm">http://www.ccr.jussieu.fr/dsi/doc/divers/Netiquette.htm</a></div> <a
-                id="idm139679563725456"
+                id="idm139935502513232"
                 class="indexterm"></a>
+			</div><div
+              class="para">
+				Furthermore, for any communication channel managed by the Debian project, you are bound by the Debian Code of Conduct: <div
+                class="url">→ <a
+                  href="https://www.debian.org/code_of_conduct">https://www.debian.org/code_of_conduct</a></div>
 			</div></div><div
             class="para">
 				Ces deux conditions remplies, vous pouvez envisager de décrire votre problème sur la liste de diffusion. Incluez le maximum d'informations pertinentes : les différents essais effectués, les documentations consultées, comment vous avez diagnostiqué le problème, les paquets concernés ou susceptibles d'être en cause. Consultez le système de suivi de bogues de Debian (BTS, ou « <span
@@ -261,18 +268,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139679563720688"></a>7.2.4. Signaler un bogue en cas de problème incompréhensible</h3></div></div></div><a
-            id="idm139679563719920"
+                    id="idm139935502507200"></a>7.2.4. Signaler un bogue en cas de problème incompréhensible</h3></div></div></div><a
+            id="idm139935502506432"
             class="indexterm"></a><a
-            id="idm139679563718480"
+            id="idm139935502504992"
             class="indexterm"></a><div
             class="para">
-				Si tous vos efforts pour résoudre un problème restent vains, il est possible que celui-ci ne relève pas de votre responsabilité et qu'il s'agisse en fait d'un bogue dans le programme récalcitrant. Dans ce cas, la procédure à adopter est de le signaler à Debian ou directement aux auteurs du logiciel. Pour cela, il convient d'isoler le mieux possible le problème et de créer une situation de test minimale qui permette de le reproduire. Si vous savez quel programme est la cause apparente du problème, il est possible de retrouver le paquet concerné à l'aide de la commande <code
+				If all of your efforts to resolve a problem fail, it is possible that a resolution is not your responsibility, and that the problem is due to a bug in the program. In this case, the proper procedure is to report the bug to Debian or directly to the upstream developers. To do this, isolate the problem as much as possible and create a minimal test situation in which it can be reproduced. If you know which program is the apparent cause of the problem, you can find its corresponding package using the command, <code
               class="command">dpkg -S <em
-                class="replaceable">fichier_en_cause</em></code>. La consultation du système de suivi de bogues (<code
-              class="literal">http://bugs.debian.org/<em
-                class="replaceable">paquet</em></code>) permettra de vérifier que ce bogue n'a pas encore été répertorié. On pourra alors envoyer son propre rapport de bogue à l'aide de la commande <code
-              class="command">reportbug</code> — en incluant le maximum d'informations, en particulier la description complète du cas minimal de test qui permet de reproduire le bogue.
+                class="replaceable">file_in_question</em></code>. Check the Bug Tracking System (<code
+              class="literal">https://bugs.debian.org/<em
+                class="replaceable">package</em></code>) to ensure that the bug has not already been reported. You can then send your own bug report, using the <code
+              class="command">reportbug</code> command, including as much information as possible, especially a complete description of those minimal test cases that will allow anyone to recreate the bug.
 			</div><div
             class="para">
 				Les éléments du présent chapitre constituent un moyen de résoudre, efficacement, les embarras que les chapitres suivants pourraient susciter. Faites-y donc appel aussi souvent que nécessaire !

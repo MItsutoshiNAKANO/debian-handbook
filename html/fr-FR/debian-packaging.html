@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. Recompiler un paquet depuis ses sources</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm139679569624272">15.1.1. Récupérer les sources</a></span></dt><dt><span
+                      href="debian-packaging.html#idm139935481999520">15.1.1. Récupérer les sources</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm139679556967520">15.1.2. Effectuer les modifications</a></span></dt><dt><span
+                      href="debian-packaging.html#idm139935479024384">15.1.2. Effectuer les modifications</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm139679563828624">15.1.3. Démarrer la recompilation</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm139935480260960">15.1.3. Démarrer la recompilation</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. Construire son premier paquet</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm139679558349072">15.2.1. Méta-paquet ou faux paquet</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm139935500057392">15.2.1. Méta-paquet ou faux paquet</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm139679559314080">15.2.2. Simple archive de fichiers</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm139935481721232">15.2.2. Simple archive de fichiers</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. Créer une archive de paquets pour APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. Devenir mainteneur de paquet</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm139679559626640">15.4.1. Apprendre à faire des paquets</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm139935481606992">15.4.1. Apprendre à faire des paquets</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm139679559560128">15.4.2. Processus d'acceptation</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm139935481546672">15.4.2. Processus d'acceptation</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		Manipuler régulièrement des paquets Debian provoque tôt ou tard le besoin de créer le sien propre ou d'en modifier un. Ce chapitre essaie de répondre à vos interrogations en la matière et fournit des éléments pour tirer le meilleur parti de l'infrastructure offerte par Debian. Qui sait, en ayant ainsi mis la main à la pâte, peut-être irez-vous plus loin et deviendrez-vous développeur Debian !
@@ -103,80 +103,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.rebuilding-package"></a>15.1. Recompiler un paquet depuis ses sources</h2></div></div></div><div
             class="para">
-			Plusieurs éléments justifient la recompilation d'un paquet depuis ses sources. L'administrateur peut avoir besoin d'une fonctionnalité du logiciel qui implique de recompiler le programme en activant une option particulière ou souhaiter en installer une version plus récente que celle fournie dans sa version de Debian (dans ce cas, il recompilera un paquet plus récent récupéré dans la version <span
-              class="distribution distribution">Testing</span> ou <span
-              class="distribution distribution">Unstable</span> pour qu'il fonctionne parfaitement dans sa distribution <span
-              class="distribution distribution">Stable</span>, opération appelée le rétroportage). On prendra soin de vérifier, avant de se lancer dans une recompilation, que personne d'autre ne s'en est déjà chargé ; on pourra vérifier en particulier sur la page dédiée du système de suivi de paquets. <div
+			Rebuilding a binary package is required under several sets of circumstances. In some cases, the administrator needs a software feature that requires the software to be compiled from sources, with a particular compilation option; in others, the software as packaged in the installed version of Debian is not recent enough. In the latter case, the administrator will usually build a more recent package taken from a newer version of Debian — such as <span
+              class="distribution distribution">Testing</span> or even <span
+              class="distribution distribution">Unstable</span> — so that this new package works in their <span
+              class="distribution distribution">Stable</span> distribution; this operation is called “backporting”. As usual, care should be taken, before undertaking such a task, to check whether it has been done already — a quick look on the Debian Package Tracker for that package will reveal that information. <div
               class="url">→ <a
-                href="http://packages.qa.debian.org/">http://packages.qa.debian.org/</a></div> <a
-              id="idm139679569479568"
+                href="https://tracker.debian.org/">https://tracker.debian.org/</a></div> <a
+              id="idm139935495368992"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm139679569624272"></a>15.1.1. Récupérer les sources</h3></div></div></div><div
+                      id="idm139935481999520"></a>15.1.1. Récupérer les sources</h3></div></div></div><div
               class="para">
-				Pour recompiler un paquet Debian, il faut commencer par rapatrier son code source. Le moyen le plus simple est d'employer la commande <code
+				Rebuilding a Debian package starts with getting its source code. The easiest way is to use the <code
                 class="command">apt-get source <em
-                  class="replaceable">nom-paquet-source</em></code>, qui nécessite la présence d'une ligne de type <code
-                class="literal">deb-src</code> dans le fichier <code
-                class="filename">/etc/apt/sources.list</code> et l'exécution préalable de la commande <code
-                class="command">apt-get update</code>. C'est déjà le cas si vous avez suivi les instructions du chapitre portant sur la configuration d'APT (voir <a
+                  class="replaceable">source-package-name</em></code> command. This command requires a <code
+                class="literal">deb-src</code> line in the <code
+                class="filename">/etc/apt/sources.list</code> file, and up-to-date index files (i.e. <code
+                class="command">apt-get update</code>). These conditions should already be met if you followed the instructions from the chapter dealing with APT configuration (see <a
                 class="xref"
                 href="apt.html#sect.apt-sources.list">Section 6.1, « Renseigner le fichier <code
-                  class="filename">sources.list</code> »</a>). Notez cependant que vous téléchargerez les paquetages sources du paquet disponible dans la version de Debian désignée par la ligne <code
-                class="literal">deb-src</code> de ce fichier de configuration. Si vous souhaitez en rapatrier une version particulière, il vous faudra peut-être la télécharger manuellement depuis un miroir Debian ou depuis le site web : récupérer deux ou trois fichiers (d'extensions <code
-                class="filename">*.dsc</code> — pour <span
-                class="foreignphrase"><em
-                  class="foreignphrase">Debian Source Control</em></span> — <code
+                  class="filename">sources.list</code> »</a>). Note however, that you will be downloading the source packages from the Debian version mentioned in the <code
+                class="literal">deb-src</code> line. If you need another version, you may need to download it manually from a Debian mirror or from the web site. This involves fetching two or three files (with extensions <code
+                class="filename">*.dsc</code> — for <span
+                class="emphasis"><em>Debian Source Control</em></span> — <code
                 class="filename">*.tar.<em
-                  class="replaceable">comp</em></code> et parfois <code
-                class="filename">*.diff.gz</code> ou <code
+                  class="replaceable">comp</em></code>, and sometimes <code
+                class="filename">*.diff.gz</code> or <code
                 class="filename">*.debian.tar.<em
                   class="replaceable">comp</em></code> — <em
-                class="replaceable">comp</em> pouvant prendre les valeurs <code
+                class="replaceable">comp</em> taking one value among <code
                 class="literal">gz</code>, <code
-                class="literal">bz2</code>, <code
-                class="literal">lzma</code> ou <code
-                class="literal">xz</code> selon l'outil de compression employé) puis exécuter la commande <code
+                class="literal">bz2</code> or <code
+                class="literal">xz</code> depending on the compression tool in use), then run the <code
                 class="command">dpkg-source -x <em
-                  class="replaceable">fichier.dsc</em></code>. Si le fichier <code
-                class="filename">*.dsc</code> est disponible à une URL donnée, on pourra même se simplifier la vie en utilisant <code
+                  class="replaceable">file.dsc</em></code> command. If the <code
+                class="filename">*.dsc</code> file is directly accessible at a given URL, there is an even simpler way to fetch it all, with the <code
                 class="command">dget <em
-                  class="replaceable">URL</em></code> : cette commande (qui fait partie du paquet <span
-                class="pkg pkg">devscripts</span>) récupère le <code
-                class="filename">*.dsc</code> à l'adresse indiquée, en analyse le contenu et récupère automatiquement le ou les fichiers qu'il référence. Avec l'option <code
-                class="literal">-x</code>, le paquet source est même extrait localement.
+                  class="replaceable">URL</em></code> command. This command (which can be found in the <span
+                class="pkg pkg">devscripts</span> package) fetches the <code
+                class="filename">*.dsc</code> file at the given address, then analyzes its contents, and automatically fetches the file or files referenced within. Once everything has been downloaded, it extracts the source package (unless the <code
+                class="literal">-d</code> or <code
+                class="literal">--download-only</code> option is used).
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm139679556967520"></a>15.1.2. Effectuer les modifications</h3></div></div></div><div
+                      id="idm139935479024384"></a>15.1.2. Effectuer les modifications</h3></div></div></div><div
               class="para">
-				Les sources maintenant disponibles dans un répertoire portant le nom du paquet source et sa version (par exemple <span
-                class="emphasis"><em>samba-3.6.16</em></span>), nous pouvons nous y rendre pour y effectuer nos modifications.
+				The source of the package is now available in a directory named after the source package and its version (for instance, <span
+                class="emphasis"><em>samba-4.1.17+dfsg</em></span>); this is where we'll work on our local changes.
 			</div><div
               class="para">
 				The first thing to do is to change the package version number, so that the rebuilt packages can be distinguished from the original packages provided by Debian. Assuming the current version is <code
-                class="literal">3.6.16-2</code>, we can create version <code
-                class="literal">3.6.16-2falcot1</code>, which clearly indicates the origin of the package. This makes the package version number higher than the one provided by Debian, so that the package will easily install as an update to the original package. Such a change is best effected with the <code
+                class="literal">2:4.1.17+dfsg-2</code>, we can create version <code
+                class="literal">2:4.1.17+dfsg-2falcot1</code>, which clearly indicates the origin of the package. This makes the package version number higher than the one provided by Debian, so that the package will easily install as an update to the original package. Such a change is best effected with the <code
                 class="command">dch</code> command (<span
                 class="emphasis"><em>Debian CHangelog</em></span>) from the <span
                 class="pkg pkg">devscripts</span> package, with an command such as <code
                 class="command">dch --local falcot</code>. This invokes a text editor (<code
-                class="command">sensible-editor</code> — this should be your favorite editor if it's mentioned in the <code
+                class="command">sensible-editor</code> — this should be your favorite editor if it is mentioned in the <code
                 class="varname">VISUAL</code> or <code
                 class="varname">EDITOR</code> environment variables, and the default editor otherwise) to allow documenting the differences brought by this rebuild. This editor shows us that <code
                 class="command">dch</code> really did change the <code
                 class="filename">debian/changelog</code> file.
 			</div><div
               class="para">
-				Si une modification des options de compilation s'avère nécessaire, il faudra modifier le fichier <code
-                class="filename">debian/rules</code>, qui pilote les différentes étapes de la compilation du paquet. Dans les cas les plus simples, vous repérerez facilement les lignes concernant la configuration initiale (<code
-                class="literal">./configure …</code>) ou déclenchant la compilation (<code
-                class="literal">$(MAKE) …</code> ou <code
-                class="literal">make …</code>). En les adaptant convenablement, il est possible d'obtenir l'effet souhaité. Si ces commandes n'apparaissent pas directement, elles sont vraisemblablement appelées par une des commandes présentes. Il faudra se référer à leur documentation pour en apprendre plus sur la manière de changer le comportement par défaut.
+				When a change in build options is required, the changes need to be made in <code
+                class="filename">debian/rules</code>, which drives the steps in the package build process. In the simplest cases, the lines concerning the initial configuration (<code
+                class="literal">./configure …</code>) or the actual build (<code
+                class="literal">$(MAKE) …</code> or <code
+                class="literal">make …</code>) are easy to spot. If these commands are not explicitly called, they are probably a side effect of another explicit command, in which case please refer to their documentation to learn more about how to change the default behavior. With packages using <code
+                class="command">dh</code>, you might need to add an override for the <code
+                class="command">dh_auto_configure</code> or <code
+                class="command">dh_auto_build</code> commands (see their respective manual pages for explanations on how to achieve this).
 			</div><div
               class="para">
 				Il convient parfois de s'occuper du fichier <code
@@ -195,29 +197,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>ASTUCE</em></span> Installer les <code
-                          class="literal">Build-Depends</code></strong></p></div></div></div><div
+                          class="literal">Build-Depends</code></strong></p></div></div></div><a
+                id="idm139935480265664"
+                class="indexterm"></a><div
                 class="para">
-				<a
-                  id="idm139679563832688"
-                  class="indexterm"></a> <code
-                  class="command">apt-get</code> aide à installer rapidement tous les paquets cités dans le ou les champs <code
-                  class="literal">Build-Depends</code> d'un paquet source disponible dans une distribution donnée sur une ligne <code
-                  class="literal">deb-src</code> du fichier <code
-                  class="filename">/etc/apt/sources.list</code>. Il suffit pour cela d'exécuter la commande <code
+				<code
+                  class="command">apt-get</code> allows installing all packages mentioned in the <code
+                  class="literal">Build-Depends</code> fields of a source package available in a distribution mentioned in a <code
+                  class="literal">deb-src</code> line of the <code
+                  class="filename">/etc/apt/sources.list</code> file. This is a simple matter of running the <code
                   class="command">apt-get build-dep <em
-                    class="replaceable">paquet-source</em></code>.
+                    class="replaceable">source-package</em></code> command.
 			</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm139679563828624"></a>15.1.3. Démarrer la recompilation</h3></div></div></div><div
+                      id="idm139935480260960"></a>15.1.3. Démarrer la recompilation</h3></div></div></div><div
               class="para">
 				Toutes les modifications souhaitables étant apportées sur les sources, il faut maintenant régénérer le paquet binaire correspondant (fichier <code
                 class="filename">.deb</code>). Tout ce processus de création est contrôlé par le programme <code
                 class="command">dpkg-buildpackage</code>.
 			</div><div
               class="example"><a
-                id="idm139679563826320"></a><p
+                id="idm139935481357712"></a><p
                 class="title"><strong>Exemple 15.1. Recompilation d'un paquet</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -264,7 +266,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>DÉCOUVERTE</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm139679558423264"
+                id="idm139935481341904"
                 class="indexterm"></a><div
                 class="para">
 				Le programme <code

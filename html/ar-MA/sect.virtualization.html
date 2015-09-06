@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.virtualization"></a>12.2. الحوسبة الظاهرية</h2></div></div></div><a
-          id="idm140255389969328"
+          id="idm139713878452944"
           class="indexterm"></a><div
           class="para">
 			Virtualization is one of the most major advances in the recent years of computing. The term covers various abstractions and techniques simulating virtual computers with a variable degree of independence on the actual hardware. One physical server can then host several systems working at the same time and in isolation. Applications are many, and often derive from this isolation: test environments with varying configurations for instance, or separation of hosted services across different virtual machines for security.
@@ -77,17 +77,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			هناك الكثير من حلول الحوسبة الظاهرية، لكل منها ميزاته وعيوبه. يركز هذا الكتاب على Xen، و LXC، وKVM، لكن هناك حلول أخرى تستحق الذكر منها:
 		</div><a
-          id="idm140255389966672"
+          id="idm139713878450288"
           class="indexterm"></a><a
-          id="idm140255389965552"
+          id="idm139713878449168"
           class="indexterm"></a><a
-          id="idm140255389964432"
+          id="idm139713878448048"
           class="indexterm"></a><a
-          id="idm140255389963312"
+          id="idm139713878446928"
           class="indexterm"></a><a
-          id="idm140255389962192"
+          id="idm139713878445808"
           class="indexterm"></a><a
-          id="idm140255389961072"
+          id="idm139713878444688"
           class="indexterm"></a><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -111,8 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div></li><li
               class="listitem"><div
                 class="para">
-					VirtualBox هو نظام محاكاة معظمه برمجيات حرة (رغم أن بعض المكونات الإضافية متوفرة برخص احتكارية). هو أقل عمراً من VMWare ومقيد بمعماريتي i386 و amd64، لكنه يتضمن مع ذلك ميزة snapshot وبعض الميزات المشوقة الأخرى. أصبح VirtualBox جزءاً من دبيان منذ إصدار <span
-                  class="distribution distribution">ليني</span>. <div
+					VirtualBox is a virtual machine that is mostly free software (some extra components are available under a proprietary license). Unfortunately it is in Debian's “contrib” section because it includes some precompiled files that cannot be rebuilt without a proprietary compiler. While younger than VMWare and restricted to the i386 and amd64 architectures, it still includes some snapshotting and other interesting features. <div
                   class="url">→ <a
                     href="http://www.virtualbox.org/">http://www.virtualbox.org/</a></div>
 				</div></li></ul></div><div
@@ -122,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.xen"></a>12.2.1. ‏Xen</h3></div></div></div><div
             class="para">
 				Xen<a
-              id="idm140255389949312"
+              id="idm139713878432800"
               class="indexterm"></a> هو حل محاكاة ”شبه ظاهرية – paravirtualization“. يقدم Xen طبقة عزل رقيقة، تدعى ”المشرف – hypervisor“، بين العتاد والأنظمة العليا؛ تعمل بمثابة مرجع يتحكم بالوصول للعتاد من الحواسيب الظاهرية. لكنها تعالج عدداً قليلاً من التعليمات، أما البقية فتنفذ مباشرة على العتاد بالنيابة عن الأنظمة الظاهرية. الميزة الأساسية هي أن مستوى الأداء لا ينخفض، والنظم تعمل بسرعات تقترب من السرعة الأصلية؛ لكن نقطة الضعف هي أن نوى نظم التشغيل التي يمكن استخدامها مع مشرف Xen يجب تعديلها لتناسب العمل على Xen.
 			</div><div
             class="para">
@@ -381,9 +380,9 @@ testxen                                      1   128     1     -b----      1.1</
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> Choice of toolstacks to manage Xen VM</strong></p></div></div></div><a
-              id="idm140255389868544"
+              id="idm139713878351920"
               class="indexterm"></a><a
-              id="idm140255389867424"
+              id="idm139713878350800"
               class="indexterm"></a><div
               class="para">
 				In Debian 7 and older releases, <code
@@ -479,7 +478,7 @@ testxen login: </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.lxc"></a>12.2.2. ‏LXC </h3></div></div></div><a
-            id="idm140255389834096"
+            id="idm139713878317472"
             class="indexterm"></a><div
             class="para">
 				Even though it is used to build “virtual machines”, LXC is not, strictly speaking, a virtualization system, but a system to isolate groups of processes from each other even though they all run on the same host. It takes advantage of a set of recent evolutions in the Linux kernel, collectively known as <span
@@ -523,7 +522,7 @@ testxen login: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255389819136"></a>12.2.2.1. الخطوات الأولية</h4></div></div></div><div
+                      id="idm139713878302512"></a>12.2.2.1. الخطوات الأولية</h4></div></div></div><div
               class="para">
 					تحوي الحزمة <span
                 class="pkg pkg">lxc</span> الأدوات اللازمة لتشغيل LXC، ويجب تثبيتها إذن.
@@ -597,7 +596,7 @@ iface br0 inet static
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255389800144"></a>12.2.2.3. إعداد النظام</h4></div></div></div><div
+                      id="idm139713878284144"></a>12.2.2.3. إعداد النظام</h4></div></div></div><div
               class="para">
 					دعنا الآن نضبط نظام الملفات الذي ستستخدمه الحاوية. بما أن هذا ”الجهاز الظاهري“ لن يعمل على العتاد مباشرة، فيجب إجراء بعض التعديلات على نظام الملفات حتى يتناسب مع تنظيم أنظمة الملفات القياسية، خصوصاً بالنسبة للنواة والأجهزة والطرفيات. لحسن الحظ، تحوي <span
                 class="pkg pkg">lxc</span> سكربتات تؤتمت معظم عملية الضبط هذه. مثلاً، يمكن استخدام الأوامر التالية (التي تحتاج الحزمتين <span
@@ -655,7 +654,7 @@ lxc.network.hwaddr = 4a:49:43:49:79:20
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255389785168"></a>12.2.2.4. تشغيل الحاوية</h4></div></div></div><div
+                      id="idm139713878269168"></a>12.2.2.4. تشغيل الحاوية</h4></div></div></div><div
               class="para">
 					الآن وبعد أن أصبحت صورة الجهاز الظاهري جاهزة، دعنا نشغل الحاوية:
 				</div><pre
@@ -750,8 +749,8 @@ root@testlxc:~# </code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255389758448"></a>12.2.3. المحاكاة في KVM</h3></div></div></div><a
-            id="idm140255389757680"
+                    id="idm139713878242448"></a>12.2.3. المحاكاة في KVM</h3></div></div></div><a
+            id="idm139713878241680"
             class="indexterm"></a><div
             class="para">
 				KVM، التي ترمز إلى <span
@@ -760,8 +759,7 @@ root@testlxc:~# </code></pre><div
               class="command">qemu-*</code>: نحن لا نزال نتحدث عن KVM.
 			</div><div
             class="para">
-				لقد دمجت KVM منذ البداية في النواة لينكس، بخلاف نظم المحاكاة الأخرى. اختر مطوروها استغلال مجموعات تعليمات المعالج المخصصة للمحاكاة (Intel-VT و AMD-V)، ما جعل KVM خفيفة الوزن، وأنيقة وغير شرهة للموارد. من جهة أخرى، هذا يعني أن KVM لا تعمل إلا على معالجات i386 و amd64 الحديثة بما يكفي لامتلاك مجموعات التعليمات هذه. يمكنك التأكد أن معالجك يدعم هذه التعليمات إذا كان هناك ”vmx“ أو ”svm“ في أعلام المعالج المذكورة في <code
-              dir="ltr"
+				Unlike other virtualization systems, KVM was merged into the Linux kernel right from the start. Its developers chose to take advantage of the processor instruction sets dedicated to virtualization (Intel-VT and AMD-V), which keeps KVM lightweight, elegant and not resource-hungry. The counterpart, of course, is that KVM doesn't work on any computer but only on those with appropriate processors. For x86-based computers, you can verify that you have such a processor by looking for “vmx” or “svm” in the CPU flags listed in <code
               class="filename">/proc/cpuinfo</code>.
 			</div><div
             class="para">
@@ -770,16 +768,16 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255389752080"></a>12.2.3.1. الخطوات الأولية</h4></div></div></div><a
-              id="idm140255389751312"
+                      id="idm139713878236560"></a>12.2.3.1. الخطوات الأولية</h4></div></div></div><a
+              id="idm139713878235792"
               class="indexterm"></a><div
               class="para">
 					بعكس الأدوات الأخرى مثل VirtualBox، لا تقدم KVM نفسها أي واجهة للمستخدم لإنشاء وإدارة الحواسيب الظاهرية. تقدم حزمة <span
                 class="pkg pkg">qemu-kvm</span> برنامجاً تنفيذيًا قادراً على تشغيل حاسوب ظاهري، بالإضافة إلى سكربت تهيئة يحمل وحدات النواة المناسبة.
 				</div><a
-              id="idm140255389748560"
+              id="idm139713878233040"
               class="indexterm"></a><a
-              id="idm140255389747600"
+              id="idm139713878232080"
               class="indexterm"></a><div
               class="para">
 					لحسن الحظ، توفر Red Hat أيضًا مجموعة أخرى من الأدوات لمعالجة هذه المشكلة، من خلال تطوير المكتبة <span
@@ -787,7 +785,7 @@ root@testlxc:~# </code></pre><div
                 class="emphasis"><em>virtual machine manager</em></span> المقترنة بها. تسمح libvirt بإدارة الحواسيب الظاهرية بأسلوب قياسي، بغض النظر عن نظام المحاكاة المستخدم وراء الكواليس (حاليًا هناك دعم لنظم QEMU، وKVM، وXen، وLXC، وOpenVZ، وVirtualBox، وVMWare وأيضاً UML). ‏<code
                 class="command">virtual-manager</code> هي واجهة رسومية تعتمد على libvirt لإنشاء وإدارة الحواسيب الظاهرية.
 				</div><a
-              id="idm140255389743664"
+              id="idm139713878228144"
               class="indexterm"></a><div
               class="para">
 					سوف نثبت الحزم المطلوبة أولاً، بالأمر <code
@@ -806,7 +804,7 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255389735744"></a>12.2.3.2. إعداد الشبكة</h4></div></div></div><div
+                      id="idm139713878220320"></a>12.2.3.2. إعداد الشبكة</h4></div></div></div><div
               class="para">
 					كما في Xen و LXC، أكثر الخيارات شيوعاً عند إعداد الشبكة هو استخدام جسر يجمع الواجهات الشبكية لعدة حواسيب ظاهرية (انظر <a
                 class="xref"
@@ -823,9 +821,9 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255389731120"></a>12.2.3.3. التثبيت باستخدام <code
+                      id="idm139713878215696"></a>12.2.3.3. التثبيت باستخدام <code
                       class="command">virt-install</code></h4></div></div></div><a
-              id="idm140255389730032"
+              id="idm139713878214608"
               class="indexterm"></a><div
               class="para">
 					يشبه إنشاء حاسب ظاهري تثبيت النظم العادية كثيراً، عدا أن مواصفات الحواسب الظاهري تُحدَّد في أمر طويل جداً.
@@ -849,6 +847,15 @@ root@testlxc:~# </code></pre><div
                 class="computeroutput">Pool srv-kvm created
 
 root@mirwiz:~# </code></pre><div
+              class="sidebar"><div
+                class="titlepage"><div><div><p
+                      class="title"><strong><span
+                          class="emphasis"><em>TIP</em></span> Add your user to the libvirt group</strong></p></div></div></div><div
+                class="para">
+					All samples in this section assume that you are running commands as root. Effectively, if you want to control a local libvirt daemon, you need either to be root or to be a member of the <code
+                  class="literal">libvirt</code> group (which is not the case by default). Thus if you want to avoid using root rights too often, you can add yoursel to the <code
+                  class="literal">libvirt</code> group and run the various commands under your user identity.
+				</div></div><div
               class="para">
 					دعنا نبدأ الآن عملية تثبيت الحاسب الظاهري، وإلقاء نظرة قريبة على أهم خيارات <code
                 class="command">virt-install</code>. هذا الأمر يسجل الجهاز الظاهري وبارامتراته عند libvirtd، ثم يشغله حتى نتابع عملية التثبيت.
@@ -1079,9 +1086,9 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255384111888"></a>12.2.3.4. إدارة الأجهزة باستخدام <code
+                      id="idm139713870724816"></a>12.2.3.4. إدارة الأجهزة باستخدام <code
                       class="command">virsh</code></h4></div></div></div><a
-              id="idm140255384110992"
+              id="idm139713870723920"
               class="indexterm"></a><div
               class="para">
 					بعد أن انتهينا من التثبيت، دعنا نرى كيف ندير الأجهزة الظاهرية المتوفرة. أول شيئ سنجربه هو طلب قائمة بالأجهزة التي تديرها <code
@@ -1162,86 +1169,52 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140255384093184"></a>12.2.3.5. تثبيت نظام مبني على RPM في دبيان باستخدام yum</h4></div></div></div><div
+                      id="idm139713870706512"></a>12.2.3.5. تثبيت نظام مبني على RPM في دبيان باستخدام yum</h4></div></div></div><div
               class="para">
 					إذا كان الجهاز الظاهري سيعمل بنظام دبيان (أو أحد مشتقاته)، يمكن تهيئة النظام باستخدام <code
                 class="command">debootstrap</code>، كما شرحناه سابقًا. أما إذا كان الجهاز الظاهري سيعمل بنظام مبني على RPM (مثل فيدورا، أو CentOS أو Scientific Linux)، يجب إتمام التثبيت باستخدام أداة <code
                 class="command">yum</code> (المتوفرة في الحزمة ذات الاسم نفسه).
 				</div><div
               class="para">
-					تحتاج العملية لإعداد ملف <code
-                class="filename">yum.conf</code> يحوي المتغيرات اللازمة، بما فيها المسار لمستودعات حزم RPM، والمسار لإعداد plugin، والمجلد الوجهة. في هذا المثال، سنفترض أن البيئة ستخزن في <code
-                dir="ltr"
-                class="filename">/var/tmp/yum-bootstrap</code>. يجب أن يبدو الملف <code
-                dir="ltr"
-                class="filename">/var/tmp/yum-bootstrap/yum.conf</code> كالتالي:
+					The procedure requires using <code
+                class="command">rpm</code> to extract an initial set of files, including notably <code
+                class="command">yum</code> configuration files. And then calling <code
+                class="command">yum</code> to extract the remaining set of packages. But since we call <code
+                class="command">yum</code> from outside the chroot, we need to make some temporary changes. In the sample below, the target chroot is <code
+                class="filename">/srv/centos</code>.
 				</div><pre
-              class="programlisting">[main]
-reposdir=/var/tmp/yum-bootstrap/repos.d
-pluginconfpath=/var/tmp/yum-bootstrap/pluginconf.d
-cachedir=/var/cache/yum
-installroot=/path/to/destination/domU/install
-exclude=$exclude
-keepcache=1
-#debuglevel=4  
-#errorlevel=4
-pkgpolicy=newest
-distroverpkg=centos-release
-tolerant=1
-exactarch=1
-obsoletes=1
-gpgcheck=1
-plugins=1
-metadata_expire=1800</pre><div
-              class="para">
-					The <code
-                class="filename">/var/tmp/yum-bootstrap/repos.d</code> directory should contain the descriptions of the RPM source repositories in <code
-                class="filename">*.repo</code> files, just as in <code
-                class="filename">/etc/yum.repos.d</code> in an already installed RPM-based system. Here is an example for a CentOS 6 installation:
-				</div><pre
-              class="programlisting">[base]
-name=CentOS-6 - Base
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-   
-[updates]
-name=CentOS-6 - Updates
-#baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-
-[extras]
-name=CentOS-6 - Extras
-#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-
-[centosplus]
-name=CentOS-6 - Plus
-#baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus
-gpgcheck=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
-</pre><div
-              class="para">
-					أخيراً، يجب أن يحوي ملف <code
-                class="filename">pluginconf.d/installonlyn.conf</code> ما يلي:
-				</div><pre
-              class="programlisting">[main]
-enabled=1
-tokeep=5
-</pre><div
-              class="para">
-					بعد إنهاء كل هذا الإعداد، تأكد أن قواعد بيانات <code
-                class="command">rpm</code> مهيئة بشكل صحيح، باستخدام أمر مثل <code
-                class="command">rpm --rebuilddb</code>. بعدها تؤول عملية تثبيت CentOS 6 إلى تنفيذ الأمر التالي:
-				</div><pre
-              class="screen"><strong
-                class="userinput"><code>yum -c /var/tmp/yum-bootstrap/yum.conf -y install coreutils basesystem centos-release yum-basearchonly initscripts</code></strong></pre></div></div></div><ul
+              class="screen">
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>rootdir="/srv/centos"</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>mkdir -p "$rootdir" /etc/rpm</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>echo "%_dbpath /var/lib/rpm" &gt; /etc/rpm/macros.dbpath</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>wget http://mirror.centos.org/centos/7/os/x86_64/Packages/centos-release-7-1.1503.el7.centos.2.8.x86_64.rpm</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>rpm --nodeps --root "$rootdir" -i centos-release-7-1.1503.el7.centos.2.8.x86_64.rpm</code></strong>
+<code
+                class="computeroutput">rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+warning: centos-release-7-1.1503.el7.centos.2.8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+</code>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>sed -i -e "s,gpgkey=file:///etc/,gpgkey=file://${rootdir}/etc/,g" $rootdir/etc/yum.repos.d/*.repo</code></strong>
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>yum --assumeyes --installroot $rootdir groupinstall core</code></strong>
+[...]
+<code
+                class="computeroutput"># </code><strong
+                class="userinput"><code>sed -i -e "s,gpgkey=file://${rootdir}/etc/,gpgkey=file:///etc/,g" $rootdir/etc/yum.repos.d/*.repo</code></strong>
+</pre></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

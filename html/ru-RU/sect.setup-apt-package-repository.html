@@ -68,22 +68,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.setup-apt-package-repository"></a>15.3. Создание репозитория пакетов для APT</h2></div></div></div><a
-          id="idm140713619821360"
+          id="idm140239389234416"
           class="indexterm"></a><a
-          id="idm140713619820432"
+          id="idm140239389233488"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp со временем начала сопровождение нескольких пакетов Debian, либо локально модифицированных из существующих пакетов, либо созданных с нуля с целью распространять внутренние данные и программы.
 		</div><div
           class="para">
-			Чтобы упростить процесс развёртывания, им необходимо интегрировать эти пакеты в хранилище, которое может быть использовано непосредственно с помощью APT. В силу очевидных причин они хотят отделить внутренние пакеты от пересобранных локально. Цель состоит в том, чтобы можно было привести записи в файле <code
-            class="filename">/etc/apt/sources.list</code> к следующему виду:
+			To make deployment easier, they want to integrate these packages in a package archive that can be directly used by APT. For obvious maintenance reasons, they wish to separate internal packages from locally-rebuilt packages. The goal is for the matching entries in a <code
+            class="filename">/etc/apt/sources.list.d/falcot.list</code> file to be as follows:
 		</div><pre
           class="programlisting">
 deb http://packages.falcot.com/ updates/
 deb http://packages.falcot.com/ internal/
 </pre><a
-          id="idm140713619815760"
+          id="idm140239389229136"
           class="indexterm"></a><div
           class="para">
 			The administrators therefore configure a virtual host on their internal HTTP server, with <code
@@ -114,7 +114,7 @@ deb http://packages.falcot.com/ internal/
                   class="title"><strong><span
                       class="emphasis"><em>АЛЬТЕРНАТИВА</em></span> <code
                       class="command">apt-ftparchive</code></strong></p></div></div></div><a
-            id="idm140713619802640"
+            id="idm140239389216016"
             class="indexterm"></a><div
             class="para">
 			Если <code
@@ -209,10 +209,9 @@ release_label = Internal Packages
                   class="title"><strong><span
                       class="emphasis"><em>ДОПОЛНИТЕЛЬНО</em></span> Создание подписанного архива</strong></p></div></div></div><div
             class="para">
-			Комплект APT проверяет цепочку криптографических подписей пакетов, которые он обрабатывает, перед их установкой (и делает это со времён <span
-              class="distribution distribution">Etch</span>) в целях проверки их подлинности (см. <a
+			The APT suite checks a chain of cryptographic signatures on the packages it handles before installing them, in order to ensure their authenticity (see <a
               class="xref"
-              href="sect.package-authentication.html">Раздел 6.5, «Checking Package Authenticity»</a>). Частные архивы APT поэтому могут создать проблему, так как машины, использующие их, будут постоянно выводить предупреждения о наличии неподписанных пакетов. Поэтому прилежный администратор увязывает частные архивы с безопасным механизмом APT.
+              href="sect.package-authentication.html">Раздел 6.5, «Checking Package Authenticity»</a>). Private APT archives can then be a problem, since the machines using them will keep displaying warnings about unsigned packages. A diligent administrator will therefore integrate private archives with the secure APT mechanism.
 		</div><div
             class="para">
 			Для помощи в этом процессе в <code

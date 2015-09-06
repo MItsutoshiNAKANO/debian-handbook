@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.how-to-migrate"></a>3.2. Cómo migrar</h2></div></div></div><a
-          id="idm140546709886784"
+          id="idm140667132844016"
           class="indexterm"></a><div
           class="para">
 			Para poder garantizar la continuidad de los servicios, la migración de cada equipo debe ser planificada y realizada de acuerdo al plan. Este principio es aplicable sin importar el sistema operativo que utilice.
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140546709885136"></a>3.2.1. Reconocimiento e identificación de servicios</h3></div></div></div><div
+                    id="idm140667132842368"></a>3.2.1. Reconocimiento e identificación de servicios</h3></div></div></div><div
             class="para">
 				Simple como parece, este paso es esencial. Un administrador serio realmente conoce los roles principales de cada servidor, pero dichos roles pueden cambiar y a veces usuarios experimentados pueden haber instalado servicios «salvajes». Saber que existen le permitirá, al menos, decidir qué hacer con ellos en lugar de eliminarlos sin orden ni propósito.
 			</div><div
@@ -86,8 +86,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546692108464"></a>3.2.1.1. La red y los procesos</h4></div></div></div><a
-              id="idm140546692107664"
+                      id="idm140667131299824"></a>3.2.1.1. La red y los procesos</h4></div></div></div><a
+              id="idm140667131299024"
               class="indexterm"></a><div
               class="para">
 					The <code
@@ -144,7 +144,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140546692507584"></a>3.2.2. Respaldos de la configuración</h3></div></div></div><div
+                    id="idm140667132877168"></a>3.2.2. Respaldos de la configuración</h3></div></div></div><div
             class="para">
 				Es buena idea conservar la configuración de todo servicio identificado para poder instalar el equivalente en el nuevo servidor. Como mínimo debería hacer un respaldo de los archivos de configuración.
 			</div><div
@@ -158,7 +158,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
 				Para servicios que administren datos (como bases de datos), es muy recomendable exportar los datos a un formato estándar que pueda ser importado fácilmente por el nuevo software. Tal formato generalmente está documentado y es texto plano; puede ser, por ejemplo, un volcado SQL para una base de datos o un archivo LDIF para un servidor LDAP.
 			</div><div
             class="figure"><a
-              id="idm140546692503504"></a><div
+              id="idm140667132872928"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/existing-setup-2.png"
@@ -170,12 +170,12 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140546692499728"></a>3.2.3. Adopción de un servidor Debian existente</h3></div></div></div><a
-            id="idm140546692498960"
+                    id="idm140667132869152"></a>3.2.3. Adopción de un servidor Debian existente</h3></div></div></div><a
+            id="idm140667132868384"
             class="indexterm"></a><a
-            id="idm140546692498032"
+            id="idm140667132867456"
             class="indexterm"></a><a
-            id="idm140546692497104"
+            id="idm140667132866528"
             class="indexterm"></a><div
             class="para">
 				Para efectivamente tomar el control de su mantenimiento, uno podría analizar un equipo que ya ejecuta Debian.
@@ -226,11 +226,11 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140546703257040"></a>3.2.4. Instalación de Debian</h3></div></div></div><div
+                    id="idm140667131330672"></a>3.2.4. Instalación de Debian</h3></div></div></div><div
             class="para">
 				Una vez que conoce toda la información del servidor actual, puede apagarlo y comenzar a instalar Debian en él.
 			</div><a
-            id="idm140546703255648"
+            id="idm140667131329280"
             class="indexterm"></a><div
             class="para">
 				Para elegir la versión apropiada, debemos saber la arquitectura del equipo. Si es una PC relativamente reciente, es probable que sea amd64 (equipos más antiguos usualmente eran i386). En otros casos podemos reducir las posibilidades según el sistema utilizado previamente.
@@ -251,9 +251,9 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>HARDWARE</em></span> Equipos de 64 bits contra equipos de 32 bits</strong></p></div></div></div><a
-              id="idm140546692849056"
+              id="idm140667133887424"
               class="indexterm"></a><a
-              id="idm140546692848096"
+              id="idm140667133886464"
               class="indexterm"></a><div
               class="para">
 				La mayoría de los equipos recientes tiene procesadores Intel o AMD de 64 bits, compatibles con los procesadores antiguos de 32 bits; por lo tanto funcionará el software compilado para la arquitectura «i386». Por el otro lado, este modo de compatibilidad no aprovecha completamente las capacidades de estos nuevos procesadores. Es por esto que Debian la arquitectura «amd64» para chips AMD recientes así como también procesadores «em64t» de Intel (incluyendo la serie reciente «Core»), que son muy similares a los procesadores AMD64.
@@ -261,12 +261,12 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140546692845792"></a>3.2.5. Instalación y configuración de los servicios seleccionados</h3></div></div></div><div
+                    id="idm140667133884160"></a>3.2.5. Instalación y configuración de los servicios seleccionados</h3></div></div></div><div
             class="para">
 				Once Debian is installed, we must install and configure one by one all of the services that this computer must host. The new configuration must take into consideration the prior one in order to ensure a smooth transition. All the information collected in the first two steps will be useful to successfully complete this part.
 			</div><div
             class="figure"><a
-              id="idm140546692844224"></a><div
+              id="idm140667133882592"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/existing-setup-4.png"

@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. ソースを使ったパッケージの再ビルド</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm139949009508000">15.1.1. ソースの取得</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140339004669824">15.1.1. ソースの取得</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm139949015933088">15.1.2. 修正を行う</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140339003191936">15.1.2. 修正を行う</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm139949002900320">15.1.3. 再ビルドの開始</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140338986349920">15.1.3. 再ビルドの開始</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. 最初のパッケージのビルド</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm139949005519888">15.2.1. メタパッケージか偽物のパッケージ</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140338985807504">15.2.1. メタパッケージか偽物のパッケージ</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm139949005922752">15.2.2. 単純なファイルアーカイブ</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140338985793392">15.2.2. 単純なファイルアーカイブ</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. APT 用のパッケージリポジトリの作成</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. パッケージメンテナになる</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm139949005624512">15.4.1. パッケージを作るための知識</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140338985670592">15.4.1. パッケージを作るための知識</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm139949004563120">15.4.2. 受け入れ過程</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140338986269200">15.4.2. 受け入れ過程</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		Debian パッケージを標準的な方法で取り扱ってきた管理者が、いずれは自分自身のパッケージを作成したり、既存のパッケージを変更したりする必要性を感じるということは極めて普通のことです。この章では、パッケージ化に関する最も一般的な質問に答えること、最良のやり方で Debian インフラをうまく使うために必要な要素を提供すること、を目標にしています。運が良ければ、ローカルパッケージを取り扱った後、さらに進んで Debian プロジェクト自体に参加する必要性を感じるかもしれません。
@@ -106,16 +106,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			いくつかの一連の状況下では、バイナリパッケージの再ビルドが必要です。たとえば、管理者は特定のコンパイルオプションを付けてソフトウェアをソースからコンパイルすることで導入されるソフトウェアの機能を必要とする場合があります。そしてまた、インストールされた Debian のバージョン向けにパッケージ化されたソフトウェアのバージョンが古い場合があります。ソフトウェアのバージョンが古い場合、管理者は<span
               class="distribution distribution">テスト版</span>や<span
               class="distribution distribution">不安定版</span>などの Debian の新しいバージョンから取得したより新しいパッケージをビルドすることが多いです。こうすることで、新しいパッケージを<span
-              class="distribution distribution">安定版</span>ディストリビューションで動かすことが可能です。さらにこの操作は「バックポート」と呼ばれています。いつも通り、バックポート作業の前に、既にバックポート作業が実行されているか否かを注意深く確認するべきです。パッケージのパッケージ追跡システムページを一読するだけでこの種の情報が明らかになります。<div
+              class="distribution distribution">安定版</span>ディストリビューションで動かすことが可能です。さらにこの操作は「バックポート」と呼ばれています。いつも通り、バックポート作業の前に、既にバックポート作業が実行されているか否かを注意深く確認するべきです。対象のパッケージに対する Debian Package Tracker を一読するだけでこの種の情報が明らかになります。<div
               class="url">→ <a
-                href="http://packages.qa.debian.org/">http://packages.qa.debian.org/</a></div><a
-              id="idm139949015072080"
+                href="https://tracker.debian.org/">https://tracker.debian.org/</a></div><a
+              id="idm140339003846208"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm139949009508000"></a>15.1.1. ソースの取得</h3></div></div></div><div
+                      id="idm140339004669824"></a>15.1.1. ソースの取得</h3></div></div></div><div
               class="para">
 				Debian パッケージの再ビルドはパッケージのソースコードを取得することから始まります。最も簡単な方法は <code
                 class="command">apt-get source <em
@@ -137,7 +137,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">comp</em> は使われている圧縮ツールに応じて <code
                 class="literal">gz</code>、<code
                 class="literal">bz2</code>、<code
-                class="literal">lzma</code>、<code
                 class="literal">xz</code> のうちのどれか 1 つです)。そして <code
                 class="command">dpkg-source -x <em
                   class="replaceable">file.dsc</em></code> コマンドを実行します。<code
@@ -145,21 +144,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">dget <em
                   class="replaceable">URL</em></code> コマンドを使えばより簡単にすべてを取得することが可能です。dget コマンドは (<span
                 class="pkg pkg">devscripts</span> パッケージに含まれます) 指定したアドレスから <code
-                class="filename">*.dsc</code> ファイルを取得し、内容を解析し、ファイル内で参照されている単一もしくは複数のファイルを自動的に取得します。<code
-                class="literal">-x</code> オプションを付けることで、ダウンロードの後ソースパッケージを展開します。
+                class="filename">*.dsc</code> ファイルを取得し、内容を解析し、ファイル内で参照されている単一もしくは複数のファイルを自動的に取得します。すべてのダウンロードが完了したら、dget コマンドはソースパッケージを展開します (これは <code
+                class="literal">-d</code> または <code
+                class="literal">--download-only</code> オプションが使われていない場合に限ります)。
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm139949015933088"></a>15.1.2. 修正を行う</h3></div></div></div><div
+                      id="idm140339003191936"></a>15.1.2. 修正を行う</h3></div></div></div><div
               class="para">
 				これでパッケージのソースがソースパッケージとバージョンを基に名付けられたディレクトリ (たとえば <span
-                class="emphasis"><em>samba-3.6.16</em></span> など) の中で利用できるようになりました。そしてこのディレクトリ内でわれわれは修正作業を行います。
+                class="emphasis"><em>samba-4.1.17+dfsg</em></span> など) の中で利用できるようになりました。そしてこのディレクトリ内でわれわれは修正作業を行います。
 			</div><div
               class="para">
 				最初にパッケージのバージョン番号を変更します。こうすることで、再ビルドされたパッケージを Debian の提供する元パッケージと区別することが可能です。現在のバージョンが <code
-                class="literal">3.6.16-2</code> の場合、バージョン <code
-                class="literal">3.6.16-2falcot1</code> を作成することが可能です。これはパッケージの出自を明らかに示しています。このパッケージのバージョン番号は Debian が提供するパッケージのバージョン番号よりも大きいため、このパッケージを元パッケージの更新として簡単にインストールできます。このような作業を極めて効果的に行うには、<span
+                class="literal">2:4.1.17+dfsg-2</code> の場合、バージョン <code
+                class="literal">2:4.1.17+dfsg-2falcot1</code> を作成することが可能です。これはパッケージの出自を明らかに示しています。このパッケージのバージョン番号は Debian が提供するパッケージのバージョン番号よりも大きいため、このパッケージを元パッケージの更新として簡単にインストールできます。このような作業を極めて効果的に行うには、<span
                 class="pkg pkg">devscripts</span> パッケージの提供する <code
                 class="command">dch</code> コマンド (<span
                 class="emphasis"><em>Debian CHangelog</em></span>) を <code
@@ -177,7 +177,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">debian/rules</code> が最も単純に書かれている場合、初期設定 (<code
                 class="literal">./configure …</code>) や実際のビルド (<code
                 class="literal">$(MAKE) …</code> や <code
-                class="literal">make …</code>) を簡単に見つけられるでしょう。ファイル内にこれらのコマンドが明示的に書かれていない場合、このファイルの内容は別のコマンドに対する作用を書いているのかもしれません。このような場合、デフォルト挙動を変える方法をより詳細に学ぶために文書を参照してください。
+                class="literal">make …</code>) を簡単に見つけられるでしょう。ファイル内にこれらのコマンドが明示的に書かれていない場合、このファイルの内容は別のコマンドに対する作用を書いているのかもしれません。このような場合、デフォルト挙動を変える方法をより詳細に学ぶために文書を参照してください。<code
+                class="command">dh</code> を使っているパッケージのビルドオプションを変更する場合、<code
+                class="command">dh_auto_configure</code> や <code
+                class="command">dh_auto_build</code> コマンドを再定義する必要があるかもしれません (これを行う方法に関する説明は各コマンドのマニュアルページをご覧ください)。
 			</div><div
               class="para">
 				パッケージに対して行った変更の内容によっては、<code
@@ -199,11 +202,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>TIP</em></span> <code
-                          class="literal">Build-Depends</code> のインストール</strong></p></div></div></div><div
+                          class="literal">Build-Depends</code> のインストール</strong></p></div></div></div><a
+                id="idm140338992444688"
+                class="indexterm"></a><div
                 class="para">
-				<a
-                  id="idm139949004769968"
-                  class="indexterm"></a><code
+				<code
                   class="command">apt-get</code> を使うことで、あるソースパッケージの <code
                   class="literal">Build-Depends</code> フィールドに指定されているすべてのパッケージをインストールすることが可能です。ここで、<code
                   class="filename">/etc/apt/sources.list</code> ファイルの <code
@@ -214,14 +217,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm139949002900320"></a>15.1.3. 再ビルドの開始</h3></div></div></div><div
+                      id="idm140338986349920"></a>15.1.3. 再ビルドの開始</h3></div></div></div><div
               class="para">
 				ソースに対するすべての必要な変更が完了したら、実際のバイナリパッケージ (<code
                 class="filename">.deb</code> ファイル) を生成します。すべてのプロセスは <code
                 class="command">dpkg-buildpackage</code> コマンドで管理されます。
 			</div><div
               class="example"><a
-                id="idm139949002898048"></a><p
+                id="idm140338986347648"></a><p
                 class="title"><strong>例15.1 パッケージの再ビルド</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -272,7 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>QUICK LOOK</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm139949005530128"
+                id="idm140338987704592"
                 class="indexterm"></a><div
                 class="para">
 				<code

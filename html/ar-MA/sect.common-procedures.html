@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.common-procedures"></a>7.2. إجراءات شائعة</h2></div></div></div><a
-          id="idm140255393599344"
+          id="idm139713882881024"
           class="indexterm"></a><div
           class="para">
 			إن الهدف من هذا القسم هو تقديم بعض النصائح العامة لبعض العمليات التي يحتاج مدير النظام تنفيذها بشكل متكرر. لا يمكن أن تغطي هذه الإجراءات جميع الحالات الممكنة بالتفصيل، لكنها ستخدمك كنقطة انطلاق للحالات الصعبة جدًا.
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>استكشاف</em></span> الوثائق باللغة الفرنسية</strong></p></div></div></div><div
+                      class="emphasis"><em>DISCOVERY</em></span> Documentation in other languages</strong></p></div></div></div><div
             class="para">
 			غالبًا ما تتوفر الوثائق المترجمة إلى لغات غير الإنكليزية في حزمة منفصلة لها نفس اسم الحزمة المرتبطة بها، متبوعًا باللاحقة <code
               dir="ltr"
@@ -95,10 +95,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255393591664"></a>7.2.1. إعداد البرامج</h3></div></div></div><a
-            id="idm140255393590896"
+                    id="idm139713882873344"></a>7.2.1. إعداد البرامج</h3></div></div></div><a
+            id="idm139713882872576"
             class="indexterm"></a><a
-            id="idm140255393589456"
+            id="idm139713882871136"
             class="indexterm"></a><div
             class="para">
 				عندما ترغب بإعداد حزمة مجهولة، عليك العمل في مراحل. أولاً، عليك قراءة ما وثَّقَه المشرف على صيانة الحزمة. سوف تساعدك قراءة الملف <code
@@ -124,7 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>سياسة دبيان</em></span> مكان الأمثلة</strong></p></div></div></div><a
-              id="idm140255393579072"
+              id="idm139713882860752"
               class="indexterm"></a><div
               class="para">
 				يجب تثبيت جميع الأمثلة في المجلد <code
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255393573520"></a>7.2.2. مراقبة الخدمات</h3></div></div></div><div
+                    id="idm139713882855200"></a>7.2.2. مراقبة الخدمات</h3></div></div></div><div
             class="para">
 				فهم ما تفعله إحدى الخدمات معقدٌ نوعاً ما، ذلك لأنها لا تتفاعل مباشرة مع مدير النظام. للتحقق من أن إحدى الخدمات تعمل فعلاً، عليك اختبارها. مثلاً، للتحقق من خدمة أباتشي (مخدم الوب)، اختبرها بتفيذ طلب HTTP.
 			</div><div
@@ -154,11 +154,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>أدوات</em></span> خدمة <code
                         class="command">rsyslogd</code></strong></p></div></div></div><a
-              id="idm140255392858816"
+              id="idm139713882850544"
               class="indexterm"></a><a
-              id="idm140255392857696"
+              id="idm139713882849424"
               class="indexterm"></a><a
-              id="idm140255392856256"
+              id="idm139713882847984"
               class="indexterm"></a><div
               class="para">
 				خدمة <code
@@ -171,12 +171,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				بعض دوال لغة C، المختصّة بإرسال السجلات تُبَسِّطُ استخدام خدمة <code
                 class="command">rsyslogd</code>. ومع ذلك فإن بعض الخدمات تدير ملفات سجلات خاصة بها (هذه هي حالة <code
                 class="command">samba</code> مثلا، التي تسمح بالمشاركة بين ويندوز ولينكس عبر الشبكة).
+			</div><div
+              class="para">
+				Note that when systemd is in use, the logs are actually collected by systemd before being forwarded to <code
+                class="command">rsyslogd</code>. They are thus also available via systemd's journal and can be consulted with <code
+                class="command">journalctl</code> (see <a
+                class="xref"
+                href="unix-services.html#sect.systemd">قسم 9.1.1, “The systemd init system”</a> for details).
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>أساسيات</em></span> الخدمة</strong></p></div></div></div><a
-              id="idm140255392849072"
+              id="idm139713882838784"
               class="indexterm"></a><div
               class="para">
 				الخدمة (daemon) هي برنامج لا يستدعيه المستخدم صراحة ويبقى في الخلفية، ينتظر تحقق شرط خاص لتنفيذ مهمة معينة. معظم البرامج الخدمية تعمل بشكل daemons، وهذا المصطلح يفسر وجود الحرف ”d“ كثيراً في نهايات أسمائها (<code
@@ -185,45 +192,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">httpd</code>، الخ).
 			</div></div><div
             class="para">
-				إن أية صيانة وقائية تبدأ بالاطلاع دورياً على سجلات المخدم ذات الصلة. عندها يمكنك تشخيص المشاكل قبل أن يبلغك بها المستخدمون الساخطون. والحق يقال إن المستخدمين ينتظرون أحياناً تكرار المشكلة على مدى عدة أيام قبل التبليغ عنها. يمكنك استخدام أدوات خاصة لتحليل محتوى السجلات الكبيرة. تتوفر مثل هذه الأدوات لمخدمات الوب (مثل <code
-              class="command">analog</code> ،<code
-              class="command">awstats</code> ،<code
-              class="command">webalizer</code> بالنسبة لأباتشي)، ولمخدمات FTP، ومخدمات كاش/بروكسي، وللجدران النارية، مخدمات البريد الإلكتروني، مخدمات DNS، وحتى مخدمات الطباعة. تعمل بعض هذه الأدوات بأسلوب تجزيئي (modular) وتسمح بتحليل أنواع مختلفة من السجلات. هذه هي حالة الأمر <code
-              class="command">lire</code> والأمر <code
-              class="command">modlogan</code> أيضاً. تفحص الأدوات الأخرى هذه الملفات بحثاً عن تحذيرات يجب التعامل معها، مثل <code
-              class="command">logcheck</code> (الذي ناقشناه في <a
+				As a preventive operation, the administrator should regularly read the most relevant server logs. They can thus diagnose problems before they are even reported by disgruntled users. Indeed users may sometimes wait for a problem to occur repeatedly over several days before reporting it. In many cases, there are specific tools to analyze the contents of the larger log files. In particular, such utilities exist for web servers (such as <code
+              class="command">analog</code>, <code
+              class="command">awstats</code>, <code
+              class="command">webalizer</code> for Apache), for FTP servers, for proxy/cache servers, for firewalls, for e-mail servers, for DNS servers, and even for print servers. Some of these utilities operate in a modular manner and allow analysis of several types of log files. This is the case of <code
+              class="command">lire</code>. Other tools, such as <code
+              class="command">logcheck</code> (a software discussed in <a
               class="xref"
-              href="security.html">فصل 14, <em>الأمن</em></a>).
+              href="security.html">فصل 14, <em>الأمن</em></a>), scan these files in search of alerts to be dealt with.
 			</div><a
-            id="idm140255392840736"
+            id="idm139713882831392"
             class="indexterm"></a><a
-            id="idm140255392839616"
+            id="idm139713882830272"
             class="indexterm"></a><a
-            id="idm140255392838496"
+            id="idm139713882829152"
             class="indexterm"></a><a
-            id="idm140255392837376"
+            id="idm139713882828032"
             class="indexterm"></a><a
-            id="idm140255392836256"
-            class="indexterm"></a><a
-            id="idm140255392835136"
+            id="idm139713882826912"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255392833856"></a>7.2.3. طلب المساعدة على القوائم البريدية</h3></div></div></div><div
+                    id="idm139713882825632"></a>7.2.3. طلب المساعدة على القوائم البريدية</h3></div></div></div><div
             class="para">
-				إذا لم تساعدك أبحاثك المختلفة على الوصول إلى جذور المشكلة، يمكنك الحصول على المساعدة من أشخاص آخرين، أو الاستعانة بمن هم أكثر خبرة. هذا هو الهدف فعلاً من القائمة البريدية <code
+				If your various searches haven't helped you to get to the root of a problem, it is possible to get help from other, perhaps more experienced people. This is indeed the purpose of the <code
               class="email"><a
                 class="email"
-                href="mailto:debian-user@lists.debian.org">debian-user@lists.debian.org</a></code>. وكما هو الحال مع أي مجتمع، توجد قواعد يجب اتباعها. قبل طرح أي سؤال: عليك التحقق من أن مشكلة لم تكن موضوع نقاشات حديثة على القائمة وأنها غير مغطاة بأي وثائق رسمية. <div
+                href="mailto:debian-user@lists.debian.org">debian-user@lists.debian.org</a></code> mailing list. As with any community, it has rules that need to be followed. Before asking any question, you should check that your problem isn't already covered by recent discussions on the list or by any official documentation. <div
               class="url">→ <a
-                href="http://wiki.debian.org/DebianMailingLists">http://wiki.debian.org/DebianMailingLists</a></div> <div
+                href="https://wiki.debian.org/DebianMailingLists">https://wiki.debian.org/DebianMailingLists</a></div> <div
               class="url">→ <a
-                href="http://lists.debian.org/debian-user/">http://lists.debian.org/debian-user/</a></div>
+                href="https://lists.debian.org/debian-user/">https://lists.debian.org/debian-user/</a></div>
 			</div><a
-            id="idm140255392830240"
+            id="idm139713882822208"
             class="indexterm"></a><a
-            id="idm140255392828960"
+            id="idm139713882820928"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -245,8 +249,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				عموماً، يجب اتباع قواعد النتيكيت (إتيكيت النت) في جميع المراسلات التي تتم عبر القوائم البريدية. يدل هذا المصطلح على مجموعة من القواعد المنطقية، تتراوح ما بين المجاملة المعروفة إلى الأخطاء التي يجب تفاديها. <div
                 class="url">→ <a
                   href="http://tools.ietf.org/html/rfc1855">http://tools.ietf.org/html/rfc1855</a></div> <a
-                id="idm140255392822480"
+                id="idm139713882814448"
                 class="indexterm"></a>
+			</div><div
+              class="para">
+				Furthermore, for any communication channel managed by the Debian project, you are bound by the Debian Code of Conduct: <div
+                class="url">→ <a
+                  href="https://www.debian.org/code_of_conduct">https://www.debian.org/code_of_conduct</a></div>
 			</div></div><div
             class="para">
 				بعد أن أوفيت هذين الشرطين، يمكنك التفكير بوصف مشكلتك في القائمة البريدية. ضع من المعلومات المناسبة قدر ما تستطيع: الاختبارات المختلفة التي أجريتها، والوثائق التي قرأتها، وكيف حاولت تشخيص المشكلة، والحزم المرتبطة بالمشكلة أو تلك التي تشك بتدخلها فيها، الخ. تحقق باستخدام نظام تتبع العلل الخاص بدبيان (BTS ‏= Bug Tracking System، مشروح في الملاحظة الجانبية <a
@@ -262,18 +271,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255392817824"></a>7.2.4. التبليغ عن علة عندما تكون المشكلة صعبة جداً</h3></div></div></div><a
-            id="idm140255392817056"
+                    id="idm139713882808528"></a>7.2.4. التبليغ عن علة عندما تكون المشكلة صعبة جداً</h3></div></div></div><a
+            id="idm139713882807760"
             class="indexterm"></a><a
-            id="idm140255392816096"
+            id="idm139713882806800"
             class="indexterm"></a><div
             class="para">
-				إذا فشلت جميع مساعيك لحل مشكلة ما، فمن الممكن أن حلها ليس مسؤوليتك، وأن المشكلة ناجمة عن علّة في البرنامج. في هذه الحالة، الإجراء المناسب هو التبليغ عن العلة إلى دبيان أو مباشرة إلى المطور المنبعي. لعمل ذلك، اعزل المشكلة قدر المستطاع وأنشئ حالة اختبار مصغرة تظهر المشكلة فيها. إذا كنت تعرف أي برنامج هو السبب الواضح للمشكلة، يمكنك العثور على حزمته باستخدام الأمر <code
+				If all of your efforts to resolve a problem fail, it is possible that a resolution is not your responsibility, and that the problem is due to a bug in the program. In this case, the proper procedure is to report the bug to Debian or directly to the upstream developers. To do this, isolate the problem as much as possible and create a minimal test situation in which it can be reproduced. If you know which program is the apparent cause of the problem, you can find its corresponding package using the command, <code
               class="command">dpkg -S <em
-                class="replaceable">file_in_question</em></code>. تحقق من نظام تتبع العلل (<code
-              class="literal">http://bugs.debian.org/<em
-                class="replaceable">package</em></code>) للتأكد أن العلة لم يبلغ عنها سابقاً. يمكنك عندها إرسال تقرير بالعلة، باستخدام الأمر <code
-              class="command">reportbug</code>، مع ذكر أكبر كمية من المعلومات، خصوصاً الوصف الكامل لحالات الاختبار المصغرة حتى يستطيع أي شخص إعادة توليد العلة.
+                class="replaceable">file_in_question</em></code>. Check the Bug Tracking System (<code
+              class="literal">https://bugs.debian.org/<em
+                class="replaceable">package</em></code>) to ensure that the bug has not already been reported. You can then send your own bug report, using the <code
+              class="command">reportbug</code> command, including as much information as possible, especially a complete description of those minimal test cases that will allow anyone to recreate the bug.
 			</div><div
             class="para">
 				عناصر هذا الفصل هي وسائل فعالة لحل المشاكل التي قد تثيرها الفصول اللاحقة. استخدمها كلما دعت الحاجة!

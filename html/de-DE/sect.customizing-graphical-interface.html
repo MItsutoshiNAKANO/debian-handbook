@@ -71,56 +71,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139813923655808"></a>13.2.1. Einen Display Manager auswählen</h3></div></div></div><a
-            id="idm139813923655040"
+                    id="idm139655480466848"></a>13.2.1. Einen Display Manager auswählen</h3></div></div></div><a
+            id="idm139655480466080"
             class="indexterm"></a><a
-            id="idm139813925717632"
+            id="idm139655480464640"
             class="indexterm"></a><a
-            id="idm139813925716512"
+            id="idm139655480463520"
             class="indexterm"></a><a
-            id="idm139813925715392"
+            id="idm139655500189520"
             class="indexterm"></a><div
             class="para">
-				Die grafische Schnittstelle stellt lediglich Bildschirmplatz zur Verfügung. Man erhält nur einen leeren Bildschirm, wenn man den X-Server allein ausführt. Deshalb verwenden die meisten Installationen einen <span
-              class="emphasis"><em>Display Manager</em></span>, um einen Anmeldebildschirm anzuzeigen und nach der Authentifizierung des Benutzers die grafische Arbeitsfläche zu starten. Die drei zur Zeit populärsten Display Manager sind <span
+				The graphical interface only provides display space. Running the X server by itself only leads to an empty screen, which is why most installations use a <span
+              class="emphasis"><em>display manager</em></span> to display a user authentication screen and start the graphical desktop once the user has authenticated. The three most popular display managers in current use are <span
               class="pkg pkg">gdm3</span> (<span
               class="foreignphrase"><em
                 class="foreignphrase">GNOME Display Manager</em></span>), <span
               class="pkg pkg">kdm</span> (<span
               class="foreignphrase"><em
-                class="foreignphrase">KDE Display Manager</em></span>) und <span
-              class="pkg pkg">xdm</span> (<span
+                class="foreignphrase">KDE Display Manager</em></span>) and <span
+              class="pkg pkg">lightdm</span> (<span
               class="foreignphrase"><em
-                class="foreignphrase">X Display Manager</em></span>). Da die Falcot Corp. Administratoren sich entschieden hatten, die GNOME-Arbeitsumgebung zu verwenden, haben sie logischerweise auch <code
-              class="command">gdm3</code> als Display Manager ausgewählt. Die Konfigurationsdatei <code
-              class="filename">/etc/gdm3/daemon.conf</code> enthält zahlreiche Optionen (die Übersicht kann in der Schemadatei <code
-              class="filename">/usr/share/gdm/gdm.schemas</code> gefunden werden) um dessen Verhalten zu steuern, während <code
-              class="filename">/etc/gdm3/greeter.gsettings</code> Einstellungen für die Begrüßungs-Session (das ist mehr als ein Anmeldebildschirm, es ist eine eingeschränkte Benutzeroberfläche mit Energieverwaltung und Werkzeugenfür den Systemzugang). Beachten Sie, dass einige sehr nützliche Einstellungen für Endanwender mit GNOME's Kontrollzentrum konfiguriert werden können.
+                class="foreignphrase">Light Display Manager</em></span>). Since the Falcot Corp administrators have opted to use the GNOME desktop environment, they logically picked <code
+              class="command">gdm3</code> as a display manager too. The <code
+              class="filename">/etc/gdm3/daemon.conf</code> configuration file has many options (the list can be found in the <code
+              class="filename">/usr/share/gdm/gdm.schemas</code> schema file) to control its behaviour while <code
+              class="filename">/etc/gdm3/greeter.dconf-defaults</code> contains settings for the greeter “session” (more than just a login window, it is a limited desktop with power management and accessibility related tools). Note that some of the most useful settings for end-users can be tweaked with GNOME's control center.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139813925707168"></a>13.2.2. Einen Fenstermanager auswählen</h3></div></div></div><div
+                    id="idm139655500181424"></a>13.2.2. Einen Fenstermanager auswählen</h3></div></div></div><div
             class="para">
-				Da jede grafische Arbeitsfläche ihren eigenen Fenstermanager bereitstellt, zieht eine Entscheidung bei ersterer normalerweise eine bestimmte Softwareauswahl bei letzterem nach sich. GNOME verwendet den Fenstermanager <code
-              class="command">mutter</code> window manager (oder <code
-              class="command">metacity</code> im Classic-Modus), KDE verwendet <code
-              class="command">kwin</code>, und Xfce (das wir später vorstellen) verwendet <code
-              class="command">Xfwm</code>. Gemäß Unix-Philosophie kann man immer den Fenstermanager seiner Wahl verwenden, aber wenn ein Administrator den Vorschlägen folgt, profitiert er am meisten von den Integrationsleistungen, die von jedem Projekt erbracht werden.
+				Since each graphical desktop provides its own window manager, choosing the former usually implies software selections from the latter. GNOME uses the <code
+              class="command">mutter</code> window manager, KDE uses <code
+              class="command">kwin</code>, and Xfce (which we present later) has <code
+              class="command">xfwm</code>. The Unix philosophy always allows using one's window manager of choice, but following the recommendations allows an administrator to best take advantage of the integration efforts led by each project.
 			</div><a
-            id="idm139813925703632"
+            id="idm139655500178464"
             class="indexterm"></a><a
-            id="idm139813925702512"
+            id="idm139655500177344"
             class="indexterm"></a><a
-            id="idm139813925682864"
+            id="idm139655500176224"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ZURÜCK ZU DEN GRUNDLAGEN</em></span> Fenstermanager</strong></p></div></div></div><a
-              id="idm139813925680656"
+              id="idm139655500174016"
               class="indexterm"></a><a
-              id="idm139813925679216"
+              id="idm139655483952768"
               class="indexterm"></a><div
               class="para">
 				Getreu der Unix-Tradition, nur eine Sache zu tun, diese aber gut, zeigt der Fenstermanager die „Verzierungen“ rings um die Fenster an, die zu den gerade laufenden Anwendungen gehören. Hierzu gehören der Rahmen und die Titelleiste. Er ermöglicht es auch, die Fenster zu verkleinern, wiederherzustellen, zu maximieren und zu verbergen. Die meisten Fenstermanager stellen auch ein Menü bereit, das erscheint, wenn die Arbeitsfläche auf eine bestimmte Art angeklickt wird. Dieses Menü ermöglicht es, die Sitzung des Fenstermanagers zu beenden, neue Anwendungen zu starten und in manchen Fällen, zu einem anderen Fenstermanager zu wechseln (falls dieser installiert ist).
@@ -131,30 +130,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">x-window-manager</code> mit dem Befehl <code
               class="command">update-alternatives --config x-window-manager</code> zu ändern.
 			</div><a
-            id="idm139813925674240"
+            id="idm139655483947792"
             class="indexterm"></a><a
-            id="idm139813925673280"
+            id="idm139655483946832"
             class="indexterm"></a><a
-            id="idm139813925672320"
+            id="idm139655483945872"
             class="indexterm"></a><a
-            id="idm139813925671360"
+            id="idm139655483944912"
             class="indexterm"></a><a
-            id="idm139813925670400"
+            id="idm139655483943952"
             class="indexterm"></a><a
-            id="idm139813925669440"
+            id="idm139655483942992"
             class="indexterm"></a><a
-            id="idm139813925668480"
+            id="idm139655483942032"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.alternatives"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DEBIAN-BESONDERHEIT</em></span> Alternativen</strong></p></div></div></div><a
-              id="idm139813932249648"
+              id="idm139655483939536"
               class="indexterm"></a><a
-              id="idm139813932248528"
+              id="idm139655483938416"
               class="indexterm"></a><a
-              id="idm139813932247568"
+              id="idm139655483542304"
               class="indexterm"></a><div
               class="para">
 				Das Debian-Regelwerk führt eine Anzahl standardisierter Befehle zur Ausführung einer bestimmten Aktion an. Zum Beispiel ruft der Befehl <code
@@ -180,68 +179,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">c++</code>, <code
                 class="command">awk</code> und so weiter).
 			</div><a
-              id="idm139813932237680"
+              id="idm139655483532416"
               class="indexterm"></a><a
-              id="idm139813932236560"
+              id="idm139655483531296"
               class="indexterm"></a><a
-              id="idm139813932235440"
+              id="idm139655483530176"
               class="indexterm"></a><a
-              id="idm139813932234320"
+              id="idm139655483529056"
               class="indexterm"></a><a
-              id="idm139813924420480"
+              id="idm139655483527936"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139813924419040"></a>13.2.3. Menü-Verwaltung</h3></div></div></div><a
-            id="idm139813924418240"
+                    id="idm139655483526496"></a>13.2.3. Menü-Verwaltung</h3></div></div></div><a
+            id="idm139655483525696"
             class="indexterm"></a><a
-            id="idm139813924417120"
+            id="idm139655483524576"
             class="indexterm"></a><div
             class="para">
-				Moderne Arbeitsumgebungen und viele Fenstermanager stellen Menüs bereit, die für den Benutzer die verfügbaren Anwendungen auflisten. Um die Menüs hinsichtlich der tatsächlich verfügbaren Anwendungen aktuell zu halten, hat Debian eine zentrale Datenbank erstellt, in der alle installierten Anwendungen registriert werden. Ein neu installiertes Paket registriert sich selbständig in dieser Datenbank und weist das System an, die Menüs entsprechend zu aktualisieren. Diese Infrastruktur wird vom Paket <span
-              class="pkg pkg">menu</span> bedient.
+				Modern desktop environments and many window managers provide menus listing the available applications for the user. In order to keep menus up-to-date in relation to the actual set of available applications, each package usually provides a <code
+              class="filename">.desktop</code> file in <code
+              class="filename">/usr/share/applications</code>. The format of those files has been standardized by FreeDesktop.org: <div
+              class="url">→ <a
+                href="http://standards.freedesktop.org/desktop-entry-spec/latest/">http://standards.freedesktop.org/desktop-entry-spec/latest/</a></div>
 			</div><div
             class="para">
-				Wenn ein Paket eine Anwendung bereitstellt, die im Menüsystem erscheinen soll, speichert es eine Datei im Verzeichnis <code
-              class="filename">/usr/share/menu/</code>. Diese Datei beschreibt einige Merkmale der Anwendung (unter anderem, ob es eine grafische Anwendung ist oder nicht) und seinen geeignetsten Platz in der Menühierarchie. Das Nachinstallationsskript dieses Pakets führt dann den Befehl <code
-              class="command">update-menus</code> aus, der wiederum alle erforderlichen Dateien aktualisiert. Dieser Befehl kann nicht alle Menütypen kennen, die von installierten Anwendungen verwendet werden. Deshalb müssen Pakete, die ein Menü anzeigen können, ein ausführbares Skript bereitstellen, das mit allen erforderlichen Informationen von der Menüdatei aufgerufen wird; dieses Skript sollte dann diese Informationen in Elemente umsetzen, die die Anwendung mit dem Menü verwenden kann. Diese Filterskripte werden in dem Verzeichnis <code
-              class="filename">/etc/menu-methods/</code> installiert. <a
-              id="idm139813924411776"
-              class="indexterm"></a> <a
-              id="idm139813924410976"
-              class="indexterm"></a> <a
-              id="idm139813924410176"
-              class="indexterm"></a> <a
-              id="idm139813924409376"
-              class="indexterm"></a>
+				The applications menus can be further customized by administrators through system-wide configuration files as described by the “Desktop Menu Specification”. End-users can also customize the menus with graphical tools such as <span
+              class="pkg pkg">kmenuedit</span> (in KDE), <span
+              class="pkg pkg">alacarte</span> (in GNOME) or <span
+              class="pkg pkg">menulibre</span>. <div
+              class="url">→ <a
+                href="http://standards.freedesktop.org/menu-spec/latest/">http://standards.freedesktop.org/menu-spec/latest/</a></div>
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>WEITERE SCHRITTE</em></span> Menü-Standardisierung</strong></p></div></div></div><a
-              id="idm139813924407296"
-              class="indexterm"></a><div
+                        class="emphasis"><em>HISTORY</em></span> The Debian menu system</strong></p></div></div></div><div
               class="para">
-				Debian stellt sein eigenes Menüsystem bereit, aber sowohl GNOME als auch KDE haben ebenfalls ihre eigenen Lösungen zur Menüverwaltung entwickelt. Diese beiden Projekte haben sich im Rahmen des gemeinsamen Vorhabens FreeDesktop.org auf ein Format für diese Menüs geeinigt - genauer gesagt, auf ein gemeinsames Format für die <code
-                class="filename">.desktop</code>-Dateien, die die Menüelemente verkörpern. <div
-                class="url">→ <a
-                  href="http://www.freedesktop.org/">http://www.freedesktop.org/</a></div>
-			</div><div
-              class="para">
-				Die Debian-Entwickler haben dieses Projekt genau im Auge behalten, und <code
-                class="filename">.desktop</code>-Dateien können auch vom Debian-Menüsystem aus (mit dem Paket <span
-                class="pkg pkg">menu-xdg</span>) erzeugt werden. Jedoch benutzen weder GNOME noch KDE das Debian-Menü. Beide ziehen es vor, vollständige Kontrolle über ihre Menüs zu behalten. Beachten Sie, dass nur GNOME Classic überhaupt ein entsprechendes Menü hat, eine GNOME Standard-Session verwendet GNOME-Shell, das Anwendungsmenüs komplett über Bord geworfen hat. In GNOME Classic wird der Menüeditor (im Paket <span
-                class="pkg pkg">alacarte</span>) mit einem Rechtsklick auf das Menü der Bedienleiste aufgerufen und dann „Menüs editieren“ ausgewählt.
-			</div></div><div
-            class="para">
-				Der Administrator kann in dieser Angelegenheit und bei den sich daraus ergebenden neu erstellten Menüs auch mitentscheiden. Erstens kann er einen Menüeintrag löschen, selbst wenn die dazugehörige Anwendung installiert ist, indem er einfach im Verzeichnis <code
-              class="filename">/etc/menu/</code> eine leere Datei unter dem Namen des Pakets, das die zu löschenden Einträge bereitstellt, abspeichert. Zweitens kann das Menü neu organisiert und können Abschnitte umbenannt oder umgruppiert werden. Diese Neuorganisation wird in der Datei <code
-              class="filename">/etc/menu-methods/translate_menus</code> festgelegt, die kommentierte Beispiele enthält. Schließlich können neue Elemente zum Menü hinzugefügt werden, um zum Beispiel Programme zu starten, die sich außerhalb des Paketsystems befinden, oder um einen bestimmten Befehl auszuführen, wie zum Beispiel das Starten des Web-Browsers mit einer bestimmten Seite. Diese zusätzlichen Elemente werden in Dateien des Typs <code
-              class="filename">/etc/menu/local.<em
-                class="replaceable">element</em></code> festgelegt, die das gleiche Format wie die übrigen unter <code
-              class="filename">/usr/share/menu/</code> vorhandenen Dateien haben.
-			</div></div></div><ul
+				Historically — way before the FreeDesktop.org standards emerged — Debian had invented its own menu system where each package provided a generic description of the desired menu entries in <code
+                class="filename">/usr/share/menu/</code>. This tool is still available in Debian (in the <span
+                class="pkg pkg">menu</span> package) but it is only marginally useful since package maintainers are encouraged to rely on <code
+                class="filename">.desktop</code> files instead.
+			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

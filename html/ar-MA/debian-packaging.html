@@ -76,25 +76,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. إعادة بناء حزمة من المصدر</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140255404520224">15.1.1. الحصول على المصادر</a></span></dt><dt><span
+                      href="debian-packaging.html#idm139713892571952">15.1.1. الحصول على المصادر</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140255392796144">15.1.2. إجراء التغييرات</a></span></dt><dt><span
+                      href="debian-packaging.html#idm139713894705536">15.1.2. إجراء التغييرات</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140255385125824">15.1.3. بدء إعادة البناء</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm139713877397984">15.1.3. بدء إعادة البناء</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. بناء حزمتك الأولى</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140255390430432">15.2.1. الحزم الفوقية أو الحزم الزائفة</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm139713879481008">15.2.1. الحزم الفوقية أو الحزم الزائفة</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140255384778080">15.2.2. أرشيف ملفات بسيط</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm139713891579984">15.2.2. أرشيف ملفات بسيط</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. إنشاء مستودع حزم للأداة APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. كيف تصبح مشرف حزم</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140255384649232">15.4.1. تعلم إنشاء الحزم</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm139713871355136">15.4.1. تعلم إنشاء الحزم</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140255384480176">15.4.2. عملية القبول</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm139713871293072">15.4.2. عملية القبول</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		من الشائع جداً، بين مديري النظم الذين يتعاملون مع حزم جبيان بشكل منتظم، أن يصلوا إلى مرحلة يحتاجون فيها لإنشاء حزم خاصة بهم، أو لتعديل حزمة سابقة. يهدف هذا الفصل للإجابة عن أكثر الأسئلة شيوعاً في هذا المجال، وتقديم العناصر اللازمة للاستفادة من بنية دبيان التحتية بأفضل طريقة ممكنة. ومع بعض الحظ، قد تشعر ‒بعد تجربة مهاراتك في الحزم المحلية‒ بالحاجة للغوص أكثر من ذلك وتنضم لمشروع دبيان نفسه!
@@ -104,89 +104,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.rebuilding-package"></a>15.1. إعادة بناء حزمة من المصدر</h2></div></div></div><div
             class="para">
-			تحتاج إعادة بناء حزمة ثنائية في عدد من الظروف. في بعض الحالات، يحتاج مدير النظام ميزة برمجية تتطلب ترجمة البرنامج من المصدر، مع استخدام خيار ترجمة معين؛ وفي حالات أخرى، لا يكون البرنامج المُحزَّم في النسخة المُبّتة من دبيان حديثاً بما يكفي. في الحالة الأخيرة، سيعمد مدير النظام عادة لبناء حزمة جديدة مأخوذة من نسخة دبيان أحدث — مثل <span
-              class="distribution distribution">الاختبارية</span> أو حتى <span
-              class="distribution distribution">غير المستقرة</span> — بحيث تعمل هذه الحزمة الجديدة في توزيعته <span
-              class="distribution distribution">المستقرة</span>؛ تدعى هذه العملية ”بالنقل الخلفي“ (backporting). كالعادة، عليك الانتباه، قبل أن تجري هذه المهمة، إلى التحقق من أن أحداً لم يسبقك إليها — نظرة سريعة على صفحة نظام تتبع الحزم الخاصة بتلك الحزمة ستعطيك هذه المعلومة. <div
+			Rebuilding a binary package is required under several sets of circumstances. In some cases, the administrator needs a software feature that requires the software to be compiled from sources, with a particular compilation option; in others, the software as packaged in the installed version of Debian is not recent enough. In the latter case, the administrator will usually build a more recent package taken from a newer version of Debian — such as <span
+              class="distribution distribution">Testing</span> or even <span
+              class="distribution distribution">Unstable</span> — so that this new package works in their <span
+              class="distribution distribution">Stable</span> distribution; this operation is called “backporting”. As usual, care should be taken, before undertaking such a task, to check whether it has been done already — a quick look on the Debian Package Tracker for that package will reveal that information. <div
               class="url">→ <a
-                href="http://packages.qa.debian.org/">http://packages.qa.debian.org/</a></div> <a
-              id="idm140255392872768"
+                href="https://tracker.debian.org/">https://tracker.debian.org/</a></div> <a
+              id="idm139713894523264"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140255404520224"></a>15.1.1. الحصول على المصادر</h3></div></div></div><div
+                      id="idm139713892571952"></a>15.1.1. الحصول على المصادر</h3></div></div></div><div
               class="para">
-				تبدأ إعادة بناء حزمة دبيان بالحصول على الشفرة المصدرية. أسهل طريقة هي استخدام الأمر <code
+				Rebuilding a Debian package starts with getting its source code. The easiest way is to use the <code
                 class="command">apt-get source <em
-                  class="replaceable">source-package-name</em></code>. يحتاج هذا الأمر لإضافة سطر <code
-                class="literal">deb-src</code> في الملف <code
-                dir="ltr"
-                class="filename">/etc/apt/sources.list</code>، وتحديث ملف الفهارس (عبر <code
-                class="command">apt-get update</code>). يجب أن تكون هذه الشروط محققة مسبقاً إذا اتبعت التعليمات من الفصل الذي يتحدث عن إعدادات APT (انظر <a
+                  class="replaceable">source-package-name</em></code> command. This command requires a <code
+                class="literal">deb-src</code> line in the <code
+                class="filename">/etc/apt/sources.list</code> file, and up-to-date index files (i.e. <code
+                class="command">apt-get update</code>). These conditions should already be met if you followed the instructions from the chapter dealing with APT configuration (see <a
                 class="xref"
                 href="apt.html#sect.apt-sources.list">قسم 6.1, “تعبئة الملف <code
-                  class="filename">sources.list</code>”</a>). لكن لاحظ أنك سوف تنزّل الحزم المصدرية من نسخة دبيان المحددة في سطر <code
-                class="literal">deb-src</code>. إذا كنت تريد الحصول عليها من نسخة دبيان أخرى، قد تضطر لتنزيلها يدوياً من مرآة دبيان أو من موقع الوب. هذا يعني تنزيل ملفين أو ثلاثة (امتداداتها <code
-                dir="ltr"
-                class="filename">*.dsc</code> — أي <span
-                class="emphasis"><em>Debian Source Control</em></span> — و <code
-                dir="ltr"
+                  class="filename">sources.list</code>”</a>). Note however, that you will be downloading the source packages from the Debian version mentioned in the <code
+                class="literal">deb-src</code> line. If you need another version, you may need to download it manually from a Debian mirror or from the web site. This involves fetching two or three files (with extensions <code
+                class="filename">*.dsc</code> — for <span
+                class="emphasis"><em>Debian Source Control</em></span> — <code
                 class="filename">*.tar.<em
-                  class="replaceable">comp</em></code> وأحياناً <code
-                dir="ltr"
-                class="filename">*.diff.gz</code> أو <code
-                dir="ltr"
+                  class="replaceable">comp</em></code>, and sometimes <code
+                class="filename">*.diff.gz</code> or <code
                 class="filename">*.debian.tar.<em
-                  class="replaceable">comp</em></code> — حيث تأخذ <em
-                class="replaceable">comp</em> إحدى القيم <code
-                class="literal">gz</code>، ‏<code
-                class="literal">bz2</code>، ‏<code
-                class="literal">lzma</code> أو <code
-                class="literal">xz</code> حسب أداة الضغط المستخدمة)، بعدها استدعاء الأمر <code
+                  class="replaceable">comp</em></code> — <em
+                class="replaceable">comp</em> taking one value among <code
+                class="literal">gz</code>, <code
+                class="literal">bz2</code> or <code
+                class="literal">xz</code> depending on the compression tool in use), then run the <code
                 class="command">dpkg-source -x <em
-                  class="replaceable">file.dsc</em></code>. إذا كان الوصول للملف <code
-                dir="ltr"
-                class="filename">*.dsc</code> ممكناً بشكل مباشر من عنوان URL، فيمكنك استخدام طريقة أبسط من هذه للحصول على جميع الملفات، وهي استخدام الأمر <code
+                  class="replaceable">file.dsc</em></code> command. If the <code
+                class="filename">*.dsc</code> file is directly accessible at a given URL, there is an even simpler way to fetch it all, with the <code
                 class="command">dget <em
-                  class="replaceable">URL</em></code>. يجلب هذا الأمر (الذي تجده في الحزمة <span
-                class="pkg pkg">devscripts</span>) ملف <code
-                dir="ltr"
-                class="filename">*.dsc</code> من العنوان المحدد، بعدها يحلل محتوياته، ويحضر الملف أو الملفات التي يشار إليها فيه. وإذا استخدمت الخيار <code
-                dir="ltr"
-                class="literal">-x</code> معه، سيفك لك الضغط عن الحزمة المصدرية محلياً بعد تنزيلها.
+                  class="replaceable">URL</em></code> command. This command (which can be found in the <span
+                class="pkg pkg">devscripts</span> package) fetches the <code
+                class="filename">*.dsc</code> file at the given address, then analyzes its contents, and automatically fetches the file or files referenced within. Once everything has been downloaded, it extracts the source package (unless the <code
+                class="literal">-d</code> or <code
+                class="literal">--download-only</code> option is used).
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140255392796144"></a>15.1.2. إجراء التغييرات</h3></div></div></div><div
+                      id="idm139713894705536"></a>15.1.2. إجراء التغييرات</h3></div></div></div><div
               class="para">
-				أصبح مصدر الحزمة متوفراً الآن في مجلد اسمه يتألف من اسم الحزمة المصدرية وإصدارها (مثلاً، <span
-                class="emphasis"><em>samba-3.6.16</em></span>)؛ سنجري تعديلاتنا المحلية في هذا المجلد.
+				The source of the package is now available in a directory named after the source package and its version (for instance, <span
+                class="emphasis"><em>samba-4.1.17+dfsg</em></span>); this is where we'll work on our local changes.
 			</div><div
               class="para">
 				The first thing to do is to change the package version number, so that the rebuilt packages can be distinguished from the original packages provided by Debian. Assuming the current version is <code
-                class="literal">3.6.16-2</code>, we can create version <code
-                class="literal">3.6.16-2falcot1</code>, which clearly indicates the origin of the package. This makes the package version number higher than the one provided by Debian, so that the package will easily install as an update to the original package. Such a change is best effected with the <code
+                class="literal">2:4.1.17+dfsg-2</code>, we can create version <code
+                class="literal">2:4.1.17+dfsg-2falcot1</code>, which clearly indicates the origin of the package. This makes the package version number higher than the one provided by Debian, so that the package will easily install as an update to the original package. Such a change is best effected with the <code
                 class="command">dch</code> command (<span
                 class="emphasis"><em>Debian CHangelog</em></span>) from the <span
                 class="pkg pkg">devscripts</span> package, with an command such as <code
                 class="command">dch --local falcot</code>. This invokes a text editor (<code
-                class="command">sensible-editor</code> — this should be your favorite editor if it's mentioned in the <code
+                class="command">sensible-editor</code> — this should be your favorite editor if it is mentioned in the <code
                 class="varname">VISUAL</code> or <code
                 class="varname">EDITOR</code> environment variables, and the default editor otherwise) to allow documenting the differences brought by this rebuild. This editor shows us that <code
                 class="command">dch</code> really did change the <code
                 class="filename">debian/changelog</code> file.
 			</div><div
               class="para">
-				عندما تحتاج تغيير خيارات البناء، يجب إجراء التغيير في <code
-                class="filename">debian/rules</code>، الذي يقود الخطوات المختلفة في عملية بناء الحزمة. في أبسط الحالات، ستجد السطور التي تتعلق بالإعدادات الافتراضية (<code
-                dir="ltr"
-                class="literal">./configure …</code>) أو عملية البناء الفعلية (<code
-                dir="ltr"
+				When a change in build options is required, the changes need to be made in <code
+                class="filename">debian/rules</code>, which drives the steps in the package build process. In the simplest cases, the lines concerning the initial configuration (<code
+                class="literal">./configure …</code>) or the actual build (<code
                 class="literal">$(MAKE) …</code> or <code
-                class="literal">make …</code>) بسهولة. إذا لم تُستَدعى هذه الأوامر صراحة، فالأغلب أن هناك أمر صريح آخر يستدعيها، وفي تلك الحالة عليك الرجوع إلى وثائق تلك الأوامر حتى تعرف طريقة تغغير السلوك الافتراضي.
+                class="literal">make …</code>) are easy to spot. If these commands are not explicitly called, they are probably a side effect of another explicit command, in which case please refer to their documentation to learn more about how to change the default behavior. With packages using <code
+                class="command">dh</code>, you might need to add an override for the <code
+                class="command">dh_auto_configure</code> or <code
+                class="command">dh_auto_build</code> commands (see their respective manual pages for explanations on how to achieve this).
 			</div><div
               class="para">
 				قد تحتاج تحديث الملف <code
@@ -204,23 +197,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>تلميح</em></span> تثبيت <code
-                          class="literal">Build-Depends</code></strong></p></div></div></div><div
+                          class="literal">Build-Depends</code></strong></p></div></div></div><a
+                id="idm139713877402688"
+                class="indexterm"></a><div
                 class="para">
-				<a
-                  id="idm140255385130080"
-                  class="indexterm"></a> تسمح <code
-                  class="command">apt-get</code> بتثبيت كل الحزم المذكورة في حقول <code
-                  class="literal">Build-Depends</code> في حزمة مصدرية ما متوفرة في توزيعة مذكورة في سطر <code
-                  class="literal">deb-src</code> في الملف <code
-                  dir="ltr"
-                  class="filename">/etc/apt/sources.list</code>. كل ما تحتاجه هو استدعاء الأمر <code
+				<code
+                  class="command">apt-get</code> allows installing all packages mentioned in the <code
+                  class="literal">Build-Depends</code> fields of a source package available in a distribution mentioned in a <code
+                  class="literal">deb-src</code> line of the <code
+                  class="filename">/etc/apt/sources.list</code> file. This is a simple matter of running the <code
                   class="command">apt-get build-dep <em
-                    class="replaceable">source-package</em></code>.
+                    class="replaceable">source-package</em></code> command.
 			</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140255385125824"></a>15.1.3. بدء إعادة البناء</h3></div></div></div><div
+                      id="idm139713877397984"></a>15.1.3. بدء إعادة البناء</h3></div></div></div><div
               class="para">
 				بعد تطبيق كل التغييرات التي تحتاجها إلى الكود المصدري، يمكننا توليد الحزمة الثنائية (ملف <code
                 dir="ltr"
@@ -228,7 +220,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">dpkg-buildpackage</code> العملية كلها.
 			</div><div
               class="example"><a
-                id="idm140255382662064"></a><p
+                id="idm139713870793344"></a><p
                 class="title"><strong>مثال 15.1. إعادة بناء حزمة</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -276,7 +268,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>نظرة سريعة</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140255390438752"
+                id="idm139713879489328"
                 class="indexterm"></a><div
                 class="para">
 				يسمح البرنامج <code

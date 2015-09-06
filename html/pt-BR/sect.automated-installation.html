@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automated-installation"></a>12.3. Instalação Automatizada</h2></div></div></div><a
-          id="idm140441582734800"
+          id="idm139983936085536"
           class="indexterm"></a><a
-          id="idm140441582734032"
+          id="idm139983936084768"
           class="indexterm"></a><div
           class="para">
 			Os administradores da Falcot Corp, como muitos administradores de grandes serviços de TI, precisam de ferramentas para instalar (ou reinstalar) rapidamente, e automaticamente se possível, suas novas máquinas.
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fai"></a>12.3.1. Instalador Completamente Automático (FAI)</h3></div></div></div><a
-            id="idm140441582725776"
+            id="idm139983936076512"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -192,9 +192,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.d-i-preseeding"></a>12.3.2. Preseeding Debian-Installer</h3></div></div></div><a
-            id="idm140441582700928"
+            id="idm139983936051664"
             class="indexterm"></a><a
-            id="idm140441582700160"
+            id="idm139983936050896"
             class="indexterm"></a><div
             class="para">
 				No final das contas, a melhor ferramenta para instalar sistemas Debian deve ser, logicamente, o instalador Debian oficial. Isso é porque, desde sua concepção, o debian-installer tem sido projetado para o uso automatizado, tirando vantagem da infraestrutura fornecida pelo <span
@@ -205,18 +205,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>INDO ALÉM</em></span> Debconf com um banco de dados centralizado</strong></p></div></div></div><a
-              id="idm140441582696480"
+              id="idm139983936047216"
               class="indexterm"></a><div
               class="para">
-				O Preseeding permite fornecer um conjunto de respostas as perguntas do Debconf no momento da instalação, mas essas respostas são estáticas e não evoluem com o passar do tempo. Como máquinas já instaladas talvez precisem de atualização, e novas respostas talvez venham a ser necessárias, o arquivo de configuração <code
-                class="filename">/etc/debconf.conf</code> pode ser configurado para que o Debconf use fontes de dados externas (como um servidor de diretório LDAP, ou um arquivo remoto acessado via NFS ou Samba). Várias fontes de dados externas podem sr definidas ao mesmo tempo, e elas se complementam. O banco de dados local ainda é usado used (para acesso leitura-escrita), mas os bancos de dados remotos são, geralmente, restritos a leitura. A página de manual <span
+				Preseeding allows to provide a set of answers to Debconf questions at installation time, but these answers are static and do not evolve as time passes. Since already-installed machines may need upgrading, and new answers may become required, the <code
+                class="filename">/etc/debconf.conf</code> configuration file can be set up so that Debconf uses external data sources (such as an LDAP directory server, or a remote file accessed via NFS or Samba). Several external data sources can be defined at the same time, and they complement one another. The local database is still used (for read-write access), but the remote databases are usually restricted to reading. The <span
                 class="citerefentry"><span
-                  class="refentrytitle">debconf.conf</span>(5)</span> descreve todas as possibilidades em detalhes.
+                  class="refentrytitle">debconf.conf</span>(5)</span> manual page describes all the possibilities in detail (you need the <span
+                class="pkg pkg">debconf-doc</span> package).
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140441582693008"></a>12.3.2.1. Usando um Arquivo Preseed</h4></div></div></div><div
+                      id="idm139983936043248"></a>12.3.2.1. Usando um Arquivo Preseed</h4></div></div></div><div
               class="para">
 					Existem vários lugares aonde o instalador pode obter um arquivo preseeding:
 				</div><div
@@ -248,7 +249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140441582684464"></a>12.3.2.2. Criando um Arquivo Preseed</h4></div></div></div><div
+                      id="idm139983936034704"></a>12.3.2.2. Criando um Arquivo Preseed</h4></div></div></div><div
               class="para">
 					Um arquivo preseed é um arquivo de texto puro, aonde cada linha contém a resposta para uma pergunta do Debconf. A linha é dividida em quatro campos separados por espaço em branco (espaços ou tabs), com em, por exemplo, <code
                 class="literal">d-i mirror/suite string stable</code>:
@@ -282,33 +283,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>DOCUMENTAÇÃO</em></span> Apêndice do guia de instalação</strong></p></div></div></div><div
                 class="para">
-					O guia de instalação, disponível online, inclui documentação detalhada sobre o uso de um arquivo preseed em um apêndice. Ele também inclui um arquivo de amostra detalhado e comentado, que pode servir como base para customizações locais. <div
+					The installation guide, available online, includes detailed documentation on the use of a preseed file in an appendix. It also includes a detailed and commented sample file, which can serve as a base for local customizations. <div
                   class="url">→ <a
-                    href="http://www.debian.org/releases/wheezy/amd64/apb.html">http://www.debian.org/releases/wheezy/amd64/apb.html</a></div> <div
+                    href="https://www.debian.org/releases/jessie/amd64/apb.html">https://www.debian.org/releases/jessie/amd64/apb.html</a></div> <div
                   class="url">→ <a
-                    href="http://www.debian.org/releases/wheezy/example-preseed.txt">http://www.debian.org/releases/wheezy/example-preseed.txt</a></div>
+                    href="https://www.debian.org/releases/jessie/example-preseed.txt">https://www.debian.org/releases/jessie/example-preseed.txt</a></div>
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140441582673344"></a>12.3.2.3. Criando uma Mídia de Inicialização Customizada</h4></div></div></div><div
+                      id="idm139983936023600"></a>12.3.2.3. Criando uma Mídia de Inicialização Customizada</h4></div></div></div><div
               class="para">
 					Saber aonde armazenar um arquivo preseed é muito bom, mas a localização não é tudo: é preciso, de uma forma ou de outra, alterar a mídia de inicialização de instalação para mudar os parâmetros de inicialização e adicionar o arquivo preseed.
 				</div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140441582672032"></a>12.3.2.3.1. Inicializando a Partir da Rede</h5></div></div></div><div
+                        id="idm139983936022288"></a>12.3.2.3.1. Inicializando a Partir da Rede</h5></div></div></div><div
                 class="para">
-						Quando um computador é inicializado a partir da rede, o servidor que envia os elementos de inicialização também define os parâmetros de inicialização. Assim, a alteração precisa ser feita na configuração PXE do servidor de inicialização; mais especificamente, no seu arquivo de configuração <code
-                  class="filename">/tftpboot/pxelinux.cfg/default</code>. Configurar a inicialização pela rede é um pré requisito; veja o Guia de Instalação para detalhes. <div
+						When a computer is booted from the network, the server sending the initialization elements also defines the boot parameters. Thus, the change needs to be made in the PXE configuration for the boot server; more specifically, in its <code
+                  class="filename">/tftpboot/pxelinux.cfg/default</code> configuration file. Setting up network boot is a prerequisite; see the Installation Guide for details. <div
                   class="url">→ <a
-                    href="http://www.debian.org/releases/wheezy/amd64/ch04s05.html">http://www.debian.org/releases/wheezy/amd64/ch04s05.html</a></div>
+                    href="https://www.debian.org/releases/jessie/amd64/ch04s05.html">https://www.debian.org/releases/jessie/amd64/ch04s05.html</a></div>
 					</div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140441582669296"></a>12.3.2.3.2. Preparando um Dispositivo USB Inicializável</h5></div></div></div><div
+                        id="idm139983936019632"></a>12.3.2.3.2. Preparando um Dispositivo USB Inicializável</h5></div></div></div><div
                 class="para">
 						Uma vez que um dispositivo inicializável tenha sido preparado (veja <a
                   class="xref"
@@ -328,17 +329,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="filename">/media/usbdisk/syslinux.cfg</code> e adicionar os parâmetros de inicialização necessários (veja o exemplo abaixo).
 							</div></li></ul></div><div
                 class="example"><a
-                  id="idm140441582664464"></a><p
+                  id="idm139983936014800"></a><p
                   class="title"><strong>Exemplo 12.2. arquivo syslinux.cfg e parâmetros preseeding</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">default vmlinuz
-append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap=us languagechooser/language-name=English countrychooser/shortlist=US vga=normal initrd=initrd.gz  --
+append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=us country=US vga=788 initrd=initrd.gz  --
 </pre></div></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140441582662976"></a>12.3.2.3.3. Criando uma Imagem de CD-ROM</h5></div></div></div><a
-                id="idm140441582662336"
+                        id="idm139983936013360"></a>12.3.2.3.3. Criando uma Imagem de CD-ROM</h5></div></div></div><a
+                id="idm139983936012720"
                 class="indexterm"></a><div
                 class="para">
 						Um dispositivo USB é uma mídia de leitura-escrita, então foi fácil para nós adicionar um arquivo lá e alterar alguns parâmetros. No caso do CD-ROM, a operação é mais complexa, já que nós precisamos refazer uma imagem ISO completa. Essa tarefa é feita pelo <span
@@ -348,23 +349,23 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
                   class="filename">/usr/share/debian-cd/README</code> é, portanto, uma leitura muito recomendada.
 					</div><div
                 class="para">
-						Dito isso, o debian-cd sempre opera de maneira similar: um diretório “imagem” com o conteúdo exato do CD-ROM é gerado, e então convertido em um arquivo ISO com uma ferramental tal como a <code
+						Having said that, debian-cd always operates in a similar way: an “image” directory with the exact contents of the CD-ROM is generated, then converted to an ISO file with a tool such as <code
                   class="command">genisoimage</code>, <code
-                  class="command">mkisofs</code> ou <code
-                  class="command">xorriso</code>. O diretório da imagem é finalizado após o passo <code
-                  class="command">make image-trees</code> do debian-cd. Nesse ponto, nós inserimos o arquivo preseed dentro do diretório apropriado (usualmente <code
-                  class="filename">$TDIR/wheezy/CD1/</code>, $TDIR sendo um dos parâmetros definidos pelo arquivo de configuração <code
-                  class="filename">CONF.sh</code>). O CD-ROM usa <code
-                  class="command">isolinux</code> como seu carregador de inicialização, e seu arquivo de configuração tem que ser adaptado a partir do que o debian-cd gerou, a fim de inserir os parâmetros de inicialização necessários (o arquivo específico é <code
-                  class="filename">$TDIR/wheezy/boot1/isolinux/isolinux.cfg</code>). Então o processo “normal” pode ser retomado e nós podemos continuar a gerar a imagem ISO com <code
-                  class="command">make image CD=1</code> (ou <code
-                  class="command">make images</code> se for para gerar vários CD-ROMs).
+                  class="command">mkisofs</code> or <code
+                  class="command">xorriso</code>. The image directory is finalized after debian-cd's <code
+                  class="command">make image-trees</code> step. At that point, we insert the preseed file into the appropriate directory (usually <code
+                  class="filename">$TDIR/wheezy/CD1/</code>, $TDIR being one of the parameters defined by the <code
+                  class="filename">CONF.sh</code> configuration file). The CD-ROM uses <code
+                  class="command">isolinux</code> as its bootloader, and its configuration file must be adapted from what debian-cd generated, in order to insert the required boot parameters (the specific file is <code
+                  class="filename">$TDIR/jessie/boot1/isolinux/isolinux.cfg</code>). Then the “normal” process can be resumed, and we can go on to generating the ISO image with <code
+                  class="command">make image CD=1</code> (or <code
+                  class="command">make images</code> if several CD-ROMs are generated).
 					</div></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.simple-cdd"></a>12.3.3. Simple-CDD: A Solução Tudo-Em-Um</h3></div></div></div><a
-            id="idm140441582652656"
+            id="idm139983936003232"
             class="indexterm"></a><div
             class="para">
 				Simplesmente usar um arquivo preseed não é o suficiente para preencher todos os requerimentos que possam aparecer em grandes implantações. Mesmo que seja possível executar alguns scripts no final de processos normais de instalação, a seleção de um conjunto de pacotes a instalar ainda não é muito flexível (basicamente, apenas “tarefas” podem ser selecionadas); mais importante, isso apenas permite a instalação de pacotes Debian oficiais e impede os gerados localmente.
@@ -379,7 +380,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140441582648608"></a>12.3.3.1. Criando Perfis</h4></div></div></div><div
+                      id="idm139983935999184"></a>12.3.3.1. Criando Perfis</h4></div></div></div><div
               class="para">
 					O Simple-CDD define “perfis” que coincidem com o conceito “classes” FAI e uma máquina pode ter vários perfis (determinados no momento da instalação). Um perfil é definido por um conjunto de arquivos <code
                 class="filename">profiles/<em
@@ -429,9 +430,9 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140441582636112"></a>12.3.3.2. Configurando e Usando o <code
+                      id="idm139983935986864"></a>12.3.3.2. Configurando e Usando o <code
                       class="command">build-simple-cdd</code></h4></div></div></div><a
-              id="idm140441582635216"
+              id="idm139983935985968"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -497,11 +498,11 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US console-keymaps-at/keymap
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140441582618384"></a>12.3.3.3. Gerando uma imagem ISO</h4></div></div></div><div
+                      id="idm139983935969136"></a>12.3.3.3. Gerando uma imagem ISO</h4></div></div></div><div
               class="para">
-					Uma vez que nós tenhamos escrito um arquivo de configuração e definido nossos perfis, a etapa restante é invocar <code
-                class="command">build-simple-cdd --conf simple-cdd.conf</code>. Após alguns minutos, nós teremos a imagem requerida em <code
-                class="filename">images/debian-7.0-amd64-CD-1.iso</code>.
+					Once we have written a configuration file and defined our profiles, the remaining step is to invoke <code
+                class="command">build-simple-cdd --conf simple-cdd.conf</code>. After a few minutes, we get the required image in <code
+                class="filename">images/debian-8.0-amd64-CD-1.iso</code>.
 				</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

@@ -69,14 +69,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.windows-emulation"></a>13.9. محاكاة ويندوز: Wine</h2></div></div></div><a
-          id="idm140255385174192"
+          id="idm139713871797680"
           class="indexterm"></a><a
-          id="idm140255385173264"
+          id="idm139713871796752"
           class="indexterm"></a><div
           class="para">
-			بالرغم من جميع الجهود السابق ذكرها، يبقى عدد من الأدوات التي ليس لها مكافئ على لينكس، أو أن البرنامج الأصلي مطلوب حتماً. في هذه الحالات تظهر فائدة نظم محاكاة ويندوز. أكثر هذه النظم شهرة هو Wine. <div
+			In spite of all the previously mentioned efforts, there are still a number of tools without a Linux equivalent, or for which the original version is absolutely required. This is where Windows emulation systems come in handy. The most well-known among them is Wine. <div
             class="url">→ <a
-              href="http://www.winehq.com/">http://www.winehq.com/</a></div>
+              href="https://www.winehq.org/">https://www.winehq.org/</a></div>
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -88,27 +88,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="url">→ <a
                 href="http://www.codeweavers.com/products/">http://www.codeweavers.com/products/</a></div>
 		</div><a
-            id="idm140255385167392"
+            id="idm139713871790960"
             class="indexterm"></a><a
-            id="idm140255385166272"
+            id="idm139713871789840"
             class="indexterm"></a></div><div
           class="para">
-			لكن يجب أن تأخذ بعين الاعتبار أن هذا حل واحد من بين عدة حلول، إذ يمكن حل المشكلة أيضاً باستخدام جهاز ظاهري أو VNC؛ سنفصل هذين الحلين في الملاحظات الجانبية.
+			However, one should keep in mind that it is only a solution among others, and the problem can also be tackled with a virtual machine or VNC; both of these solutions are detailed in the sidebars.
 		</div><div
           class="para">
 			دعنا نبدأ الآن بتذكرة: تسمح المحاكاة بتشغيل برنامج ما (مطور لنظام هدف معين) على نظام مستضيف مختلف. يستخدم نظام المحاكاة هذا النظام المستضيف، الذي يعمل التطبيق عليه، لتقليد خصائص النظام الهدف.
 		</div><a
-          id="idm140255385163584"
+          id="idm139713871787232"
           class="indexterm"></a><div
           class="para">
-			دعنا نثبت الآن الحزم المطلوبة:
+			Now let's install the required packages (<span
+            class="pkg pkg">ttf-mscorefonts-installer</span> is in the contrib section):
 		</div><pre
           class="screen">
 <code
             class="computeroutput"># </code><strong
-            class="userinput"><code>apt-get install wine ttf-mscorefonts-installer wine-doc</code></strong></pre><a
-          id="idm140255385161088"
+            class="userinput"><code>apt-get install wine ttf-mscorefonts-installer</code></strong></pre><a
+          id="idm139713871784016"
           class="indexterm"></a><div
+          class="para">
+			On a 64 bit (amd64) system, if your Windows applications are 32 bit applications, then you will have to enable multi-arch to be able to install wine32 from the i386 architecture (see <a
+            class="xref"
+            href="sect.manipulating-packages-with-dpkg.html#sect.multi-arch">قسم 5.4.5, “دعم تعدد المعماريات”</a>).
+		</div><div
           class="para">
 			بعد ذلك يحتاج المستخدم تشغيل <code
             class="command">winecfg</code> وضبط المواقع (على دبيان) التي تقابل السواقات (في ويندوز). الإعدادات الافتراضية في <code
@@ -125,6 +131,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">wine <em
               class="replaceable">program</em></code>، لأن البرامج تُثبَّت عادة في مكان يبحث فيه Wine لوحده.
 		</div><div
+          class="sidebar"><div
+            class="titlepage"><div><div><p
+                  class="title"><strong><span
+                      class="emphasis"><em>TIP</em></span> Working around a winecfg failure</strong></p></div></div></div><div
+            class="para">
+			In some cases, <code
+              class="command">winecfg</code> (which is just a wrapper) might fail. As a work-around, it is possible to try to run the underlying command manually: <code
+              class="command">wine64 /usr/lib/x86_64-linux-gnu/wine/wine/winecfg.exe.so</code> or <code
+              class="command">wine32 /usr/lib/i386-linux-gnu/wine/wine/winecfg.exe.so</code>.
+		</div></div><div
           class="para">
 			لاحظ أنه لا يجوز الاعتماد على Wine (أو أي حلول مشابهة) قبل الاختبار الفعلي للبرنامج المطلوب تشغيله: لا يمكن اختبار عمل المحاكاة بشكل كامل إلا باختبار يماثل الاستخدام الحقيقي.
 		</div><div
@@ -151,11 +167,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="foreignphrase"><em
                 class="foreignphrase">Windows NT/2000 Terminal Server</em></span> لعرض سطح المكتب على الأجهزة البعيدة.
 		</div><a
-            id="idm140255385145904"
+            id="idm139713871764352"
             class="indexterm"></a><a
-            id="idm140255385144944"
+            id="idm139713871763392"
             class="indexterm"></a><a
-            id="idm140255385143824"
+            id="idm139713871762272"
             class="indexterm"></a><div
             class="para">
 			توفر برمجيات VNC مزايا مشابهة، وتزيد على ذلك ميزة العمل مع العديد من نظم التشغيل. لقد شرحنا مخدمات وعملاء VNC على لينكس في <a

@@ -72,60 +72,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255394575600"></a>13.2.1. اختيار مدير عرض</h3></div></div></div><a
-            id="idm140255394574832"
+                    id="idm139713877454288"></a>13.2.1. اختيار مدير عرض</h3></div></div></div><a
+            id="idm139713877453520"
             class="indexterm"></a><a
-            id="idm140255394573392"
+            id="idm139713877452080"
             class="indexterm"></a><a
-            id="idm140255394572272"
+            id="idm139713877450960"
             class="indexterm"></a><a
-            id="idm140255394571152"
+            id="idm139713877449840"
             class="indexterm"></a><div
             class="para">
-				توفر الواجهة الرسومية مساحة عرض فقط.إن تشغيل المخدم X وحده يؤدي إلى شاشة فارغة وحسب، لذلك تستخدم معظم الأنظمة مدير عرض <span
-              class="emphasis"><em>display manager</em></span> لعرض شاشة التحقق من المستخدم وتشغيل سطح المكتب الرسومي بعد تسجيل المستخدم دخوله. أشهر ثلاثة مدراء عرض مستخدمة حالياً هي <span
-              class="pkg pkg">gdm3</span> ‏(<span
+				The graphical interface only provides display space. Running the X server by itself only leads to an empty screen, which is why most installations use a <span
+              class="emphasis"><em>display manager</em></span> to display a user authentication screen and start the graphical desktop once the user has authenticated. The three most popular display managers in current use are <span
+              class="pkg pkg">gdm3</span> (<span
               class="foreignphrase"><em
-                class="foreignphrase">GNOME Display Manager</em></span>)، و<span
-              class="pkg pkg">kdm</span> ‏(<span
+                class="foreignphrase">GNOME Display Manager</em></span>), <span
+              class="pkg pkg">kdm</span> (<span
               class="foreignphrase"><em
-                class="foreignphrase">KDE Display Manager</em></span>)، و<span
-              class="pkg pkg">xdm</span> ‏(<span
+                class="foreignphrase">KDE Display Manager</em></span>) and <span
+              class="pkg pkg">lightdm</span> (<span
               class="foreignphrase"><em
-                class="foreignphrase">X Display Manager</em></span>). بما أن مديرو النظم في شركة فلكوت اختاروا استخدام بيئة سطح المكتب GNOME، فقد اختاروا منطقياً <code
-              class="command">gdm3</code> أيضاً ليستخدموه كمدير عرض. هناك خيارات كثيرة في الملف <code
-              dir="ltr"
-              class="filename">/etc/gdm3/daemon.conf</code> (هناك قائمة بها في ملف التخطيط <code
-              dir="ltr"
-              class="filename">/usr/share/gdm/gdm.schemas</code>) للتحكم بسلوك <code
-              class="command">gdm3</code> بينما يحوي <code
-              dir="ltr"
-              class="filename">/etc/gdm3/greeter.gsettings</code> خيارات ”جلسة“ الترحيب (وهي أكثر من مجرد نافذة لتسجيل الدخول، بل هي سطح مكتب محدود مزود بأدوات إدارة الطاقة وتسهيلات الوصول accessibility). لاحظ أنه يمكن تعديل معظم الخيارات المفيدة للمستخدمين النهائيين من مركز تحكم GNOME.
+                class="foreignphrase">Light Display Manager</em></span>). Since the Falcot Corp administrators have opted to use the GNOME desktop environment, they logically picked <code
+              class="command">gdm3</code> as a display manager too. The <code
+              class="filename">/etc/gdm3/daemon.conf</code> configuration file has many options (the list can be found in the <code
+              class="filename">/usr/share/gdm/gdm.schemas</code> schema file) to control its behaviour while <code
+              class="filename">/etc/gdm3/greeter.dconf-defaults</code> contains settings for the greeter “session” (more than just a login window, it is a limited desktop with power management and accessibility related tools). Note that some of the most useful settings for end-users can be tweaked with GNOME's control center.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255394602320"></a>13.2.2. اختيار مدير النوافذ</h3></div></div></div><div
+                    id="idm139713877260560"></a>13.2.2. اختيار مدير النوافذ</h3></div></div></div><div
             class="para">
-				بما أن كل بيئة سطح مكتب توفر مدير نوافذ خاص بها، فإن اختيار الأولى يشمل اختيار الأخير عادة. تعتمد GNOME على مدير النوافذ <code
-              class="command">mutter</code> (أو <code
-              class="command">metacity</code> عندما يعمل في وضع GNOME Classic)، أما KDE فتعتمد على <code
-              class="command">kwin</code>، وXfce (التي سنعرضها لاحقاً) لديها <code
-              class="command">xfwm</code>. تسمح فلسفة يونكس دائماً باستخدام مدير النوافذ الذي تريده، لكن اتباع التوصيات يسمح لمدير النظام بالاستفادة العظمى من جهود التكامل التي يبذلها كل مشروع.
+				Since each graphical desktop provides its own window manager, choosing the former usually implies software selections from the latter. GNOME uses the <code
+              class="command">mutter</code> window manager, KDE uses <code
+              class="command">kwin</code>, and Xfce (which we present later) has <code
+              class="command">xfwm</code>. The Unix philosophy always allows using one's window manager of choice, but following the recommendations allows an administrator to best take advantage of the integration efforts led by each project.
 			</div><a
-            id="idm140255394598736"
+            id="idm139713877257600"
             class="indexterm"></a><a
-            id="idm140255394597616"
+            id="idm139713877256480"
             class="indexterm"></a><a
-            id="idm140255394596496"
+            id="idm139713877255360"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>أساسيات</em></span> مدير النوافذ</strong></p></div></div></div><a
-              id="idm140255394594288"
+              id="idm139713877253152"
               class="indexterm"></a><a
-              id="idm140255394592848"
+              id="idm139713877251712"
               class="indexterm"></a><div
               class="para">
 				من الحقائق في تقاليد يونكس تنفيذ مهمة واحدة فقط ولكن تنفيذها بشكل جيد، يعرض مدير النوافذ ”الديكور“ حول نوافذ التطبيقات التي تعمل حالياً، وهذا يشمل الإطار وشريط العنوان. كما يسمح أيضاً بتصغير واستعادة وتكبير النوافذ و إخفائها. كما يوفر معظم مديرو النوافذ أيضاً قائمة تبثق عند نقر سطح المكتب بطريقة معينة. تمثل هذه القائمة الوسيلة لإغلاق جلسة مدير النوافذ، أو فتح تطبيقات جديدة، وفي بعض الحالات التبديل إلى مدير نوافذ آخر (إذا كان مثبتاً).
@@ -136,30 +131,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">x-window-manager</code> باستخدام الأمر <code
               class="command">update-alternatives --config x-window-manager</code>.
 			</div><a
-            id="idm140255391970912"
+            id="idm139713872498192"
             class="indexterm"></a><a
-            id="idm140255391969952"
+            id="idm139713872497232"
             class="indexterm"></a><a
-            id="idm140255391968992"
+            id="idm139713872496272"
             class="indexterm"></a><a
-            id="idm140255391968032"
+            id="idm139713872495312"
             class="indexterm"></a><a
-            id="idm140255391967072"
+            id="idm139713872494352"
             class="indexterm"></a><a
-            id="idm140255391966112"
+            id="idm139713872493392"
             class="indexterm"></a><a
-            id="idm140255391965152"
+            id="idm139713872492432"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.alternatives"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>خصائص دبيان</em></span> بدائل</strong></p></div></div></div><a
-              id="idm140255391962656"
+              id="idm139713872489936"
               class="indexterm"></a><a
-              id="idm140255391961536"
+              id="idm139713872488816"
               class="indexterm"></a><a
-              id="idm140255391960576"
+              id="idm139713872487856"
               class="indexterm"></a><div
               class="para">
 				تتضمن سياسة دبيان عدد من الأوامر الموحدة القادرة على تنفيذ فعل معين. مثلاً، يستدعي الأمر <code
@@ -185,72 +180,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">c++</code>،‏ <code
                 class="command">awk</code>، وغيرها).
 			</div><a
-              id="idm140255386066656"
+              id="idm139713872477792"
               class="indexterm"></a><a
-              id="idm140255386065536"
+              id="idm139713872476672"
               class="indexterm"></a><a
-              id="idm140255386064416"
+              id="idm139713872475552"
               class="indexterm"></a><a
-              id="idm140255386063296"
+              id="idm139713872474432"
               class="indexterm"></a><a
-              id="idm140255386062176"
+              id="idm139713872473312"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140255386060736"></a>13.2.3. إدارة القوائم</h3></div></div></div><a
-            id="idm140255386059968"
+                    id="idm139713872471872"></a>13.2.3. إدارة القوائم</h3></div></div></div><a
+            id="idm139713872471104"
             class="indexterm"></a><a
-            id="idm140255386058848"
+            id="idm139713872469984"
             class="indexterm"></a><div
             class="para">
-				توفر بيئات سطح المكتب الحديثة ومعظم مديرو النوافذ قوائم تسرد التطبيقات المتاحة للمستخدم. تنشئ دبيان قاعدة بيانات مركزية تسجل كافة التطبيقات المثبتة لإبقاء القوائم محدثة وموافقة للمجموعة الفعلية من التطبيقات المتوفرة. تسجل الحزم المثبتة حديثاً نفسها في قاعدة البيانات تلك، وتطلب من النظام تحديث القوائم تبعاً لذلك. تقدم هذه البنية التحتية عبر الحزمة <span
-              class="pkg pkg">menu</span>.
+				Modern desktop environments and many window managers provide menus listing the available applications for the user. In order to keep menus up-to-date in relation to the actual set of available applications, each package usually provides a <code
+              class="filename">.desktop</code> file in <code
+              class="filename">/usr/share/applications</code>. The format of those files has been standardized by FreeDesktop.org: <div
+              class="url">→ <a
+                href="http://standards.freedesktop.org/desktop-entry-spec/latest/">http://standards.freedesktop.org/desktop-entry-spec/latest/</a></div>
 			</div><div
             class="para">
-				عندما توفر الحزمة تطبيقاً يحتاج أن يظهر في نظام القوائم، تخزن ملفاً في مجلد <code
-              class="filename">/usr/share/menu/</code>. يصف ذلك الملف بعض مزايا التطبيق (تطبيق رسومي أو لا، الخ)، والمكان الأمثل له في فروع القائمة. بعد ذلك، يستدعي السكربت اللاحق للتثبيت لهذه الحزمة الأمر <code
-              class="command">update-menus</code>، الذي يُحدِّث بدوره جميع الملفات اللازمة. لا يمكن أن يعرف هذا الأمر جميع أنواع القوائم التي تستخدمها التطبيقات المُثبَّتة. ولذلك، يجب أن توفر الحزم القادرة على عرض قوائم سكربتاً تنفيذياً يُستَدعَى مع كافة المعلومات اللازمة من ملف القائمة؛ يجب أن يحوّل هذا السكربت المعلومات هذه إلى عناصر يستطيع التطبيق صاحب القوائم استخدامها. تُثبّت سكربتات الترشيح هذه في مجلد <code
-              class="filename">/etc/menu-methods/</code>. <a
-              id="idm140255386053152"
-              class="indexterm"></a> <a
-              id="idm140255386052352"
-              class="indexterm"></a> <a
-              id="idm140255386051552"
-              class="indexterm"></a> <a
-              id="idm140255386050752"
-              class="indexterm"></a>
+				The applications menus can be further customized by administrators through system-wide configuration files as described by the “Desktop Menu Specification”. End-users can also customize the menus with graphical tools such as <span
+              class="pkg pkg">kmenuedit</span> (in KDE), <span
+              class="pkg pkg">alacarte</span> (in GNOME) or <span
+              class="pkg pkg">menulibre</span>. <div
+              class="url">→ <a
+                href="http://standards.freedesktop.org/menu-spec/latest/">http://standards.freedesktop.org/menu-spec/latest/</a></div>
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>التعمق أكثر</em></span> توحيد القوائم</strong></p></div></div></div><a
-              id="idm140255386048704"
-              class="indexterm"></a><div
+                        class="emphasis"><em>HISTORY</em></span> The Debian menu system</strong></p></div></div></div><div
               class="para">
-				تقدم دبيان نظام قوائم خاص بها، لكن كل من بيئتي GNOME و KDE قد طورت حلاً خاصاً بها لإدارة القوائم أيضًا. اتفق المشروعان على صيغة لهذه القوائم —أو بالأحرى، اتفقا على صيغة موحدة لملفات <code
-                dir="ltr"
-                class="filename">.desktop</code> التي تمثل عناصر القائمة— تحت مظلة مشروع FreeDesktop.org. <div
-                class="url">→ <a
-                  href="http://www.freedesktop.org/">http://www.freedesktop.org/</a></div>
-			</div><div
-              class="para">
-				لقد تابع مطورو دبيان هذا المشروع عن كثب، ويمكن توليد ملفات <code
-                dir="ltr"
-                class="filename">.desktop</code> من نظام القوائم الخاص بدبيان (بمساعدة الحزمة <span
-                class="pkg pkg">menu-xdg</span>). لكن لا تستخدم GNOME ولا KDE قائمة دبيان. تفضل كل منهما التحكم الكامل بقوائمها. لاحظ أن GNOME Calssic فقط فيها قائمة حقيقية، أما جلسة GNOME الافتراضية فتستخدم GNOME Shell التي تخلصت من قائمة التطبيقات بالكامل. في GNOME Classic، يمكن الوصول لمحرر القوائم (من حزمة <span
-                class="pkg pkg">alacarte</span>) من خلال النقر باليمين على قائمة البانل، ثم اختيار ”Edit menus“.
-			</div></div><div
-            class="para">
-				يستطيع مدير النظام أيضاً التأثير على العملية وعلى القوائم النهائية الناتجة. أولاً، يمكنه حذف عنصر من القائمة حتى لو كان التطبيق الموافق له مُثبّتاً، وذلك ببساطة عبر تخزين ملف فارغ في <code
-              class="filename">/etc/menu/</code> اسمه يناسب الحزمة التي نريد تعطيل مدخلاتها. ثانياً، يمكن إعادة ترتيب القائمة وإعادة تسمية الأقسام أو تجميعها. الملف <code
-              dir="ltr"
-              class="filename">/etc/menu-methods/translate_menus</code> يحوي تعريف طريقة التنظيم هذه وفيه أمثلة مدعومة بالتعليقات. أخيراً، يمكن إضافة عناصر جديدة إلى القائمة، لفتح برامج مُثبّتة دون استخدام نظام الحزم مثلاً، أو لتشغيل أمر معين مثل فتح متصفح الوب على صفحة محددة. تُعرَّف هذه العناصر الإضافية في الملفات <code
-              dir="ltr"
-              class="filename">/etc/menu/local.<em
-                class="replaceable">element</em></code>، وهذه الملفات لها نفس صيغة الملفات الموجودة في <code
-              class="filename">/usr/share/menu/</code>.
-			</div></div></div><ul
+				Historically — way before the FreeDesktop.org standards emerged — Debian had invented its own menu system where each package provided a generic description of the desired menu entries in <code
+                class="filename">/usr/share/menu/</code>. This tool is still available in Debian (in the <span
+                class="pkg pkg">menu</span> package) but it is only marginally useful since package maintainers are encouraged to rely on <code
+                class="filename">.desktop</code> files instead.
+			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.virtualization.html#sect.lxc">12.2.2. LXC</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.virtualization.html#idm140441604237264">12.2.3. Virtualização com KVM</a></span></dt></dl></dd><dt><span
+                      href="sect.virtualization.html#idm139983956366432">12.2.3. Virtualização com KVM</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.automated-installation.html">12.3. Instalação Automatizada</a></span></dt><dd><dl><dt><span
                     class="section"><a
@@ -99,9 +99,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="sect.monitoring.html">12.4. Monitoramento</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.monitoring.html#sect.munin">12.4.1. Setting Up Munin</a></span></dt><dt><span
+                      href="sect.monitoring.html#sect.munin">12.4.1. Configurando o Munin</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.monitoring.html#sect.nagios">12.4.2. Setting Up Nagios</a></span></dt></dl></dd></dl></div><div
+                      href="sect.monitoring.html#sect.nagios">12.4.2. Configurando o Nagios</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		Este capítulo retoma alguns aspectos já descritos, com uma perspectiva diferente: em vez de instalar em um único computador, vamos estudar a implantação de sistemas em massa; em vez de criar volumes RAID ou LVM no momento da instalação, vamos aprender a fazer tudo na mão para que mais tarde possamos rever nossas escolhas iniciais. Finalmente, vamos discutir as ferramentas de monitoramento e técnicas de virtualização. Como consequência, este capítulo é mais particularmente alvo de administradores profissionais e centra-se um pouco menos nos indivíduos responsáveis pela sua rede doméstica.
@@ -138,7 +138,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.raid-soft"></a>12.1.1. RAID Por Software</h3></div></div></div><a
-              id="idm140441591568432"
+              id="idm139983946126832"
               class="indexterm"></a><div
               class="para">
 				RAID means <span
@@ -260,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><h4
                       class="title"><a
                         id="sect.raid-setup"></a>12.1.1.2. Configurando um RAID</h4></div></div></div><a
-                id="idm140441583725280"
+                id="idm139983937124320"
                 class="indexterm"></a><div
                 class="para">
 					Setting up RAID volumes requires the <span
@@ -658,9 +658,9 @@ ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><a
-              id="idm140441583630512"
+              id="idm139983955118112"
               class="indexterm"></a><a
-              id="idm140441583629552"
+              id="idm139983955117152"
               class="indexterm"></a><div
               class="para">
 				LVM, the <span
@@ -1139,7 +1139,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 (4k) blocks long.
                           class="emphasis"><em>NOTA</em></span> Se o desempenho importa…</strong></p></div></div></div><div
                 class="para">
 				Se a velocidade de entrada/saída é essencial, especialmente em termos de tempo de acesso, o uso do LVM e/ou RAID em uma das muitas combinações pode ter algum impacto no desempenho, e isso pode influenciar nas decisões sobre qual escolher. Contudo, essas diferenças de desempenho são realmente pequenas, e só serão mensuráveis em alguns casos de uso. Se desempenho importa, o melhor ganho a ser obtido seria no uso de mídia não rotativa (<a
-                  id="idm140441604475872"
+                  id="idm139983955005168"
                   class="indexterm"></a><span
                   class="emphasis"><em>solid-state drives</em></span> ou SSDs); seu custo por megabyte é maior que os discos rígidos padrão, e sua capacidade geralmente é menor, mas ele fornece desempenho excelente para acessos aleatórios. Se o padrão de uso inclui muitas operações de entrada/saída espalhadas por todo o sistema de arquivos, por exemplo, para bancos de dados aonde consultas complexas são executadas rotineiramente, então a vantagem de executá-las em um SSD de longe superam tudo o que pode ser ganho escolhendo LVM sobre RAID ou o contrário. Nessas situações, a escolha deveria ser determinada por outras considerações ao invés de velocidade pura, já que o aspecto desempenho é mais facilmente lidado usando SSDs.
 			</div></div><div

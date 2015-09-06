@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139949005519888"></a>15.2.1. メタパッケージか偽物のパッケージ</h3></div></div></div><div
+                    id="idm140338985807504"></a>15.2.1. メタパッケージか偽物のパッケージ</h3></div></div></div><div
             class="para">
 				偽物のパッケージとメタパッケージは似ています。両者は自分のメタデータをパッケージ取り扱いスタックに置いておくためだけに存在する抜け殻です。
 			</div><div
@@ -97,19 +97,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">equivs-build</code> を使う限りにおいて意味を持つものであり、生成されるパッケージのヘッダから削除されるべきです。
 			</div><div
             class="example"><a
-              id="idm139949005926608"></a><p
+              id="idm140338985797248"></a><p
               class="title"><strong>例15.2 <span
                   class="emphasis"><em>libxml-libxml-perl</em></span> 偽物のパッケージのヘッダファイル</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 Section: perl
 Priority: optional
-Standards-Version: 3.8.4
+Standards-Version: 3.9.6
 
 Package: libxml-libxml-perl
-Version: 1.57-1
+Version: 2.0116-1
 Maintainer: Raphael Hertzog &lt;hertzog@debian.org&gt;
-Depends: libxml2 (&gt;= 2.6.6)
+Depends: libxml2 (&gt;= 2.7.4)
 Architecture: all
 Description: Fake package - module manually installed in site_perl
  This is a fake package to let the packaging system
@@ -126,11 +126,11 @@ Description: Fake package - module manually installed in site_perl
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139949005922752"></a>15.2.2. 単純なファイルアーカイブ</h3></div></div></div><div
+                    id="idm140338985793392"></a>15.2.2. 単純なファイルアーカイブ</h3></div></div></div><div
             class="para">
 				Falcot Corp の管理者は大量のマシン上に一連の文書を配備することを簡単に行うために Debian パッケージを作成する必要があります。この作業を担当している管理者は最初に「新メンテナーガイド」を読み、その後最初のパッケージに対する作業に着手します。<div
               class="url">→ <a
-                href="http://www.debian.org/doc/maint-guide/">http://www.debian.org/doc/maint-guide/</a></div>
+                href="https://www.debian.org/doc/manuals/maint-guide/">https://www.debian.org/doc/manuals/maint-guide/</a></div>
 			</div><div
             class="para">
 				最初に、対象のソースパッケージを含める <code
@@ -151,18 +151,17 @@ Description: Fake package - module manually installed in site_perl
               class="userinput"><code>dh_make --native</code></strong>
 <code
               class="computeroutput">
-Type of package: single binary, indep binary, multiple binary, library, kernel module, kernel patch or cdbs?
- [s/i/m/l/k/n/b] </code><strong
+Type of package: single binary, indep binary, multiple binary, library, kernel module, kernel patch?
+ [s/i/m/l/k/n] </code><strong
               class="userinput"><code>i</code></strong>
 <code
               class="computeroutput">
 Maintainer name : Raphael Hertzog
 Email-Address   : hertzog@debian.org
-Date            : Mon, 11 Apr 2011 15:11:36 +0200
+Date            : Fri, 04 Sep 2015 12:09:39 -0400
 Package Name    : falcot-data
 Version         : 1.0
-License         : blank
-Usind dpatch    : no
+License         : gpl3
 Type of Package : Independent
 Hit &lt;enter&gt; to confirm:
 Currently there is no top level Makefile. This may require additional tuning.
@@ -171,23 +170,22 @@ check that the falcot-data Makefiles install into $DESTDIR and not in / .
 $</code></pre><div
             class="para">
 				パッケージの種類で <span
-              class="emphasis"><em>single binary</em></span> を選ぶと、ソースパッケージから単一のバイナリパッケージをアーキテクチャごとに (<code
-              class="literal">Architecture: any</code>) 生成します。<span
-              class="emphasis"><em>indep binary</em></span> はその逆の振る舞いで、対象のアーキテクチャに依存しない (<code
-              class="literal">Architecture: all</code>) 単一のバイナリを生成します。今回作成するパッケージの場合、<span
+              class="emphasis"><em>indep binary</em></span> を選ぶと、ソースパッケージから単一のバイナリパッケージを生成します。ここで生成されるバイナリパッケージはすべてのアーキテクチャで共有されることを意味します (<code
+              class="literal">Architecture: all</code>)。<span
+              class="emphasis"><em>single binary</em></span> はその逆の振る舞いで、対象のアーキテクチャに依存する (<code
+              class="literal">Architecture: any</code>) 単一のバイナリを生成します。今回作成するパッケージの場合、<span
               class="emphasis"><em>indep binary</em></span> がより適切です。なぜなら、このパッケージは文書だけを含みバイナリプログラムを含まないからです。このため、すべてのアーキテクチャのコンピュータで同様に使うことが可能です。
-			</div><div
+			</div><a
+            id="idm140338985780160"
+            class="indexterm"></a><a
+            id="idm140338985779232"
+            class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>multiple binary</em></span> を選ぶと、ソースパッケージから複数のバイナリパッケージを作成することになります。<span
               class="emphasis"><em>library</em></span> は特別な場合で、共有ライブラリ用に用意されています。なぜなら、共有ライブラリは厳しいパッケージ化規則に従う必要があるからです。同様に、<span
-              class="emphasis"><em>kernel module</em></span> はカーネルモジュールを含むパッケージ用に用意されています。最後に、<span
-              class="emphasis"><em>cdbs</em></span> は特定のパッケージビルドシステム用に用意されています。そして <span
-              class="emphasis"><em>cdbs</em></span> はかなり柔軟ですが、より多くの知識が必要です。<a
-              id="idm139949005906688"
-              class="indexterm"></a><a
-              id="idm139949005906240"
-              class="indexterm"></a>
+              class="emphasis"><em>kernel module</em></span> および <span
+              class="emphasis"><em>kernel patch</em></span> はカーネルモジュールを含むパッケージ用に用意されています。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -199,8 +197,7 @@ $</code></pre><div
                 class="varname">DEBEMAIL</code> または <code
                 class="varname">EMAIL</code> 環境変数から取得します。たった 1 回だけこれらの環境変数を定義するだけで、毎回これらの情報を打ち込む必要がなくなります。通常のシェルが <code
                 class="command">bash</code> の場合、<code
-                class="filename">~/.bashrc</code> と <code
-                class="filename">~/.bash_profile</code> ファイルに以下の 2 行 (当然ですが、値を自分のものに変えてくださいね!) を追加するだけで簡単にこれを行うことが可能です。
+                class="filename">~/.bashrc</code> ファイルに以下の 2 行 (当然ですが、値を自分のものに変えてくださいね!) を追加するだけで簡単にこれを行うことが可能です。
 			</div><pre
               class="programlisting">
 export EMAIL="hertzog@debian.org"
@@ -234,7 +231,7 @@ export DEBFULLNAME="Raphael Hertzog"</pre></div><div
               class="literal">iceweasel | www-browser</code> を指定しました。これはパッケージ内の文書を表示するために必要なウェブブラウザがインストールされていることを保証するためです。
 			</div><div
             class="example"><a
-              id="idm139949005887488"></a><p
+              id="idm140338985757968"></a><p
               class="title"><strong>例15.3 <code
                   class="filename">control</code> ファイル</strong></p><div
               class="example-contents"><pre
@@ -243,8 +240,8 @@ Source: falcot-data
 Section: misc
 Priority: optional
 Maintainer: Raphael Hertzog &lt;hertzog@debian.org&gt;
-Build-Depends: debhelper (&gt;= 7.0.50~)
-Standards-Version: 3.8.4
+Build-Depends: debhelper (&gt;= 9)
+Standards-Version: 3.9.5
 
 Package: falcot-data
 Architecture: all
@@ -258,7 +255,7 @@ Description: Internal Falcot Corp Documentation
  These documents MUST NOT leave the company.
  Their use is INTERNAL ONLY.</pre></div></div><div
             class="example"><a
-              id="idm139949005885200"></a><p
+              id="idm140338985755680"></a><p
               class="title"><strong>例15.4 <code
                   class="filename">changelog</code> ファイル</strong></p><div
               class="example-contents"><pre
@@ -270,29 +267,26 @@ falcot-data (1.0) internal; urgency=low
     - internal company structure;
     - contacts for each department.
 
- -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Mon, 11 Apr 2011 20:46:33 +0200</pre></div></div><div
+ -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Fri, 04 Sep 2015 12:09:39 -0400</pre></div></div><div
             class="example"><a
-              id="idm139949005883216"></a><p
+              id="idm140338985753696"></a><p
               class="title"><strong>例15.5 <code
                   class="filename">copyright</code> ファイル</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-This work was packaged for Debian by Raphael Hertzog &lt;hertzog@debian.org&gt;
-on Mon, 11 Apr 2011 20:46:33 +0200
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: falcot-data
 
-Copyright:
-
-    Copyright (C) 2004-2011 Falcot Corp
-
-License:
-
-    All rights reserved.</pre></div></div><div
+Files: *
+Copyright: 2004-2015 Falcot Corp
+License: 
+ All rights reserved.</pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> <code
                         class="filename">Makefile</code> ファイル</strong></p></div></div></div><a
-              id="idm139949005879680"
+              id="idm140338985750176"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -337,53 +331,32 @@ target: source1 source2 ...
             class="programlisting">
 data/* usr/share/falcot-data/</pre><div
             class="para">
-				この時点で、パッケージを作成することが可能になります。しかしながら、もう少しファイルを追加します。管理者はグラフィカルデスクトップ環境のヘルプメニューから文書へ簡単にアクセスできるようにしたいので、Debian メニューシステムにエントリを作成しました。これは <code
-              class="filename">debian/menu.ex</code> の拡張子を外し、以下の通り編集することで、単純に行われます。
+				この時点でパッケージを作成することも可能ですが、パッケージにもう少しファイルを追加します。管理者はグラフィカルデスクトップ環境のメニューから文書へ簡単にアクセスできるようにしたいので、パッケージに <code
+              class="filename">falcot-data.desktop</code> ファイルを追加します。さらに <code
+              class="filename">debian/falcot-data.install</code> に例に示した 2 行目を追加して、<code
+              class="filename">/usr/share/applications</code> の中に <code
+              class="filename">falcot-data.desktop</code> ファイルをインストールします。
 			</div><div
             class="example"><a
-              id="idm139949005695008"></a><p
+              id="idm140338985731760"></a><p
               class="title"><strong>例15.6 <code
-                  class="filename">menu</code> ファイル</strong></p><div
+                  class="filename">falcot-data.desktop</code> ファイル</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-?package(falcot-data):needs=X11|wm section=Help\
-  title="Internal Falcot Corp Documentation" \
-  command="/usr/bin/x-www-browser /usr/share/falcot-data/index.html"
-?package(falcot-data):needs=text section=Help\
-  title="Internal Falcot Corp Documentation" \
-  command="/usr/bin/www-browser /usr/share/falcot-data/index.html"</pre></div></div><div
+[Desktop Entry]
+Name=Internal Falcot Corp Documentation
+Comment=Starts a browser to read the documentation
+Exec=x-www-browser /usr/share/falcot-data/index.html
+Terminal=false
+Type=Application
+Categories=Documentation;</pre></div></div><div
             class="para">
-				<code
-              class="literal">needs</code> フィールドが <code
-              class="literal">X11|wm</code> に設定された場合、このエントリがグラフィカルインターフェースでのみ意味を持つことを意味します。そのため、このエントリはグラフィカル (X11) アプリケーションとウィンドウマネージャ (<code
-              class="literal">wm</code>) のメニューに統合されます。<code
-              class="literal">section</code> フィールドはこのエントリが表示されるメニュー内の場所を指定します。今回の場合、このエントリは Help メニューに表示されます。<code
-              class="literal">title</code> フィールドはメニューに表示されるテキストを指定します。最後に、<code
-              class="literal">command</code> フィールドはユーザがメニューエントリを選択した時に実行するコマンドを指定します。
-			</div><div
-            class="para">
-				2 番目のエントリは 1 番目のエントリを Linux コンソールテキストモードに適応させたものです。
-			</div><div
-            class="sidebar"><div
-              class="titlepage"><div><div><p
-                    class="title"><strong><span
-                        class="emphasis"><em>DEBIAN POLICY</em></span> メニュー統合</strong></p></div></div></div><div
-              class="para">
-				Debian メニューは規則に従って統合されます。詳細は以下のテキストに書かれています。<div
-                class="url">→ <a
-                  href="http://www.debian.org/doc/packaging-manuals/menu-policy/">http://www.debian.org/doc/packaging-manuals/menu-policy/</a></div>
-			</div><div
-              class="para">
-				<code
-                class="filename">menu</code> ファイルの <code
-                class="literal">section</code> の値はこの文書で述べられているリストの値を使うべきです。
-			</div></div><div
-            class="para">
-				パッケージ内でメニューを有効化するには、単純に <code
-              class="filename">debian/menu</code> ファイルを作成するだけで十分です。なぜなら、パッケージビルド作業の間に <code
-              class="command">dh</code> が <code
-              class="command">dh_installmenu</code> コマンドを自動的に呼び出すからです。
-			</div><div
+				編集後の <code
+              class="filename">debian/falcot-data.install</code> は以下のようになります。
+			</div><pre
+            class="programlisting">
+data/* usr/share/falcot-data/
+falcot-data.desktop usr/share/applications/</pre><div
             class="para">
 				これでソースパッケージの準備が整いました。最後に残された作業は、以前パッケージを再ビルドした際に使った方法と同じ方法を使って、バイナリパッケージを生成することです。具体的に言えば、バイナリパッケージを生成するには、<code
               class="filename">falcot-data-1.0</code> ディレクトリの中で、<code

@@ -71,47 +71,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140546687035104"></a>15.4.1. Aprendizaje de creación de paquetes</h3></div></div></div><div
+                    id="idm140667121480128"></a>15.4.1. Aprendizaje de creación de paquetes</h3></div></div></div><div
             class="para">
 				Crear un paquete Debian de calidad no siempre es una tarea sencilla y necesitará aprender algunas cosas para convertirse en un encargado de paquetes («package mantainer»), tanto teóricas como prácticas. No es sólo cuestión de compilar e instalar software; en cambio, la mayor parte de la complejidad proviene de entender problemas, conflictos y, en general, las interacciones con los muchos otros paquetes disponibles.
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546687033440"></a>15.4.1.1. Reglas</h4></div></div></div><div
+                      id="idm140667121478464"></a>15.4.1.1. Reglas</h4></div></div></div><div
               class="para">
-					Un paquete Debian debe cumplir con las reglas precisas agrupadas en la normativa Debian, y todo encargado de paquetes debe conocerlas. No hay necesidad de saberlas de memoria, sino saber que existen y consultarlas cuando se enfrente ante alternativas no triviales. Todo encargado Debian cometió errores por no saber acerca de alguna regla, pero esto no es un gran problema siempre que se lo corrija después que un usuario reporte el error como un fallo, lo que sucede bastante rápido gracias a usuarios avanzados. <div
+					A Debian package must comply with the precise rules compiled in the Debian policy, and each package maintainer must know them. There is no requirement to know them by heart, but rather to know they exist and to refer to them whenever a choice presents a non-trivial alternative. Every Debian maintainer has made mistakes by not knowing about a rule, but this is not a huge problem as long as the error gets fixed when a user reports it as a bug report (which tends to happen fairly soon thanks to advanced users). <div
                 class="url">→ <a
-                  href="http://www.debian.org/doc/debian-policy/">http://www.debian.org/doc/debian-policy/</a></div>
+                  href="https://www.debian.org/doc/debian-policy/">https://www.debian.org/doc/debian-policy/</a></div>
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546687030816"></a>15.4.1.2. Procedimientos</h4></div></div></div><a
-              id="idm140546687030016"
+                      id="idm140667121475840"></a>15.4.1.2. Procedimientos</h4></div></div></div><a
+              id="idm140667121475040"
               class="indexterm"></a><div
               class="para">
-					Debian no es una simple colección de paquetes individuales. El trabajo de empaquetado de todos es parte de un proyecto colectivo; ser un desarrollador Debian incluye saber cómo funciona el proyecto Debian como un todo. Todo desarrollador, tarde o temprano, interactuará con otros. La referencia de desarrolladores de Debian («Debian Developer's Reference», en el paquete <span
-                class="pkg pkg">developers-reference</span>) resume lo que todo desarrollador debe saber para poder interactuar de la mejor forma posible con los varios equipos dentro del proyecto y para poder aprovechar al máximo los recursos disponibles. Este documento también enumera una serie de deberes que se espera cumpla un desarrollador. <div
+					Debian is not a simple collection of individual packages. Everyone's packaging work is part of a collective project; being a Debian developer involves knowing how the Debian project operates as a whole. Every developer will, sooner or later, interact with others. The Debian Developer's Reference (in the <span
+                class="pkg pkg">developers-reference</span> package) summarizes what every developer must know in order to interact as smoothly as possible with the various teams within the project, and to take the best possible advantages of the available resources. This document also enumerates a number of duties a developer is expected to fulfill. <div
                 class="url">→ <a
-                  href="http://www.debian.org/doc/developers-reference/">http://www.debian.org/doc/developers-reference/</a></div>
+                  href="https://www.debian.org/doc/manuals/developers-reference/">https://www.debian.org/doc/manuals/developers-reference/</a></div>
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546687026464"></a>15.4.1.3. Herramientas</h4></div></div></div><div
+                      id="idm140667121471568"></a>15.4.1.3. Herramientas</h4></div></div></div><div
               class="para">
 					Many tools help package maintainers in their work. This section describes them quickly, but does not give the full details, since they all have comprehensive documentation of their own.
 				</div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140546687025008"></a>15.4.1.3.1. El programa <code
+                        id="idm140667121470112"></a>15.4.1.3.1. El programa <code
                         class="command">lintian</code></h5></div></div></div><a
-                id="idm140546687023888"
+                id="idm140667121468992"
                 class="indexterm"></a><div
                 class="para">
-						Esta herramienta es una de las más importantes: es el verificador de paquetes Debian. Está basado en un gran conjunto de pruebas creadas a partir de la normativa Debian y detecta rápida y automáticamente muchos errores que pueden corregirse antes de publicar los paquetes.
+						This tool is one of the most important: it's the Debian package checker. It is based on a large array of tests created from the Debian policy, and detects quickly and automatically many errors that can then be fixed before packages are released.
 					</div><div
                 class="para">
 						Esta herramienta es sólo una ayuda y a veces está equivocada (por ejemplo, como la normativa Debian cambia con el tiempo, <code
@@ -120,9 +120,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140546687020592"></a>15.4.1.3.2. El programa <code
+                        id="idm140667121465728"></a>15.4.1.3.2. El programa <code
                         class="command">piuparts</code></h5></div></div></div><a
-                id="idm140546687019472"
+                id="idm140667121464608"
                 class="indexterm"></a><div
                 class="para">
 						Esta es otra herramienta importante: automatiza la instalación, actualización, eliminación y purga de un paquete (en un entorno aislado) y revisa que ninguna de estas operaciones genere un error. Puede ayudar a detectar dependencias faltantes y también detecta cuando un archivo no elimina archivos que debería luego de ser purgado.
@@ -130,18 +130,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140546687017376"></a>15.4.1.3.3. devscripts</h5></div></div></div><a
-                id="idm140546687016576"
+                        id="idm140667121462512"></a>15.4.1.3.3. devscripts</h5></div></div></div><a
+                id="idm140667121461712"
                 class="indexterm"></a><a
-                id="idm140546687015264"
+                id="idm140667121460400"
                 class="indexterm"></a><a
-                id="idm140546687014144"
+                id="idm140667121459280"
                 class="indexterm"></a><a
-                id="idm140546687013024"
+                id="idm140667121458160"
                 class="indexterm"></a><a
-                id="idm140546687011904"
+                id="idm140667121457040"
                 class="indexterm"></a><a
-                id="idm140546687010784"
+                id="idm140667121455920"
                 class="indexterm"></a><div
                 class="para">
 						El paquete <span
@@ -211,49 +211,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140546686989232"></a>15.4.1.3.4. <span
+                        id="idm140667121434368"></a>15.4.1.3.4. <span
                         class="pkg pkg">debhelper</span> y <span
                         class="pkg pkg">dh-make</span></h5></div></div></div><a
-                id="idm140546686987408"
+                id="idm140667121432544"
                 class="indexterm"></a><a
-                id="idm140546686986288"
-                class="indexterm"></a><a
-                id="idm140546686985168"
+                id="idm140667121431424"
                 class="indexterm"></a><div
                 class="para">
-						Debhelper es un conjunto de scripts que facilitan la creación de paquetes que cumplan la normativa; debe ejecutar estos scripts desde <code
-                  class="filename">debian/rules</code>. Debhelper fue ampliamente adopado en Debian, como muestra el hecho de que es utilizado en la mayoría de los paquetes Debian oficiales. Todos los programas que contiene tienen un prefijo <code
-                  class="command">dh_</code>. Joey Hess es el principal desarrollador de Debhelper.
+						Debhelper is a set of scripts easing the creation of policy-compliant packages; these scripts are invoked from <code
+                  class="filename">debian/rules</code>. Debhelper has been widely adopted within Debian, as evidenced by the fact that it is used by the majority of official Debian packages. All the commands it contains have a <code
+                  class="command">dh_</code> prefix.
 					</div><div
                 class="para">
 						El script <code
                   class="command">dh_make</code> (en el paquete <span
                   class="pkg pkg">dh-make</span>) crea los archivos necesarios para generar un paquete Debian en un directorio que contiene inicialmente las fuentes de un software. Como puede adivinar del nombre del programa, los archivos generados utilizan Debhelper de forma predeterminada.
-					</div><div
-                class="sidebar"><div
-                  class="titlepage"><div><div><p
-                        class="title"><strong><span
-                            class="emphasis"><em>ALTERNATIVA</em></span> CDBS</strong></p></div></div></div><div
-                  class="para">
-						<span
-                    class="pkg pkg">cdbs</span> es otro enfoque al empaquetado de Debian, basado exclusivamente en un sistema de herencia de archivos <code
-                    class="filename">Makefile</code>.
-					</div><div
-                  class="para">
-						Esta herramienta tiene sus partidarios ya que evita duplicar la misma lista de órdenes <code
-                    class="command">dh_*</code> en el archivo <code
-                    class="filename">debian/rules</code>. Sin embargo, la versión 7 de Debhelper introdujo el programa <code
-                    class="command">dh</code> que automatiza por sí mismo la secuencia adecuada de llamadas a todos los programas individuales en el orden correcto, desde entonces CDBS perdió gran parte de su atractivo.
-					</div></div></div><div
+					</div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140546686975568"></a>15.4.1.3.5. <code
+                        id="idm140667121426576"></a>15.4.1.3.5. <code
                         class="command">dupload</code> y <code
                         class="command">dput</code></h5></div></div></div><a
-                id="idm140546686974128"
+                id="idm140667121425136"
                 class="indexterm"></a><a
-                id="idm140546686973008"
+                id="idm140667121424016"
                 class="indexterm"></a><div
                 class="para">
 						Los programas <code
@@ -265,25 +248,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140546686968704"></a>15.4.2. Proceso de aceptación</h3></div></div></div><div
+                    id="idm140667121419792"></a>15.4.2. Proceso de aceptación</h3></div></div></div><div
             class="para">
-				Becoming a Debian developer is not a simple administrative matter. The process comprises several steps, and is as much an initiation as it is a selection process. In any case, it is formalized and well-documented, so anyone can track their progression on the website dedicated to the new member process. <div
+				Becoming a “Debian developer” is not a simple administrative matter. The process comprises several steps, and is as much an initiation as it is a selection process. In any case, it is formalized and well-documented, so anyone can track their progression on the website dedicated to the new member process. <div
               class="url">→ <a
-                href="http://nm.debian.org/">http://nm.debian.org/</a></div>
+                href="https://nm.debian.org/">https://nm.debian.org/</a></div>
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>EXTRA</em></span> Proceso liviano para «encargados Debian»</strong></p></div></div></div><div
               class="para">
-				Recientemente se introdujo la posición de «encargado Debian» («Debian Maintainer»). El proceso asociado es más rápido y los privilegios provistos son sólo suficientes para mantener los paquetes propios. Un desarrollador Debian sólo debe realizar una revisión en el paquete inicial y realizar una declaración indicando que confían en el encargado potencial y su habilidad de mantener el paquete por su cuenta.
+				“Debian Maintainer” is another status that gives less privileges than “Debian developer” but whose associated process is quicker. With this status, the contributors can maintain their own packages only. A Debian developer only needs to perform a check on an initial upload, and issue a statement to the effect that they trust the prospective maintainer with the ability to maintain the package on their own.
 			</div><a
-              id="idm140546686964448"
+              id="idm140667121415520"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546686963328"></a>15.4.2.1. Prerequisitos</h4></div></div></div><div
+                      id="idm140667121414400"></a>15.4.2.1. Prerequisitos</h4></div></div></div><div
               class="para">
 					Se espera que todos los candidatos tengan un conocimiento práctico del idioma inglés. Esto es necesario en todos los niveles: por supuesto, para la comunicación inicial con el examinador pero también luego, ya que el inglés es el idioma de preferencia para la mayoría de la documentación; además los usuarios de paquetes se comunicarán en inglés al reportar errores y esperarán respuestas en el mismo idioma.
 				</div><div
@@ -293,17 +276,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546686960624"></a>15.4.2.2. Registración</h4></div></div></div><div
+                      id="idm140667121411696"></a>15.4.2.2. Registración</h4></div></div></div><div
               class="para">
 					El primer paso (real) consiste en encontrar un patrocinador («sponsor») o partidario («advocate»); esto significa un desarrollador oficial dispuesto a manifestar que aceptar <span
                 class="emphasis"><em>X</em></span> sería algo bueno para Debian. Esto generalmente implica que el candidato ha participado en la comunidad y que se apreció su trabajo. Si el candidato es tímido y no promocionó su trabajo públicamente, pueden intentar convencer a un desarrollador Debian para que lo patrocine mostrándole su trabajo en privado.
-				</div><div
+				</div><a
+              id="idm140667121409456"
+              class="indexterm"></a><div
               class="para">
-					Al mismo tiempo, el candidato debe generar un par de llaves pública/privada <a
-                id="idm140546686958096"
-                class="indexterm"></a> con GnuPG, que deben ser firmadas por al menos dos desarrolladores Debian oficiales. La firma autentica el nombre en la llave. Efectivamente, durante una fiesta de firma de llaves, cada participante debe mostrar identificación oficial (generalmente un pasaporte o documento de identidad) junto con sus identificadores de llaves. Este paso hace oficial el enlace entre la persona y las llaves. Esta firma, por lo tanto, requiere encontrarse en la vida real. Si no encuentra ningún desarrollador Debian en una conferencia pública de software libre, puede buscar explícitamente desarrolladores que vivan cerca utilizando la lista en la siguiente página web como punto de partida. <div
+					At the same time, the candidate must generate a public/private RSA key pair with GnuPG, which should be signed by at least two official Debian developers. The signature authenticates the name on the key. Effectively, during a key signing party, each participant must show an official identification (usually an ID card or passport) together with their key identifiers. This step confirms the link between the human and the keys. This signature thus requires meeting in real life. If you have not yet met any Debian developers in a public free software conference, you can explicitly seek developers living nearby using the list on the following webpage as a starting point. <div
                 class="url">→ <a
-                  href="http://wiki.debian.org/Keysigning">http://wiki.debian.org/Keysigning</a></div>
+                  href="https://wiki.debian.org/Keysigning">https://wiki.debian.org/Keysigning</a></div>
 				</div><div
               class="para">
 					Una vez que el patrocinador validó la registración en <code
@@ -311,12 +294,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>Gestor de aplicación</em></span> («Application Manager»). El gestor de aplicación, de allí en adelante, dirigirá el proceso a través de varios pasos y validaciones predeterminados.
 				</div><div
               class="para">
-					La primera verificación es una comprobación de identidad. Si ya tiene una llave firmada por dos desarrolladores Debian, este paso es sencillo; de lo contrario, el gestor de aplicación intentará guiarlo para buscar desarrolladores Debian cercanos y organizar una reunión y firma de llaves. Muy al comienzo del proceso, cuando la cantidad de desarrolladores era pequeña, había una excepción para este procedimiento que permitía completar este paso con un escaneo digital de documentos oficiales de identifiación; ya no es el caso.
+					The first verification is an identity check. If you already have a key signed by two Debian developers, this step is easy; otherwise, the application manager will try and guide you in your search for Debian developers close by to organize a meet-up and a key signing.
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546686953072"></a>15.4.2.3. Aceptación de principios</h4></div></div></div><div
+                      id="idm140667121404256"></a>15.4.2.3. Aceptación de principios</h4></div></div></div><div
               class="para">
 					These administrative formalities are followed by philosophical considerations. The point is to make sure that the candidate understands and accepts the social contract and the principles behind Free Software. Joining Debian is only possible if one shares the values that unite the current developers, as expressed in the founding texts (and summarized in <a
                 class="xref"
@@ -324,17 +307,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div><div
               class="para">
 					In addition, each candidate wishing to join the Debian ranks is expected to know the workings of the project, and how to interact appropriately to solve the problems they will doubtless encounter as time passes. All of this information is generally documented in manuals targeting the new maintainers, and in the Debian developer's reference. An attentive reading of this document should be enough to answer the examiner's questions. If the answers are not satisfactory, the candidate will be informed. They will then have to read (again) the relevant documentation before trying again. In the cases where the existing documentation does not contain the appropriate answer for the question, the candidate can usually reach an answer with some practical experience within Debian, or potentially by discussing with other Debian developers. This mechanism ensures that candidates get involved somewhat in Debian before becoming a full part of it. It is a deliberate policy, by which candidates who eventually join the project are integrated as another piece of an infinitely extensible jigsaw puzzle.
-				</div><div
+				</div><a
+              id="idm140667121400576"
+              class="indexterm"></a><div
               class="para">
-					Este paso es conocido generalmente como <span
-                class="emphasis"><em>filosofía y procedimientos</em></span> (abreviado como «P&amp;P» por «Philosophy &amp; Procedures») en la jerga de los desarrolladores involucrados en el proceso de nuevos miembros. <a
-                id="idm140546686948416"
-                class="indexterm"></a>
+					This step is usually known as the <span
+                class="emphasis"><em>Philosophy &amp; Procedures</em></span> (P&amp;P for short) in the lingo of the developers involved in the new member process.
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546686947296"></a>15.4.2.4. Revisión de habilidades</h4></div></div></div><div
+                      id="idm140667121398400"></a>15.4.2.4. Revisión de habilidades</h4></div></div></div><div
               class="para">
 					Se debe justificar cada aplicación para convertirse en un desarrollador oficial de Debian. Convertirse en un miembro del proyecto requiere mostrar que esta posición es legítima y que facilita el trabajo del candidato para ayudar a Debian. La justificación más común es que ser desarrollador Debian facilita el mantener un paquete Debian, pero no es la única. Algunos desarrolladores se unen al proyecto para adaptar una arquitectura particular, otros desean mejorar la documentación, etc.
 				</div><div
@@ -345,32 +328,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>COMUNIDAD</em></span> Patrocinio</strong></p></div></div></div><a
-                id="idm140546686943408"
-                class="indexterm"></a><a
-                id="idm140546686942448"
+                id="idm140667121905056"
                 class="indexterm"></a><div
                 class="para">
 					Los desarrolladores Debian pueden «patrocinar» («sponsor») paquetes preparados por alguien más, lo que significa que los publican en los repositorios Debian oficiales luego de haber realizado una revisión cuidadosa. Este mecanismo le permite a terceros, quienes todavía no atravesaron el proceso de nuevos miembros, contribuir al proyecto ocasionalmente. Al mismo tiempo, asegura que todos los paquetes incluidos en Debian siempre son revisados por un miembro oficial.
 				</div></div><div
               class="para">
 					Finalmente, el examinador revisa las habilidades técnicas (empaquetado) del candidato con un cuestionario detallado. No se permiten respuestas incorrectas, pero no hay límite de tiempo para responder. Toda la documentación está disponible y se permiten varios intentos si las primeras respuestas no son satisfactorias. Este paso no intenta discriminar, sino garantizar al menos un mínimo común de conocimiento para todos los nuevos contribuyentes.
-				</div><div
+				</div><a
+              id="idm140667121902064"
+              class="indexterm"></a><div
               class="para">
-					En la jerga de los examinadores, se conoce a este paso como <span
-                class="emphasis"><em>tareas y habilidades</em></span> (abreviado «T&amp;S» por «Tasks &amp; Skills»). <a
-                id="idm140546686938640"
-                class="indexterm"></a>
+					This step is known as the <span
+                class="emphasis"><em>Tasks &amp; Skills</em></span> step (T&amp;S for short) in the examiners' jargon.
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140546686937520"></a>15.4.2.5. Aprobación final</h4></div></div></div><div
+                      id="idm140667121899888"></a>15.4.2.5. Aprobación final</h4></div></div></div><div
               class="para">
 					En el último paso, un DAM (<span
                 class="emphasis"><em>gestor de cuentas Debian</em></span>: «Debian Account Manager») revisa todo el proceso. El DAM revisará toda la información que recolectó el examinador sobre el candidato y tomará la decisión de crearle una cuenta en los servidores Debian o no. En los casos que necesite información adicional se puede demorar la creación de la cuenta. Los rechazos son bastante raros si el examinador realiza un buen trabajo siguiendo el procedimiento, pero a veces ocurren. Nunca son permanentes y el candidato es libre de intentar nuevamente luego de un tiempo.
 				</div><div
               class="para">
-					La decisión del DAM es final y (casi) sin apelación, lo que explica porqué, en el pasado, se criticaba frecuentemente a aquellos en dicho rol (actualmente Jörg Jaspert, Christoph Berg y Enrico Zini).
+					The DAM's decision is authoritative and (almost) without appeal, which explains why the people in that seat have often been criticized in the past.
 				</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a
