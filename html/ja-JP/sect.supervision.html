@@ -30,8 +30,8 @@
         href="sect.firewall-packet-filtering.html"
         title="14.2. ファイアウォールとパケットフィルタリング" /><link
         rel="next"
-        href="sect.selinux.html"
-        title="14.4. SELinux の紹介" /><link
+        href="sect.apparmor.html"
+        title="14.4. AppArmor の紹介" /><link
         rel="canonical"
         href="http://l.github.io/debian-handbook/html/ja-JP/sect.supervision.html" /></head><body
       class="draft "><noscript><iframe
@@ -63,14 +63,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="home">Debian 管理者ハンドブック</li><li
           class="next"><a
             accesskey="n"
-            href="sect.selinux.html"><strong>次へ</strong></a></li></ul><div
+            href="sect.apparmor.html"><strong>次へ</strong></a></li></ul><div
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.supervision"></a>14.3. 監督、防止、検知、監査</h2></div></div></div><a
-          id="idm140338987424048"
-          class="indexterm"></a><a
-          id="idm140338987423088"
+          id="idm140708249872368"
           class="indexterm"></a><div
           class="para">
 			監視はいくつかの理由によってセキュリティポリシーの不可欠な要素になっています。中でも、セキュリティの目標には、通常データの機密性を保証するだけでなく、サービスの可用性を保証することも含まれています。そのため、すべてが思った通り稼働しているかを確認したり、さまざまな逸脱した挙動や提供しているサービス品質の変化をタイミング良く検知したり、することが不可欠です。監視活動のおかげで、危機的状況に陥る前に、不正侵入の試行を検知し迅速に対応することが可能です。この節では、Debian システムのさまざまな側面を監視するために使えるいくつかのツールを概説します。この節は<a
@@ -82,11 +80,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.logcheck"></a>14.3.1. <code
                     class="command">logcheck</code> を使ったログ監視</h3></div></div></div><a
-            id="idm140338987419008"
+            id="idm140708249868064"
             class="indexterm"></a><a
-            id="idm140338987417888"
+            id="idm140708249866944"
             class="indexterm"></a><a
-            id="idm140338987416448"
+            id="idm140708249865504"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -96,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				監視されるファイルのリストは <code
               class="filename">/etc/logcheck/logcheck.logfiles</code> に保存されています。そして <code
-              class="filename">/etc/syslog.conf</code> ファイルが完全に書き換えられていなければ、デフォルト値でうまく動作します。
+              class="filename">/etc/rsyslog.conf</code> ファイルが完全に書き換えられていなければ、デフォルト値でうまく動作します。
 			</div><div
             class="para">
 				<code
@@ -158,31 +156,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				<code
               class="filename">/etc/logcheck/ignore.d.{paranoid,server,workstation}/</code> ディレクトリ内のルールの 1 つによってシステムイベントが無視されなかった場合を除いて、常にシステムイベントは通知されます。もちろん、ここで考慮されるディレクトリは、選択された動作モードの冗長性レベル以上の冗長性レベルに対応するディレクトリです。
-			</div><div
-            class="sidebar"><div
-              class="titlepage"><div><div><p
-                    class="title"><strong><span
-                        class="emphasis"><em>TIP</em></span> 画面背景にログを表示する</strong></p></div></div></div><div
-              class="para">
-				一部の管理者はリアルタイムでログメッセージをスクロール表示したいと思っています。<code
-                class="command">root-tail</code> コマンド (<span
-                class="pkg pkg">root-tail</span> に含まれます) パッケージを使って、グラフィカルデスクトップの背景にログを表示することが可能です。<code
-                class="command">xconsole</code> プログラム (<span
-                class="emphasis"><em>x11-apps</em></span> パッケージに含まれます) も小さなウィンドウにログをスクロール表示させることが可能です。メッセージは <code
-                class="filename">/dev/xconsole</code> 名前付きパイプを使って直接 <code
-                class="command">syslogd</code> から取得されます。
-			</div><a
-              id="idm140338987388224"
-              class="indexterm"></a><a
-              id="idm140338987387104"
-              class="indexterm"></a></div></div><div
+			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.monitoring-activity"></a>14.3.2. 監視活動</h3></div></div></div><a
-            id="idm140338987384384"
+            id="idm140708249840176"
             class="indexterm"></a><a
-            id="idm140338987382944"
+            id="idm140708249838736"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -199,7 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="keycap"><strong>r</strong></span> キーを使ってプロセスの <span
                 class="emphasis"><em>renicing</em></span> を行うことが可能です、つまり優先度を変更することが可能です。
 				</div><a
-              id="idm140338987376496"
+              id="idm140708249832064"
               class="indexterm"></a><div
               class="para">
 					システムの負荷が高過ぎる場合、<code
@@ -211,24 +192,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				</div><div
               class="para">
 					<code
-                class="command">gnome-system-monitor</code> と <code
-                class="command">qps</code> グラフィカルツールは <code
+                class="command">gnome-system-monitor</code> グラフィカルツールは <code
                 class="command">top</code> とよく似ており、大雑把に言って同じ機能を備えています。
 				</div><a
-              id="idm140338987370688"
+              id="idm140708249826736"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.monitoring-history"></a>14.3.2.2. 歴史</h4></div></div></div><a
-              id="idm140338987368352"
+              id="idm140708249824288"
               class="indexterm"></a><div
               class="para">
 					プロセッサの負荷、ネットワークトラフィック、空きディスク領域などの情報は絶えず変わります。これらの情報の時間変化を保存しておくと、コンピュータの使われ方を明らかにするためには便利です。
 				</div><a
-              id="idm140338987366640"
+              id="idm140708249822576"
               class="indexterm"></a><a
-              id="idm140338987365680"
+              id="idm140708249821616"
               class="indexterm"></a><div
               class="para">
 					このタスクには専用のツールがたくさんあります。ほとんどのツールは、この種の情報を中央に集めるために、SNMP (<span
@@ -248,7 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>ALTERNATIVE</em></span> <code
                           class="command">mrtg</code></strong></p></div></div></div><a
-                id="idm140338987358992"
+                id="idm140708249814400"
                 class="indexterm"></a><div
                 class="para">
 					<code
@@ -264,16 +244,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338987353024"></a>14.3.3. 変更検知</h3></div></div></div><div
+                    id="idm140708249808320"></a>14.3.3. 変更検知</h3></div></div></div><div
             class="para">
 				システムのインストールと設定が完了したら、セキュリティアップグレードを行わない限りデータ以外のほとんどのファイルとディレクトリが変化する理由はありません。このため、ファイルが変化していないことを確認することは興味深いです。このため、ファイルに対する予想外の変化は調査に値します。この節では、ファイルに対する予想外の変化に備えて、ファイルを監視して管理者に警告する (または単純に変更をリストする) いくつかのツールを紹介します。
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="sect.debsums"></a>14.3.3.1. パッケージの監査、<code
-                      class="command">debsums</code> とその限界</h4></div></div></div><a
-              id="idm140338987349504"
+                      id="sect.dpkg-verify"></a>14.3.3.1. <code
+                      class="command">dpkg --verify</code> を使ったパッケージ監視</h4></div></div></div><a
+              id="idm140708249804960"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -281,58 +261,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="emphasis"><em>GOING FURTHER</em></span> 上流に対して加えられた変更から保護する</strong></p></div></div></div><div
                 class="para">
 					<code
-                  class="command">debsums</code> は Debian パッケージの提供するファイルに対する変化を検出するのに便利ですが、たとえば Debian ミラーが不正アクセスを受けたことによりパッケージ自体が不正に改竄されていた場合 <code
-                  class="command">debsums</code> は役に立ちません。この種の攻撃に対向するには、APT のデジタル署名照合システム (<a
+                  class="command">dpkg --verify</code> は Debian パッケージの提供するファイルに対する変化を検出するのに便利ですが、たとえば Debian ミラーが不正アクセスを受けたことによりパッケージ自体が不正に改竄されていた場合 <code
+                  class="command">dpkg --verify</code> は役に立ちません。この種の攻撃に対向するには、APT のデジタル署名照合システム (<a
                   class="xref"
                   href="sect.package-authentication.html">「パッケージ信頼性の確認」</a>参照) を使い、認証された発行元からのパッケージだけをインストールするように気を付けること、が必要です。
 				</div></div><div
               class="para">
 					<code
-                class="command">debsums</code> は興味深いツールで、(潜在的には攻撃者によって) 修正されたインストール済みファイルを見つけることが可能ですが、その結果は疑ってかかるべきです。第一に、すべての Debian パッケージが <code
-                class="command">debsums</code> プログラムが要求する指紋を提供しているわけではないからです (指紋が提供されているならば、指紋は <code
+                class="command">dpkg --verify</code> (または <code
+                class="command">dpkg -V</code>) は興味深いツールで、(潜在的には攻撃者によって) 変更を加えられたインストール済みファイルを見つけることが可能ですが、その結果は疑ってかかるべきです。なぜなら <code
+                class="command">dpkg --verify</code> は変更されたファイルを検出するために dpkg 自身のデータベースに保存されたチェックサムを使っており、このデータベースはハードディスク上に保存されている (<code
                 class="filename">/var/lib/dpkg/info/<em
-                  class="replaceable">package</em>.md5sums</code> に保存されています)。<a
-                id="idm140338987342048"
-                class="indexterm"></a><a
-                id="idm140338987341568"
-                class="indexterm"></a><a
-                id="idm140338987341088"
-                class="indexterm"></a><a
-                id="idm140338987340608"
-                class="indexterm"></a>備忘録的になりますが、ここで指紋とは、ファイルの内容に対するある種のシグネチャを含む値、通常は数 (実際は 16 進数表記です)、です。このシグネチャはあるアルゴリズムを使って計算されます。指紋計算に使われるアルゴリズムはファイルに対して行われた小さな変化により指紋が変化することがおおよそ保証されているものです (MD5 や SHA1 がよく知られている例です)。そしてこれは「アバランシェ効果」として知られています。アバランシェ効果のおかげで、簡単な数字で表される指紋がファイルの内容の変化を検出するためのリトマス試験として機能することになります。指紋計算に使われるアルゴリズムは不可逆です。言い換えれば、ほとんどの場合、指紋からその指紋が得られる内容を発見することは不可能であることが知られています。最近の数学的な進歩により、アルゴリズムの原理の絶対性が揺らいでいるように見えます。しかしこれはアルゴリズムを使うことに対して疑問を投げかけるものではありません。なぜなら、同じ指紋を持つ異なる内容を作成することはまだかなり難しい作業だからです。
+                  class="replaceable">package</em>.md5sums</code> にあります) からです。このため、几帳面な攻撃者なら改竄したファイルに対応する新しいチェックサムを使ってデータベースファイルを更新するでしょう。
 				</div><div
+              class="sidebar"><div
+                class="titlepage"><div><div><p
+                      class="title"><strong><span
+                          class="emphasis"><em>BACK TO BASICS</em></span> ファイルの指紋</strong></p></div></div></div><a
+                id="idm140708249794720"
+                class="indexterm"></a><a
+                id="idm140708249793760"
+                class="indexterm"></a><a
+                id="idm140708249792832"
+                class="indexterm"></a><a
+                id="idm140708249791872"
+                class="indexterm"></a><div
+                class="para">
+					備忘録的になりますが、ここで指紋とは、ファイルの内容に対するある種のシグネチャを含む値、通常は数 (実際は 16 進数表記です)、です。このシグネチャはあるアルゴリズムを使って計算されます。指紋計算に使われるアルゴリズムはファイルに対して行われた小さな変化により指紋が変化することがおおよそ保証されているものです (MD5 や SHA1 がよく知られている例です)。そしてこれは「アバランシェ効果」として知られています。アバランシェ効果のおかげで、簡単な数字で表される指紋がファイルの内容の変化を検出するためのリトマス試験として機能することになります。指紋計算に使われるアルゴリズムは不可逆です。言い換えれば、ほとんどの場合、指紋からその指紋が得られる内容を発見することは不可能であることが知られています。最近の数学的な進歩により、アルゴリズムの原理の絶対性が揺らいでいるように見えます。しかしこれはアルゴリズムを使うことに対して疑問を投げかけるものではありません。なぜなら、同じ指紋を持つ異なる内容を作成することはまだかなり難しい作業だからです。
+				</div></div><div
               class="para">
-					加えて、<code
-                class="filename">md5sums</code> ファイルはハードディスク上に保存されます。このため、几帳面な攻撃者なら <code
-                class="filename">md5sums</code> ファイルの中の指紋を改竄したファイルに対応する新しい指紋で置き換えるでしょう。
-				</div><div
-              class="para">
-					最初の欠点は <code
-                class="command">debsums</code> が確認を行う際に <code
-                class="filename">md5sums</code> ファイルを参照するのではなく <code
-                class="filename">.deb</code> パッケージを参照すれば避けることが可能です。しかしこの場合、先に対応する <code
-                class="filename">.deb</code> ファイルをダウンロードすることが必要になります。
+					<code
+                class="command">dpkg -V</code> を実行すると、すべてのインストール済みパッケージが検証され、テストに失敗したファイルが行ごとに表示されます。出力フォーマットは <code
+                class="command">rpm -V</code> が採用しているフォーマットと同じで、それぞれの文字は特定のメタデータに対するテストの結果を意味しています。残念なことに <code
+                class="command">dpkg</code> はテストに必要な多くのメタデータを保存しません。これらのメタデータを必要とするテストの結果は常に疑問符が出力されることになります。今のところ実行できるテストはチェックサムテストだけで、チェックサムテストに失敗した場合、左から 3 番目の文字が「5」になります。
 				</div><pre
               class="screen">
 <code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>apt-get --reinstall -d install `debsums -l`</code></strong>
+                class="userinput"><code>dpkg -V</code></strong>
 <code
-                class="computeroutput">[ ... ]
-# </code><strong
-                class="userinput"><code>debsums -p /var/cache/apt/archives -g</code></strong>
-</pre><div
+                class="computeroutput">??5??????   /lib/systemd/system/ssh.service
+??5?????? c /etc/libvirt/qemu/networks/default.xml
+??5?????? c /etc/lvm/lvm.conf
+??5?????? c /etc/salt/roster</code></pre><div
               class="para">
-					注目すべき点として、デフォルト状態の <code
-                class="command">debsums</code> は APT を使ってパッケージがインストールされていた場合でも存在しない <code
-                class="filename">md5sums</code> ファイルを自動的に生成します。
+					上の例では、dpkg は SSH のサービスファイルが変更されていることを報告しています。これは、管理者がパッケージから提供された <code
+                class="filename">/etc/systemd/system/ssh.service</code> ではなく、このファイルを自前で上書きして使っていることを意味しています。さらに、dpkg は適切に修正された複数の設定ファイル (左から 2 番目のフィールドが「c」文字になっています) を出力しています。
+				</div></div><div
+            class="section"><div
+              class="titlepage"><div><div><h4
+                    class="title"><a
+                      id="sect.debsums"></a>14.3.3.2. パッケージの監査、<code
+                      class="command">debsums</code> とその限界</h4></div></div></div><a
+              id="idm140708249781392"
+              class="indexterm"></a><div
+              class="para">
+					<code
+                class="command">debsums</code> は <code
+                class="command">dpkg -V</code> の祖先で、したがってほとんど使われていません。<code
+                class="command">debsums</code> と dpkg は同じ制限に悩まされています。幸いなことに、<code
+                class="command">debsums</code> はいくつかの制限を回避することが可能です (一方で dpkg には同様の回避策がありません)。
 				</div><div
               class="para">
-					次の問題も同様のやり方で避けることが可能です。この確認は本来の <code
-                class="filename">.deb</code> ファイル に基づかなければいけません。この方法の前提条件は、すべてのインストール済みパッケージに対するすべての <code
-                class="filename">.deb</code> ファイルを取得すること、<code
-                class="filename">.deb</code> ファイルの完全性が保証されていること、です。これを満足させる最も簡単な方法は Debian ミラーから <code
-                class="filename">.deb</code> ファイルを取得することです。この操作は遅くて退屈ですから、この操作を定期的かつ積極的に使うべき手法として考えるべきではありません。
+					ディスク上のデータは信頼できないため、<code
+                class="command">debsums</code> は dpkg データベースではなく <code
+                class="filename">.deb</code> ファイルに基づいてテストを行う機能を提供しています。すべてのインストール済みパッケージに対応する信頼できる <code
+                class="filename">.deb</code> ファイルをダウンロードするには、APT の認証付きダウンロード機構を使います。この操作は遅くて退屈ですから、この操作を定期的かつ積極的に使うべき手法として考えるべきではありません。
 				</div><pre
               class="screen">
 <code
@@ -341,8 +335,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 <code
                 class="computeroutput">[ ... ]
 # </code><strong
-                class="userinput"><code>debsums -p /var/cache/apt/archives --generate=all</code></strong>
-</pre><div
+                class="userinput"><code>debsums -p /var/cache/apt/archives --generate=all</code></strong></pre><div
               class="para">
 					この例の中で、デフォルトではインストールされない <span
                 class="pkg pkg">dctrl-tools</span> パッケージに含まれる <code
@@ -351,8 +344,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140338987324096"></a>14.3.3.2. ファイル監視、AIDE</h4></div></div></div><a
-              id="idm140338987323328"
+                      id="idm140708249771632"></a>14.3.3.3. ファイル監視、AIDE</h4></div></div></div><a
+              id="idm140708249770864"
               class="indexterm"></a><div
               class="para">
 					AIDE ツール (<span
@@ -403,7 +396,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="pkg pkg">checksecurity</span> と <span
                           class="pkg pkg">chkrootkit</span>/<span
                           class="pkg pkg">rkhunter</span> パッケージ</strong></p></div></div></div><a
-                id="idm140338987301728"
+                id="idm140708249749104"
                 class="indexterm"></a><div
                 class="para">
 					<span
@@ -420,23 +413,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.intrusion-detection"></a>14.3.4. 侵入検知 (IDS/NIDS)</h3></div></div></div><a
-            id="idm140338987293696"
+            id="idm140708249741072"
             class="indexterm"></a><a
-            id="idm140338987292736"
+            id="idm140708249740112"
             class="indexterm"></a><a
-            id="idm140338987291776"
+            id="idm140708249739152"
             class="indexterm"></a><a
-            id="idm140338987290816"
+            id="idm140708249738192"
             class="indexterm"></a><a
-            id="idm140338987289888"
+            id="idm140708249737264"
             class="indexterm"></a><a
-            id="idm140338987288928"
+            id="idm140708249736304"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> サービス妨害</strong></p></div></div></div><a
-              id="idm140338987286368"
+              id="idm140708249733744"
               class="indexterm"></a><div
               class="para">
 				「サービス妨害」攻撃の目的は 1 つしかありません。すなわちサービスを使用不能にすることです。そのような攻撃は、問い合わせを使ってサーバに大きな負荷を加えたり、バグを不正に活用したりすることで、実行されます。最終結果はどれも同じです。つまり、サービスはもはや使用できません。正規のユーザは迷惑しますし、標的にされたネットワークサービスをホストしている全体の評価が落ちます (たとえばサービスが電子商取引サイトの場合、さらに収入が落ちます)。
@@ -448,18 +441,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div></div><div
             class="para">
 				<code
-              class="command">snort</code> (同名の Debian パッケージに含まれます) は NIDS <span
-              class="emphasis"><em>ネットワーク型侵入検知システム</em></span> です。NIDS の機能はネットワークをリッスンして侵入試行および敵対行為 (サービス妨害攻撃も含めて) を検知しようとします。すべてのイベントは記録され、過去 24 時間のイベントをまとめた電子メールが管理者宛に毎日送信されます。
+              class="command">suricata</code> (同名の Debian パッケージに含まれます) は NIDS <span
+              class="emphasis"><em>ネットワーク型侵入検知システム</em></span> です。NIDS の機能はネットワークをリッスンして侵入試行および敵対行為 (サービス妨害攻撃も含めて) を検知しようとします。すべてのイベントは <code
+              class="filename">/var/log/suricata</code> 内の複数のファイルに記録されます。収集されたすべてのデータを閲覧するためのサードパーティツール (Kibana/logstash) が存在します。<div
+              class="url">→ <a
+                href="http://suricata-ids.org">http://suricata-ids.org</a></div><div
+              class="url">→ <a
+                href="https://www.elastic.co/products/kibana">https://www.elastic.co/products/kibana</a></div>
 			</div><a
-            id="idm140338987280608"
+            id="idm140708249725712"
+            class="indexterm"></a><a
+            id="idm140708249724592"
             class="indexterm"></a><div
+            class="sidebar"><div
+              class="titlepage"><div><div><p
+                    class="title"><strong><span
+                        class="emphasis"><em>CAUTION</em></span> 動作範囲</strong></p></div></div></div><div
+              class="para">
+				<code
+                class="command">suricata</code> の有効性は監視対象のネットワークインターフェース上を流れるトラフィックによって制限されます。<code
+                class="command">suricata</code> が真のトラフィックを観察することができない場合、当然ながら何も検知されません。<code
+                class="command">suricata</code> が実行されているマシンをネットワークスイッチに接続した場合、<code
+                class="command">suricata</code> が実行されているマシンを対象にした攻撃だけを検知することが可能です。この挙動は意図するものではないかもしれません。このため <code
+                class="command">suricata</code> が実行されているマシンはネットワークスイッチの「ミラー」ポートに接続されるべきです。通常「ミラー」ポートはスイッチをカスケード接続するために使われるため、すべてのトラフィックを取得することが可能です。
+			</div></div><div
             class="para">
-				snort の設定にローカルネットワークをカバーするアドレス範囲を追加します。具体的に言えば、アドレス範囲とは潜在的に攻撃対象となりうるすべてのアドレスを意味します。他の重要なパラメータは <code
-              class="command">dpkg-reconfigure snort</code> を使って設定します。これには監視するネットワークインターフェースが含まれます。監視対象のネットワークインターフェースは通常イーサネット接続用の <code
-              class="literal">eth0</code> ですが、他の可能性も存在します。たとえば ADSL や PSTN (<span
-              class="emphasis"><em>Public Switched Telephone Network</em></span>、かなり古いダイヤルアップモデム) 用の <code
-              class="literal">ppp0</code>、無線ネットワークカード用の <code
-              class="literal">wlan0</code> などです。
+				suricata を設定するには <code
+              class="filename">/etc/suricata/suricata-debian.yaml</code> をよく読んで編集します。それぞれのパラメータはこのファイルの中で詳細に説明されているため、このファイルはとても長いものです。最低限の設定を行うには、<code
+              class="literal">HOME_NET</code> パラメータでローカルネットワークのカバーするアドレス範囲を指定する必要があります。実際のところ <code
+              class="literal">HOME_NET</code> パラメータとはすべての潜在的な攻撃対象の組を意味しています。しかし設定パラメータの多くを理解するには、パラメータの説明をすべて読み、パラメータをそれぞれの状況に適応させることが必要です。
+			</div><div
+            class="para">
+				加えて、監視対象のネットワークインターフェースを定義して、init スクリプトを有効化する (<code
+              class="literal">RUN=yes</code> と設定する) ために、<code
+              class="filename">/etc/default/suricata</code> を編集するべきです。また、管理者は <code
+              class="literal">LISTENMODE=pcap</code> のように設定したいと思うかもしれません。なぜなら、デフォルト設定である <code
+              class="literal">LISTENMODE=nfqueue</code> を適切に動かすためには、さらに設定を行う必要があるからです (netfilter ファイアーウォールの <code
+              class="literal">NFQUEUE</code> ターゲットを使って suricata が取り扱う一部のユーザ空間キュー宛のパケットを通過するように、ファイアーウォールを設定しなければいけません)。
+			</div><div
+            class="para">
+				不正行為を検出するためには、<code
+              class="command">suricata</code> に一連の監視規則を設定する必要があります。いくつかの監視規則は <span
+              class="pkg pkg">snort-rules-default</span> パッケージに含まれています。<code
+              class="command">snort</code> は IDS エコシステムにおける歴史的な基準ソフトウェアで、<code
+              class="command">suricata</code> は <code
+              class="command">snort</code> 向けに書かれた監視規則を再利用することが可能です。残念なことに <span
+              class="pkg pkg">snort-rules-default</span> パッケージは <span
+              class="distribution distribution">Debian Jessie</span> には含まれません。このため、<span
+              class="pkg pkg">snort-rules-default</span> パッケージを入手するには <span
+              class="distribution distribution">テスト版</span>か<span
+              class="distribution distribution">不安定版</span>などの他の Debian リリースに含まれるパッケージを入手してください。
+			</div><div
+            class="para">
+				代案として、<code
+              class="command">oinkmaster</code> (同名のパッケージに含まれます) を使って外部ソースから Snort の監視規則をダウンローすることも可能です。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -473,7 +508,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>センサー</em></span>によって生成された警告を収集します。
 			</div><div
               class="para">
-				Snort を prelude のセンサーとして設定することが可能です。他の可能性には <span
+				Suricata を prelude のセンサーとして設定することが可能です。他の可能性には <span
                 class="emphasis"><em>prelude-lml</em></span> (<span
                 class="emphasis"><em>Log Monitor Lackey</em></span>) があります。これは (<a
                 class="xref"
@@ -481,30 +516,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="command">logcheck</code> を使ったログ監視」</a>で説明されている <code
                 class="command">logcheck</code> と同様のやり方で) ログファイルを監視します。
 			</div><a
-              id="idm140338987269840"
-              class="indexterm"></a></div><div
-            class="para">
-				<code
-              class="command">snort</code> 設定ファイル (<code
-              class="filename">/etc/snort/snort.conf</code>) はとても長く、コメントを使ってそれぞれの指示文がとても詳しく説明されています。設定項目を最大限に活用するには、コメントを全部読んで、現場の状態に適用する必要があります。たとえば、マシンとそのマシンがホストするサービスの対応関係を表しておくことにより、<code
-              class="command">snort</code> が報告する事故の数を制限することが可能です。なぜなら、デスクトップマシンへのサービス妨害攻撃は DNS サーバへのサービス妨害攻撃に比べて致命的な問題ではないからです。さらに別の興味深い指示文を使えば、IP アドレスと MAC アドレス (一意的にネットワークカードを識別するもの) 間の対応付けを保存することが可能です。こうすることで、不正侵入されたマシンが他の慎重に扱うべきサーバのような他のマシンになりすますという、<span
-              class="emphasis"><em>ARP spoofing</em></span> 攻撃を検知することが可能になります。
-			</div><div
-            class="sidebar"><div
-              class="titlepage"><div><div><p
-                    class="title"><strong><span
-                        class="emphasis"><em>CAUTION</em></span> 動作範囲</strong></p></div></div></div><div
-              class="para">
-				<code
-                class="command">snort</code> の有効性は監視対象のネットワークインターフェース上を流れるトラフィックによって制限されます。<code
-                class="command">snort</code> が真のトラフィックを観察することができない場合、当然ながら何も検知されません。<code
-                class="command">snort</code> が実行されているマシンをネットワークスイッチに接続した場合、<code
-                class="command">snort</code> が実行されているマシンを対象にした攻撃だけを検知することが可能です。この挙動は意図するものではないかもしれません。このため <code
-                class="command">snort</code> が実行されているマシンはネットワークスイッチの「ミラー」ポートに接続されるべきです。通常「ミラー」ポートはスイッチをカスケード接続するために使われるため、すべてのトラフィックを取得することが可能です。
-			</div><div
-              class="para">
-				ネットワークが 1 台のネットワークハブ近傍に制限されている場合、そのような問題はありません。なぜなら、すべてのマシンはすべてのトラフィックを受け取るからです。
-			</div></div></div></div><ul
+              id="idm140708249697856"
+              class="indexterm"></a></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"
@@ -517,7 +530,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             href="index.html"><strong>ホーム</strong></a></li><li
           class="next"><a
             accesskey="n"
-            href="sect.selinux.html"><strong>次へ</strong>14.4. SELinux の紹介</a></li></ul><div
+            href="sect.apparmor.html"><strong>次へ</strong>14.4. AppArmor の紹介</a></li></ul><div
         id="translated_pages"><ul><li><a
               href="../ar-MA/sect.supervision.html">ar-MA</a></li><li><a
               href="../da-DK/sect.supervision.html">da-DK</a></li><li><a

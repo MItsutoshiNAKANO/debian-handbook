@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">14.6. Lidando com uma máquina comprometida</title><link
+        xmlns:d="http://docbook.org/ns/docbook">14.7. Lidando com uma máquina comprometida</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -28,7 +28,7 @@
         title="Capítulo 14. Segurança" /><link
         rel="prev"
         href="sect.other-security-considerations.html"
-        title="14.5. Outras Consideracoes Relacionadas a Seguranca" /><link
+        title="14.6. Outras Consideracoes Relacionadas a Seguranca" /><link
         rel="next"
         href="debian-packaging.html"
         title="Capítulo 15. Criando um Pacote Debian" /><link
@@ -67,14 +67,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.dealing-with-compromised-machine"></a>14.6. Lidando com uma máquina comprometida</h2></div></div></div><div
+                  id="sect.dealing-with-compromised-machine"></a>14.7. Lidando com uma máquina comprometida</h2></div></div></div><div
           class="para">
 			Apesar das melhores intenções e por mais cuidadosamente concebido política da segurança, um administrador, eventualmente, enfrenta um ato de desvio. Esta seção fornece algumas orientações sobre como reagir quando confrontado com estas circunstâncias infelizes.
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139983934841200"></a>14.6.1. Detectando e Visualizando a Intrusão do cracker</h3></div></div></div><div
+                    id="idm139835257525776"></a>14.7.1. Detectando e Visualizando a Intrusão do cracker</h3></div></div></div><div
             class="para">
 				A primeira etapa de reagir a quebra é estar ciente de tal ato. Isso não é auto-evidente, especialmente sem uma infra-estrutura adequada de vigilância.
 			</div><div
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139983934829776"></a>14.6.2. Colocando o servidor Off-Line</h3></div></div></div><div
+                    id="idm139835257514272"></a>14.7.2. Colocando o servidor Off-Line</h3></div></div></div><div
             class="para">
 				Em qualquer dos casos porém, os mais exóticos, a quebra vem da rede, e o invasor precisa de uma rede trabalhando para alcançar as suas metas (acesso a dados confidenciais, compartilhar arquivos clandestinos, ocultar a sua identidade utilizando a máquina como de um retransmissor e assim sucessivamente). Desconectar o computador da rede impedirá que o atacante alcane esses objetivos, se eles não conseguiram fazer isso ainda.
 			</div><div
@@ -133,7 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139983934826720"></a>14.6.3. Mantendo Tudo que Poderia Ser Usado como Evidência</h3></div></div></div><div
+                    id="idm139835257511216"></a>14.7.3. Mantendo Tudo que Poderia Ser Usado como Evidência</h3></div></div></div><div
             class="para">
 				Compreender o ataque e/ou ação legal contra os atacantes envolvente requer uma tomada de cópias de todos os elementos relevantes, o que inclui o conteúdo do disco rígido, uma lista de todos os processos em execução, e uma lista de todas conexões abertas. O conteúdo da memória RAM também poderia ser usado, mas é raramente utilizado na prática.
 			</div><div
@@ -164,14 +164,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139983934817536"></a>14.6.4. Reinstalando</h3></div></div></div><a
-            id="idm139983934816896"
-            class="indexterm"></a><a
-            id="idm139983934816128"
+                    id="idm139835257502032"></a>14.7.4. Reinstalando</h3></div></div></div><a
+            id="idm139835257501392"
             class="indexterm"></a><div
             class="para">
-				O servidor não deve ser trazido de volta em linha sem uma reinstalação completa. Se o comprometimento foi grave (se privilégios administrativos foram obtidos), não há quase nenhuma outra maneira de ter certeza de que estamos livres de tudo o que o invasor pode ter deixado para trás (particularmente <span
-              class="emphasis"><em>backdoors</em></span>). Naturalmente, todas últimas atualizações de segurança devem também ser aplicadas de modo a conectar a vulnerabilidade utilizada pelo invasor. O ideal, analisando o ataque deve apontar para este vetor de ataque, para que se possa ter certeza de efetivamente corrigi-lo, caso contrário, só se pode esperar que a vulnerabilidade foi um daqueles fixados pelas atualizações.
+				The server should not be brought back on line without a complete reinstallation. If the compromise was severe (if administrative privileges were obtained), there is almost no other way to be sure that we get rid of everything the attacker may have left behind (particularly <span
+              class="emphasis"><em>backdoors</em></span>). Of course, all the latest security updates must also be applied so as to plug the vulnerability used by the attacker. Ideally, analyzing the attack should point at this attack vector, so one can be sure of actually fixing it; otherwise, one can only hope that the vulnerability was one of those fixed by the updates.
 			</div><div
             class="para">
 				Reinstalar um servidor remoto não é sempre fácil, pode envolver a assistência da empresa de hospedagem, porque nem todas empresas oferecem sistemas automatizados de reinstalação. Cuidados devem ser tomados para não reinstalar a máquina a partir de backups feitos depois do compromisso. Idealmente, os dados devem ser restaurados, o próprio software deve ser reinstalado a partir da mídia de instalação.
@@ -179,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139983934812912"></a>14.6.5. Analise Fonrense</h3></div></div></div><div
+                    id="idm139835257498288"></a>14.7.5. Analise Fonrense</h3></div></div></div><div
             class="para">
 				Agora que o serviço foi restaurado, é hora de dar uma olhada nas imagens de disco do sistema comprometido a fim de compreender o vetor de ataque. Ao montar essas imagens, deve se tomar cuidado e usar as opções <code
               class="literal">ro, nodev, noexec, noatime</code> de modo a evitar alteração dos conteúdos (incluindo marcas de tempo de acesso a arquivos) ou a execução de programas comprometidos por engano.
@@ -213,27 +211,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						ferramentas special-purpose também permitem restaurar o conteúdo de arquivos potencialmente excluídos, incluindo arquivos de log que os atacantes muitas vezes excluíram.
 					</div></li></ul></div><div
             class="para">
-				Algumas destas operações podem ser feita mais facilmente com software especializado. Em particular, <span
-              class="emphasis"><em>The Coroner Toolkit</em></span> (no pacote <span
-              class="pkg pkg">tct</span>) é uma coleção de tais ferramentas. Ele inclui várias ferramentas; entre estes, <code
-              class="command">grave-robber</code> pode coletar dados de um sistema em execução comprometido, <code
-              class="command">lazarus</code> extrai dados interessantes, muitas vezes provenientes de regiões nao alocados em discos e <code
-              class="command">pcat</code> pode copiar a memória usada por um processo; outras ferramentas de extração de dados também são incluídas. <a
-              id="idm139983934801616"
-              class="indexterm"></a>
-			</div><div
-            class="para">
-				O pacote <span
-              class="pkg pkg">sleuthkit</span> fornece algumas outras ferramentas para analisar um sistema de arquivos. Seu uso é facilitado pela interface gráfica <span
-              class="emphasis"><em>Autopsy Forensic Browser</em></span> (no pacote de <span
-              class="pkg pkg">autopsy</span> ). <a
-              id="idm139983934798944"
-              class="indexterm"></a>
-			</div></div><div
+				Some of these operations can be made easier with specialized software. In particular, the <span
+              class="pkg pkg">sleuthkit</span> package provides many tools to analyze a filesystem. Their use is made easier by the <span
+              class="emphasis"><em>Autopsy Forensic Browser</em></span> graphical interface (in the <span
+              class="pkg pkg">autopsy</span> package).
+			</div><a
+            id="idm139835257487728"
+            class="indexterm"></a><a
+            id="idm139835257486960"
+            class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139983934798176"></a>14.6.6. Reconstituindo o Cenário do Ataque</h3></div></div></div><div
+                    id="idm139835257486064"></a>14.7.6. Reconstituindo o Cenário do Ataque</h3></div></div></div><div
             class="para">
 				Todos os elementos recolhidos durante a análise devem se encaixar como peças de um quebra-cabeça, a criação dos primeiros arquivos suspeitos é muitas vezes relacionada aos registros que comprovam a violação. A exemplo do mundo real deve ser mais explícito do que longas divagações teóricas.
 			</div><div
@@ -296,7 +286,7 @@ www.falcot.com 200.58.141.84 - - [27/Nov/2004:13:33:34 +0100] "GET /phpbb/viewto
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.other-security-considerations.html"><strong>Anterior</strong>14.5. Outras Consideracoes Relacionadas a Seguran...</a></li><li
+            href="sect.other-security-considerations.html"><strong>Anterior</strong>14.6. Outras Consideracoes Relacionadas a Seguran...</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Acima</strong></a></li><li

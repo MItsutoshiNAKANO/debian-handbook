@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">14.6. التعامل مع جهاز مُختَرَق</title><link
+        xmlns:d="http://docbook.org/ns/docbook">14.7. التعامل مع جهاز مُختَرَق</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -28,7 +28,7 @@
         title="فصل 14. الأمن" /><link
         rel="prev"
         href="sect.other-security-considerations.html"
-        title="14.5. اعتبارات أمنية أخرى" /><link
+        title="14.6. اعتبارات أمنية أخرى" /><link
         rel="next"
         href="debian-packaging.html"
         title="فصل 15. إنشاء حزمة دبيان" /><link
@@ -68,14 +68,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.dealing-with-compromised-machine"></a>14.6. التعامل مع جهاز مُختَرَق</h2></div></div></div><div
+                  id="sect.dealing-with-compromised-machine"></a>14.7. التعامل مع جهاز مُختَرَق</h2></div></div></div><div
           class="para">
 			بالرغم من أحسن النوايا ومهما كانت السياسة الأمنية مصممة بحذر، سيواجه مدير النظام حالة قرصنة في النهاية. يقدّم هذا القسم بعض الإرشادات عن كيفية التصرف عند مواجهة هذه الظروف المشؤومة.
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139713869468528"></a>14.6.1. اكتشاف وملاحظة تطفل المخترقين</h3></div></div></div><div
+                    id="idm139700940781536"></a>14.7.1. اكتشاف وملاحظة تطفل المخترقين</h3></div></div></div><div
             class="para">
 				الخطوة الأولى في مواجهة الاختراق هي اكتشاف هذا النشاط. لا يُظهِر النشاط نفسه، خصوصاً في حال غياب البنية التحتية المناسبة لمراقبة النظام.
 			</div><div
@@ -125,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139713869456112"></a>14.6.2. فصل المخدم عن الشبكة</h3></div></div></div><div
+                    id="idm139700940769120"></a>14.7.2. فصل المخدم عن الشبكة</h3></div></div></div><div
             class="para">
 				في جميع الحالات عدا العجيبة منها، ترد الاختراقات من الشبكة، ويحتاج المهاجم لشبكة فعالة للوصول إلى أهدافه (الوصول لمعلومات سرية، مشاركة ملفات غير قانونية، إخفاء هويته عبر استخدام الجهاز كمحطة ترحيل، وغيرها). فصل الجهاز عن الشبكة سيمنع المهاجم من الوصول لهذه الأهداف، إن لم يتمكن من تحقيقها بعد.
 			</div><div
@@ -136,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139713869452672"></a>14.6.3. الاحتفاظ بكل ما يمكن استخدامه كدليل</h3></div></div></div><div
+                    id="idm139700940765680"></a>14.7.3. الاحتفاظ بكل ما يمكن استخدامه كدليل</h3></div></div></div><div
             class="para">
 				لفهم الهجوم و (أو) اتخاذ إجراءات قانونية ضد المهاجمين يجب أخذ نسخ عن جميع العناصر المهمة؛ هذا يتضمن محتويات القرص الصلب، ولائحة بجميع العمليات الفعالة، ولائحة بجميع الاتصالات المفتوحة. يجب استخدام محتويات الذاكرة RAM أيضاً، لكنها نادراً ما تستخدم عملياً.
 			</div><div
@@ -169,14 +169,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139713869441984"></a>14.6.4. إعادة التثبيت</h3></div></div></div><a
-            id="idm139713869441344"
-            class="indexterm"></a><a
-            id="idm139713869440576"
+                    id="idm139700940754992"></a>14.7.4. إعادة التثبيت</h3></div></div></div><a
+            id="idm139700940754352"
             class="indexterm"></a><div
             class="para">
-				يجب عدم إعادة وصل المخدم بالشبكة قبل إعادة تثبيت النظام عليه بالكامل. إذا كان الاختراق عميقاً (إذا حصل المهاجم على صلاحيات الإدارة)، فلا توجد طريقة أخرى تقريباً للتأكد من أننا تخلصنا من جميع مخلفات المهاجم (خصوصاً <span
-              class="emphasis"><em>الأبواب الخلفية backdoors</em></span>). طبعاً، يجب تطبيق آخر التحديثات الأمنية أيضاً لسد الثغرة التي استخدمها المهاجم. مثالياً، يجب أن يشير تحليل الهجوم إلى نوع الهجمة التي استخدمت، بحيث يتأكد المرء من إصلاحها حقاً؛ وإلا، فإنه لا يسع الإنسان إلا أن يأمل أن الثغرة كانت واحدة من الثغرات التي أصلحتها التحديثات.
+				The server should not be brought back on line without a complete reinstallation. If the compromise was severe (if administrative privileges were obtained), there is almost no other way to be sure that we get rid of everything the attacker may have left behind (particularly <span
+              class="emphasis"><em>backdoors</em></span>). Of course, all the latest security updates must also be applied so as to plug the vulnerability used by the attacker. Ideally, analyzing the attack should point at this attack vector, so one can be sure of actually fixing it; otherwise, one can only hope that the vulnerability was one of those fixed by the updates.
 			</div><div
             class="para">
 				إعادة تثبيت النظام على مخدم بعيد ليست عملية سهلة دوماً؛ قد تحتاج مساعدة من شركة الاستضافة، لأن بعض هذه الشركات لا توفر أنظمة مؤتمتة لإعادة تثبيت النظام. يجب الانتباه لعدم إعادة تثبيت نسخة احتياطية أُخذِت بعد حدوث الاختراق. مثالياً، يجب استعادة البيانات فقط، أما البرمجيات فيجب إعادة تثبيتها من وسائط التثبيت.
@@ -184,7 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139713869437008"></a>14.6.5. التحليل الجنائي</h3></div></div></div><div
+                    id="idm139700940751088"></a>14.7.5. التحليل الجنائي</h3></div></div></div><div
             class="para">
 				بعد استعادة الخدمة، حان الوقت لفحص صور القرص المأخوذة من النظام المخترق في سبيل فهم طريقة الهجوم. عند ربط هذه الصور بنظام الملفات، يجب الانتباه لاستخدام الخيارات <code
               class="literal">ro,nodev,noexec,noatime</code> لتفادي تعديل محتوياتها (بما في ذلك تواريخ الوصول للملفات) أو تشغيل برامج مشبوهة عن طريق الخطأ.
@@ -219,27 +217,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						كما تسمح الأدوات المتخصصة باستعادة محتويات أي ملفات محذوفة، بما فيها ملفات السجلات التي يحذفها المهاجمون غالباً.
 					</div></li></ul></div><div
             class="para">
-				يمكن تسهيل بعض هذه العمليات عبر استخدام برمجيات متخصصة. بالأخص، مجموعة <span
-              class="emphasis"><em>The Coroner Toolkit</em></span> (عُدَّة الطبيب الشرعي) في الحزمة <span
-              class="pkg pkg">tct</span> تحوي أدوات عديدة؛ منها، <code
-              class="command">grave-robber</code> التي تستطيع تجميع البيانات من نظام مُختَرَق لا يزال قيد التشغيل، و <code
-              class="command">lazarus</code> التي تستخرج بيانات مثيرة للاهتمام عادة من المناطق غير المُقسَّمة من الأقراص، وتستطيع <code
-              class="command">pcat</code> نسخ الذاكرة التي تستخدمها عملية ما؛ كما تحوي أيضاً أدوات أخرى لاستخراج البيانات. <a
-              id="idm139713869425088"
-              class="indexterm"></a>
-			</div><div
-            class="para">
-				توفر الحزمة <span
-              class="pkg pkg">sleuthkit</span> بضعة أدوات اخرى لتحليل نظام الملفات. تُسهّل الواجهة الرسومية <span
-              class="emphasis"><em>Autopsy Forensic Browser</em></span> (من الحزمة <span
-              class="pkg pkg">autopsy</span> ) استخدام هذه الأدوات. <a
-              id="idm139713869422432"
-              class="indexterm"></a>
-			</div></div><div
+				Some of these operations can be made easier with specialized software. In particular, the <span
+              class="pkg pkg">sleuthkit</span> package provides many tools to analyze a filesystem. Their use is made easier by the <span
+              class="emphasis"><em>Autopsy Forensic Browser</em></span> graphical interface (in the <span
+              class="pkg pkg">autopsy</span> package).
+			</div><a
+            id="idm139700940740064"
+            class="indexterm"></a><a
+            id="idm139700940739296"
+            class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139713869421664"></a>14.6.6. إعادة بناء سيناريو الهجوم</h3></div></div></div><div
+                    id="idm139700940738400"></a>14.7.6. إعادة بناء سيناريو الهجوم</h3></div></div></div><div
             class="para">
 				يجب أن تنطبق جميع العناصر التي جُمِعَت أثناء عملية التحليل مع بعضها مثل قطع أحجية تركيب الصور؛ غالباً ما يترافق إنشاء أولى الملفات المشبوهة مع سجلات تُثْبت عملية الاختراق. يجب أن تكون الأمثلة الحقيقية أفصح من اللغو النظري.
 			</div><div
@@ -308,7 +298,7 @@ www.falcot.com 200.58.141.84 - - [27/Nov/2004:13:33:34 +0100] "GET /phpbb/viewto
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.other-security-considerations.html"><strong>السابق</strong>14.5. اعتبارات أمنية أخرى</a></li><li
+            href="sect.other-security-considerations.html"><strong>السابق</strong>14.6. اعتبارات أمنية أخرى</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>أعلى</strong></a></li><li

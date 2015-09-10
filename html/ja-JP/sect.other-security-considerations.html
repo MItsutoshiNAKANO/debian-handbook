@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">14.5. セキュリティ関連で他に考慮すべき点</title><link
+        xmlns:d="http://docbook.org/ns/docbook">14.6. セキュリティ関連で他に考慮すべき点</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -28,10 +28,10 @@
         title="第14章 セキュリティ" /><link
         rel="prev"
         href="sect.selinux.html"
-        title="14.4. SELinux の紹介" /><link
+        title="14.5. SELinux の紹介" /><link
         rel="next"
         href="sect.dealing-with-compromised-machine.html"
-        title="14.6. 不正侵入されたマシンの取り扱い" /><link
+        title="14.7. 不正侵入されたマシンの取り扱い" /><link
         rel="canonical"
         href="http://l.github.io/debian-handbook/html/ja-JP/sect.other-security-considerations.html" /></head><body
       class="draft "><noscript><iframe
@@ -67,14 +67,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.other-security-considerations"></a>14.5. セキュリティ関連で他に考慮すべき点</h2></div></div></div><div
+                  id="sect.other-security-considerations"></a>14.6. セキュリティ関連で他に考慮すべき点</h2></div></div></div><div
           class="para">
 			セキュリティとは単なる技術的問題ではありません。そしてセキュリティに関してもっとも重要なことは、良く練習すること、危険を理解すること、です。この節では、いくつかのより一般的な危険および最良の実践例を見直します。ここで挙げた事例を実践することで、セキュリティを向上させたり、攻撃が成功してもその影響を小さなものにすることが可能です。
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338984526848"></a>14.5.1. ウェブアプリケーションの持つ潜在的危険性</h3></div></div></div><div
+                    id="idm140708247166144"></a>14.6.1. ウェブアプリケーションの持つ潜在的危険性</h3></div></div></div><div
             class="para">
 				ウェブアプリケーションは、その普遍的特徴のおかげで、数多く開発されました。いくつかのアプリケーションは同時に実行されます。たとえばウェブメール、wiki、グループウェアシステム、フォーラム、写真ギャラリー、ブログ、などは同時に実行されます。これらのアプリケーションは「LAMP」(<span
               class="emphasis"><em>Linux、Apache、MySQL、PHP</em></span>) スタックに頼っています。残念なことに、多くのアプリケーションがセキュリティ問題を深く考えずに書かれています。外部から提供されるデータは、その妥当性を少しだけ検査するか、全く検査せずに使わることが多いです。特別に細工した値をアプリケーションに渡すことで、あるコマンドの代わりに他のコマンドを実行させることが可能です。多くの最も自明な問題は時間がたてば修正されますが、定期的に新しいセキュリティ問題が生じます。
@@ -88,7 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="url">→ <a
                   href="http://en.wikipedia.org/wiki/SQL_Injection">http://en.wikipedia.org/wiki/SQL_Injection</a></div>
 			</div><a
-              id="idm140338984521760"
+              id="idm140708247161056"
               class="indexterm"></a></div><div
             class="para">
 				このため、定期的なウェブアプリケーションの更新は不可欠です。これは、クラッカー (プロフェッショナルな攻撃者であるかスクリプトキディであるかに関わらず) からの既知の脆弱性を利用した攻撃を防ぐ意味合いがあります。実際のリスクは場合によりますが、データの破壊、任意のコード実行、ウェブサイトの書き換えなどの範囲におよびます。
@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338984519856"></a>14.5.2. 予測される結果を知る</h3></div></div></div><div
+                    id="idm140708247159152"></a>14.6.2. 予測される結果を知る</h3></div></div></div><div
             class="para">
 				ウェブアプリケーションの持つ脆弱性はクラッキング行為の足掛かりとして使われることが多いです。以下は、そこから考えられる結果の短い概観を示します。
 			</div><div
@@ -112,12 +112,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
               class="para">
 				<span
-                class="emphasis"><em>mod-security</em></span> (<span
-                class="pkg pkg">libapache-mod-security</span> パッケージに含まれます) はこの機能を提供する主要なモジュールです。
+                class="emphasis"><em>mod-security2</em></span> (<span
+                class="pkg pkg">libapache2-mod-security2</span> パッケージに含まれます) はこの機能を提供する主要なモジュールです。<span
+                class="emphasis"><em>mod-security2</em></span> には簡単に有効化できる専用のすぐに使える数多くのルールが付属しています (<span
+                class="pkg pkg">modsecurity-crs</span> パッケージに含まれます)。
 			</div><a
-              id="idm140338984514336"
+              id="idm140708247152496"
               class="indexterm"></a><a
-              id="idm140338984513200"
+              id="idm140708247151360"
               class="indexterm"></a></div><div
             class="para">
 				不正侵入に成功した後にどのようなことが行われるかは攻撃者のやる気に依存します。<span
@@ -129,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				さらに上級の攻撃者はこれ以上のことを行います。最悪の筋書きは以下の手順で進みます。すなわち、攻撃者は <code
               class="literal">www-data</code> ユーザ権限でコマンドを実行する能力を取得しますが、コマンドを実行するには数多くの操作が必要です。実行を簡単にするために、攻撃者はリモートからさまざまなコマンドを実行する専用に設計された他のウェブアプリケーションをインストールします。このアプリケーションを使うことで、ファイルシステムを閲覧したり、パーミッションを検査したり、ファイルをアップロードおよびダウンロードしたり、ネットワークシェルを提供したりすることが可能になります。しばしば、脆弱性を使って、<code
               class="command">wget</code> コマンドを使ってマルウェアを <code
-              class="filename">/tmp/</code> にダウンロードし、マルウェアを実行することが可能になります。このマルウェアは既に不正侵入されている別のウェブサイトからダウンロードされます。こうすることで、攻撃者の痕跡がなくなり、実際の攻撃元に関するヒントを追跡することが難しくなります。
+              class="filename">/tmp/</code> にダウンロードし、マルウェアを実行することが可能になります。このマルウェアは既に不正侵入されている別のウェブサイトからダウンロードされます。こうすることで、攻撃者の痕跡がなくなり、実際の攻撃元に関するヒントを調査することが難しくなります。
 			</div><div
             class="para">
 				この時点で、攻撃者は IRC <span
@@ -159,7 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338984497968"></a>14.5.3. 賢い方法でソフトウェアを選ぶ</h3></div></div></div><div
+                    id="idm140708247136128"></a>14.6.3. 賢い方法でソフトウェアを選ぶ</h3></div></div></div><div
             class="para">
 				潜在的なセキュリティ問題が知られると、管理者はサービスを配備するプロセスの各段階、特にインストールするソフトウェアを選ぶ際、に気を配らなければいけません。<code
               class="literal">SecurityFocus.com</code> などの多くのウェブサイトが最近発見された脆弱性をリストしています。このおかげで、あるソフトウェアを配備する前にそのソフトウェアのセキュリティ実績の情報を得ることが可能です。もちろん、この情報はそのソフトウェアの人気に比例しています。すなわち、広く使われているプログラムほど標的にされ、結果として注意深く検査されます。逆に、セキュリティ監査に対する関心が欠如していたために、特定分野のプログラムはまだ公表されていない数多くのセキュリティホールを隠しているかもしれません。
@@ -185,7 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338984490672"></a>14.5.4. マシン全体の管理</h3></div></div></div><div
+                    id="idm140708247128832"></a>14.6.4. マシン全体の管理</h3></div></div></div><div
             class="para">
 				多くの Linux ディストリビューションはデフォルトで多数の Unix サービスと多くのツールをインストールします。多くの場合、デフォルトでインストールされるサービスとツールは管理者がマシンをセットアップする本来の目的に必要なものではありません。セキュリティに関する一般的な指針として、不要はソフトウェアをアンインストールすることが最良の方針です。実際、もし FTP サーバ以外の未使用のサービスに含まれる脆弱性を使ってマシン全体の管理者権限が取得される可能性があるのなら、FTP サーバを守ることに意味はありません。
 			</div><div
@@ -193,12 +195,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				同様の理由で、通常ファイアウォールは公開アクセスできるようになる予定のサービスへのアクセスだけを許可するように設定されます。
 			</div><div
             class="para">
-				現在のコンピュータは複数のサービスを 1 台の物理マシン上でホストできる程度に十分強力です。財政的な観点からすると、この可能性は興味深いものです。なぜなら、管理するコンピュータの台数を 1 台で済ませたり、エネルギー消費量を減らすことができるからです。しかしながら、セキュリティの観点からすると、この可能性は問題です。1 つのサービスが不正侵入を受けるだけでマシン全体にアクセスできるようになり、さらに同じコンピュータ上でホストされている他のサービスも不正侵入を受けます。サービスを隔離することでこのリスクを緩和することが可能です。サービスの隔離は仮想化 (各サービスを専用の仮想マシンでホストさせる) や SELinux (それぞれのサービスデーモンに適切に設計された一連のパーミッションを設定する) を使って達成されます。
+				現在のコンピュータは複数のサービスを 1 台の物理マシン上でホストできる程度に十分強力です。財政的な観点からすると、この可能性は興味深いものです。なぜなら、管理するコンピュータの台数を 1 台で済ませたり、エネルギー消費量を減らすことができるからです。しかしながら、セキュリティの観点からすると、この可能性は問題です。1 つのサービスが不正侵入を受けるだけでマシン全体にアクセスできるようになり、さらに同じコンピュータ上でホストされている他のサービスも不正侵入を受けます。サービスを隔離することでこのリスクを緩和することが可能です。サービスの隔離は仮想化 (各サービスを専用の仮想マシンやコンテナでホストさせる) や AppArmor/SELinux (それぞれのサービスデーモンに適切に設計された一連のパーミッションを設定する) を使って達成されます。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338984486704"></a>14.5.5. 内部ユーザから保護</h3></div></div></div><div
+                    id="idm140708247124848"></a>14.6.5. 内部ユーザから保護</h3></div></div></div><div
             class="para">
 				セキュリティに関する議論と言えばすぐに、インターネットの無法地帯に隠れた匿名のクラッカーによる攻撃に対する保護を思い浮かべることでしょう。しかし、忘れられがちですが、内部にもリスクが有るという事実があります。具体的に言えば、退職を控えている雇用者は重要なプロジェクトの機密ファイルをダウンロードしてこれを競争相手に売ることが可能です。不注意なセールスマンは新しい顧客とのミーティング中にセッションをロックせずに離席します。不器用なユーザは誤って間違ったディレクトリを削除します。
 			</div><div
@@ -217,7 +219,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338984481088"></a>14.5.6. 物理セキュリティ</h3></div></div></div><div
+                    id="idm140708247119232"></a>14.6.6. 物理セキュリティ</h3></div></div></div><div
             class="para">
 				コンピュータ本体が保護されていなければ、サービスとネットワークの保護は無意味です。重要なデータは RAID アレイ内のホットスワップ対応のハードディスクに保存するだけの価値があります。なぜなら、ハードディスクは壊れるものですし、データの可用性は不可欠だからです。しかし、ピザ配達人が建物に入って、サーバ部屋に忍び込んで、いくつかの選ばれたハードディスクを盗んで逃げることが可能な場合、セキュリティの重要な部分が満足されていません。誰がサーバ部屋に入れるのでしょうか? 入室と退室は監視されていますか? これらの質問は、物理セキュリティを評価する際に、考慮 (そして回答に) に値します。
 			</div><div
@@ -227,7 +229,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140338984478352"></a>14.5.7. 法的責任</h3></div></div></div><div
+                    id="idm140708247116496"></a>14.6.7. 法的責任</h3></div></div></div><div
             class="para">
 				管理者は、程度の差はあるものの暗黙のうちに、自分の管理するユーザと一般のネットワークユーザから信頼されています。そのためユーザは悪意ある人が不法利用することで生じる過失の影響から守られています。
 			</div><div
@@ -240,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.selinux.html"><strong>戻る</strong>14.4. SELinux の紹介</a></li><li
+            href="sect.selinux.html"><strong>戻る</strong>14.5. SELinux の紹介</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>上に戻る</strong></a></li><li
@@ -249,7 +251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             href="index.html"><strong>ホーム</strong></a></li><li
           class="next"><a
             accesskey="n"
-            href="sect.dealing-with-compromised-machine.html"><strong>次へ</strong>14.6. 不正侵入されたマシンの取り扱い</a></li></ul><div
+            href="sect.dealing-with-compromised-machine.html"><strong>次へ</strong>14.7. 不正侵入されたマシンの取り扱い</a></li></ul><div
         id="translated_pages"><ul><li><a
               href="../ar-MA/sect.other-security-considerations.html">ar-MA</a></li><li><a
               href="../da-DK/sect.other-security-considerations.html">da-DK</a></li><li><a

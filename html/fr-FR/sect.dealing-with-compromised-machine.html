@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">14.6. En cas de piratage</title><link
+        xmlns:d="http://docbook.org/ns/docbook">14.7. En cas de piratage</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -28,7 +28,7 @@
         title="Chapitre 14. Sécurité" /><link
         rel="prev"
         href="sect.other-security-considerations.html"
-        title="14.5. Autres considérations sur la sécurité" /><link
+        title="14.6. Autres considérations sur la sécurité" /><link
         rel="next"
         href="debian-packaging.html"
         title="Chapitre 15. Conception d'un paquet Debian" /><link
@@ -67,14 +67,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.dealing-with-compromised-machine"></a>14.6. En cas de piratage</h2></div></div></div><div
+                  id="sect.dealing-with-compromised-machine"></a>14.7. En cas de piratage</h2></div></div></div><div
           class="para">
 			Malgré toute la bonne volonté et tout le soin apporté à la politique de sécurité, tout administrateur informatique est tôt ou tard confronté à un acte de piratage. Cette section donne des lignes directrices pour bien réagir face à ces fâcheux événements.
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139935478955488"></a>14.6.1. Détecter et constater le piratage</h3></div></div></div><div
+                    id="idm140698178310480"></a>14.7.1. Détecter et constater le piratage</h3></div></div></div><div
             class="para">
 				Avant de pouvoir agir face à un piratage, il faut se rendre compte que l'on est effectivement victime d'un tel acte. Ce n'est pas toujours le cas... surtout si l'on ne dispose pas d'une infrastructure de supervision adéquate.
 			</div><div
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139935478944192"></a>14.6.2. Mettre le serveur hors-ligne</h3></div></div></div><div
+                    id="idm140698178298912"></a>14.7.2. Mettre le serveur hors-ligne</h3></div></div></div><div
             class="para">
 				Dans l'immense majorité des cas, l'intrusion provient du réseau et la disponibilité du réseau est essentielle à l'attaquant pour atteindre ses objectifs (récupérer des données confidentielles, échanger des fichiers illégaux, masquer son identité en employant la machine comme relais intermédiaire…). Débrancher l'ordinateur du réseau empêchera l'attaquant d'arriver à ses fins au cas où il n'en aurait pas encore eu le temps.
 			</div><div
@@ -133,7 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139935478941120"></a>14.6.3. Préserver tout ce qui peut constituer une preuve</h3></div></div></div><div
+                    id="idm140698178295840"></a>14.7.3. Préserver tout ce qui peut constituer une preuve</h3></div></div></div><div
             class="para">
 				Si l'on veut comprendre ce qui s'est passé et/ou si l'on veut pouvoir poursuivre les assaillants, il faut conserver une copie de tous les éléments importants : notamment le contenu du disque dur, la liste des processus en cours d'exécution et la liste des connexions ouvertes. Le contenu de la mémoire vive pourrait aussi être intéressant, mais il est assez rare que l'on exploite cette information.
 			</div><div
@@ -167,15 +167,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139935478931056"></a>14.6.4. Réinstaller</h3></div></div></div><a
-            id="idm139935478930416"
-            class="indexterm"></a><a
-            id="idm139935478929520"
+                    id="idm140698178285776"></a>14.7.4. Réinstaller</h3></div></div></div><a
+            id="idm140698178285136"
             class="indexterm"></a><div
             class="para">
-				Avant de remettre le serveur en ligne, il est indispensable de le réinstaller complètement. En effet, si la compromission était sévère (obtention des privilèges administrateur), il est presque impossible d'être certain d'avoir éliminé tout ce que l'attaquant a pu laisser derrière lui (portes dérobées notamment, <span
-              class="foreignphrase"><em
-                class="foreignphrase">backdoors</em></span> en anglais). Une réinstallation complète apportera cette certitude. Bien entendu, il faut également installer toutes les dernières mises à jour de sécurité afin de colmater la brèche que l'attaquant a réussi à exploiter. Idéalement l'analyse de l'attaque aura mis en lumière la faille et il sera possible de la corriger avec certitude (au lieu de simplement espérer que les mises à jour de sécurité seront suffisantes).
+				The server should not be brought back on line without a complete reinstallation. If the compromise was severe (if administrative privileges were obtained), there is almost no other way to be sure that we get rid of everything the attacker may have left behind (particularly <span
+              class="emphasis"><em>backdoors</em></span>). Of course, all the latest security updates must also be applied so as to plug the vulnerability used by the attacker. Ideally, analyzing the attack should point at this attack vector, so one can be sure of actually fixing it; otherwise, one can only hope that the vulnerability was one of those fixed by the updates.
 			</div><div
             class="para">
 				Pour un serveur distant, réinstaller n'est pas forcément évident à réaliser. Il faudra souvent le concours de l'hébergeur car tous ne disposent pas d'infrastructure de réinstallation automatique. Attention également à ne pas réinitialiser la machine avec une sauvegarde complète ultérieure à la date de compromission ! Il vaut mieux réinstaller les logiciels et ne restaurer que les données.
@@ -183,7 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139935478926096"></a>14.6.5. Analyser à froid</h3></div></div></div><div
+                    id="idm140698178281904"></a>14.7.5. Analyser à froid</h3></div></div></div><div
             class="para">
 				Maintenant que le service est à nouveau fonctionnel, il est temps de se pencher sur les images disque du système compromis afin de comprendre ce qui s'est passé. Lorsqu'on monte l'image du disque, il faut prendre soin d'employer les options <code
               class="literal">ro,nodev,noexec,noatime</code> afin de ne ne pas modifier son contenu (y compris les horodatages des accès aux fichiers) et de ne pas exécuter par erreur des exécutables compromis.
@@ -217,28 +214,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						Enfin, des outils spécialisés permettent de récupérer le contenu de potentiels fichiers supprimés (notamment les fichiers de trace que les attaquants aiment à supprimer).
 					</div></li></ul></div><div
             class="para">
-				Il existe des logiciels pour faciliter certaines de ces opérations. Citons notamment <span
-              class="foreignphrase"><em
-                class="foreignphrase">The Coroner Toolkit</em></span> (Le kit du médecin légiste) fourni par le paquet <span
-              class="pkg pkg">tct</span> : il contient <code
-              class="command">grave-robber</code> qui collecte à chaud des données d'un système compromis, <code
-              class="command">lazarus</code> qui extrait des données des zones non allouées d'un disque, <code
-              class="command">pcat</code> qui effectue une copie de la mémoire utilisée par un processus, ainsi que d'autres outils d'extraction de données. <a
-              id="idm139935478914960"
-              class="indexterm"></a>
-			</div><div
-            class="para">
-				Le paquet <span
-              class="pkg pkg">sleuthkit</span> fournit d'autres outils d'analyse de système de fichiers. Leur usage est grandement facilité par l'interface graphique <span
-              class="emphasis"><em>Autopsy Forensic Browser</em></span> contenue dans le paquet <span
-              class="pkg pkg">autopsy</span>. <a
-              id="idm139935478912288"
-              class="indexterm"></a>
-			</div></div><div
+				Some of these operations can be made easier with specialized software. In particular, the <span
+              class="pkg pkg">sleuthkit</span> package provides many tools to analyze a filesystem. Their use is made easier by the <span
+              class="emphasis"><em>Autopsy Forensic Browser</em></span> graphical interface (in the <span
+              class="pkg pkg">autopsy</span> package).
+			</div><a
+            id="idm140698178271360"
+            class="indexterm"></a><a
+            id="idm140698178270592"
+            class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139935478911520"></a>14.6.6. Reconstituer le scénario de l'attaque</h3></div></div></div><div
+                    id="idm140698178269696"></a>14.7.6. Reconstituer le scénario de l'attaque</h3></div></div></div><div
             class="para">
 				Tous les éléments récoltés au cours de l'analyse doivent pouvoir s'emboîter comme dans un puzzle : la date de création des premiers fichiers suspects correspond souvent à des traces prouvant l'intrusion. Un petit exemple réel sera plus parlant qu'un long discours théorique.
 			</div><div
@@ -305,7 +293,7 @@ www.falcot.com 200.58.141.84 - - [27/Nov/2004:13:33:34 +0100] "GET /phpbb/viewto
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.other-security-considerations.html"><strong>Précédent</strong>14.5. Autres considérations sur la sécurité</a></li><li
+            href="sect.other-security-considerations.html"><strong>Précédent</strong>14.6. Autres considérations sur la sécurité</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Niveau supérieur</strong></a></li><li

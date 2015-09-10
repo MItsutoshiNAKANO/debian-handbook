@@ -68,17 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. ファイアウォールとパケットフィルタリング</h2></div></div></div><a
-          id="idm140339009605840"
+          id="idm140708268631664"
           class="indexterm"></a><a
-          id="idm140339003624656"
-          class="indexterm"></a><a
-          id="idm140339003623728"
+          id="idm140708259077984"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> ファイアウォール</strong></p></div></div></div><a
-            id="idm140339003621712"
+            id="idm140708259075968"
             class="indexterm"></a><div
             class="para">
 			<span
@@ -92,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span> ファイアウォールの設定を簡単に行うためのツールが存在し、ツールはフィルタリングルールをグラフィカルに表現する機能を備えています。<code
             class="command">fwbuilder</code> がこの種のツールの中で最良のツールであることは疑いありません。
 		</div><a
-          id="idm140338993388480"
+          id="idm140708259070432"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -112,9 +110,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">iptables</code> が IPv4 ネットワークを取り扱うのに対し、<code
             class="command">ip6tables</code> は IPv6 ネットワークを取り扱うという点です。おそらく IPv4 と IPv6 のネットワークプロトコルスタックは長きにわたり共存するでしょうから、両方のツールを並行して実行する必要があります。
 		</div><a
-          id="idm140338993380816"
+          id="idm140708258996144"
           class="indexterm"></a><a
-          id="idm140338993379696"
+          id="idm140708258995024"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -151,9 +149,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				それぞれのテーブルには、<span
               class="emphasis"><em>チェイン</em></span>と呼ばれるルールのリストが含まれます。ファイアウォールは事前に定義された状況に基づいてパケットを取り扱うために標準的なチェインを使います。管理者は他のチェインを作成することが可能です。このチェインを使うには、標準的なチェインの 1 つから (直接的か間接的かのいずれか一方の方法で) このチェインを参照します。
 			</div><a
-            id="idm140338993242512"
+            id="idm140708257168144"
             class="indexterm"></a><a
-            id="idm140338993241552"
+            id="idm140708257167184"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -228,15 +226,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				参考までに、受信バッファとは、データがネットワークから到着してカーネルがデータを処理するまでの間、そのデータを保存する小容量のメモリ区画です。このメモリ区画が満杯になると、新しいデータを受け取ることができなくなり、ICMP がこの問題を通知します。そうすれば送信側はデータの転送速度を遅くすることが可能です (理想的に言えば、しばらくの後に転送速度は平衡状態に達するべきです)。
 			</div><a
-              id="idm140338994373488"
+              id="idm140708247377248"
               class="indexterm"></a><a
-              id="idm140338994372528"
+              id="idm140708247376288"
               class="indexterm"></a><a
-              id="idm140338987546800"
+              id="idm140708247375360"
               class="indexterm"></a><a
-              id="idm140338987545840"
+              id="idm140708247374400"
               class="indexterm"></a><a
-              id="idm140338987544400"
+              id="idm140708247372960"
               class="indexterm"></a><div
               class="para">
 				IPv4 ネットワークは ICMP がなくても動作しますが、IPv6 ネットワークは ICMPv6 を必須条件としています。なぜなら、ICMPv6 は IPv4 世界では ICMPv4、IGMP (<span
@@ -297,24 +295,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">SNAT</code> (<code
-                    class="literal">nat</code> テーブル、つまり <span
-                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です — IPv6 の NAT サポートは Linux 3.7 カーネルから導入されました)。これは <span
+                    class="literal">nat</code> テーブルの中だけでのみ使うことが可能です)。これは <span
                     class="emphasis"><em>Source NAT</em></span> を適用します (追加オプションを使って適用する正確な変更を設定します)。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">DNAT</code> (<code
-                    class="literal">nat</code> テーブル、つまり <span
-                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です)。これは <span
+                    class="literal">nat</code> テーブルの中だけでのみ使うことが可能です)。これは <span
                     class="emphasis"><em>Destination NAT</em></span> を適用します (追加オプションを使って適用する正確な変更を設定します)。
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">MASQUERADE</code> (<code
-                    class="literal">nat</code> テーブル、つまり <span
-                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です)。これは<span
+                    class="literal">nat</code> テーブルの中だけでのみ使うことが可能です)。これは<span
                     class="emphasis"><em>マスカレード</em></span>を適用します (<span
                     class="emphasis"><em>マスカレード</em></span>は <span
                     class="emphasis"><em>Source NAT</em></span> の特別な場合です)。
@@ -323,8 +318,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">REDIRECT</code> (<code
-                    class="literal">nat</code> テーブル、つまり <span
-                    class="distribution distribution">Wheezy</span> の IPv4 の中だけでのみ使うことが可能です)。これはファイアウォールの指定したポートに対象のパケットを転送します。さらにこれを使って、クライアント側に特別な設定をせずとも動作する透過的なウェブプロキシをセットアップすることが可能です。なぜなら、クライアントは宛先に接続していると思っていても、実際の通信はプロキシを通過しているからです。
+                    class="literal">nat</code> テーブルの中だけでのみ使うことが可能です)。これはファイアウォールの指定したポートに対象のパケットを転送します。さらにこれを使って、クライアント側に特別な設定をせずとも動作する透過的なウェブプロキシをセットアップすることが可能です。なぜなら、クライアントは宛先に接続していると思っていても、実際の通信はプロキシを通過しているからです。
 					</div></li></ul></div><div
             class="para">
 				その他の動作、特に <code
@@ -348,9 +342,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> オプションで操作対象のテーブルを指定します (デフォルトの場合、<code
               class="literal">filter</code> テーブルを操作します)。
 			</div><a
-            id="idm140338987503888"
+            id="idm140708248193984"
             class="indexterm"></a><a
-            id="idm140338987502768"
+            id="idm140708248192864"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -388,7 +382,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. ルール</h4></div></div></div><a
-              id="idm140338987487872"
+              id="idm140708248177728"
               class="indexterm"></a><div
               class="para">
 					それぞれのルールは <code
@@ -485,8 +479,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">REDIRECT</code> 動作には <code
                 class="literal">--to-ports <em
                   class="replaceable">port(s)</em></code> オプションを指定することが可能です。これはパケットの転送先ポート番号またはポート番号範囲を指定します (<code
-                class="literal">REDIRECT</code> 動作は <span
-                class="distribution distribution">Wheezy</span> 上の NAT を有効化している場合にのみ使うことが可能です。つまりこれは IPv4 だけで使えることを意味します)。
+                class="literal">REDIRECT</code> 動作は NAT を有効化している場合にのみ使うことが可能です)。
 				</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -497,7 +490,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">iptables</code>/<code
               class="command">ip6tables</code> を 1 回実行する必要があります。これらのコマンドを手作業で実行することは退屈なので、通常スクリプトの形で保存しておきます。こうすることで、マシンの起動時に同じ設定を自動的に適用することが可能です。このスクリプトは手作業で書かなければいけませんが、<code
               class="command">fwbuilder</code> などの高レベルツールを使ってスクリプトを準備することも興味深いでしょう。
-			</div><div
+			</div><pre
+            class="screen">
+<code
+              class="computeroutput"># </code><strong
+              class="userinput"><code>apt install fwbuilder</code></strong></pre><div
             class="para">
 				原理は簡単です。最初に、実際のルールに適用するすべての要素を宣言する必要があります。
 			</div><div
@@ -533,7 +530,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="fwbuilder のメインウィンドウ" /></div></div><p
               class="title"><strong>図14.2 fwbuilder のメインウィンドウ</strong></p></div><a
-            id="idm140338987439040"
+            id="idm140708249885344"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -542,24 +539,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">iptables</code>、FreeBSD の <code
               class="command">ipf</code>、OpenBSD の <code
               class="command">pf</code>) を設定するためのスクリプトを生成することが可能です。
-			</div><div
-            class="para">
-				<span
-              class="distribution distribution">Squeeze</span> 以降の <span
-              class="pkg pkg">fwbuilder</span> パッケージには、グラフィカルインターフェースとさまざまなファイアウォールシステム用のモジュール (以前、これらはシステムごとに複数のパッケージに分割されていました) が含まれます。
-			</div><pre
-            class="screen">
-<code
-              class="computeroutput"># </code><strong
-              class="userinput"><code>aptitude install fwbuilder</code></strong></pre></div><div
+			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-rules-at-boot"></a>14.2.4. 起動時にルールを適用する</h3></div></div></div><div
-            class="para">
-				ファイアウォールが断続的な PPP ネットワーク接続を保護するように設定されていた場合、スクリプトを <code
-              class="filename">/etc/ppp/ip-up.d/0iptables</code> に配置することが最も単純な方法です (名前にドットを含まないファイルだけが考慮されます)。ファイアウォールは PPP 接続が確立された時点で毎回再読み込みされます。
-			</div><div
             class="para">
 				別のやり方として、設定スクリプトを <code
               class="filename">/etc/network/interfaces</code> ファイルの <code
@@ -577,7 +561,13 @@ iface eth0 inet static
     network 192.168.0.0
     netmask 255.255.255.0
     broadcast 192.168.0.255
-    up /usr/local/etc/arrakis.fw</pre></div></div></div></div><ul
+    up /usr/local/etc/arrakis.fw</pre></div></div><div
+            class="para">
+				見ての通りこの例ではネットワークインターフェースを設定するために <span
+              class="pkg pkg">ifupdown</span> を使っています。他の方法 (たとえば <span
+              class="emphasis"><em>NetworkManager</em></span> や <span
+              class="emphasis"><em>systemd-networkd</em></span> など) を使ってネットワークインターフェースを設定している場合、それぞれの文書を参照して、インターフェースを起動した後にスクリプトを実行する方法を見つけてください。
+			</div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

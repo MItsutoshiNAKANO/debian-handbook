@@ -63,9 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.user-space"></a>B.5. O Espaço de Usuário</h2></div></div></div><a
-          id="idm139983937287984"
+          id="idm139835259075504"
           class="indexterm"></a><a
-          id="idm139983937287024"
+          id="idm139835259074544"
           class="indexterm"></a><div
           class="para">
 			“User-space” refers to the runtime environment of normal (as opposed to kernel) processes. This does not necessarily mean these processes are actually started by users because a standard system normally has several “daemon” (or background) processes running before the user even opens a session. Daemon processes are also considered user-space processes.
@@ -74,13 +74,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-basics"></a>B.5.1. Processo</h3></div></div></div><a
-            id="idm139983937284176"
+            id="idm139835259071696"
             class="indexterm"></a><div
             class="para">
 				When the kernel gets past its initialization phase, it starts the very first process, <code
               class="command">init</code>. Process #1 alone is very rarely useful by itself, and Unix-like systems run with many additional processes.
 			</div><a
-            id="idm139983937282032"
+            id="idm139835259069552"
             class="indexterm"></a><div
             class="para">
 				First of all, a process can clone itself (this is known as a <span
@@ -103,9 +103,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.daemons"></a>B.5.2. Daemons</h3></div></div></div><a
-            id="idm139983935120144"
+            id="idm139835259060944"
             class="indexterm"></a><a
-            id="idm139983935119184"
+            id="idm139835259059984"
             class="indexterm"></a><div
             class="para">
 				Um "daemon" (serviço) é um processo iniciado automaticamente pela sequência de inicialização. Ele continua em execução (em segundo plano) para executar as tarefas de manutenção ou prover serviços a outros processos. Esta "tarefa em segundo plano" é realmente arbitrária e não tem uma importância especial do ponto de vista do sistema. Eles são simplesmente os processos, bastante semelhante a outros processos, que se executam quando está em sua porção de tempo. A distinção é apenas na língua humana: um processo que é executado sem interação com o usuário (em particular, sem qualquer interface gráfica) é dita estar em execução "em segundo plano" ou "como um serviço".
@@ -128,9 +128,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipc"></a>B.5.3. Comunicação Inter Processos</h3></div></div></div><a
-            id="idm139983935112032"
+            id="idm139835259052832"
             class="indexterm"></a><a
-            id="idm139983935111072"
+            id="idm139835259051872"
             class="indexterm"></a><div
             class="para">
 				Um processo isolado, seja um daemon ou um aplicativo interativo, raramente é útil por si só, e é por isso que existem vários métodos que permitem a comunicação entre os processos separados, seja para troca de dados ou para controlar um ao outro. O termo genérico que se refere a isso é <span
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				O sistema IPC mais simples é utilizar arquivos. O processo que deseja enviar dados escreve-os em um arquivo (com um nome já conhecido), enquanto o destinatário só precisa abrir o arquivo e ler seu conteúdo.
 			</div><a
-            id="idm139983935108272"
+            id="idm139835259049072"
             class="indexterm"></a><div
             class="para">
 				In the case where you do not wish to store data on disk, you can use a <span
@@ -204,7 +204,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.libraries"></a>B.5.4. Bibliotecas</h3></div></div></div><a
-            id="idm139983935085888"
+            id="idm139835259026688"
             class="indexterm"></a><div
             class="para">
 				Bibliotecas de funções desempenham um papel crucial em um sistema operacional similar ao Unix. Eles não são programas propriamente dito, uma vez que não podem ser executados por si próprios, mas coleções de fragmentos de código que podem ser utilizados pelos programas normais. Entre as bibliotecas comuns, você pode encontrar:
@@ -233,12 +233,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> O Estilo Unix; uma coisa de cada vez</strong></p></div></div></div><div
               class="para">
-				One of the fundamental concepts that underlies the Unix family of operating systems is that each tool should only do one thing, and do it well; applications can then reuse these tools to build more advanced logic on top. This philosophy can be seen in many incarnations. Shell scripts may be the best example: they assemble complex sequences of very simple tools (such as <code
+				Um dos conceitos fundamentais em que subjaz à família de sistemas operacionais Unix é que cada ferramenta deveria fazer uma coisa, e fazê-lo bem; aplicações podem reutilizar essas ferramentas para criar uma lógica mais avançada sobre elas. Essa filosofia pode ser vista em muitas encarnações. Shell scripts podem ser o melhor exemplo: eles montam sequências complexas de ferramentas muito simples (como <code
                 class="command">grep</code>, <code
                 class="command">wc</code>, <code
                 class="command">sort</code>, <code
-                class="command">uniq</code> and so on). Another implementation of this philosophy can be seen in code libraries: the <span
-                class="emphasis"><em>libpng</em></span> library allows reading and writing PNG images, with different options and in different ways, but it does only that; no question of including functions that display or edit images.
+                class="command">uniq</code> e assim por diante). Outra implementação dessa filosofia pode ser vista em bibliotecas de código: a biblioteca <span
+                class="emphasis"><em>libpng</em></span> permite ler e escrever imagens PNG, com diferentes opções e de maneiras diferentes, mas ele faz só isso; nenhuma questão de incluir funções que exibem ou editam imagens.
 			</div></div><div
             class="para">
 				Além disso, essas bibliotecas muitas vezes são referidas como "bibliotecas compartilhadas", desde que o kernel possa carregá-las apenas uma vez para a memória, mesmo se vários processos utilizam a mesma biblioteca ao mesmo tempo. Isso permite economia de memória, quando comparado com a situação oposta (hipotética), onde o código para uma biblioteca seria carregada tantas vezes quantos os processos que a utilizam.

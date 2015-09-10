@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automated-installation"></a>12.3. Автоматизированная установка</h2></div></div></div><a
-          id="idm140239388800752"
+          id="idm140254101211888"
           class="indexterm"></a><a
-          id="idm140239388799984"
+          id="idm140254101211120"
           class="indexterm"></a><div
           class="para">
 			Администраторам Falcot Corp, как и многим администраторам больших IT-инфраструктур, необходимы инструменты для быстрой установки (или переустановки), причём по возможности автоматической, на новых машинах.
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fai"></a>12.3.1. Fully Automatic Installer (FAI)</h3></div></div></div><a
-            id="idm140239388789520"
+            id="idm140254101200656"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -192,9 +192,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.d-i-preseeding"></a>12.3.2. Пресидинг Debian-Installer</h3></div></div></div><a
-            id="idm140239388762064"
+            id="idm140254101173296"
             class="indexterm"></a><a
-            id="idm140239388761296"
+            id="idm140254101172528"
             class="indexterm"></a><div
             class="para">
 				В конце концов, если рассуждать логически, лучшим инструментом для установки Debian должен быть официальный установщик Debian. По этой причине debian-installer с самого начала разрабатывался для автоматизированной установки, используя возможности, предоставляемые <span
@@ -207,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>УГЛУБЛЯЕМСЯ</em></span> Debconf с централизованной базой данных</strong></p></div></div></div><a
-              id="idm140239388756736"
+              id="idm140254101167968"
               class="indexterm"></a><div
               class="para">
 				Preseeding allows to provide a set of answers to Debconf questions at installation time, but these answers are static and do not evolve as time passes. Since already-installed machines may need upgrading, and new answers may become required, the <code
@@ -219,7 +219,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388752688"></a>12.3.2.1. Использование preseed-файла</h4></div></div></div><div
+                      id="idm140254101163920"></a>12.3.2.1. Использование preseed-файла</h4></div></div></div><div
               class="para">
 					Есть несколько мест, откуда установщик может получить файл пресидинга:
 				</div><div
@@ -251,7 +251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388743120"></a>12.3.2.2. Создание preseed-файла</h4></div></div></div><div
+                      id="idm140254101154352"></a>12.3.2.2. Создание preseed-файла</h4></div></div></div><div
               class="para">
 					Preseed-файл — это простой текстовый файл, в котором каждая строка содержит ответ на один вопрос Debconf. Строка разбита на четыре поля, разделённых между собой пробельными символами (пробелами или символами табуляции), например <code
                 class="literal">d-i mirror/suite string stable</code>:
@@ -294,14 +294,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388730864"></a>12.3.2.3. Создание модифицированного загрузочного носителя</h4></div></div></div><div
+                      id="idm140254101142096"></a>12.3.2.3. Создание модифицированного загрузочного носителя</h4></div></div></div><div
               class="para">
 					Знать, где разместить preseed-файл, конечно, уже хорошо, но одного этого знания недостаточно: нужно, так или иначе, внести изменения
 				</div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140239388729472"></a>12.3.2.3.1. Сетевая загрузка</h5></div></div></div><div
+                        id="idm140254101140704"></a>12.3.2.3.1. Сетевая загрузка</h5></div></div></div><div
                 class="para">
 						When a computer is booted from the network, the server sending the initialization elements also defines the boot parameters. Thus, the change needs to be made in the PXE configuration for the boot server; more specifically, in its <code
                   class="filename">/tftpboot/pxelinux.cfg/default</code> configuration file. Setting up network boot is a prerequisite; see the Installation Guide for details. <div
@@ -311,7 +311,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140239388726736"></a>12.3.2.3.2. Подготовка загрузочного USB-брелока</h5></div></div></div><div
+                        id="idm140254101137968"></a>12.3.2.3.2. Подготовка загрузочного USB-брелока</h5></div></div></div><div
                 class="para">
 						Когда загрузочный брелок подготовлен (см. <a
                   class="xref"
@@ -331,7 +331,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="filename">/media/usbdisk/syslinux.cfg</code> и добавьте необходимые параметры загрузки (см. пример ниже).
 							</div></li></ul></div><div
                 class="example"><a
-                  id="idm140239388721568"></a><p
+                  id="idm140254101132800"></a><p
                   class="title"><strong>Пример 12.2. файл syslinux.cfg и параметры файла ответов</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">default vmlinuz
@@ -340,8 +340,8 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140239388720048"></a>12.3.2.3.3. Создание образа CD-ROM</h5></div></div></div><a
-                id="idm140239388719408"
+                        id="idm140254101131280"></a>12.3.2.3.3. Создание образа CD-ROM</h5></div></div></div><a
+                id="idm140254101130640"
                 class="indexterm"></a><div
                 class="para">
 						USB-брелок является перезаписываемым носителем, поэтому нам было легко добавить туда файл и изменить несколько параметров. В случае CD-ROM эта процедура усложняется, поскольку требуетс перегенерировать весь ISO-образ. Для этой задачи служит <span
@@ -367,7 +367,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.simple-cdd"></a>12.3.3. Simple-CDD: решение «всё-в-одном»</h3></div></div></div><a
-            id="idm140239388709392"
+            id="idm140254101120624"
             class="indexterm"></a><div
             class="para">
 				Простого использования preseed-файла недостаточно, чтобы удовлетворить всем требованиям, которые могут предъявляться при массовом развёртывании. Несмотря на наличие возможности выполнить некоторые сценарии в конце обычного процесса установки, выбор набора пакетов для установки всё же недостаточно гибок (собственно, можно выбрать для установки только «задачи»); что более важно, возможна установка только официальных пакетов Debian, но не локально собранных.
@@ -382,7 +382,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388704336"></a>12.3.3.1. Создание профилей</h4></div></div></div><div
+                      id="idm140254101115568"></a>12.3.3.1. Создание профилей</h4></div></div></div><div
               class="para">
 					Simple-CDD определяет «профили», сходные с «классами» FAI, причём у машины может быть несколько профилей (назначенных во время установки). Профиль определяется набором файлов <code
                 class="filename">profiles/<em
@@ -432,9 +432,9 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388691104"></a>12.3.3.2. Настройка и использование <code
+                      id="idm140254101102336"></a>12.3.3.2. Настройка и использование <code
                       class="command">build-simple-cdd</code></h4></div></div></div><a
-              id="idm140239388690208"
+              id="idm140254101101440"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -500,7 +500,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388671968"></a>12.3.3.3. Генерация ISO-образа</h4></div></div></div><div
+                      id="idm140254101083200"></a>12.3.3.3. Генерация ISO-образа</h4></div></div></div><div
               class="para">
 					Once we have written a configuration file and defined our profiles, the remaining step is to invoke <code
                 class="command">build-simple-cdd --conf simple-cdd.conf</code>. After a few minutes, we get the required image in <code

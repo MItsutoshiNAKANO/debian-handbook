@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>АЛЬТЕРНАТИВА</em></span> Zabbix, комплексный инструмент мониторинга</strong></p></div></div></div><a
-            id="idm140239388664640"
+            id="idm140254101075872"
             class="indexterm"></a><div
             class="para">
 			Although Munin and Nagios are in very common use, they are not the only players in the monitoring field, and each of them only handles half of the task (graphing on one side, alerting on the other). Zabbix, on the other hand, integrates both parts of monitoring; it also has a web interface for configuring the most common aspects. It has grown by leaps and bounds during the last few years, and can now be considered a viable contender. On the monitoring server, you would install <span
@@ -95,7 +95,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>АЛЬТЕРНАТИВА</em></span> Icinga, ответвление Nagios</strong></p></div></div></div><a
-            id="idm140239388658656"
+            id="idm140254101069888"
             class="indexterm"></a><div
             class="para">
 			Из-за расхождения во взглядах на модель разработки Nagios (который контролируется компанией) часть разработчиков создала ответвление Nagios под названием Icinga. Icinga остаётся совместимым — по крайней мере пока — с настройками и плагинами Nagios, но добавляет дополнительный функционал. <div
@@ -106,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.munin"></a>12.4.1. Настройка Munin</h3></div></div></div><a
-            id="idm140239388655232"
+            id="idm140254101066464"
             class="indexterm"></a><div
             class="para">
 				Назначение Munin — наблюдать за множеством машин, и вполне естественно, что он имеет клиент-серверную архитектуру. Центральный узел — построитель графиков — собирает данные со всех наблюдаемых узлов и создаёт графики истории.
@@ -114,7 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388653648"></a>12.4.1.1. Настройка узлов для мониторинга</h4></div></div></div><div
+                      id="idm140254101064880"></a>12.4.1.1. Настройка узлов для мониторинга</h4></div></div></div><div
               class="para">
 					Первый шаг — установка пакета <span
                 class="pkg pkg">munin-node</span>. Демон, устанавливаемый этим пакетом, слушает порт 4949 и отправляет данные, собранные всеми активными плагинами. Каждый плагин представляет собой простую программу, возвращающую описание собранных данных и последнее измеренное значение. Плагины хранятся в <code
@@ -186,7 +186,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388633696"></a>12.4.1.2. Настройка построителя графиков</h4></div></div></div><div
+                      id="idm140254101044928"></a>12.4.1.2. Настройка построителя графиков</h4></div></div></div><div
               class="para">
 					«Построитель графиков» — это просто компьютер, собирающий данные и создающий на их основании графики. Необходимое для него программное обеспечение находится в пакете <span
                 class="pkg pkg">munin</span>. Стандартная конфигурация запускает <code
@@ -218,7 +218,7 @@ load.info 5 minute load average
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.nagios"></a>12.4.2. Настройка Nagios</h3></div></div></div><a
-            id="idm140239388623264"
+            id="idm140254101034496"
             class="indexterm"></a><div
             class="para">
 				В отличие от Munin, Nagios не требует обязательной установки чего бы то ни было на наблюдаемых узлах; чаще всего NAgios используется для проверки доступности сетевых сервисов. Например, Nagios может подключиться к веб-серверу и проверить, что конкретная веб-страница может быть получена за заданное время.
@@ -226,7 +226,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388621552"></a>12.4.2.1. Установка</h4></div></div></div><div
+                      id="idm140254101032784"></a>12.4.2.1. Установка</h4></div></div></div><div
               class="para">
 					Первый шаг установки Nagios заключается в установке пакетов <span
                 class="pkg pkg">nagios3</span>, <span
@@ -267,7 +267,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140239388609280"></a>12.4.2.2. Настройка</h4></div></div></div><div
+                      id="idm140254101020512"></a>12.4.2.2. Настройка</h4></div></div></div><div
               class="para">
 					Веб-интерфейс Nagios довольно симпатичный, но не позволяет менять настройки или добавлять наблюдаемые узлы и сервисы. Вся конфигурация управляется через файлы, указанные в центральном конфигурационном файле <code
                 class="filename">/etc/nagios3/nagios.cfg</code>.
@@ -331,7 +331,7 @@ load.info 5 minute load average
 					Администраторы Falcot Corp используют следующую конфигурацию:
 				</div><div
               class="example"><a
-                id="idm140239388591632"></a><p
+                id="idm140254101002864"></a><p
                 class="title"><strong>Пример 12.3. Файл <code
                     class="filename">/etc/nagios3/conf.d/falcot.cfg</code></strong></p><div
                 class="example-contents"><pre

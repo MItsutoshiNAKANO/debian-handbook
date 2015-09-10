@@ -28,7 +28,7 @@
         title="Настольная книга администратора Debian" /><link
         rel="prev"
         href="sect.dealing-with-compromised-machine.html"
-        title="14.6. Dealing with a Compromised Machine" /><link
+        title="14.7. Dealing with a Compromised Machine" /><link
         rel="next"
         href="sect.building-first-package.html"
         title="15.2. Сборка вашего первого пакета" /><link
@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. Пересборка пакета из его исходного кода</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140239398959520">15.1.1. Получение исходного кода</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140254124469712">15.1.1. Получение исходного кода</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140239396082672">15.1.2. Внесение изменений</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140254110589040">15.1.2. Внесение изменений</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140239388956160">15.1.3. Запуск пересборки</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140254102606144">15.1.3. Запуск пересборки</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. Сборка вашего первого пакета</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140239390697376">15.2.1. Метапакеты или пакеты-пустышки</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140254103063168">15.2.1. Метапакеты или пакеты-пустышки</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140239410516432">15.2.2. Простое файловое хранилище</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140254103049152">15.2.2. Простое файловое хранилище</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. Создание репозитория пакетов для APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. Как стать сопровождающим пакета</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140239389181376">15.4.1. Учимся создавать пакеты</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140254101470128">15.4.1. Учимся создавать пакеты</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140239389118928">15.4.2. Процесс принятия</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140254101407680">15.4.2. Процесс принятия</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		Нередко администратор, постоянно имеющий дело с пакетами Debian, со временем чувствует необходимость в создании своих собственных пакетов или изменении существующего пакета. Цель этой главы состоит в том, чтобы ответить на наиболее распространенные вопросы в этой области, а также предоставить необходимые базовые знания для использования инфраструктуры Debian наилучшим образом. Если повезет, после попытки приложить руку к созданию локальных пакетов вы даже можете почувствовать потребность в том, чтобы пойти дальше и присоединиться к самому Проекту Debian!
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span> distribution; this operation is called “backporting”. As usual, care should be taken, before undertaking such a task, to check whether it has been done already — a quick look on the Debian Package Tracker for that package will reveal that information. <div
               class="url">→ <a
                 href="https://tracker.debian.org/">https://tracker.debian.org/</a></div> <a
-              id="idm140239395734896"
+              id="idm140254105986272"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140239398959520"></a>15.1.1. Получение исходного кода</h3></div></div></div><div
+                      id="idm140254124469712"></a>15.1.1. Получение исходного кода</h3></div></div></div><div
               class="para">
 				Rebuilding a Debian package starts with getting its source code. The easiest way is to use the <code
                 class="command">apt-get source <em
@@ -151,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140239396082672"></a>15.1.2. Внесение изменений</h3></div></div></div><div
+                      id="idm140254110589040"></a>15.1.2. Внесение изменений</h3></div></div></div><div
               class="para">
 				The source of the package is now available in a directory named after the source package and its version (for instance, <span
                 class="emphasis"><em>samba-4.1.17+dfsg</em></span>); this is where we'll work on our local changes.
@@ -197,7 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>СОВЕТ</em></span> Установка <code
                           class="literal">Build-Depends</code></strong></p></div></div></div><a
-                id="idm140239388960864"
+                id="idm140254102610848"
                 class="indexterm"></a><div
                 class="para">
 				<code
@@ -211,14 +211,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140239388956160"></a>15.1.3. Запуск пересборки</h3></div></div></div><div
+                      id="idm140254102606144"></a>15.1.3. Запуск пересборки</h3></div></div></div><div
               class="para">
 				Когда все необходимые изменения внесены в исходный код, мы можем запустить создание собственно двоичного пакета (файл <code
                 class="filename">.deb</code>). Весь процесс управляется командой <code
                 class="command">dpkg-buildpackage</code>.
 			</div><div
               class="example"><a
-                id="idm140239388252128"></a><p
+                id="idm140254102603760"></a><p
                 class="title"><strong>Пример 15.1. Пересборка пакета</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -265,7 +265,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>КРАТКИЙ ОБЗОР</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140239390706336"
+                id="idm140254103072128"
                 class="indexterm"></a><div
                 class="para">
 				Программа <code
@@ -284,7 +284,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.dealing-with-compromised-machine.html"><strong>Пред.</strong>14.6. Dealing with a Compromised Machine</a></li><li
+            href="sect.dealing-with-compromised-machine.html"><strong>Пред.</strong>14.7. Dealing with a Compromised Machine</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Наверх</strong></a></li><li
