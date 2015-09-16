@@ -69,21 +69,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.source-package-structure"></a>5.3. بنية الحزمة المصدرية</h2></div></div></div><a
-          id="idm139700947997536"
+          id="idm140156535617856"
           class="indexterm"></a><a
-          id="idm139700947996096"
+          id="idm140156535616416"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700947994656"></a>5.3.1. الصيغة</h3></div></div></div><a
-            id="idm139700947993856"
+                    id="idm140156535614976"></a>5.3.1. الصيغة</h3></div></div></div><a
+            id="idm140156535614176"
             class="indexterm"></a><a
-            id="idm139700947992896"
+            id="idm140156535613216"
             class="indexterm"></a><a
-            id="idm139700947991616"
+            id="idm140156535611936"
             class="indexterm"></a><a
-            id="idm139700947990336"
+            id="idm140156535610656"
             class="indexterm"></a><div
             class="para">
 				تتألف الحزمة المصدرية عادة من ثلاثة ملفات، ملف <code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="sect.package-authentication.html">قسم 6.5, “التحقق من سلامة الحزم”</a> لمزيد من التفاصيل على هذا الموضوع.
 			</div><div
             class="example"><a
-              id="idm139700947983040"></a><p
+              id="idm140156535603360"></a><p
               class="title"><strong>مثال 5.1. ملف <code
                   class="filename">‎.dsc</code></strong></p><div
               class="example-contents"><pre
@@ -148,7 +148,7 @@ oltfl05z/AI+vYsW482YrCz0fxNAKAvkyuPhDebYI8jnKWeAANoqmKpsNc/HYyvT
 edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
 =Wtoa
 -----END PGP SIGNATURE-----</pre></div></div><a
-            id="idm139700947979728"
+            id="idm140156535600048"
             class="indexterm"></a><div
             class="para">
 				لاحظ أن الحزمة المصدرية لها اعتماديات أيضاً (<code
@@ -199,9 +199,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
                   class="replaceable">component</em>.tar.gz</code> archives can be included. This is useful with software that is distributed in several upstream components but for which a single source package is desired. These archives can also be compressed with <code
                 class="command">bzip2</code> or <code
                 class="command">xz</code> rather than <code
-                class="command">gzip</code> (<code
-                class="command">lzma</code> is also supported by <code
-                class="command">dpkg-source</code> but not accepted into the official archive), which saves disk space and network resources. Finally, the monolithic patch, <code
+                class="command">gzip</code>, which saves disk space and network resources. Finally, the monolithic patch, <code
                 class="filename">.diff.gz</code> is replaced by a <code
                 class="filename">.debian.tar.gz</code> archive containing the compiling instructions and a set of upstream patches contributed by the package maintainer. These last are recorded in a format compatible with <code
                 class="command">quilt</code> — a tool that facilitates the management of a series of patches.
@@ -219,13 +217,13 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>أدوات</em></span> فك الضغط عن حزمة مصدرية</strong></p></div></div></div><a
-              id="idm139700947950880"
+              id="idm140156535572304"
               class="indexterm"></a><a
-              id="idm139700947949760"
+              id="idm140156535571184"
               class="indexterm"></a><a
-              id="idm139700947948832"
+              id="idm140156535570256"
               class="indexterm"></a><a
-              id="idm139700947947904"
+              id="idm140156535569328"
               class="indexterm"></a><div
               class="para">
 				If you have a source package, you can use the <code
@@ -251,7 +249,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700947939568"></a>5.3.2. الاستخدام في دبيان</h3></div></div></div><div
+                    id="idm140156535560992"></a>5.3.2. الاستخدام في دبيان</h3></div></div></div><div
             class="para">
 				الحزم المصدرية هي أساس كل شيء في دبيان. جميع الحزم الدبيانية تنشأ من حزم مصدرية، وكل تعديل في حزمة دبيانية هو نتيجة تعديل في الحزمة المصدرية. يتعامل مشرفو دبيان مع الحزم المصدرية، لكن مع معرفة تبعات تعديلاتهم على الحزم الثنائية. فثمرات جهودهم إذن تراها في الحزم المصدرية التي توفرها دبيان: يمكنك الرجوع لها ولكل شيء ينتج عنها بسهولة.
 			</div><div

@@ -80,28 +80,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       href="sect.package-meta-information.html#sect.control">5.2.1. 説明、<code
                         class="filename">control</code> ファイル</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.package-meta-information.html#idm140708261565920">5.2.2. 設定スクリプト</a></span></dt><dt><span
+                      href="sect.package-meta-information.html#idm139870901028384">5.2.2. 設定スクリプト</a></span></dt><dt><span
                     class="section"><a
                       href="sect.package-meta-information.html#sect.conffiles">5.2.3. チェックサム、設定ファイルのリスト</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.source-package-structure.html">5.3. ソースパッケージの構造</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.source-package-structure.html#idm140708252222784">5.3.1. フォーマット</a></span></dt><dt><span
+                      href="sect.source-package-structure.html#idm139870892600128">5.3.1. フォーマット</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.source-package-structure.html#idm140708252167104">5.3.2. Debian 内の使い方</a></span></dt></dl></dd><dt><span
+                      href="sect.source-package-structure.html#idm139870892545440">5.3.2. Debian 内の使い方</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.manipulating-packages-with-dpkg.html">5.4. <code
                     class="command">dpkg</code> を用いたパッケージの操作</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140708252153904">5.4.1. パッケージのインストール</a></span></dt><dt><span
+                      href="sect.manipulating-packages-with-dpkg.html#idm139870892532240">5.4.1. パッケージのインストール</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140708252115104">5.4.2. パッケージの削除</a></span></dt><dt><span
+                      href="sect.manipulating-packages-with-dpkg.html#idm139870892493472">5.4.2. パッケージの削除</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140708252101584">5.4.3. <code
+                      href="sect.manipulating-packages-with-dpkg.html#idm139870892479952">5.4.3. <code
                         class="command">dpkg</code> のデータベースへの問い合わせと <code
                         class="filename">.deb</code> ファイルの調査</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140708252051168">5.4.4. <code
+                      href="sect.manipulating-packages-with-dpkg.html#idm139870892429536">5.4.4. <code
                         class="command">dpkg</code> のログファイル</a></span></dt><dt><span
                     class="section"><a
                       href="sect.manipulating-packages-with-dpkg.html#sect.multi-arch">5.4.5. マルチアーキテクチャサポート</a></span></dt></dl></dd><dt><span
@@ -121,9 +121,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.binary-package-structure"></a>5.1. バイナリパッケージの構造</h2></div></div></div><a
-            id="idm140708271030160"
+            id="idm139870894081888"
             class="indexterm"></a><a
-            id="idm140708266152272"
+            id="idm139870894258960"
             class="indexterm"></a><div
             class="para">
 			Debian パッケージのフォーマットは古くからのコマンド <code
@@ -150,7 +150,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">gzip</code>/<code
               class="command">xz</code>/<code
               class="command">bzip2</code> のうち 1 つでもなかったら、足りないプログラムを別のシステムからコピーするだけで十分です (各々のプログラムは、依存関係がなく、完全に独立して動くため、単純にコピーすれば十分です)。システムが最悪の状況に陥ってこれらのプログラムが動かない場合 (最も根源的なシステムライブラリが欠けている場合?)、静的リンクされた <code
-              class="command">busybox</code> を試してみるべきです。静的リンクされた <code
+              class="command">busybox</code> (<span
+              class="pkg pkg">busybox-static</span> パッケージに含まれます) を試してみるべきです。静的リンクされた <code
               class="command">busybox</code> はさらに依存関係が少なく、<code
               class="command">busybox ar</code>、<code
               class="command">busybox tar</code>、<code
@@ -164,11 +165,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="command">dpkg</code>、<code
                         class="command">APT</code>、<code
                         class="command">ar</code></strong></p></div></div></div><a
-              id="idm140708268229424"
+              id="idm139870895002528"
               class="indexterm"></a><a
-              id="idm140708268228304"
+              id="idm139870895001408"
               class="indexterm"></a><a
-              id="idm140708268227184"
+              id="idm139870895000288"
               class="indexterm"></a><div
               class="para">
 			<code
@@ -178,11 +179,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 			<code
                 class="command">APT</code> はシステムの高レベル変更を担当しているプログラムのグループです。具体的に言えば、パッケージのインストールや削除 (依存関係を破壊することなく)、システムの更新、利用できるパッケージの表示などを行います。
-		</div><div
+		</div><a
+              id="idm139870898335328"
+              class="indexterm"></a><div
               class="para">
-			<a
-                id="idm140708264299408"
-                class="indexterm"></a><code
+			<code
                 class="command">ar</code> プログラムは ar アーカイブファイルを取り扱います。たとえば <code
                 class="command">ar t <em
                   class="replaceable">archive</em></code> はアーカイブに含まれるファイルのリストを表示、<code
@@ -305,8 +306,7 @@ $ </code><strong
 					<code
                     class="filename">data.tar.gz</code>。このアーカイブには、パッケージから展開されるすべてのファイルが含まれています。つまり、実行ファイル、文書などすべてが保存されています。一部のパッケージでは異なる圧縮フォーマットが使われているかもしれません、このような場合、ファイルは別の名前が付けられています (bzip2 の場合 <code
                     class="filename">data.tar.bz2</code>、XZ の場合 <code
-                    class="filename">data.tar.xz</code>、LZMA の場合 <code
-                    class="filename">data.tar.lzma</code> です)。
+                    class="filename">data.tar.xz</code> です)。
 				</div></li></ul></div></div></div><ul
         class="docnav"><li
           class="previous"><a

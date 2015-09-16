@@ -80,28 +80,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       href="sect.package-meta-information.html#sect.control">5.2.1. Descrição: O arquivo <code
                         class="filename">control</code></a></span></dt><dt><span
                     class="section"><a
-                      href="sect.package-meta-information.html#idm139835280474928">5.2.2. Scripts de Configuração</a></span></dt><dt><span
+                      href="sect.package-meta-information.html#idm140561529180576">5.2.2. Scripts de Configuração</a></span></dt><dt><span
                     class="section"><a
                       href="sect.package-meta-information.html#sect.conffiles">5.2.3. Checksums, Lista de arquivos de configuração</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.source-package-structure.html">5.3. Estrutura de um Pacote Fonte</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.source-package-structure.html#idm139835270750352">5.3.1. Formato</a></span></dt><dt><span
+                      href="sect.source-package-structure.html#idm140561528787792">5.3.1. Formato</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.source-package-structure.html#idm139835270696640">5.3.2. Uso no Debian</a></span></dt></dl></dd><dt><span
+                      href="sect.source-package-structure.html#idm140561528735456">5.3.2. Uso no Debian</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.manipulating-packages-with-dpkg.html">5.4. Manipulando Pacotes com o <code
                     class="command">dpkg</code></a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm139835270684432">5.4.1. Instalando pacotes</a></span></dt><dt><span
+                      href="sect.manipulating-packages-with-dpkg.html#idm140561528723360">5.4.1. Instalando pacotes</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm139835270647696">5.4.2. Remoção de pacote</a></span></dt><dt><span
+                      href="sect.manipulating-packages-with-dpkg.html#idm140561528686768">5.4.2. Remoção de pacote</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm139835270634592">5.4.3. Consultando o banco de dados do <code
+                      href="sect.manipulating-packages-with-dpkg.html#idm140561528673664">5.4.3. Consultando o banco de dados do <code
                         class="command">dpkg</code> e inspecionando os arquivos <code
                         class="filename">.deb</code></a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm139835270585392">5.4.4. Arquivo de log do <code
+                      href="sect.manipulating-packages-with-dpkg.html#idm140561528624464">5.4.4. Arquivo de log do <code
                         class="command">dpkg</code></a></span></dt><dt><span
                     class="section"><a
                       href="sect.manipulating-packages-with-dpkg.html#sect.multi-arch">5.4.5. Suporte Multi-Arqu</a></span></dt></dl></dd><dt><span
@@ -121,9 +121,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.binary-package-structure"></a>5.1. Estrutura de um Pacote Binário</h2></div></div></div><a
-            id="idm139835279560800"
+            id="idm140561538605712"
             class="indexterm"></a><a
-            id="idm139835275485520"
+            id="idm140561529693408"
             class="indexterm"></a><div
             class="para">
 			O formato do pacote Debian foi projetado para que seu conteúdo possa ser extraído em qualquer sistema Unix que contenha os clássicos comandos <code
@@ -134,25 +134,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">bzip2</code>). Esta característica aparentemente trivial é importante para a portabilidade e recuperação de desastres.
 		</div><div
             class="para">
-			Imagine, por exemplo, que você apagou acidentalmente o programa <code
-              class="command">dpkg</code>, e que portanto você não pode mais instalar pacotes Debian. O <code
-              class="command">dpkg</code> sendo um pacote Debian em si, ao que parece seu sistema seria feito por... Felizmente, você conhece o formato de um pacote e pode então baixar o arquivo <code
-              class="filename">.deb</code> do pacote <span
-              class="pkg pkg">dpkg</span> e instalar ele manualmente (veja a barra lateral sidebar <a
+			Imagine, for example, that you mistakenly deleted the <code
+              class="command">dpkg</code> program, and that you could thus no longer install Debian packages. <code
+              class="command">dpkg</code> being a Debian package itself, it would seem your system would be done for... Fortunately, you know the format of a package and can therefore download the <code
+              class="filename">.deb</code> file of the <span
+              class="pkg pkg">dpkg</span> package and install it manually (see sidebar <a
               class="xref"
               href="packaging-system.html#sidebar.dpkg-apt-ar"><span
                 class="emphasis"><em>FERRAMENTAS</em></span> <code
                 class="command">dpkg</code>, <code
                 class="command">APT</code> e <code
-                class="command">ar</code></a>) . Se por algum infortúnio um ou mais dos programas <code
+                class="command">ar</code></a>). If by some misfortune one or more of the programs <code
               class="command">ar</code>, <code
-              class="command">tar</code> ou <code
+              class="command">tar</code> or <code
               class="command">gzip</code>/<code
               class="command">xz</code>/<code
-              class="command">bzip2</code> tenham sumido, você só precisa copiar o programa faltoso de outro sistema (já que qualquer um destes opera de modo totalmente autônomo, sem dependências, uma simples cópia será suficiente). Se o seu sistema sofreu um desfortunio ainda mais ultrajante, e mesmo esses não funcionam (talvez o sistema de bibliotecas mais profundo esteja faltando?), você deve tentar a versão estática do <code
-              class="command">busybox</code>, a quak é ainda mais autosuficiente, e provê sub comandos tais como <code
+              class="command">bzip2</code> have disappeared, you will only need to copy the missing program from another system (since each of these operates in a completely autonomous manner, without dependencies, a simple copy will suffice). If your system suffered some even more outrageous fortune, and even these don't work (maybe the deepest system libraries are missing?), you should try the static version of <code
+              class="command">busybox</code> (provided in the <span
+              class="pkg pkg">busybox-static</span> package), which is even more self-contained, and provides subcommands such as <code
               class="command">busybox ar</code>, <code
-              class="command">busybox tar</code> e <code
+              class="command">busybox tar</code> and <code
               class="command">busybox gunzip</code>.
 		</div><div
             class="sidebar"><a
@@ -163,11 +164,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="command">dpkg</code>, <code
                         class="command">APT</code> e <code
                         class="command">ar</code></strong></p></div></div></div><a
-              id="idm139835279423152"
+              id="idm140561538639424"
               class="indexterm"></a><a
-              id="idm139835279422032"
+              id="idm140561538638304"
               class="indexterm"></a><a
-              id="idm139835279420912"
+              id="idm140561538637184"
               class="indexterm"></a><div
               class="para">
 			<code
@@ -177,25 +178,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 			<code
                 class="command">APT</code> é um conjunto de programas que permite a execução alto nível de modificações no sistema: instalando ou removendo pacotes (enquanto satisfaz dependências), atualizando o sistema, listando pacotes disponíveis, etc.
-		</div><div
+		</div><a
+              id="idm140561527338400"
+              class="indexterm"></a><div
               class="para">
-			<a
-                id="idm139835265592048"
-                class="indexterm"></a> Assim como o programa <code
-                class="command">ar</code>, ele permite manipular arquivos do mesmo nome: <code
+			As for the <code
+                class="command">ar</code> program, it allows handling files of the same name: <code
                 class="command">ar t <em
-                  class="replaceable">arquivamento</em></code> mostra a lista de arquivos contidos no arquivamento, <code
+                  class="replaceable">archive</em></code> displays the list of files contained in such an archive, <code
                 class="command">ar x <em
-                  class="replaceable">arquivmento</em></code> extrai os arquivos do arquivamento para a pasta de trabalho atual, <code
+                  class="replaceable">archive</em></code> extracts the files from the archive into the current working directory, <code
                 class="command">ar d <em
-                  class="replaceable">arquivamento</em> <em
-                  class="replaceable">arquivo</em></code> apaga um arquivo do arquivamento, etc. Sua página man (<span
+                  class="replaceable">archive</em> <em
+                  class="replaceable">file</em></code> deletes a file from the archive, etc. Its man page (<span
                 class="citerefentry"><span
-                  class="refentrytitle">ar</span>(1)</span>) documenta todas as demais funcionalidades. <code
-                class="command">ar</code> é uma ferramenta muito rudimentar que um administrador Unix usará muito pouco, mas os admins usarão com frequencia o <code
-                class="command">tar</code>, um programa de gerencia de arquivos e arquivamentos. É por isso que é fácil recuperar o <code
-                class="command">dpkg</code> no caso de uma remoção errada. Você terá apenas que baixar o pacote Debian e extrair o conteúdo do arquivamento <code
-                class="filename">data.tar.gz</code> na raiz do sistema (<code
+                  class="refentrytitle">ar</span>(1)</span>) documents all its other features. <code
+                class="command">ar</code> is a very rudimentary tool that a Unix administrator would only use on rare occasions, but admins routinely use <code
+                class="command">tar</code>, a more evolved archive and file management program. This is why it is easy to restore <code
+                class="command">dpkg</code> in the event of an erroneous deletion. You would only have to download the Debian package and extract the content from the <code
+                class="filename">data.tar.gz</code> archive in the system's root (<code
                 class="filename">/</code>):
 		</div><pre
               class="screen">
@@ -302,10 +303,9 @@ $ </code><strong
                 class="listitem"><div
                   class="para">
 					<code
-                    class="filename">data.tar.gz</code>. Este arquivamento contém todos os arquivos para serem extraídos do pacote; é onde os arquivos executáveis, documentação, etc, estão todos estocados. Alguns pacotes podem usar outros formatos de compressão, e neste caso o arquivo terá um nome diferente (<code
-                    class="filename">data.tar.bz2</code> para bzip2, <code
-                    class="filename">data.tar.xz</code> para XZ, <code
-                    class="filename">data.tar.lzma</code> para LZMA).
+                    class="filename">data.tar.gz</code>. This archive contains all of the files to be extracted from the package; this is where the executable files, documentation, etc., are all stored. Some packages may use other compression formats, in which case the file will be named differently (<code
+                    class="filename">data.tar.bz2</code> for bzip2, <code
+                    class="filename">data.tar.xz</code> for XZ).
 				</div></li></ul></div></div></div><ul
         class="docnav"><li
           class="previous"><a

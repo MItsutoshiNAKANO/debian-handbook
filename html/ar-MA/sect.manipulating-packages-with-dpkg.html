@@ -70,33 +70,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. معالجة الحزم باستخدام <code
                   class="command">dpkg</code></h2></div></div></div><a
-          id="idm139700947934944"
+          id="idm140156535556368"
           class="indexterm"></a><div
           class="para">
 			<code
-            class="command">dpkg</code> هو الأمر الأساسي لمعالجة حزم دبيان في النظام. إذا كنت تملك حزم <code
-            class="filename">‎.deb</code>، فإن <code
-            class="command">dpkg</code> هو المسؤول عن تثبيتها أو تحليل محتوياتها. لكن رؤية هذا البرنامج لعالم دبيان جزئية: فهو يعرف ما هو مُثبَّت على النظام، وما يُعطَى له في سطر الأوامر، لكن لا يعرف شيئاً عن الحزم المتوفرة الأخرى. ولذلك فهو يفشل إذا لم تكن الاعتماديات محققة. أما الأدوات الأخرى مثل <code
-            class="command">apt-get</code>، من ناحية أخرى، سوف تنشئ قائمة بالاعتماديات لتثبيت كل شيء آلياً قدر المستطاع.
+            class="command">dpkg</code> is the base command for handling Debian packages on the system. If you have <code
+            class="filename">.deb</code> packages, it is <code
+            class="command">dpkg</code> that allows installation or analysis of their contents. But this program only has a partial view of the Debian universe: it knows what is installed on the system, and whatever it is given on the command line, but knows nothing of the other available packages. As such, it will fail if a dependency is not met. Tools such as <code
+            class="command">apt</code>, on the contrary, will create a list of dependencies to install everything as automatically as possible.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>ملاحظة</em></span> <code
-                      class="command">dpkg</code> أو <code
-                      class="command">apt-get</code>؟</strong></p></div></div></div><div
+                      class="emphasis"><em>NOTE</em></span> <code
+                      class="command">dpkg</code> or <code
+                      class="command">apt</code>?</strong></p></div></div></div><div
             class="para">
-			يجب اعتبار <code
-              class="command">dpkg</code> أداة نظام (backend)، و <code
-              class="command">apt-get</code> كأداة أقرب للمستخدم، تتجاوز قيود الأداة الأولى. تعمل هذه الأدوات معاً، ولكل منها خصوصياتها، وتتناسب مع مهام محددة.
+			<code
+              class="command">dpkg</code> should be seen as a system tool (backend), and <code
+              class="command">apt</code> as a tool closer to the user, which overcomes the limitations of the former. These tools work together, each one with its particularities, suited to specific tasks.
 		</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700947926944"></a>5.4.1. تثبيت الحزم</h3></div></div></div><a
-            id="idm139700947926144"
+                    id="idm140156535548672"></a>5.4.1. تثبيت الحزم</h3></div></div></div><a
+            id="idm140156535547872"
             class="indexterm"></a><a
-            id="idm139700947924704"
+            id="idm140156535546432"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">‎--install</code>.
 			</div><div
             class="example"><a
-              id="idm139700947921152"></a><p
+              id="idm140156535542880"></a><p
               class="title"><strong>مثال 5.2. تثبيت حزمة باستخدام <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -127,7 +127,7 @@ Processing triggers for mime-support (3.58) ...</code></pre></div></div><div
               class="command">dpkg</code> (بما أن كل استدعاء له كلفة، بسبب تحميل قاعدة البيانات إلى الذاكرة، خصوصاً لائحة الملفات المثبتة على النظام).
 			</div><div
             class="example"><a
-              id="idm139700947915424"></a><p
+              id="idm140156535537152"></a><p
               class="title"><strong>مثال 5.3. فك الضغط والإعداد على مرحلتين</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -145,9 +145,9 @@ Processing triggers for mime-support (3.58) ...
                   class="computeroutput">Setting up man-db (2.7.0.2-5) ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm139700947911648"
+            id="idm140156535533376"
             class="indexterm"></a><a
-            id="idm139700947910208"
+            id="idm140156535531936"
             class="indexterm"></a><div
             class="para">
 				أحياناً يخفق <code
@@ -176,7 +176,7 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                     class="title"><strong><span
                         class="emphasis"><em>تحذير</em></span> الاستخدام الفعال لخيارات <code
                         class="literal">‎--force-*‎</code></strong></p></div></div></div><a
-              id="idm139700947900000"
+              id="idm140156535521728"
               class="indexterm"></a><div
               class="para">
 				إذا لم تأخذ حذرك، فقد يوصلك استخدام أحد خيارات <code
@@ -184,19 +184,19 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                 class="pkg pkg">rdesktop</span> مع تجاهل اعتمادها على نسخة أحدث من <span
                 class="pkg pkg">libc6</span>:
 			</div><pre
-              class="programlisting"># apt-get dist-upgrade
+              class="programlisting"># apt full-upgrade
 [...]
-You can run "apt-get -f install" to correct these problems.
-The following packages contain unmet dependencies:
-  rdesktop: Depends on: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
-E: missing dependencies. Try to use the option -f.
+You might want to run 'apt-get -f install' to correct these.
+The following packages have unmet dependencies:
+  rdesktop: Depends: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
+E: Unmet dependencies. Try using -f.
 </pre><div
               class="para">
-				قد يختار مدير النظام الشجاع الواثق من صحة تحليلاته تجاهل اعتمادية أو تضارب ما ويستخدم خيار <code
-                class="literal">‎--force-*‎</code>‎ الموافق. في هذه الحالة، إذا كان يريد أن يبقى قادراً على استخدام <code
-                class="command">apt-get</code> أو <code
-                class="command">aptitude</code>، عليه تحرير الملف <code
-                class="filename">‎/var/lib/dpkg/status</code> لحذف أو تعديل الاعتمادية، أو التضارب، الذي اختار تجاوزه.
+				A courageous administrator who is certain of the correctness of their analysis may choose to ignore a dependency or conflict and use the corresponding <code
+                class="literal">--force-*</code> option. In this case, if they want to be able to continue to use <code
+                class="command">apt</code> or <code
+                class="command">aptitude</code>, they must edit <code
+                class="filename">/var/lib/dpkg/status</code> to delete/modify the dependency, or conflict, that they chose to override.
 			</div><div
               class="para">
 				هذا التعديل تعديل بشع، ويجب عدم استخدامه أبداً، إلا في حال الضرورة القصوى. في أغلب الأحيان، يكون الحل الأنسب هو إعادة ترجمة الحزمة التي تسبب المشكلة (انظر <a
@@ -209,14 +209,14 @@ E: missing dependencies. Try to use the option -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700947889344"></a>5.4.2. إزالة حزمة</h3></div></div></div><a
-            id="idm139700947888544"
+                    id="idm140156535511264"></a>5.4.2. إزالة حزمة</h3></div></div></div><a
+            id="idm140156535510464"
             class="indexterm"></a><a
-            id="idm139700947887584"
+            id="idm140156535509504"
             class="indexterm"></a><a
-            id="idm139700947886624"
+            id="idm140156535508544"
             class="indexterm"></a><a
-            id="idm139700947885184"
+            id="idm140156535507104"
             class="indexterm"></a><div
             class="para">
 				استدعاء <code
@@ -227,7 +227,7 @@ E: missing dependencies. Try to use the option -f.
               class="literal">‎--purge</code>، يليه اسم الحزمة.
 			</div><div
             class="example"><a
-              id="idm139700947880272"></a><p
+              id="idm140156535502192"></a><p
               class="title"><strong>مثال 5.4. Removal and purge of the <span
                   class="pkg pkg">debian-cd</span> package</strong></p><div
               class="example-contents"><pre
@@ -246,14 +246,14 @@ Purging configuration files for debian-cd ...</code></pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700947875952"></a>5.4.3. الاستعلام في قاعدة بيانات <code
+                    id="idm140156535497872"></a>5.4.3. الاستعلام في قاعدة بيانات <code
                     class="command">dpkg</code> وفحص ملفات <code
                     class="filename">‎.deb</code></h3></div></div></div><a
-            id="idm139700947874384"
+            id="idm140156535496304"
             class="indexterm"></a><a
-            id="idm139700947872944"
+            id="idm140156535494864"
             class="indexterm"></a><a
-            id="idm139700947871536"
+            id="idm140156535493456"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -284,7 +284,7 @@ Purging configuration files for debian-cd ...</code></pre></div></div></div><div
               class="literal">‎-I</code>)، الذي يعرض ترويسات حزمة دبيان هذه.
 			</div><div
             class="example"><a
-              id="idm139700947859184"></a><p
+              id="idm140156535481104"></a><p
               class="title"><strong>مثال 5.5. الاستعلامات المختلفة باستخدام <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -435,9 +435,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>التعمق أكثر</em></span> المقارنة بين الإصدارات</strong></p></div></div></div><a
-              id="idm139700947845056"
+              id="idm140156535466976"
               class="indexterm"></a><a
-              id="idm139700947844128"
+              id="idm140156535466048"
               class="indexterm"></a><div
               class="para">
 				بما أن <code
@@ -495,7 +495,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700947825792"></a>5.4.4. سجلات <code
+                    id="idm140156535447712"></a>5.4.4. سجلات <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				يحتفظ <code
@@ -508,9 +508,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. دعم تعدد المعماريات</h3></div></div></div><a
-            id="idm139700947820192"
+            id="idm140156535442112"
             class="indexterm"></a><a
-            id="idm139700947819264"
+            id="idm140156535441184"
             class="indexterm"></a><div
             class="para">
 				تحوي جميع حزم دبيان حقل <code
@@ -525,12 +525,12 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139700947814128"></a>5.4.5.1. تفعيل تعدد المعماريات</h4></div></div></div><div
+                      id="idm140156535436048"></a>5.4.5.1. تفعيل تعدد المعماريات</h4></div></div></div><div
               class="para">
-					يسمح تعدد المعماريات في <code
-                class="command">dpkg</code> للمستخدمين بتعريف ”معماريات أجنبية“ يمكن تثبيت ملفاتها الثنائية على النظام. يتم هذا بسهولة عبر الأمر <code
-                class="command">dpkg --add-architecture</code> كما في المثال التالي. هناك أمر مقابل لإسقاط دعم معمارية أجنبية هو <code
-                class="command">dpkg --remove-architecture</code>، لكن لا يمكن استخدامه إلا عندما لا تبقى أي حزمة من حزم تلك المعمارية على النظام.
+					<code
+                class="command">dpkg</code>'s multi-arch support allows users to define “foreign architectures” that can be installed on the current system. This is simply done with <code
+                class="command">dpkg --add-architecture</code> like in the example below. There is a corresponding <code
+                class="command">dpkg --remove-architecture</code> to drop support of a foreign architecture, but it can only be used when no packages of this architecture remain.
 				</div><pre
               class="screen">
 <code
@@ -587,8 +587,8 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
                   class="filename">Packages</code> المقابلة لها أثناء عملية تحديث لوائح الحزم.
 				</div><div
                 class="para">
-					يمكن بعدها تثبيت الحزم الأجنبية باستخدام <code
-                  class="command">apt-get install <em
+					Foreign packages can then be installed with <code
+                  class="command">apt install <em
                     class="replaceable">package</em>:<em
                     class="replaceable">architecture</em></code>.
 				</div></div><div
@@ -598,22 +598,15 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
                           class="emphasis"><em>ممارسة عملية</em></span> استخدام ملفات i386 الثنائية على amd64</strong></p></div></div></div><div
                 class="para">
 					هناك عدة حالات يستفاد فيها من تعدد المعماريات، لكن أشهرها هي إمكانية تنفيذ ملفات 32 بت الثنائية (i386) على نظم 64 بت (amd64)، خصوصاً وأن بعض البرمجيات المحتكرة (مثل سكايب) متوفرة فقط بنسخ 32 بت.
-				</div><div
-                class="para">
-					قبل تعدد المعماريات، كان عليك تثبيت <span
-                  class="pkg pkg">ia32-libs</span> عندما تريد استخدام تطبيقات 32 بت على نظام 64 بت، ولذلك للحصول على نسخ 32 بت من المكتبات الأكثر انتشاراً. تلك الحزمة كانت التفافاً كبيراً أعاد تحزيم مكتبات 32 بت في حزمة معماريتها ”amd64“.
-				</div><a
-                id="idm139700947794656"
-                class="indexterm"></a></div></div><div
+				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139700947792912"></a>5.4.5.2. التعديلات المتعلقة بتعدد المعماريات</h4></div></div></div><div
+                      id="idm140156535418000"></a>5.4.5.2. التعديلات المتعلقة بتعدد المعماريات</h4></div></div></div><div
               class="para">
 					To make multi-arch actually useful and usable, libraries had to be repackaged and moved to an architecture-specific directory so that multiple copies (targeting different architectures) can be installed alongside. Such updated packages contain the “<code
                 class="literal">Multi-Arch: same</code>” header field to tell the packaging system that the various architectures of the package can be safely co-installed (and that those packages can only satisfy dependencies of packages of the same architecture). Since multi-arch made its debut in Debian <span
-                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet (but all libraries which were embedded in <span
-                class="pkg pkg">ia32-libs</span> do!).
+                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet.
 				</div><pre
               class="screen">
 $ <strong

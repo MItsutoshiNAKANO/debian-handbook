@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ar-MA-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="دفتر مدير دبيان" /><link
@@ -69,34 +69,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-authentication"></a>6.5. التحقق من سلامة الحزم</h2></div></div></div><a
-          id="idm139700962991008"
+          id="idm140156518151312"
           class="indexterm"></a><a
-          id="idm139700962989600"
+          id="idm140156518149904"
           class="indexterm"></a><a
-          id="idm139700962988160"
+          id="idm140156518148464"
           class="indexterm"></a><a
-          id="idm139700962986720"
+          id="idm140156518147024"
           class="indexterm"></a><a
-          id="idm139700962985280"
+          id="idm140156518145584"
           class="indexterm"></a><div
           class="para">
 			الأمن هام جداً بالنسبة لمدراء النظم في شركة فلكوت. لذا، فهم يحتاجون للتأكد من تثبيت الحزم التي يوثق بأنها جاءت من دبيان وأنها لم تُعدّل على الطريق. يمكن أن يحاول المخرب إضافة شفرة خبيثة إلى حزمة شرعية. إذا تم تثبيت حزمة كهذه، فقد تنفذ أي شيء صممها المخرب لتنفيذه، بما في ذلك مثلا كشف كلمات السر أو معلومات سريّة. لتفادي هذا الخطر، تقدّم دبيان ختماً مقاوماً للعبث يضمن — ساعة تثبيت الحزمة — ورود الحزمة من مشرفها الرسمي وأن أية أطراف ثالثة لم تُعدِّلها.
 		</div><div
           class="para">
-			يعمل نظام الختم باستخدام سلسلة من شفرات التحقق وتوقيع. الملف الموقَّع هو الملف <code
-            class="filename">Release</code>، المتوفر على مرايا دبيان. يحوي الملف قائمة بملفات <code
-            class="filename">Packages</code> (متضمنة الصيغ المضغوطة لهذه الملفات، <code
-            class="filename">Packages.gz</code> و<code
-            class="filename">Packages.bz2</code>، والنسخ التصاعدية منها)، بالإضافة إلى قيم MD5، و SHA1 و SHA256 لهذه الملفات، التي تضمن أن أحداً لم يعبث بها. تحوي ملفات <code
-            class="filename">Packages</code> هذه قائمة بحزم دبيان المتوفرة على المرآة، بالإضافة إلى شِفرات التحقق الخاصة بها، التي تضمن بدورها أن أحداً لم يعبث بمحتوى الحزم نفسها.
+			The seal works with a chain of cryptographical hashes and a signature. The signed file is the <code
+            class="filename">Release</code> file, provided by the Debian mirrors. It contains a list of the <code
+            class="filename">Packages</code> files (including their compressed forms, <code
+            class="filename">Packages.gz</code> and <code
+            class="filename">Packages.xz</code>, and the incremental versions), along with their MD5, SHA1 and SHA256 hashes, which ensures that the files haven't been tampered with. These <code
+            class="filename">Packages</code> files contain a list of the Debian packages available on the mirror, along with their hashes, which ensures in turn that the contents of the packages themselves haven't been altered either.
 		</div><a
-          id="idm139700962979008"
+          id="idm140156518139600"
           class="indexterm"></a><a
-          id="idm139700962977888"
+          id="idm140156518138480"
           class="indexterm"></a><a
-          id="idm139700962976464"
+          id="idm140156518137056"
           class="indexterm"></a><a
-          id="idm139700962975344"
+          id="idm140156518135936"
           class="indexterm"></a><div
           class="para">
 			يدير الأمر <code
@@ -155,14 +155,14 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ممارسة عملية</em></span> إضافة مفاتيح موثوقة</strong></p></div></div></div><a
-            id="idm139700962964768"
+            id="idm140156518125360"
             class="indexterm"></a><a
-            id="idm139700962963808"
+            id="idm140156518124400"
             class="indexterm"></a><div
             class="para">
-			عند إضافة مصدر حزم لأطراف ثالثة إلى الملف <code
-              class="filename">sources.list</code>، يجب أن تطلب من APT أن تثق بمفتاح GPG الخاص بها (وإلا ستظل تتذمر من أنها لا تضمن لك سلامة الحزم القادمة من ذلك المستودع). الخطوة الأولى طبعاً هي الحصول على المفتاح العام. في معظم الأوقات، سيعطى المفتاح بشكل ملف نصي صغير، سندعوه <code
-              class="filename">key.asc</code> في الأمثلة التالية.
+			When a third-party package source is added to the <code
+              class="filename">sources.list</code> file, APT needs to be told to trust the corresponding GPG authentication key (otherwise it will keep complaining that it can't ensure the authenticity of the packages coming from that repository). The first step is of course to get the public key. More often than not, the key will be provided as a small text file, which we will call <code
+              class="filename">key.asc</code> in the following examples.
 		</div><div
             class="para">
 			لإضافة المفتاح إلى حلقة المفاتيح الموثوقة، يمكن لمدير النظام استدعاء <code
@@ -172,7 +172,7 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
               class="guisubmenu"><strong>Repositories</strong></span> إمكانية استيراد مفتاح من الملف <code
               class="filename">key.asc</code>.
 		</div><a
-            id="idm139700962957424"
+            id="idm140156518118080"
             class="indexterm"></a><div
             class="para">
 			بالنسبة للأشخاص الذين يريدون برنامجاً مخصصاً وتفاصيل أكثر عن المفاتيح الموثوقة، يمكن استخدام <code

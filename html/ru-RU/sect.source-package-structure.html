@@ -68,21 +68,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.source-package-structure"></a>5.3. Структура исходного пакета</h2></div></div></div><a
-          id="idm140254113793200"
+          id="idm140679276948432"
           class="indexterm"></a><a
-          id="idm140254113791792"
+          id="idm140679276947024"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140254113790352"></a>5.3.1. Формат</h3></div></div></div><a
-            id="idm140254113789552"
+                    id="idm140679276945584"></a>5.3.1. Формат</h3></div></div></div><a
+            id="idm140679276944784"
             class="indexterm"></a><a
-            id="idm140254113788592"
+            id="idm140679276943824"
             class="indexterm"></a><a
-            id="idm140254113787312"
+            id="idm140679276942544"
             class="indexterm"></a><a
-            id="idm140254113786032"
+            id="idm140679276941264"
             class="indexterm"></a><div
             class="para">
 				Пакет с исходным кодом, как правило, состоит из трех файлов: <code
@@ -103,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="sect.package-authentication.html">Раздел 6.5, «Checking Package Authenticity»</a> для получения дополнительной информации по этому вопросу.
 			</div><div
             class="example"><a
-              id="idm140254113778416"></a><p
+              id="idm140679276933648"></a><p
               class="title"><strong>Пример 5.1. Файл <code
                   class="filename">.dsc</code></strong></p><div
               class="example-contents"><pre
@@ -147,7 +147,7 @@ oltfl05z/AI+vYsW482YrCz0fxNAKAvkyuPhDebYI8jnKWeAANoqmKpsNc/HYyvT
 edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
 =Wtoa
 -----END PGP SIGNATURE-----</pre></div></div><a
-            id="idm140254113775104"
+            id="idm140679276930336"
             class="indexterm"></a><div
             class="para">
 				Обратите внимание, что исходный пакет тоже имеет зависимости (<code
@@ -198,9 +198,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
                   class="replaceable">component</em>.tar.gz</code> archives can be included. This is useful with software that is distributed in several upstream components but for which a single source package is desired. These archives can also be compressed with <code
                 class="command">bzip2</code> or <code
                 class="command">xz</code> rather than <code
-                class="command">gzip</code> (<code
-                class="command">lzma</code> is also supported by <code
-                class="command">dpkg-source</code> but not accepted into the official archive), which saves disk space and network resources. Finally, the monolithic patch, <code
+                class="command">gzip</code>, which saves disk space and network resources. Finally, the monolithic patch, <code
                 class="filename">.diff.gz</code> is replaced by a <code
                 class="filename">.debian.tar.gz</code> archive containing the compiling instructions and a set of upstream patches contributed by the package maintainer. These last are recorded in a format compatible with <code
                 class="command">quilt</code> — a tool that facilitates the management of a series of patches.
@@ -218,13 +216,13 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ИНСТРУМЕНТ</em></span> Распаковка пакетов c исходным кодом</strong></p></div></div></div><a
-              id="idm140254113744912"
+              id="idm140679276339584"
               class="indexterm"></a><a
-              id="idm140254113743792"
+              id="idm140679276338464"
               class="indexterm"></a><a
-              id="idm140254113742784"
+              id="idm140679276337456"
               class="indexterm"></a><a
-              id="idm140254113741776"
+              id="idm140679276336448"
               class="indexterm"></a><div
               class="para">
 				If you have a source package, you can use the <code
@@ -250,7 +248,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140254113733472"></a>5.3.2. Использование в Debian</h3></div></div></div><div
+                    id="idm140679276328144"></a>5.3.2. Использование в Debian</h3></div></div></div><div
             class="para">
 				Пакеты с исходными кодами являются основой всего в системе Debian. При помощи них собраны все остальные пакеты Debian, и любое изменение в двоичных пакетах — следствие изменений, внесенных в исходный пакет. Сопровождающие Debian работают только с исходными пакетами, однако знают, какими окажутся последствия их действий для двоичных пакетов. Так что плоды их трудов находятся в исходных пакетах: к ним можно легко вернуться, и они есть начало всего.
 			</div><div

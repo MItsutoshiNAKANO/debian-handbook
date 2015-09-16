@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-pt-BR-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="O Manual do Administrador Debian" /><link
@@ -28,7 +28,7 @@
         title="Capítulo 6. Manutenções e atualizações: As ferramentas APT" /><link
         rel="prev"
         href="sect.apt-get.html"
-        title="6.2. Comandos aptitude e apt-get" /><link
+        title="6.2. aptitude, apt-get, and apt Commands" /><link
         rel="next"
         href="sect.apt-frontends.html"
         title="6.4. Interfaces: aptitude, synaptic" /><link
@@ -69,21 +69,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.apt-cache"></a>6.3. O Comando <code
                   class="command">apt-cache</code></h2></div></div></div><a
-          id="idm139835269767504"
+          id="idm140561526166944"
           class="indexterm"></a><a
-          id="idm139835269766384"
+          id="idm140561526165824"
           class="indexterm"></a><a
-          id="idm139835269764944"
+          id="idm140561526164384"
           class="indexterm"></a><a
-          id="idm139835269763536"
+          id="idm140561526162976"
           class="indexterm"></a><a
-          id="idm139835269762576"
+          id="idm140561526162016"
           class="indexterm"></a><div
           class="para">
-			O comando <code
-            class="command">apt-cache</code> pode apresentar grande parte das informações armazenadas no banco de dados interno do APT. Esta informação é uma espécie de cache, pois é recolhida de diferentes fontes, listadas no arquivo <code
-            class="filename">sources.list</code>. Isso acontece durante a operação do <code
-            class="command">apt-get update</code>.
+			The <code
+            class="command">apt-cache</code> command can display much of the information stored in APT's internal database. This information is a sort of cache since it is gathered from the different sources listed in the <code
+            class="filename">sources.list</code> file. This happens during the <code
+            class="command">apt update</code> operation.
 		</div><div
           class="sidebar"><a
             id="sidebar.cache"></a><div
@@ -99,32 +99,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/var/lib/apt/lists/</code>) e buscas são feitas neles. Similarmente, <code
               class="filename">/var/cache/apt/archives/</code> contém um cache de pacotes já baixados para evitar baixá-los de novo se você precisar deles depois de uma remoção.
 		</div></div><a
-          id="idm139835269754448"
+          id="idm140561526153904"
           class="indexterm"></a><a
-          id="idm139835269753328"
+          id="idm140561526152784"
           class="indexterm"></a><a
-          id="idm139835269752208"
+          id="idm140561526151664"
           class="indexterm"></a><a
-          id="idm139835269751088"
+          id="idm140561526150544"
+          class="indexterm"></a><a
+          id="idm140561526149424"
+          class="indexterm"></a><a
+          id="idm140561526148304"
           class="indexterm"></a><div
           class="para">
-			O comando <code
-            class="command">apt-cache</code> pode buscar pacotes baseado em palavras-chave com <code
+			The <code
+            class="command">apt-cache</code> command can do keyword-based package searches with <code
             class="command">apt-cache search <em
-              class="replaceable">palavra-chave</em></code>. Também pode mostrar os cabeçalhos das versões disponíveis dos pacotes com <code
+              class="replaceable">keyword</em></code>. It can also display the headers of the package's available versions with <code
             class="command">apt-cache show <em
-              class="replaceable">pacote</em></code>. Este comando fornece a descrição do pacote, suas dependências, o nome de seu mantenedor, etc. Observe que <code
-            class="command">aptitude search</code> e <code
-            class="command">aptitude show</code> funcionam do mesmo jeito.
+              class="replaceable">package</em></code>. This command provides the package's description, its dependencies, the name of its maintainer, etc. Note that <code
+            class="command">apt search</code>, <code
+            class="command">apt show</code>, <code
+            class="command">aptitude search</code>, <code
+            class="command">aptitude show</code> work in the same way.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">axi-cache</code></strong></p></div></div></div><a
-            id="idm139835269745008"
+            id="idm140561526141264"
             class="indexterm"></a><a
-            id="idm139835269743888"
+            id="idm140561526140144"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -159,11 +165,11 @@ More terms: search debian searching strigi debtags bsearch libbsearch
 More tags: suite::debian works-with::software:package role::program interface::commandline implemented-in::c++ admin::package-management use::analysing
 `axi-cache more' fornecerá mais resultados
 </pre></div><a
-          id="idm139835269735312"
+          id="idm140561526131568"
           class="indexterm"></a><a
-          id="idm139835269734192"
+          id="idm140561526130448"
           class="indexterm"></a><a
-          id="idm139835269733072"
+          id="idm140561526129328"
           class="indexterm"></a><div
           class="para">
 			Algumas funcionalidades são raramente usadas. Por exemplo, <code
@@ -174,7 +180,7 @@ More tags: suite::debian works-with::software:package role::program interface::c
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.apt-get.html"><strong>Anterior</strong>6.2. Comandos aptitude e apt-get</a></li><li
+            href="sect.apt-get.html"><strong>Anterior</strong>6.2. aptitude, apt-get, and apt Commands</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Acima</strong></a></li><li

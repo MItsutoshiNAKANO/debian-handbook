@@ -80,28 +80,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       href="sect.package-meta-information.html#sect.control">5.2.1. Описание: файл <code
                         class="filename">control</code></a></span></dt><dt><span
                     class="section"><a
-                      href="sect.package-meta-information.html#idm140254113346192">5.2.2. Сценарии настройки</a></span></dt><dt><span
+                      href="sect.package-meta-information.html#idm140679287887008">5.2.2. Сценарии настройки</a></span></dt><dt><span
                     class="section"><a
                       href="sect.package-meta-information.html#sect.conffiles">5.2.3. Контрольные суммы, список конфигурационных файлов</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.source-package-structure.html">5.3. Структура исходного пакета</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.source-package-structure.html#idm140254113790352">5.3.1. Формат</a></span></dt><dt><span
+                      href="sect.source-package-structure.html#idm140679276945584">5.3.1. Формат</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.source-package-structure.html#idm140254113733472">5.3.2. Использование в Debian</a></span></dt></dl></dd><dt><span
+                      href="sect.source-package-structure.html#idm140679276328144">5.3.2. Использование в Debian</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.manipulating-packages-with-dpkg.html">5.4. Работа с пакетами при помощи <code
                     class="command">dpkg</code></a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140254113719696">5.4.1. Установка пакетов</a></span></dt><dt><span
+                      href="sect.manipulating-packages-with-dpkg.html#idm140679276315296">5.4.1. Установка пакетов</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140254113680448">5.4.2. Удаление пакета</a></span></dt><dt><span
+                      href="sect.manipulating-packages-with-dpkg.html#idm140679276276496">5.4.2. Удаление пакета</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140254113666688">5.4.3. Запросы к базе данных <code
+                      href="sect.manipulating-packages-with-dpkg.html#idm140679276262736">5.4.3. Запросы к базе данных <code
                         class="command">dpkg</code> и анализ файлов <code
                         class="filename">.deb</code></a></span></dt><dt><span
                     class="section"><a
-                      href="sect.manipulating-packages-with-dpkg.html#idm140254113615584">5.4.4. Файл журнала <code
+                      href="sect.manipulating-packages-with-dpkg.html#idm140679276211632">5.4.4. Файл журнала <code
                         class="command">dpkg</code></a></span></dt><dt><span
                     class="section"><a
                       href="sect.manipulating-packages-with-dpkg.html#sect.multi-arch">5.4.5. Поддержка мультиархитектуры</a></span></dt></dl></dd><dt><span
@@ -121,9 +121,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.binary-package-structure"></a>5.1. Структура двоичных пакетов</h2></div></div></div><a
-            id="idm140254107511632"
+            id="idm140679283611984"
             class="indexterm"></a><a
-            id="idm140254122517776"
+            id="idm140679289430976"
             class="indexterm"></a><div
             class="para">
 			Формат пакета Debian устроен таким образом, что его содержимое может быть извлеченно в любой Unix-системе, где есть такие команды как <code
@@ -150,7 +150,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">gzip</code>/<code
               class="command">xz</code>/<code
               class="command">bzip2</code> have disappeared, you will only need to copy the missing program from another system (since each of these operates in a completely autonomous manner, without dependencies, a simple copy will suffice). If your system suffered some even more outrageous fortune, and even these don't work (maybe the deepest system libraries are missing?), you should try the static version of <code
-              class="command">busybox</code>, which is even more self-contained, and provides subcommands such as <code
+              class="command">busybox</code> (provided in the <span
+              class="pkg pkg">busybox-static</span> package), which is even more self-contained, and provides subcommands such as <code
               class="command">busybox ar</code>, <code
               class="command">busybox tar</code> and <code
               class="command">busybox gunzip</code>.
@@ -163,11 +164,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="command">dpkg</code>, <code
                         class="command">APT</code> и <code
                         class="command">ar</code></strong></p></div></div></div><a
-              id="idm140254116184176"
+              id="idm140679276531440"
               class="indexterm"></a><a
-              id="idm140254116183056"
+              id="idm140679276530320"
               class="indexterm"></a><a
-              id="idm140254116181936"
+              id="idm140679276529200"
               class="indexterm"></a><div
               class="para">
 			<code
@@ -177,25 +178,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 			<code
                 class="command">APT</code> предствляет собой группу программ, которые позволяют выполнять высокоуровневые модификации в системе: установку или удаление пакета (сохраняя зависимости удовлетворёнными), обновление системы, отбражение списка дотупных пакетов и т. д.
-		</div><div
+		</div><a
+              id="idm140679276874160"
+              class="indexterm"></a><div
               class="para">
-			<a
-                id="idm140254106181840"
-                class="indexterm"></a> Что касается программы <code
-                class="command">ar</code>, она работает с файлами формата с тем же названием: <code
+			As for the <code
+                class="command">ar</code> program, it allows handling files of the same name: <code
                 class="command">ar t <em
-                  class="replaceable">архив</em></code> покажет список файлов, содержавшихся в архиве, <code
+                  class="replaceable">archive</em></code> displays the list of files contained in such an archive, <code
                 class="command">ar x <em
-                  class="replaceable">архив</em></code> извлекает файлы из архива в текущий каталог, <code
+                  class="replaceable">archive</em></code> extracts the files from the archive into the current working directory, <code
                 class="command">ar d <em
-                  class="replaceable">архив</em> <em
-                  class="replaceable">файл</em></code> удаляет файл из архива и т. д. На её странице man (<span
+                  class="replaceable">archive</em> <em
+                  class="replaceable">file</em></code> deletes a file from the archive, etc. Its man page (<span
                 class="citerefentry"><span
-                  class="refentrytitle">ar</span>(1)</span>) можно найти более подробную документацию. <code
-                class="command">ar</code> — это рудиментарный инструмент, который редко применяется администраторами Unix. Как правило, они используют <code
-                class="command">tar</code> — более развитую программу управления архивами и файлами. Это и является причиной того, почему так легко можно восстановить <code
-                class="command">dpkg</code> в случае ошибочного удаления. Вам нужно только загрузить пакет Debian и извлечь его содержимое из архива <code
-                class="filename">data.tar.gz</code> в корень системы (<code
+                  class="refentrytitle">ar</span>(1)</span>) documents all its other features. <code
+                class="command">ar</code> is a very rudimentary tool that a Unix administrator would only use on rare occasions, but admins routinely use <code
+                class="command">tar</code>, a more evolved archive and file management program. This is why it is easy to restore <code
+                class="command">dpkg</code> in the event of an erroneous deletion. You would only have to download the Debian package and extract the content from the <code
+                class="filename">data.tar.gz</code> archive in the system's root (<code
                 class="filename">/</code>):
 		</div><pre
               class="screen">
@@ -302,10 +303,9 @@ $ </code><strong
                 class="listitem"><div
                   class="para">
 					<code
-                    class="filename">data.tar.gz</code>. Этот архив содержит все файлы, которые необходимо извлечь из пакета; то есть в нем хранятся все исполняемые файлы, документация и т. п. Некоторые пакеты могут использовать и другие форматы сжатия, и в таком случае файл будет называться по-другому (<code
-                    class="filename">data.tar.bz2</code> для bzip2, <code
-                    class="filename">data.tar.xz</code> для XZ, <code
-                    class="filename">data.tar.lzma</code> для LZMA).
+                    class="filename">data.tar.gz</code>. This archive contains all of the files to be extracted from the package; this is where the executable files, documentation, etc., are all stored. Some packages may use other compression formats, in which case the file will be named differently (<code
+                    class="filename">data.tar.bz2</code> for bzip2, <code
+                    class="filename">data.tar.xz</code> for XZ).
 				</div></li></ul></div></div></div><ul
         class="docnav"><li
           class="previous"><a

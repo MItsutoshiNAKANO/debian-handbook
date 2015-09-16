@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-id-ID-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="The Debian Administrator's Handbook" /><link
@@ -28,7 +28,7 @@
         title="Bab 6. Pemeliharaan dan Pembaharuan: Peralatan APT" /><link
         rel="prev"
         href="sect.apt-get.html"
-        title="6.2. Perintah aptitude dan apt-get" /><link
+        title="6.2. aptitude, apt-get, and apt Commands" /><link
         rel="next"
         href="sect.apt-frontends.html"
         title="6.4. Frontends: aptitude, synaptic" /><link
@@ -69,21 +69,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.apt-cache"></a>6.3. Perintah <code
                   class="command">apt-cache</code></h2></div></div></div><a
-          id="idm139645525539552"
+          id="idm140298911553440"
           class="indexterm"></a><a
-          id="idm139645525538432"
+          id="idm140298911552320"
           class="indexterm"></a><a
-          id="idm139645525536992"
+          id="idm140298911550880"
           class="indexterm"></a><a
-          id="idm139645525535552"
+          id="idm140298911549440"
           class="indexterm"></a><a
-          id="idm139645525534592"
+          id="idm140298911548480"
           class="indexterm"></a><div
           class="para">
-			Perintah <code
-            class="command">apt-cache</code> dapat menampilkan banyak informasi yang tersimpan di basisdata internal APT. Informasi ini semacam cache karena dikumpulkan dari daftar sumber yang berbeda di berkas <code
-            class="filename">sources.list</code>. Hal ini terjadi selama operasi <code
-            class="command">apt-get update</code>.
+			The <code
+            class="command">apt-cache</code> command can display much of the information stored in APT's internal database. This information is a sort of cache since it is gathered from the different sources listed in the <code
+            class="filename">sources.list</code> file. This happens during the <code
+            class="command">apt update</code> operation.
 		</div><div
           class="sidebar"><a
             id="sidebar.cache"></a><div
@@ -99,32 +99,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/var/lib/apt/lists/</code>) dan pencarian dapat dilakukan dengan berkas lokal tersebut. Sama halnya, <code
               class="filename">/var/cache/apt/archives/</code> berisi sebuah cache paket yang telah diunduh untuk menghindari mengunduhnya lagi jika Anda perlu menginstall ulang lagi setelah penghapusan.
 		</div></div><a
-          id="idm139645525526496"
+          id="idm140298911540368"
           class="indexterm"></a><a
-          id="idm139645525525376"
+          id="idm140298911539248"
           class="indexterm"></a><a
-          id="idm139645525524256"
+          id="idm140298911538128"
           class="indexterm"></a><a
-          id="idm139645525523136"
+          id="idm140298911537008"
+          class="indexterm"></a><a
+          id="idm140298911535888"
+          class="indexterm"></a><a
+          id="idm140298911534768"
           class="indexterm"></a><div
           class="para">
-			Perintah <code
-            class="command">apt-cache</code> dapat melakukan pencarian berdasarkan kata-kunci dengan <code
+			The <code
+            class="command">apt-cache</code> command can do keyword-based package searches with <code
             class="command">apt-cache search <em
-              class="replaceable">katakunci</em></code>. Dapat pula menampilkan header versi paket yang tersedia dengan <code
+              class="replaceable">keyword</em></code>. It can also display the headers of the package's available versions with <code
             class="command">apt-cache show <em
-              class="replaceable">paket</em></code>. Perintah ini menyediakan deskripsi paket, ketergantungannya, nama maintainernya, dll. Catat bahwa <code
-            class="command">aptitude search</code> dan <code
-            class="command">aptitude show</code> bekerja dengan cara yang sama.
+              class="replaceable">package</em></code>. This command provides the package's description, its dependencies, the name of its maintainer, etc. Note that <code
+            class="command">apt search</code>, <code
+            class="command">apt show</code>, <code
+            class="command">aptitude search</code>, <code
+            class="command">aptitude show</code> work in the same way.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">axi-cache</code></strong></p></div></div></div><a
-            id="idm139645525516912"
+            id="idm140298911527728"
             class="indexterm"></a><a
-            id="idm139645525515792"
+            id="idm140298911526608"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -159,11 +165,11 @@ More terms: search debian searching strigi debtags bsearch libbsearch
 More tags: suite::debian works-with::software:package role::program interface::commandline implemented-in::c++ admin::package-management use::analysing
 `axi-cache more' will give more results
 </pre></div><a
-          id="idm139645525507264"
+          id="idm140298911518080"
           class="indexterm"></a><a
-          id="idm139645525506144"
+          id="idm140298911516960"
           class="indexterm"></a><a
-          id="idm139645525505024"
+          id="idm140298911515840"
           class="indexterm"></a><div
           class="para">
 			Beberapa fitur lebih jarang digunakan. Misalnya, <code
@@ -174,7 +180,7 @@ More tags: suite::debian works-with::software:package role::program interface::c
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.apt-get.html"><strong>Sebelumnya</strong>6.2. Perintah aptitude dan apt-get</a></li><li
+            href="sect.apt-get.html"><strong>Sebelumnya</strong>6.2. aptitude, apt-get, and apt Commands</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Induk</strong></a></li><li

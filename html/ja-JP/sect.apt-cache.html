@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="Debian 管理者ハンドブック" /><link
@@ -28,7 +28,7 @@
         title="第6章 保守と更新、APT ツール" /><link
         rel="prev"
         href="sect.apt-get.html"
-        title="6.2. aptitude と apt-get コマンド" /><link
+        title="6.2. aptitude、apt-get、apt コマンド" /><link
         rel="next"
         href="sect.apt-frontends.html"
         title="6.4. フロントエンド、aptitude、synaptic" /><link
@@ -69,21 +69,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.apt-cache"></a>6.3. <code
                   class="command">apt-cache</code> コマンド</h2></div></div></div><a
-          id="idm140708261091888"
+          id="idm139870905667792"
           class="indexterm"></a><a
-          id="idm140708261090768"
+          id="idm139870905666672"
           class="indexterm"></a><a
-          id="idm140708261089328"
+          id="idm139870905665232"
           class="indexterm"></a><a
-          id="idm140708261087888"
+          id="idm139870905663792"
           class="indexterm"></a><a
-          id="idm140708261086960"
+          id="idm139870905662864"
           class="indexterm"></a><div
           class="para">
 			<code
             class="command">apt-cache</code> コマンドは APT の内部データベースに保存された情報の多くを表示できます。この情報は一種のキャッシュのようなもので、<code
             class="filename">sources.list</code> ファイル内のさまざまなソースから収集されます。収集は <code
-            class="command">apt-get update</code> の実行ごとに行われます。
+            class="command">apt update</code> の実行ごとに行われます。
 		</div><div
           class="sidebar"><a
             id="sidebar.cache"></a><div
@@ -99,13 +99,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/var/lib/apt/lists/</code> に) データベースのコピーを保存し、このコピーを使って検索します。同様に、<code
               class="filename">/var/cache/apt/archives/</code> にはこれまでにダウンロードしたパッケージのキャッシュを保存しています。これは削除後の再インストール時に同じファイルをダウンロードするのを避けるためです。
 		</div></div><a
-          id="idm140708261078560"
+          id="idm139870905654464"
           class="indexterm"></a><a
-          id="idm140708261077440"
+          id="idm139870905653344"
           class="indexterm"></a><a
-          id="idm140708261076320"
+          id="idm139870905652224"
           class="indexterm"></a><a
-          id="idm140708261075200"
+          id="idm139870905651104"
+          class="indexterm"></a><a
+          id="idm139870905649984"
+          class="indexterm"></a><a
+          id="idm139870905648864"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -114,7 +118,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="replaceable">keyword</em></code> のように使うことで、キーワードを元にパッケージを検索することが可能です。さらに、<code
             class="command">apt-cache show <em
               class="replaceable">package</em></code> のように使うことで、利用できるバージョンのパッケージヘッダを表示することも可能です。このコマンドで、パッケージの説明、依存関係、メンテナの名前などの情報が表示されます。また、<code
-            class="command">aptitude search</code> と <code
+            class="command">apt search</code>、<code
+            class="command">apt show</code>、<code
+            class="command">aptitude search</code>、<code
             class="command">aptitude show</code> は同様の機能を持っている点に注意してください。
 		</div><div
           class="sidebar"><div
@@ -122,9 +128,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">axi-cache</code></strong></p></div></div></div><a
-            id="idm140708261068800"
+            id="idm139870905641504"
             class="indexterm"></a><a
-            id="idm140708261067680"
+            id="idm139870905640384"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -159,11 +165,11 @@ More terms: search debian searching strigi debtags bsearch libbsearch
 More tags: suite::debian works-with::software:package role::program interface::commandline implemented-in::c++ admin::package-management use::analysing
 `axi-cache more' will give more results
 </pre></div><a
-          id="idm140708261058992"
+          id="idm139870905631696"
           class="indexterm"></a><a
-          id="idm140708261057872"
+          id="idm139870905630576"
           class="indexterm"></a><a
-          id="idm140708261056752"
+          id="idm139870905629456"
           class="indexterm"></a><div
           class="para">
 			あまり使われない機能もあります。たとえば、<code
@@ -174,7 +180,7 @@ More tags: suite::debian works-with::software:package role::program interface::c
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.apt-get.html"><strong>戻る</strong>6.2. aptitude と apt-get コマンド</a></li><li
+            href="sect.apt-get.html"><strong>戻る</strong>6.2. aptitude、apt-get、apt コマンド</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>上に戻る</strong></a></li><li

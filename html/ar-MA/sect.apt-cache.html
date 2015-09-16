@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ar-MA-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="دفتر مدير دبيان" /><link
@@ -28,7 +28,7 @@
         title="فصل 6. الصيانة والتحديث: أدوات APT" /><link
         rel="prev"
         href="sect.apt-get.html"
-        title="6.2. ‏aptitude وapt-get" /><link
+        title="6.2. aptitude, apt-get, and apt Commands" /><link
         rel="next"
         href="sect.apt-frontends.html"
         title="6.4. واجهات APT: ‏aptitude، ‏synaptic" /><link
@@ -70,21 +70,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.apt-cache"></a>6.3. الأمر <code
                   class="command">apt-cache</code></h2></div></div></div><a
-          id="idm139700964688992"
+          id="idm140156520169792"
           class="indexterm"></a><a
-          id="idm139700964687872"
+          id="idm140156520168672"
           class="indexterm"></a><a
-          id="idm139700964686432"
+          id="idm140156520167232"
           class="indexterm"></a><a
-          id="idm139700964684992"
+          id="idm140156520165792"
           class="indexterm"></a><a
-          id="idm139700964684032"
+          id="idm140156520164832"
           class="indexterm"></a><div
           class="para">
-			يعرض الأمر <code
-            class="command">apt-cache</code> الكثير من المعلومات المخزنة في قاعدة بيانات APT الداخلية. هذه المعلومات هي نوع من الكاش أو الذاكرة المخبئية لأنها تُجمَع من مصادر مختلفة موجودة في الملف <code
-            class="filename">sources.list</code>. يحدث هذا خلال عملية <code
-            class="command">apt-get update</code>.
+			The <code
+            class="command">apt-cache</code> command can display much of the information stored in APT's internal database. This information is a sort of cache since it is gathered from the different sources listed in the <code
+            class="filename">sources.list</code> file. This happens during the <code
+            class="command">apt update</code> operation.
 		</div><div
           class="sidebar"><a
             id="sidebar.cache"></a><div
@@ -103,32 +103,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               dir="ltr"
               class="filename">/var/cache/apt/archives/</code> على نسخة كاش من الحزم التي تم تنزيلها لتفادي تنزيلها ثانية إذا احتجت لإعادة تثبيتها بعد إزالتها.
 		</div></div><a
-          id="idm139700964674400"
+          id="idm140156520155264"
           class="indexterm"></a><a
-          id="idm139700964673280"
+          id="idm140156520154144"
           class="indexterm"></a><a
-          id="idm139700964672160"
+          id="idm140156520153024"
           class="indexterm"></a><a
-          id="idm139700964671040"
+          id="idm140156520151904"
+          class="indexterm"></a><a
+          id="idm140156520150784"
+          class="indexterm"></a><a
+          id="idm140156520149664"
           class="indexterm"></a><div
           class="para">
-			يمكن أن يبحث الأمر <code
-            class="command">apt-cache</code> اعتماداً على كلمات مفتاحية وذلك باستخدام <code
+			The <code
+            class="command">apt-cache</code> command can do keyword-based package searches with <code
             class="command">apt-cache search <em
-              class="replaceable">keyword</em></code>. يستطيع هذا الأمر أيضاً عرض ترويسات النسخ المتوفرة من الحزمة باستخدام <code
+              class="replaceable">keyword</em></code>. It can also display the headers of the package's available versions with <code
             class="command">apt-cache show <em
-              class="replaceable">package</em></code>. يقدّم هذا الأمر وصف الحزمة، اعتمادياتها، اسم المشرف، الخ. لاحظ أن <code
-            class="command">aptitude search</code> و<code
-            class="command">aptitude show</code> يعملان بالأسلوب نفسه.
+              class="replaceable">package</em></code>. This command provides the package's description, its dependencies, the name of its maintainer, etc. Note that <code
+            class="command">apt search</code>, <code
+            class="command">apt show</code>, <code
+            class="command">aptitude search</code>, <code
+            class="command">aptitude show</code> work in the same way.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>بدائل</em></span> <code
                       class="command">axi-cache</code></strong></p></div></div></div><a
-            id="idm139700964664832"
+            id="idm140156520142624"
             class="indexterm"></a><a
-            id="idm139700964663712"
+            id="idm140156520141504"
             class="indexterm"></a><div
             class="para">
 			الأداة <code
@@ -164,11 +170,11 @@ More terms: search debian searching strigi debtags bsearch libbsearch
 More tags: suite::debian works-with::software:package role::program interface::commandline implemented-in::c++ admin::package-management use::analysing
 `axi-cache more' will give more results
 </pre></div><a
-          id="idm139700964654544"
+          id="idm140156520132336"
           class="indexterm"></a><a
-          id="idm139700964653424"
+          id="idm140156520131216"
           class="indexterm"></a><a
-          id="idm139700964652304"
+          id="idm140156520130096"
           class="indexterm"></a><div
           class="para">
 			توجد مزايا نادراً ما تستخدم. مثلاً، يعرض <code
@@ -179,7 +185,7 @@ More tags: suite::debian works-with::software:package role::program interface::c
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.apt-get.html"><strong>السابق</strong>6.2. ‏aptitude وapt-get</a></li><li
+            href="sect.apt-get.html"><strong>السابق</strong>6.2. aptitude, apt-get, and apt Commands</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>أعلى</strong></a></li><li

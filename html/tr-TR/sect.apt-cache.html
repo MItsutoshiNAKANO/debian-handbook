@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-tr-TR-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="The Debian Administrator's Handbook" /><link
@@ -28,7 +28,7 @@
         title="Bölüm 6. Maintenance and Updates: The APT Tools" /><link
         rel="prev"
         href="sect.apt-get.html"
-        title="6.2. aptitude and apt-get Commands" /><link
+        title="6.2. aptitude, apt-get, and apt Commands" /><link
         rel="next"
         href="sect.apt-frontends.html"
         title="6.4. Frontends: aptitude, synaptic" /><link
@@ -69,21 +69,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.apt-cache"></a>6.3. The <code
                   class="command">apt-cache</code> Command</h2></div></div></div><a
-          id="idm140202340384704"
+          id="idm140068434392592"
           class="indexterm"></a><a
-          id="idm140202340383584"
+          id="idm140068434391472"
           class="indexterm"></a><a
-          id="idm140202340382144"
+          id="idm140068434390032"
           class="indexterm"></a><a
-          id="idm140202340380704"
+          id="idm140068434388592"
           class="indexterm"></a><a
-          id="idm140202340379744"
+          id="idm140068434387632"
           class="indexterm"></a><div
           class="para">
 			The <code
             class="command">apt-cache</code> command can display much of the information stored in APT's internal database. This information is a sort of cache since it is gathered from the different sources listed in the <code
             class="filename">sources.list</code> file. This happens during the <code
-            class="command">apt-get update</code> operation.
+            class="command">apt update</code> operation.
 		</div><div
           class="sidebar"><a
             id="sidebar.cache"></a><div
@@ -99,13 +99,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/var/lib/apt/lists/</code>) and searches are done within those local files. Similarly, <code
               class="filename">/var/cache/apt/archives/</code> contains a cache of already downloaded packages to avoid downloading them again if you need to reinstall them after a removal.
 		</div></div><a
-          id="idm140202340371616"
+          id="idm140068434379504"
           class="indexterm"></a><a
-          id="idm140202340370496"
+          id="idm140068434378384"
           class="indexterm"></a><a
-          id="idm140202340369376"
+          id="idm140068434377264"
           class="indexterm"></a><a
-          id="idm140202340368256"
+          id="idm140068434376144"
+          class="indexterm"></a><a
+          id="idm140068434375024"
+          class="indexterm"></a><a
+          id="idm140068434373904"
           class="indexterm"></a><div
           class="para">
 			The <code
@@ -114,7 +118,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="replaceable">keyword</em></code>. It can also display the headers of the package's available versions with <code
             class="command">apt-cache show <em
               class="replaceable">package</em></code>. This command provides the package's description, its dependencies, the name of its maintainer, etc. Note that <code
-            class="command">aptitude search</code> and <code
+            class="command">apt search</code>, <code
+            class="command">apt show</code>, <code
+            class="command">aptitude search</code>, <code
             class="command">aptitude show</code> work in the same way.
 		</div><div
           class="sidebar"><div
@@ -122,9 +128,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> <code
                       class="command">axi-cache</code></strong></p></div></div></div><a
-            id="idm140202340362176"
+            id="idm140068434366864"
             class="indexterm"></a><a
-            id="idm140202340361056"
+            id="idm140068434365744"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -159,11 +165,11 @@ More terms: search debian searching strigi debtags bsearch libbsearch
 More tags: suite::debian works-with::software:package role::program interface::commandline implemented-in::c++ admin::package-management use::analysing
 `axi-cache more' will give more results
 </pre></div><a
-          id="idm140202340352688"
+          id="idm140068434357376"
           class="indexterm"></a><a
-          id="idm140202340351568"
+          id="idm140068434356256"
           class="indexterm"></a><a
-          id="idm140202340350448"
+          id="idm140068434355136"
           class="indexterm"></a><div
           class="para">
 			Some features are more rarely used. For instance, <code
@@ -174,7 +180,7 @@ More tags: suite::debian works-with::software:package role::program interface::c
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.apt-get.html"><strong>Önceki</strong>6.2. aptitude and apt-get Commands</a></li><li
+            href="sect.apt-get.html"><strong>Önceki</strong>6.2. aptitude, apt-get, and apt Commands</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Yukarı</strong></a></li><li

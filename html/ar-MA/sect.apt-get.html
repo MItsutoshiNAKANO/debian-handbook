@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">6.2. ‏aptitude وapt-get</title><link
+        xmlns:d="http://docbook.org/ns/docbook">6.2. aptitude, apt-get, and apt Commands</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ar-MA-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="دفتر مدير دبيان" /><link
@@ -68,76 +68,91 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.apt-get"></a>6.2. ‏<code
-                  class="command">aptitude</code> و<code
-                  class="command">apt-get</code></h2></div></div></div><a
-          id="idm139700964958672"
+                  id="sect.apt-get"></a>6.2. <code
+                  class="command">aptitude</code>, <code
+                  class="command">apt-get</code>, and <code
+                  class="command">apt</code> Commands</h2></div></div></div><a
+          id="idm140156535263568"
           class="indexterm"></a><a
-          id="idm139700964957552"
+          id="idm140156535262448"
+          class="indexterm"></a><a
+          id="idm140156535261328"
           class="indexterm"></a><div
           class="para">
-			APT مشروع ضخم، تضمنت خططه الأصلية واجهة رسومية. يرتكز المشروع على مكتبة تحوي لب التطبيق، و كانت <code
-            class="command">apt-get</code> أول واجهة –نصية– طوِّرت ضمن المشروع.
+			APT is a vast project, whose original plans included a graphical interface. It is based on a library which contains the core application, and <code
+            class="command">apt-get</code> is the first front end — command-line based — which was developed within the project. <code
+            class="command">apt</code> is a second command-line based front end provided by APT which overcomes some design mistakes of <code
+            class="command">apt-get</code>.
 		</div><div
           class="para">
-			ظهرت بعدها العديد من الواجهات الرسومية كمشاريع خارجية: مثل <code
-            class="command">synaptic</code>، و <code
-            class="command">aptitude</code> (الذي يحتوي على واجهة نصيّة وأخرى رسومية — وإنْ لم تكتمل بعد)، و <code
-            class="command">wajig</code>، الخ. أكثر واجهة ننصح بها، <code
-            class="command">apt-get</code>، هي المعتمدة أثناء تثبيت دبيان، وهي التي سنستخدمها في الأمثلة المعطاة في هذا القسم. لكن لاحظ على أي حال أن صيغة أوامر <code
-            class="command">aptitude</code> مشابهة جداً. عند وجود اختلافات كبيرة بين <code
-            class="command">apt-get</code> و<code
-            class="command">aptitude</code> سنفصّل هذه الاختلافات.
+			Numerous other graphical interfaces then appeared as external projects: <code
+            class="command">synaptic</code>, <code
+            class="command">aptitude</code> (which includes both a text mode interface and a graphical one — even if not complete yet), <code
+            class="command">wajig</code>, etc. The most recommended interface, <code
+            class="command">apt</code>, is the one that we will use in the examples given in this section. Note however that <code
+            class="command">apt-get</code> and <code
+            class="command">aptitude</code> have a very similar command line syntax. When there are major differences between <code
+            class="command">apt</code>, <code
+            class="command">apt-get</code> and <code
+            class="command">aptitude</code>, these differences will be detailed.
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700964951216"></a>6.2.1. التهيئة</h3></div></div></div><div
+                    id="idm140156535253280"></a>6.2.1. التهيئة</h3></div></div></div><div
             class="para">
-				قبل إجراء أي عمل باستخدام APT يجب تحديث قائمة الحزم المتوفرة؛ يمكن تنفيذ ذلك بسهولة من خلال <code
-              class="command">apt-get update</code>. قد تستغرق العملية وقتاً حسب سرعة الاتصال، نظراً لأنها تحتاج لتنزيل عدد من ملفات <code
+				For any work with APT, the list of available packages needs to be updated; this can be done simply through <code
+              class="command">apt update</code>. Depending on the speed of your connection, the operation can take a while since it involves downloading a certain number of <code
               class="filename">Packages</code>/<code
               class="filename">Sources</code>/<code
               class="filename">Translation-<em
-                class="replaceable">language-code</em></code>، والتي كبرت أكثر وأكثر تدريجياً مع تطور دبيان (على الأقل 10 م.ب. من البيانات للقسم <code
-              class="literal">main</code>). طبعاً، لا يحتاج التثبيت من القرص الليزري أي تنزيل — لذلك تكون العملية سريعة جداً في هذه الحالة.
+                class="replaceable">language-code</em></code> files, which have gradually become bigger and bigger as Debian has developed (at least 10 MB of data for the <code
+              class="literal">main</code> section). Of course, installing from a CD-ROM set does not require any downloading — in this case, the operation is very fast.
 			</div><a
-            id="idm139700964946640"
+            id="idm140156535248864"
             class="indexterm"></a><a
-            id="idm139700964945520"
+            id="idm140156535247744"
+            class="indexterm"></a><a
+            id="idm140156535246624"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700964944240"></a>6.2.2. التثبيت والإزالة</h3></div></div></div><a
-            id="idm139700964943472"
+                    id="idm140156535245344"></a>6.2.2. التثبيت والإزالة</h3></div></div></div><a
+            id="idm140156535244576"
             class="indexterm"></a><a
-            id="idm139700964942032"
+            id="idm140156535243136"
             class="indexterm"></a><a
-            id="idm139700964940592"
+            id="idm140156535241696"
             class="indexterm"></a><a
-            id="idm139700964939152"
+            id="idm140156535240256"
             class="indexterm"></a><div
             class="para">
-				يمكن إضافة الحزم إلى النظام أو إزالتها منه باستخدام APT، باستخدام الأمر <code
-              class="command">apt-get install <em
-                class="replaceable">package</em></code> والأمر <code
-              class="command">apt-get remove <em
-                class="replaceable">package</em></code>. في كلا الحالتين، ستثبت APT الاعتماديات الضرورية أو تحذف الحزم التي تعتمد على الحزمة التي تتم إزالتها. يزيل الأمر <code
-              class="command">apt-get purge <em
-                class="replaceable">package</em></code> الحزمة بالكامل — حيث تحذف ملفات الضبط أيضاً.
+				With APT, packages can be added or removed from the system, respectively with <code
+              class="command">apt install <em
+                class="replaceable">package</em></code> and <code
+              class="command">apt remove <em
+                class="replaceable">package</em></code>. In both cases, APT will automatically install the necessary dependencies or delete the packages which depend on the package that is being removed. The <code
+              class="command">apt purge <em
+                class="replaceable">package</em></code> command involves a complete uninstallation — the configuration files are also deleted.
 			</div><a
-            id="idm139700964935040"
+            id="idm140156535236224"
             class="indexterm"></a><a
-            id="idm139700964933920"
+            id="idm140156535235104"
             class="indexterm"></a><a
-            id="idm139700964932800"
+            id="idm140156535233984"
             class="indexterm"></a><a
-            id="idm139700964931680"
+            id="idm140156535232864"
             class="indexterm"></a><a
-            id="idm139700964930560"
+            id="idm140156535231744"
             class="indexterm"></a><a
-            id="idm139700964929440"
+            id="idm140156535230624"
+            class="indexterm"></a><a
+            id="idm140156535229504"
+            class="indexterm"></a><a
+            id="idm140156535228384"
+            class="indexterm"></a><a
+            id="idm140156535227264"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -183,13 +198,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>تلميح</em></span> الإزالة والتثبيت في الوقت نفسه</strong></p></div></div></div><div
               class="para">
-				من الممكن الطلب من <code
-                class="command">apt-get</code> (أو <code
-                class="command">aptitude</code>) تثبيت حزم معينة وإزالة أخرى بالأمر نفسه بإضافة لاحقة. أضف ”<code
-                class="literal">-</code>“ إلى أسماء الحزم التي تريد إزالتها مع الأمر <code
-                class="command">apt-get install</code>. أما مع الأمر <code
-                class="command">apt-get remove</code>، فأضف ”<code
-                class="literal">+</code>“ إلى أسماء الحزم التي تريد تثبيتها.
+				It is possible to ask <code
+                class="command">apt</code> (or <code
+                class="command">apt-get</code>, or <code
+                class="command">aptitude</code>) to install certain packages and remove others on the same command line by adding a suffix. With an <code
+                class="command">apt install</code> command, add “<code
+                class="literal">-</code>” to the names of the packages you wish to remove. With an <code
+                class="command">apt remove</code> command, add “<code
+                class="literal">+</code>” to the names of the packages you wish to install.
 			</div><div
               class="para">
 				يبين المثال التالي طريقتين مختلفتين لتثبيت <em
@@ -197,12 +213,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">package2</em>.
 			</div><pre
               class="screen"># <strong
-                class="userinput"><code>apt-get install <em
+                class="userinput"><code>apt install <em
                     class="replaceable">package1</em> <em
                     class="replaceable">package2-</em></code></strong>
 [...]
 # <strong
-                class="userinput"><code>apt-get remove <em
+                class="userinput"><code>apt remove <em
                     class="replaceable">package1+</em> <em
                     class="replaceable">package2</em></code></strong>
 [...]
@@ -214,21 +230,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>تلميح</em></span> <code
-                        class="command">apt-get --reinstall</code> و<code
-                        class="command">aptitude reinstall</code> </strong></p></div></div></div><a
-              id="idm139700964905664"
+                        class="emphasis"><em>TIP</em></span> <code
+                        class="command">apt --reinstall</code> and <code
+                        class="command">aptitude reinstall</code></strong></p></div></div></div><a
+              id="idm140156535203072"
               class="indexterm"></a><div
               class="para">
-				أحياناً يتضرر النظام بعد إزالة أو تعديل الملفات في حزمة ما. أسهل طريقة لاستعادة هذه الملفات هي إعادة تثبيت الحزمة المتأثرة. لسوء الحظ، سيجد نظام التحزيم أن هذه الحزمة مثبتة فعلاً وسيرفض إعادة تثبيتها بأدب؛ ولتجاوز هذا الأمر، استخدم الخيار <code
-                dir="ltr"
-                class="literal">--reinstall</code> الخاص بالأمر <code
-                class="command">apt-get</code>. الأمر التالي يعيد تثبيت الحزمة <span
-                class="pkg pkg">postfix</span> حتى لو كانت مثبتة مسبقاً:
+				The system can sometimes be damaged after the removal or modification of files in a package. The easiest way to retrieve these files is to reinstall the affected package. Unfortunately, the packaging system finds that the latter is already installed and politely refuses to reinstall it; to avoid this, use the <code
+                class="literal">--reinstall</code> option of the <code
+                class="command">apt</code> and <code
+                class="command">apt-get</code> commands. The following command reinstalls <span
+                class="pkg pkg">postfix</span> even if it is already present:
 			</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>apt-get --reinstall install postfix</code></strong></pre><div
+                class="userinput"><code>apt --reinstall install postfix</code></strong></pre><div
               class="para">
 				إن صيغة الأمر في <code
                 class="command">aptitude</code> مختلفة قليلاً، لكنها تؤدي الوظيفة ذاتها باستخدام <code
@@ -240,38 +256,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
               class="para">
 				Be careful! Using <code
-                class="command">apt-get --reinstall</code> to restore packages modified during an attack will certainly not recover the system as it was. <a
+                class="command">apt --reinstall</code> to restore packages modified during an attack will certainly not recover the system as it was. <a
                 class="xref"
                 href="sect.dealing-with-compromised-machine.html">قسم 14.7, “التعامل مع جهاز مُختَرَق”</a> details the necessary steps to take with a compromised system.
 			</div></div><div
             class="para">
-				إذا كان الملف <code
-              class="filename">sources.list</code> يشير إلى عدة توزيعات، فمن الممكن تحديد النسخة التي تريد تثبيتها من الحزمة. يمكن أن تطلب رقم إصدار محدد من خلال الأمر <code
-              class="command">apt-get install <em
+				If the file <code
+              class="filename">sources.list</code> mentions several distributions, it is possible to give the version of the package to install. A specific version number can be requested with <code
+              class="command">apt install <em
                 class="replaceable">package</em>=<em
-                class="replaceable">version</em></code>، لكن الأفضل عادة تحديد التوزيعة التي تريد تثبيت الحزمة منها (<span
-              class="distribution distribution">المستقرة</span>، أو <span
-              class="distribution distribution">الاختبارية</span>، أو <span
-              class="distribution distribution">Stable</span>) — باستخدام الأمر <code
-              class="command">apt-get install <em
+                class="replaceable">version</em></code>, but indicating its distribution of origin (<span
+              class="distribution distribution">Stable</span>, <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span>) — with <code
+              class="command">apt install <em
                 class="replaceable">package</em>/<em
-                class="replaceable">distribution</em></code>. بهذه الطريقة يمكنك العودة إلى نسخة أقدم من الحزمة (مثلاً إذا كنت تعلم أنها تعمل بشكل جيد)، شريطة أن تبقى متوفرة في أحد المصادر المذكورة في ملف <code
-              class="filename">sources.list</code>. وإلا فإن أرشيف <code
-              class="literal">snapshot.debian.org</code> قد يساعد في إنقاذ الموقف (انظر الملاحظة الجانبية <a
+                class="replaceable">distribution</em></code> — is usually preferred. With this command, it is possible to go back to an older version of a package (if for instance you know that it works well), provided that it is still available in one of the sources referenced by the <code
+              class="filename">sources.list</code> file. Otherwise the <code
+              class="literal">snapshot.debian.org</code> archive can come to the rescue (see sidebar <a
               class="xref"
               href="apt.html#sidebar.snapshot.debian.org"><span
                 class="emphasis"><em>التعمق أكثر</em></span> إصدارات الحزم القديمة: <code
                 class="literal">snapshot.debian.org</code></a>).
 			</div><div
             class="example"><a
-              id="idm139700964888736"></a><p
+              id="idm140156535186384"></a><p
               class="title"><strong>مثال 6.3. تثبيت النسخة <span
                   class="distribution distribution">غير المستقرة</span> من <span
                   class="pkg pkg">spamassassin</span></strong></p><div
               class="example-contents"><pre
                 class="screen"><code
                   class="computeroutput"># </code><strong
-                  class="userinput"><code>apt-get install spamassassin/unstable</code></strong></pre></div></div><div
+                  class="userinput"><code>apt install spamassassin/unstable</code></strong></pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
@@ -285,25 +301,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">apt-get clean</code> entirely empties the directory; <code
                 class="command">apt-get autoclean</code> only removes packages which can no longer be downloaded (because they have disappeared from the Debian mirror) and are therefore clearly useless (the configuration parameter <code
                 class="literal">APT::Clean-Installed</code> can prevent the removal of <code
-                class="filename">.deb</code> files that are currently installed).
+                class="filename">.deb</code> files that are currently installed). Note that <code
+                class="command">apt</code> does not support those commands.
 			</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.apt-upgrade"></a>6.2.3. تحديث النظام</h3></div></div></div><a
-            id="idm139700964878704"
+            id="idm140156535175904"
             class="indexterm"></a><a
-            id="idm139700964877264"
+            id="idm140156535174464"
             class="indexterm"></a><a
-            id="idm139700964876144"
+            id="idm140156535173344"
+            class="indexterm"></a><a
+            id="idm140156535172224"
             class="indexterm"></a><div
             class="para">
-				يُنصَح بتحديث النظام بشكل منتظم، وذلك للحصول على آخر التحديثات الأمنية. استخدم الأمر <code
-              class="command">apt-get upgrade</code> أو الأمر <code
-              class="command">aptitude safe-upgrade</code> لتحديث النظام (بعد تنفيذ <code
-              class="command">apt-get update</code> طبعاً). يبحث هذا الأمر عن الحزم المثبتة التي يمكن تحديثها دون إزالة أي حزم من النظام. أي أن الغرض هو تحديث النظام بأقل تأثير ممكن. إن <code
-              class="command">apt-get</code> متشددة أكثر من <code
-              class="command">aptitude</code> لأنها ترفض تثبيت الحزم التي لم تكن مثبتة من قبل.
+				Regular upgrades are recommended, because they include the latest security updates. To upgrade, use <code
+              class="command">apt upgrade</code>, <code
+              class="command">apt-get upgrade</code> or <code
+              class="command">aptitude safe-upgrade</code> (of course after <code
+              class="command">apt update</code>). This command looks for installed packages which can be upgraded without removing any packages. In other words, the goal is to ensure the least intrusive upgrade possible. <code
+              class="command">apt-get</code> is slightly more demanding than <code
+              class="command">aptitude</code> or <code
+              class="command">apt</code> because it will refuse to install packages which were not installed beforehand.
 			</div><div
             class="sidebar"><a
               id="sidebar.apt-pdiff"></a><div
@@ -312,7 +333,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>تلميح</em></span> التحديث التصاعدي</strong></p></div></div></div><div
               class="para">
 				As we explained earlier, the aim of the <code
-                class="command">apt-get update</code> command is to download for each package source the corresponding <code
+                class="command">apt update</code> command is to download for each package source the corresponding <code
                 class="filename">Packages</code> (or <code
                 class="filename">Sources</code>) file. However, even after a <code
                 class="command">bzip2</code> compression, these files can remain rather large (the <code
@@ -322,12 +343,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="distribution distribution">Jessie</span> takes more than 6 MB). If you wish to upgrade regularly, these downloads can take up a lot of time.
 			</div><div
               class="para">
-				لتسريع هذه العملية تستطيع APT تنزيل ملف ”diff“ يحوي الاختلافات عن التحديث السابق، بدلاً من تنزيل الملف كاملاً. لتحقيق ذلك، توزع مرايا دبيان الرسمية ملفات مختلفة تسرد الاختلافات بين كل نسخة من ملف <code
-                class="filename">Packages</code> والنسخة التي تليها. تولّد هذه الملفات عند كل تحديث للأرشيفات ويتم إبقاء المحفوظات لأسبوع واحد. كل واحد من ملفات ”diff“ هذه يستهلك عدة عشرات من الكيلوبايتات فقط بالنسبة للتوزيعة <span
-                class="distribution distribution">غير المستقرة</span>، لذا فإن كمية البيانات المُنزَّلة عند استدعاء <code
-                class="command">aptitude update</code> أسبوعياً أصغر بعشر مرات غالباً. أما بالنسبة للتوزيعات الأخرى مثل <span
-                class="distribution distribution">المستقرة</span> و<span
-                class="distribution distribution">الاختبارية</span>، اللتان تتغيران بمعدل أقل، فإن التوفير ملحوظ أكثر.
+				To speed up the process APT can download “diff” files containing the changes since the previous update, as opposed to the entire file. To achieve this, official Debian mirrors distribute different files which list the differences between one version of the <code
+                class="filename">Packages</code> file and the following version. They are generated at each update of the archives and a history of one week is kept. Each of these “diff” files only takes a few dozen kilobytes for <span
+                class="distribution distribution">Unstable</span>, so that the amount of data downloaded by a weekly <code
+                class="command">apt update</code> is often divided by 10. For distributions like <span
+                class="distribution distribution">Stable</span> and <span
+                class="distribution distribution">Testing</span>, which change less, the gain is even more noticeable.
 			</div><div
               class="para">
 				على أي حال، قد ترغب أحياناً بتنزيل ملف <code
@@ -336,58 +357,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">false</code>.
 			</div></div><div
             class="para">
-				ستختار <code
-              class="command">apt-get</code> الإصدار الأحدث عادة (فيما عدا حزم التوزيعة <span
-              class="distribution distribution">التجريبية Experimental</span> وحزم <span
-              class="distribution distribution">stable-backports</span>، التي يتم تجاهلها افتراضياً مهما كان رقم إصدارها). فإذا أضفتَ <span
-              class="distribution distribution">Testing</span> أو <span
-              class="distribution distribution">Unstable</span> إلى ملف <code
-              class="filename">sources.list</code>، سوف يغير الأمر <code
-              class="command">apt-get upgrade</code> معظم توزيعتك <span
-              class="distribution distribution">المستقرة</span> إلى <span
-              class="distribution distribution">اختبارية</span> أو <span
-              class="distribution distribution">غير مستقرة</span>، وقد لا يكون هذا مقصدك.
+				<code
+              class="command">apt</code> will generally select the most recent version number (except for packages from <span
+              class="distribution distribution">Experimental</span> and <span
+              class="distribution distribution">stable-backports</span>, which are ignored by default whatever their version number). If you specified <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span> in your <code
+              class="filename">sources.list</code>, <code
+              class="command">apt upgrade</code> will switch most of your <span
+              class="distribution distribution">Stable</span> system to <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span>, which might not be what you intended.
 			</div><div
             class="para">
-				حتى تطلب من <code
-              class="command">apt-get</code> أن تستخدم توزيعة محددة عند البحث عن تحديثات الحزم، عليك استخدام الخيار <code
-              dir="ltr"
-              class="literal">-t</code> أو <code
-              dir="ltr"
-              class="literal">--target-release</code>، متبوعاً باسم التوزيعة التي تريد (مثلاً: <code
-              class="command">apt-get -t stable upgrade</code>). لتفادي تحديد هذا الخيار في كل مرة تستخدم فيها <code
-              class="command">apt-get</code>، يمكنك إضافة <code
-              class="literal">APT::Default-Release "stable";</code>‎ إلى الملف <code
-              dir="ltr"
+				To tell <code
+              class="command">apt</code> to use a specific distribution when searching for upgraded packages, you need to use the <code
+              class="literal">-t</code> or <code
+              class="literal">--target-release</code> option, followed by the name of the distribution you want (for example: <code
+              class="command">apt -t stable upgrade</code>). To avoid specifying this option every time you use <code
+              class="command">apt</code>, you can add <code
+              class="literal">APT::Default-Release "stable";</code> in the file <code
               class="filename">/etc/apt/apt.conf.d/local</code>.
 			</div><a
-            id="idm139700964846736"
+            id="idm140156520331040"
             class="indexterm"></a><a
-            id="idm139700964845616"
+            id="idm140156520329920"
             class="indexterm"></a><a
-            id="idm139700964844496"
+            id="idm140156520328800"
+            class="indexterm"></a><a
+            id="idm140156520327680"
+            class="indexterm"></a><a
+            id="idm140156520326560"
             class="indexterm"></a><div
             class="para">
-				بالنسبة للتحديثات الأهم، مثل الانتقال من أحد إصدارات دبيان الرئيسية إلى التالي، عليك استخدام <code
-              class="command">apt-get dist-upgrade</code> (من العبارة ‏”distribution upgrade“ أي تحديث التوزيعة). عند تنفيذ هذه التعليمة، ستكمل <code
-              class="command">apt-get</code> التحديث حتى لو اضطرت لإزالة بعض الحزم الميتة أو تثبيت اعتماديات جديدة. هذا هو أيضاً الأمر الذي يستعمله مستخدمو إصدارة دبيان <span
-              class="distribution distribution">غير المستقرة</span>ويتابعون تطورها يوماً بيوم. هذه التعليمة أبسط من أن تحتاج لشرح: فهذه الوظيفة العظيمة هي أساس شهرة APT.
+				For more important upgrades, such as the change from one major Debian version to the next, you need to use <code
+              class="command">apt full-upgrade</code>. With this instruction, <code
+              class="command">apt</code> will complete the upgrade even if it has to remove some obsolete packages or install new dependencies. This is also the command used by users who work daily with the Debian <span
+              class="distribution distribution">Unstable</span> release and follow its evolution day by day. It is so simple that it hardly needs explanation: APT's reputation is based on this great functionality.
 			</div><div
             class="para">
-				تملك <code
-              class="command">aptitude</code> الأمر <code
-              class="command">aptitude full-upgrade</code> كمرادف للأمر السابق رغم أنها تتعرف على الأمر <code
-              class="command">dist-upgrade</code> أيضاً (لكن هذه الصيغة مستنكرة deprecated).
+				Unlike <code
+              class="command">apt</code> and <code
+              class="command">aptitude</code>, <code
+              class="command">apt-get</code> doesn't know the <code
+              class="command">full-upgrade</code> command. Instead, you should use <code
+              class="command">apt-get dist-upgrade</code> (”distribution upgrade”), the historical and well-known command that <code
+              class="command">apt</code> and <code
+              class="command">aptitude</code> also accept for the convenience of users who got used to it.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.apt-config"></a>6.2.4. خيارات الإعداد</h3></div></div></div><a
-            id="idm139700964837248"
+            id="idm140156520317728"
             class="indexterm"></a><a
-            id="idm139700964835808"
+            id="idm140156520316288"
             class="indexterm"></a><a
-            id="idm139700964834688"
+            id="idm140156520315168"
             class="indexterm"></a><div
             class="para">
 				بالإضافة إلى عناصر الضبط التي ذكرناها سابقاً، من الممكن ضبط بعض نواحي APT بإضافة تعليمات في ملف في مجلد <code
@@ -415,7 +441,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>أساسيات</em></span> المجلدات التي تنتهي باللاحقة <code
                         dir="ltr"
                         class="filename">.d</code></strong></p></div></div></div><a
-              id="idm139700964824288"
+              id="idm140156520304768"
               class="indexterm"></a><div
               class="para">
 				أصبح استخدام المجلدات ذات اللاحقة <code
@@ -455,19 +481,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">غير المستقرة</span> أو <span
               class="distribution distribution">التجريبية</span> إلى إحدى التوزيعات الأخرى. من الممكن تعيين أولويات للحزم المتوفرة (يمكن أن تملك الحزمة الواحدة أكثر من أولوية واحدة اعتماداً على إصدارها أو التوزيعة التي توفرها). ستؤثر هذه الأولويات في سلوك APT: ستختار دائماً نسخة الحزمة ذات الأولوية الأعلى (إلا إذا كانت هذه النسخة أقدم من النسخة المثبتة وكانت أولويتها أقل من 1000).
 			</div><a
-            id="idm139700964806848"
+            id="idm140156520287328"
             class="indexterm"></a><a
-            id="idm139700964805248"
+            id="idm140156520285728"
             class="indexterm"></a><a
-            id="idm139700964804288"
+            id="idm140156520284768"
             class="indexterm"></a><a
-            id="idm139700964802848"
+            id="idm140156520283328"
             class="indexterm"></a><a
-            id="idm139700964801440"
+            id="idm140156520281920"
             class="indexterm"></a><a
-            id="idm139700964800000"
+            id="idm140156520280480"
             class="indexterm"></a><a
-            id="idm139700964798880"
+            id="idm140156520279360"
             class="indexterm"></a><div
             class="para">
 				تُعرِّف APT عدة أولويات افتراضية. كل نسخة مثبتة من الحزمة لها أولوية تساوي 100. النسخة غير المثبتة لها أولوية تساوي 500 افتراضياً، لكن يمكنها أن تقفز إلى 990 إذا كانت تنتمي للتوزيعة المستهدفة (التي تُحدَّد بالخيار <code
@@ -494,15 +520,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span>, <span
               class="distribution distribution">Testing</span>, <span
               class="distribution distribution">Unstable</span> or <span
-              class="distribution distribution">Experimental</span> for the standard distributions provided by Debian) together with its version (for example 5.0 for Debian <span
-              class="distribution distribution">Lenny</span>). Let's have a look at its syntax through some realistic case studies of this mechanism.
+              class="distribution distribution">Experimental</span> for the standard distributions provided by Debian) together with its version (for example 8 for Debian <span
+              class="distribution distribution">Jessie</span>). Let's have a look at its syntax through some realistic case studies of this mechanism.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>حالة خاصة</em></span> أولوية الحزم <span
                         class="distribution distribution">التجريبية</span></strong></p></div></div></div><a
-              id="idm139700964783072"
+              id="idm140156520263552"
               class="indexterm"></a><div
               class="para">
 				إذا أضفت التوزيعة <span
@@ -560,11 +586,11 @@ Pin-Priority: 1001
                         class="emphasis"><em>تلميح</em></span> التعليقات في الملف <code
                         dir="ltr"
                         class="filename">/etc/apt/preferences</code></strong></p></div></div></div><a
-              id="idm139700964764880"
+              id="idm140156520245360"
               class="indexterm"></a><a
-              id="idm139700964763760"
+              id="idm140156520244240"
               class="indexterm"></a><a
-              id="idm139700964762640"
+              id="idm140156520243120"
               class="indexterm"></a><div
               class="para">
 				لا توجد صيغة رسمية للتعليقات في ملف <code
@@ -584,42 +610,40 @@ Pin-Priority: 500
                   class="title"><a
                     id="sect.apt-mix-distros"></a>6.2.6. العمل مع عدة توزيعات</h3></div></div></div><div
             class="para">
-				بما أن <code
-              class="command">apt-get</code> أداة رائعة فعلاً، فهي تغريك بالتقاط حزم من توزيعات أخرى. مثلاً، بعد تثبيت التوزيعة <span
-              class="distribution distribution">المستقرة</span>، قد ترغب بتجربة حزمة برمجية متوفرة في التوزيعة <span
-              class="distribution distribution">الاختبارية</span> أو <span
-              class="distribution distribution">غير المستقرة</span> دون الانحراف بعيداً عن حالة النظام الأولية.
+				<code
+              class="command">apt</code> being such a marvelous tool, it is tempting to pick packages coming from other distributions. For example, after having installed a <span
+              class="distribution distribution">Stable</span> system, you might want to try out a software package available in <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span> without diverging too much from the system's initial state.
 			</div><div
             class="para">
-				حتى لو كنت ستواجه أحياناً مشاكل نتيجة خلط الحزم من توزيعات مختلفة، يدير <code
-              class="command">apt-get</code> مثل هذه الحالات بشكل جيد جداً وتقلل المخاطر بصورة فعالة. أفضل طريقة للمتابعة تكون بإضافة جميع التوزيعات المستخدمة في <code
-              dir="ltr"
-              class="filename">/etc/apt/sources.list</code> (بعض الناس يضعون التوزيعات الثلاثة دائماً، لكن تذكر أن التوزيعة <span
-              class="distribution distribution">غير المستقرة</span> محجوزة للمستخدمين المخضرمين) و تعريف توزيعتك المرجعية بالمتغير <code
-              class="literal">APT::Default-Release</code> (انظر <a
+				Even if you will occasionally encounter problems while mixing packages from different distributions, <code
+              class="command">apt</code> manages such coexistence very well and limits risks very effectively. The best way to proceed is to list all distributions used in <code
+              class="filename">/etc/apt/sources.list</code> (some people always put the three distributions, but remember that <span
+              class="distribution distribution">Unstable</span> is reserved for experienced users) and to define your reference distribution with the <code
+              class="literal">APT::Default-Release</code> parameter (see <a
               class="xref"
               href="sect.apt-get.html#sect.apt-upgrade">قسم 6.2.3, “تحديث النظام”</a>).
 			</div><div
             class="para">
-				دعنا نفرض أن <span
-              class="distribution distribution">المستقرة</span> هي توزيعتك المرجعية لكن <span
-              class="distribution distribution">الاختبارية</span> و<span
-              class="distribution distribution">غير المستقرة</span> موجودتان في ملف <code
-              class="filename">sources.list</code> الخاص بك أيضاً. في هذه الحالة، يمكنك استخدام <code
-              class="command">apt-get install <em
-                class="replaceable">package</em>/testing</code> لتثبيت حزمة من <span
-              class="distribution distribution">الاختبارية</span>. إذا فشل التثبيت نتيجة اعتماديات لا يمكن تلبيتها، دع apt-get تحل هذه الاعتماديات ضمن التوزيعة <span
-              class="distribution distribution">الاختبارية</span> بإضافة المتغير <code
-              dir="ltr"
-              class="literal">-t testing</code>. من الواضح أن الشيء نفسه ينطبق على <span
-              class="distribution distribution">غير المستقرة</span>.
+				Let's suppose that <span
+              class="distribution distribution">Stable</span> is your reference distribution but that <span
+              class="distribution distribution">Testing</span> and <span
+              class="distribution distribution">Unstable</span> are also listed in your <code
+              class="filename">sources.list</code> file. In this case, you can use <code
+              class="command">apt install <em
+                class="replaceable">package</em>/testing</code> to install a package from <span
+              class="distribution distribution">Testing</span>. If the installation fails due to some unsatisfiable dependencies, let it solve those dependencies within <span
+              class="distribution distribution">Testing</span> by adding the <code
+              class="literal">-t testing</code> parameter. The same obviously applies to <span
+              class="distribution distribution">Unstable</span>.
 			</div><div
             class="para">
-				في هذه الحالة، التحديثات (<code
-              class="command">upgrade</code> و <code
-              class="command">dist-upgrade</code>) تتم ضمن التوزيعة <span
-              class="distribution distribution">المستقرة</span> ما عدا الحزم التي حُدِّثت مسبقاً إلى توزيعة أخرى: هذه الحزم ستتبع التحديثات المتوفرة في التوزيعات الأخرى. سنشرح هذا السلوك بمساعدة الأولويات الافتراضية التي تضبطها APT أدناه. لا تتردد باستخدام <code
-              class="command">apt-cache policy</code> (انظر الملاحظة الجانبية) للتحقق من الأولويات المعطاة.
+				In this situation, upgrades (<code
+              class="command">upgrade</code> and <code
+              class="command">full-upgrade</code>) are done within <span
+              class="distribution distribution">Stable</span> except for packages already upgraded to another distribution: those will follow updates available in the other distributions. We will explain this behavior with the help of the default priorities set by APT below. Do not hesitate to use <code
+              class="command">apt-cache policy</code> (see sidebar) to verify the given priorities.
 			</div><div
             class="para">
 				يدور كل شيء حول حقيقة أن APT تنظر إلى الحزم ذات الأولويات الأعلى أو المساوية لأولويات الحزم المثبتة (بفرض أن <code
@@ -668,22 +692,22 @@ Pin-Priority: 490
                   class="title"><a
                     id="sect.automatic-tracking"></a>6.2.7. متابعة الحزم المثبتة آلياً</h3></div></div></div><div
             class="para">
-				إحدى وظائف <code
-              class="command">apt-get</code> الأساسية (التي كانت متوفرة في <code
-              class="command">aptitude</code> فقط في السابق) هي تتبع الحزم المثبتة فقط لأنها اعتماديات. هذه الحزم تدعى ”آلية automatic“، وغالباً ما تنتمي المكتبات مثلاً لهذه الفئة.
+				One of the essential functionalities of <code
+              class="command">apt</code> is the tracking of packages installed only through dependencies. These packages are called “automatic”, and often include libraries for instance.
 			</div><div
             class="para">
-				اعتماداً على هذه المعلومات، يستطيع مدير الحزم عند طلب إزالة حزمة، حساب لائحة بالحزم الآلية التي لم تعد لها حاجة (لعدم وجود حزم أخرى ”مثبتة يدوياً“ تعتمد عليها). يتخلص الأمر <code
-              class="command">apt-get autoremove</code> من هذه الحزم. أما <code
-              class="command">aptitude</code> فليس لها مثل هذا الأمر لأنها تزيل هذه الحزم فور التعرف عليها. يعرض كل من البرنامجين رسالة واضحة تبين الحزم المتأثرة.
+				With this information, when packages are removed, the package managers can compute a list of automatic packages that are no longer needed (because there is no “manually installed” packages depending on them). <code
+              class="command">apt-get autoremove</code> will get rid of those packages. <code
+              class="command">aptitude</code> and <code
+              class="command">apt</code> do not have this command: the former because it removes them automatically as soon as they are identified, and the latter probably because the user should not have to manually run such a command. In all cases, the tools display a clear message listing the affected packages.
 			</div><a
-            id="idm139700964715184"
+            id="idm140156520196800"
             class="indexterm"></a><a
-            id="idm139700964714064"
+            id="idm140156520195680"
             class="indexterm"></a><a
-            id="idm139700964712944"
+            id="idm140156520194560"
             class="indexterm"></a><a
-            id="idm139700964711824"
+            id="idm140156520193440"
             class="indexterm"></a><div
             class="para">
 				من الجيد تعليم أي حزمة لا تحتاجها بشكل مباشر على أنها آلية حتى تزال آلياً عندما لا تبقى لها ضرورة. سوف يضع الأمر <code
@@ -698,13 +722,14 @@ Pin-Priority: 490
                 class="command">aptitude</code>”</a>). كما أن الواجهة التفاعلية التي تقدمها <code
               class="command">aptitude</code> في الطرفية تُسهِّل مراجعة ”الأعلام الآلية automatic flag“ على أعداد كبيرة من الحزم.
 			</div><a
-            id="idm139700964706032"
+            id="idm140156520187648"
             class="indexterm"></a><div
             class="para">
-				قد يرغب بعض الأشخاص بمعرفة سبب وجود حزمة آلية مثبتة على النظام. للحصول على هذه المعلومات من سطر الأوامر، يمكنك استخدام <code
+				People might want to know why an automatically installed package is present on the system. To get this information from the command line, you can use <code
               class="command">aptitude why <em
-                class="replaceable">package</em></code> (لا تملك <code
-              class="command">apt-get</code> ميزة مشابهة):
+                class="replaceable">package</em></code> (<code
+              class="command">apt</code> and <code
+              class="command">apt-get</code> have no similar feature):
 			</div><pre
             class="screen">$ <strong
               class="userinput"><code>aptitude why python-debian</code></strong>
@@ -717,15 +742,16 @@ i A apt-xapian-index Depends    python-debian (&gt;= 0.1.15)
                         class="emphasis"><em>بدائل</em></span> <code
                         class="command">deborphan</code> و<code
                         class="command">debfoster</code></strong></p></div></div></div><a
-              id="idm139700964700032"
+              id="idm140156520181232"
               class="indexterm"></a><a
-              id="idm139700964698912"
+              id="idm140156520180112"
               class="indexterm"></a><div
               class="para">
-				في الأيام الغابرة عندما لم تكن <code
-                class="command">apt-get</code> ولا <code
-                class="command">aptitude</code> قادرتين على تتبع الحزم الآلية، كان هناك أداتين تولدان قوائم الحزم غير الضرورية: <code
-                class="command">deborphan</code> و<code
+				In days where <code
+                class="command">apt</code>, <code
+                class="command">apt-get</code> and <code
+                class="command">aptitude</code> were not able to track automatic packages, there were two utilities producing lists of unnecessary packages: <code
+                class="command">deborphan</code> and <code
                 class="command">debfoster</code>.
 			</div><div
               class="para">

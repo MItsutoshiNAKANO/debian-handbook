@@ -69,33 +69,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. Manipulasi Paket dengan <code
                   class="command">dpkg</code></h2></div></div></div><a
-          id="idm139645526783136"
+          id="idm140298911212368"
           class="indexterm"></a><div
           class="para">
 			<code
-            class="command">dpkg</code> adalah perintah dasar untuk menangani paket Debian pada sistem. Jika Anda memiliki paket <code
-            class="filename">.deb</code>, adalah <code
-            class="command">dpkg</code> yang mengizinkan instalasi atau analisa isinya. Namun program ini hanya memiliki sebagaian pandangan pada dunia Debian: dia tau apa yang terinstall di sistem, dan apapun yang diberikan di baris perintah, namun tidak mengetahui paket lain yang tersedia. Dengan demikian, dia akan gagal jika ketergantungan tidak dipenuhi. Alat semacam <code
-            class="command">apt-get</code>, sebaliknya, akan membuat daftar ketergantungan untuk menginstall apapun seotomatis mungkin.
+            class="command">dpkg</code> is the base command for handling Debian packages on the system. If you have <code
+            class="filename">.deb</code> packages, it is <code
+            class="command">dpkg</code> that allows installation or analysis of their contents. But this program only has a partial view of the Debian universe: it knows what is installed on the system, and whatever it is given on the command line, but knows nothing of the other available packages. As such, it will fail if a dependency is not met. Tools such as <code
+            class="command">apt</code>, on the contrary, will create a list of dependencies to install everything as automatically as possible.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>CATATAN</em></span> <code
-                      class="command">dpkg</code> atau <code
-                      class="command">apt-get</code>?</strong></p></div></div></div><div
+                      class="emphasis"><em>NOTE</em></span> <code
+                      class="command">dpkg</code> or <code
+                      class="command">apt</code>?</strong></p></div></div></div><div
             class="para">
 			<code
-              class="command">dpkg</code> harus dilihat sebagai alat sistem (backend&gt;, dan <code
-              class="command">apt-get</code> sebagai sebuah alat yang paling dekat dengan pengguna, yang mengatasi batasan sebelumnya. Alat-alat ini bekerja bersama-sama, setiap kekhasannya, berlaku untuk tugas khusus.
+              class="command">dpkg</code> should be seen as a system tool (backend), and <code
+              class="command">apt</code> as a tool closer to the user, which overcomes the limitations of the former. These tools work together, each one with its particularities, suited to specific tasks.
 		</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139645526775328"></a>5.4.1. Menginstall Paket</h3></div></div></div><a
-            id="idm139645526774528"
+                    id="idm140298911204672"></a>5.4.1. Menginstall Paket</h3></div></div></div><a
+            id="idm140298911203872"
             class="indexterm"></a><a
-            id="idm139645526773088"
+            id="idm140298911202432"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code>.
 			</div><div
             class="example"><a
-              id="idm139645526769584"></a><p
+              id="idm140298911198928"></a><p
               class="title"><strong>Contoh 5.2. Instalasi sebuah paket dengan <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -126,7 +126,7 @@ Processing triggers for mime-support (3.58) ...</code></pre></div></div><div
               class="command">dpkg</code> (karena setiap panggilan itu berharga, disebabkan oleh pemuatan basisdata di memori, khususnya daftar paket yang telah terinstall).
 			</div><div
             class="example"><a
-              id="idm139645526764000"></a><p
+              id="idm140298911193344"></a><p
               class="title"><strong>Contoh 5.3. Memisahkan unpacking dan konfigurasi</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -144,9 +144,9 @@ Processing triggers for mime-support (3.58) ...
                   class="computeroutput">Setting up man-db (2.7.0.2-5) ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm139645526760224"
+            id="idm140298911189568"
             class="indexterm"></a><a
-            id="idm139645526758784"
+            id="idm140298911188128"
             class="indexterm"></a><div
             class="para">
 				Terkadang <code
@@ -175,7 +175,7 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                     class="title"><strong><span
                         class="emphasis"><em>PERHATIAN</em></span> Efektivitas penggunaan <code
                         class="literal">--force-*</code></strong></p></div></div></div><a
-              id="idm139645526748800"
+              id="idm140298911178144"
               class="indexterm"></a><div
               class="para">
 				Jika Anda tidak berhati-hati, penggunaan pilihan <code
@@ -183,19 +183,19 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                 class="pkg pkg">rdesktop</span> ketika mengabaikan ketergantungannya pada versi baru <span
                 class="pkg pkg">libc6</span>:
 			</div><pre
-              class="programlisting"># apt-get dist-upgrade
+              class="programlisting"># apt full-upgrade
 [...]
-You can run "apt-get -f install" to correct these problems.
-The following packages contain unmet dependencies:
-  rdesktop: Depends on: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
-E: missing dependencies. Try to use the option -f.
+You might want to run 'apt-get -f install' to correct these.
+The following packages have unmet dependencies:
+  rdesktop: Depends: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
+E: Unmet dependencies. Try using -f.
 </pre><div
               class="para">
-				Seorang administrator yang berani yakin akan kebenaran analisanya mungkin akan memilih untuk mengabaikan ketergantungan atau konflik dan menggunakan pilihan <code
-                class="literal">--fore-*</code>. Dalam kasus ini, jika meraka ingin dapat melanjutkan menggunakan <code
-                class="command">apt-get</code> atau <code
-                class="command">aptitude</code>, mereka harus menyunting <code
-                class="filename">/var/lib/dpkg/status</code> untuk menghapus/memodifikasi ketergantungan, atau konflik, yang mereka pilih untuk dikesampingkan.
+				A courageous administrator who is certain of the correctness of their analysis may choose to ignore a dependency or conflict and use the corresponding <code
+                class="literal">--force-*</code> option. In this case, if they want to be able to continue to use <code
+                class="command">apt</code> or <code
+                class="command">aptitude</code>, they must edit <code
+                class="filename">/var/lib/dpkg/status</code> to delete/modify the dependency, or conflict, that they chose to override.
 			</div><div
               class="para">
 				Manipulasi ini ialah hacking yang buruk, dan sebaiknya tidak pernah digunakan, kecuali pada kasus keadaan yang paling ekstrim. Cukup sering, solusi yang paling tepat adalah mengompilasi ulang paket yang menyebabkan masalah (lihat <a
@@ -208,14 +208,14 @@ E: missing dependencies. Try to use the option -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139645526738592"></a>5.4.2. Penghapusan Paket</h3></div></div></div><a
-            id="idm139645526737792"
+                    id="idm140298911168048"></a>5.4.2. Penghapusan Paket</h3></div></div></div><a
+            id="idm140298911167248"
             class="indexterm"></a><a
-            id="idm139645526736832"
+            id="idm140298911166288"
             class="indexterm"></a><a
-            id="idm139645526735872"
+            id="idm140298911165328"
             class="indexterm"></a><a
-            id="idm139645526734432"
+            id="idm140298911163888"
             class="indexterm"></a><div
             class="para">
 				Menjalankan <code
@@ -226,7 +226,7 @@ E: missing dependencies. Try to use the option -f.
               class="literal">--purge</code>, diikuti dengan nama paket.
 			</div><div
             class="example"><a
-              id="idm139645526729680"></a><p
+              id="idm140298911159136"></a><p
               class="title"><strong>Contoh 5.4. Removal and purge of the <span
                   class="pkg pkg">debian-cd</span> package</strong></p><div
               class="example-contents"><pre
@@ -245,14 +245,14 @@ Purging configuration files for debian-cd ...</code></pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139645526725360"></a>5.4.3. Melakukan Queri ke Basisdata <code
+                    id="idm140298911154816"></a>5.4.3. Melakukan Queri ke Basisdata <code
                     class="command">dpkg</code> dan Memeriksa Berkas <code
                     class="filename">.deb</code></h3></div></div></div><a
-            id="idm139645526723792"
+            id="idm140298911153248"
             class="indexterm"></a><a
-            id="idm139645526722352"
+            id="idm140298911151808"
             class="indexterm"></a><a
-            id="idm139645526720912"
+            id="idm140298911150368"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -283,7 +283,7 @@ Purging configuration files for debian-cd ...</code></pre></div></div></div><div
               class="literal">-I</code>), menampilkan header paket Debian tersebut.
 			</div><div
             class="example"><a
-              id="idm139645526708896"></a><p
+              id="idm140298911138352"></a><p
               class="title"><strong>Contoh 5.5. Berbagai queri dengan <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -434,9 +434,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>LEBIH JAUH</em></span> Perbandingan versi</strong></p></div></div></div><a
-              id="idm139645526694784"
+              id="idm140298911124240"
               class="indexterm"></a><a
-              id="idm139645526693824"
+              id="idm140298911123280"
               class="indexterm"></a><div
               class="para">
 				Karena <code
@@ -494,7 +494,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139645526675952"></a>5.4.4. Berkas Log <code
+                    id="idm140298911105408"></a>5.4.4. Berkas Log <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				<code
@@ -507,9 +507,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. Dukungan Multi-Arch</h3></div></div></div><a
-            id="idm139645526670608"
+            id="idm140298911100064"
             class="indexterm"></a><a
-            id="idm139645526669648"
+            id="idm140298911099104"
             class="indexterm"></a><div
             class="para">
 				Semua paket Debian memiliki sebuah field <code
@@ -524,12 +524,12 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139645526664736"></a>5.4.5.1. Mengaktifkan Multi-Arch</h4></div></div></div><div
+                      id="idm140298908394592"></a>5.4.5.1. Mengaktifkan Multi-Arch</h4></div></div></div><div
               class="para">
-					Dukungan multi-arch <code
-                class="command">dpkg</code> mengizinkan pengguna untuk menentukan “arsitektur asing” yang dapat diinstall pada sistem terkini. Hal ini dapat dengan mudah dilakukan dengan <code
-                class="command">dpkg --add-architecture</code> seperti contoh di bawah ini. Ada <code
-                class="command">dpkg --remove-architecture</code> yang sesuai untuk menghilangkah dukungan ke arsitektur asing, namun hanya dapat digunakan ketika tidak ada paket dengan arsitektur ini.
+					<code
+                class="command">dpkg</code>'s multi-arch support allows users to define “foreign architectures” that can be installed on the current system. This is simply done with <code
+                class="command">dpkg --add-architecture</code> like in the example below. There is a corresponding <code
+                class="command">dpkg --remove-architecture</code> to drop support of a foreign architecture, but it can only be used when no packages of this architecture remain.
 				</div><pre
               class="screen">
 <code
@@ -586,10 +586,10 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
                   class="filename">Paket</code> yang sesuai selama proses pembaharuannya.
 				</div><div
                 class="para">
-					Paket asing kemudian dapat diinstall dengan <code
-                  class="command">apt-get install <em
-                    class="replaceable">paket</em>:<em
-                    class="replaceable">arsitektur</em></code>.
+					Foreign packages can then be installed with <code
+                  class="command">apt install <em
+                    class="replaceable">package</em>:<em
+                    class="replaceable">architecture</em></code>.
 				</div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -597,22 +597,15 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
                           class="emphasis"><em>DALAM PRAKTEKNYA</em></span> Menggunakan biner i386 proprietary pada amd64</strong></p></div></div></div><div
                 class="para">
 					Ada banyak kasus penggunaan multi-arch, namun yang paling umum ialah kemungkinan untuk mengeksekusi biner 32 bit (i386) pada sistem 64 bit (amd64), seringkali karena beberapa aplikasi proprietary populer (seperti Skype) hanya disediakan dalam versi 43 bit.
-				</div><div
-                class="para">
-					Sebelum multi-arch, ketika Anda ingin menggunakan aplikasi 32 bit pada sebuah sistem 64 bit, Anda harus menginstall <span
-                  class="pkg pkg">ia32-libs</span> untuk mendapatkan versi 32 bit pustaka yang paling populer. Paket tersebut merupakan usaha yang besar memaketkan ulang pustaka 32 bit dalam paket “amd64”.
-				</div><a
-                id="idm139645526645584"
-                class="indexterm"></a></div></div><div
+				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139645526643840"></a>5.4.5.2. Perubahan Terkait Multi-Arch</h4></div></div></div><div
+                      id="idm140298908376640"></a>5.4.5.2. Perubahan Terkait Multi-Arch</h4></div></div></div><div
               class="para">
 					To make multi-arch actually useful and usable, libraries had to be repackaged and moved to an architecture-specific directory so that multiple copies (targeting different architectures) can be installed alongside. Such updated packages contain the “<code
                 class="literal">Multi-Arch: same</code>” header field to tell the packaging system that the various architectures of the package can be safely co-installed (and that those packages can only satisfy dependencies of packages of the same architecture). Since multi-arch made its debut in Debian <span
-                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet (but all libraries which were embedded in <span
-                class="pkg pkg">ia32-libs</span> do!).
+                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet.
 				</div><pre
               class="screen">
 $ <strong

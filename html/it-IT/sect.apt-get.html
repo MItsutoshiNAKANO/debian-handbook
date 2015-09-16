@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">6.2. I comandi aptitude e apt-get</title><link
+        xmlns:d="http://docbook.org/ns/docbook">6.2. aptitude, apt-get, and apt Commands</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-it-IT-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="Il manuale dell'amministratore Debian" /><link
@@ -67,76 +67,91 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.apt-get"></a>6.2. I comandi <code
-                  class="command">aptitude</code> e <code
-                  class="command">apt-get</code></h2></div></div></div><a
-          id="idm140518369798304"
+                  id="sect.apt-get"></a>6.2. <code
+                  class="command">aptitude</code>, <code
+                  class="command">apt-get</code>, and <code
+                  class="command">apt</code> Commands</h2></div></div></div><a
+          id="idm140109887681760"
           class="indexterm"></a><a
-          id="idm140518369797184"
+          id="idm140109887680640"
+          class="indexterm"></a><a
+          id="idm140109887679520"
           class="indexterm"></a><div
           class="para">
-			APT è un progetto vasto, i cui piani originali includevano un'interfaccia grafica. Si basa su una libreria che contiene l'applicazione principale e <code
-            class="command">apt-get</code> è stato il primo frontend, basato su riga di comando, che è stata sviluppato nell'ambito del progetto.
+			APT is a vast project, whose original plans included a graphical interface. It is based on a library which contains the core application, and <code
+            class="command">apt-get</code> is the first front end — command-line based — which was developed within the project. <code
+            class="command">apt</code> is a second command-line based front end provided by APT which overcomes some design mistakes of <code
+            class="command">apt-get</code>.
 		</div><div
           class="para">
-			Numerose altre interfacce grafiche sono apparse come progetti esterni: <code
+			Numerous other graphical interfaces then appeared as external projects: <code
             class="command">synaptic</code>, <code
-            class="command">aptitude</code> (che include sia un'interfaccia in modalità testo che una grafica, anche se non ancora completa), <code
-            class="command">wajig</code>, ecc. L'interfaccia più consigliata, <code
-            class="command">apt-get</code>, è quella usata durante l'installazione di Debian ed è quella che verrà usata negli esempi forniti in questa sezione. Notare tuttavia che la sintassi della riga di comando di <code
-            class="command">aptitude</code> è molto simile. Quando ci saranno grandi differenze fra <code
-            class="command">apt-get</code> e <code
-            class="command">aptitude</code>, tali differenze verranno spiegate.
+            class="command">aptitude</code> (which includes both a text mode interface and a graphical one — even if not complete yet), <code
+            class="command">wajig</code>, etc. The most recommended interface, <code
+            class="command">apt</code>, is the one that we will use in the examples given in this section. Note however that <code
+            class="command">apt-get</code> and <code
+            class="command">aptitude</code> have a very similar command line syntax. When there are major differences between <code
+            class="command">apt</code>, <code
+            class="command">apt-get</code> and <code
+            class="command">aptitude</code>, these differences will be detailed.
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140518369790832"></a>6.2.1. Inizializzazione</h3></div></div></div><div
+                    id="idm140109887671472"></a>6.2.1. Inizializzazione</h3></div></div></div><div
             class="para">
-				Per qualsiasi lavoro con APT, la lista dei pacchetti disponibili deve essere aggiornata; questo può essere fatto semplicemente attraverso <code
-              class="command">apt-get update</code>. A seconda della velocità della connessione, l'operazione può richiedere un po' di tempo visto che deve scaricare un certo numero di file <code
+				For any work with APT, the list of available packages needs to be updated; this can be done simply through <code
+              class="command">apt update</code>. Depending on the speed of your connection, the operation can take a while since it involves downloading a certain number of <code
               class="filename">Packages</code>/<code
               class="filename">Sources</code>/<code
               class="filename">Translation-<em
-                class="replaceable">codice-lingua</em></code>, che sono gradualmente diventati sempre più grandi mano a mano che Debian si è sviluppata (almeno 10 MB di dati per la sezione <code
-              class="literal">main</code>). Ovviamente, installare da un insieme di CD-ROM non richiede di scaricare nulla: in questo caso, l'operazione è molto veloce.
+                class="replaceable">language-code</em></code> files, which have gradually become bigger and bigger as Debian has developed (at least 10 MB of data for the <code
+              class="literal">main</code> section). Of course, installing from a CD-ROM set does not require any downloading — in this case, the operation is very fast.
 			</div><a
-            id="idm140518369786352"
+            id="idm140109887667056"
             class="indexterm"></a><a
-            id="idm140518369785232"
+            id="idm140109887665936"
+            class="indexterm"></a><a
+            id="idm140109887664816"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140518369783952"></a>6.2.2. Installazione e rimozione</h3></div></div></div><a
-            id="idm140518369783184"
+                    id="idm140109887663536"></a>6.2.2. Installazione e rimozione</h3></div></div></div><a
+            id="idm140109887662768"
             class="indexterm"></a><a
-            id="idm140518369781744"
+            id="idm140109887661328"
             class="indexterm"></a><a
-            id="idm140518369780304"
+            id="idm140109887659888"
             class="indexterm"></a><a
-            id="idm140518369778896"
+            id="idm140109887658480"
             class="indexterm"></a><div
             class="para">
-				Con APT, i pacchetti possono essere aggiunti o rimossi dal sistema, rispettivamente con <code
-              class="command">apt-get install <em
-                class="replaceable">pacchetto</em></code> e <code
-              class="command">apt-get remove <em
-                class="replaceable">pacchetto</em></code>. In entrambi i casi, APT installerà automaticamente le dipendenze necessarie o rimuoverà i pacchetti che dipendono da quello che ci si appresta a rimuovere. Il comando <code
-              class="command">apt-get purge <em
-                class="replaceable">pacchetto</em></code> implica una completa disinstallazione: anche i file di configurazione vengono eliminati.
+				With APT, packages can be added or removed from the system, respectively with <code
+              class="command">apt install <em
+                class="replaceable">package</em></code> and <code
+              class="command">apt remove <em
+                class="replaceable">package</em></code>. In both cases, APT will automatically install the necessary dependencies or delete the packages which depend on the package that is being removed. The <code
+              class="command">apt purge <em
+                class="replaceable">package</em></code> command involves a complete uninstallation — the configuration files are also deleted.
 			</div><a
-            id="idm140518369774768"
+            id="idm140109887654480"
             class="indexterm"></a><a
-            id="idm140518369773648"
+            id="idm140109887653360"
             class="indexterm"></a><a
-            id="idm140518369772528"
+            id="idm140109887652240"
             class="indexterm"></a><a
-            id="idm140518369771408"
+            id="idm140109887651120"
             class="indexterm"></a><a
-            id="idm140518369770288"
+            id="idm140109887650000"
             class="indexterm"></a><a
-            id="idm140518369769168"
+            id="idm140109887648880"
+            class="indexterm"></a><a
+            id="idm140109887647760"
+            class="indexterm"></a><a
+            id="idm140109887646640"
+            class="indexterm"></a><a
+            id="idm140109887645520"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -182,13 +197,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>SUGGERIMENTO</em></span> Rimozione e installazione nello stesso momento</strong></p></div></div></div><div
               class="para">
-				È possibile richiedere ad <code
-                class="command">apt-get</code> (o ad <code
-                class="command">aptitude</code>) di installare certi pacchetti e rimuoverne altri nella stessa riga di comando aggiungendo un suffisso. Con un comando <code
-                class="command">apt-get install</code>, aggiungere «<code
-                class="literal">-</code>» ai nomi dei pacchetti da rimuovere. Con un comando <code
-                class="command">apt-get remove</code>, aggiungere «<code
-                class="literal">+</code>» ai nomi dei pacchetti da installare.
+				It is possible to ask <code
+                class="command">apt</code> (or <code
+                class="command">apt-get</code>, or <code
+                class="command">aptitude</code>) to install certain packages and remove others on the same command line by adding a suffix. With an <code
+                class="command">apt install</code> command, add “<code
+                class="literal">-</code>” to the names of the packages you wish to remove. With an <code
+                class="command">apt remove</code> command, add “<code
+                class="literal">+</code>” to the names of the packages you wish to install.
 			</div><div
               class="para">
 				Il prossimo esempio mostra due modi differenti di installare il <em
@@ -196,14 +212,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">pacchetto2</em>.
 			</div><pre
               class="screen"># <strong
-                class="userinput"><code>apt-get install <em
-                    class="replaceable">pacchetto1</em> <em
-                    class="replaceable">pacchetto2-</em></code></strong>
+                class="userinput"><code>apt install <em
+                    class="replaceable">package1</em> <em
+                    class="replaceable">package2-</em></code></strong>
 [...]
 # <strong
-                class="userinput"><code>apt-get remove <em
-                    class="replaceable">pacchetto1+</em> <em
-                    class="replaceable">pacchetto2</em></code></strong>
+                class="userinput"><code>apt remove <em
+                    class="replaceable">package1+</em> <em
+                    class="replaceable">package2</em></code></strong>
 [...]
 </pre><div
               class="para">
@@ -213,20 +229,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>SUGGERIMENTO</em></span> <code
-                        class="command">apt-get --reinstall</code> e <code
+                        class="emphasis"><em>TIP</em></span> <code
+                        class="command">apt --reinstall</code> and <code
                         class="command">aptitude reinstall</code></strong></p></div></div></div><a
-              id="idm140518369745792"
+              id="idm140109887621536"
               class="indexterm"></a><div
               class="para">
-				Il sistema può a volte danneggiarsi a seguito della rimozione o delle modifiche ai file in un pacchetto. Il modo più facile per recuperare questi file è di reinstallare il pacchetto interessato. Purtroppo, il sistema di pacchettizzazione rileva che quest'ultimo è già installato e si rifiuta cortesemente di reinstallarlo; per evitare questo, usare l'opzione <code
-                class="literal">--reinstall</code> del comando <code
-                class="command">apt-get</code>. Il seguente comando reinstalla <span
-                class="pkg pkg">postfix</span> anche se è già presente:
+				The system can sometimes be damaged after the removal or modification of files in a package. The easiest way to retrieve these files is to reinstall the affected package. Unfortunately, the packaging system finds that the latter is already installed and politely refuses to reinstall it; to avoid this, use the <code
+                class="literal">--reinstall</code> option of the <code
+                class="command">apt</code> and <code
+                class="command">apt-get</code> commands. The following command reinstalls <span
+                class="pkg pkg">postfix</span> even if it is already present:
 			</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>apt-get --reinstall install postfix</code></strong></pre><div
+                class="userinput"><code>apt --reinstall install postfix</code></strong></pre><div
               class="para">
 				La riga di comando per <code
                 class="command">aptitude</code> è un po' diversa, ma ottiene lo stesso risultato con <code
@@ -238,38 +255,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
               class="para">
 				Be careful! Using <code
-                class="command">apt-get --reinstall</code> to restore packages modified during an attack will certainly not recover the system as it was. <a
+                class="command">apt --reinstall</code> to restore packages modified during an attack will certainly not recover the system as it was. <a
                 class="xref"
                 href="sect.dealing-with-compromised-machine.html">Sezione 14.7, «Gestire una macchina compromessa»</a> details the necessary steps to take with a compromised system.
 			</div></div><div
             class="para">
-				Se il file <code
-              class="filename">sources.list</code> cita diverse distribuzioni, è possibile specificare la versione del pacchetto da installare. Un numero di versione specifico può essere richiesto con <code
-              class="command">apt-get install <em
-                class="replaceable">pacchetto</em>=<em
-                class="replaceable">versione</em></code>, ma è in genere preferito indicare la sua distribuzione di origine (<span
+				If the file <code
+              class="filename">sources.list</code> mentions several distributions, it is possible to give the version of the package to install. A specific version number can be requested with <code
+              class="command">apt install <em
+                class="replaceable">package</em>=<em
+                class="replaceable">version</em></code>, but indicating its distribution of origin (<span
               class="distribution distribution">Stable</span>, <span
-              class="distribution distribution">Testing</span> o <span
-              class="distribution distribution">Unstable</span>): con <code
-              class="command">apt-get install <em
-                class="replaceable">pacchetto</em>/<em
-                class="replaceable">distribuzione</em></code>. Con questo comando è possibile tornare ad una versione precedente di un pacchetto (se per esempio si sa che funziona bene), a condizione che sia ancora disponibile in una delle sorgenti a cui fa riferimento il file <code
-              class="filename">sources.list</code>. Altrimenti l'archivio <code
-              class="literal">snapshot.debian.org</code> può venire in soccorso (vedere il riquadro <a
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span>) — with <code
+              class="command">apt install <em
+                class="replaceable">package</em>/<em
+                class="replaceable">distribution</em></code> — is usually preferred. With this command, it is possible to go back to an older version of a package (if for instance you know that it works well), provided that it is still available in one of the sources referenced by the <code
+              class="filename">sources.list</code> file. Otherwise the <code
+              class="literal">snapshot.debian.org</code> archive can come to the rescue (see sidebar <a
               class="xref"
               href="apt.html#sidebar.snapshot.debian.org"><span
                 class="emphasis"><em>APPROFONDIMENTO</em></span> Le vecchie versioni dei pacchetti: <code
                 class="literal">snapshot.debian.org</code></a>).
 			</div><div
             class="example"><a
-              id="idm140518369729472"></a><p
+              id="idm140109887604848"></a><p
               class="title"><strong>Esempio 6.3. Installazione della versione <span
                   class="distribution distribution">unstable</span> di <span
                   class="pkg pkg">spamassassin</span></strong></p><div
               class="example-contents"><pre
                 class="screen"><code
                   class="computeroutput"># </code><strong
-                  class="userinput"><code>apt-get install spamassassin/unstable</code></strong></pre></div></div><div
+                  class="userinput"><code>apt install spamassassin/unstable</code></strong></pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
@@ -282,25 +299,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">apt-get clean</code> entirely empties the directory; <code
                 class="command">apt-get autoclean</code> only removes packages which can no longer be downloaded (because they have disappeared from the Debian mirror) and are therefore clearly useless (the configuration parameter <code
                 class="literal">APT::Clean-Installed</code> can prevent the removal of <code
-                class="filename">.deb</code> files that are currently installed).
+                class="filename">.deb</code> files that are currently installed). Note that <code
+                class="command">apt</code> does not support those commands.
 			</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.apt-upgrade"></a>6.2.3. Aggiornamento del sistema</h3></div></div></div><a
-            id="idm140518369719776"
+            id="idm140109887594704"
             class="indexterm"></a><a
-            id="idm140518369718368"
+            id="idm140109887593296"
             class="indexterm"></a><a
-            id="idm140518369717248"
+            id="idm140109887592176"
+            class="indexterm"></a><a
+            id="idm140109887591056"
             class="indexterm"></a><div
             class="para">
-				Sono raccomandati aggiornamenti regolari, perché includono gli ultimi aggiornamenti di sicurezza. Per aggiornare, usare <code
-              class="command">apt-get upgrade</code> o <code
-              class="command">aptitude safe-upgrade</code> (ovviamente dopo <code
-              class="command">apt-get update</code>). Questo comando controlla i pacchetti installati che possono essere aggiornati senza la rimozione di alcun pacchetto. In altre parole, l'obiettivo è quello di garantire l'aggiornamento meno intrusivo possibile. <code
-              class="command">apt-get</code> è un po' più esigente di <code
-              class="command">aptitude</code> perché si rifiuta di installare pacchetti che erano già installati in precedenza.
+				Regular upgrades are recommended, because they include the latest security updates. To upgrade, use <code
+              class="command">apt upgrade</code>, <code
+              class="command">apt-get upgrade</code> or <code
+              class="command">aptitude safe-upgrade</code> (of course after <code
+              class="command">apt update</code>). This command looks for installed packages which can be upgraded without removing any packages. In other words, the goal is to ensure the least intrusive upgrade possible. <code
+              class="command">apt-get</code> is slightly more demanding than <code
+              class="command">aptitude</code> or <code
+              class="command">apt</code> because it will refuse to install packages which were not installed beforehand.
 			</div><div
             class="sidebar"><a
               id="sidebar.apt-pdiff"></a><div
@@ -309,7 +331,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>SUGGERIMENTO</em></span> Aggiornamento incrementale</strong></p></div></div></div><div
               class="para">
 				As we explained earlier, the aim of the <code
-                class="command">apt-get update</code> command is to download for each package source the corresponding <code
+                class="command">apt update</code> command is to download for each package source the corresponding <code
                 class="filename">Packages</code> (or <code
                 class="filename">Sources</code>) file. However, even after a <code
                 class="command">bzip2</code> compression, these files can remain rather large (the <code
@@ -319,12 +341,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="distribution distribution">Jessie</span> takes more than 6 MB). If you wish to upgrade regularly, these downloads can take up a lot of time.
 			</div><div
               class="para">
-				Per velocizzare il processo, APT può scaricare file «diff» contenenti le modifiche rispetto al precedente aggiornamento, invece che l'intero file. Per raggiungere questo obiettivo, i mirror Debian ufficiali distribuiscono diversi file che elencano le differenze fra una versione del file <code
-                class="filename">Packages</code> e la versione successiva. Sono generati ad ogni aggiornamento degli archivi e viene mantenuto uno storico di una settimana. Ognuno di questi file «diff» occupa solo poche decine di kilobyte per <span
-                class="distribution distribution">Unstable</span>, in modo che la quantità di dati scaricati con un <code
-                class="command">aptitude update</code> settimanale è spesso divisa per 10. Per distribuzioni come <span
-                class="distribution distribution">Stable</span> e <span
-                class="distribution distribution">Testing</span>, che cambiano di meno, il guadagno è ancora più evidente.
+				To speed up the process APT can download “diff” files containing the changes since the previous update, as opposed to the entire file. To achieve this, official Debian mirrors distribute different files which list the differences between one version of the <code
+                class="filename">Packages</code> file and the following version. They are generated at each update of the archives and a history of one week is kept. Each of these “diff” files only takes a few dozen kilobytes for <span
+                class="distribution distribution">Unstable</span>, so that the amount of data downloaded by a weekly <code
+                class="command">apt update</code> is often divided by 10. For distributions like <span
+                class="distribution distribution">Stable</span> and <span
+                class="distribution distribution">Testing</span>, which change less, the gain is even more noticeable.
 			</div><div
               class="para">
 				Tuttavia, a volte può essere interessante forzare lo scaricamento di tutto il file <code
@@ -334,54 +356,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div></div><div
             class="para">
 				<code
-              class="command">apt-get</code> in genere seleziona il numero di versione più recente (ad eccezione dei pacchetti <span
-              class="distribution distribution">Experimental</span> e <span
-              class="distribution distribution">stable-backports</span>, che vengono ignorati per impostazione predefinita a prescindere dal loro numero di versione). Se si è specificato <span
-              class="distribution distribution">Testing</span> o <span
-              class="distribution distribution">Unstable</span> nel proprio <code
+              class="command">apt</code> will generally select the most recent version number (except for packages from <span
+              class="distribution distribution">Experimental</span> and <span
+              class="distribution distribution">stable-backports</span>, which are ignored by default whatever their version number). If you specified <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span> in your <code
               class="filename">sources.list</code>, <code
-              class="command">apt-get upgrade</code> porterà la maggior parte di un sistema <span
-              class="distribution distribution">Stable</span> a <span
-              class="distribution distribution">Testing</span> o <span
-              class="distribution distribution">Unstable</span>, e ciò potrebbe non essere quello che si desiderava fare.
+              class="command">apt upgrade</code> will switch most of your <span
+              class="distribution distribution">Stable</span> system to <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span>, which might not be what you intended.
 			</div><div
             class="para">
-				Per dire ad <code
-              class="command">apt-get</code> di usare una specifica distribuzione quando cerca degli aggiornamenti, si deve usare l'opzione <code
-              class="literal">-t</code> o <code
-              class="literal">--target-release</code>, seguita dal nome della distribuzione voluta (ad esempio: <code
-              class="command">apt-get -t stable upgrade</code>). Per evitare di specificare questa opzione ogni volta che si utilizza <code
-              class="command">apt-get</code>, si può aggiungere la riga <code
-              class="literal">APT::Default-Release "stable";</code> nel file <code
+				To tell <code
+              class="command">apt</code> to use a specific distribution when searching for upgraded packages, you need to use the <code
+              class="literal">-t</code> or <code
+              class="literal">--target-release</code> option, followed by the name of the distribution you want (for example: <code
+              class="command">apt -t stable upgrade</code>). To avoid specifying this option every time you use <code
+              class="command">apt</code>, you can add <code
+              class="literal">APT::Default-Release "stable";</code> in the file <code
               class="filename">/etc/apt/apt.conf.d/local</code>.
 			</div><a
-            id="idm140518369688944"
+            id="idm140109895954848"
             class="indexterm"></a><a
-            id="idm140518369687824"
+            id="idm140109895953728"
             class="indexterm"></a><a
-            id="idm140518369686704"
+            id="idm140109895952608"
+            class="indexterm"></a><a
+            id="idm140109895951488"
+            class="indexterm"></a><a
+            id="idm140109895950368"
             class="indexterm"></a><div
             class="para">
-				Per gli aggiornamenti più importanti, come il passaggio da una versione principale di Debian a quella successiva, è necessario utilizzare <code
-              class="command">apt-get dist-upgrade</code> («aggiornamento di distribuzione»). Con questa istruzione, <code
-              class="command">apt-get</code> completerà l'aggiornamento anche nel caso in cui debba eliminare dei pacchetti obsoleti o installare nuove dipendenze. Questo è anche il comando usato dagli utenti che lavorano quotidianamente con il rilascio <span
-              class="distribution distribution">Unstable</span> di Debian e che seguono la sua evoluzione giorno per giorno. È così semplice che non ha certo bisogno di spiegazione: la reputazione di APT si basa su questa sua grande funzionalità.
+				For more important upgrades, such as the change from one major Debian version to the next, you need to use <code
+              class="command">apt full-upgrade</code>. With this instruction, <code
+              class="command">apt</code> will complete the upgrade even if it has to remove some obsolete packages or install new dependencies. This is also the command used by users who work daily with the Debian <span
+              class="distribution distribution">Unstable</span> release and follow its evolution day by day. It is so simple that it hardly needs explanation: APT's reputation is based on this great functionality.
 			</div><div
             class="para">
-				<code
-              class="command">aptitude full-upgrade</code> è il comando corrispondente di <code
-              class="command">aptitude</code> anche se <code
-              class="command">dist-upgrade</code> è comunque riconosciuto (ma deprecato).
+				Unlike <code
+              class="command">apt</code> and <code
+              class="command">aptitude</code>, <code
+              class="command">apt-get</code> doesn't know the <code
+              class="command">full-upgrade</code> command. Instead, you should use <code
+              class="command">apt-get dist-upgrade</code> (”distribution upgrade”), the historical and well-known command that <code
+              class="command">apt</code> and <code
+              class="command">aptitude</code> also accept for the convenience of users who got used to it.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.apt-config"></a>6.2.4. Opzioni di configurazione</h3></div></div></div><a
-            id="idm140518369679664"
+            id="idm140109895941536"
             class="indexterm"></a><a
-            id="idm140518369678224"
+            id="idm140109895940096"
             class="indexterm"></a><a
-            id="idm140518369677104"
+            id="idm140109895938976"
             class="indexterm"></a><div
             class="para">
 				Oltre agli elementi di configurazione già citati, è possibile configurare certi aspetti di APT aggiungendo direttive in un file della directory <code
@@ -407,7 +437,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>FONDAMENTALI</em></span> Directory terminanti in <code
                         class="filename">.d</code></strong></p></div></div></div><a
-              id="idm140518369667712"
+              id="idm140109895929584"
               class="indexterm"></a><div
               class="para">
 				Le directory con il suffisso <code
@@ -441,19 +471,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Unstable</span> o <span
               class="distribution distribution">Experimental</span>. È possibile assegnare una priorità a ciascun pacchetto disponibile (lo stesso pacchetto può avere diverse priorità a seconda della sua versione o della distribuzione che lo fornisce). Queste priorità influenzeranno il comportamento di APT: per ogni pacchetto, selezionerà sempre la versione con la priorità più alta (tranne se questa è più vecchia di quella installata e se la sua priorità è inferiore a 1000).
 			</div><a
-            id="idm140518369652736"
+            id="idm140109895914608"
             class="indexterm"></a><a
-            id="idm140518369651136"
+            id="idm140109895913008"
             class="indexterm"></a><a
-            id="idm140518369650176"
+            id="idm140109895912048"
             class="indexterm"></a><a
-            id="idm140518369648736"
+            id="idm140109895910608"
             class="indexterm"></a><a
-            id="idm140518369647296"
+            id="idm140109895909168"
             class="indexterm"></a><a
-            id="idm140518369645856"
+            id="idm140109895907728"
             class="indexterm"></a><a
-            id="idm140518369644736"
+            id="idm140109895906608"
             class="indexterm"></a><div
             class="para">
 				APT definisce diverse priorità predefinite. Ogni versione installata di un pacchetto ha priorità 100. Una versione non installata ha priorità 500 per impostazione predefinita, ma può arrivare a 990 se è parte del rilascio di destinazione prescelto (definito con l'opzione a riga di comando <code
@@ -478,15 +508,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span>, <span
               class="distribution distribution">Testing</span>, <span
               class="distribution distribution">Unstable</span> or <span
-              class="distribution distribution">Experimental</span> for the standard distributions provided by Debian) together with its version (for example 5.0 for Debian <span
-              class="distribution distribution">Lenny</span>). Let's have a look at its syntax through some realistic case studies of this mechanism.
+              class="distribution distribution">Experimental</span> for the standard distributions provided by Debian) together with its version (for example 8 for Debian <span
+              class="distribution distribution">Jessie</span>). Let's have a look at its syntax through some realistic case studies of this mechanism.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CASO SPECIFICO</em></span> Priorità di <span
                         class="distribution distribution">experimental</span></strong></p></div></div></div><a
-              id="idm140518369630128"
+              id="idm140109895892000"
               class="indexterm"></a><div
               class="para">
 				Se si è elencato <span
@@ -541,11 +571,11 @@ Pin-Priority: 1001
                     class="title"><strong><span
                         class="emphasis"><em>SUGGERIMENTO</em></span> Commenti in <code
                         class="filename">/etc/apt/preferences</code></strong></p></div></div></div><a
-              id="idm140518369613008"
+              id="idm140109895874880"
               class="indexterm"></a><a
-              id="idm140518369611888"
+              id="idm140109895873760"
               class="indexterm"></a><a
-              id="idm140518369610768"
+              id="idm140109895872640"
               class="indexterm"></a><div
               class="para">
 				Non esiste una sintassi ufficiale per mettere dei commenti nel file <code
@@ -564,40 +594,40 @@ Pin-Priority: 500
                   class="title"><a
                     id="sect.apt-mix-distros"></a>6.2.6. Lavorare con più distribuzioni</h3></div></div></div><div
             class="para">
-				Dato che <code
-              class="command">apt-get</code> è uno strumento così meraviglioso, si può essere tentati di prendere pacchetti provenienti da altre distribuzioni. Ad esempio, dopo aver installato un sistema <span
-              class="distribution distribution">Stable</span>, si potrebbe desiderare di provare un pacchetto software disponibile in <span
-              class="distribution distribution">Testing</span> o <span
-              class="distribution distribution">Unstable</span>, senza scostarsi troppo dallo stato iniziale del sistema.
+				<code
+              class="command">apt</code> being such a marvelous tool, it is tempting to pick packages coming from other distributions. For example, after having installed a <span
+              class="distribution distribution">Stable</span> system, you might want to try out a software package available in <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span> without diverging too much from the system's initial state.
 			</div><div
             class="para">
-				Anche se a volte si incontrano problemi mischiando pacchetti di diverse distribuzioni, <code
-              class="command">apt-get</code> gestisce tale coesistenza molto bene e limita i rischi in modo molto efficace. Il miglior modo di procedere è quello di elencare tutte le distribuzioni utilizzate in <code
-              class="filename">/etc/apt/sources.list</code> (alcune persone mettono sempre le tre distribuzioni, ma ricordare che <span
-              class="distribution distribution">Unstable</span> è riservata agli utenti esperti) e di definire la distribuzione di riferimento con il parametro <code
-              class="literal">APT::Default-Release</code> (vedere la <a
+				Even if you will occasionally encounter problems while mixing packages from different distributions, <code
+              class="command">apt</code> manages such coexistence very well and limits risks very effectively. The best way to proceed is to list all distributions used in <code
+              class="filename">/etc/apt/sources.list</code> (some people always put the three distributions, but remember that <span
+              class="distribution distribution">Unstable</span> is reserved for experienced users) and to define your reference distribution with the <code
+              class="literal">APT::Default-Release</code> parameter (see <a
               class="xref"
               href="sect.apt-get.html#sect.apt-upgrade">Sezione 6.2.3, «Aggiornamento del sistema»</a>).
 			</div><div
             class="para">
-				Supponiamo che <span
-              class="distribution distribution">Stable</span> sia la propria distribuzione di riferimento ma che <span
-              class="distribution distribution">Testing</span> e <span
-              class="distribution distribution">Unstable</span> siano comunque elencate nel proprio file <code
-              class="filename">sources.list</code>. In questo caso, è possibile usare <code
-              class="command">apt-get install <em
-                class="replaceable">pacchetto</em>/testing</code> per installare un pacchetto da <span
-              class="distribution distribution">Testing</span>. Se l'installazione non riesce a causa di alcune dipendenze che non possono essere soddisfatte, si può lasciare che risolva queste dipendenze in <span
-              class="distribution distribution">Testing</span> aggiungendo il parametro <code
-              class="literal">-t testing</code>. Lo stesso vale ovviamente per <span
+				Let's suppose that <span
+              class="distribution distribution">Stable</span> is your reference distribution but that <span
+              class="distribution distribution">Testing</span> and <span
+              class="distribution distribution">Unstable</span> are also listed in your <code
+              class="filename">sources.list</code> file. In this case, you can use <code
+              class="command">apt install <em
+                class="replaceable">package</em>/testing</code> to install a package from <span
+              class="distribution distribution">Testing</span>. If the installation fails due to some unsatisfiable dependencies, let it solve those dependencies within <span
+              class="distribution distribution">Testing</span> by adding the <code
+              class="literal">-t testing</code> parameter. The same obviously applies to <span
               class="distribution distribution">Unstable</span>.
 			</div><div
             class="para">
-				In questa situazione, gli aggiornamenti (<code
-              class="command">upgrade</code> e <code
-              class="command">dist-upgrade</code>) vengono fatti all'interno di <span
-              class="distribution distribution">Stable</span> eccetto per i pacchetti già aggiornati ad altre distribuzioni: questi seguiranno gli aggiornamenti disponibili nelle altre distribuzioni. Questo comportamento verrà spiegato più avanti con l'aiuto delle priorità predefinite impostate da APT. Non esitare ad usare <code
-              class="command">apt-cache policy</code> (vedere riquadro) per verificare le priorità assegnate.
+				In this situation, upgrades (<code
+              class="command">upgrade</code> and <code
+              class="command">full-upgrade</code>) are done within <span
+              class="distribution distribution">Stable</span> except for packages already upgraded to another distribution: those will follow updates available in the other distributions. We will explain this behavior with the help of the default priorities set by APT below. Do not hesitate to use <code
+              class="command">apt-cache policy</code> (see sidebar) to verify the given priorities.
 			</div><div
             class="para">
 				Tutto ruota intorno al fatto che APT considera solo i pacchetti con versione più alta o uguale a quella installata (assumendo che non è stato usato <code
@@ -644,22 +674,22 @@ Pin-Priority: 490
                   class="title"><a
                     id="sect.automatic-tracking"></a>6.2.7. Tenere traccia dei pacchetti installati automaticamente</h3></div></div></div><div
             class="para">
-				Una delle funzionalità essenziali di <code
-              class="command">apt-get</code> (che era inizialmente specifica di <code
-              class="command">aptitude</code>) è il tenere traccia dei pacchetti installati solo come dipendenze. Questi pacchetti vengono chiamati «automatici» e spesso comprendono, ad esempio, le librerie.
+				One of the essential functionalities of <code
+              class="command">apt</code> is the tracking of packages installed only through dependencies. These packages are called “automatic”, and often include libraries for instance.
 			</div><div
             class="para">
-				Con queste informazioni, quando i pacchetti vengono rimossi, i gestori di pacchetti possono elaborare un elenco di pacchetti automatici che non sono più necessari (perché non ci sono pacchetti «installati manualmente» che dipendono da essi). <code
-              class="command">apt-get autoremove</code> eliminerà tali pacchetti. <code
-              class="command">aptitude</code> non ha questo comando perché li rimuove automaticamente non appena vengono identificati. Entrambi i programmi includono un chiaro messaggio che elenca i pacchetti interessati.
+				With this information, when packages are removed, the package managers can compute a list of automatic packages that are no longer needed (because there is no “manually installed” packages depending on them). <code
+              class="command">apt-get autoremove</code> will get rid of those packages. <code
+              class="command">aptitude</code> and <code
+              class="command">apt</code> do not have this command: the former because it removes them automatically as soon as they are identified, and the latter probably because the user should not have to manually run such a command. In all cases, the tools display a clear message listing the affected packages.
 			</div><a
-            id="idm140518369565696"
+            id="idm140109895827696"
             class="indexterm"></a><a
-            id="idm140518369564576"
+            id="idm140109895826576"
             class="indexterm"></a><a
-            id="idm140518369563456"
+            id="idm140109895825456"
             class="indexterm"></a><a
-            id="idm140518369562336"
+            id="idm140109895824336"
             class="indexterm"></a><div
             class="para">
 				È buona abitudine marcare come automatico ogni pacchetto di cui non si ha direttamente bisogno, in modo che venga automaticamente rimosso quando non è più necessario. <code
@@ -674,13 +704,14 @@ Pin-Priority: 490
                 class="command">aptitude</code>»</a>). L'interfaccia interattiva basata su console di <code
               class="command">aptitude</code> rende anche facile revisionare il «contrassegno automatico» per molti pacchetti.
 			</div><a
-            id="idm140518369556816"
+            id="idm140109895818816"
             class="indexterm"></a><div
             class="para">
-				Si potrebbe voler sapere perché un pacchetto installato automaticamente è presente nel sistema. Per ottenere queste informazioni dalla riga di comando, è possibile utilizzare <code
+				People might want to know why an automatically installed package is present on the system. To get this information from the command line, you can use <code
               class="command">aptitude why <em
-                class="replaceable">pacchetto</em></code> (<code
-              class="command">apt-get</code> non ha una funzionalità simile):
+                class="replaceable">package</em></code> (<code
+              class="command">apt</code> and <code
+              class="command">apt-get</code> have no similar feature):
 			</div><pre
             class="screen">$ <strong
               class="userinput"><code>aptitude why python-debian</code></strong>
@@ -693,15 +724,16 @@ i A apt-xapian-index Dipende    python-debian (&gt;= 0.1.15)
                         class="emphasis"><em>ALTERNATIVA</em></span> <code
                         class="command">deborphan</code> e <code
                         class="command">debfoster</code></strong></p></div></div></div><a
-              id="idm140518369550864"
+              id="idm140109887549744"
               class="indexterm"></a><a
-              id="idm140518369549744"
+              id="idm140109887548624"
               class="indexterm"></a><div
               class="para">
-				In passato quando <code
-                class="command">apt-get</code> e <code
-                class="command">aptitude</code> non erano in grado di tenere traccia dei pacchetti automatici, esistevano due utilità per produrre elenchi dei pacchetti non necessari: <code
-                class="command">deborphan</code> e <code
+				In days where <code
+                class="command">apt</code>, <code
+                class="command">apt-get</code> and <code
+                class="command">aptitude</code> were not able to track automatic packages, there were two utilities producing lists of unnecessary packages: <code
+                class="command">deborphan</code> and <code
                 class="command">debfoster</code>.
 			</div><div
               class="para">

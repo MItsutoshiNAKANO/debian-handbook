@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ar-MA-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="دفتر مدير دبيان" /><link
@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700962950992"></a>6.6.1. إجراءات مستحسنة</h3></div></div></div><div
+                    id="idm140156518111648"></a>6.6.1. إجراءات مستحسنة</h3></div></div></div><div
             class="para">
 				بما أن دبيان تستغرق زمناً طويلاً في مرحلة التطور بين الإصدارات المستقرة، عليك قراءة ملاحظات الإصدار قبل التحديث.
 			</div><div
@@ -118,16 +118,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Wheezy</span>. If the file only contains references to <span
               class="distribution distribution">Stable</span> rather than explicit codenames, the change isn't even required, since <span
               class="distribution distribution">Stable</span> always refers to the latest released version of Debian. In both cases, the database of available packages must be refreshed (with the <code
-              class="command">apt-get update</code> command or the refresh button in <code
+              class="command">apt update</code> command or the refresh button in <code
               class="command">synaptic</code>).
 			</div><div
             class="para">
-				بمجرد تسجيل مصادر الحزم الجديدة هذه، عليك أولاً تنفيذ تحديث أصغري باستخدام <code
-              class="command">apt-get upgrade</code>. عند تنفيذ التحديث على دفعتين، نُسهِّل عمل أدوات إدارة الحزم ونضمن غالباً أننا نستخدم أحدث الإصدارات من هذه الأدوات، التي قد تقدم إصلاحات للعلل وتحسينات ضرورية لإتمام التحديث الكامل للتوزيعة.
+				Once these new package sources are registered, you should first do a minimal upgrade with <code
+              class="command">apt upgrade</code>. By doing the upgrade in two steps, we ease the job of the package management tools and often ensure that we have the latest versions of those, which might have accumulated bugfixes and improvements required to complete the full distribution upgrade.
 			</div><div
             class="para">
 				Once this first upgrade is done, it is time to handle the upgrade itself, either with <code
-              class="command">apt-get dist-upgrade</code>, <code
+              class="command">apt full-upgrade</code>, <code
               class="command">aptitude</code>, or <code
               class="command">synaptic</code>. You should carefully check the suggested actions before applying them: you might want to add suggested packages or deselect packages which are only recommended and known not to be useful. In any case, the front-end should come up with a scenario ending in a coherent and up-to-date <span
               class="distribution distribution">Jessie</span> system. Then, all you need is to do is wait while the required packages are downloaded, answer the Debconf questions and possibly those about locally modified configuration files, and sit back while APT does its magic.
@@ -135,7 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139700962928416"></a>6.6.2. حل المشاكل بعد التحديث</h3></div></div></div><div
+                    id="idm140156518089216"></a>6.6.2. حل المشاكل بعد التحديث</h3></div></div></div><div
             class="para">
 				بالرغم من أن مشرفي حزم دبيان يبذلون أفضل ما لديهم، إلا أن تحديث النظام بالكامل لا يجري بالسلاسة التي تتمناها دائماً. قد لا تتوافق إصدارات البرمجيات الجديدة مع القديمة (مثلا، قد يتغير سلوكها الافتراضي أو الصيغة التي تحفظ فيها البيانات). أيضاً، قد تتسلل بعض العلل من هنا وهناك بالرغم من طور الاختبار الذي يسبق إطلاق دبيان دائماً.
 			</div><div
@@ -148,10 +148,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">apt-listchanges</span>) على تفادي المفاجآت السيئة.
 			</div><div
             class="para">
-				قد تجد أحياناً أن النسخة الجديدة من البرنامج لا تعمل على الإطلاق. هذا يحدث عادة إذا لم يكن التطبيق شهيراً بما يكفي ولم يُختَبَر كما يجب؛ وقد يسبب تحديث البرنامج في اللحظات الأخيرة انتكاسات لا يُعثَر عليها إلا بعد إطلاق الإصدار المستقر. في كلا الحالتين، أول شيء يجب عمله هو إلقاء نظرة على نظام تتبع العلل على <code
-              class="literal">http://bugs.debian.org/<em
-                class="replaceable">package</em></code>، والتحقق فيما لو تم التبليغ عن العلة مسبقاً. إذا لم يبلغ عنها أحد، عليك التبليغ عنها بنفسك باستخدام <code
-              class="command">reportbug</code>. أما إذا كانت معروفة مسبقاً، فإن تقرير العلة والرسائل المرتبطة به مصدر ممتاز للمعلومات المتعلقة بالعلة عادة:
+				You might sometimes find that the new version of a software doesn't work at all. This generally happens if the application isn't particularly popular and hasn't been tested enough; a last-minute update can also introduce regressions which are only found after the stable release. In both cases, the first thing to do is to have a look at the bug tracking system at <code
+              class="literal">https://bugs.debian.org/<em
+                class="replaceable">package</em></code>, and check whether the problem has already been reported. If it hasn't, you should report it yourself with <code
+              class="command">reportbug</code>. If it is already known, the bug report and the associated messages are usually an excellent source of information related to the bug:
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
@@ -170,18 +170,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						بل ثمة حالات يُحضِّر فيها المشرف حزمة مصححة وينشرها للعموم.
 					</div></li></ul></div><div
             class="para">
-				تبعاً لخطورة العلة، قد يُحضَّر إصدار جديد من الحزمة خصيصاً لإحدى النسخ المنقحة من الإصدارة المستقرة. عند حدوث ذلك، تتوفر الحزمة المصححة في القسم <code
-              class="literal">proposed-updates</code> في مرايا دبيان (انظر <a
+				Depending on the severity of the bug, a new version of the package may be prepared specifically for a new revision of the stable release. When this happens, the fixed package is made available in the <code
+              class="literal">proposed-updates</code> section of the Debian mirrors (see <a
               class="xref"
-              href="apt.html#sect.proposed-updates">قسم 6.1.2.3, “التحديثات المقترحة”</a>). يمكن إضافة المدخلة المطلوبة مؤقتاً إلى الملف <code
-              class="filename">sources.list</code>، ويمكن تثبيت الحزم المحدّثة باستخدام <code
-              class="command">apt-get</code> أو <code
+              href="apt.html#sect.proposed-updates">قسم 6.1.2.3, “التحديثات المقترحة”</a>). The corresponding entry can then be temporarily added to the <code
+              class="filename">sources.list</code> file, and updated packages can be installed with <code
+              class="command">apt</code> or <code
               class="command">aptitude</code>.
 			</div><div
             class="para">
-				أحياناً لا تتوفر الحزمة المصححة في هذا القسم لأنها تنتظر مصادقة مديري الإصدارة المستقرة عليها. يمكنك التأكد من ذلك من صفحتهم على الوب. الحزم المذكورة هناك غير متوفرة بعد، لكنك ستعرف على الأقل أن عملية نشرها في تَقدُّم. <div
+				Sometimes the fixed package isn't available in this section yet because it is pending a validation by the Stable Release Managers. You can verify if that's the case on their web page. Packages listed there aren't available yet, but at least you know that the publication process is ongoing. <div
               class="url">→ <a
-                href="http://release.debian.org/proposed-updates/stable.html">http://release.debian.org/proposed-updates/stable.html</a></div>
+                href="https://release.debian.org/proposed-updates/stable.html">https://release.debian.org/proposed-updates/stable.html</a></div>
 			</div></div></div><ul
         class="docnav"><li
           class="previous"><a

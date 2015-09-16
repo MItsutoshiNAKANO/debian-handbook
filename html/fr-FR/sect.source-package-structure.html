@@ -68,21 +68,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.source-package-structure"></a>5.3. Structure d'un paquet source</h2></div></div></div><a
-          id="idm140698193513136"
+          id="idm140443401792480"
           class="indexterm"></a><a
-          id="idm140698193511696"
+          id="idm140443401791040"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140698193510256"></a>5.3.1. Format</h3></div></div></div><a
-            id="idm140698193509456"
+                    id="idm140443401789600"></a>5.3.1. Format</h3></div></div></div><a
+            id="idm140443401788800"
             class="indexterm"></a><a
-            id="idm140698193508496"
+            id="idm140443401787840"
             class="indexterm"></a><a
-            id="idm140698193507216"
+            id="idm140443401786560"
             class="indexterm"></a><a
-            id="idm140698193505936"
+            id="idm140443401785280"
             class="indexterm"></a><div
             class="para">
 				Un paquet source est habituellement constitué de 3 fichiers : un <code
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="sect.package-authentication.html">Section 6.5, « Vérification d'authenticité des paquets »</a> pour plus de détails à ce sujet.
 			</div><div
             class="example"><a
-              id="idm140698193498656"></a><p
+              id="idm140443401777664"></a><p
               class="title"><strong>Exemple 5.1. Un fichier <code
                   class="filename">.dsc</code></strong></p><div
               class="example-contents"><pre
@@ -149,7 +149,7 @@ oltfl05z/AI+vYsW482YrCz0fxNAKAvkyuPhDebYI8jnKWeAANoqmKpsNc/HYyvT
 edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
 =Wtoa
 -----END PGP SIGNATURE-----</pre></div></div><a
-            id="idm140698193495344"
+            id="idm140443401774352"
             class="indexterm"></a><div
             class="para">
 				On notera au passage que le paquet source compte lui aussi des dépendances (<code
@@ -200,9 +200,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
                   class="replaceable">component</em>.tar.gz</code> archives can be included. This is useful with software that is distributed in several upstream components but for which a single source package is desired. These archives can also be compressed with <code
                 class="command">bzip2</code> or <code
                 class="command">xz</code> rather than <code
-                class="command">gzip</code> (<code
-                class="command">lzma</code> is also supported by <code
-                class="command">dpkg-source</code> but not accepted into the official archive), which saves disk space and network resources. Finally, the monolithic patch, <code
+                class="command">gzip</code>, which saves disk space and network resources. Finally, the monolithic patch, <code
                 class="filename">.diff.gz</code> is replaced by a <code
                 class="filename">.debian.tar.gz</code> archive containing the compiling instructions and a set of upstream patches contributed by the package maintainer. These last are recorded in a format compatible with <code
                 class="command">quilt</code> — a tool that facilitates the management of a series of patches.
@@ -220,13 +218,13 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>OUTIL</em></span> Décompresser un paquet source</strong></p></div></div></div><a
-              id="idm140698193467936"
+              id="idm140443401747376"
               class="indexterm"></a><a
-              id="idm140698193466816"
+              id="idm140443401746256"
               class="indexterm"></a><a
-              id="idm140698193465888"
+              id="idm140443401745328"
               class="indexterm"></a><a
-              id="idm140698193464960"
+              id="idm140443401744400"
               class="indexterm"></a><div
               class="para">
 				If you have a source package, you can use the <code
@@ -253,7 +251,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140698193456464"></a>5.3.2. Utilité chez Debian</h3></div></div></div><div
+                    id="idm140443401735904"></a>5.3.2. Utilité chez Debian</h3></div></div></div><div
             class="para">
 				Le paquet source est à la base de tout chez Debian. Tous les paquets Debian proviennent d'un paquet source et chaque changement dans un paquet Debian est la conséquence d'une modification réalisée au niveau du paquet source. Les mainteneurs Debian travaillent au niveau du paquet source, en connaissant cependant les conséquences de leurs actions sur les paquets binaires. Le fruit de leur travail se retrouve donc dans les paquets sources disponibles chez Debian : on peut y remonter facilement et tout en découle.
 			</div><div

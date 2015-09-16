@@ -69,33 +69,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. <code
                   class="command">dpkg</code> を用いたパッケージの操作</h2></div></div></div><a
-          id="idm140708252162128"
+          id="idm139870892540464"
           class="indexterm"></a><div
           class="para">
 			<code
             class="command">dpkg</code> はシステムの Debian パッケージを操作する基礎的なコマンドです。<code
             class="filename">.deb</code> パッケージがあれば、<code
             class="command">dpkg</code> でパッケージ内容をインストールしたり解析したりすることが可能です。しかしこのプログラムは Debian 世界のある一方向だけを見ているに過ぎません。つまり、このプログラムは、システムインストール済みのパッケージとコマンドラインで与えられたパッケージについては理解していますが、他の利用できるパッケージについては理解していません。このため、依存関係が満足されていなければパッケージを操作できません。これに対して、<code
-            class="command">apt-get</code> などのツールは、可能な限り自動的にすべてをインストールするために、依存関係のリストを作成します。
+            class="command">apt</code> などのツールは、可能な限り自動的にすべてをインストールするために、依存関係のリストを作成します。
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>NOTE</em></span> <code
                       class="command">dpkg</code> か <code
-                      class="command">apt-get</code> か?</strong></p></div></div></div><div
+                      class="command">apt</code> か?</strong></p></div></div></div><div
             class="para">
 			<code
               class="command">dpkg</code> はシステムツール (バックエンド) と、<code
-              class="command">apt-get</code> はユーザに近いツールととらえるべきです。後者は前者の制限を克服しています。これらのツールは互いに協力して作業を行います。両者は互いに異なる得意分野を持っており、それぞれが特定の作業を担当しています。
+              class="command">apt</code> はユーザに近いツールととらえるべきです。後者は前者の制限を克服しています。これらのツールは互いに協力して作業を行います。両者は互いに異なる得意分野を持っており、それぞれが特定の作業を担当しています。
 		</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140708252153904"></a>5.4.1. パッケージのインストール</h3></div></div></div><a
-            id="idm140708252153136"
+                    id="idm139870892532240"></a>5.4.1. パッケージのインストール</h3></div></div></div><a
+            id="idm139870892531472"
             class="indexterm"></a><a
-            id="idm140708252151728"
+            id="idm139870892530064"
             class="indexterm"></a><div
             class="para">
 				中でも、<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code> オプションを使ってください。
 			</div><div
             class="example"><a
-              id="idm140708252148224"></a><p
+              id="idm139870892526560"></a><p
               class="title"><strong>例5.2 <code
                   class="command">dpkg</code> を使ったパッケージのインストール</strong></p><div
               class="example-contents"><pre
@@ -126,7 +126,7 @@ mime-support (3.58) のトリガを処理しています ...</code></pre></div><
               class="command">dpkg</code> を呼び出す回数を減らしています (なぜなら呼び出される度にデータベース、特にインストール済みファイルのリスト、をメモリに読み込むため効率が悪いからです)。
 			</div><div
             class="example"><a
-              id="idm140708252142336"></a><p
+              id="idm139870892520672"></a><p
               class="title"><strong>例5.3 解凍と設定を分けて実行</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -144,9 +144,9 @@ mime-support (3.58) のトリガを処理しています ...
                   class="computeroutput">man-db (2.7.0.2-5) を設定しています ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm140708252138432"
+            id="idm139870892516768"
             class="indexterm"></a><a
-            id="idm140708252136992"
+            id="idm139870892515328"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -175,7 +175,7 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                     class="title"><strong><span
                         class="emphasis"><em>CAUTION</em></span> <code
                         class="literal">--force-*</code> の効果的な使い方</strong></p></div></div></div><a
-              id="idm140708252126544"
+              id="idm139870892504880"
               class="indexterm"></a><div
               class="para">
 				下手をすると <code
@@ -184,17 +184,17 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                 class="pkg pkg">libc6</span> のシステムにインストールされているバージョンよりも新しいバージョンに依存しているにも関わらず、その依存関係を無視して <span
                 class="pkg pkg">rdesktop</span> をインストールした結果です。
 			</div><pre
-              class="programlisting"># apt-get dist-upgrade
+              class="programlisting"># apt full-upgrade
 [...]
-You can run "apt-get -f install" to correct these problems.
-The following packages contain unmet dependencies:
-  rdesktop: Depends on: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
-E: missing dependencies. Try to use the option -f.
+You might want to run 'apt-get -f install' to correct these.
+The following packages have unmet dependencies:
+  rdesktop: Depends: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
+E: Unmet dependencies. Try using -f.
 </pre><div
               class="para">
 				勇気ある管理者が自分の解析の正確さに自信を持っているなら、依存関係や衝突を無視して、対応する <code
                 class="literal">--force-*</code> 系オプションを使うことを選ぶかもしれません。この場合に、管理者が <code
-                class="command">apt-get</code> や <code
+                class="command">apt</code> や <code
                 class="command">aptitude</code> を使い続けたいと思うなら、管理者は無効にしたい依存関係や衝突を削除/変更するために <code
                 class="filename">/var/lib/dpkg/status</code> を編集しなければいけません。
 			</div><div
@@ -209,14 +209,14 @@ E: missing dependencies. Try to use the option -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140708252115104"></a>5.4.2. パッケージの削除</h3></div></div></div><a
-            id="idm140708252114336"
+                    id="idm139870892493472"></a>5.4.2. パッケージの削除</h3></div></div></div><a
+            id="idm139870892492704"
             class="indexterm"></a><a
-            id="idm140708252113408"
+            id="idm139870892491776"
             class="indexterm"></a><a
-            id="idm140708252112480"
+            id="idm139870892490848"
             class="indexterm"></a><a
-            id="idm140708252111040"
+            id="idm139870892489408"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -227,7 +227,7 @@ E: missing dependencies. Try to use the option -f.
               class="literal">--purge</code> オプションを付けてさらにパッケージの名前を続けてください。
 			</div><div
             class="example"><a
-              id="idm140708252105952"></a><p
+              id="idm139870892484320"></a><p
               class="title"><strong>例5.4 <span
                   class="pkg pkg">debian-cd</span> パッケージの削除と完全消去</strong></p><div
               class="example-contents"><pre
@@ -246,14 +246,14 @@ debian-cd (3.1.17) の設定ファイルを削除しています ...</code></pre
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140708252101584"></a>5.4.3. <code
+                    id="idm139870892479952"></a>5.4.3. <code
                     class="command">dpkg</code> のデータベースへの問い合わせと <code
                     class="filename">.deb</code> ファイルの調査</h3></div></div></div><a
-            id="idm140708252100016"
+            id="idm139870892478384"
             class="indexterm"></a><a
-            id="idm140708252098576"
+            id="idm139870892476944"
             class="indexterm"></a><a
-            id="idm140708252097136"
+            id="idm139870892475504"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -284,7 +284,7 @@ debian-cd (3.1.17) の設定ファイルを削除しています ...</code></pre
               class="literal">-I</code>) は Debian パッケージのヘッダを表示します。
 			</div><div
             class="example"><a
-              id="idm140708252084720"></a><p
+              id="idm139870892463088"></a><p
               class="title"><strong>例5.5 <code
                   class="command">dpkg</code> にさまざまな情報を問い合わせる</strong></p><div
               class="example-contents"><pre
@@ -435,9 +435,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> バージョンの比較</strong></p></div></div></div><a
-              id="idm140708252070416"
+              id="idm139870892448784"
               class="indexterm"></a><a
-              id="idm140708252069488"
+              id="idm139870892447856"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -495,7 +495,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140708252051168"></a>5.4.4. <code
+                    id="idm139870892429536"></a>5.4.4. <code
                     class="command">dpkg</code> のログファイル</h3></div></div></div><div
             class="para">
 				<code
@@ -508,9 +508,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. マルチアーキテクチャサポート</h3></div></div></div><a
-            id="idm140708252045744"
+            id="idm139870892424112"
             class="indexterm"></a><a
-            id="idm140708252044816"
+            id="idm139870892423184"
             class="indexterm"></a><div
             class="para">
 				すべての Debian パッケージは <code
@@ -525,7 +525,7 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140708252039744"></a>5.4.5.1. マルチアーキテクチャの有効化</h4></div></div></div><div
+                      id="idm139870892418112"></a>5.4.5.1. マルチアーキテクチャの有効化</h4></div></div></div><div
               class="para">
 					<code
                 class="command">dpkg</code> のマルチアーキテクチャサポートのおかげで、ユーザは現在のシステムにインストールできる「外来アーキテクチャ」を定義できます。これを行うには、以下に示す通り <code
@@ -588,7 +588,7 @@ gcc-4.9-base:armhf (4.9.1-19) を設定しています ...
 				</div><div
                 class="para">
 					外来パッケージをインストールするには <code
-                  class="command">apt-get install <em
+                  class="command">apt install <em
                     class="replaceable">package</em>:<em
                     class="replaceable">architecture</em></code> を使ってください。
 				</div></div><div
@@ -598,22 +598,15 @@ gcc-4.9-base:armhf (4.9.1-19) を設定しています ...
                           class="emphasis"><em>IN PRACTICE</em></span> amd64 上でプロプライエタリな i386 バイナリを使う</strong></p></div></div></div><div
                 class="para">
 					マルチアーキテクチャには複数の使用事例がありますが、特に人気の用例は、32 ビットバイナリ (i386) を 64 ビットシステム (amd64) で実行できるようにする事例です。その具体的理由は、複数の人気のプロプライエタリアプリケーション (たとえば Skype) が 32 ビット版しか提供していないからです。
-				</div><div
-                class="para">
-					マルチアーキテクチャ以前、32 ビットアプリケーションを 64 ビットシステムで実行したければ、<span
-                  class="pkg pkg">ia32-libs</span> をインストールすることで、システム内に人気の高いライブラリの 32 ビット版を持つ必要がありました。このパッケージは amd64 パッケージ内の 32 ビットライブラリを再パッケージ化した大規模なハックでした。
-				</div><a
-                id="idm140708252019680"
-                class="indexterm"></a></div></div><div
+				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140708252017936"></a>5.4.5.2. マルチアーキテクチャ関連の変更</h4></div></div></div><div
+                      id="idm139870904788896"></a>5.4.5.2. マルチアーキテクチャ関連の変更</h4></div></div></div><div
               class="para">
 					マルチアーキテクチャを実際に便利で使いやすいものにするためには、ライブラリを再パッケージ化しなければいけませんでした。さらに複数のコピー (対象の異なるアーキテクチャ) を同時にインストールできるようにするために、マルチアーキテクチャ専用のディレクトリにライブラリを移動しなければいけませんでした。このようにして更新されたパッケージには、このパッケージはアーキテクチャが違っても安全に同時インストールできること (そしてこのパッケージは自分と異なるアーキテクチャのパッケージの依存関係を満足することはできないこと) をパッケージ化システムに伝えるための「<code
                 class="literal">Multi-Arch: same</code>」ヘッダフィールドが含まれていました。マルチアーキテクチャモードは Debian <span
-                class="distribution distribution">Wheezy</span> で初登場しましたから、まだすべてのライブラリが変換されたわけではありません (<span
-                class="pkg pkg">ia32-libs</span> に組み込まれていたライブラリはすべて変換されました)。
+                class="distribution distribution">Wheezy</span> で初登場しましたから、まだすべてのライブラリが変換されたわけではありません。
 				</div><pre
               class="screen">
 $ <strong

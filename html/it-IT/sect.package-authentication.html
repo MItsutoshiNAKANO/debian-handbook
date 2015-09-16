@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-it-IT-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="Il manuale dell'amministratore Debian" /><link
@@ -68,34 +68,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-authentication"></a>6.5. Controllare l'autenticità dei pacchetti</h2></div></div></div><a
-          id="idm140518367910720"
+          id="idm140109887418560"
           class="indexterm"></a><a
-          id="idm140518367909312"
+          id="idm140109887417152"
           class="indexterm"></a><a
-          id="idm140518367907872"
+          id="idm140109887415712"
           class="indexterm"></a><a
-          id="idm140518367906432"
+          id="idm140109887414272"
           class="indexterm"></a><a
-          id="idm140518367904992"
+          id="idm140109887412832"
           class="indexterm"></a><div
           class="para">
 			La sicurezza è molto importante per gli amministratori di Falcot Corp. Di conseguenza, devono garantire che vengano installati solo i pacchetti di cui è garantita la provenienza da Debian senza alcuna manomissione lungo il percorso. Un autore di attacchi informatici potrebbe tentare di aggiungere codice dannoso ad un pacchetto altrimenti legittimo. Tale pacchetto, se installato, potrebbe fare qualsiasi cosa per cui l'autore dell'attacco l'ha progettato, tra cui ad esempio scoprire password o informazioni riservate. Per ovviare a questo rischio, Debian fornisce un sigillo di garanzia a prova di manomissione per garantire, in fase di installazione, che un pacchetto venga veramente dal suo manutentore ufficiale e non sia stato modificato da terzi.
 		</div><div
           class="para">
-			Il sigillo funziona con una catena di hash crittografici e una firma. Il file firmato è il file <code
-            class="filename">Release</code>, fornito dai mirror Debian. Contiene una lista dei file <code
-            class="filename">Packages</code> (comprese le loro forme compresse, <code
-            class="filename">Packages.gz</code> e <code
-            class="filename">Packages.bz2</code>, e la versione incrementale), insieme ai loro hash MD5, SHA1 e SHA256, che assicurano che i file non siano stati manomessi. Questi file <code
-            class="filename">Packages</code> contengono una lista dei pacchetti Debian disponibili sul mirror, con i loro hash, che assicura a sua volta che il contenuto dei pacchetti non sia stato alterato.
+			The seal works with a chain of cryptographical hashes and a signature. The signed file is the <code
+            class="filename">Release</code> file, provided by the Debian mirrors. It contains a list of the <code
+            class="filename">Packages</code> files (including their compressed forms, <code
+            class="filename">Packages.gz</code> and <code
+            class="filename">Packages.xz</code>, and the incremental versions), along with their MD5, SHA1 and SHA256 hashes, which ensures that the files haven't been tampered with. These <code
+            class="filename">Packages</code> files contain a list of the Debian packages available on the mirror, along with their hashes, which ensures in turn that the contents of the packages themselves haven't been altered either.
 		</div><a
-          id="idm140518367899104"
+          id="idm140109887406912"
           class="indexterm"></a><a
-          id="idm140518367897984"
+          id="idm140109887405792"
           class="indexterm"></a><a
-          id="idm140518367896560"
+          id="idm140109887404368"
           class="indexterm"></a><a
-          id="idm140518367895440"
+          id="idm140109887403248"
           class="indexterm"></a><div
           class="para">
 			Le chiavi fidate sono gestite con il comando <code
@@ -153,14 +153,14 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>IN PRATICA</em></span> Aggiungere chiavi fidate</strong></p></div></div></div><a
-            id="idm140518367885536"
+            id="idm140109887393344"
             class="indexterm"></a><a
-            id="idm140518367884576"
+            id="idm140109887392384"
             class="indexterm"></a><div
             class="para">
-			Quando si aggiunge una sorgente di pacchetti di terze parti al file <code
-              class="filename">sources.list</code>, APT ha bisogno di venire istruiti a fidarsi della corrispondente chiave GPG (altrimenti continuerà a ricordare che non può garantire l'autenticità dei pacchetti provenienti da quel repository). Il primo passo è ovviamente ottenere la chiave pubblica. Spesso, la chiave viene fornita come un piccolo file di testo, che nei prossimi esempi verrà chiamato <code
-              class="filename">key.asc</code>.
+			When a third-party package source is added to the <code
+              class="filename">sources.list</code> file, APT needs to be told to trust the corresponding GPG authentication key (otherwise it will keep complaining that it can't ensure the authenticity of the packages coming from that repository). The first step is of course to get the public key. More often than not, the key will be provided as a small text file, which we will call <code
+              class="filename">key.asc</code> in the following examples.
 		</div><div
             class="para">
 			Per aggiungere la chiave al portafoglio fidato, l'amministratore può lanciare <code
@@ -170,7 +170,7 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
               class="guisubmenu"><strong>Repository</strong></span> dà la possibilità di importare una chiave dal file <code
               class="filename">key.asc</code>.
 		</div><a
-            id="idm140518367878496"
+            id="idm140109887386368"
             class="indexterm"></a><div
             class="para">
 			Per chi vorrebbe un'applicazione dedicata e più dettagli sulle chiavi fidate, è possibile usare <code

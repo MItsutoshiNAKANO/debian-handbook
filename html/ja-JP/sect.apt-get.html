@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">6.2. aptitude と apt-get コマンド</title><link
+        xmlns:d="http://docbook.org/ns/docbook">6.2. aptitude、apt-get、apt コマンド</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-ja-JP-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="Debian 管理者ハンドブック" /><link
@@ -68,75 +68,92 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.apt-get"></a>6.2. <code
-                  class="command">aptitude</code> と <code
-                  class="command">apt-get</code> コマンド</h2></div></div></div><a
-          id="idm140708260359136"
+                  class="command">aptitude</code>、<code
+                  class="command">apt-get</code>、<code
+                  class="command">apt</code> コマンド</h2></div></div></div><a
+          id="idm139870892920064"
           class="indexterm"></a><a
-          id="idm140708260358016"
+          id="idm139870892918944"
+          class="indexterm"></a><a
+          id="idm139870892917824"
           class="indexterm"></a><div
           class="para">
 			APT は巨大なプロジェクトで、当初の予定ではグラフィカルインターフェースを含んでいました。APT はライブラリに基づいており、ライブラリにはコアアプリケーションが含まれています。<code
-            class="command">apt-get</code> は最初のフロントエンド — コマンドラインベース — で、APT プロジェクト内で開発されました。
+            class="command">apt-get</code> は最初のフロントエンド — コマンドラインベース — で、APT プロジェクト内で開発されました。<code
+            class="command">apt</code> は APT から提供されているもう一つのコマンドラインベースフロントエンドで、<code
+            class="command">apt-get</code> の持っていた設計上のミスを克服しています。
 		</div><div
           class="para">
 			外部プロジェクトから、数多くのグラフィカルインターフェースが生まれました。たとえば <code
             class="command">synaptic</code>、<code
             class="command">aptitude</code> (テキストとグラフィカルモードインターフェース — まだ完成していません — の両方を含んでいます)、<code
-            class="command">wajig</code> などです。最も推奨されるインターフェースは Debian のインストール中に使われる <code
-            class="command">apt-get</code> で、この節ではこれを例に使います。<code
+            class="command">wajig</code> などです。最も推奨されるインターフェースは <code
+            class="command">apt</code> で、この節では <code
+            class="command">apt</code> を例に使います。<code
+            class="command">apt</code> のコマンドライン構文と <code
+            class="command">apt-get</code> や <code
             class="command">aptitude</code> のコマンドライン構文はよく似ていることに注意してください。<code
-            class="command">apt-get</code> と <code
-            class="command">aptitude</code> に大きな違いがある場合は、違いを詳しく述べます。
+            class="command">apt</code>、<code
+            class="command">apt-get</code>、<code
+            class="command">aptitude</code> の間に大きな違いがある場合は、その違いを詳しく述べます。
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140708260351392"></a>6.2.1. 初期設定</h3></div></div></div><div
+                    id="idm139870892908144"></a>6.2.1. 初期設定</h3></div></div></div><div
             class="para">
 				APT を使う作業では、事前に利用できるパッケージのリストを更新しなければいけません。そして、これを行うには <code
-              class="command">apt-get update</code> を使ってください。ネットワークのスピードに依存しますが、この操作には少し時間がかかります。なぜなら、<code
+              class="command">apt update</code> を使ってください。ネットワークのスピードに依存しますが、この操作には少し時間がかかります。なぜなら、<code
               class="filename">Packages</code>/<code
               class="filename">Sources</code>/<code
               class="filename">Translation-<em
                 class="replaceable">language-code</em></code> などのファイルをダウンロードするからです。これらのファイルは Debian の開発が進むにつれて徐々に大きくなります (<code
               class="literal">main</code> セクションの場合、データのサイズは少なく見積もっても 10 MB です)。もちろん CD-ROM セットからインストールする場合はダウンロードに時間は必要ありません — この場合、操作はとても速くなります。
 			</div><a
-            id="idm140708260346720"
+            id="idm139870892903472"
             class="indexterm"></a><a
-            id="idm140708260345600"
+            id="idm139870892902352"
+            class="indexterm"></a><a
+            id="idm139870892901232"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140708260344320"></a>6.2.2. インストールと削除</h3></div></div></div><a
-            id="idm140708260343552"
+                    id="idm139870892899952"></a>6.2.2. インストールと削除</h3></div></div></div><a
+            id="idm139870892899184"
             class="indexterm"></a><a
-            id="idm140708260342112"
+            id="idm139870892897744"
             class="indexterm"></a><a
-            id="idm140708260340672"
+            id="idm139870892896304"
             class="indexterm"></a><a
-            id="idm140708260339264"
+            id="idm139870892894896"
             class="indexterm"></a><div
             class="para">
 				APT を使うと、システムからパッケージを追加したり削除したりできます。それぞれの操作は <code
-              class="command">apt-get install <em
+              class="command">apt install <em
                 class="replaceable">package</em></code> と <code
-              class="command">apt-get remove <em
+              class="command">apt remove <em
                 class="replaceable">package</em></code> のようにして行います。どちらの場合も APT は自動的に、追加するパッケージの動作に必要なパッケージをインストールし、削除するパッケージの動作に必要だったパッケージを削除します。<code
-              class="command">apt-get purge <em
+              class="command">apt purge <em
                 class="replaceable">package</em></code> コマンドを実行すれば完全にアンインストール、設定ファイルも削除、します。
 			</div><a
-            id="idm140708260335008"
+            id="idm139870892890640"
             class="indexterm"></a><a
-            id="idm140708260333888"
+            id="idm139870892889520"
             class="indexterm"></a><a
-            id="idm140708260332768"
+            id="idm139870892888400"
             class="indexterm"></a><a
-            id="idm140708260331648"
+            id="idm139870892887280"
             class="indexterm"></a><a
-            id="idm140708260330528"
+            id="idm139870892886160"
             class="indexterm"></a><a
-            id="idm140708260329408"
+            id="idm139870892885040"
+            class="indexterm"></a><a
+            id="idm139870892883920"
+            class="indexterm"></a><a
+            id="idm139870892882800"
+            class="indexterm"></a><a
+            id="idm139870892881680"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -183,11 +200,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>TIP</em></span> 同時に削除とインストールを行う</strong></p></div></div></div><div
               class="para">
 				<code
-                class="command">apt-get</code> (または <code
+                class="command">apt</code> (および <code
+                class="command">apt-get</code> や <code
                 class="command">aptitude</code>) を使ってパッケージのインストールと削除を同時に命令するには、パッケージ名の末尾にサフィックスを付け加えます。<code
-                class="command">apt-get install</code> コマンドで、パッケージ名の末尾に「<code
+                class="command">apt install</code> コマンドで、パッケージ名の末尾に「<code
                 class="literal">-</code>」を付けると、削除になります。<code
-                class="command">apt-get remove</code> コマンドで、パッケージ名の末尾に「<code
+                class="command">apt remove</code> コマンドで、パッケージ名の末尾に「<code
                 class="literal">+</code>」を付けるとインストールになります。
 			</div><div
               class="para">
@@ -196,12 +214,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">package2</em> を削除する 2 種類の方法です。
 			</div><pre
               class="screen"># <strong
-                class="userinput"><code>apt-get install <em
+                class="userinput"><code>apt install <em
                     class="replaceable">package1</em> <em
                     class="replaceable">package2-</em></code></strong>
 [...]
 # <strong
-                class="userinput"><code>apt-get remove <em
+                class="userinput"><code>apt remove <em
                     class="replaceable">package1+</em> <em
                     class="replaceable">package2</em></code></strong>
 [...]</pre><div
@@ -213,19 +231,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TIP</em></span> <code
-                        class="command">apt-get --reinstall</code> と <code
+                        class="command">apt --reinstall</code> と <code
                         class="command">aptitude reinstall</code></strong></p></div></div></div><a
-              id="idm140708260306000"
+              id="idm139870892857792"
               class="indexterm"></a><div
               class="para">
 				システムはパッケージ中のファイルが削除されたり変更されたりした後に被害を受ける場合があります。これらのファイルを再取得する最も簡単な方法は、影響を受けたパッケージを再インストールすることです。残念なことに、パッケージ化システムはパッケージが既にインストール済みで、再インストールできないことを丁寧に教えてくれます。一方でこれを避けるためには、<code
+                class="command">apt</code> および <code
                 class="command">apt-get</code> コマンドの <code
                 class="literal">--reinstall</code> オプションを使います。以下は、既にインストール済みでも <span
                 class="pkg pkg">postfix</span> を再インストールするコマンドです。
 			</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>apt-get --reinstall install postfix</code></strong></pre><div
+                class="userinput"><code>apt --reinstall install postfix</code></strong></pre><div
               class="para">
 				<code
                 class="command">aptitude</code> のコマンドラインは少し違いますが、<code
@@ -237,17 +256,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
               class="para">
 				注意してください! 攻撃を受けている最中に、変更されたパッケージを修復する目的で <code
-                class="command">apt-get --reinstall</code> を使っても、システムを以前の状態に回復することは絶対に不可能でしょう。不正侵入を受けたシステムでパッケージを修復するために必要な手順の詳細は<a
+                class="command">apt --reinstall</code> を使っても、システムを以前の状態に回復することは絶対に不可能でしょう。不正侵入を受けたシステムでパッケージを修復するために必要な手順の詳細は<a
                 class="xref"
                 href="sect.dealing-with-compromised-machine.html">「不正侵入されたマシンの取り扱い」</a>を参照してください。
 			</div></div><div
             class="para">
 				<code
               class="filename">sources.list</code> が複数のディストリビューションを参照しているのなら、パッケージのバージョンを指定してインストールすることも可能です。特定のバージョンを指定するには、<code
-              class="command">apt-get install <em
+              class="command">apt install <em
                 class="replaceable">package</em>=<em
                 class="replaceable">version</em></code> を使いますが、<code
-              class="command">apt-get install <em
+              class="command">apt install <em
                 class="replaceable">package</em>/<em
                 class="replaceable">distribution</em></code> のようにして、ディストリビューション (<span
               class="distribution distribution">安定版</span>、<span
@@ -261,14 +280,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">snapshot.debian.org</code></a>を参照してください)。
 			</div><div
             class="example"><a
-              id="idm140708260288992"></a><p
+              id="idm139870892840304"></a><p
               class="title"><strong>例6.3 <span
                   class="pkg pkg">spamassassin</span> の<span
                   class="distribution distribution">不安定版</span>バージョンをインストール</strong></p><div
               class="example-contents"><pre
                 class="screen"><code
                   class="computeroutput"># </code><strong
-                  class="userinput"><code>apt-get install spamassassin/unstable</code></strong></pre></div></div><div
+                  class="userinput"><code>apt install spamassassin/unstable</code></strong></pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
@@ -281,25 +300,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">apt-get clean</code> はこのディレクトリを完全に空にします。一方で <code
                 class="command">apt-get autoclean</code> は (Debian ミラーから削除されたために) もはやダウンロードできない、明らかに無駄なパッケージだけを削除します (設定パラメータ <code
                 class="literal">APT::Clean-Installed</code> を使って現在インストール済みパッケージの <code
-                class="filename">.deb</code> は削除しないようにすることも可能です)。
+                class="filename">.deb</code> は削除しないようにすることも可能です)。<code
+                class="command">apt</code> では clean および autoclean を使うことができない点に注意してください。
 			</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.apt-upgrade"></a>6.2.3. システムのアップグレード</h3></div></div></div><a
-            id="idm140708260278720"
+            id="idm139870892829472"
             class="indexterm"></a><a
-            id="idm140708261276352"
+            id="idm139870892828064"
             class="indexterm"></a><a
-            id="idm140708261275232"
+            id="idm139870892826944"
+            class="indexterm"></a><a
+            id="idm139870892825824"
             class="indexterm"></a><div
             class="para">
 				最新のセキュリティ更新を入手するために、定期的にアップグレードを行うことをお勧めします。アップグレードを行うには、(もちろん <code
-              class="command">apt-get update</code> を実行した後で) <code
-              class="command">apt-get upgrade</code> または <code
+              class="command">apt update</code> を実行した後で) <code
+              class="command">apt upgrade</code>、<code
+              class="command">apt-get upgrade</code>、<code
               class="command">aptitude safe-upgrade</code> を実行してください。このコマンドは他のパッケージを削除せずにアップグレードできるインストール済みパッケージだけを探します。言い換えれば、最低限可能なアップグレードを行います。<code
               class="command">apt-get</code> のアップグレードパッケージの選択ルールは <code
-              class="command">aptitude</code> よりも少し条件が厳しいです。これは <code
+              class="command">aptitude</code> や <code
+              class="command">apt</code> よりも少し条件が厳しいです。なぜなら <code
               class="command">apt-get</code> は既にインストール済みのパッケージだけのアップグレードを行うからです。
 			</div><div
             class="sidebar"><a
@@ -309,7 +333,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>TIP</em></span> 増分アップグレード</strong></p></div></div></div><div
               class="para">
 				先に説明した通り、<code
-                class="command">apt-get update</code> コマンドは、複数のパッケージソースから適当な <code
+                class="command">apt update</code> コマンドは、複数のパッケージソースから適当な <code
                 class="filename">Packages</code> (または <code
                 class="filename">Sources</code>) ファイルをダウンロードします。しかしながら、これらのファイルのサイズは <code
                 class="command">bzip2</code> 圧縮してもまだ大きいです (<span
@@ -322,7 +346,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				APT は作業を高速に進めるために、ファイル全体をダウンロードするのではなく、前回の更新以降の変更を含む「差分」をダウンロードします。これを実現するために、公式の Debian ミラーはある時点の <code
                 class="filename">Packages</code> ファイルとそれ以降の時点の差分を含むファイルを配布します。差分はアーカイブが更新されるたびに生成され、1 週間につき 1 つが残されます。それぞれの「差分」ファイルは<span
                 class="distribution distribution">不安定版</span>の場合でもたった数十キロバイトです。そうすれば毎週 <code
-                class="command">aptitude update</code> を実行する場合にダウンロードされるデータ量は通常 10 分の 1 です。より変更頻度が低い <span
+                class="command">apt update</code> を実行する場合にダウンロードされるデータ量は通常 10 分の 1 です。より変更頻度が低い <span
                 class="distribution distribution">安定版</span>や<span
                 class="distribution distribution">テスト版</span>などのディストリビューションについては、その増加はより顕著です。
 			</div><div
@@ -334,54 +358,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div></div><div
             class="para">
 				通常 <code
-              class="command">apt-get</code> は最新のバージョン (<span
+              class="command">apt</code> は最新のバージョン (<span
               class="distribution distribution">実験版</span> と <span
               class="distribution distribution">安定版バックポート</span> のパッケージは除きます。これらは普通バージョン番号に関わらず無視されます) を選択します。<code
               class="filename">sources.list</code> の中で<span
               class="distribution distribution">テスト版</span>や<span
               class="distribution distribution">不安定版</span>を指定した場合、<code
-              class="command">apt-get upgrade</code> は<span
+              class="command">apt upgrade</code> は<span
               class="distribution distribution">安定版</span>システムのほとんどを<span
               class="distribution distribution">テスト版</span>や<span
               class="distribution distribution">不安定版</span>に変更します。これはあなたが望んでいないことかもしれません。
 			</div><div
             class="para">
 				<code
-              class="command">apt-get</code> がアップグレードされたパッケージを検索する際に特定のディストリビューションを検索させるには、ディストリビューションの名前を後ろに付けて <code
+              class="command">apt</code> がアップグレードされたパッケージを検索する際に特定のディストリビューションを検索させるには、ディストリビューションの名前を後ろに付けて <code
               class="literal">-t</code> または <code
               class="literal">--target-release</code> オプションを使ってください (たとえば <code
-              class="command">apt-get -t stable upgrade</code> を使ってください)。<code
-              class="command">apt-get</code> を使う時に毎回このオプションを指定するのを避けるには、<code
+              class="command">apt -t stable upgrade</code> を使ってください)。<code
+              class="command">apt</code> を使う時に毎回このオプションを指定するのを避けるには、<code
               class="filename">/etc/apt/apt.conf.d/local</code> ファイルに <code
               class="literal">APT::Default-Release "stable";</code> を追加してください。
 			</div><a
-            id="idm140708261246096"
+            id="idm139870905828256"
             class="indexterm"></a><a
-            id="idm140708261244976"
+            id="idm139870905827136"
             class="indexterm"></a><a
-            id="idm140708261243856"
+            id="idm139870905826016"
+            class="indexterm"></a><a
+            id="idm139870905824896"
+            class="indexterm"></a><a
+            id="idm139870905823776"
             class="indexterm"></a><div
             class="para">
 				より重要なアップグレード、たとえば Debian のメジャーバージョンから次バージョンに変更するなどの場合、<code
-              class="command">apt-get dist-upgrade</code> (「ディストリビューションアップグレード」) を使ってください。この命令で、アップグレード伴う新しい依存関係で時代遅れのパッケージを削除することになったとしても、<code
-              class="command">apt-get</code> はアップグレードを完了します。この命令はまた Debian <span
+              class="command">apt full-upgrade</code> を使ってください。この命令で、アップグレード伴う新しい依存関係で時代遅れのパッケージを削除することになったとしても、<code
+              class="command">apt</code> はアップグレードを完了します。この命令はまた Debian <span
               class="distribution distribution">不安定版</span> リリースを日常的に使い、毎日開発進化についていくユーザが使うコマンドです。これは説明がほとんど必要ないくらいとても単純です。そして APT の評判はこの偉大なる機能性が担っています。
 			</div><div
             class="para">
 				<code
-              class="command">aptitude full-upgrade</code> は <code
-              class="command">aptitude</code> で上の命令に対応するコマンドですが、<code
-              class="command">dist-upgrade</code> も認識されます (将来廃止予定です)。
+              class="command">apt</code> と異なり、<code
+              class="command">aptitude</code> および <code
+              class="command">apt-get</code> では <code
+              class="command">full-upgrade</code> コマンドを使うことができません。その代わり、<code
+              class="command">apt-get dist-upgrade</code> (「ディストリビューションアップグレード」) を使ってください。dist-upgrade コマンドは歴史的かつよく知られており、<code
+              class="command">apt</code> と <code
+              class="command">aptitude</code> はユーザの利便性を考慮して dist-upgrade を受け付けます。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.apt-config"></a>6.2.4. 設定オプション</h3></div></div></div><a
-            id="idm140708261236672"
+            id="idm139870905814592"
             class="indexterm"></a><a
-            id="idm140708261235232"
+            id="idm139870905813152"
             class="indexterm"></a><a
-            id="idm140708261234112"
+            id="idm139870905812032"
             class="indexterm"></a><div
             class="para">
 				既に説明した設定項目に加えて、<code
@@ -407,7 +439,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> <code
                         class="filename">.d</code> で終わるディレクトリ</strong></p></div></div></div><a
-              id="idm140708261224464"
+              id="idm139870905802384"
               class="indexterm"></a><div
               class="para">
 				名前に <code
@@ -441,19 +473,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">不安定版</span>、<span
               class="distribution distribution">実験版</span>から入手できる新しいパッケージを 1 つか 2 つあるディストリビューションにインストールしたいと思うかもしれません。利用できるパッケージに対して優先度を割り当てることが可能です (同じパッケージに対してバージョンやそれを提供しているディストリビューションに依存する異なる優先度を設定することも可能です)。優先度の設定は APT の挙動に影響を与えます。すなわち、各パッケージについて、APT は常に最も優先度の高いバージョンをインストールします (例外は、最も優先度の高いバージョンがインストール済みのバージョンよりも古い場合か 1000 より低い優先順位を持っている場合です)。
 			</div><a
-            id="idm140708261208624"
+            id="idm139870905786544"
             class="indexterm"></a><a
-            id="idm140708261207024"
+            id="idm139870905784944"
             class="indexterm"></a><a
-            id="idm140708261206064"
+            id="idm139870905783984"
             class="indexterm"></a><a
-            id="idm140708261204624"
+            id="idm139870905782544"
             class="indexterm"></a><a
-            id="idm140708261203216"
+            id="idm139870905781136"
             class="indexterm"></a><a
-            id="idm140708261201776"
+            id="idm139870905779696"
             class="indexterm"></a><a
-            id="idm140708261200656"
+            id="idm139870905778576"
             class="indexterm"></a><div
             class="para">
 				APT はいくつかのデフォルト優先度を定義しています。インストール済みパッケージのバージョンは優先度 100 です。インストールされていないパッケージのバージョンはデフォルトで優先度 500 ですが、ターゲットリリース (<code
@@ -479,14 +511,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">テスト版</span>、<span
               class="distribution distribution">不安定版</span>、<span
               class="distribution distribution">実験版</span>) とバージョン (たとえば Debian <span
-              class="distribution distribution">Lenny</span> なら 5.0) を規定しています。このメカニズムの実際のケーススタディを通じて、構文を見てみましょう。
+              class="distribution distribution">Jessie</span> なら 8) を規定しています。このメカニズムの実際のケーススタディを通じて、構文を見てみましょう。
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>SPECIFIC CASE</em></span> <span
                         class="distribution distribution">実験版</span> の優先度</strong></p></div></div></div><a
-              id="idm140708261184720"
+              id="idm139870905762640"
               class="indexterm"></a><div
               class="para">
 				<span
@@ -538,11 +570,11 @@ Pin-Priority: 1001</pre></div><div
                     class="title"><strong><span
                         class="emphasis"><em>TIP</em></span> <code
                         class="filename">/etc/apt/preferences</code> 内のコメント</strong></p></div></div></div><a
-              id="idm140708261167152"
+              id="idm139870905745072"
               class="indexterm"></a><a
-              id="idm140708261166032"
+              id="idm139870905743952"
               class="indexterm"></a><a
-              id="idm140708261164912"
+              id="idm139870905742832"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -561,14 +593,14 @@ Pin-Priority: 500</pre></div></div></div><div
                     id="sect.apt-mix-distros"></a>6.2.6. 複数ディストリビューションの利用</h3></div></div></div><div
             class="para">
 				<code
-              class="command">apt-get</code> はこのように素晴らしく、他のディストリビューションからパッケージを選ぶ際に力を発揮するツールです。たとえば、<span
+              class="command">apt</code> はこのように素晴らしく、他のディストリビューションからパッケージを選ぶ際に力を発揮するツールです。たとえば、<span
               class="distribution distribution">安定版</span>システムをインストールした後に<span
               class="distribution distribution">テスト版</span>や<span
               class="distribution distribution">不安定版</span>に収録されているあるソフトウェアのパッケージを試したいが、システムを最初の状態から大きく変更したくないという場合です。
 			</div><div
             class="para">
 				ディストリビューションの異なるパッケージを混在させると、時々問題に遭遇するかもしれませんが、<code
-              class="command">apt-get</code> はパッケージをうまく共存させ、危険のおよぶ範囲をうまく限定します。進むべき最善の道は、<code
+              class="command">apt</code> はパッケージをうまく共存させ、危険のおよぶ範囲をうまく限定します。進むべき最善の道は、<code
               class="filename">/etc/apt/sources.list</code> で使われているすべてのディストリビューションをリストアップ (常に 3 つのディストリビューションを使う人がいるかもしれませんが、<span
               class="distribution distribution">不安定版</span>は経験豊富なユーザ向けであることを忘れないでください) して、<code
               class="literal">APT::Default-Release</code> パラメータ (<a
@@ -582,7 +614,7 @@ Pin-Priority: 500</pre></div></div></div><div
               class="distribution distribution">不安定版</span>も <code
               class="filename">sources.list</code> ファイルに書かれているとします。この場合、<span
               class="distribution distribution">テスト版</span> からのパッケージをインストールするには <code
-              class="command">apt-get install <em
+              class="command">apt install <em
                 class="replaceable">package</em>/testing</code> を使います。依存関係の解決に失敗してインストールできなかった場合、<code
               class="literal">-t testing</code> パラメータを付けて <span
               class="distribution distribution">テスト版</span>を使って依存関係を解決させることが可能です。<span
@@ -591,7 +623,7 @@ Pin-Priority: 500</pre></div></div></div><div
             class="para">
 				この状況では、アップグレード (<code
               class="command">upgrade</code> と <code
-              class="command">dist-upgrade</code>) は、他のディストリビューションでパッケージがアップグレードされていない限り、<span
+              class="command">full-upgrade</code>) は、他のディストリビューションでパッケージがアップグレードされていない限り、<span
               class="distribution distribution">安定版</span>のパッケージを使って終了します。つまり、他のディストリビューションに利用できる更新があれば、アップグレードを行います。以下では、APT によって設定されたデフォルト優先度の助けを借りてこの挙動を説明します。パッケージの優先度を確認するには、遠慮なく <code
               class="command">apt-cache policy</code> (傍注参照) を使ってください。
 			</div><div
@@ -640,21 +672,23 @@ Pin-Priority: 490</pre></div><div
                     id="sect.automatic-tracking"></a>6.2.7. 自動的にインストールされたパッケージの追跡</h3></div></div></div><div
             class="para">
 				<code
-              class="command">apt-get</code> の本質的な機能の 1 つに、依存関係によってのみインストールされたパッケージの追跡があります (当初これは <code
-              class="command">aptitude</code> に固有の機能でした)。これらのパッケージは「自動」と呼ばれ、たとえばライブラリなどがその一例です。
+              class="command">apt</code> の本質的な機能の 1 つに、依存関係によってのみインストールされたパッケージの追跡があります。これらのパッケージは「自動」と呼ばれ、たとえばライブラリなどがその一例です。
 			</div><div
             class="para">
-				あるパッケージを削除する際に、パッケージマネージャは、この追跡情報を元に、既に不要となった自動パッケージ (「手作業でインストール」されていないパッケージ) を選び出すことができます。不要になった自動パッケージを削除するには <code
+				あるパッケージを削除する際に、パッケージマネージャは、この追跡情報を元に、既に不要となった自動パッケージを選び出すことができます (なぜなら、対象のパッケージが依存しているパッケージの内、「手作業でインストール」されていないパッケージは不要と判断できるからです)。不要になった自動パッケージを削除するには <code
               class="command">apt-get autoremove</code> を使います。<code
-              class="command">aptitude</code> にはこのコマンドがありませんが、これは不要な自動パッケージは見つかり次第自動的に削除されるからです。どちらのプログラムでも、不要になったパッケージは分かりやすく表示されます。
+              class="command">aptitude</code> および <code
+              class="command">apt</code> にはこのコマンドがありません。なぜなら <code
+              class="command">aptitude</code> は不要な自動パッケージを見つけ次第自動的に削除しますし、<code
+              class="command">apt</code> はユーザが手作業でこのコマンドを実行するべきではないと考えているからです。どのプログラムを使った場合も、不要になったパッケージは分かりやすく表示されます。
 			</div><a
-            id="idm140708261118080"
+            id="idm139870905694944"
             class="indexterm"></a><a
-            id="idm140708261116960"
+            id="idm139870905693824"
             class="indexterm"></a><a
-            id="idm140708261115840"
+            id="idm139870905692704"
             class="indexterm"></a><a
-            id="idm140708261114720"
+            id="idm139870905691584"
             class="indexterm"></a><div
             class="para">
 				直接的に使うわけではないパッケージを自動パッケージとしてマークするのは良い癖です。こうすれば、そのパッケージがいらなくなった時に自動的に削除されます。<code
@@ -669,12 +703,13 @@ Pin-Priority: 490</pre></div><div
                 class="command">aptitude</code>」</a>を参照してください)。<code
               class="command">aptitude</code> のコンソールベース対話型インターフェースを使うと、多くのパッケージの「自動パッケージフラグ」を容易に確認できます。
 			</div><a
-            id="idm140708261109088"
+            id="idm139870905685952"
             class="indexterm"></a><div
             class="para">
 				自動的にインストールされたパッケージがシステムに存在する理由を知りたい場合があるかもしれません。この情報をコマンドラインから得るには、<code
               class="command">aptitude why <em
                 class="replaceable">package</em></code> を使ってください (<code
+              class="command">apt</code> および <code
               class="command">apt-get</code> に同様の機能はありません)。
 			</div><pre
             class="screen">$ <strong
@@ -688,13 +723,14 @@ i A apt-xapian-index 依存 python-debian (&gt;= 0.1.15)
                         class="emphasis"><em>ALTERNATIVE</em></span> <code
                         class="command">deborphan</code> と <code
                         class="command">debfoster</code></strong></p></div></div></div><a
-              id="idm140708261103136"
+              id="idm139870905679520"
               class="indexterm"></a><a
-              id="idm140708261102016"
+              id="idm139870905678400"
               class="indexterm"></a><div
               class="para">
 				<code
-                class="command">apt-get</code> や <code
+                class="command">apt</code>、<code
+                class="command">apt-get</code>、<code
                 class="command">aptitude</code> にまだ自動パッケージを追跡する機能がなかった時代、不要なパッケージをリストアップするユーティリティが 2 つありました。具体的に言えば、<code
                 class="command">deborphan</code> と <code
                 class="command">debfoster</code> です。

@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-pt-BR-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="O Manual do Administrador Debian" /><link
@@ -68,34 +68,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-authentication"></a>6.5. Verificando Autenticidade do Pacote</h2></div></div></div><a
-          id="idm139835267987056"
+          id="idm140561524613056"
           class="indexterm"></a><a
-          id="idm139835267985648"
+          id="idm140561524611648"
           class="indexterm"></a><a
-          id="idm139835267984208"
+          id="idm140561524610208"
           class="indexterm"></a><a
-          id="idm139835267982768"
+          id="idm140561524608768"
           class="indexterm"></a><a
-          id="idm139835267981328"
+          id="idm140561524607328"
           class="indexterm"></a><div
           class="para">
 			Segurança é muito importante para os administradores da Falcot Corp. E desta forma, eles precisam ter certeza que estão instalando pacotes que vem do Debian, sem interceptações no caminho. Um cracker de computador pode tentar adicionar código malicioso num pacote que de outra forma seria legítimo. Tal pacote, se instalado, poderia fazer qualquer coisa que o cracker o tivesse projetado para fazer, incluindo por exemplo revelar senhas e informações confidenciais. Para evitar este risco, o Debian fornece um selo de qualidade a prova de interceptações para garantir - no momento da instalação - que um pacote realmente vem de um mentenedor oficial e não foi modificado por um terceiro.
 		</div><div
           class="para">
-			O selo funciona como uma cadeia de hashes criptográficos e uma assinatura. O arquivo assinado é o arquivo <code
-            class="filename">Release</code> file, fornecido pelos espelhos Debian. Ele contém uma lista de arquivos <code
-            class="filename">Packages</code> (incluindo suas formas compactadas, <code
-            class="filename">Packages.gz</code> e <code
-            class="filename">Packages.bz2</code>, e as versões incrementais), junto com suas hashes MD5, SHA1 e SHA256 que garantem que os arquivos não foram interceptados. Estes arquivos <code
-            class="filename">Packages</code> contém uma lista de pacotes Debian disponíveis no espelho, junto com seus hashes, que garantem, por sua vez, que os conteúdos dos próprios pacotes também não foram alterados.
+			The seal works with a chain of cryptographical hashes and a signature. The signed file is the <code
+            class="filename">Release</code> file, provided by the Debian mirrors. It contains a list of the <code
+            class="filename">Packages</code> files (including their compressed forms, <code
+            class="filename">Packages.gz</code> and <code
+            class="filename">Packages.xz</code>, and the incremental versions), along with their MD5, SHA1 and SHA256 hashes, which ensures that the files haven't been tampered with. These <code
+            class="filename">Packages</code> files contain a list of the Debian packages available on the mirror, along with their hashes, which ensures in turn that the contents of the packages themselves haven't been altered either.
 		</div><a
-          id="idm139835267975536"
+          id="idm140561524601472"
           class="indexterm"></a><a
-          id="idm139835267974416"
+          id="idm140561524600352"
           class="indexterm"></a><a
-          id="idm139835267972992"
+          id="idm140561524598928"
           class="indexterm"></a><a
-          id="idm139835267971872"
+          id="idm140561524597808"
           class="indexterm"></a><div
           class="para">
 			As chaves confiáveis são gerenciadas com o comando <code
@@ -153,14 +153,14 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>NA PRÁTICA</em></span> Adicionando chaves confiáveis</strong></p></div></div></div><a
-            id="idm139835267961872"
+            id="idm140561524587808"
             class="indexterm"></a><a
-            id="idm139835267960912"
+            id="idm140561524586848"
             class="indexterm"></a><div
             class="para">
-			Quando uma origem de pacotes de terceiros é adicionada ao arquivo <code
-              class="filename">sources.list</code>, O apt precisa ser instruído a confiar na chave de autenticação GPG correspondente (caso contrário ele vai ficar reclamando que não pode garantir a autenticidade dos pacotes vindo daquele repositório). O primeiro passo, obviamente, é obter a chave pública. Em geral, a chave vai ser fornecida como um pequeno arquivo texto, que vamos chamar de <code
-              class="filename">key.asc</code> nos seguintes exemplos.
+			When a third-party package source is added to the <code
+              class="filename">sources.list</code> file, APT needs to be told to trust the corresponding GPG authentication key (otherwise it will keep complaining that it can't ensure the authenticity of the packages coming from that repository). The first step is of course to get the public key. More often than not, the key will be provided as a small text file, which we will call <code
+              class="filename">key.asc</code> in the following examples.
 		</div><div
             class="para">
 			Para adicionar a chave ao chaveiro confiável, o administrador pode executar <code
@@ -170,7 +170,7 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
               class="guisubmenu"><strong>Repositórioos</strong></span> dá a possibilidade de importar uma chave do arquivo <code
               class="filename">key.asc</code>.
 		</div><a
-            id="idm139835267954800"
+            id="idm140561524580832"
             class="indexterm"></a><div
             class="para">
 			Para pessoas que precisam de uma aplicação dedicada e mais detalhes sobre as chaves confiáveis, é possível usar o <code

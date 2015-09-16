@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Configurando o carregador de boot (bootloader)</h2></div></div></div><a
-          id="idm139835269113584"
+          id="idm140561525876240"
           class="indexterm"></a><a
-          id="idm139835269112176"
+          id="idm140561525874832"
           class="indexterm"></a><div
           class="para">
 			Isso provavelmente já é funcional, mas é sempre bom saber configurar e instalar o carregador de inicialização em caso dele desaparecer da MBR (Master Boot Record). Isso pode ocorrer depois da instalação de outro sistema operacional, como o Windows. A seguinte informação pode também ajudar você a modificar a configuração do carregador de inicialização caso necessário.
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> Registro mestre de inicialização</strong></p></div></div></div><a
-            id="idm139835269109296"
+            id="idm140561525871952"
             class="indexterm"></a><a
-            id="idm139835269108336"
+            id="idm140561525870992"
             class="indexterm"></a><div
             class="para">
 			A MBR (Master Boot Record) ocupa os primeiros 512 bytes do primeiro disco rígido, e é a primeira coisa carregada pela BIOS para entregar o controle a um programa capaz de inicializar o sistema operacional desejado. Em geral, um carregador de inicialização fica instalado dentro da MBR, removendo seu conteúdo prévio.
@@ -126,9 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm139835266919120"
+            id="idm140561523417024"
             class="indexterm"></a><a
-            id="idm139835266918160"
+            id="idm140561523416064"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -141,13 +141,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> é a primeira partição do primeiro disco, e <code
               class="filename">/dev/sdb3</code> é a terceira partição do segundo disco.
 			</div><a
-            id="idm139835266912800"
+            id="idm140561523410704"
             class="indexterm"></a><a
-            id="idm139835266911360"
+            id="idm140561523409264"
             class="indexterm"></a><a
-            id="idm139835266909920"
+            id="idm140561523407824"
             class="indexterm"></a><a
-            id="idm139835266908480"
+            id="idm140561523406384"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -157,9 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
 			</div><a
-            id="idm139835266904496"
+            id="idm140561523402400"
             class="indexterm"></a><a
-            id="idm139835266903056"
+            id="idm140561523400960"
             class="indexterm"></a><div
             class="para">
 				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
@@ -209,9 +209,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Configurando o LILO</h3></div></div></div><a
-            id="idm139835266892576"
+            id="idm140561523390480"
             class="indexterm"></a><a
-            id="idm139835266891616"
+            id="idm140561523389520"
             class="indexterm"></a><div
             class="para">
 				O <span
@@ -257,16 +257,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Configuração do GRUB 2</h3></div></div></div><a
-            id="idm139835266884272"
+            id="idm140561523382176"
             class="indexterm"></a><a
-            id="idm139835266883312"
+            id="idm140561523381216"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (GRand Unified Bootloader) é mais recente. Não é necessário invocá-lo após cada atualização do; o <span
               class="emphasis"><em>GRUB</em></span> sabe como ler o sistema de arquivos e achar a posição do kernel no disco por conta própria. Para instalá-lo na MBR do primeiro disco, simplesmente digite <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm139835266880352"
+              id="idm140561523378256"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -304,7 +304,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Para Computadores Macintosh (PowerPC): Configurando Yaboot</h3></div></div></div><a
-            id="idm139835266865824"
+            id="idm140561523363648"
             class="indexterm"></a><div
             class="para">
 				Yaboot é o carregador de boot usado por computadores Macintosh antigos que usam processadores PowerPC. Eles não iniciam como PCs, mas sim usando uma partição “bootstrap”, a partir da qual a BIOS (ou OpenFirmware) executa o carregador, e na qual o programa <code
@@ -317,7 +317,7 @@ other=/dev/sda1
 				Antes de executar o <code
               class="command">ybin</code>, você deve primeiro ter um <code
               class="filename">/etc/yaboot.conf</code> válido. O seguinte é um exemplo de uma configuração minimalista. <a
-              id="idm139835266860608"
+              id="idm140561523358432"
               class="indexterm"></a>
 			</div><div
             class="example"><a

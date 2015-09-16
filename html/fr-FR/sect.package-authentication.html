@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="Le cahier de l'administrateur Debian" /><link
@@ -68,34 +68,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-authentication"></a>6.5. Vérification d'authenticité des paquets</h2></div></div></div><a
-          id="idm140698202817968"
+          id="idm140443396319520"
           class="indexterm"></a><a
-          id="idm140698202816560"
+          id="idm140443396318112"
           class="indexterm"></a><a
-          id="idm140698202815120"
+          id="idm140443396316672"
           class="indexterm"></a><a
-          id="idm140698202813680"
+          id="idm140443396315232"
           class="indexterm"></a><a
-          id="idm140698202812240"
+          id="idm140443396313792"
           class="indexterm"></a><div
           class="para">
 			Étant donné l'importance qu'accordent les administrateurs de Falcot SA à la sécurité, ils veulent s'assurer de n'installer que des paquets garantis provenant de Debian et non altérés en cours de route. En effet, un pirate pourrait tenter d'agir indirectement sur des machines en modifiant un paquet Debian diffusé afin d'y ajouter les instructions de son choix. Si un paquet ainsi modifié est installé, ces instructions agiront, par exemple afin de dérober les mots de passe. C'est pourquoi Debian offre un moyen de s'assurer que le paquet installé provient bien de son mainteneur et qu'il n'a subi aucune modification par un tiers : il existe un mécanisme de scellement des paquets.
 		</div><div
           class="para">
-			Cette signature n'est pas directe : le fichier signé est un fichier <code
-            class="filename">Release</code> placé sur les miroirs Debian et qui donne la liste des différents fichiers <code
-            class="filename">Packages</code> (y compris sous leurs formes compressées <code
-            class="filename">Packages.gz</code> et <code
-            class="filename">Packages.bz2</code> et les versions incrémentales), accompagnés de leurs sommes de contrôle MD5, SHA1 et SHA256 (pour vérifier que leur contenu n'a pas été altéré). Ces fichiers <code
-            class="filename">Packages</code> renferment à leur tour une liste de paquets Debian et leurs sommes de contrôle, afin de garantir que leur contenu n'a pas lui non plus été altéré.
+			The seal works with a chain of cryptographical hashes and a signature. The signed file is the <code
+            class="filename">Release</code> file, provided by the Debian mirrors. It contains a list of the <code
+            class="filename">Packages</code> files (including their compressed forms, <code
+            class="filename">Packages.gz</code> and <code
+            class="filename">Packages.xz</code>, and the incremental versions), along with their MD5, SHA1 and SHA256 hashes, which ensures that the files haven't been tampered with. These <code
+            class="filename">Packages</code> files contain a list of the Debian packages available on the mirror, along with their hashes, which ensures in turn that the contents of the packages themselves haven't been altered either.
 		</div><a
-          id="idm140698202806560"
+          id="idm140443396307904"
           class="indexterm"></a><a
-          id="idm140698202805440"
+          id="idm140443396306784"
           class="indexterm"></a><a
-          id="idm140698202804016"
+          id="idm140443396305360"
           class="indexterm"></a><a
-          id="idm140698202802896"
+          id="idm140443396304240"
           class="indexterm"></a><div
           class="para">
 			La gestion des clés de confiance se fait grâce au programme <code
@@ -155,14 +155,14 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>EN PRATIQUE</em></span> Ajouter des clés de confiance</strong></p></div></div></div><a
-            id="idm140698202792336"
+            id="idm140443396293680"
             class="indexterm"></a><a
-            id="idm140698202791376"
+            id="idm140443396292720"
             class="indexterm"></a><div
             class="para">
-			Lorsqu'une source de paquets tierce est ajoutée au fichier <code
-              class="filename">sources.list</code>, il faut désormais porter à la connaissance de APT la clé de confiance correspondante (sans quoi il se plaindra constamment qu'il ne peut pas vérifier l'authenticité des paquets contenus dans le dépôt concerné). Pour cela, il faut avant tout récupérer la clé publique en question : la plupart du temps, elle sera fournie sous la forme d'un petit fichier texte (qui sera nommé <code
-              class="filename">cle.asc</code> dans les exemples ci-dessous).
+			When a third-party package source is added to the <code
+              class="filename">sources.list</code> file, APT needs to be told to trust the corresponding GPG authentication key (otherwise it will keep complaining that it can't ensure the authenticity of the packages coming from that repository). The first step is of course to get the public key. More often than not, the key will be provided as a small text file, which we will call <code
+              class="filename">key.asc</code> in the following examples.
 		</div><div
             class="para">
 			On peut alors ajouter cette clé de confiance par la commande <code
@@ -172,7 +172,7 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
               class="guisubmenu"><strong>Dépôts</strong></span> permet d'importer le fichier <code
               class="filename">cle.asc</code> préalablement récupéré.
 		</div><a
-            id="idm140698202785056"
+            id="idm140443396286528"
             class="indexterm"></a><div
             class="para">
 			Pour ceux qui préfèrent une application dédiée et veulent plus de détails sur les clés de confiance, il est possible d'employer le programme <code

@@ -69,33 +69,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. Manipolazione dei pacchetti con <code
                   class="command">dpkg</code></h2></div></div></div><a
-          id="idm140518370373008"
+          id="idm140109884567776"
           class="indexterm"></a><div
           class="para">
 			<code
             class="command">dpkg</code> is the base command for handling Debian packages on the system. If you have <code
             class="filename">.deb</code> packages, it is <code
             class="command">dpkg</code> that allows installation or analysis of their contents. But this program only has a partial view of the Debian universe: it knows what is installed on the system, and whatever it is given on the command line, but knows nothing of the other available packages. As such, it will fail if a dependency is not met. Tools such as <code
-            class="command">apt-get</code>, on the contrary, will create a list of dependencies to install everything as automatically as possible.
+            class="command">apt</code>, on the contrary, will create a list of dependencies to install everything as automatically as possible.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>NOTA</em></span> <code
-                      class="command">dpkg</code> o <code
-                      class="command">apt-get</code>?</strong></p></div></div></div><div
+                      class="emphasis"><em>NOTE</em></span> <code
+                      class="command">dpkg</code> or <code
+                      class="command">apt</code>?</strong></p></div></div></div><div
             class="para">
 			<code
               class="command">dpkg</code> should be seen as a system tool (backend), and <code
-              class="command">apt-get</code> as a tool closer to the user, which overcomes the limitations of the former. These tools work together, each one with its particularities, suited to specific tasks.
+              class="command">apt</code> as a tool closer to the user, which overcomes the limitations of the former. These tools work together, each one with its particularities, suited to specific tasks.
 		</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140518370365312"></a>5.4.1. Installazione dei pacchetti</h3></div></div></div><a
-            id="idm140518370364544"
+                    id="idm140109884560080"></a>5.4.1. Installazione dei pacchetti</h3></div></div></div><a
+            id="idm140109884559312"
             class="indexterm"></a><a
-            id="idm140518370363104"
+            id="idm140109884557872"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code> option.
 			</div><div
             class="example"><a
-              id="idm140518370359616"></a><p
+              id="idm140109884554384"></a><p
               class="title"><strong>Esempio 5.2. Installazione di un pacchetto con <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -126,7 +126,7 @@ Processing triggers for mime-support (3.58) ...</code></pre></div></div><div
               class="command">dpkg</code> (dal momento che ogni chiamata è onerosa a causa del caricamento del database in memoria, specialmente l'elenco dei file già installati).
 			</div><div
             class="example"><a
-              id="idm140518370354000"></a><p
+              id="idm140109884548768"></a><p
               class="title"><strong>Esempio 5.3. Spacchettamento e configurazione separati</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -144,9 +144,9 @@ Processing triggers for mime-support (3.58) ...
                   class="computeroutput">Setting up man-db (2.7.0.2-5) ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm140518370350224"
+            id="idm140109884544992"
             class="indexterm"></a><a
-            id="idm140518370348784"
+            id="idm140109884543552"
             class="indexterm"></a><div
             class="para">
 				Talvolta <code
@@ -175,7 +175,7 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                     class="title"><strong><span
                         class="emphasis"><em>ATTENZIONE</em></span> Uso efficace di <code
                         class="literal">--force-*</code></strong></p></div></div></div><a
-              id="idm140518370338736"
+              id="idm140109884533504"
               class="indexterm"></a><div
               class="para">
 				If you are not careful, the use of an option <code
@@ -183,19 +183,19 @@ dpkg: error processing /var/cache/apt/archives/libgdm_3.8.3-2_amd64.deb (--unpac
                 class="pkg pkg">rdesktop</span> while ignoring its dependency on a newer version of the <span
                 class="pkg pkg">libc6</span>:
 			</div><pre
-              class="programlisting"># apt-get dist-upgrade
+              class="programlisting"># apt full-upgrade
 [...]
-You can run "apt-get -f install" to correct these problems.
-The following packages contain unmet dependencies:
-  rdesktop: Depends on: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
-E: missing dependencies. Try to use the option -f.
+You might want to run 'apt-get -f install' to correct these.
+The following packages have unmet dependencies:
+  rdesktop: Depends: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
+E: Unmet dependencies. Try using -f.
 </pre><div
               class="para">
-				Un amministratore coraggioso che sia certo della correttezza della propria analisi può scegliere di ignorare una dipendenza o un conflitto e usare la corrispondente opzione <code
-                class="literal">--force-*</code>. In questo caso, se si vuole continuare a usare <code
-                class="command">apt-get</code> o <code
-                class="command">aptitude</code>, bisogna modificare <code
-                class="filename">/var/lib/dpkg/status</code> per eliminare o modificare la dipendenza, o il conflitto, che si è scelto di scavalcare.
+				A courageous administrator who is certain of the correctness of their analysis may choose to ignore a dependency or conflict and use the corresponding <code
+                class="literal">--force-*</code> option. In this case, if they want to be able to continue to use <code
+                class="command">apt</code> or <code
+                class="command">aptitude</code>, they must edit <code
+                class="filename">/var/lib/dpkg/status</code> to delete/modify the dependency, or conflict, that they chose to override.
 			</div><div
               class="para">
 				This manipulation is an ugly hack, and should never be used, except in the most extreme case of necessity. Quite frequently, a more fitting solution is to recompile the package that's causing the problem (see <a
@@ -208,14 +208,14 @@ E: missing dependencies. Try to use the option -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140518370328656"></a>5.4.2. Rimozione di pacchetti</h3></div></div></div><a
-            id="idm140518370327856"
+                    id="idm140109884523504"></a>5.4.2. Rimozione di pacchetti</h3></div></div></div><a
+            id="idm140109884522704"
             class="indexterm"></a><a
-            id="idm140518370326928"
+            id="idm140109884521776"
             class="indexterm"></a><a
-            id="idm140518370325968"
+            id="idm140109884520816"
             class="indexterm"></a><a
-            id="idm140518370324528"
+            id="idm140109884519376"
             class="indexterm"></a><div
             class="para">
 				Invoking <code
@@ -226,7 +226,7 @@ E: missing dependencies. Try to use the option -f.
               class="literal">--purge</code> option, followed by the package name.
 			</div><div
             class="example"><a
-              id="idm140518370319808"></a><p
+              id="idm140109884514656"></a><p
               class="title"><strong>Esempio 5.4. Removal and purge of the <span
                   class="pkg pkg">debian-cd</span> package</strong></p><div
               class="example-contents"><pre
@@ -245,14 +245,14 @@ Purging configuration files for debian-cd ...</code></pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140518370315488"></a>5.4.3. Querying <code
+                    id="idm140109884510336"></a>5.4.3. Querying <code
                     class="command">dpkg</code>'s Database and Inspecting <code
                     class="filename">.deb</code> Files</h3></div></div></div><a
-            id="idm140518370313760"
+            id="idm140109884508608"
             class="indexterm"></a><a
-            id="idm140518370312320"
+            id="idm140109884507168"
             class="indexterm"></a><a
-            id="idm140518370310880"
+            id="idm140109884505728"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -283,7 +283,7 @@ Purging configuration files for debian-cd ...</code></pre></div></div></div><div
               class="literal">-I</code>), which displays the headers of this Debian package.
 			</div><div
             class="example"><a
-              id="idm140518370298832"></a><p
+              id="idm140109887822480"></a><p
               class="title"><strong>Esempio 5.5. Varie richieste con <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -434,9 +434,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>APPROFONDIMENTI</em></span> Confronto di versioni</strong></p></div></div></div><a
-              id="idm140518370284720"
+              id="idm140109887808368"
               class="indexterm"></a><a
-              id="idm140518370283760"
+              id="idm140109887807408"
               class="indexterm"></a><div
               class="para">
 				Since <code
@@ -494,7 +494,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140518370265824"></a>5.4.4. File di registro di <code
+                    id="idm140109887789472"></a>5.4.4. File di registro di <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				<code
@@ -507,9 +507,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. Multi-Arch Support</h3></div></div></div><a
-            id="idm140518370260480"
+            id="idm140109887784128"
             class="indexterm"></a><a
-            id="idm140518370259520"
+            id="idm140109887783168"
             class="indexterm"></a><div
             class="para">
 				All Debian packages have an <code
@@ -524,11 +524,11 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140518370254672"></a>5.4.5.1. Enabling Multi-Arch</h4></div></div></div><div
+                      id="idm140109887778320"></a>5.4.5.1. Enabling Multi-Arch</h4></div></div></div><div
               class="para">
 					<code
                 class="command">dpkg</code>'s multi-arch support allows users to define “foreign architectures” that can be installed on the current system. This is simply done with <code
-                class="command">dpkg --add-architecture</code> like in the example below. There's a corresponding <code
+                class="command">dpkg --add-architecture</code> like in the example below. There is a corresponding <code
                 class="command">dpkg --remove-architecture</code> to drop support of a foreign architecture, but it can only be used when no packages of this architecture remain.
 				</div><pre
               class="screen">
@@ -587,7 +587,7 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
 				</div><div
                 class="para">
 					Foreign packages can then be installed with <code
-                  class="command">apt-get install <em
+                  class="command">apt install <em
                     class="replaceable">package</em>:<em
                     class="replaceable">architecture</em></code>.
 				</div></div><div
@@ -597,22 +597,15 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
                           class="emphasis"><em>IN PRACTICE</em></span> Using proprietary i386 binaries on amd64</strong></p></div></div></div><div
                 class="para">
 					There are multiple use cases for multi-arch, but the most popular one is the possibility to execute 32 bit binaries (i386) on 64 bit systems (amd64), in particular since several popular proprietary applications (like Skype) are only provided in 32 bit versions.
-				</div><div
-                class="para">
-					Before multi-arch, when you wanted to uses a 32 bit appliction on a 64 bit system, you had to install <span
-                  class="pkg pkg">ia32-libs</span> to have 32 bit versions of the most popular libraries. That package was a huge hack that repackaged 32 bit libraries in an “amd64” package.
-				</div><a
-                id="idm140518370235552"
-                class="indexterm"></a></div></div><div
+				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140518370233808"></a>5.4.5.2. Multi-Arch Related Changes</h4></div></div></div><div
+                      id="idm140109887760368"></a>5.4.5.2. Multi-Arch Related Changes</h4></div></div></div><div
               class="para">
 					To make multi-arch actually useful and usable, libraries had to be repackaged and moved to an architecture-specific directory so that multiple copies (targeting different architectures) can be installed alongside. Such updated packages contain the “<code
                 class="literal">Multi-Arch: same</code>” header field to tell the packaging system that the various architectures of the package can be safely co-installed (and that those packages can only satisfy dependencies of packages of the same architecture). Since multi-arch made its debut in Debian <span
-                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet (but all libraries which were embedded in <span
-                class="pkg pkg">ia32-libs</span> do!).
+                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet.
 				</div><pre
               class="screen">
 $ <strong

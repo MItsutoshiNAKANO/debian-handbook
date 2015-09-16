@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.virtualization"></a>12.2. Virtualisation</h2></div></div></div><a
-          id="idm140698199068960"
+          id="idm140443395748768"
           class="indexterm"></a><div
           class="para">
 			Virtualization is one of the most major advances in the recent years of computing. The term covers various abstractions and techniques simulating virtual computers with a variable degree of independence on the actual hardware. One physical server can then host several systems working at the same time and in isolation. Applications are many, and often derive from this isolation: test environments with varying configurations for instance, or separation of hosted services across different virtual machines for security.
@@ -76,17 +76,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Il existe différentes mises en œuvre pour la virtualisation, chacune ayant ses avantages et ses inconvénients. Nous allons nous concentrer sur Xen, LXC et KVM, mais on peut aussi citer, à titre d'exemple :
 		</div><a
-          id="idm140698199066320"
+          id="idm140443395746128"
           class="indexterm"></a><a
-          id="idm140698199065200"
+          id="idm140443395745008"
           class="indexterm"></a><a
-          id="idm140698199064080"
+          id="idm140443395743888"
           class="indexterm"></a><a
-          id="idm140698199062960"
+          id="idm140443395742768"
           class="indexterm"></a><a
-          id="idm140698199061840"
+          id="idm140443395741648"
           class="indexterm"></a><a
-          id="idm140698199060720"
+          id="idm140443395740528"
           class="indexterm"></a><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -124,7 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.xen"></a>12.2.1. Xen</h3></div></div></div><div
             class="para">
 				Xen<a
-              id="idm140698199049280"
+              id="idm140443395728304"
               class="indexterm"></a> est une solution de « paravirtualisation », c'est-à-dire qu'elle insère entre le matériel et les systèmes supérieurs une fine couche d'abstraction, nommée « hyperviseur », dont le rôle est de répartir l'utilisation du matériel entre les différentes machines virtuelles qui fonctionnent dessus. Cependant, cet hyperviseur n'entre en jeu que pour une petite partie des instructions, le reste étant exécuté directement par le matériel pour le compte des différents systèmes. L'avantage est que les performances ne subissent pas de dégradation ; la contrepartie est que les noyaux des systèmes d'exploitation que l'on souhaite utiliser sur un hyperviseur Xen doivent être modifiés pour en tirer parti.
 			</div><div
             class="para">
@@ -379,9 +379,9 @@ testxen                                      1   128     1     -b----      1.1</
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> Choice of toolstacks to manage Xen VM</strong></p></div></div></div><a
-              id="idm140698198972368"
+              id="idm140443395651392"
               class="indexterm"></a><a
-              id="idm140698198971248"
+              id="idm140443395650272"
               class="indexterm"></a><div
               class="para">
 				In Debian 7 and older releases, <code
@@ -476,7 +476,7 @@ testxen login: </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.lxc"></a>12.2.2. LXC</h3></div></div></div><a
-            id="idm140698198938688"
+            id="idm140443395617712"
             class="indexterm"></a><div
             class="para">
 				Even though it is used to build “virtual machines”, LXC is not, strictly speaking, a virtualization system, but a system to isolate groups of processes from each other even though they all run on the same host. It takes advantage of a set of recent evolutions in the Linux kernel, collectively known as <span
@@ -521,7 +521,7 @@ testxen login: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698198924064"></a>12.2.2.1. Préliminaires</h4></div></div></div><div
+                      id="idm140443395603088"></a>12.2.2.1. Préliminaires</h4></div></div></div><div
               class="para">
 					Les utilitaires requis pour faire fonctionner LXC sont inclus dans le paquet <span
                 class="pkg pkg">lxc</span>, qui doit donc être installé avant toute chose.
@@ -593,7 +593,7 @@ iface br0 inet static
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698198906304"></a>12.2.2.3. Mise en place du système</h4></div></div></div><div
+                      id="idm140443395585328"></a>12.2.2.3. Mise en place du système</h4></div></div></div><div
               class="para">
 					Nous allons maintenant mettre en place le système de fichiers qui sera utilisé par le conteneur. Comme cette « machine virtuelle » ne fonctionnera pas directement sur le matériel, certains ajustements sont nécessaires par rapport à un système de fichiers classique, notamment en ce qui concerne le noyau, les périphériques et les consoles. Fort heureusement, le paquet <span
                 class="pkg pkg">lxc</span> contient des scripts qui automatisent en grande partie cette mise en place. Ainsi, pour créer un conteneur Debian, on pourra utiliser les commandes suivantes (qui auront besoin des paquets <span
@@ -648,7 +648,7 @@ lxc.network.hwaddr = 4a:49:43:49:79:20
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698198892768"></a>12.2.2.4. Lancement du conteneur</h4></div></div></div><div
+                      id="idm140443395571792"></a>12.2.2.4. Lancement du conteneur</h4></div></div></div><div
               class="para">
 					Maintenant que notre image de machine virtuelle est prête, nous pouvons démarrer le conteneur :
 				</div><pre
@@ -740,8 +740,8 @@ root@testlxc:~# </code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140698198867136"></a>12.2.3. Virtualisation avec KVM</h3></div></div></div><a
-            id="idm140698198866336"
+                    id="idm140443395546160"></a>12.2.3. Virtualisation avec KVM</h3></div></div></div><a
+            id="idm140443395545360"
             class="indexterm"></a><div
             class="para">
 				KVM (<span
@@ -759,16 +759,16 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698198861616"></a>12.2.3.1. Préliminaires</h4></div></div></div><a
-              id="idm140698198860816"
+                      id="idm140443395540640"></a>12.2.3.1. Préliminaires</h4></div></div></div><a
+              id="idm140443395539840"
               class="indexterm"></a><div
               class="para">
 					Contrairement à des outils comme Virtualbox, KVM ne dispose pas en standard d'interface pour créer et gérer les machines virtuelles. Le paquet <span
                 class="pkg pkg">qemu-kvm</span> se contente de fournir un exécutable du même nom (qui sert à démarrer une machine virtuelle) et un script de démarrage qui charge les modules nécessaires.
 				</div><a
-              id="idm140698198858144"
+              id="idm140443395537168"
               class="indexterm"></a><a
-              id="idm140698198857184"
+              id="idm140443395536208"
               class="indexterm"></a><div
               class="para">
 					Fort heureusement, RedHat fournit aussi la solution à ce problème puisqu'ils développent <span
@@ -776,7 +776,7 @@ root@testlxc:~# </code></pre><div
                 class="emphasis"><em>virtual-manager</em></span>. libvirt est une bibliothèque qui permet de gérer des machines virtuelles de manière uniforme, quelle que soit la technologie de virtualisation employée. À l'heure actuelle, libvirt gère QEMU, KVM, Xen, LXC, OpenVZ, VirtualBox, VMWare et UML. <code
                 class="command">virtual-manager</code> est une interface graphique exploitant libvirt pour créer et gérer des machines virtuelles.
 				</div><a
-              id="idm140698198853472"
+              id="idm140443395532496"
               class="indexterm"></a><div
               class="para">
 					Installons donc tous les paquets requis avec <code
@@ -795,7 +795,7 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698198846048"></a>12.2.3.2. Configuration réseau</h4></div></div></div><div
+                      id="idm140443395525072"></a>12.2.3.2. Configuration réseau</h4></div></div></div><div
               class="para">
 					Tout comme avec Xen ou LXC, la configuration la plus courante pour des serveurs publics consiste à configurer un pont dans lequel seront intégrées les interfaces réseau des machines virtuelles (voir <a
                 class="xref"
@@ -812,9 +812,9 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698198841584"></a>12.2.3.3. Installation avec <code
+                      id="idm140443395520608"></a>12.2.3.3. Installation avec <code
                       class="command">virt-install</code></h4></div></div></div><a
-              id="idm140698198840464"
+              id="idm140443395519488"
               class="indexterm"></a><div
               class="para">
 					La création d'une machine virtuelle est très similaire à l'installation d'une machine normale, sauf que toutes les caractéristiques de la machine sont décrites par une ligne de commande à rallonge.
@@ -1065,9 +1065,9 @@ root@serveur's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698179670688"></a>12.2.3.4. Gestion des machines avec <code
+                      id="idm140443381135776"></a>12.2.3.4. Gestion des machines avec <code
                       class="command">virsh</code></h4></div></div></div><a
-              id="idm140698179669792"
+              id="idm140443381134880"
               class="indexterm"></a><div
               class="para">
 					L'installation étant terminée, il est temps de voir comment manipuler les machines virtuelles disponibles. La première commande permet de lister les machines gérées par <code
@@ -1147,7 +1147,7 @@ root@serveur's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140698179652816"></a>12.2.3.5. Installer un système basé sur RPM avec yum sur Debian</h4></div></div></div><div
+                      id="idm140443381117904"></a>12.2.3.5. Installer un système basé sur RPM avec yum sur Debian</h4></div></div></div><div
               class="para">
 					Si la machine virtuelle doit faire fonctionner Debian (ou une de ses dérivées), le système peut être initialisé avec <code
                 class="command">debootstrap</code>, comme décrit précédemment. En revanche si la machine virtuelle doit être installée avec un système basé sur RPM (comme Fedora, CentOS ou Scientific Linux), la mise en place sera faite avec l'outil <code

@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-zh-CN-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt缓存, aptitude 更安全的apt, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt缓存, aptitude 更安全的apt, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="Debian 管理员手册" /><link
@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-authentication"></a>6.5. Checking Package Authenticity</h2></div></div></div><a
-          id="idm140314589796096"
+          id="idm139972814231776"
           class="indexterm"></a><a
-          id="idm140314589794656"
+          id="idm139972814230336"
           class="indexterm"></a><a
-          id="idm140314589793216"
+          id="idm139972814228896"
           class="indexterm"></a><a
-          id="idm140314589791776"
+          id="idm139972814227456"
           class="indexterm"></a><a
-          id="idm140314589790336"
+          id="idm139972814226016"
           class="indexterm"></a><div
           class="para">
 			Security is very important for Falcot Corp administrators. Accordingly, they need to ensure that they only install packages which are guaranteed to come from Debian with no tampering on the way. A computer cracker could try to add malicious code to an otherwise legitimate package. Such a package, if installed, could do anything the cracker designed it to do, including for instance disclosing passwords or confidential information. To circumvent this risk, Debian provides a tamper-proof seal to guarantee — at install time — that a package really comes from its official maintainer and hasn't been modified by a third party.
@@ -86,16 +86,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="filename">Release</code> file, provided by the Debian mirrors. It contains a list of the <code
             class="filename">Packages</code> files (including their compressed forms, <code
             class="filename">Packages.gz</code> and <code
-            class="filename">Packages.bz2</code>, and the incremental versions), along with their MD5, SHA1 and SHA256 hashes, which ensures that the files haven't been tampered with. These <code
+            class="filename">Packages.xz</code>, and the incremental versions), along with their MD5, SHA1 and SHA256 hashes, which ensures that the files haven't been tampered with. These <code
             class="filename">Packages</code> files contain a list of the Debian packages available on the mirror, along with their hashes, which ensures in turn that the contents of the packages themselves haven't been altered either.
 		</div><a
-          id="idm140314589784512"
+          id="idm139972814220192"
           class="indexterm"></a><a
-          id="idm140314589783392"
+          id="idm139972814219072"
           class="indexterm"></a><a
-          id="idm140314589781968"
+          id="idm139972814217648"
           class="indexterm"></a><a
-          id="idm140314589780848"
+          id="idm139972814216528"
           class="indexterm"></a><div
           class="para">
 			The trusted keys are managed with the <code
@@ -153,13 +153,13 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>IN PRACTICE</em></span> Adding trusted keys</strong></p></div></div></div><a
-            id="idm140314589770976"
+            id="idm139972814206656"
             class="indexterm"></a><a
-            id="idm140314589770016"
+            id="idm139972814205696"
             class="indexterm"></a><div
             class="para">
 			When a third-party package source is added to the <code
-              class="filename">sources.list</code> file, APT needs to be told to trust the corresponding GPG authentication key (otherwise it will keep complaining that it can't ensure the authenticity of the packages coming from that repository). The first step is of course to get the public key. More often than not, the key will be provided as a small text file, which we'll call <code
+              class="filename">sources.list</code> file, APT needs to be told to trust the corresponding GPG authentication key (otherwise it will keep complaining that it can't ensure the authenticity of the packages coming from that repository). The first step is of course to get the public key. More often than not, the key will be provided as a small text file, which we will call <code
               class="filename">key.asc</code> in the following examples.
 		</div><div
             class="para">
@@ -170,7 +170,7 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
               class="guisubmenu"><strong>Repositories</strong></span> menu gives the possibility of importing a key from the <code
               class="filename">key.asc</code> file.
 		</div><a
-            id="idm140314589763760"
+            id="idm139972814199440"
             class="indexterm"></a><div
             class="para">
 			For people who would want a dedicated application and more details on the trusted keys, it is possible to use <code

@@ -19,7 +19,7 @@
         name="package"
         content="Debian-debian-handbook-8-fr-FR-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="Le cahier de l'administrateur Debian" /><link
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140698202778928"></a>6.6.1. Démarche à suivre</h3></div></div></div><div
+                    id="idm140443396280400"></a>6.6.1. Démarche à suivre</h3></div></div></div><div
             class="para">
 				Comme le système Debian a le temps d'évoluer entre deux versions stables, on prendra soin de lire, avant d'entreprendre la mise à jour, les notes de publication.
 			</div><div
@@ -118,16 +118,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Wheezy</span>. If the file only contains references to <span
               class="distribution distribution">Stable</span> rather than explicit codenames, the change isn't even required, since <span
               class="distribution distribution">Stable</span> always refers to the latest released version of Debian. In both cases, the database of available packages must be refreshed (with the <code
-              class="command">apt-get update</code> command or the refresh button in <code
+              class="command">apt update</code> command or the refresh button in <code
               class="command">synaptic</code>).
 			</div><div
             class="para">
-				Une fois que ces nouvelles sources de paquets sont déclarées, la première chose à faire est une mise à jour minimale avec <code
-              class="command">apt-get upgrade</code>. Cette mise à jour en deux temps facilite la tâche des outils de gestion de paquets ; en particulier, cela assure que ces outils eux-mêmes sont dans leur dernière version et qu'ils disposent donc de correctifs et d'améliorations qui peuvent s'avérer nécessaires lors de la mise à jour complète de la distribution.
+				Once these new package sources are registered, you should first do a minimal upgrade with <code
+              class="command">apt upgrade</code>. By doing the upgrade in two steps, we ease the job of the package management tools and often ensure that we have the latest versions of those, which might have accumulated bugfixes and improvements required to complete the full distribution upgrade.
 			</div><div
             class="para">
 				Once this first upgrade is done, it is time to handle the upgrade itself, either with <code
-              class="command">apt-get dist-upgrade</code>, <code
+              class="command">apt full-upgrade</code>, <code
               class="command">aptitude</code>, or <code
               class="command">synaptic</code>. You should carefully check the suggested actions before applying them: you might want to add suggested packages or deselect packages which are only recommended and known not to be useful. In any case, the front-end should come up with a scenario ending in a coherent and up-to-date <span
               class="distribution distribution">Jessie</span> system. Then, all you need is to do is wait while the required packages are downloaded, answer the Debconf questions and possibly those about locally modified configuration files, and sit back while APT does its magic.
@@ -135,7 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140698202756704"></a>6.6.2. Gérer les problèmes consécutifs à une mise à jour</h3></div></div></div><div
+                    id="idm140443396258288"></a>6.6.2. Gérer les problèmes consécutifs à une mise à jour</h3></div></div></div><div
             class="para">
 				Malgré tous les efforts des mainteneurs Debian, une mise à jour majeure du système d'exploitation cause parfois quelques soucis. Les nouvelles versions de certains logiciels sont parfois incompatibles avec les précédentes (évolution d'un format de données, comportement par défaut qui diffère, etc.). En outre, certains bogues passent inaperçus malgré la période de test précédant la publication d'une nouvelle version.
 			</div><div
@@ -146,10 +146,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">paquet</em>/NEWS.Debian</code> et en tenir compte évitera toute mauvaise surprise.
 			</div><div
             class="para">
-				Parfois, la nouvelle version d'un logiciel ne fonctionne plus du tout. C'est par exemple le cas si le logiciel n'est pas très populaire et n'a pas été suffisamment testé ; une mise à jour de dernière minute peut aussi introduire des régressions qui ne sont découvertes qu'après publication. Dans ce cas, le premier réflexe sain est de consulter le système de suivi de bogue à l'adresse <code
-              class="literal">http://bugs.debian.org/<em
-                class="replaceable">paquet</em></code> pour déterminer si le problème est déjà connu et signalé. Si ce n'est pas le cas, il faut le signaler avec <code
-              class="command">reportbug</code>. Sinon, la lecture du rapport de bogue sera généralement très instructive :
+				You might sometimes find that the new version of a software doesn't work at all. This generally happens if the application isn't particularly popular and hasn't been tested enough; a last-minute update can also introduce regressions which are only found after the stable release. In both cases, the first thing to do is to have a look at the bug tracking system at <code
+              class="literal">https://bugs.debian.org/<em
+                class="replaceable">package</em></code>, and check whether the problem has already been reported. If it hasn't, you should report it yourself with <code
+              class="command">reportbug</code>. If it is already known, the bug report and the associated messages are usually an excellent source of information related to the bug:
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
@@ -168,18 +168,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						Enfin un paquet corrigé peut avoir été préparé par le mainteneur et être disponible en téléchargement.
 					</div></li></ul></div><div
             class="para">
-				Selon la gravité du bogue, une nouvelle version peut être préparée pour être intégrée dans une nouvelle révision de la version stable. Dans ce cas, un paquet corrigé est peut-être disponible dans la section <code
-              class="literal">proposed-updates</code> des miroirs Debian (voir <a
+				Depending on the severity of the bug, a new version of the package may be prepared specifically for a new revision of the stable release. When this happens, the fixed package is made available in the <code
+              class="literal">proposed-updates</code> section of the Debian mirrors (see <a
               class="xref"
-              href="apt.html#sect.proposed-updates">Section 6.1.2.3, « Mises à jour proposées »</a>). On peut alors temporairement ajouter l'entrée correspondante dans son fichier <code
-              class="filename">sources.list</code> et installer la mise à jour avec <code
-              class="command">apt-get</code> ou <code
+              href="apt.html#sect.proposed-updates">Section 6.1.2.3, « Mises à jour proposées »</a>). The corresponding entry can then be temporarily added to the <code
+              class="filename">sources.list</code> file, and updated packages can be installed with <code
+              class="command">apt</code> or <code
               class="command">aptitude</code>.
 			</div><div
             class="para">
-				Si le paquet n'est pas encore disponible dans cette section, on peut vérifier s'il est en attente de validation par les SRM (les gestionnaires de la version stable) en consultant leur page web. Les paquets listés sur cette page ne sont pas encore disponibles publiquement mais l'on sait au moins que le processus de publication suit son cours. <div
+				Sometimes the fixed package isn't available in this section yet because it is pending a validation by the Stable Release Managers. You can verify if that's the case on their web page. Packages listed there aren't available yet, but at least you know that the publication process is ongoing. <div
               class="url">→ <a
-                href="http://release.debian.org/proposed-updates/stable.html">http://release.debian.org/proposed-updates/stable.html</a></div>
+                href="https://release.debian.org/proposed-updates/stable.html">https://release.debian.org/proposed-updates/stable.html</a></div>
 			</div></div></div><ul
         class="docnav"><li
           class="previous"><a

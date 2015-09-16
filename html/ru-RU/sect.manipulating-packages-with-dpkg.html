@@ -69,33 +69,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. Работа с пакетами при помощи <code
                   class="command">dpkg</code></h2></div></div></div><a
-          id="idm140254113728320"
+          id="idm140679276322992"
           class="indexterm"></a><div
           class="para">
 			<code
-            class="command">dpkg</code> представляет собой основную программу в системе для работы с пакетами Debian. При наличии пакетов <code
-            class="filename">.deb</code> именно <code
-            class="command">dpkg</code> позволяет их установить или проанализировать их содержимое. Однако эта программа имеет только частичное представление о мире Debian: она знает, что установлено в системе, а также всё, что передано ей в командной строке, но она ничего не знает о других доступных пакетах. Поэтому она завершится с ошибкой, если обнаружит неудовлетворённую зависимость. Такие инструменты как <code
-            class="command">apt-get</code>, напротив, автоматически создадут список зависимостей, чтобы установить всё по возможности автоматически.
+            class="command">dpkg</code> is the base command for handling Debian packages on the system. If you have <code
+            class="filename">.deb</code> packages, it is <code
+            class="command">dpkg</code> that allows installation or analysis of their contents. But this program only has a partial view of the Debian universe: it knows what is installed on the system, and whatever it is given on the command line, but knows nothing of the other available packages. As such, it will fail if a dependency is not met. Tools such as <code
+            class="command">apt</code>, on the contrary, will create a list of dependencies to install everything as automatically as possible.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
-                      class="emphasis"><em>ЗАМЕТКА</em></span> <code
-                      class="command">dpkg</code> или <code
-                      class="command">apt-get</code>?</strong></p></div></div></div><div
+                      class="emphasis"><em>NOTE</em></span> <code
+                      class="command">dpkg</code> or <code
+                      class="command">apt</code>?</strong></p></div></div></div><div
             class="para">
 			<code
-              class="command">dpkg</code> стоит рассматривать как низкоуровневый инструмент (бэк-энд), а <code
-              class="command">apt-get</code> — как инструмент, более близкий к пользователю, обходящий ограничения первого. Эти инструменты работают совместно, каждый со своей спецификой, заточенный под определённый круг задач.
+              class="command">dpkg</code> should be seen as a system tool (backend), and <code
+              class="command">apt</code> as a tool closer to the user, which overcomes the limitations of the former. These tools work together, each one with its particularities, suited to specific tasks.
 		</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140254113719696"></a>5.4.1. Установка пакетов</h3></div></div></div><a
-            id="idm140254113718928"
+                    id="idm140679276315296"></a>5.4.1. Установка пакетов</h3></div></div></div><a
+            id="idm140679276314528"
             class="indexterm"></a><a
-            id="idm140254113717520"
+            id="idm140679276313120"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code>.
 			</div><div
             class="example"><a
-              id="idm140254113713904"></a><p
+              id="idm140679276309504"></a><p
               class="title"><strong>Пример 5.2. Установка пакета при помощи <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -126,7 +126,7 @@ Processing triggers for mime-support (3.58) ...</code></pre></div></div><div
               class="command">dpkg</code> (каждый такой запрос является дорогостоящей операцией из-за необходимости загрузки в память базы данных, включая весь список уже установленных файлов).
 			</div><div
             class="example"><a
-              id="idm140254113708096"></a><p
+              id="idm140679276303696"></a><p
               class="title"><strong>Пример 5.3. Раздельная распаковка и настройка</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -144,9 +144,9 @@ Processing triggers for mime-support (3.58) ...
                   class="computeroutput">Setting up man-db (2.7.0.2-5) ...
 Updating database of manual pages ...
 </code></pre></div></div><a
-            id="idm140254113704240"
+            id="idm140679276299840"
             class="indexterm"></a><a
-            id="idm140254113702800"
+            id="idm140679276298400"
             class="indexterm"></a><div
             class="para">
 				Иногда <code
@@ -175,7 +175,7 @@ dpkg: ошибка при обработке параметра /var/cache/apt/a
                     class="title"><strong><span
                         class="emphasis"><em>ВНИМАНИЕ</em></span> Эффективное использование <code
                         class="literal">--force-*</code></strong></p></div></div></div><a
-              id="idm140254113691792"
+              id="idm140679276287392"
               class="indexterm"></a><div
               class="para">
 				Если вы не будете осторожны, использование опции <code
@@ -183,19 +183,19 @@ dpkg: ошибка при обработке параметра /var/cache/apt/a
                 class="pkg pkg">rdesktop</span> с игнорированием зависимости от более новой версии <span
                 class="pkg pkg">libc6</span>:
 			</div><pre
-              class="programlisting"># apt-get dist-upgrade
+              class="programlisting"># apt full-upgrade
 [...]
-Возможно, для исправления этих ошибок вы захотите воспользоваться «apt-get -f install».
-Пакеты, имеющие неудовлетворённые зависимости:
-  rdesktop: Зависит от: libc6 (&gt;= 2.5) но 2.3.6.ds1-13etch7 уже установлен
-E: Неудовлетворённые зависимости. Попытайтесь использовать -f.
+You might want to run 'apt-get -f install' to correct these.
+The following packages have unmet dependencies:
+  rdesktop: Depends: libc6 (&gt;= 2.5) but 2.3.6.ds1-13etch7 is installed
+E: Unmet dependencies. Try using -f.
 </pre><div
               class="para">
-				Бесстрашные администраторы, уверенные в правильности своего анализа ситуации, могут проигнорировать предупреждение о проблеме зависимостями или конфликте, используя соответствующую опцию <code
-                class="literal">--force-*</code>. В этом случае, если необходимо продолжать использовать <code
-                class="command">apt-get</code> или <code
-                class="command">aptitude</code>, нужно отредактировать <code
-                class="filename">/var/lib/dpkg/status</code> и удалить/изменить зависимость или конфликт.
+				A courageous administrator who is certain of the correctness of their analysis may choose to ignore a dependency or conflict and use the corresponding <code
+                class="literal">--force-*</code> option. In this case, if they want to be able to continue to use <code
+                class="command">apt</code> or <code
+                class="command">aptitude</code>, they must edit <code
+                class="filename">/var/lib/dpkg/status</code> to delete/modify the dependency, or conflict, that they chose to override.
 			</div><div
               class="para">
 				Редакрирование данного файла — это грязный хак, и не стоит прибегать к нему, кроме как в самых крайних случаях. Зачастую лучшим решением является пересборка пакета, вызывающего проблему (см. <a
@@ -208,14 +208,14 @@ E: Неудовлетворённые зависимости. Попытайте
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140254113680448"></a>5.4.2. Удаление пакета</h3></div></div></div><a
-            id="idm140254113679680"
+                    id="idm140679276276496"></a>5.4.2. Удаление пакета</h3></div></div></div><a
+            id="idm140679276275728"
             class="indexterm"></a><a
-            id="idm140254113678752"
+            id="idm140679276274800"
             class="indexterm"></a><a
-            id="idm140254113677824"
+            id="idm140679276273872"
             class="indexterm"></a><a
-            id="idm140254113676384"
+            id="idm140679276272432"
             class="indexterm"></a><div
             class="para">
 				Запуск <code
@@ -226,7 +226,7 @@ E: Неудовлетворённые зависимости. Попытайте
               class="literal">--purge</code>, сопровождающаяся именем пакета.
 			</div><div
             class="example"><a
-              id="idm140254113671200"></a><p
+              id="idm140679276267248"></a><p
               class="title"><strong>Пример 5.4. Removal and purge of the <span
                   class="pkg pkg">debian-cd</span> package</strong></p><div
               class="example-contents"><pre
@@ -245,14 +245,14 @@ E: Неудовлетворённые зависимости. Попытайте
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140254113666688"></a>5.4.3. Запросы к базе данных <code
+                    id="idm140679276262736"></a>5.4.3. Запросы к базе данных <code
                     class="command">dpkg</code> и анализ файлов <code
                     class="filename">.deb</code></h3></div></div></div><a
-            id="idm140254113665152"
+            id="idm140679276261200"
             class="indexterm"></a><a
-            id="idm140254113663712"
+            id="idm140679276259760"
             class="indexterm"></a><a
-            id="idm140254113662304"
+            id="idm140679276258352"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -283,7 +283,7 @@ E: Неудовлетворённые зависимости. Попытайте
               class="literal">-I</code>) показывает информацию о пакете Debian.
 			</div><div
             class="example"><a
-              id="idm140254113649744"></a><p
+              id="idm140679276245792"></a><p
               class="title"><strong>Пример 5.5. Получение информации с помощью <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -434,9 +434,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>УГЛУБЛЯЕМСЯ</em></span> Сравнение версий</strong></p></div></div></div><a
-              id="idm140254113635616"
+              id="idm140679276231664"
               class="indexterm"></a><a
-              id="idm140254113634688"
+              id="idm140679276230736"
               class="indexterm"></a><div
               class="para">
 				Так как <code
@@ -495,7 +495,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140254113615584"></a>5.4.4. Файл журнала <code
+                    id="idm140679276211632"></a>5.4.4. Файл журнала <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				<code
@@ -508,9 +508,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. Поддержка мультиархитектуры</h3></div></div></div><a
-            id="idm140254113609952"
+            id="idm140679276206000"
             class="indexterm"></a><a
-            id="idm140254113609024"
+            id="idm140679276205072"
             class="indexterm"></a><div
             class="para">
 				Все пакеты Debian имеют поле <code
@@ -525,12 +525,12 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140254113603616"></a>5.4.5.1. Включение мультиархитектуры</h4></div></div></div><div
+                      id="idm140679276199664"></a>5.4.5.1. Включение мультиархитектуры</h4></div></div></div><div
               class="para">
-					Поддержка мультиархитектуры <code
-                class="command">dpkg</code> позволяет определять «чужеродные архитектуры», которые могут быть установлены в данной системе. Это легко сделать с помощью <code
-                class="command">dpkg --add-architecture</code>, как показанно в примере ниже. Существует и соответствующая команда <code
-                class="command">dpkg --remove-architecture</code> для отключения поддержки чужеродной архитектуры, но её можно использовать только в том случае, когда в системе не осталось ни одного пакета этой архитектуры.
+					<code
+                class="command">dpkg</code>'s multi-arch support allows users to define “foreign architectures” that can be installed on the current system. This is simply done with <code
+                class="command">dpkg --add-architecture</code> like in the example below. There is a corresponding <code
+                class="command">dpkg --remove-architecture</code> to drop support of a foreign architecture, but it can only be used when no packages of this architecture remain.
 				</div><pre
               class="screen">
 <code
@@ -587,10 +587,10 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
                   class="filename">Packages</code> в процессе обновления.
 				</div><div
                 class="para">
-					Чужеродные пакеты можно установить при помощи команды <code
-                  class="command">apt-get install <em
-                    class="replaceable">пакет</em>:<em
-                    class="replaceable">архитектура</em></code>.
+					Foreign packages can then be installed with <code
+                  class="command">apt install <em
+                    class="replaceable">package</em>:<em
+                    class="replaceable">architecture</em></code>.
 				</div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -598,22 +598,15 @@ Setting up gcc-4.9-base:armhf (4.9.1-19) ...
                           class="emphasis"><em>НА ПРАКТИКЕ</em></span> Использование собственнических двоичных файлов i386 в системах amd64</strong></p></div></div></div><div
                 class="para">
 					Есть несколько случаев, когда может пригодиться мультиархитектура, но самым распространённымным из них является обеспечение возможности запуска 32-битных файллов (i386) на 64-битных системах (amd64), в частности потому что некоторые популярные собственнические приложения (вроде Skype) доступны только в виде 32-разрядных версий.
-				</div><div
-                class="para">
-					Перед тем, как была добавленна мультиархитектурная поддержка, при желаниии использовать 32-битные приложения в 64-битной системе нужно было устанавливать <span
-                  class="pkg pkg">ia32-libs</span>. Этот пакет представлял собой огромный хак, так как содержал 32-битные версии популярных библиотек, причём сам он был для архитектуры «amd64».
-				</div><a
-                id="idm140254111855824"
-                class="indexterm"></a></div></div><div
+				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140254111854080"></a>5.4.5.2. Изменения, связанные с мультиархитектурой</h4></div></div></div><div
+                      id="idm140679276181104"></a>5.4.5.2. Изменения, связанные с мультиархитектурой</h4></div></div></div><div
               class="para">
 					To make multi-arch actually useful and usable, libraries had to be repackaged and moved to an architecture-specific directory so that multiple copies (targeting different architectures) can be installed alongside. Such updated packages contain the “<code
                 class="literal">Multi-Arch: same</code>” header field to tell the packaging system that the various architectures of the package can be safely co-installed (and that those packages can only satisfy dependencies of packages of the same architecture). Since multi-arch made its debut in Debian <span
-                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet (but all libraries which were embedded in <span
-                class="pkg pkg">ia32-libs</span> do!).
+                class="distribution distribution">Wheezy</span>, not all libraries have been converted yet.
 				</div><pre
               class="screen">
 $ <strong
