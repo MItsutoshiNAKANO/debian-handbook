@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Configuration du chargeur d'amorçage</h2></div></div></div><a
-          id="idm140443397338368"
+          id="idm140602025985328"
           class="indexterm"></a><a
-          id="idm140443397336928"
+          id="idm140602025983888"
           class="indexterm"></a><div
           class="para">
 			Il est probablement déjà fonctionnel, mais il est toujours bon de savoir configurer et installer un chargeur d'amorçage au cas où celui-ci disparaîtrait du <span
@@ -83,9 +83,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>B.A.-BA</em></span> <span
                       class="foreignphrase"><em
                         class="foreignphrase">Master Boot Record</em></span></strong></p></div></div></div><a
-            id="idm140443395157712"
+            id="idm140602025980144"
             class="indexterm"></a><a
-            id="idm140443395156752"
+            id="idm140602023740704"
             class="indexterm"></a><div
             class="para">
 			Le <span
@@ -132,9 +132,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm140443395139824"
+            id="idm140602023723776"
             class="indexterm"></a><a
-            id="idm140443395138864"
+            id="idm140602023722816"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -147,13 +147,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> est donc la première partition du premier disque et <code
               class="filename">/dev/sdb3</code> la troisième partition du deuxième disque.
 			</div><a
-            id="idm140443395133504"
+            id="idm140602023717456"
             class="indexterm"></a><a
-            id="idm140443395132064"
+            id="idm140602023716016"
             class="indexterm"></a><a
-            id="idm140443395130624"
+            id="idm140602023714576"
             class="indexterm"></a><a
-            id="idm140443395129184"
+            id="idm140602023713136"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -161,14 +161,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda6</code>, etc.
 			</div><div
             class="para">
-				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
+				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming a real problem with recent disks.
 			</div><a
-            id="idm140443395125200"
+            id="idm140602023709152"
             class="indexterm"></a><a
-            id="idm140443395123760"
+            id="idm140602023707712"
             class="indexterm"></a><div
             class="para">
-				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
+				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure that you are creating the partition table in the GPT format when partitioning your disk.
 			</div><div
             class="para">
 				Il n'est pas toujours facile de mémoriser quel disque est branché sur le second contrôleur SATA ou en troisième position dans la chaîne SCSI, d'autant que le nommage des disques durs branchables à chaud (ce qui inclut entre autres la plupart des disques SATA et des disques externes) n'est pas entièrement déterministe et peut changer d'un boot à l'autre. Heureusement, <code
@@ -215,9 +215,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Configuration de LILO</h3></div></div></div><a
-            id="idm140443395113232"
+            id="idm140602023697184"
             class="indexterm"></a><a
-            id="idm140443395112272"
+            id="idm140602023696224"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -265,9 +265,9 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Configuration de GRUB 2</h3></div></div></div><a
-            id="idm140443395104160"
+            id="idm140602023688112"
             class="indexterm"></a><a
-            id="idm140443395103200"
+            id="idm140602023687152"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -275,7 +275,7 @@ other=/dev/sda1
               class="foreignphrase"><em
                 class="foreignphrase">GRand Unified Bootloader</em></span>, ou grand chargeur d'amorçage unifié) est plus récent. Il n'est pas nécessaire de l'invoquer après chaque mise à jour du noyau puisqu'il sait lire les systèmes de fichiers et retrouver tout seul la position du noyau sur le disque. Pour l'installer dans le MBR du premier disque, on saisira simplement <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm140443395100224"
+              id="idm140602023684176"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -297,23 +297,23 @@ other=/dev/sda1
                 class="literal">(hd0,msdos2)</code>, etc.
 			</div></div><div
             class="para">
-				La configuration de GRUB 2 est stockée dans <code
-              class="filename">/boot/grub/grub.cfg</code>, mais ce fichier est (sous Debian) généré à partir d'autres. On prendra donc garde de ne pas le modifier à la main, sous peine de voir ces modifications locales perdues à la prochaine invocation de <code
-              class="command">update-grub</code> (qui peut se faire lors d'une mise à jour de différents paquets). Les modifications les plus courantes du fichier <code
-              class="filename">/boot/grub/grub.cfg</code> (pour ajouter des paramètres de ligne de commande au noyau ou changer la durée d'affichage du menu, par exemple) se font par le biais des variables définies dans <code
-              class="filename">/etc/default/grub</code>. Pour ajouter des entrées dans le menu, on pourra soit créer un fichier <code
-              class="filename">/boot/grub/custom.cfg</code>, soit modifier le fichier <code
-              class="filename">/etc/grub.d/50_custom</code>. Pour des personnalisations plus complexes, on pourra modifier les autres fichiers de <code
-              class="filename">/etc/grub.d/</code>, ou en ajouter ; il s'agit de scripts qui doivent renvoyer des extraits de configuration, en s'appuyant éventuellement sur des programmes externes. Ce sont ces scripts qui vont mettre à jour la liste des noyaux à démarrer : <code
-              class="filename">10_linux</code> prend en compte les noyaux Linux installés, <code
-              class="filename">20_linux_xen</code> prend en compte les systèmes de virtualisation Xen et <code
-              class="filename">30_os-prober</code> prend en compte d'autres systèmes d'exploitation (Windows, Mac OS X, Hurd).
+				GRUB 2 configuration is stored in <code
+              class="filename">/boot/grub/grub.cfg</code>, but this file (in Debian) is generated from others. Be careful not to modify it by hand, since such local modifications will be lost the next time <code
+              class="command">update-grub</code> is run (which may occur upon update of various packages). The most common modifications of the <code
+              class="filename">/boot/grub/grub.cfg</code> file (to add command line parameters to the kernel or change the duration that the menu is displayed, for example) are made through the variables in <code
+              class="filename">/etc/default/grub</code>. To add entries to the menu, you can either create a <code
+              class="filename">/boot/grub/custom.cfg</code> file or modify the <code
+              class="filename">/etc/grub.d/50_custom</code> file. For more complex configurations, you can modify other files in <code
+              class="filename">/etc/grub.d</code>, or add to them; these scripts should return configuration snippets, possibly by making use of external programs. These scripts are the ones that will update the list of kernels to boot: <code
+              class="filename">10_linux</code> takes into consideration the installed Linux kernels; <code
+              class="filename">20_linux_xen</code> takes into account Xen virtual systems, and <code
+              class="filename">30_os-prober</code> lists other operating systems (Windows, OS X, Hurd).
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Cas des Macintosh (PowerPC) : configuration de Yaboot</h3></div></div></div><a
-            id="idm140443395085744"
+            id="idm140602023669712"
             class="indexterm"></a><div
             class="para">
 				Yaboot est le chargeur de démarrage employé par les anciens Macintosh utilisant des processeurs PowerPC. Ils n'amorcent pas comme les PC, mais recourent à une partition d'amorçage (<span
@@ -332,7 +332,7 @@ other=/dev/sda1
 				Avant d'exécuter <code
               class="command">ybin</code>, il faut disposer d'un fichier <code
               class="filename">/etc/yaboot.conf</code> valide. L'exemple ci-dessous pourrait constituer un fichier minimal. <a
-              id="idm140443395079264"
+              id="idm140602023663232"
               class="indexterm"></a>
 			</div><div
             class="example"><a

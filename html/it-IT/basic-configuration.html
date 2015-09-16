@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.kernel-compilation.html#sect.kernel-sources">8.10.2. Ottenere i sorgenti</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.kernel-compilation.html#sect.config-noyau">8.10.3. Configurare il kernel</a></span></dt><dt><span
+                      href="sect.kernel-compilation.html#sect.config-kernel">8.10.3. Configurare il kernel</a></span></dt><dt><span
                     class="section"><a
                       href="sect.kernel-compilation.html#sect.kernel-build">8.10.4. Compilazione e creazione del pacchetto</a></span></dt><dt><span
                     class="section"><a
@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. Configurare il sistema per un'altra lingua</h2></div></div></div><a
-            id="idm140109886659872"
+            id="idm140592113110800"
             class="indexterm"></a><div
             class="para">
 			Se il sistema è stato installato inizialmente in italiano, la macchina avrà già probabilmente l'italiano come lingue predefinita. È comunque meglio conoscere cosa l'installatore fa per impostare la lingua, cosicché, poi, se ne capita la necessità, la si possa cambiare.
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. Impostare la lingua predefinita</h3></div></div></div><a
-              id="idm140109888864752"
+              id="idm140592110558624"
               class="indexterm"></a><a
-              id="idm140109888369520"
+              id="idm140592115356112"
               class="indexterm"></a><a
-              id="idm140109900387008"
+              id="idm140592115093296"
               class="indexterm"></a><div
               class="para">
 				A locale is a group of regional settings. This includes not only the language for text, but also the format for displaying numbers, dates, times, and monetary sums, as well as the alphabetical comparison rules (to properly account for accented characters). Although each of these parameters can be specified independently from the others, we generally use a locale, which is a coherent set of values for these parameters corresponding to a “region” in the broadest sense. These locales are usually indicated under the form, <code
@@ -208,34 +208,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>CULTURA</em></span> Insiemi di caratteri</strong></p></div></div></div><a
-                id="idm140109903188864"
+                id="idm140592113795984"
                 class="indexterm"></a><a
-                id="idm140109903187904"
+                id="idm140592113795024"
                 class="indexterm"></a><a
-                id="idm140109903186944"
+                id="idm140592113794064"
                 class="indexterm"></a><a
-                id="idm140109903185984"
+                id="idm140592113793104"
                 class="indexterm"></a><a
-                id="idm140109903185024"
+                id="idm140592113792144"
                 class="indexterm"></a><a
-                id="idm140109903184064"
+                id="idm140592113791184"
                 class="indexterm"></a><div
                 class="para">
 				Storicamente ogni localizzazione ha un "insieme di caratteri" associati (gruppo di caratteri noti) ed una "codifica" preferita (la rappresentazione interna al computer per i caratteri).
 			</div><div
                 class="para">
-				The most popular encodings for latin-based languages were limited to 256 characters because they opted to use a single byte for each character. Since 256 characters was not enough to cover all European languages, multiple encodings were needed, and that's how we ended up with <span
+				The most popular encodings for latin-based languages were limited to 256 characters because they opted to use a single byte for each character. Since 256 characters was not enough to cover all European languages, multiple encodings were needed, and that is how we ended up with <span
                   class="emphasis"><em>ISO-8859-1</em></span> (also known as “Latin 1”) up to <span
                   class="emphasis"><em>ISO-8859-15</em></span> (also known as “Latin 9”), among others.
 			</div><div
                 class="para">
-				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it's the default encoding in XML documents.
+				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it is the default encoding in XML documents.
 			</div><a
-                id="idm140109886522944"
+                id="idm140592113067872"
                 class="indexterm"></a><a
-                id="idm140109886521984"
+                id="idm140592113066912"
                 class="indexterm"></a><a
-                id="idm140109886521024"
+                id="idm140592113065952"
                 class="indexterm"></a><div
                 class="para">
 				This is the encoding that should generally be used, and is thus the default on Debian systems.
@@ -257,14 +257,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">en_GB.UTF-8</code>”, and Canadians will prefer either “<code
                 class="literal">en_CA.UTF-8</code>” or, for French, “<code
                 class="literal">fr_CA.UTF-8</code>”. The <code
-                class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it's picked up by all user sessions since PAM will inject its content in the <code
+                class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it is picked up by all user sessions since PAM will inject its content in the <code
                 class="varname">LANG</code> environment variable.
 			</div><a
-              id="idm140109890461360"
+              id="idm140592116121056"
               class="indexterm"></a><a
-              id="idm140109890460400"
+              id="idm140592116120096"
               class="indexterm"></a><a
-              id="idm140109890459440"
+              id="idm140592116119136"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -289,34 +289,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				The <code
                   class="filename">/etc/default/locale</code> file works in a similar manner, but contains only the <code
-                  class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it's generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
+                  class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it is generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
 			</div><a
-                id="idm140109897000976"
+                id="idm140592125270000"
                 class="indexterm"></a><a
-                id="idm140109897000016"
+                id="idm140592125269040"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. Configurare la tastiera</h3></div></div></div><a
-              id="idm140109896997520"
+              id="idm140592125266544"
               class="indexterm"></a><a
-              id="idm140109896996592"
+              id="idm140592125265616"
               class="indexterm"></a><div
               class="para">
-				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it's based on debconf and is implemented in the <span
+				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it is based on debconf and is implemented in the <span
                 class="pkg pkg">keyboard-configuration</span> package. Thus the <code
                 class="command">dpkg-reconfigure keyboard-configuration</code> command can be used at any time to reset the keyboard layout.
 			</div><a
-              id="idm140109896993872"
+              id="idm140592125262896"
               class="indexterm"></a><a
-              id="idm140109896992752"
+              id="idm140592125261776"
               class="indexterm"></a><a
-              id="idm140109896991632"
+              id="idm140592125260656"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm140109896990192"
+                id="idm140592125259216"
                 class="indexterm"></a>The questions are relevant to the physical keyboard layout (a standard PC keyboard in the US will be a “Generic 104 key”), then the layout to choose (generally “US”), and then the position of the AltGr key (right Alt). Finally comes the question of the key to use for the “Compose key”, which allows for entering special characters by combining keystrokes. Type successively <span
                 class="keycap"><strong>Compose</strong></span> <span
                 class="keycap"><strong>'</strong></span> <span
@@ -324,13 +324,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/usr/share/X11/locale/en_US.UTF-8/Compose</code> file (or another file, determined according to the current locale indicated by <code
                 class="filename">/usr/share/X11/locale/compose.dir</code>).
 			</div><a
-              id="idm140109896986560"
+              id="idm140592125255584"
               class="indexterm"></a><a
-              id="idm140109896985280"
+              id="idm140592115020976"
               class="indexterm"></a><a
-              id="idm140109889679824"
+              id="idm140592115019696"
               class="indexterm"></a><a
-              id="idm140109889678224"
+              id="idm140592115018096"
               class="indexterm"></a><div
               class="para">
 				Si noti che la configurazione della tastiera per la modalità grafica descritta qui interessa unicamente la diposizione predefinita: gli ambienti GNOME e KDE, così come altri, forniscono un pannello di controllo della tastiera tra le proprie preferenze consentendo ad ogni utente di avere la propria configurazione. Alcune opzioni aggiuntive riguardanti il comportamento di alcuni tasti particolari sono inoltre disponibili in questi pannelli di controllo.

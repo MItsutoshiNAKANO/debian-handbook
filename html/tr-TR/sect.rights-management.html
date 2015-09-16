@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux is definitely a multi-user system, so it is necessary to provide a permission system to control the set of authorized operations on files and directories, which includes all the system resources and devices (on a Unix system, any device is represented by a file or directory). This principle is common to all Unix systems, but a reminder is always useful, especially as there are some interesting and relatively unknown advanced uses.
 		</div><a
-          id="idm140068438175792"
+          id="idm140120330222272"
           class="indexterm"></a><a
-          id="idm140068438174832"
+          id="idm140120330221312"
           class="indexterm"></a><a
-          id="idm140068438173872"
+          id="idm140120330220352"
           class="indexterm"></a><a
-          id="idm140068438172432"
+          id="idm140120330218912"
           class="indexterm"></a><a
-          id="idm140068438170992"
+          id="idm140120330217472"
           class="indexterm"></a><a
-          id="idm140068438169552"
+          id="idm140120330216032"
           class="indexterm"></a><div
           class="para">
 			Each file or directory has specific permissions for three categories of users:
@@ -123,16 +123,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					executing (symbolized by <code
                   class="literal">x</code> as in “eXecute”).
 				</div></li></ul></div><a
-          id="idm140068438157920"
+          id="idm140120330204400"
           class="indexterm"></a><a
-          id="idm140068438156960"
+          id="idm140120330203440"
           class="indexterm"></a><a
-          id="idm140068438156000"
+          id="idm140120330202480"
           class="indexterm"></a><a
-          id="idm140068438155040"
+          id="idm140120330201520"
           class="indexterm"></a><div
           class="para">
-			In the case of a file, these rights are easily understood: read access allows reading the content (including copying), write access allows changing it, and execute access allows you to run it (which will only work if it's a program).
+			In the case of a file, these rights are easily understood: read access allows reading the content (including copying), write access allows changing it, and execute access allows you to run it (which will only work if it is a program).
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> and <code
               class="literal">setgid</code> (symbolized with the letter “s”). Note that we frequently speak of “bit”, since each of these boolean values can be represented by a 0 or a 1. These two rights allow any user to execute the program with the rights of the owner or the group, respectively. This mechanism grants access to features requiring higher level permissions than those you would usually have.
 		</div><a
-            id="idm140068438149440"
+            id="idm140120330195920"
             class="indexterm"></a><a
-            id="idm140068438148160"
+            id="idm140120330194640"
             class="indexterm"></a><div
             class="para">
 			Since a <code
@@ -164,14 +164,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>SECURITY</em></span> <code
                       class="literal">setgid</code> directory and <span
                       class="emphasis"><em>sticky bit</em></span></strong></p></div></div></div><a
-            id="idm140068438141808"
+            id="idm140120330188288"
             class="indexterm"></a><div
             class="para">
 			The <code
               class="literal">setgid</code> bit also applies to directories. Any newly-created item in such directories is automatically assigned the owner group of the parent directory, instead of inheriting the creator's main group as usual. This setup avoids the user having to change its main group (with the <code
               class="command">newgrp</code> command) when working in a file tree shared between several users of the same dedicated group.
 		</div><a
-            id="idm140068438138752"
+            id="idm140120330185232"
             class="indexterm"></a><div
             class="para">
 			The “sticky” bit (symbolized by the letter “t”) is a permission that is only useful in directories. It is especially used for temporary directories where everybody has write access (such as <code
@@ -216,15 +216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code>, for “all”, covers all three categories of users, so that <code
             class="literal">a=rx</code> grants all three categories the same rights (read and execute, but not write).
 		</div><a
-          id="idm140068438122992"
+          id="idm140120330169472"
           class="indexterm"></a><a
-          id="idm140068438121872"
+          id="idm140120330168352"
           class="indexterm"></a><a
-          id="idm140068438120752"
+          id="idm140120330167232"
           class="indexterm"></a><a
-          id="idm140068438119632"
+          id="idm140120330166112"
           class="indexterm"></a><a
-          id="idm140068438118704"
+          id="idm140120330165184"
           class="indexterm"></a><div
           class="para">
 			The (octal) numeric representation associates each right with a value: 4 for read, 2 for write, and 1 for execute. We associate each combination of rights with the sum of the figures. Each value is then assigned to different categories of users by putting them end to end in the usual order (owner, group, others).
@@ -259,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">-R</code> option to operate recursively in sub-directories.
 		</div><div
             class="para">
-			The distinction between directories and files sometimes causes problems with recursive operations. That's why the “X” letter has been introduced in the symbolic representation of rights. It represents a right to execute which applies only to directories (and not to files lacking this right). Thus, <code
+			The distinction between directories and files sometimes causes problems with recursive operations. That is why the “X” letter has been introduced in the symbolic representation of rights. It represents a right to execute which applies only to directories (and not to files lacking this right). Thus, <code
               class="command">chmod -R a+X <em
                 class="replaceable">directory</em></code> will only add execute rights for all categories of users (<code
               class="literal">a</code>) for all of the sub-directories and files for which at least one category of user (even if their sole owner) already has execute rights.
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> in a shell; you will see a mask such as <code
               class="computeroutput">0022</code>. This is simply an octal representation of the rights to be systematically removed (in this case, the write right for the group and other users).
 		</div><a
-            id="idm140068438096928"
+            id="idm140120330143408"
             class="indexterm"></a><a
-            id="idm140068438095968"
+            id="idm140120330142448"
             class="indexterm"></a><a
-            id="idm140068438094528"
+            id="idm140120330141008"
             class="indexterm"></a><div
             class="para">
 			If you give it a new octal value, the <code

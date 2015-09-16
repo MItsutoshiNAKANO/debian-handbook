@@ -73,36 +73,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> Essential network concepts (Ethernet, IP address, subnet, broadcast).</strong></p></div></div></div><a
-            id="idm140695310276016"
+            id="idm140665118005872"
             class="indexterm"></a><a
-            id="idm140695310275056"
+            id="idm140665118004912"
             class="indexterm"></a><a
-            id="idm140695310274096"
+            id="idm140665118003952"
             class="indexterm"></a><a
-            id="idm140695310273136"
+            id="idm140665118002992"
             class="indexterm"></a><a
-            id="idm140695310272176"
+            id="idm140665118002032"
             class="indexterm"></a><a
-            id="idm140695310271216"
+            id="idm140665118001072"
             class="indexterm"></a><a
-            id="idm140695310270256"
+            id="idm140665118000112"
             class="indexterm"></a><div
             class="para">
 			Most modern local networks use the Ethernet protocol, where data is split into small blocks called frames and transmitted on the wire one frame at a time. Data speeds vary from 10 Mb/s for older Ethernet cards to 10 Gb/s in the newest cards (with the most common rate currently growing from 100 Mb/s to 1 Gb/s). The most widely used cables are called 10BASE-T, 100BASE-T, 1000BASE-T or 10GBASE-T depending on the throughput they can reliably provide (the T stands for “twisted pair”); those cables end in an RJ45 connector. There are other cable types, used mostly for speeds of 1 Gb/s and above.
 		</div><a
-            id="idm140695310268224"
+            id="idm140665117998080"
             class="indexterm"></a><a
-            id="idm140695310267264"
+            id="idm140665117997120"
             class="indexterm"></a><div
             class="para">
 			An IP address is a number used to identify a network interface on a computer on a local network or the Internet. In the currently most widespread version of IP (IPv4), this number is encoded in 32 bits, and is usually represented as 4 numbers separated by periods (e.g. <code
               class="literal">192.168.0.1</code>), each number being between 0 and 255 (inclusive, which corresponds to 8 bits of data). The next version of the protocol, IPv6, extends this addressing space to 128 bits, and the addresses are generally represented as a series of hexadecimal numbers separated by colons (e.g., 2001:0db8:13bb:0002:0000:0000:0000:0020, or 2001:db8:13bb:2::20 for short).
 		</div><a
-            id="idm140695310264752"
+            id="idm140665117994608"
             class="indexterm"></a><a
-            id="idm140695310263792"
+            id="idm140665117993648"
             class="indexterm"></a><a
-            id="idm140695310262352"
+            id="idm140665117992208"
             class="indexterm"></a><div
             class="para">
 			A subnet mask (netmask) defines in its binary code which portion of an IP address corresponds to the network, the remainder specifying the machine. In the example of configuring a static IPv4 address given here, the subnet mask, <code
@@ -117,14 +117,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">192.168.0.0/24</code>. The syntax is similar in IPv6: <code
               class="literal">2001:db8:13bb:2::/64</code>.
 		</div><a
-            id="idm140695310255888"
+            id="idm140665117985744"
             class="indexterm"></a><a
-            id="idm140695310254928"
+            id="idm140665117984784"
             class="indexterm"></a><div
             class="para">
 			A router is a machine that connects several networks to each other. All traffic coming through a router is guided to the correct network. To do this, the router analyzes incoming packets and redirects them according to the IP address of their destination. The router is often known as a gateway; in this configuration, it works as a machine that helps reach out beyond a local network (towards an extended network, such as the Internet).
 		</div><a
-            id="idm140695310253056"
+            id="idm140665117982912"
             class="indexterm"></a><div
             class="para">
 			The special broadcast address connects all the stations in a network. Almost never “routed”, it only functions on the network in question. Specifically, it means that a data packet addressed to the broadcast never passes through the router.
@@ -142,24 +142,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="filename">/etc/init.d/networking</code> init script. This will often be <code
             class="literal">eth0</code>, which refers to the first Ethernet card.
 		</div><a
-          id="idm140695310247056"
+          id="idm140665117976912"
           class="indexterm"></a><a
-          id="idm140695310245616"
+          id="idm140665117975472"
           class="indexterm"></a><a
-          id="idm140695310244176"
+          id="idm140665117974032"
           class="indexterm"></a><a
-          id="idm140695310242736"
+          id="idm140665117972592"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> NetworkManager</strong></p></div></div></div><a
-            id="idm140695310240496"
+            id="idm140665117970352"
             class="indexterm"></a><div
             class="para">
 			If Network Manager is particularly recommended in roaming setups (see <a
               class="xref"
-              href="sect.network-config.html#sect.roaming-network-config">Afsnit 8.2.4, “Automatic Network Configuration for Roaming Users”</a>), it's also perfectly usable as the default network management tool. You can create “System connections” that are used as soon as the computer boots either manually with a <code
+              href="sect.network-config.html#sect.roaming-network-config">Afsnit 8.2.4, “Automatic Network Configuration for Roaming Users”</a>), it is also perfectly usable as the default network management tool. You can create “System connections” that are used as soon as the computer boots either manually with a <code
               class="filename">.ini</code>-like file in <code
               class="filename">/etc/NetworkManager/system-connections/</code> or through a graphical tool (<code
               class="command">nm-connection-editor</code>). Just remember to deactivate all entries in <code
@@ -177,9 +177,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				If the computer has an Ethernet card, the IP network that is associated with it must be configured by choosing from one of two methods. The simplest method is dynamic configuration with DHCP, and it requires a DHCP server on the local network. It may indicate a desired hostname, corresponding to the <code
               class="literal">hostname</code> setting in the example below. The DHCP server then sends configuration settings for the appropriate network.
 			</div><a
-            id="idm140695310232240"
+            id="idm140665117962096"
             class="indexterm"></a><a
-            id="idm140695310231280"
+            id="idm140665117961136"
             class="indexterm"></a><div
             class="example"><a
               id="example.config-dhcp"></a><p
@@ -220,13 +220,13 @@ iface eth0 inet static
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ppp-rtc"></a>8.2.2. Connecting with PPP through a PSTN Modem</h3></div></div></div><a
-            id="idm140695310222208"
+            id="idm140665127827248"
             class="indexterm"></a><a
-            id="idm140695310221248"
+            id="idm140665127826288"
             class="indexterm"></a><a
-            id="idm140695310220288"
+            id="idm140665127825328"
             class="indexterm"></a><a
-            id="idm140695310218848"
+            id="idm140665127823888"
             class="indexterm"></a><div
             class="para">
 				A point to point (PPP) connection establishes an intermittent connection; this is the most common solution for connections made with a telephone modem (“PSTN modem”, since the connection goes over the public switched telephone network).
@@ -237,9 +237,9 @@ iface eth0 inet static
               class="literal">provider</code> (as in Internet service provider). When in doubt about the authentication protocol, choose <span
               class="emphasis"><em>PAP</em></span>: it is offered by the majority of Internet service providers.
 			</div><a
-            id="idm140695310214576"
+            id="idm140665127819616"
             class="indexterm"></a><a
-            id="idm140695310213456"
+            id="idm140665127818496"
             class="indexterm"></a><div
             class="para">
 				After configuration, it is possible to connect using the <code
@@ -248,19 +248,19 @@ iface eth0 inet static
               class="command">poff</code> command. These two commands can be executed by the root user, or by any other user, provided they are in the <code
               class="literal">dip</code> group.
 			</div><a
-            id="idm140695310209936"
+            id="idm140665127814976"
             class="indexterm"></a><a
-            id="idm140695310208816"
+            id="idm140665127813856"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.adsl"></a>8.2.3. Connecting through an ADSL Modem</h3></div></div></div><a
-            id="idm140695310206512"
+            id="idm140665127811552"
             class="indexterm"></a><a
-            id="idm140695310205072"
+            id="idm140665127810112"
             class="indexterm"></a><a
-            id="idm140695310203632"
+            id="idm140665127808672"
             class="indexterm"></a><div
             class="para">
 				The generic term “ADSL modem” covers a multitude of devices with very different functions. The modems that are simplest to use with Linux are those that have an Ethernet interface (and not only a USB interface). These tend to be popular; most ADSL Internet service providers lend (or lease) a “box” with Ethernet interfaces. Depending on the type of modem, the configuration required can vary widely.
@@ -269,9 +269,9 @@ iface eth0 inet static
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.adsl-pppoe"></a>8.2.3.1. Modems Supporting PPPOE</h4></div></div></div><a
-              id="idm140695310200736"
+              id="idm140665127805776"
               class="indexterm"></a><a
-              id="idm140695310199776"
+              id="idm140665127804816"
               class="indexterm"></a><div
               class="para">
 					Some Ethernet modems work with the PPPOE protocol (Point to Point Protocol over Ethernet). The <code
@@ -285,16 +285,16 @@ iface eth0 inet static
                 class="command">pon dsl-provider</code> and disconnect with <code
                 class="command">poff dsl-provider</code>.
 				</div><a
-              id="idm140695310195008"
+              id="idm140665127800048"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>TIP</em></span> Starting <code
                           class="command">ppp</code> at boot</strong></p></div></div></div><a
-                id="idm140695310192288"
+                id="idm140665127797328"
                 class="indexterm"></a><a
-                id="idm140695310191168"
+                id="idm140665127796208"
                 class="indexterm"></a><div
                 class="para">
 					PPP connections over ADSL are, by definition, intermittent. Since they are usually not billed according to time, there are few downsides to the temptation of keeping them always open. The standard means to do so is to use the init system.
@@ -323,7 +323,7 @@ WantedBy=multi-user.target</pre><div
                 class="para">
 					On systems not using <code
                   class="command">systemd</code> (including <span
-                  class="distribution distribution">Wheezy</span> and earlier versions of Debian), the standard SystemV init works differently. On such systems, all that's needed is to add a line such as the following at the end of the <code
+                  class="distribution distribution">Wheezy</span> and earlier versions of Debian), the standard SystemV init works differently. On such systems, all that is needed is to add a line such as the following at the end of the <code
                   class="filename">/etc/inittab</code> file; then, any time the connection is disconnected, <code
                   class="command">init</code> will reconnect it.
 				</div><pre
@@ -331,13 +331,13 @@ WantedBy=multi-user.target</pre><div
 adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
 </pre><div
                 class="para">
-					Most ADSL connections disconnect on a daily basis, but this method reduces the duration of the interruption.
+					For ADSL connections that auto-disconnect on a daily basis, this method reduces the duration of the interruption.
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.adsl-pptp"></a>8.2.3.2. Modems Supporting PPTP</h4></div></div></div><a
-              id="idm140695310180240"
+              id="idm140665127785264"
               class="indexterm"></a><div
               class="para">
 					The PPTP (Point-to-Point Tunneling Protocol) protocol was created by Microsoft. Deployed at the beginning of ADSL, it was quickly replaced by PPPOE. If this protocol is forced on you, see <a
@@ -355,7 +355,7 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> Crossover cable for a direct Ethernet connection</strong></p></div></div></div><a
-                id="idm140695310174976"
+                id="idm140665127780000"
                 class="indexterm"></a><div
                 class="para">
 					Computer network cards expect to receive data on specific wires in the cable, and send their data on others. When you connect a computer to a local network, you usually connect a cable (straight or crossover) between the network card and a repeater or switch. However, if you want to connect two computers directly (without an intermediary switch or repeater), you must route the signal sent by one card to the receiving side of the other card, and vice-versa. This is the purpose of a crossover cable, and the reason it is used.
@@ -370,9 +370,9 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.roaming-network-config"></a>8.2.4. Automatic Network Configuration for Roaming Users</h3></div></div></div><a
-            id="idm140695310170272"
+            id="idm140665127775296"
             class="indexterm"></a><a
-            id="idm140695310168960"
+            id="idm140665127773984"
             class="indexterm"></a><div
             class="para">
 				Many Falcot engineers have a laptop computer that, for professional purposes, they also use at home. The network configuration to use differs according to location. At home, it may be a wifi network (protected by a WPA key), while the workplace uses a wired network for greater security and more bandwidth.
@@ -396,7 +396,7 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> Configuration by “network profile”</strong></p></div></div></div><a
-              id="idm140695310160656"
+              id="idm140665127765680"
               class="indexterm"></a><div
               class="para">
 				More advanced users may want to try the <span

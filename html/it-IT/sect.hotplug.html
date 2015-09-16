@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140109880606224"></a>9.11.1. Premessa</h3></div></div></div><div
+                    id="idm140592106838688"></a>9.11.1. Premessa</h3></div></div></div><div
             class="para">
 				Il sottosistema <span
               class="emphasis"><em>hotplug</em></span> del kernel gestisce dinamicamente l'aggiunta e la rimozione dei dispositivi, caricando i driver appropriati e creando i corrispondenti file di device (con l'aiuto di <code
@@ -83,22 +83,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> che quindi sarà in grado di creare la voce corrispondente in <code
               class="filename">/dev/</code>.
 			</div><a
-            id="idm140109880602432"
+            id="idm140592106834896"
             class="indexterm"></a><a
-            id="idm140109880601536"
+            id="idm140592106834000"
             class="indexterm"></a><a
-            id="idm140109880600768"
+            id="idm140592106833232"
             class="indexterm"></a><a
-            id="idm140109880600000"
+            id="idm140592106832464"
             class="indexterm"></a><a
-            id="idm140109880599232"
+            id="idm140592106831696"
             class="indexterm"></a><a
-            id="idm140109880598464"
+            id="idm140592106830928"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140109880597568"></a>9.11.2. Il problema dei nomi</h3></div></div></div><div
+                    id="idm140592106830032"></a>9.11.2. Il problema dei nomi</h3></div></div></div><div
             class="para">
 				Prima della comparsa dei collegamenti a caldo, era facile assegnare un nome fisso ad un dispositivo. Esso era basato semplicemente sulla posizione dei dispositivi sui loro rispettivi bus. Ma questo non è possibile quando tali dispositivi possono andare e venire sul bus. Il caso tipico è l'uso di una macchina fotografica digitale e una chiave USB che appaiono entrambe al computer come unità disco. La prima ad essere collegata potrebbe essere <code
               class="filename">/dev/sdb</code> e la seconda <code
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>IN PRATICA</em></span> Gestione delle schede di rete</strong></p></div></div></div><div
               class="para">
 				Many computers have multiple network cards (sometimes two wired interfaces and a wifi interface), and with <span
-                class="emphasis"><em>hotplug</em></span> support on most bus types, kernel versions later than 2.6 no longer guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
+                class="emphasis"><em>hotplug</em></span> support on most bus types, the Linux kernel does not guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
                 class="filename">/etc/network/interfaces</code> needs a fixed name!
 			</div><div
               class="para">
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140109880584544"></a>9.11.3. Come funziona <span
+                    id="idm140592106817024"></a>9.11.3. Come funziona <span
                     class="emphasis"><em>udev</em></span></h3></div></div></div><div
             class="para">
 				Quando il kernel notifica a <span
@@ -324,7 +324,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140109880533984"></a>9.11.4. Un esempio concreto</h3></div></div></div><div
+                    id="idm140592106766464"></a>9.11.4. Un esempio concreto</h3></div></div></div><div
             class="para">
 				Consideriamo il caso di una semplice penna USB e tentiamo di assegnarle un nome fisso. In primo luogo, è necessario individuare gli elementi che la identificano in modo univoco. Per far questo, collegarla ed eseguire <code
               class="command">udevadm info -a -n /dev/sdc</code> (sostituendo <em
@@ -400,11 +400,11 @@ KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+
                         class="emphasis"><em>APPROFONDIMENTI</em></span> Debug della configurazione di <span
                         class="emphasis"><em>udev</em></span></strong></p></div></div></div><div
               class="para">
-				Come molti demoni, <code
-                class="command">udevd</code> memorizza i file di log in <code
-                class="filename">/var/log/daemon.log</code>. Non è però molto dettagliato per impostazione predefinita e non è, di solito, sufficiente per capire cosa sta succedendo. Il comando <code
-                class="command">udevadm control --log-priority=info</code> aumenta il livello di dettaglio e risolve questo problema. Mentre invece <code
-                class="command">udevadm control --log-priority=err</code> torna al livello di dettaglio predefinito.
+				Like many daemons, <code
+                class="command">udevd</code> stores logs in <code
+                class="filename">/var/log/daemon.log</code>. But it is not very verbose by default, and it is usually not enough to understand what is happening. The <code
+                class="command">udevadm control --log-priority=info</code> command increases the verbosity level and solves this problem. <code
+                class="command">udevadm control --log-priority=err</code> returns to the default verbosity level.
 			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

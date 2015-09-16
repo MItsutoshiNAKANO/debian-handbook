@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Den Boot-Loader konfigurieren</h2></div></div></div><a
-          id="idm140682577774880"
+          id="idm140021947289456"
           class="indexterm"></a><a
-          id="idm140682577773440"
+          id="idm140021947288016"
           class="indexterm"></a><div
           class="para">
 			Er funktioniert wahrscheinlich schon, aber trotzdem ist es immer empfehlenswert zu wissen, wie der Boot-Loader konfiguriert und installiert wird für den Fall, dass er aus dem Master Boot Record verschwindet. Dies kann nach der Installierung eines anderen Betriebssystems, wie zum Beispiel Windows, passieren. Die folgenden Informationen können auch dabei helfen, die Konfiguration des Boot-Loaders, falls nötig, zu verändern.
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ZURÜCK ZU DEN GRUNDLAGEN</em></span> Master Boot Record</strong></p></div></div></div><a
-            id="idm140682577770496"
+            id="idm140021947285072"
             class="indexterm"></a><a
-            id="idm140682577769536"
+            id="idm140021947284112"
             class="indexterm"></a><div
             class="para">
 			Der Master Boot Record (MBR) belegt die ersten 512 Bytes der ersten Festplatte und ist die erste Sache, die vom BIOS geladen wird, um die Kontrolle an ein Programm zu übergeben, das in der Lage ist, das gewünschte Betriebssystem hochzufahren. Im allgemeinen wird der Boot-Loader in den MBR installiert und damit sein bisheriger Inhalt überschrieben.
@@ -126,9 +126,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm140682575518000"
+            id="idm140021945458528"
             class="indexterm"></a><a
-            id="idm140682575517040"
+            id="idm140021945457568"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -141,13 +141,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> die erste Partition auf der ersten Platte, und <code
               class="filename">/dev/sdb3</code> ist die dritte Partition auf der zweiten Platte.
 			</div><a
-            id="idm140682575511664"
+            id="idm140021945452192"
             class="indexterm"></a><a
-            id="idm140682575510224"
+            id="idm140021945450752"
             class="indexterm"></a><a
-            id="idm140682575508784"
+            id="idm140021945449312"
             class="indexterm"></a><a
-            id="idm140682575507344"
+            id="idm140021945447872"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -155,14 +155,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda6</code>, etc.
 			</div><div
             class="para">
-				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
+				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming a real problem with recent disks.
 			</div><a
-            id="idm140682575503360"
+            id="idm140021945443888"
             class="indexterm"></a><a
-            id="idm140682575501920"
+            id="idm140021945442448"
             class="indexterm"></a><div
             class="para">
-				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
+				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure that you are creating the partition table in the GPT format when partitioning your disk.
 			</div><div
             class="para">
 				Es ist nicht immer leicht sich zu merken, welche Platte mit welchem SATA-Controller verbunden ist, oder welche in der SCSI-Kette an dritter Position steht, vor allem, da sich die Benennung von im laufenden Betrieb austauschbaren Festplatten (zu denen unter anderem die meisten SATA-Platten und externen Platten gehören) von einem Hochfahren zum nächsten ändern kann. Zum Glück erstellt <code
@@ -209,9 +209,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. LILO konfigurieren</h3></div></div></div><a
-            id="idm140682575491344"
+            id="idm140021945431872"
             class="indexterm"></a><a
-            id="idm140682575490384"
+            id="idm140021945430912"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -257,16 +257,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Konfigurierung von GRUB 2</h3></div></div></div><a
-            id="idm140682575482912"
+            id="idm140021945423440"
             class="indexterm"></a><a
-            id="idm140682575481952"
+            id="idm140021945422480"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (GRand Unified Bootloader) ist neueren Datums. Man muss ihn nicht nach jeder Kernelaktualisierung aufrufen; <span
               class="emphasis"><em>GRUB</em></span> kann die Dateisysteme lesen und die Position des Kernels auf der Platte selbst finden. Um ihn in den MBR der ersten Platte zu installieren, geben Sie einfach <code
               class="command">grub-install /dev/sda</code> ein. <a
-              id="idm140682575478992"
+              id="idm140021945419520"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -288,23 +288,23 @@ other=/dev/sda1
                 class="literal">(hd0,msdos2)</code> usw.
 			</div></div><div
             class="para">
-				Die Konfiguration von GRUB 2 ist in <code
-              class="filename">/boot/grub/grub.cfg</code> gespeichert, aber diese Datei wird (in Debian) aus anderen erzeugt. Achten Sie daher darauf, sie nicht von Hand zu verändern, da derartige lokale Veränderungen bei der nächsten Ausführung von <code
-              class="command">update-grub</code> verloren gehen (was nach einer Aktualisierung verschiedener Pakete geschehen kann). Die häufigsten Veränderungen der Datei <code
-              class="filename">/boot/grub/grub.cfg</code> (um zum Beispiel Befehlszeilen-Parameter zum Kernel hinzuzufügen oder die Anzeigedauer des Menüs zu ändern) werden durch die Variablen in der Datei <code
-              class="filename">/etc/default/grub</code> vorgenommen. Um Einträge zum Menü hinzuzufügen, können Sie entweder eine Datei namens <code
-              class="filename">/boot/grub/custom.cfg</code> erstellen oder die Datei <code
-              class="filename">/etc/grub.d/50_custom</code> ändern. Für komplexere Konfigurationen können Sie andere Dateien im Verzeichnis <code
-              class="filename">/etc/grub.d</code> ändern oder dort hinzufügen; diese Skripten sollten Konfigurationsausschnitte wiedergeben, möglicherweise unter Verwendung externer Programme. Die folgenden Skripten aktualisieren die Liste der zu ladenden Kernel: <code
-              class="filename">10_linux</code> berücksichtigt die installierten Linux-Kernel; <code
-              class="filename">20_linux_xen</code> beachtet virtuelle Systeme unter Xen, und <code
-              class="filename">30_os-prober</code> führt andere Betriebssysteme (Windows, Mac OSX, Hurd) auf.
+				GRUB 2 configuration is stored in <code
+              class="filename">/boot/grub/grub.cfg</code>, but this file (in Debian) is generated from others. Be careful not to modify it by hand, since such local modifications will be lost the next time <code
+              class="command">update-grub</code> is run (which may occur upon update of various packages). The most common modifications of the <code
+              class="filename">/boot/grub/grub.cfg</code> file (to add command line parameters to the kernel or change the duration that the menu is displayed, for example) are made through the variables in <code
+              class="filename">/etc/default/grub</code>. To add entries to the menu, you can either create a <code
+              class="filename">/boot/grub/custom.cfg</code> file or modify the <code
+              class="filename">/etc/grub.d/50_custom</code> file. For more complex configurations, you can modify other files in <code
+              class="filename">/etc/grub.d</code>, or add to them; these scripts should return configuration snippets, possibly by making use of external programs. These scripts are the ones that will update the list of kernels to boot: <code
+              class="filename">10_linux</code> takes into consideration the installed Linux kernels; <code
+              class="filename">20_linux_xen</code> takes into account Xen virtual systems, and <code
+              class="filename">30_os-prober</code> lists other operating systems (Windows, OS X, Hurd).
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Für Macintosh-Computer (PowerPC): Yaboot konfigurieren</h3></div></div></div><a
-            id="idm140682575464416"
+            id="idm140021945405072"
             class="indexterm"></a><div
             class="para">
 				Yaboot ist der von alten Macintosh-Rechnern mit PowerPC-Prozessoren verwendete Boot-Loader. Sie fahren nicht wie PCs hoch, sondern stützen sich auf eine “Bootstrap“-Partition, von der aus das BIOS (oder OpenFirmware) den Loader ausführt, und auf dem das Programm <code
@@ -317,7 +317,7 @@ other=/dev/sda1
 				Bevor <code
               class="command">ybin</code> ausgeführt wird, muss man zunächst eine gültige Version der Datei <code
               class="filename">/etc/yaboot.conf</code> haben. Das Folgende ist ein Beispiel einer minimalen Konfiguration. <a
-              id="idm140682575459072"
+              id="idm140021945399728"
               class="indexterm"></a>
 			</div><div
             class="example"><a

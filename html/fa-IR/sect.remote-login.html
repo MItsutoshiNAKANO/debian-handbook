@@ -76,24 +76,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> Client, server</strong></p></div></div></div><a
-            id="idm140145896858992"
+            id="idm140597530969472"
             class="indexterm"></a><a
-            id="idm140145896857584"
+            id="idm140597530968064"
             class="indexterm"></a><div
             class="para">
 			A system where several processes communicate with each other is often described with the “client/server” metaphor. The server is the program that takes requests coming from a client and executes them. It is the client that controls operations, the server doesn't take any initiative of its own.
 		</div></div><a
-          id="idm140145896855248"
+          id="idm140597530965728"
           class="indexterm"></a><a
-          id="idm140145896853808"
+          id="idm140597530964288"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh"></a>9.2.1. Secure Remote Login: SSH</h3></div></div></div><a
-            id="idm140145896851824"
+            id="idm140597530962304"
             class="indexterm"></a><a
-            id="idm140145896850864"
+            id="idm140597530961344"
             class="indexterm"></a><div
             class="para">
 				The <span
@@ -103,9 +103,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Telnet and RSH are obsolete</strong></p></div></div></div><a
-              id="idm140145896847696"
+              id="idm140597530958176"
               class="indexterm"></a><a
-              id="idm140145896846576"
+              id="idm140597530957056"
               class="indexterm"></a><div
               class="para">
 				Before SSH, <span
@@ -136,15 +136,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">ftp</code>. In a single session, <code
               class="command">sftp</code> can transfer several files, and it is possible to manipulate remote files with it (delete, rename, change permissions, etc.).
 			</div><a
-            id="idm140145896836560"
+            id="idm140597530947040"
             class="indexterm"></a><a
-            id="idm140145896835440"
+            id="idm140597530945920"
             class="indexterm"></a><div
             class="para">
 				Debian uses OpenSSH, a free version of SSH maintained by the <code
               class="command">OpenBSD</code> project (a free operating system based on the BSD kernel, focused on security) and fork of the original SSH software developed by the SSH Communications Security Corp company, of Finland. This company initially developed SSH as free software, but eventually decided to continue its development under a proprietary license. The OpenBSD project then created OpenSSH to maintain a free version of SSH.
 			</div><a
-            id="idm140145896832928"
+            id="idm140597530943408"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -152,7 +152,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>BACK TO BASICS</em></span> <span
                         class="foreignphrase"><em
                           class="foreignphrase">Fork</em></span></strong></p></div></div></div><a
-              id="idm140145896830528"
+              id="idm140597530941008"
               class="indexterm"></a><div
               class="para">
 				A “fork”, in the software field, means a new project that starts as a clone of an existing project, and that will compete with it. From there on, both software will usually quickly diverge in terms of new developments. A fork is often the result of disagreements within the development team.
@@ -165,7 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">openssh-client</span> package, and the server is in the <span
               class="pkg pkg">openssh-server</span> package. The <span
               class="pkg pkg">ssh</span> meta-package depends on both parts and facilitates installation of both (<code
-              class="command">apt-get install ssh</code>).
+              class="command">apt install ssh</code>).
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -220,9 +220,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="command">valgrind</code>. Furthermore, the code (especially the parts as sensitive as the RNG) should be better commented to prevent such errors. On Debian's side, the maintainer wanted to validate the modifications with the OpenSSL developers, but simply explained the modifications without providing the corresponding patch to review and failed to mention his role within Debian. Finally, the maintenance choices were sub-optimal: the changes made to the original code were not clearly documented; all the modifications were effectively stored in a Subversion repository, but they ended up all lumped into one single patch during creation of the source package.
 				</div><div
                 class="para">
-					It is difficult under such conditions to find the corrective measures to prevent such incidents from recurring. The lesson to be learned here is that every divergence Debian introduces to upstream software must be justified, documented, submitted to the upstream project when possible, and widely publicized. It is from this perspective that the new source package format (“3.0 (quilt)”) and the Debian patch tracker were developed. <div
+					It is difficult under such conditions to find the corrective measures to prevent such incidents from recurring. The lesson to be learned here is that every divergence Debian introduces to upstream software must be justified, documented, submitted to the upstream project when possible, and widely publicized. It is from this perspective that the new source package format (“3.0 (quilt)”) and the Debian sources webservice were developed. <div
                   class="url">→ <a
-                    href="http://patch-tracker.debian.org">http://patch-tracker.debian.org</a></div>
+                    href="http://sources.debian.net">http://sources.debian.net</a></div>
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -239,7 +239,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.ssh-port-forwarding"></a>9.2.1.3. Creating Encrypted Tunnels with Port Forwarding</h4></div></div></div><a
-              id="idm140145896796752"
+              id="idm140597530908576"
               class="indexterm"></a><div
               class="para">
 					Its <code
@@ -254,9 +254,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULARY</em></span> Tunnel</strong></p></div></div></div><a
-                id="idm140145896792064"
+                id="idm140597530904000"
                 class="indexterm"></a><a
-                id="idm140145896790624"
+                id="idm140597530902560"
                 class="indexterm"></a><div
                 class="para">
 					The Internet, and most LANs that are connected to it, operate in packet mode and not in connected mode, meaning that a packet issued from one computer to another is going to be stopped at several intermediary routers to find its way to its destination. You can still simulate a connected operation where the stream is encapsulated in normal IP packets. These packets follow their usual route, but the stream is reconstructed unchanged at the destination. We call this a “tunnel”, analogous to a road tunnel in which vehicles drive directly from the entrance (input) to the exit (output) without encountering any intersections, as opposed to a path on the surface that would involve intersections and changing direction.
@@ -320,24 +320,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				VNC (Virtual Network Computing) allows remote access to graphical desktops.
 			</div><a
-            id="idm140145896767984"
+            id="idm140597530881152"
             class="indexterm"></a><a
-            id="idm140145896767024"
+            id="idm140597530880192"
             class="indexterm"></a><a
-            id="idm140145896766096"
+            id="idm140597530879264"
             class="indexterm"></a><a
-            id="idm140145896764656"
+            id="idm140597530877824"
             class="indexterm"></a><a
-            id="idm140145896763728"
+            id="idm140597530876896"
             class="indexterm"></a><div
             class="para">
 				This tool is mostly used for technical assistance; the administrator can see the errors that the user is facing, and show them the correct course of action without having to stand by them.
 			</div><a
-            id="idm140145896762144"
+            id="idm140597530875312"
             class="indexterm"></a><a
-            id="idm140145896760720"
+            id="idm140597530874000"
             class="indexterm"></a><a
-            id="idm140145896759296"
+            id="idm140597530872688"
             class="indexterm"></a><div
             class="para">
 				First, the user must authorize sharing their session. The GNOME graphical desktop environment in <span
@@ -346,13 +346,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">krfb</code> to allow sharing an existing session over VNC. For other graphical desktop environments, the <code
               class="command">x11vnc</code> command (from the Debian package of the same name) serves the same purpose; you can make it available to the user with an explicit icon.
 			</div><a
-            id="idm140145896754800"
+            id="idm140597530868528"
             class="indexterm"></a><a
-            id="idm140145896753376"
+            id="idm140597530867104"
             class="indexterm"></a><a
-            id="idm140145896751952"
+            id="idm140597530865680"
             class="indexterm"></a><a
-            id="idm140145896750528"
+            id="idm140597530864256"
             class="indexterm"></a><div
             class="para">
 				When the graphical session is made available by VNC, the administrator must connect to it with a VNC client. GNOME has <code
@@ -362,13 +362,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="guimenu"><strong>K</strong></span> → <span
               class="guisubmenu"><strong>Internet</strong></span> → <span
               class="guimenuitem"><strong>Remote Desktop Client</strong></span>). There are other VNC clients that use the command line, such as <code
-              class="command">xvnc4viewer</code> in the Debian package of the same name. Once connected, the administrator can see what's going on, work on the machine remotely, and show the user how to proceed.
+              class="command">xvnc4viewer</code> in the Debian package of the same name. Once connected, the administrator can see what is going on, work on the machine remotely, and show the user how to proceed.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>SECURITY</em></span> VNC over SSH</strong></p></div></div></div><a
-              id="idm140145896743552"
+              id="idm140597530857264"
               class="indexterm"></a><div
               class="para">
 				If you want to connect by VNC, and you don't want your data sent in clear text on the network, it is possible to encapsulate the data in an SSH tunnel (see <a
@@ -391,17 +391,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> Display manager</strong></p></div></div></div><a
-              id="idm140145896736272"
+              id="idm140597530849984"
               class="indexterm"></a><a
-              id="idm140145896735152"
+              id="idm140597530848864"
               class="indexterm"></a><a
-              id="idm140145896734032"
+              id="idm140597530847744"
               class="indexterm"></a><a
-              id="idm140145884327312"
+              id="idm140597530846624"
               class="indexterm"></a><a
-              id="idm140145884326192"
+              id="idm140597530845504"
               class="indexterm"></a><a
-              id="idm140145884324752"
+              id="idm140597530844064"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -430,7 +430,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">vncviewer <em
                 class="replaceable">server</em>:50</code>, because the port used is 5950.
 			</div><a
-            id="idm140145884312720"
+            id="idm140597530832032"
             class="indexterm"></a></div></div><ul
         class="docnav"><li
           class="previous"><a

@@ -69,9 +69,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. ترجمة النواة</h2></div></div></div><a
-          id="idm140156516877504"
+          id="idm140228332549920"
           class="indexterm"></a><a
-          id="idm140156516876064"
+          id="idm140228332548480"
           class="indexterm"></a><div
           class="para">
 			تتضمن النواة التي توفرها دبيان أكبر كمية ممكنة من الميزات، بالإضافة إلى أكبر كمية من تعريفات الأجهزة، في سبيل تغطية أوسع طيف من تجميعات العتاد الموجودة. لهذا تجد بعض المستخدمين الذين يفضلون إعادة ترجمة النواة حتى تتضمن ما يحتاجونه بشكل خاص فقط. هناك دافعين رئيسيين وراء ذلك. أولاً، قد يُحسن هذا من استهلاك الذاكرة، لأن كود النواة سيحجز الذاكرة دون سبب، حتى لو تكن هناك حاجة له (كما أنه لا ”ينزل“ إلى مساحة التبديل أبداً، لذلك فهو يستهلك الذاكرة RAM الفعلية)، وهذا قد يخفض الأداء الكلي للنظام. كما أن النواة المترجمة محلياً قد تحدّ من خطر المشاكل الأمنية لأن كود النواة المترجم والمستعمل يشكل جزءاً فقط من الكود الكلي.
@@ -90,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>التعمق أكثر</em></span> دفتر نواة دبيان</strong></p></div></div></div><a
-            id="idm140156516869136"
+            id="idm140228332541552"
             class="indexterm"></a><div
             class="para">
 			تشرف فرق نواة دبيان على صيانة ”Debian Kernel Handbook“ (متوفر أيضاً في الحزمة <span
@@ -116,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>ثقافة</em></span> <span
                         class="pkg pkg">kernel-package</span> وأيامها الجميلة الخالية</strong></p></div></div></div><a
-              id="idm140156516857824"
+              id="idm140228332530240"
               class="indexterm"></a><div
               class="para">
 				قبل أن يملك نظام بناء لينكس القدرة على بناء حزم دبيان صحيحة، كانت الطريقة المفضلة لبناء هذه الحزم هي استخدام <code
@@ -127,11 +127,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. الحصول على الشفرة المصدرية</h3></div></div></div><a
-            id="idm140156516853008"
+            id="idm140228332525424"
             class="indexterm"></a><a
-            id="idm140156516852080"
+            id="idm140228332524496"
             class="indexterm"></a><a
-            id="idm140156516850640"
+            id="idm140228332523056"
             class="indexterm"></a><div
             class="para">
 				تتوفر الشِّفرة المصدرية للنواة لينكس في حزمة، ككل الأشياء التي قد تكون لها فائدة في نظام دبيان. للحصول عليها، فقط ثبّت الحزمة <span
@@ -174,12 +174,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.config-noyau"></a>8.10.3. ضبط النواة</h3></div></div></div><a
-            id="idm140156516833408"
+                    id="sect.config-kernel"></a>8.10.3. ضبط النواة</h3></div></div></div><a
+            id="idm140228332505824"
             class="indexterm"></a><a
-            id="idm140156516831968"
+            id="idm140228332504384"
             class="indexterm"></a><a
-            id="idm140156516830528"
+            id="idm140228332502944"
             class="indexterm"></a><div
             class="para">
 				تتمثل الخطوة التالية في إعداد النواة حسب احتياجاتك. تعتمد الإجراءات الدقيقة على أهدافك.
@@ -224,11 +224,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">libgtk2.0-dev</span>.
 			</div><div
             class="para">
-				عند استخدام إحدى واجهات الضبط هذه، يفضل دوماً البدء من إعدادات افتراضية مقبولة. توفر النواة إعدادات كهذه في <code
+				When using one of those configuration interfaces, it is always a good idea to start from a reasonable default configuration. The kernel provides such configurations in <code
               class="filename">arch/<em
-                class="replaceable">arch</em>/configs/*_defconfig</code> ويمكنك أن تضع الإعدادات التي اخترتها حيز التطبيق باستخدام <code
-              class="command">make x86_64_defconfig</code> (على حواسيب 64 بت) أو <code
-              class="command">make i386_defconfig</code> (على حواسيب 32 بت).
+                class="replaceable">arch</em>/configs/*_defconfig</code> and you can put your selected configuration in place with a command like <code
+              class="command">make x86_64_defconfig</code> (in the case of a 64-bit PC) or <code
+              class="command">make i386_defconfig</code> (in the case of a 32-bit PC).
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -248,7 +248,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. ترجمة وبناء الحزمة</h3></div></div></div><a
-            id="idm140156516803440"
+            id="idm140228332476016"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -268,6 +268,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em></span> that contains the kernel image and the associated modules, <span
               class="pkg pkg">linux-headers-<em
                 class="replaceable">version</em></span> which contains the header files required to build external modules, <span
+              class="pkg pkg">linux-firmware-image-<em
+                class="replaceable">version</em></span> which contains the firmware files needed by some drivers (this package might be missing when you build from the kernel sources provided by Debian), <span
               class="pkg pkg">linux-image-<em
                 class="replaceable">version</em>-dbg</span> which contains the debugging symbols for the kernel image and its modules, and <span
               class="pkg pkg">linux-libc-dev</span> which contains headers relevant to some user space libraries like GNU glibc.
@@ -304,11 +306,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. ترجمة الوحدات الخارجية</h3></div></div></div><a
-            id="idm140156516783824"
+            id="idm140228332455168"
             class="indexterm"></a><a
-            id="idm140156516782384"
+            id="idm140228332453728"
             class="indexterm"></a><a
-            id="idm140156516780976"
+            id="idm140228332452320"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -334,7 +336,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>sudo apt-get install xtables-addons-common-dkms</code></strong>
+              class="userinput"><code>sudo apt install xtables-addons-common-dkms</code></strong>
 <code
               class="computeroutput">
 [...]
@@ -371,7 +373,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>بدائل</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140156516764864"
+              id="idm140228332436208"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -383,9 +385,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. ترقيع النواة</h3></div></div></div><a
-            id="idm140156516759488"
+            id="idm140228332430832"
             class="indexterm"></a><a
-            id="idm140156516758048"
+            id="idm140228332429392"
             class="indexterm"></a><div
             class="para">
 				لا تتضمن النواة القياسية بعض المزايا لأنها غير ناضجة أو نتيجة بعض الخلافات مع مشرفي النواة. يمكن توزيع هذه المزايا كرقع يستطيع أي أحد تطبيقها على أكواد النواة إذا أراد.

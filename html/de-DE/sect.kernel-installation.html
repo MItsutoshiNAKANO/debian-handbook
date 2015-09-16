@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. Einen Kernel installieren</h2></div></div></div><a
-          id="idm140682575150688"
+          id="idm140021945085856"
           class="indexterm"></a><a
-          id="idm140682575149248"
+          id="idm140021945084416"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. Merkmale eines Debian-Kernelpakets</h3></div></div></div><a
-            id="idm140682575146672"
+            id="idm140021945081840"
             class="indexterm"></a><div
             class="para">
 				Ein Debian-Kernelpaket installiert das Kernelabbild (<code
@@ -91,11 +91,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em>/</code> installiert.
 			</div><div
             class="para">
-				Die Konfigurierungsskripten des Pakets erstellen selbsttätig ein initrd-Abbild, ein Minisystem, das vom Boot-Loader in den Speicher geladen wird (daher sein Name, der „init ramdisk“ bedeutet) und vom Linux-Kernel ausschließlich dazu benutzt wird, die Module zu laden, die erforderlich sind, um auf die Geräte, die das vollständige Debian-System enthalten, zuzugreifen (zum Beispiel den Treiber für die IDE-Platten). Außerdem aktualisieren die Nachinstallationsskripten die symbolischen Verknüpfungen <code
+				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code
               class="filename">/vmlinuz</code>, <code
               class="filename">/vmlinuz.old</code>, <code
-              class="filename">/initrd.img</code> und <code
-              class="filename">/initrd.img.old</code>, so dass sie auf die letzten beiden installierten Kernel und die entsprechenden initrd-Abbilder verweisen.
+              class="filename">/initrd.img</code> and <code
+              class="filename">/initrd.img.old</code> so that they point to the latest two kernels installed, respectively, as well as the corresponding initrd images.
 			</div><div
             class="para">
 				Die meisten der Aufgaben werden an "hook scripts" in den <code
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="command">dpkg</code> installieren</h3></div></div></div><div
             class="para">
 				Using <code
-              class="command">apt-get</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
+              class="command">apt</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
               class="command">dpkg -i <em
                 class="replaceable">package</em>.deb</code>, where <code
               class="literal"><em

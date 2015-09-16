@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140156514796816"></a>9.11.1. مقدمة</h3></div></div></div><div
+                    id="idm140228330678400"></a>9.11.1. مقدمة</h3></div></div></div><div
             class="para">
 				يعالج نظام النواة الفرعي <span
               class="emphasis"><em>hotplug</em></span> إضافة وإزالة الأجهزة ديناميكياً، عبر تحميل التعاريف المناسبة وعبر إنشاء ملفات الأجهزة الموافقة (بمساعدة <code
@@ -84,22 +84,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> فور جاهزية القطعة للاستعمال، حتى يتمكن من إنشاء المدخلة الموافقة في <code
               class="filename">/dev/</code>.
 			</div><a
-            id="idm140156514792720"
+            id="idm140228330674304"
             class="indexterm"></a><a
-            id="idm140156514791824"
+            id="idm140228330673408"
             class="indexterm"></a><a
-            id="idm140156514791056"
+            id="idm140228330672640"
             class="indexterm"></a><a
-            id="idm140156514790288"
+            id="idm140228330671872"
             class="indexterm"></a><a
-            id="idm140156514789520"
+            id="idm140228330671104"
             class="indexterm"></a><a
-            id="idm140156514788752"
+            id="idm140228330670336"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140156514787856"></a>9.11.2. مشكلة التسمية</h3></div></div></div><div
+                    id="idm140228330669440"></a>9.11.2. مشكلة التسمية</h3></div></div></div><div
             class="para">
 				قبل ظهور الاتصالات الساخنة، كان من السهل تعيين أسماء ثابتة للأجهزة. كانت تعتمد تسميتها ببساطة على موقع الجهاز على الناقل الخاص به. لكن هذا غير ممكن عندما تتحرك هذه الأجهزة على النواقل. من الحالات النموذجية استخدام الكاميرا الرقمية أو مفتاح USB، حيث يظهر كل منهما للحاسوب على أنه قرص تخزيني. ربما كان اسم الجهاز المتصل أولاً <code
               dir="ltr"
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>ممارسة عملية</em></span> إدارة بطاقات الشبكة</strong></p></div></div></div><div
               class="para">
 				Many computers have multiple network cards (sometimes two wired interfaces and a wifi interface), and with <span
-                class="emphasis"><em>hotplug</em></span> support on most bus types, kernel versions later than 2.6 no longer guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
+                class="emphasis"><em>hotplug</em></span> support on most bus types, the Linux kernel does not guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
                 class="filename">/etc/network/interfaces</code> needs a fixed name!
 			</div><div
               class="para">
@@ -146,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140156514773568"></a>9.11.3. طريقة عمل <span
+                    id="idm140228330655168"></a>9.11.3. طريقة عمل <span
                     class="emphasis"><em>udev</em></span></h3></div></div></div><div
             class="para">
 				عندما تُـنَـبِّه النواةُ <span
@@ -351,7 +351,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140156514716272"></a>9.11.4. مثال واقعي</h3></div></div></div><div
+                    id="idm140228330597872"></a>9.11.4. مثال واقعي</h3></div></div></div><div
             class="para">
 				دعنا ندرس حالة مفتاح USB بسيط ونحاول تعيين اسم ثابت له. أولاً، يجب أن تعثر على العناصر التي تعرف المفتاح بشكل فريد. للحصول عليها، وصّل المفتاح ثم استدع <code
               class="command">udevadm info -a -n /dev/sdc</code> مع استبدال <em
@@ -431,12 +431,11 @@ KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+
                         class="emphasis"><em>التعمق أكثر</em></span> تنقيح إعدادات <span
                         class="emphasis"><em>udev</em></span></strong></p></div></div></div><div
               class="para">
-				يخزن <code
-                class="command">udevd</code>، مثل العديد من الخدمات، سجلات في <code
-                dir="ltr"
-                class="filename">/var/log/daemon.log</code>. لكنها غير مفصلة كثيراً افتراضياً، وهي عادة غير كافية لفهم ما يجري. يزيد الأمر <code
-                class="command">udevadm control --log-priority=info</code> مستوى التفصيل ويحل هذه المشكلة. يعود الأمر <code
-                class="command">udevadm control --log-priority=err</code> إلى مستوى التفصيل الافتراضي.
+				Like many daemons, <code
+                class="command">udevd</code> stores logs in <code
+                class="filename">/var/log/daemon.log</code>. But it is not very verbose by default, and it is usually not enough to understand what is happening. The <code
+                class="command">udevadm control --log-priority=info</code> command increases the verbosity level and solves this problem. <code
+                class="command">udevadm control --log-priority=err</code> returns to the default verbosity level.
 			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

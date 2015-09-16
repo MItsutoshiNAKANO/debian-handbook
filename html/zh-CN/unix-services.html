@@ -122,22 +122,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="sect.backup.html">9.10. 备份</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm139972795906288">9.10.1. 使用 <code
+                      href="sect.backup.html#idm139980761259744">9.10.1. 使用 <code
                         class="command">rsync</code>备份</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm139972795869952">9.10.2. 不使用备份恢复系统</a></span></dt></dl></dd><dt><span
+                      href="sect.backup.html#idm139980761222576">9.10.2. 不使用备份恢复系统</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.hotplug.html">9.11. 热插拔： <span
                     class="emphasis"><em>热插拔</em></span></a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139972795853408">9.11.1. 介绍</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm139980761205872">9.11.1. 介绍</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139972795844864">9.11.2. 命名问题</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm139980761197248">9.11.2. 命名问题</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139972795832448">9.11.3.  <span
+                      href="sect.hotplug.html#idm139980761184768">9.11.3.  <span
                         class="emphasis"><em>udev</em></span> 如何工作</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm139972795783008">9.11.4. 一个具体例子</a></span></dt></dl></dd><dt><span
+                      href="sect.hotplug.html#idm139980761135328">9.11.4. 一个具体例子</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.power-management.html">9.12. Power Management: Advanced Configuration and Power Interface (ACPI)</a></span></dt></dl></div><div
           class="highlights"><div
@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.system-boot"></a>9.1. 系统启动</h2></div></div></div><a
-            id="idm139972810525952"
+            id="idm139980778552464"
             class="indexterm"></a><div
             class="para">
 			当启动计算机时，控制台上滚动的大量信息显示许多初始化和配置工作自动正在执行。有时候你可能稍稍的改变这一阶段的操作，就要求你需要很好的理解他们。这正是本章节的目的所在。
@@ -184,7 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="command">systemd</code> is a relatively recent “init system”, and although it was already available, to a certain extent, in <span
                   class="distribution distribution">Wheezy</span>, it has only become the default in Debian <span
                   class="distribution distribution">Jessie</span>. Previous releases relied, by default, on the “System V init” (in the <span
-                  class="pkg pkg">sysv-rc</span> package), a much more traditional system. We describe the SysV init later on.
+                  class="pkg pkg">sysv-rc</span> package), a much more traditional system. We describe the System V init later on.
 			</div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -195,7 +195,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="distribution distribution">Jessie</span> (as implemented by the <span
                   class="pkg pkg">systemd</span> package), as well as the previous default, <span
                   class="pkg pkg">sysvinit</span>, which is derived and inherited from <span
-                  class="emphasis"><em>System_V</em></span> Unix systems; there are others.
+                  class="emphasis"><em>System V</em></span> Unix systems; there are others.
 			</div><div
                 class="para">
 				<span
@@ -211,10 +211,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="pkg pkg">sysv-rc</span> package.
 			</div><div
                 class="para">
-				也有其他的系统和操作模式，例如：<code
-                  class="command">runit</code>， <code
-                  class="command">minit</code>， 或者 <code
-                  class="command">initng</code>，但是他们应用相对特殊没有那么普遍。
+				There are also other systems and other operating modes, such as <code
+                  class="command">runit</code> or <code
+                  class="command">minit</code>, but they are relatively specialized and not widespread.
 			</div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -233,7 +232,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>回到基础</em></span>进程，一个程序实例</strong></p></div></div></div><a
-                id="idm139972814496976"
+                id="idm139980777852704"
                 class="indexterm"></a><div
                 class="para">
 				一个进程代表一个在内存中运行的程序。它包含了需要正确执行软件的所有必要信息（代码本身，内存数据，打开的文件清单，建立的网络连接，等等）。一个程序可能初始化为几个进程，而没必要使用不同的用户 ID 。
@@ -249,7 +248,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/lib/systemd/systemd</code> by default). However, it is possible to pass an <code
                   class="literal">init</code> option to the kernel indicating a different program.
 			</div><a
-                id="idm139972814491728"
+                id="idm139980769016736"
                 class="indexterm"></a><div
                 class="para">
 				任何可以接近电脑的人都能按下<span
@@ -260,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				为了防止此类事件，可以给加载器设定密码。你也许会考虑保护 BIOS （密码保护总是可行的），这样可以防止侵入者使用包含自己的 Linux 系统的移动介质启动电脑，使用该系统他们可以读取硬盘上的数据。
 			</div><div
                 class="para">
-				最后，应该知道大多数 BIOS 有一个通用的密码。最初用于让那些忘记自己密码的人解决问题，这些密码现在是公开的并且可以在网上找到（通过搜索引擎搜索“通用 BIOS 密码”）。所有这些保护措施都不太可能完全阻止非授权用户操作机器。如果攻击者能直接接触电脑，就没有可靠的方法保护电脑；他们可以拆下硬盘连到自己的电脑上，甚至是偷走整个机器，或者擦除 BIOS 来重置密码…
+				Finally, be aware that most BIOS have a generic password available. Initially intended for troubleshooting for those who have forgotten their password, these passwords are now public and available on the Internet (see for yourself by searching for “generic BIOS passwords” in a search engine). All of these protections will thus impede unauthorized access to the machine without being able to completely prevent it. There is no reliable way to protect a computer if the attacker can physically access it; they could dismount the hard drives to connect them to a computer under their own control anyway, or even steal the entire machine, or erase the BIOS memory to reset the password…
 			</div></div><div
               class="para">
 				Systemd executes several processes, in charge of setting up the system: keyboard, drivers, filesystems, network, services. It does this while keeping a global view of the system as a whole, and the requirements of the components. Each component is described by a “unit file” (sometimes more); the general syntax is derived from the widely-used “*.ini files“ syntax, with <code
@@ -270,10 +269,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">[<em
                   class="replaceable">section</em>]</code> headers. Unit files are stored under <code
                 class="filename">/lib/systemd/system/</code> and <code
-                class="filename">/etc/systemd/system/</code>; they come in several flavours, but we'll focus on “services” and “targets” here.
+                class="filename">/etc/systemd/system/</code>; they come in several flavours, but we will focus on “services” and “targets” here.
 			</div><div
               class="para">
-				A systemd “service file” describes a process managed by systemd. It contains roughly the same information as old-style init-scripts, but expressed in a declaratory way (and much more concise) way. Systemd handles the bulk of the repetitive tasks (starting and stopping the process, checking its status, logging, dropping privileges, and so on), and the service file only needs to fill in the specifics of the process. For instance, here's the service file for SSH:
+				A systemd “service file” describes a process managed by systemd. It contains roughly the same information as old-style init-scripts, but expressed in a declaratory (and much more concise) way. Systemd handles the bulk of the repetitive tasks (starting and stopping the process, checking its status, logging, dropping privileges, and so on), and the service file only needs to fill in the specifics of the process. For instance, here is the service file for SSH:
 			</div><pre
               class="programlisting">[Unit]
 Description=OpenBSD Secure Shell server
@@ -292,7 +291,7 @@ WantedBy=multi-user.target
 Alias=sshd.service
 </pre><div
               class="para">
-				As you can see, there's very little code in there, only declarations. Systemd takes care of displaying progress reports, keeping track of the processes, and even restarting them when needed.
+				As you can see, there is very little code in there, only declarations. Systemd takes care of displaying progress reports, keeping track of the processes, and even restarting them when needed.
 			</div><div
               class="para">
 				A systemd “target file” describes a state of the system, where a set of services are known to be operational. It can be thought of as an equivalent of the old-style runlevel. One of the targets is <code
@@ -358,7 +357,7 @@ Mar 31 10:09:32 mirtuel sshd[1151]: pam_unix(sshd:session): session opened for u
                   class="replaceable">file</em></code>).
 			</div><div
               class="para">
-				If a service doesn't seem to be working as expected, the first step to debug the problem are to check that the service is actually running with <code
+				If a service doesn't seem to be working as expected, the first step to debug the problem is to check that the service is actually running with <code
                 class="command">systemctl status</code>; if it is not, and the messages given by the first command are not enough to diagnose the problem, check the logs gathered by journald about that service. For instance, assume the SSH server doesn't work:
 			</div><pre
               class="screen"><code
@@ -431,19 +430,23 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                       class="title"><strong><span
                           class="emphasis"><em>GOING FURTHER</em></span> Other types of unit files</strong></p></div></div></div><div
                 class="para">
-				We've only described the most basic of systemd's capabilities in this section. It offers many other interesting features; we'll only list a few here:
+				We have only described the most basic of systemd's capabilities in this section. It offers many other interesting features; we will only list a few here:
 			</div><div
                 xmlns:d="http://docbook.org/ns/docbook"
                 class="itemizedlist"><ul><li
                     class="listitem"><div
                       class="para">
 						socket activation: a “socket” unit file can be used to describe a network or Unix socket managed by systemd; this means that the socket will be created by systemd, and the actual service may be started on demand when an actual connection attempt comes. This roughly replicates the feature set of <code
-                        class="command">inetd</code>.
+                        class="command">inetd</code>. See <span
+                        class="citerefentry"><span
+                          class="refentrytitle">systemd.socket</span>(5)</span>.
 					</div></li><li
                     class="listitem"><div
                       class="para">
-						timers: a “timer” unit file describes events that occur with a fixed frequency; when a service is linked to such a timer, the corresponding task will be executed whenever the timer fires. In a similar fashion, a “time” unit file describes events that occur on specific times. This allows replicating part of the <code
-                        class="command">cron</code> features.
+						timers: a “timer” unit file describes events that occur with a fixed frequency or on specific times; when a service is linked to such a timer, the corresponding task will be executed whenever the timer fires. This allows replicating part of the <code
+                        class="command">cron</code> features. See <span
+                        class="citerefentry"><span
+                          class="refentrytitle">systemd.timer</span>(5)</span>.
 					</div></li><li
                     class="listitem"><div
                       class="para">
@@ -459,13 +462,13 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="emphasis"><em>sysinit</em></span> step) is <code
                 class="command">/etc/init.d/rcS</code>, a script that executes all of the programs in the <code
                 class="filename">/etc/rcS.d/</code> directory. <a
-                id="idm139972815359456"
+                id="idm139980765624480"
                 class="indexterm"></a> <a
-                id="idm139972815358656"
+                id="idm139980765623680"
                 class="indexterm"></a> <a
-                id="idm139972815357856"
+                id="idm139980765622880"
                 class="indexterm"></a> <a
-                id="idm139972815357056"
+                id="idm139980765622080"
                 class="indexterm"></a>
 			</div><div
               class="para">
@@ -502,7 +505,7 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>回到基础</em></span> 内核模块和选项</strong></p></div></div></div><a
-                id="idm139972815347824"
+                id="idm139980765612848"
                 class="indexterm"></a><div
                 class="para">
 				内核模块也有一些选项，可以通过在 <code
@@ -517,9 +520,9 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                   class="command">modprobe</code> — the program that loads a kernel module with its dependencies (modules can indeed call other modules). This program is provided by the <span
                   class="pkg pkg">kmod</span> package.
 			</div><a
-                id="idm139972815342032"
+                id="idm139980765607056"
                 class="indexterm"></a><a
-                id="idm139972815340912"
+                id="idm139980765605936"
                 class="indexterm"></a></div><div
               class="para">
 				After this stage, <code
@@ -535,9 +538,9 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
               class="para">
 				这种以依赖为基础的启动系统使自动排序成为可能，如果要手工完成则显得冗长乏味，由于调度根据明确给出的参数进行，这样就避免了人为错误。另一个好处是如果两个服务彼此独立，则可以并行启动，进而加速启动过程
 			</div><a
-              id="idm139972815333536"
+              id="idm139980765598560"
               class="indexterm"></a><a
-              id="idm139972815332576"
+              id="idm139980765597600"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -583,7 +586,7 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                     src="images/startup-sysvinit.png"
                     alt="Boot sequence of a computer running Linux with System V init" /></div></div><p
                 class="title"><strong>图 9.2. Boot sequence of a computer running Linux with System V init</strong></p></div><a
-              id="idm139972815317472"
+              id="idm139980765582496"
               class="indexterm"></a><div
               class="para">
 				所有包含在<code
@@ -599,25 +602,25 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="command">rcconf</code>（出自<span
                 class="pkg pkg">rcconf</span> 软件包），它提供了更加友好的界面。
 			</div><a
-              id="idm139972815310352"
+              id="idm139980765575376"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>DEBIAN 策略</em></span> 重启服务</strong></p></div></div></div><a
-                id="idm139972815308112"
+                id="idm139980765573136"
                 class="indexterm"></a><a
-                id="idm139972815306992"
+                id="idm139980765572016"
                 class="indexterm"></a><a
-                id="idm139972816096416"
+                id="idm139980765570576"
                 class="indexterm"></a><div
                 class="para">
-				Debian 软件包的一些维护脚本有时会重启某些服务以确保其有效并采取某些措施。服务控制命令－ <code
-                  class="command">/etc/init.d/<em
+				The maintainer scripts for Debian packages will sometimes restart certain services to ensure their availability or get them to take certain options into account. The command that controls a service — <code
+                  class="command">service <em
                     class="replaceable">service</em> <em
-                    class="replaceable">operation</em></code>－不会考虑运行等级，假定（错误地）服务正在使用中，并因此产生错误操作（启动一个有意终止的服务，或者停止已经停止的服务，等等）。因此 Debian 引入了<code
-                  class="command">invoke-rc.d</code>程序：该程序只能用于维护脚本启动初始化脚本，而且仅执行必要的命令。注意，与一般应用不同，此处<code
-                  class="filename">.d</code> 后缀用于程序名，而不是目录名。
+                    class="replaceable">operation</em></code> — doesn't take runlevel into consideration, assumes (wrongly) that the service is currently being used, and may thus initiate incorrect operations (starting a service that was deliberately stopped, or stopping a service that is already stopped, etc.). Debian therefore introduced the <code
+                  class="command">invoke-rc.d</code> program: this program must be used by maintainer scripts to run services initialization scripts and it will only execute the necessary commands. Note that, contrary to common usage, the <code
+                  class="filename">.d</code> suffix is used here in a program name, and not in a directory.
 			</div></div><div
               class="para">
 				最后，<code
@@ -626,7 +629,7 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="command">login <em
                   class="replaceable">user</em></code>发起会话。
 			</div><a
-              id="idm139972816089920"
+              id="idm139980765563792"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p

@@ -75,23 +75,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="existing-setup.html#sect.heterogeneous-environments">3.1. Сосуществование в гетерогенных средах</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="existing-setup.html#idm140679280928048">3.1.1. Интеграция с системами Windows</a></span></dt><dt><span
+                      href="existing-setup.html#idm140247821336496">3.1.1. Интеграция с системами Windows</a></span></dt><dt><span
                     class="section"><a
-                      href="existing-setup.html#idm140679280996928">3.1.2. Integration with OS X machines</a></span></dt><dt><span
+                      href="existing-setup.html#idm140247821848304">3.1.2. Интеграция с системами Mac OS</a></span></dt><dt><span
                     class="section"><a
-                      href="existing-setup.html#idm140679289215552">3.1.3. Интеграция с другими системами Linux/Unix</a></span></dt></dl></dd><dt><span
+                      href="existing-setup.html#idm140247821395936">3.1.3. Интеграция с другими системами Linux/Unix</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.how-to-migrate.html">3.2. Как мигрировать</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.how-to-migrate.html#idm140679289927184">3.2.1. Обследование и определение служб</a></span></dt><dt><span
+                      href="sect.how-to-migrate.html#idm140247826334992">3.2.1. Обследование и определение служб</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.how-to-migrate.html#idm140679282998160">3.2.2. Создание резервной копии настроек</a></span></dt><dt><span
+                      href="sect.how-to-migrate.html#idm140247822458368">3.2.2. Создание резервной копии настроек</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.how-to-migrate.html#idm140679282510208">3.2.3. Анализ существующего сервера под управлением Debian</a></span></dt><dt><span
+                      href="sect.how-to-migrate.html#idm140247822449040">3.2.3. Анализ существующего сервера под управлением Debian</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.how-to-migrate.html#idm140679278148528">3.2.4. Установка Debian</a></span></dt><dt><span
+                      href="sect.how-to-migrate.html#idm140247813460320">3.2.4. Установка Debian</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.how-to-migrate.html#idm140679280676128">3.2.5. Установка и настройка выбранных служб</a></span></dt></dl></dd></dl></div><div
+                      href="sect.how-to-migrate.html#idm140247803555136">3.2.5. Установка и настройка выбранных служб</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		При модернизация любой компьютерной системы необходимо учитывать уже существующую систему. Подобный подход позволит максимально использовать имеющиеся ресурсы и гарантирует взаимодействие различных элементов, составляющих сеть. В этой работе мы представим общий подход к миграции компьютерной инфраструктуры на Linux.
@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.heterogeneous-environments"></a>3.1. Сосуществование в гетерогенных средах</h2></div></div></div><a
-            id="idm140679283308208"
+            id="idm140247813923760"
             class="indexterm"></a><div
             class="para">
 			Debian легко интегрируется во все существующие типы окружений и хорошо работает совместно с любыми другими типами операционных систем. Столь гармоничное поведение обусловлено требованиями рынка, который стимулирует соблюдение стандартов разработчиками программного обеспечения. Следование стандартам позволяет администраторам заменять программы, будь то серверная или клиентская часть, свободное программное обеспечение или нет.
@@ -108,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140679280928048"></a>3.1.1. Интеграция с системами Windows</h3></div></div></div><div
+                      id="idm140247821336496"></a>3.1.1. Интеграция с системами Windows</h3></div></div></div><div
               class="para">
 				Поддержка SMB/CIFS в Samba обеспечивает превосходное взаимодействие с окружением Windows и позволяет обмениваться файлами, направлять очередь печати на Windows-клиенты, и включает в себя программное обеспечение, необходимое Linux-машинам для использования ресурсов Windows-серверов.
 			</div><div
@@ -116,50 +116,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>ИНСТРУМЕНТ</em></span> Samba</strong></p></div></div></div><a
-                id="idm140679280726912"
+                id="idm140247812944944"
                 class="indexterm"></a><div
                 class="para">
-				The latest version of Samba can replace most of the Windows features: from those of a simple Windows NT server (authentication, files, print queues, downloading printer drivers, DFS, etc.) to the most advanced one (a domain controller compatible with Active Directory).
+				Samba второй версии ведёт себя как сервер Windows NT (аутентификация, файлы, очереди печати, загрузка драйверов принтеров, DFS и т. д.). Третья версия поддерживает Active Directory, обеспечивает взаимодействие с контроллерами доменов NT4 и реализует механизм RPC (удалённый вызов процедур). Четвёртая версия была значительно переработана и теперь предоставляет совместимый с Active Directory контроллер домена.
 			</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140679280996928"></a>3.1.2. Integration with OS X machines</h3></div></div></div><a
-              id="idm140679289709760"
+                      id="idm140247821848304"></a>3.1.2. Интеграция с системами Mac OS</h3></div></div></div><a
+              id="idm140247821847536"
               class="indexterm"></a><a
-              id="idm140679282340288"
+              id="idm140247821846576"
               class="indexterm"></a><a
-              id="idm140679281147168"
+              id="idm140247821845616"
               class="indexterm"></a><div
               class="para">
-				OS X machines provide, and are able to use, network services such as file servers and printer sharing. These services are published on the local network, which allows other machines to discover them and make use of them without any manual configuration, using the Bonjour implementation of the Zeroconf protocol suite. Debian includes another implementation, called Avahi, which provides the same functionality.
+				Системы Mac OS предоставляют, а также могут использовать, такие сетевые службы как файловые серверы и разделяемые принтеры. Данные службы объявляются доступными в локальной сети, а другие машины могут обнаружить и использовать их без необходимости какой-либо ручной настройки посредством протокола Zeroconf, реализация которого называется Bonjour. Debian содержит другую реализацию этого протокола, Avahi, которая обеспечивает аналогичную функциональность.
 			</div><a
-              id="idm140679283371728"
+              id="idm140247821401232"
               class="indexterm"></a><a
-              id="idm140679283370768"
+              id="idm140247821400272"
               class="indexterm"></a><div
               class="para">
-				In the other direction, the Netatalk daemon can be used to provide file servers to OS X machines on the network. It implements the AFP (AppleShare) protocol as well as the required notifications so that the servers can be autodiscovered by the OS X clients.
+				В обратном направлении можно использовать демон Netatalk, чтобы предоставить файловые серверы для машин с Mac OSX в сети. Он реализует протокол AFP (AppleShare), а также необходимые уведомления, так что серверы могут быть автоматически обнаружены слиентами Mac OSX.
 			</div><a
-              id="idm140679283369072"
+              id="idm140247821398384"
               class="indexterm"></a><div
               class="para">
-				Older Mac OS networks (before OS X) used a different protocol called AppleTalk. For environments involving machines using this protocol, Netatalk also provides the AppleTalk protocol (in fact, it started as a reimplementation of that protocol). It ensures the operation of the file server and print queues, as well as time server (clock synchronization). Its router function allows interconnection with AppleTalk networks.
+				В сетях на основе предыдущих реализаций Mac OS (до Mac OSX) использовался другой протокол — AppleTalk. Для окружений, где есть машины, использующие этот протокол, Netatalk также предоставляет протокол AppleTalk (на самом деле всё началось именно с реализации этого протокола). Он обеспечивает функционирование как файлового сервера и очередей печати, так и сервера времени (для синхронизации часов). Функции маршрутизации этой программы обеспечивают взаимодействие с другими сетями Appletalk.
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140679289215552"></a>3.1.3. Интеграция с другими системами Linux/Unix</h3></div></div></div><div
+                      id="idm140247821395936"></a>3.1.3. Интеграция с другими системами Linux/Unix</h3></div></div></div><div
               class="para">
 				Наконец, NFS и NIS (обе включены в дистрибутив) гарантируют взаимодействие с системами Unix. NFS реализует функции файлового сервера, а NIS управляет каталогами пользователей. Система печати BSD, которая используется в большинстве Unix-систем, обеспечивает разделение очередей печати.
 			</div><div
               class="figure"><a
-                id="idm140679289213808"></a><div
+                id="idm140247826340496"></a><div
                 class="figure-contents"><div
                   class="mediaobject"><img
                     src="images/existing-setup-1.png"
-                    alt="Coexistence of Debian with OS X, Windows and Unix systems" /></div></div><p
-                class="title"><strong>Рисунок 3.1. Coexistence of Debian with OS X, Windows and Unix systems</strong></p></div></div></div></div><ul
+                    alt="Совместное существование систем Debian, MacOS, Windows и Unix" /></div></div><p
+                class="title"><strong>Рисунок 3.1. Совместное существование систем Debian, MacOS, Windows и Unix</strong></p></div></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

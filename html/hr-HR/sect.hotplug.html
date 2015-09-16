@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140189067883744"></a>9.11.1. Introduction</h3></div></div></div><div
+                    id="idm140581000950752"></a>9.11.1. Introduction</h3></div></div></div><div
             class="para">
 				The <span
               class="emphasis"><em>hotplug</em></span> kernel subsystem dynamically handles the addition and removal of devices, by loading the appropriate drivers and by creating the corresponding device files (with the help of <code
@@ -83,22 +83,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> so it will be able to create the corresponding entry in <code
               class="filename">/dev/</code>.
 			</div><a
-            id="idm140189067879984"
+            id="idm140581000946992"
             class="indexterm"></a><a
-            id="idm140189067879088"
+            id="idm140581000946096"
             class="indexterm"></a><a
-            id="idm140189067878320"
+            id="idm140581000945328"
             class="indexterm"></a><a
-            id="idm140189067877552"
+            id="idm140581000944560"
             class="indexterm"></a><a
-            id="idm140189067876784"
+            id="idm140581000943792"
             class="indexterm"></a><a
-            id="idm140189067876016"
+            id="idm140581000943024"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140189067875120"></a>9.11.2. The Naming Problem</h3></div></div></div><div
+                    id="idm140581000942128"></a>9.11.2. The Naming Problem</h3></div></div></div><div
             class="para">
 				Before the appearance of hotplug connections, it was easy to assign a fixed name to a device. It was based simply on the position of the devices on their respective bus. But this is not possible when such devices can come and go on the bus. The typical case is the use of a digital camera and a USB key, both of which appear to the computer as disk drives. The first one connected may be <code
               class="filename">/dev/sdb</code> and the second <code
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>IN PRACTICE</em></span> Network card management</strong></p></div></div></div><div
               class="para">
 				Many computers have multiple network cards (sometimes two wired interfaces and a wifi interface), and with <span
-                class="emphasis"><em>hotplug</em></span> support on most bus types, kernel versions later than 2.6 no longer guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
+                class="emphasis"><em>hotplug</em></span> support on most bus types, the Linux kernel does not guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
                 class="filename">/etc/network/interfaces</code> needs a fixed name!
 			</div><div
               class="para">
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140189067862368"></a>9.11.3. How <span
+                    id="idm140581000929392"></a>9.11.3. How <span
                     class="emphasis"><em>udev</em></span> Works</h3></div></div></div><div
             class="para">
 				When <span
@@ -324,7 +324,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140189067812160"></a>9.11.4. A concrete example</h3></div></div></div><div
+                    id="idm140581000879184"></a>9.11.4. A concrete example</h3></div></div></div><div
             class="para">
 				Let us consider the case of a simple USB key and try to assign it a fixed name. First, you must find the elements that will identify it in a unique manner. For this, plug it in and run <code
               class="command">udevadm info -a -n /dev/sdc</code> (replacing <em
@@ -402,7 +402,7 @@ KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+
               class="para">
 				Like many daemons, <code
                 class="command">udevd</code> stores logs in <code
-                class="filename">/var/log/daemon.log</code>. But it is not very verbose by default, and it's usually not enough to understand what's happening. The <code
+                class="filename">/var/log/daemon.log</code>. But it is not very verbose by default, and it is usually not enough to understand what is happening. The <code
                 class="command">udevadm control --log-priority=info</code> command increases the verbosity level and solves this problem. <code
                 class="command">udevadm control --log-priority=err</code> returns to the default verbosity level.
 			</div></div></div></div><ul

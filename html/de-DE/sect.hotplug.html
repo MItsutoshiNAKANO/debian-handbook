@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140682558300736"></a>9.11.1. Einführung</h3></div></div></div><div
+                    id="idm140021939989712"></a>9.11.1. Einführung</h3></div></div></div><div
             class="para">
 				Das Kernel-Subsystem <span
               class="emphasis"><em>hotplug</em></span> steuert das Anschließen und Wegnehmen von Geräten, indem die passenden Treiber geladen und die zugehörigen Gerätedateien (mit Hilfe von <code
@@ -83,22 +83,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> geschickt, so dass es einen entsprechenden Eintrag in <code
               class="filename">/dev/</code> erstellen kann.
 			</div><a
-            id="idm140682558296912"
+            id="idm140021939985888"
             class="indexterm"></a><a
-            id="idm140682558296016"
+            id="idm140021939984992"
             class="indexterm"></a><a
-            id="idm140682558295248"
+            id="idm140021939984224"
             class="indexterm"></a><a
-            id="idm140682558294480"
+            id="idm140021939983456"
             class="indexterm"></a><a
-            id="idm140682558293712"
+            id="idm140021939982688"
             class="indexterm"></a><a
-            id="idm140682558292944"
+            id="idm140021939981920"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140682558292048"></a>9.11.2. Das Namensproblem</h3></div></div></div><div
+                    id="idm140021939981024"></a>9.11.2. Das Namensproblem</h3></div></div></div><div
             class="para">
 				Vor dem Aufkommen von Hotplug-Verbindungen war es leicht, einem Gerät einen festen Namen zuzuordnen. Er beruhte einfach auf der Position des Gerätes auf seinem jeweiligen Bus. Dies ist jedoch nicht möglich, wenn solche Geräte auf dem Bus kommen und gehen können. Der typische Fall ist die Benutzung einer Digitalkamera und eines USB-Sticks, die dem Rechner beide als Plattenlaufwerke erscheinen. Das als erstes angeschlossene könnte <code
               class="filename">/dev/sdb</code> sein und das zweite <code
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>IN DER PRAXIS</em></span> Verwaltung von Netzwerkkarten</strong></p></div></div></div><div
               class="para">
 				Many computers have multiple network cards (sometimes two wired interfaces and a wifi interface), and with <span
-                class="emphasis"><em>hotplug</em></span> support on most bus types, kernel versions later than 2.6 no longer guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
+                class="emphasis"><em>hotplug</em></span> support on most bus types, the Linux kernel does not guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
                 class="filename">/etc/network/interfaces</code> needs a fixed name!
 			</div><div
               class="para">
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140682558278960"></a>9.11.3. Wie <span
+                    id="idm140021939967952"></a>9.11.3. Wie <span
                     class="emphasis"><em>udev</em></span> funktioniert</h3></div></div></div><div
             class="para">
 				Wenn <span
@@ -324,7 +324,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140682558228176"></a>9.11.4. Ein konkretes Beispiel</h3></div></div></div><div
+                    id="idm140021939917168"></a>9.11.4. Ein konkretes Beispiel</h3></div></div></div><div
             class="para">
 				Lassen Sie uns den Fall eines einfachen USB-Sticks betrachten und versuchen, ihm eine feststehende Bezeichnung zu geben. Zunächst müssen Sie die Elemente finden, die ihn eindeutig identifizieren. Hierzu stecken Sie ihn ein und führen den Befehl <code
               class="command">udevadm info -a -n /dev/sdc</code> aus (wobei Sie <em
@@ -400,11 +400,11 @@ KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+
                         class="emphasis"><em>WEITERE SCHRITTE</em></span> Fehlersuche in <span
                         class="emphasis"><em>udev</em></span>s Konfiguration</strong></p></div></div></div><div
               class="para">
-				Wie viele Daemons, so speichert auch <code
-                class="command">udevd</code> Protokolle in <code
-                class="filename">/var/log/daemon.log</code>. Jedoch sind sie standardmäßig nicht sehr ausführlich und reichen gewöhnlich nicht aus, um zu verstehen, was vor sich geht. Der Befehl <code
-                class="command">udevadm control --log-priority=info</code> erhöht den Grad der Ausführlichkeit und behebt dieses Problem. <code
-                class="command">udevadm control --log-priority=err</code> setzt ihn wieder auf den ursprünglichen Ausführlichkeitsgrad zurück.
+				Like many daemons, <code
+                class="command">udevd</code> stores logs in <code
+                class="filename">/var/log/daemon.log</code>. But it is not very verbose by default, and it is usually not enough to understand what is happening. The <code
+                class="command">udevadm control --log-priority=info</code> command increases the verbosity level and solves this problem. <code
+                class="command">udevadm control --log-priority=err</code> returns to the default verbosity level.
 			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

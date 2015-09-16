@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux 是一个典型的多用户系统，这就有必要提供许可制度来控制对文件和目录的操作，其中包含了所有的系统资源和设备（在Unix 系统中，任何设备都由文件或目录来表示）。这一原则对所有Unix 系统通用，这里再提醒一下，特别是对一些有趣的相对高级应用。
 		</div><a
-          id="idm139972812694304"
+          id="idm139980764726256"
           class="indexterm"></a><a
-          id="idm139972812693344"
+          id="idm139980764725296"
           class="indexterm"></a><a
-          id="idm139972812692384"
+          id="idm139980764724336"
           class="indexterm"></a><a
-          id="idm139972812690944"
+          id="idm139980764722896"
           class="indexterm"></a><a
-          id="idm139972812689504"
+          id="idm139980764721456"
           class="indexterm"></a><a
-          id="idm139972812688064"
+          id="idm139980764720016"
           class="indexterm"></a><div
           class="para">
 			每个文件和文件夹有三种用户许可类型：
@@ -123,16 +123,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					执行（使用“eXecute”中的符号 <code
                   class="literal">x</code> ）；
 				</div></li></ul></div><a
-          id="idm139972812676320"
+          id="idm139980764708272"
           class="indexterm"></a><a
-          id="idm139972812675360"
+          id="idm139980764707312"
           class="indexterm"></a><a
-          id="idm139972812674400"
+          id="idm139980764706352"
           class="indexterm"></a><a
-          id="idm139972812673440"
+          id="idm139980764705392"
           class="indexterm"></a><div
           class="para">
-			对于文件操作，很容易理解这些权限：读允许读取内容（包括复制），写允许改变，执行允许运行它（只对程序文件有用）。
+			In the case of a file, these rights are easily understood: read access allows reading the content (including copying), write access allows changing it, and execute access allows you to run it (which will only work if it is a program).
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> 和 <code
               class="literal">setgid</code> （使用符号“s”代表）。代表我们常说的“位”，这种布尔值可以用0和1表示。这两种权限允许用户以相应所有者或组的身份执行程序。这种许可机制要求有更高的授权才能有权使用某些特性。
 		</div><a
-            id="idm139972812668272"
+            id="idm139980764700160"
             class="indexterm"></a><a
-            id="idm139972812666992"
+            id="idm139980764698880"
             class="indexterm"></a><div
             class="para">
 			由于 <code
@@ -164,14 +164,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>安全</em></span> <code
                       class="literal">setgid</code> 目录和 <span
                       class="emphasis"><em>粘着位</em></span></strong></p></div></div></div><a
-            id="idm139972812660672"
+            id="idm139980764692560"
             class="indexterm"></a><div
             class="para">
 			<code
               class="literal">setgid</code> 位也适用于目录。在这种目录中新创建的条目会被自动赋予其父目录所有组的特性，而不是继承创建者的组用户特性。这样设置避免几个同组用户在共享文件树中工作时，改变其所有组特性（使用<code
               class="command">newgrp</code> 命令）。
 		</div><a
-            id="idm139972812657712"
+            id="idm139980764689600"
             class="indexterm"></a><div
             class="para">
 			“粘着”位（使用符号“t”）是仅用于目录的许可位。专门用于所有人都有写权限的临时目录（例如 <code
@@ -215,15 +215,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code>是指“所有”，涵盖三种类型的用户，因此 <code
             class="literal">a=rx</code> 命令会赋予三种用户相同的权限（读和执行，没有写）。
 		</div><a
-          id="idm139972812642688"
+          id="idm139980764674576"
           class="indexterm"></a><a
-          id="idm139972812641568"
+          id="idm139980764673456"
           class="indexterm"></a><a
-          id="idm139972812640448"
+          id="idm139980764672336"
           class="indexterm"></a><a
-          id="idm139972812639328"
+          id="idm139980764671216"
           class="indexterm"></a><a
-          id="idm139972812638400"
+          id="idm139980764670288"
           class="indexterm"></a><div
           class="para">
 			与权限相关的（八进制）数字表示：4是读，2是写，1是执行。各种权限组合通过代表的数字求和得到。通过把每个值置于端到端序列不同位置关联不同的用户类型（所有者，所有组，其他用户）。
@@ -258,10 +258,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">-R</code> 选项来递归操作子目录。
 		</div><div
             class="para">
-			目录和文件的区别有时可能在递归操作时发生问题。这是之所以引入字母“X”作为权限符号链接的原因。它代表仅仅对目录执行操作（而不是缺少此类权限的文件）。因此， <code
+			The distinction between directories and files sometimes causes problems with recursive operations. That is why the “X” letter has been introduced in the symbolic representation of rights. It represents a right to execute which applies only to directories (and not to files lacking this right). Thus, <code
               class="command">chmod -R a+X <em
-                class="replaceable">目录</em></code> 对所有类型用户（<code
-              class="literal">a</code>），所有子目录和文件仅添加执行权限，并要求至少一种类型的用户（即使只有所有者）已经拥有执行权限。
+                class="replaceable">directory</em></code> will only add execute rights for all categories of users (<code
+              class="literal">a</code>) for all of the sub-directories and files for which at least one category of user (even if their sole owner) already has execute rights.
 		</div></div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -286,11 +286,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> ：会看到类似 <code
               class="computeroutput">0022</code>的掩码。这是一个八进制数代表了会被系统移除的权限（在本例中，是指对所有组和其他用户的写权限）。
 		</div><a
-            id="idm139972812616944"
+            id="idm139980764648688"
             class="indexterm"></a><a
-            id="idm139972812615984"
+            id="idm139980764647728"
             class="indexterm"></a><a
-            id="idm139972812614544"
+            id="idm139980764646288"
             class="indexterm"></a><div
             class="para">
 			如果指定新的八进制数值， <code

@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. Installing a Kernel</h2></div></div></div><a
-          id="idm140695313117936"
+          id="idm140665115727888"
           class="indexterm"></a><a
-          id="idm140695313116496"
+          id="idm140665115726448"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. Features of a Debian Kernel Package</h3></div></div></div><a
-            id="idm140695313113920"
+            id="idm140665115723872"
             class="indexterm"></a><div
             class="para">
 				A Debian kernel package installs the kernel image (<code
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em>/</code> directory.
 			</div><div
             class="para">
-				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for IDE disks). Finally, the post-installation scripts update the symbolic links <code
+				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code
               class="filename">/vmlinuz</code>, <code
               class="filename">/vmlinuz.old</code>, <code
               class="filename">/initrd.img</code> and <code
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				Using <code
-              class="command">apt-get</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
+              class="command">apt</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
               class="command">dpkg -i <em
                 class="replaceable">package</em>.deb</code>, where <code
               class="literal"><em

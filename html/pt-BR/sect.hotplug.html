@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140561520099328"></a>9.11.1. Introdução</h3></div></div></div><div
+                    id="idm139899464899872"></a>9.11.1. Introdução</h3></div></div></div><div
             class="para">
 				O subsistema do núcleo <span
               class="emphasis"><em>hotplug</em></span> dinamicamente lida com a adição e remoção de dispositivos carregando os drives apropriados e criando os arquivos de dispositivos correspondentes (com a ajuda do <code
@@ -83,22 +83,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> para que ele seja capaz de criar a entrada correspondente em <code
               class="filename">/dev/</code>.
 			</div><a
-            id="idm140561520095488"
+            id="idm139899464896032"
             class="indexterm"></a><a
-            id="idm140561520094592"
+            id="idm139899464895136"
             class="indexterm"></a><a
-            id="idm140561520093824"
+            id="idm139899464894368"
             class="indexterm"></a><a
-            id="idm140561520093056"
+            id="idm139899464893600"
             class="indexterm"></a><a
-            id="idm140561520092288"
+            id="idm139899464892832"
             class="indexterm"></a><a
-            id="idm140561520091520"
+            id="idm139899464892064"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140561520090624"></a>9.11.2. O Problema da nomeação</h3></div></div></div><div
+                    id="idm139899464891168"></a>9.11.2. O Problema da nomeação</h3></div></div></div><div
             class="para">
 				Antes do aparecimento das conexões hotplug, era fácil determinar um nome fixo para um dispositivo. Isso era baseado simplesmente na posição dos dispositivos em seu respectivo barramento. Mas isso não é possível quando dispositivos deste tipo podem ir e vir no barramento. O típico caso é o uso de uma câmera digital e um pendrive, os dois aparecem para o computador como discos. O primeiro conectado pode ser <code
               class="filename">/dev/sdb</code> e o segundo <code
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>NA PRÁTICA</em></span> Gestão de placa de rede</strong></p></div></div></div><div
               class="para">
 				Many computers have multiple network cards (sometimes two wired interfaces and a wifi interface), and with <span
-                class="emphasis"><em>hotplug</em></span> support on most bus types, kernel versions later than 2.6 no longer guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
+                class="emphasis"><em>hotplug</em></span> support on most bus types, the Linux kernel does not guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
                 class="filename">/etc/network/interfaces</code> needs a fixed name!
 			</div><div
               class="para">
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140561520077632"></a>9.11.3. Como o <span
+                    id="idm139899464878192"></a>9.11.3. Como o <span
                     class="emphasis"><em>udev</em></span> Funciona</h3></div></div></div><div
             class="para">
 				Quando o <span
@@ -324,7 +324,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140561520027024"></a>9.11.4. Um exemplo concreto</h3></div></div></div><div
+                    id="idm139899464827584"></a>9.11.4. Um exemplo concreto</h3></div></div></div><div
             class="para">
 				Vamos considerar o caso de uma simples chave USB e tentar atribuir um nome fixo para ela. Primeiro, você tem que encontrar os elementos que iram identificar ela de uma maneira única. Para isso, conecte ela e rode <code
               class="command">udevadm info -a -n /dev/sdc</code> (substituindo <em
@@ -400,11 +400,11 @@ KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+
                         class="emphasis"><em>INDO ALÉM</em></span> Depurando a configuração do <span
                         class="emphasis"><em>udev</em></span></strong></p></div></div></div><div
               class="para">
-				Como muitos daemons, o <code
-                class="command">udevd</code> armazena os seus logs em <code
-                class="filename">/var/log/daemon.log</code>. Mas ele não é muito detalhado por padrão, e sendo assim, geralmente não é suficiente para se entender o que está acontecendo. O comando <code
-                class="command">udevadm control --log-priority=info</code> incrementa o nível de detalhamento e resolve esse problema. <code
-                class="command">udevadm control --log-priority=err</code> retorna ao nível de detalhamento padrão.
+				Like many daemons, <code
+                class="command">udevd</code> stores logs in <code
+                class="filename">/var/log/daemon.log</code>. But it is not very verbose by default, and it is usually not enough to understand what is happening. The <code
+                class="command">udevadm control --log-priority=info</code> command increases the verbosity level and solves this problem. <code
+                class="command">udevadm control --log-priority=err</code> returns to the default verbosity level.
 			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

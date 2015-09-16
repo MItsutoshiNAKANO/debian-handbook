@@ -69,9 +69,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. ضبط محمّل الإقلاع</h2></div></div></div><a
-          id="idm140156517153280"
+          id="idm140228332827824"
           class="indexterm"></a><a
-          id="idm140156517151872"
+          id="idm140228332826416"
           class="indexterm"></a><div
           class="para">
 			الأغلب أن محمّل الإقلاع يعمل بشكل سليم، لكن من الجيد دوماً معرفة طريقة إعداد وتثبيت مُحمِّل الإقلاع في حال اختفى من سجل الإقلاع الرئيسي، خصوصاً بعد تثبيت نظام تشغيل آخر، مثل ويندوز. قد تساعدك المعلومات التالية على تعديل إعدادات محمل الإقلاع إذا احتجت لذلك.
@@ -80,9 +80,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>أساسيات</em></span> سجل الإقلاع الرئيسي</strong></p></div></div></div><a
-            id="idm140156517148912"
+            id="idm140228332823456"
             class="indexterm"></a><a
-            id="idm140156517147952"
+            id="idm140228332822496"
             class="indexterm"></a><div
             class="para">
 			يحجز سجل الإقلاع الرئيسي (Master Boot Record، واختصاراً MBR) أول 512 بايت من بداية القرص الصلب الأول، وهو أول شيء يُحمّله BIOS لتسليم التحكم إلى برنامج قادر على إقلاع نظام التشغيل المطلوب. بشكل عام، يُثبَّت محمل الإقلاع في MBR، مستبدلاً محتوياته السابقة.
@@ -127,9 +127,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> to <code
                 class="filename">/etc/modules</code> in order to force loading them on boot.
 			</div></div><a
-            id="idm140156517131648"
+            id="idm140228332806192"
             class="indexterm"></a><a
-            id="idm140156517130720"
+            id="idm140228332805264"
             class="indexterm"></a><div
             class="para">
 				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
@@ -144,13 +144,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               dir="ltr"
               class="filename">/dev/sdb3</code> هو القسم الثالث على القرص الثاني.
 			</div><a
-            id="idm140156517124624"
+            id="idm140228332799168"
             class="indexterm"></a><a
-            id="idm140156517123184"
+            id="idm140228332797728"
             class="indexterm"></a><a
-            id="idm140156517121744"
+            id="idm140228332796288"
             class="indexterm"></a><a
-            id="idm140156517120304"
+            id="idm140228332794848"
             class="indexterm"></a><div
             class="para">
 				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
@@ -158,14 +158,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda6</code>, etc.
 			</div><div
             class="para">
-				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming less and less of a theoretical problem.
+				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming a real problem with recent disks.
 			</div><a
-            id="idm140156517116320"
+            id="idm140228332790864"
             class="indexterm"></a><a
-            id="idm140156517114880"
+            id="idm140228332789424"
             class="indexterm"></a><div
             class="para">
-				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure you're creating the partition table in the GPT format when partitioning your disk.
+				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure that you are creating the partition table in the GPT format when partitioning your disk.
 			</div><div
             class="para">
 				ليس سهلاً دائماً أن تتذكر أي قرص يتصل بأي متحكم SATA، أو أي قرص هو الثالث في سلسلة SCSI، خصوصاً وأن تسمية الأقراص الصلبة التي تدعم التوصيل الساخن (وهذا يشمل معظم أقراص SATA والأقراص الخارجية وغيرها) قد تتغير بعد إعادة الإقلاع. لحسن الحظ، ينشئ <code
@@ -214,9 +214,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. ضبط LILO</h3></div></div></div><a
-            id="idm140156517103616"
+            id="idm140228332778160"
             class="indexterm"></a><a
-            id="idm140156517102656"
+            id="idm140228332777200"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -263,9 +263,9 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. ضبط GRUB 2</h3></div></div></div><a
-            id="idm140156517094720"
+            id="idm140228332769264"
             class="indexterm"></a><a
-            id="idm140156517093760"
+            id="idm140228332768304"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -273,7 +273,7 @@ other=/dev/sda1
               class="emphasis"><em>GRUB</em></span> يعرف كيف يقرأ نظم الملفات ويعثر على القسم الذي يحوي النواة على القرص وحده. لتثبيت <span
               class="emphasis"><em>GRUB</em></span> على MBR القرص الأول، فقط اطبع <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm140156517090272"
+              id="idm140228332764816"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -295,29 +295,23 @@ other=/dev/sda1
                 class="literal">(hd0,msdos2)</code>، الخ.
 			</div></div><div
             class="para">
-				تُخزَّن إعدادات GRUB 2 في <code
-              dir="ltr"
-              class="filename">/boot/grub/grub.cfg</code>، لكن هذا الملف (في دبيان) يُولَّد من ملفات أخرى. إياك تعديل هذا الملف يدوياً، لأن جميع التغييرات المحلية ستضيع عند الاستدعاء التالي للأمر <code
-              class="command">update-grub</code> (وهذا قد يحدث عند تحديث حزم متنوعة). أكثر التعديلات شيوعاً على الملف <code
-              dir="ltr"
-              class="filename">/boot/grub/grub.cfg</code> (مثل إضافة بارامترات إقلاع للنواة أو تغيير مدة عرض القائمة، مثلاً) تُجرى عبر استخدام المتغيرات في <code
-              dir="ltr"
-              class="filename">/etc/default/grub</code>. أما لإضافة مدخلات إلى القائمة، فإما أن تنشئ ملف <code
-              dir="ltr"
-              class="filename">/boot/grub/custom.cfg</code> مخصص أو تُعدِّل الملف <code
-              dir="ltr"
-              class="filename">/etc/grub.d/50_custom</code>. بالنسبة للتعديلات الأعقد، يمكنك تعديل الملفات الأخرى في <code
-              dir="ltr"
-              class="filename">/etc/grub.d</code>، أو إضافة ملفات إليها؛ يجب أن تعيد هذه السكربتات أجزاء من الإعدادات، وقد تستخدم برامج خارجية لهذا الغرض. السكربتات التالية هي المسؤولة عن تحديث قائمة النَوَى المتاحة للإقلاع: يختص <code
-              class="filename">10_linux</code> بنوى لينكس المُثبَّتة؛ أما <code
-              class="filename">20_linux_xen</code> فيهتم بنظم Xen الظاهرية، و <code
-              class="filename">30_os-prober</code> يذكر نظم التشغيل الأخرى (Hurd ،Mac OSX ،Windows).
+				GRUB 2 configuration is stored in <code
+              class="filename">/boot/grub/grub.cfg</code>, but this file (in Debian) is generated from others. Be careful not to modify it by hand, since such local modifications will be lost the next time <code
+              class="command">update-grub</code> is run (which may occur upon update of various packages). The most common modifications of the <code
+              class="filename">/boot/grub/grub.cfg</code> file (to add command line parameters to the kernel or change the duration that the menu is displayed, for example) are made through the variables in <code
+              class="filename">/etc/default/grub</code>. To add entries to the menu, you can either create a <code
+              class="filename">/boot/grub/custom.cfg</code> file or modify the <code
+              class="filename">/etc/grub.d/50_custom</code> file. For more complex configurations, you can modify other files in <code
+              class="filename">/etc/grub.d</code>, or add to them; these scripts should return configuration snippets, possibly by making use of external programs. These scripts are the ones that will update the list of kernels to boot: <code
+              class="filename">10_linux</code> takes into consideration the installed Linux kernels; <code
+              class="filename">20_linux_xen</code> takes into account Xen virtual systems, and <code
+              class="filename">30_os-prober</code> lists other operating systems (Windows, OS X, Hurd).
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. خاص بحواسيب ماكنتوش (PowerPC): ضبط Yaboot</h3></div></div></div><a
-            id="idm140156517073536"
+            id="idm140228332750272"
             class="indexterm"></a><div
             class="para">
 				Yaboot هو محمل الإقلاع الذي تستخدمه حواسيب ماكنتوش القديمة التي تستخدم معالجات PowerPC. لا تقلع هذه الحواسيب كالحواسيب الشخصية PC، بل تعتمد على قسم إقلاع (‎“bootstrap” partition)، يُنفّذ منه BIOS (أو OpenFirmware) محمل الإقلاع، ويثبت البرنامج <code
@@ -332,7 +326,7 @@ other=/dev/sda1
               dir="ltr"
               class="filename">/etc/yaboot.conf</code> سليم قبل استدعاء <code
               class="command">ybin</code>. فيما يلي مثالاً عن إعدادات أصغرية. <a
-              id="idm140156517067712"
+              id="idm140228332744448"
               class="indexterm"></a>
 			</div><div
             class="example"><a

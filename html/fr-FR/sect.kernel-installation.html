@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. Installation d'un noyau</h2></div></div></div><a
-          id="idm140443394768592"
+          id="idm140602023347120"
           class="indexterm"></a><a
-          id="idm140443394767152"
+          id="idm140602023345680"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. Caractéristiques d'un paquet Debian du noyau</h3></div></div></div><a
-            id="idm140443394764576"
+            id="idm140602023343104"
             class="indexterm"></a><div
             class="para">
 				Un paquet Debian de noyau installe l'image du noyau (<code
@@ -93,19 +93,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em>/</code>.
 			</div><div
             class="para">
-				Les scripts de configuration du paquet génèrent automatiquement une image <span
-              class="foreignphrase"><em
-                class="foreignphrase">initrd</em></span> (<span
-              class="foreignphrase"><em
-                class="foreignphrase">init ram disk</em></span>) — cette dernière est un mini-système préparé en mémoire (<span
-              class="foreignphrase"><em
-                class="foreignphrase">ram disk</em></span>) par le chargeur de démarrage et démarré par le noyau Linux dans le seul but de charger les modules nécessaires pour accéder au périphérique contenant le système Debian complet (par exemple le pilote pour les disques IDE). Enfin, les scripts de post-installation mettent à jour les liens symboliques <code
+				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code
               class="filename">/vmlinuz</code>, <code
               class="filename">/vmlinuz.old</code>, <code
-              class="filename">/initrd.img</code> et <code
-              class="filename">/initrd.img.old</code> pour qu'ils pointent respectivement sur les deux derniers noyaux installés ainsi que leurs images <span
-              class="foreignphrase"><em
-                class="foreignphrase">initrd</em></span> associées.
+              class="filename">/initrd.img</code> and <code
+              class="filename">/initrd.img.old</code> so that they point to the latest two kernels installed, respectively, as well as the corresponding initrd images.
 			</div><div
             class="para">
 				La plupart de ces tâches sont déléguées à des scripts présents dans les répertoires <code
@@ -122,7 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				Using <code
-              class="command">apt-get</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
+              class="command">apt</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
               class="command">dpkg -i <em
                 class="replaceable">package</em>.deb</code>, where <code
               class="literal"><em

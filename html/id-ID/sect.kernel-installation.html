@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. Menginstall sebuah Kernel</h2></div></div></div><a
-          id="idm140298905122240"
+          id="idm140457724553008"
           class="indexterm"></a><a
-          id="idm140298905120800"
+          id="idm140457724551568"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. Fitur sebuah Paket Kernel Debian</h3></div></div></div><a
-            id="idm140298905118224"
+            id="idm140457724548992"
             class="indexterm"></a><div
             class="para">
 				Paket kernel Debian menginstall image kernel (<code
@@ -91,11 +91,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em>/</code>.
 			</div><div
             class="para">
-				Skrip konfigurasi paket secara otomatis menghasilkan sebuah image initrd, yang merupakan sebuah sistem mini didesain untuk dimuat dalam memori (selanjutnya namanya, adalah singkatan untuk “init ramdisk”) oleh bootloader, dan digunakan oleh kernel Linux sendiri untuk memuat modul yang diperlukan untuk mengakses perangkat berisi sistem Debian lengkap (misalnya, penggerak untuk cakram IDE). Akhirnya, skrip post-instalasi memerbarui tautan simbolis <code
+				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code
               class="filename">/vmlinuz</code>, <code
               class="filename">/vmlinuz.old</code>, <code
-              class="filename">/initrd.img</code> dan <code
-              class="filename">/initrd.img.old</code> agar mereka menunjuk ke dua kernel terbaru yang terinstall, masing-masing, sebagaimana image initrd yang sesuai.
+              class="filename">/initrd.img</code> and <code
+              class="filename">/initrd.img.old</code> so that they point to the latest two kernels installed, respectively, as well as the corresponding initrd images.
 			</div><div
             class="para">
 				Kebanyakan tugas tersebut diturunkan ke skrip pengait dalam direktori <code
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				Using <code
-              class="command">apt-get</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
+              class="command">apt</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
               class="command">dpkg -i <em
                 class="replaceable">package</em>.deb</code>, where <code
               class="literal"><em

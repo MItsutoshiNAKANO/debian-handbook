@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. ブートローダの設定</h2></div></div></div><a
-          id="idm139870902679712"
+          id="idm140090719715440"
           class="indexterm"></a><a
-          id="idm139870902678272"
+          id="idm140090719714000"
           class="indexterm"></a><div
           class="para">
 			ブートローダは既に機能しているかもしれませんが、ブートローダがマスターブートレコードから消えてしまった状況に備えて、ブートローダの設定方法とイントール方法を知っておくのは常に良い考えです。この状況は、他のオペレーティングシステム、たとえば Windows などをインストールした後に、起こる場合があります。以下の情報はブートローダ設定の変更が必要になった際にそれを変更するための助けになるでしょう。
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>BACK TO BASICS</em></span> マスターブートレコード</strong></p></div></div></div><a
-            id="idm139870902675168"
+            id="idm140090719710896"
             class="indexterm"></a><a
-            id="idm139870902674208"
+            id="idm140090719709936"
             class="indexterm"></a><div
             class="para">
 			マスターブートレコード (MBR) は最初のハードディスクの最初の 512 バイトを専有し、BIOS は対象のオペレーティングシステムを起動できるプログラムに操作を受け渡すために真っ先に MBR を読み込みます。一般にブートローダは MBR にインストールされ、その前に MBR にあった情報は削除されます。
@@ -128,9 +128,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> モジュールを <code
                 class="filename">/etc/modules</code> に追加して、起動時に強制的にこれらのモジュールを読み込むことを検討してください。
 			</div></div><a
-            id="idm139870902656336"
+            id="idm140090719692144"
             class="indexterm"></a><a
-            id="idm139870902655408"
+            id="idm140090719691216"
             class="indexterm"></a><div
             class="para">
 				ブートローダを設定するには、必ずさまざまなハードドライブとそのパーティションを識別しなければいけません。Linux はこの目的のために <code
@@ -143,13 +143,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> は 1 台目のディスクの最初のパーティションで、<code
               class="filename">/dev/sdb3</code> は 2 台目のディスクの 3 番目のパーティションです。
 			</div><a
-            id="idm139870902649808"
+            id="idm140090719685616"
             class="indexterm"></a><a
-            id="idm139870902648368"
+            id="idm140090719684176"
             class="indexterm"></a><a
-            id="idm139870902646928"
+            id="idm140090719682736"
             class="indexterm"></a><a
-            id="idm139870902645488"
+            id="idm140090719681296"
             class="indexterm"></a><div
             class="para">
 				PC アーキテクチャ (つまり「i386」およびそのいとこである「amd64」) では、長い間「MS-DOS」パーティションテーブルフォーマットを使うよう制限を受けていました。このフォーマットはディスク 1 台当たりに作れる「プライマリ」パーティションの数を 4 つに制限していました。この制限を乗り越えるためには、プライマリパーティションの 1 つを「拡張」パーティションとして作成します。拡張パーティションには追加的な「セカンダリ」パーティションを含めることが可能です。このようなセカンダリパーティションには 5 以上の番号が割り振られます。最初のセカンダリパーティションは <code
@@ -157,11 +157,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda6</code> などのように割り振られるでしょう。
 			</div><div
             class="para">
-				MS-DOS パーティションテーブルフォーマットのもう一つの制限は、2 TiB を超えるサイズのディスクを取り扱うことができないという点です。この制限は現実的な問題になりつつあります。
+				MS-DOS パーティションテーブルフォーマットのもう一つの制限は、2 TiB を超えるサイズのディスクを取り扱うことができないという点です。近年のディスクではこの制限が現実的な問題になりつつあります。
 			</div><a
-            id="idm139870902641120"
+            id="idm140090719676896"
             class="indexterm"></a><a
-            id="idm139870902639712"
+            id="idm140090719675488"
             class="indexterm"></a><div
             class="para">
 				GPT と呼ばれる新しいパーティションテーブルフォーマットを使うことで、上に挙げたパーティション数 (標準的な設定を使った場合、最大で 128 個のパーティション) とディスクサイズ (最大で 8 ZiB、80 億テラバイト以上です) の制限が緩和されます。1 台のディスクに多くの物理パーティションを作成する場合、ディスクのパーティショニングを行う際に、必ず GPT フォーマットでパーティションテーブルを作成するよう注意してください。
@@ -211,9 +211,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. LILO の設定</h3></div></div></div><a
-            id="idm139870902628608"
+            id="idm140090719664384"
             class="indexterm"></a><a
-            id="idm139870902627648"
+            id="idm140090719663424"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -259,16 +259,16 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. GRUB 2 の設定</h3></div></div></div><a
-            id="idm139870902619568"
+            id="idm140090719655344"
             class="indexterm"></a><a
-            id="idm139870902618608"
+            id="idm140090719654384"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (GRand Unified Bootloader) はより新しいブートローダです。カーネル更新の後に GRUB を実行する必要はありません。それどころか <span
               class="emphasis"><em>GRUB</em></span> はファイルシステムを読む方法とディスクからカーネルを探し出す方法を知っています。GRUB を最初のディスクの MBR にインストールするためには、<code
               class="command">grub-install /dev/sda</code> を実行してください。<a
-              id="idm139870902615584"
+              id="idm140090719651360"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -301,13 +301,13 @@ other=/dev/sda1
               class="filename">/etc/grub.d</code> にある他のファイルを変更するか、このディレクトリにファイルを追加してください。さらに、このディレクトリに含まれるスクリプトは設定スニペットを返します。場合によっては外部プログラムを使用することもあるかもしれません。このスクリプトは起動したいカーネルのリストを更新するものです。すなわち <code
               class="filename">10_linux</code> はインストール済み Linux カーネルを考慮します。そして <code
               class="filename">20_linux_xen</code> は Xen 仮想システムを考慮し、<code
-              class="filename">30_os-prober</code> は他のオペレーティングシステム (Windows、Mac OSX、Hurd) をリストアップします。
+              class="filename">30_os-prober</code> は他のオペレーティングシステム (Windows、OS X、Hurd) をリストアップします。
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Macintosh コンピュータ (PowerPC) の場合、Yaboot の設定</h3></div></div></div><a
-            id="idm139870902599760"
+            id="idm140090719635536"
             class="indexterm"></a><div
             class="para">
 				Yaboot は PowerPC プロセッサを使う古い Macintosh コンピュータで使われるブートローダです。古い Macintosh コンピュータは PC のように起動せず、bootstrap パーティションを使って起動します。BIOS (または OpenFirmware) が bootstrap パーティションからローダを実行し、<code
@@ -321,7 +321,7 @@ other=/dev/sda1
 				<code
               class="command">ybin</code> を実行する前に、適切な <code
               class="filename">/etc/yaboot.conf</code> を作らなければいけません。以下は最低限の設定例です。<a
-              id="idm139870902594144"
+              id="idm140090719629920"
               class="indexterm"></a>
 			</div><div
             class="example"><a

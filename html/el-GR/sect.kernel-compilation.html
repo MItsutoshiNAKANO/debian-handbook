@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Compiling a Kernel</h2></div></div></div><a
-          id="idm140576976088144"
+          id="idm140453929760304"
           class="indexterm"></a><a
-          id="idm140576976086704"
+          id="idm140453929758864"
           class="indexterm"></a><div
           class="para">
 			The kernels provided by Debian include the largest possible number of features, as well as the maximum of drivers, in order to cover the broadest spectrum of existing hardware configurations. This is why some users prefer to recompile the kernel in order to only include what they specifically need. There are two reasons for this choice. First, it may be to optimize memory consumption, since the kernel code, even if it is never used, occupies memory for nothing (and never “goes down” on the swap space, since it is actual RAM that it uses), which can decrease overall system performance. A locally compiled kernel can also limit the risk of security problems since only a fraction of the kernel code is compiled and run.
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>GOING FURTHER</em></span> The Debian Kernel Handbook</strong></p></div></div></div><a
-            id="idm140576976080336"
+            id="idm140453929752496"
             class="indexterm"></a><div
             class="para">
 			The Debian kernel teams maintains the “Debian Kernel Handbook” (also available in the <span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> The good old days of <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm140576976069488"
+              id="idm140453929741648"
               class="indexterm"></a><div
               class="para">
 				Before the Linux build system gained the ability to build proper Debian packages, the recommended way to build such packages was to use <code
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Getting the Sources</h3></div></div></div><a
-            id="idm140576976064704"
+            id="idm140453929736864"
             class="indexterm"></a><a
-            id="idm140576976063744"
+            id="idm140453929735904"
             class="indexterm"></a><a
-            id="idm140576976062304"
+            id="idm140453929734464"
             class="indexterm"></a><div
             class="para">
 				Like anything that can be useful on a Debian system, the Linux kernel sources are available in a package. To retrieve them, just install the <span
@@ -173,12 +173,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.config-noyau"></a>8.10.3. Configuring the Kernel</h3></div></div></div><a
-            id="idm140576976045600"
+                    id="sect.config-kernel"></a>8.10.3. Configuring the Kernel</h3></div></div></div><a
+            id="idm140453929717760"
             class="indexterm"></a><a
-            id="idm140576976044160"
+            id="idm140453929716320"
             class="indexterm"></a><a
-            id="idm140576976042720"
+            id="idm140453929714880"
             class="indexterm"></a><div
             class="para">
 				The next step consists of configuring the kernel according to your needs. The exact procedure depends on the goals.
@@ -220,7 +220,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">libgtk2.0-dev</span>.
 			</div><div
             class="para">
-				When using one of those configuration interfaces, it's always a good idea to start from a reasonable default configuration. The kernel provides such configurations in <code
+				When using one of those configuration interfaces, it is always a good idea to start from a reasonable default configuration. The kernel provides such configurations in <code
               class="filename">arch/<em
                 class="replaceable">arch</em>/configs/*_defconfig</code> and you can put your selected configuration in place with a command like <code
               class="command">make x86_64_defconfig</code> (in the case of a 64-bit PC) or <code
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Compiling and Building the Package</h3></div></div></div><a
-            id="idm140576976018176"
+            id="idm140453929690336"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -261,6 +261,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em></span> that contains the kernel image and the associated modules, <span
               class="pkg pkg">linux-headers-<em
                 class="replaceable">version</em></span> which contains the header files required to build external modules, <span
+              class="pkg pkg">linux-firmware-image-<em
+                class="replaceable">version</em></span> which contains the firmware files needed by some drivers (this package might be missing when you build from the kernel sources provided by Debian), <span
               class="pkg pkg">linux-image-<em
                 class="replaceable">version</em>-dbg</span> which contains the debugging symbols for the kernel image and its modules, and <span
               class="pkg pkg">linux-libc-dev</span> which contains headers relevant to some user space libraries like GNU glibc.
@@ -296,11 +298,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Compiling External Modules</h3></div></div></div><a
-            id="idm140576975999488"
+            id="idm140453929670416"
             class="indexterm"></a><a
-            id="idm140576975998048"
+            id="idm140453929668976"
             class="indexterm"></a><a
-            id="idm140576975996608"
+            id="idm140453929667536"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -325,7 +327,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>sudo apt-get install xtables-addons-common-dkms</code></strong>
+              class="userinput"><code>sudo apt install xtables-addons-common-dkms</code></strong>
 <code
               class="computeroutput">
 [...]
@@ -362,7 +364,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140576975981040"
+              id="idm140453929651968"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -374,9 +376,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Applying a Kernel Patch</h3></div></div></div><a
-            id="idm140576975975664"
+            id="idm140453929646592"
             class="indexterm"></a><a
-            id="idm140576975974224"
+            id="idm140453929645152"
             class="indexterm"></a><div
             class="para">
 				Some features are not included in the standard kernel due to a lack of maturity or to some disagreement with the kernel maintainers. Such features may be distributed as patches that anyone is then free to apply to the kernel sources.

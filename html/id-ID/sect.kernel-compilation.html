@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Mengompilasi sebuah Kernel</h2></div></div></div><a
-          id="idm140298905248656"
+          id="idm140457724680608"
           class="indexterm"></a><a
-          id="idm140298905247216"
+          id="idm140457724679168"
           class="indexterm"></a><div
           class="para">
 			Kernel yang disediakan oleh Debian menyertakan banyak fitur, sebagaimana penggerak (driver) penuh, agar dapat menangani spektrum yang luas konfigurasi perangkat keras. Oleh karena itu, beberapa pengguna lebih memilih mengompilasi ulang kernel agar hanya menyertakan beberapa yang mereka butuhkan saja. Ada dua alasan untuk pilihan ini. Pertama, mungkin untuk mengoptimalisasi konsumsi memori, karena kode kernel, bahkan jika tak pernah digunakan, memakan memori yang tidak berguna (dan tak pernah “hilang” pada ruang swap, karena dia menggunakan RAM sebenarnya), di mana dapat mengurangi performa sistem. Kernel lokal yang dikompilasi dapat membatasi resiko masalah keamanan karena hanya sebagian kode kernel yang dikompilasi dan dijalankan.
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>LEBIH JAUH</em></span> Buku Pegangan Kernel Debian</strong></p></div></div></div><a
-            id="idm140298905240768"
+            id="idm140457724672720"
             class="indexterm"></a><div
             class="para">
 			Tim kernel Debian mengelola “Buku Pegangan Kernel Debian” (juga tersedia dalam paket <span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>KULTUR</em></span> Hari tua yang baik dari <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm140298905229920"
+              id="idm140457724661872"
               class="indexterm"></a><div
               class="para">
 				Sebelum sistem pembangun Linux mendapatkan kemampuan untuk membangun paket Debian, cara yang direkomendasikan untuk membangun paket adalah dengan menggunakan <code
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Mendapatkan Sumber</h3></div></div></div><a
-            id="idm140298905225120"
+            id="idm140457724657072"
             class="indexterm"></a><a
-            id="idm140298905224160"
+            id="idm140457724656112"
             class="indexterm"></a><a
-            id="idm140298905222720"
+            id="idm140457724654672"
             class="indexterm"></a><div
             class="para">
 				Seperti apapun yang dapat berguna pada sebuah sistem Debian, sumber kernel Linux tersedia dalam sebuah paket. Untuk mendapatkannya, install saja paket <span
@@ -173,12 +173,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.config-noyau"></a>8.10.3. Mengonfigurasi Kernel</h3></div></div></div><a
-            id="idm140298905205920"
+                    id="sect.config-kernel"></a>8.10.3. Mengonfigurasi Kernel</h3></div></div></div><a
+            id="idm140457724637872"
             class="indexterm"></a><a
-            id="idm140298905204480"
+            id="idm140457724636432"
             class="indexterm"></a><a
-            id="idm140298905203040"
+            id="idm140457724634992"
             class="indexterm"></a><div
             class="para">
 				Langkah selanjutnya mengonfigurasi kernel berdasarkan kebutuhan Anda. Prosedur tepatnya tergantung pada tujuannya.
@@ -220,11 +220,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">libgtk2.0-dev</span>.
 			</div><div
             class="para">
-				Ketika menggunakan salah satu antarmuka konfigurasi tersebut, sebaiknya dimulai dengan konfigurasi standar. Kernel menyadiakan konfigurasi dalam <code
+				When using one of those configuration interfaces, it is always a good idea to start from a reasonable default configuration. The kernel provides such configurations in <code
               class="filename">arch/<em
-                class="replaceable">arch</em>/configs/*_defconfig</code> dan Anda dapat menaruh konfigurasi pilihan dengan perintah seperti <code
-              class="command">make x86_64_defconfig</code> (dalam hal ini PC 64-bit) atau <code
-              class="command">make i386_defconfig</code> (dalam hal ini PC 32-bit).
+                class="replaceable">arch</em>/configs/*_defconfig</code> and you can put your selected configuration in place with a command like <code
+              class="command">make x86_64_defconfig</code> (in the case of a 64-bit PC) or <code
+              class="command">make i386_defconfig</code> (in the case of a 32-bit PC).
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Kompilasi dan Membangun Paket</h3></div></div></div><a
-            id="idm140298905178512"
+            id="idm140457724610512"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -261,6 +261,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em></span> that contains the kernel image and the associated modules, <span
               class="pkg pkg">linux-headers-<em
                 class="replaceable">version</em></span> which contains the header files required to build external modules, <span
+              class="pkg pkg">linux-firmware-image-<em
+                class="replaceable">version</em></span> which contains the firmware files needed by some drivers (this package might be missing when you build from the kernel sources provided by Debian), <span
               class="pkg pkg">linux-image-<em
                 class="replaceable">version</em>-dbg</span> which contains the debugging symbols for the kernel image and its modules, and <span
               class="pkg pkg">linux-libc-dev</span> which contains headers relevant to some user space libraries like GNU glibc.
@@ -296,11 +298,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Kompilasi Modul Eksternal</h3></div></div></div><a
-            id="idm140298905159680"
+            id="idm140457724590448"
             class="indexterm"></a><a
-            id="idm140298905158240"
+            id="idm140457724589008"
             class="indexterm"></a><a
-            id="idm140298905156800"
+            id="idm140457724587568"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -325,7 +327,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>sudo apt-get install xtables-addons-common-dkms</code></strong>
+              class="userinput"><code>sudo apt install xtables-addons-common-dkms</code></strong>
 <code
               class="computeroutput">
 [...]
@@ -362,7 +364,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIF</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140298905141088"
+              id="idm140457724571856"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -374,9 +376,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Menerapkan Patch Kernel</h3></div></div></div><a
-            id="idm140298905135712"
+            id="idm140457724566480"
             class="indexterm"></a><a
-            id="idm140298905134272"
+            id="idm140457724565040"
             class="indexterm"></a><div
             class="para">
 				Beberapa fitur tidak disertakan dalam kernel standar karena belum maksimalnya atau ketidaksepakatan dengan maintainer kernel. Beberapa fitur mungkin didistribusikan sebagai patch di mana setiap orang bebas untuk menerapkan ke sumber kernel.

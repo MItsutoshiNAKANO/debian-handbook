@@ -69,15 +69,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. تثبيت النواة</h2></div></div></div><a
-          id="idm140156516744704"
+          id="idm140228332416048"
           class="indexterm"></a><a
-          id="idm140156516743264"
+          id="idm140228332414608"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. مزايا حزمة النواة </h3></div></div></div><a
-            id="idm140156516740688"
+            id="idm140228332412032"
             class="indexterm"></a><div
             class="para">
 				تُثبِّت حزمة النواة صورة النواة (<code
@@ -92,11 +92,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em>/</code>.
 			</div><div
             class="para">
-				تولد سكربتات إعداد الحزمة صورة initrd آلياً، وههو نظام مصغر مصمم حتى يحمّله محمل الإقلاع إلى الذاكرة (من هنا جاء اسمه، الذي يرمز للعبارة ”init ramdisk“ أي قرص التهيئة الذاكري)، وتستخدمه النواة لينكس فقط لتحميل الوحدات اللازمة للوصول إلى الأجهزة التي تحوي نظام دبيان الكامل (مثلاً، تعاريف أقراص IDE). أخيراً، تُحدّث سكربتات ما بعد التثبيت الروابط الرمزية <code
-              class="filename">/vmlinuz</code> و <code
-              class="filename">/vmlinuz.old</code> و <code
-              class="filename">/initrd.img</code> و <code
-              class="filename">/initrd.img.old</code> بحيث تشير إلى أحدث نواتين مثبتتين، بالإضافة إلى صورتي initrd الأخيرتين.
+				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code
+              class="filename">/vmlinuz</code>, <code
+              class="filename">/vmlinuz.old</code>, <code
+              class="filename">/initrd.img</code> and <code
+              class="filename">/initrd.img.old</code> so that they point to the latest two kernels installed, respectively, as well as the corresponding initrd images.
 			</div><div
             class="para">
 				معظم هذه المهمات موكلة إلى سكربتات تعليق (hook scripts) في المجلدات <code
@@ -113,7 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				Using <code
-              class="command">apt-get</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
+              class="command">apt</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
               class="command">dpkg -i <em
                 class="replaceable">package</em>.deb</code>, where <code
               class="literal"><em
