@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux は完全なマルチユーザシステムです。このため、ユーザの権限に基づいてファイルやディレクトリに対する操作を制御するために、パーミッションシステムを提供することが必要です。このパーミッションシステムは、すべてのシステムリソースとデバイス (Unix システムではすべてのデバイスはファイルまたはディレクトリとして表現されます) を対象とします。この原理はすべての Unix システムで共通ですが、特に興味深く比較的知られていない上級の使い方があるので、注意は常に必要です。
 		</div><a
-          id="idm140090721580896"
+          id="idm139657414271680"
           class="indexterm"></a><a
-          id="idm140090721579936"
+          id="idm139657414270720"
           class="indexterm"></a><a
-          id="idm140090721578976"
+          id="idm139657414269760"
           class="indexterm"></a><a
-          id="idm140090721577536"
+          id="idm139657414268320"
           class="indexterm"></a><a
-          id="idm140090721576096"
+          id="idm139657414266880"
           class="indexterm"></a><a
-          id="idm140090721574656"
+          id="idm139657414265440"
           class="indexterm"></a><div
           class="para">
 			ファイルとディレクトリには、ユーザの種類別に 3 種類の特定のパーミッションが付けられます。
@@ -123,13 +123,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					実行 (「eXecute」の <code
                   class="literal">x</code> で表記されます)。
 				</div></li></ul></div><a
-          id="idm140090721562816"
+          id="idm139657414253600"
           class="indexterm"></a><a
-          id="idm140090721561856"
+          id="idm139657414252640"
           class="indexterm"></a><a
-          id="idm140090721560896"
+          id="idm139657414251680"
           class="indexterm"></a><a
-          id="idm140090721559936"
+          id="idm139657414250720"
           class="indexterm"></a><div
           class="para">
 			ファイルの場合、これらの権限は簡単に理解できます。すなわち、読み込み権限があれば、内容を読む (コピーを含めて) ことが可能です。書き込み権限があれば、内容を変更することが可能です。実行権限があれば、内容を実行することが可能です (実行権限に意味があるのは対象がプログラムの場合に限ります)。
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> と <code
               class="literal">setgid</code> (「s」で表記されます) です。これらは「ビット」と呼ばれることが多い点に注意してください。なぜなら、これらは 0 か 1 で表されるブール値だからです。これら 2 種類の権限を使うと、実行されたプログラムは、所有者か所有グループの権限で動くことになります。このメカニズムを使うと、プログラムはプログラムを実行したユーザが通常持っているよりも高位のパーミッションを要求する機能にアクセスできるようになります。
 		</div><a
-            id="idm140090721553888"
+            id="idm139657414244672"
             class="indexterm"></a><a
-            id="idm140090721552608"
+            id="idm139657414243392"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -164,7 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>SECURITY</em></span> <code
                       class="literal">setgid</code> ディレクトリと<span
                       class="emphasis"><em>スティッキービット</em></span></strong></p></div></div></div><a
-            id="idm140090721545808"
+            id="idm139657414236592"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -172,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setgid</code> ビットが適用されたディレクトリの中に新しく作成されたアイテムは、作成者のメイングループを継承するのではなく、自動的に親ディレクトリの所有者グループを割り当てられます。こうすることで、ユーザが同じ専用グループに所属する複数のユーザの間で共有されているファイルツリーの中で作業をしている場合、自分の (<code
               class="command">newgrp</code> コマンドを使って) メイングループを変更しなくてもよくなります。
 		</div><a
-            id="idm140090721542048"
+            id="idm139657414232832"
             class="indexterm"></a><div
             class="para">
 			「スティッキー」ビット (「t」で表記されます) とはディレクトリだけに有効なパーミッションです。これは特に、誰でも書き込み権限を持つ一時ディレクトリ (<code
@@ -217,15 +217,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code> は 3 つのユーザカテゴリすべてを表現します。このため、<code
             class="literal">a=rx</code> はすべてのカテゴリのユーザに対して同じ権限 (読み込みと実行権限を与えますが、書き込み権限は与えません) を与えます。
 		</div><a
-          id="idm140090721525664"
+          id="idm139657414216448"
           class="indexterm"></a><a
-          id="idm140090721524544"
+          id="idm139657414215328"
           class="indexterm"></a><a
-          id="idm140090721523424"
+          id="idm139657414214208"
           class="indexterm"></a><a
-          id="idm140090721522304"
+          id="idm139657414213088"
           class="indexterm"></a><a
-          id="idm140090721521376"
+          id="idm139657414212160"
           class="indexterm"></a><div
           class="para">
 			(8 進数) 数値表記は各権限を値で表現します。具体的に言えば、読み込みは 4、書き込みは 2、実行権限は 1 で表現します。権限を組み合わせるには組み合わせたい権限に対応する数字を合計します。ユーザの各カテゴリ (所有者、グループ、その他) に対して与える権限を同じ順番で連結して、それぞれの権限を割り当てます。
@@ -288,11 +288,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> を実行すると、<code
               class="computeroutput">0022</code> などのマスクが表示されます。これは権限の単純な 8 進数表記で、これで表される権限は体系的に削除されます (上の場合、グループとその他のユーザに対する書き込み権限が削除されます)。
 		</div><a
-            id="idm140090721498320"
+            id="idm139657414189104"
             class="indexterm"></a><a
-            id="idm140090721497360"
+            id="idm139657414188144"
             class="indexterm"></a><a
-            id="idm140090721495920"
+            id="idm139657413616304"
             class="indexterm"></a><div
             class="para">
 			新しい 8 進数値でマスクを再設定したければ、<code

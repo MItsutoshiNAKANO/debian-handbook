@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.apparmor"></a>14.4. Introduction to AppArmor</h2></div></div></div><a
-          id="idm140602004184896"
+          id="idm140065022800688"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>Mandatory Access Control</em></span> (MAC) system built on Linux's LSM (<span
               class="emphasis"><em>Linux Security Modules</em></span>) interface. In practice, the kernel queries AppArmor before each system call to know whether the process is authorized to do the given operation. Through this mechanism, AppArmor confines programs to a limited set of resources.
 			</div><a
-            id="idm140602004181264"
+            id="idm140065022797056"
             class="indexterm"></a><a
-            id="idm140602004180176"
+            id="idm140065022795968"
             class="indexterm"></a><div
             class="para">
 				AppArmor applies a set of rules (known as “profile”) on each program. The profile applied by the kernel depends on the installation path of the program being executed. Contrary to SELinux (discussed in <a
@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				The state of each profile can be switched between enforcing and complaining with calls to <code
               class="command">aa-enforce</code> and <code
-              class="command">aa-complain</code> giving as parameter either the path of the executable or the patch to the policy file. Additionnaly a profile can be entirely disabled with <code
+              class="command">aa-complain</code> giving as parameter either the path of the executable or the patch to the policy file. Additionaly a profile can be entirely disabled with <code
               class="command">aa-disable</code> or put in audit mode (to log accepted system calls too) with <code
               class="command">aa-audit</code>.
 			</div><pre
@@ -196,7 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				In the following example, we will thus try to create a profile for <code
               class="command">/sbin/dhclient</code>. For this we will use <code
-              class="command">aa-genprof dhclient</code>. It will invite you to use the application in another windown and when done to come back to <code
+              class="command">aa-genprof dhclient</code>. It will invite you to use the application in another window and when done to come back to <code
               class="command">aa-genprof</code> to scan for AppArmor events in the system logs and convert those logs into access rules. For each logged event, it will make one or more rule suggestions that you can either approve or further edit in multiple ways:
 			</div><pre
             class="screen">
@@ -466,8 +466,48 @@ Finished generating profile for /sbin/dhclient.</code></pre><div
               class="command">aa-logprof</code> which is a tool to update a profile based on the profile violations that have been logged. So you can re-run that tool later to improve the profile that you just created.
 			</div><div
             class="para">
-				If you want the generated profile to be complete, you should use the program in all the ways that it is legitimately used. In the case of dhclient, it means running it via Network Manager, running it via ifupdwon, running it manually, etc. In the end, you might get
-			</div></div></div><ul
+				If you want the generated profile to be complete, you should use the program in all the ways that it is legitimately used. In the case of dhclient, it means running it via Network Manager, running it via ifupdown, running it manually, etc. In the end, you might get a <code
+              class="filename">/etc/apparmor.d/sbin.dhclient</code> close to this:
+			</div><pre
+            class="programlisting">
+# Last Modified: Tue Sep  8 21:40:02 2015
+#include &lt;tunables/global&gt;
+
+/sbin/dhclient {
+  #include &lt;abstractions/base&gt;
+  #include &lt;abstractions/nameservice&gt;
+
+  capability net_bind_service,
+  capability net_raw,
+
+  /bin/dash r,
+  /etc/dhcp/* r,
+  /etc/dhcp/dhclient-enter-hooks.d/* r,
+  /etc/dhcp/dhclient-exit-hooks.d/* r,
+  /etc/resolv.conf.* w,
+  /etc/samba/dhcp.conf.* w,
+  /proc/*/net/dev r,
+  /proc/filesystems r,
+  /run/dhclient*.pid w,
+  /sbin/dhclient mr,
+  /sbin/dhclient-script rCx,
+  /usr/lib/NetworkManager/nm-dhcp-helper Px,
+  /var/lib/NetworkManager/* r,
+  /var/lib/NetworkManager/*.lease rw,
+  /var/lib/dhcp/*.leases rw,
+
+  profile /sbin/dhclient-script flags=(complain) {
+    #include &lt;abstractions/base&gt;
+    #include &lt;abstractions/bash&gt;
+
+    /bin/dash rix,
+    /etc/dhcp/dhclient-enter-hooks.d/* r,
+    /etc/dhcp/dhclient-exit-hooks.d/* r,
+    /sbin/dhclient-script r,
+
+  }
+}
+</pre></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

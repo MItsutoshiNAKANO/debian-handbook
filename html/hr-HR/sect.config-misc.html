@@ -75,18 +75,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.timezone"></a>8.9.1. Timezone</h3></div></div></div><a
-            id="idm140581001972816"
+            id="idm139723176344496"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.symbolic-link"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> Symbolic links</strong></p></div></div></div><a
-              id="idm140581001970912"
+              id="idm139723176342592"
               class="indexterm"></a><a
-              id="idm140581001969760"
+              id="idm139723176341440"
               class="indexterm"></a><a
-              id="idm140581001968992"
+              id="idm139723176340672"
               class="indexterm"></a><div
               class="para">
 				A symbolic link is a pointer to another file. When you access it, the file to which it points is opened. Removal of the link will not cause deletion of the file to which it points. Likewise, it does not have its own set of permissions, but rather retains the permissions of its target. Finally, it can point to any type of file: directories, special files (sockets, named pipes, device files, etc.), even other symbolic links.
@@ -110,23 +110,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/usr/share/zoneinfo</code> directory is copied into <code
               class="filename">/etc/localtime</code>; this file contains the rules governing the dates where daylight saving time is active, for countries that use it.
 			</div><a
-            id="idm140581001961120"
+            id="idm139723176332800"
             class="indexterm"></a><a
-            id="idm140581001960224"
+            id="idm139723176331904"
             class="indexterm"></a><a
-            id="idm140581001959328"
+            id="idm139723176331008"
             class="indexterm"></a><a
-            id="idm140581001958432"
+            id="idm139723176330112"
             class="indexterm"></a><a
-            id="idm140581001957536"
+            id="idm139723176329216"
             class="indexterm"></a><a
-            id="idm140581001956768"
+            id="idm139723176328448"
             class="indexterm"></a><div
             class="para">
 				When you need to temporarily change the timezone, use the <code
               class="varname">TZ</code> environment variable, which takes priority over the configured system default:
 			</div><a
-            id="idm140581001955232"
+            id="idm139723176326912"
             class="indexterm"></a><a
             id="screen.tz"></a><pre
             class="screen">
@@ -161,9 +161,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.time-synchronization"></a>8.9.2. Time Synchronization</h3></div></div></div><a
-            id="idm140581001944800"
+            id="idm139723176316480"
             class="indexterm"></a><a
-            id="idm140581001944032"
+            id="idm139723176315712"
             class="indexterm"></a><div
             class="para">
 				Time synchronization, which may seem superfluous on a computer, is very important on a network. Since users do not have permissions allowing them to modify the date and time, it is important for this information to be precise to prevent confusion. Furthermore, having all of the computers on a network synchronized allows better cross-referencing of information from logs on different machines. Thus, in the event of an attack, it is easier to reconstruct the chronological sequence of actions on the various machines involved in the compromise. Data collected on several machines for statistical purposes won't make a great deal of sense if they are not synchronized.
@@ -172,9 +172,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> NTP</strong></p></div></div></div><a
-              id="idm140581001940912"
+              id="idm139723176312592"
               class="indexterm"></a><a
-              id="idm140581001940144"
+              id="idm139723176311824"
               class="indexterm"></a><div
               class="para">
 				NTP (Network Time Protocol) allows a machine to synchronize with others fairly accurately, taking into consideration the delays induced by the transfer of information over the network and other possible offsets.
@@ -197,9 +197,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="pkg pkg">ntpdate</span> package. You can change the NTP server used if needed by modifying the <code
                 class="filename">/etc/default/ntpdate</code> file.
 				</div><a
-              id="idm140581001933024"
+              id="idm139723176304704"
               class="indexterm"></a><a
-              id="idm140581001932128"
+              id="idm139723176303808"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -211,19 +211,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>pool.ntp.org</em></span> and provide time in response to requests coming from the local network. You can configure it by editing the <code
                 class="filename">/etc/ntp.conf</code> file, the most significant alteration being the NTP server to which it refers. If the network has a lot of servers, it may be interesting to have one local time server which synchronizes with the public servers and is used as a time source by the other servers of the network.
 				</div><a
-              id="idm140581001927792"
+              id="idm139723176299472"
               class="indexterm"></a><a
-              id="idm140581001926656"
+              id="idm139723176298336"
               class="indexterm"></a><a
-              id="idm140581001925504"
+              id="idm139723176297184"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>GOING FURTHER</em></span> GPS modules and other time sources</strong></p></div></div></div><a
-                id="idm140581001923456"
+                id="idm139723176295136"
                 class="indexterm"></a><a
-                id="idm140581001922688"
+                id="idm139723176294368"
                 class="indexterm"></a><div
                 class="para">
 					If time synchronization is particularly crucial to your network, it is possible to equip a server with a GPS module (which will use the time from GPS satellites) or a DCF-77 module (which will sync time with the atomic clock near Frankfurt, Germany). In this case, the configuration of the NTP server is a little more complicated, and prior consultation of the documentation is an absolute necessity.
@@ -232,13 +232,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.rotation-logs"></a>8.9.3. Rotating Log Files</h3></div></div></div><a
-            id="idm140581001919840"
+            id="idm139723176291520"
             class="indexterm"></a><a
-            id="idm140581001918688"
+            id="idm139723176290368"
             class="indexterm"></a><a
-            id="idm140581001917536"
+            id="idm139723176289216"
             class="indexterm"></a><a
-            id="idm140581001916768"
+            id="idm139723176288448"
             class="indexterm"></a><div
             class="para">
 				Log files can grow, fast, and it is necessary to archive them. The most common scheme is a rotating archive: the log file is regularly archived, and only the latest <em
@@ -262,11 +262,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.sharing-admin-rights"></a>8.9.4. Sharing Administrator Rights</h3></div></div></div><a
-            id="idm140581001909728"
+            id="idm139723176281408"
             class="indexterm"></a><a
-            id="idm140581001908576"
+            id="idm139723176280256"
             class="indexterm"></a><a
-            id="idm140581001907808"
+            id="idm139723176279488"
             class="indexterm"></a><div
             class="para">
 				Frequently, several administrators work on the same network. Sharing the root passwords is not very elegant, and opens the door for abuse due to the anonymity such sharing creates. The solution to this problem is the <code
@@ -286,11 +286,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal"><em
                 class="replaceable">username</em> ALL=(ALL) ALL</code> allows the user in question to execute any command as root.
 			</div><a
-            id="idm140581001901072"
+            id="idm139723176272752"
             class="indexterm"></a><a
-            id="idm140581001900176"
+            id="idm139723176271856"
             class="indexterm"></a><a
-            id="idm140581001899280"
+            id="idm139723176270960"
             class="indexterm"></a><div
             class="para">
 				More sophisticated configurations allow authorization of only specific commands to specific users. All the details of the various possibilities are given in the <span
@@ -301,9 +301,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fstab-mount-points"></a>8.9.5. List of Mount Points</h3></div></div></div><a
-            id="idm140581001895920"
+            id="idm139723176267600"
             class="indexterm"></a><a
-            id="idm140581001895152"
+            id="idm139723176266832"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -315,7 +315,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/home/</code> directory. The root filesystem is always mounted at boot by the kernel; other devices are often mounted later during the startup sequence or manually with the <code
                 class="command">mount</code> command.
 			</div><a
-              id="idm140581001891248"
+              id="idm139723176262928"
               class="indexterm"></a><div
               class="para">
 				Some removable devices are automatically mounted when connected, especially when using the GNOME, KDE or other graphical desktop environments. Others have to be mounted manually by the user. Likewise, they must be unmounted (removed from the file tree). Normal users do not usually have permission to execute the <code
@@ -338,9 +338,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				The <code
               class="filename">/etc/fstab</code> file gives a list of all possible mounts that happen either automatically on boot or manually for removable storage devices. Each mount point is described by a line with several space-separated fields: <a
-              id="idm140581001883008"
+              id="idm139723176254688"
               class="indexterm"></a> <a
-              id="idm140581001882368"
+              id="idm139723176254048"
               class="indexterm"></a>
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
@@ -486,15 +486,15 @@ arrakis:/shared /shared         nfs     defaults        0       0
                 class="emphasis"><em>am-utils</em></span> package provides the <code
                 class="command">amd</code> auto-mounting utility, able to mount removable media on demand when a user attempts to access their usual mount point. It will unmount these devices when no process is accessing them any longer.
 			</div><a
-              id="idm140581001842704"
+              id="idm139723176214384"
               class="indexterm"></a><a
-              id="idm140581001841808"
+              id="idm139723176213488"
               class="indexterm"></a><a
-              id="idm140581001840912"
+              id="idm139723176212592"
               class="indexterm"></a><a
-              id="idm140581001840016"
+              id="idm139723176211696"
               class="indexterm"></a><a
-              id="idm140581001839120"
+              id="idm139723176210800"
               class="indexterm"></a><div
               class="para">
 				Other auto-mounting utilities exist, such as <code
@@ -511,11 +511,11 @@ arrakis:/shared /shared         nfs     defaults        0       0
                     id="sect.locate-updatedb"></a>8.9.6. <code
                     class="command">locate</code> and <code
                     class="command">updatedb</code></h3></div></div></div><a
-            id="idm140581001834672"
+            id="idm139723176206352"
             class="indexterm"></a><a
-            id="idm140581001833776"
+            id="idm139723176205456"
             class="indexterm"></a><a
-            id="idm140581001832880"
+            id="idm139723176204560"
             class="indexterm"></a><div
             class="para">
 				The <code

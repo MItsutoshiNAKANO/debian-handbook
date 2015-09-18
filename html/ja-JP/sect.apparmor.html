@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.apparmor"></a>14.4. AppArmor の紹介</h2></div></div></div><a
-          id="idm140090712248560"
+          id="idm139657409752112"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>Linux Security Modules</em></span>) インターフェース上に設けられた<span
               class="emphasis"><em>強制アクセス制御</em></span> (MAC) システムです。具体的に言えば、カーネルはそれぞれのシステムコールの前にシステムコールを発行したプロセスが指定された操作に対する権限を与えられているか AppArmor に問い合わせます。このメカニズムを通じて、AppArmor はプログラムがアクセスできるリソースを制限します。
 			</div><a
-            id="idm140090712244816"
+            id="idm139657409748368"
             class="indexterm"></a><a
-            id="idm140090712243728"
+            id="idm139657409747280"
             class="indexterm"></a><div
             class="para">
 				AppArmor はプログラムごとに一連の規則 (これは「プロファイル」として知られています) を適用します。カーネルは実行されたプログラムのインストール先のパスに依存してこのプロファイルを適用します。SELinux とは対照的に (<a
@@ -477,8 +477,48 @@ Finished generating profile for /sbin/dhclient.</code></pre><div
               class="command">aa-genprof</code> を改めて再実行することが可能です。
 			</div><div
             class="para">
-				完全なプロファイルを作成したい場合、対象のプログラムに対するすべての合法的な使い方を試してみるべきです。dhclient の場合、Network Manager を介して実行したり、ifupdwon を介して実行したり、手作業で実行することを意味します。最終的に、完全なプロファイルが手に入るかもしれません。
-			</div></div></div><ul
+				完全なプロファイルを作成したい場合、対象のプログラムに対するすべての合法的な使い方を試してみるべきです。dhclient の場合、Network Manager を介して実行したり、ifupdown を介して実行したり、手作業で実行することを意味します。こうすることで最終的に作成される <code
+              class="filename">/etc/apparmor.d/sbin.dhclient</code> は完全なプロファイルに近いものとなるでしょう。
+			</div><pre
+            class="programlisting">
+# Last Modified: Tue Sep  8 21:40:02 2015
+#include &lt;tunables/global&gt;
+
+/sbin/dhclient {
+  #include &lt;abstractions/base&gt;
+  #include &lt;abstractions/nameservice&gt;
+
+  capability net_bind_service,
+  capability net_raw,
+
+  /bin/dash r,
+  /etc/dhcp/* r,
+  /etc/dhcp/dhclient-enter-hooks.d/* r,
+  /etc/dhcp/dhclient-exit-hooks.d/* r,
+  /etc/resolv.conf.* w,
+  /etc/samba/dhcp.conf.* w,
+  /proc/*/net/dev r,
+  /proc/filesystems r,
+  /run/dhclient*.pid w,
+  /sbin/dhclient mr,
+  /sbin/dhclient-script rCx,
+  /usr/lib/NetworkManager/nm-dhcp-helper Px,
+  /var/lib/NetworkManager/* r,
+  /var/lib/NetworkManager/*.lease rw,
+  /var/lib/dhcp/*.leases rw,
+
+  profile /sbin/dhclient-script flags=(complain) {
+    #include &lt;abstractions/base&gt;
+    #include &lt;abstractions/bash&gt;
+
+    /bin/dash rix,
+    /etc/dhcp/dhclient-enter-hooks.d/* r,
+    /etc/dhcp/dhclient-exit-hooks.d/* r,
+    /sbin/dhclient-script r,
+
+  }
+}
+</pre></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"
