@@ -81,24 +81,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					Servidor de filtragem: se o uso do proxy é obrigatório (e conexões de saída são bloqueadas a menos que elas passem através do proxy), então o proxy pode determinar quando a requisição pode ser concedida.
 				</div></li></ul></div><a
-          id="idm139689841938208"
+          id="idm140625110720768"
           class="indexterm"></a><a
-          id="idm139689841937248"
+          id="idm140625110720000"
           class="indexterm"></a><div
           class="para">
-			Falcot Corp selecionou o Squid como seu servidor de proxy
+			Falcot Corp selecionou o Squid como seu servidor de proxy.
 		</div><a
-          id="idm139689841935760"
+          id="idm140625110718768"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689841934800"></a>11.6.1. Instalando</h3></div></div></div><div
+                    id="idm140625110718000"></a>11.6.1. Instalando</h3></div></div></div><div
             class="para">
-				The <span
-              class="pkg pkg">squid3</span> Debian package only contains the modular (caching) proxy. Turning it into a filtering server requires installing the additional <span
-              class="pkg pkg">squidguard</span> package. In addition, <span
-              class="pkg pkg">squid-cgi</span> provides a querying and administration interface for a Squid proxy.
+				O pacote Debian <span
+              class="pkg pkg">squid3</span> apenas contém o proxy modular (caching). Fazer dele um servidor de filtragem requer a instalação do pacote adicional <span
+              class="pkg pkg">squidguard</span>. Em adição, o <span
+              class="pkg pkg">squid-cgi</span> provê uma interface de consulta e administração para o proxy Squid.
 			</div><div
             class="para">
 				Antes da instalação, deve-se tomar o cuidado de checar que o sistema pode identificar seu próprio nome completo: o <code
@@ -109,15 +109,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689841928656"></a>11.6.2. Configurando um Cache</h3></div></div></div><div
+                    id="idm140625110712720"></a>11.6.2. Configurando um Cache</h3></div></div></div><div
             class="para">
-				Enabling the caching server feature is a simple matter of editing the <code
-              class="filename">/etc/squid3/squid.conf</code> configuration file and allowing machines from the local network to run queries through the proxy. The following example shows the modifications made by the Falcot Corp administrators:
+				Habilitar o recurso de cache no servidor é uma simples questão de editar o arquivo de configuração <code
+              class="filename">/etc/squid3/squid.conf</code> e permitir que máquinas da rede local executem consultas através do proxy. Os exemplos a seguir mostram as modificações feitas pelos administradores da Falcot Corp:
 			</div><div
             class="example"><a
-              id="idm139689841926752"></a><p
-              class="title"><strong>Exemplo 11.30. The <code
-                  class="filename">/etc/squid3/squid.conf</code> file (excerpts)</strong></p><div
+              id="idm140625110710992"></a><p
+              class="title"><strong>Exemplo 11.30. O arquivo <code
+                  class="filename">/etc/squid3/squid.conf</code> (trecho)</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 # INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS
@@ -129,22 +129,21 @@ acl our_networks src 192.168.1.0/24 192.168.2.0/24
 http_access allow our_networks
 http_access allow localhost
 # And finally deny all other access to this proxy
-http_access deny all
-</pre></div></div></div><div
+http_access deny all</pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689841924304"></a>11.6.3. Configurando um Filtro</h3></div></div></div><div
+                    id="idm140625110708928"></a>11.6.3. Configurando um Filtro</h3></div></div></div><div
             class="para">
-				O <code
-              class="command">squid</code> sozinho não faz a filtragem; essa ação é delegada ao <code
-              class="command">squidGuard</code>. O primeiro tem então que ser configurado para interagir com o último. Isso envolve a adição da seguinte diretiva ao arquivo <code
-              class="filename">/etc/squid/squid.conf</code>:
+				<code
+              class="command">squid</code> itself does not perform the filtering; this action is delegated to <code
+              class="command">squidGuard</code>. The former must then be configured to interact with the latter. This involves adding the following directive to the <code
+              class="filename">/etc/squid3/squid.conf</code> file:
 			</div><a
-            id="idm139689841921424"
+            id="idm140625110706544"
             class="indexterm"></a><pre
             class="programlisting">
-redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
+url_rewrite_program /usr/bin/squidGuard -c /etc/squid3/squidGuard.conf
 </pre><div
             class="para">
 				O programa CGI <code
@@ -157,9 +156,9 @@ redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
 			</div><div
             class="para">
 				The filter is enabled with the <code
-              class="command">service squid reload</code> command. However, since the <span
+              class="command">service squid3 reload</code> command. However, since the <span
               class="pkg pkg">squidguard</span> package does no filtering by default, it is the administrator's task to define the policy. This can be done by creating the <code
-              class="filename">/etc/squid/squidGuard.conf</code> file (using <code
+              class="filename">/etc/squid3/squidGuard.conf</code> file (using <code
               class="filename">/etc/squidguard/squidGuard.conf.default</code> as template if required).
 			</div><div
             class="para">
@@ -169,21 +168,21 @@ redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
               class="url">→ <a
                 href="http://www.squidguard.org/Doc/configure.html">http://www.squidguard.org/Doc/configure.html</a></div>
 			</div><a
-            id="idm139689841911056"
+            id="idm140625110697632"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVA</em></span> DansGuardian</strong></p></div></div></div><a
-              id="idm139689841908816"
+              id="idm140625110695840"
               class="indexterm"></a><a
-              id="idm139689841907392"
+              id="idm140625110694704"
               class="indexterm"></a><div
               class="para">
-				O pacote <span
-                class="pkg pkg">dansguardian</span> é uma alternativa ao <span
-                class="emphasis"><em>squidguard</em></span>. Esse software não apenas lida com uma lista negra de URLs proibidas, mas pode ter tirar vantagem do sistema PICS (<span
-                class="emphasis"><em>Platform for Internet Content Selection</em></span>) para decidir quando uma página é aceitável através de uma análise dinâmica de seu conteudo.
+				The <span
+                class="pkg pkg">dansguardian</span> package is an alternative to <span
+                class="emphasis"><em>squidguard</em></span>. This software does not simply handle a blacklist of forbidden URLs, but it can take advantage of the PICS system (<span
+                class="emphasis"><em>Platform for Internet Content Selection</em></span>) to decide whether a page is acceptable by dynamic analysis of its contents.
 			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

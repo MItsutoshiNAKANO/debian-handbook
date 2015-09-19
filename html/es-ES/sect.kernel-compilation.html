@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Compilación de un núcleo</h2></div></div></div><a
-          id="idm140667124780736"
+          id="idm140408379721648"
           class="indexterm"></a><a
-          id="idm140667124779584"
+          id="idm140408379720496"
           class="indexterm"></a><div
           class="para">
 			El núcleo que provee Debian incluye la mayor cantidad de funcionalidad posible así como también la mayor cantidad de controladores para cubrir el espectro más amplio de configuraciones de hardware. Es por esto que algunos usuarios prefieren compilar el núcleo para incluir sólamente lo que necesiten específicamente. Hay dos razones para esta elección. Primero, podría optimizar el consumo de memoria ya que el código del núcleo, aún cuando no sea utilizado, ocupa memoria por nada (y nunca es «bajado» al espacio de swap ya que utiliza RAM real) lo que puede disminuir el rendimiento general del sistema. Un núcleo compilado localmente también puede limitar el riesgo de problemas de seguridad ya que sólo se compila y ejecuta una fracción del código del núcleo.
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>YENDO MÁS ALLÁ</em></span> El libro del núcleo de Debian («Debian Kernel Handbook»)</strong></p></div></div></div><a
-            id="idm140667124773952"
+            id="idm140408379714864"
             class="indexterm"></a><div
             class="para">
 			El equipo del núcleo de Debian administra el «Libro del núcleo de Debian» («Debian Kernel Handbook», disponible también en el paquete <span
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> Los días de <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm140667124765184"
+              id="idm140408379706096"
               class="indexterm"></a><div
               class="para">
 				Antes que el sistema de compilación de Linux tuviera la capacidad de crear paquetes Debian apropiados, la forma recomendada de crear dichos paquetes era utilizar <code
@@ -126,11 +126,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Obtención de las fuentes</h3></div></div></div><a
-            id="idm140667124761328"
+            id="idm140408379702240"
             class="indexterm"></a><a
-            id="idm140667124760560"
+            id="idm140408379701472"
             class="indexterm"></a><a
-            id="idm140667124759408"
+            id="idm140408379700320"
             class="indexterm"></a><div
             class="para">
 				Como cualquier cosa que pueda ser útil en un sistema Debian, las fuentes del núcleo Linux están disponibles en un paquete. Para obtenerlas simplemente instale el paquete <span
@@ -173,12 +173,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="sect.config-noyau"></a>8.10.3. Configuración del núcleo</h3></div></div></div><a
-            id="idm140667124744864"
+                    id="sect.config-kernel"></a>8.10.3. Configuración del núcleo</h3></div></div></div><a
+            id="idm140408379685776"
             class="indexterm"></a><a
-            id="idm140667124743712"
+            id="idm140408379684624"
             class="indexterm"></a><a
-            id="idm140667124742560"
+            id="idm140408379683472"
             class="indexterm"></a><div
             class="para">
 				El siguiente paso consiste en configurar el núcleo según sus necesidades. El procedimiento exacto depende de los objetivos.
@@ -220,11 +220,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">libgtk2.0-dev</span>.
 			</div><div
             class="para">
-				Cuando utiliza una de las interfaces de configuración, siempre es buena idea comenzar desde una configuración predeterminada razonable. El núcleo provee tales configuraciones en <code
+				When using one of those configuration interfaces, it is always a good idea to start from a reasonable default configuration. The kernel provides such configurations in <code
               class="filename">arch/<em
-                class="replaceable">arquitectura</em>/configs/*_defconfig</code> y puede mover la configuración que desee si ejecuta algo similar a <code
-              class="command">make x86_64_defconfig</code> (en el caso de un equipo de 64 bits) o <code
-              class="command">make i386_defconfig</code> (en el caso de un equipo de 32 bits).
+                class="replaceable">arch</em>/configs/*_defconfig</code> and you can put your selected configuration in place with a command like <code
+              class="command">make x86_64_defconfig</code> (in the case of a 64-bit PC) or <code
+              class="command">make i386_defconfig</code> (in the case of a 32-bit PC).
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Compilación y creación del paquete</h3></div></div></div><a
-            id="idm140667124721584"
+            id="idm140408379662496"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -261,6 +261,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">version</em></span> that contains the kernel image and the associated modules, <span
               class="pkg pkg">linux-headers-<em
                 class="replaceable">version</em></span> which contains the header files required to build external modules, <span
+              class="pkg pkg">linux-firmware-image-<em
+                class="replaceable">version</em></span> which contains the firmware files needed by some drivers (this package might be missing when you build from the kernel sources provided by Debian), <span
               class="pkg pkg">linux-image-<em
                 class="replaceable">version</em>-dbg</span> which contains the debugging symbols for the kernel image and its modules, and <span
               class="pkg pkg">linux-libc-dev</span> which contains headers relevant to some user space libraries like GNU glibc.
@@ -296,11 +298,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Compilación de módulos externos</h3></div></div></div><a
-            id="idm140667124705504"
+            id="idm140408379645376"
             class="indexterm"></a><a
-            id="idm140667124704352"
+            id="idm140408379644224"
             class="indexterm"></a><a
-            id="idm140667124703200"
+            id="idm140408379643072"
             class="indexterm"></a><div
             class="para">
 				Some modules are maintained outside of the official Linux kernel. To use them, they must be compiled alongside the matching kernel. A number of common third party modules are provided by Debian in dedicated packages, such as <span
@@ -325,7 +327,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="screen">
 <code
               class="computeroutput">$ </code><strong
-              class="userinput"><code>sudo apt-get install xtables-addons-common-dkms</code></strong>
+              class="userinput"><code>sudo apt install xtables-addons-common-dkms</code></strong>
 <code
               class="computeroutput">
 [...]
@@ -362,7 +364,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVA</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140667124689808"
+              id="idm140408379629680"
               class="indexterm"></a><div
               class="para">
 				Before DKMS, <span
@@ -374,9 +376,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Aplicación de un parche al núcleo</h3></div></div></div><a
-            id="idm140667124685424"
+            id="idm140408379625296"
             class="indexterm"></a><a
-            id="idm140667124684272"
+            id="idm140408379624144"
             class="indexterm"></a><div
             class="para">
 				Algunas funcionalidades no están incluidas en el núcleo estándar debido a falta de madurez o algún desacuerdo con los encargados del núcleo. Dichas funcionalidades pueden ser distribuidas como parches que cualquiera puede aplicar a las fuentes del núcleo.

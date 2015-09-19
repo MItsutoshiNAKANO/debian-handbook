@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.how-to-migrate"></a>3.2. Como Migrar</h2></div></div></div><a
-          id="idm139689831618144"
+          id="idm140625133586288"
           class="indexterm"></a><div
           class="para">
 			Para garantir a continuidade dos serviços, cada migração de computador deve ser planejada e executada de acordo com o plano. Este princípio se aplica independente do sistema operacional utilizado.
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689831616512"></a>3.2.1. Pesquisar e Identificar Serviços</h3></div></div></div><div
+                    id="idm140625127604368"></a>3.2.1. Pesquisar e Identificar Serviços</h3></div></div></div><div
             class="para">
 				Tão simples quanto parece, este passo é essencial. Um administrador sério sabe realmente quais são os principais papéis de cada servidor, mas estes papéis podem mudar, e as vezes usuários experientes podem ter instalado serviços "selvagens". Sabendo que eles existem irá pelo menos permitir que você decida o que fazer com eles, em vez de excluí-los ao acaso.
 			</div><div
@@ -86,12 +86,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139689829667184"></a>3.2.1.1. Rede e Processos</h4></div></div></div><a
-              id="idm139689829666384"
+                      id="idm140625127601888"></a>3.2.1.1. Rede e Processos</h4></div></div></div><a
+              id="idm140625127601088"
               class="indexterm"></a><div
               class="para">
-					The <code
-                class="command">nmap</code> tool (in the package with the same name) will quickly identify Internet services hosted by a network connected machine without even requiring to log in to it. Simply call the following command on another machine connected to the same network:
+					A ferramenta <code
+                class="command">nmap</code> (contida no pacote de mesmo nome) irá rapidamente identificar Serviços de Internet hospedados por uma máquina conectada na rede sem a necessidade de se logar. Simplesmente chame o seguinte comando em outra máquina conectada na mesma rede:
 				</div><pre
               class="screen">
 <code
@@ -109,8 +109,8 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
-                          class="emphasis"><em>ALTERNATIVO</em></span> Use <code
-                          class="command">netstat</code> para encontrar a lista de serviços disponíveis.</strong></p></div></div></div><div
+                          class="emphasis"><em>ALTERNATIVA</em></span> Use o <code
+                          class="command">netstat</code> para encontrar a lista de serviços disponíveis</strong></p></div></div></div><div
                 class="para">
 					Em uma máquina Linux, o comando <code
                   class="command">netstat -tupan</code> irá exibir a lista de sessões TCP ativas ou pendentes, bem como portas UDP em que processos em execução estão ouvindo. Isto facilita a identificação de serviços oferecidos na rede.
@@ -144,7 +144,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689829354432"></a>3.2.2. Fazendo Backup da Configuração</h3></div></div></div><div
+                    id="idm140625132244512"></a>3.2.2. Fazendo Backup da Configuração</h3></div></div></div><div
             class="para">
 				É sábio manter a configuração de cada serviço identificado para poder instalar o equivalente no servidor atualizado. O mínimo é fazer uma cópia de segurança dos arquivos de configuração.
 			</div><div
@@ -158,7 +158,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
 				Para serviços de gestão de dados (como em bancos de dados), é fortemente recomendado exportar os dados para um formato padrão que seja facilmente importado pelo novo software. Tal formato é usualmente em modo texto e documentado; ele pode ser, por exemplo, um dump SQL para um banco de dados, ou um arquivo LDIF para um servidor LDAP.
 			</div><div
             class="figure"><a
-              id="idm139689829350192"></a><div
+              id="idm140625132240272"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/existing-setup-2.png"
@@ -170,12 +170,12 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689829346432"></a>3.2.3. Assumindo um servidor Debian existente</h3></div></div></div><a
-            id="idm139689829345664"
+                    id="idm140625132236512"></a>3.2.3. Assumindo um servidor Debian existente</h3></div></div></div><a
+            id="idm140625132235744"
             class="indexterm"></a><a
-            id="idm139689829344736"
+            id="idm140625132234816"
             class="indexterm"></a><a
-            id="idm139689829343808"
+            id="idm140625132233888"
             class="indexterm"></a><div
             class="para">
 				Para assumir efetivamente sua manutenção, deve se analisar uma máquina que já esteja rodando o Debian.
@@ -193,9 +193,9 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
               class="command">aptitude</code> pode também ser usado para estas tarefas, embora de uma maneira menos sistemática.
 			</div><div
             class="para">
-				A glance at the <code
-              class="filename">/etc/apt/sources.list</code> file (and <code
-              class="filename">/etc/apt/sources.list.d/</code> directory) will show where the installed Debian packages likely came from. If many unknown sources appear, the administrator may choose to completely reinstall the computer's system to ensure optimal compatibility with the software provided by Debian.
+				Uma olhada no arquivo <code
+              class="filename">/etc/apt/sources.list</code> (e no diretório <code
+              class="filename">/etc/apt/sources.list.d/</code>) mostrará de onde os pacotes debian instalados costumam vir. Se muitas fontes desconhecidas aparecem, o administrador pode escolher reinstalar o sistema do computador para garantir compatibilidade ótima com o software fornecido com o Debian.
 			</div><div
             class="para">
 				O arquivo <code
@@ -226,11 +226,11 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689828199952"></a>3.2.4. Instalando o Debian</h3></div></div></div><div
+                    id="idm140625115992336"></a>3.2.4. Instalando o Debian</h3></div></div></div><div
             class="para">
 				Com toda a informação no servidor atual agora conhecida, podemos desligá-lo e começar a instalar o Debian nele.
 			</div><a
-            id="idm139689828198560"
+            id="idm140625115990944"
             class="indexterm"></a><div
             class="para">
 				Para escolher a versão apropriada, devemos conhecer a arquitetura do computador. Se for um PC relativamente novo, é provável que seja um amd64 (PCs mais antigos normalmente são i386). Caso contrário, podemos restringir as possibilidades de acordo com o sistema usado anteriormente.
@@ -251,9 +251,9 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
               class="titlepage"><div><div><p
                     class="title"><strong>o <span
                         class="emphasis"><em>HARDWARE</em></span> dos PCs de 64 bit vs 32 bit</strong></p></div></div></div><a
-              id="idm139689825054160"
+              id="idm140625132865040"
               class="indexterm"></a><a
-              id="idm139689825053200"
+              id="idm140625132864080"
               class="indexterm"></a><div
               class="para">
 				Computadores mais novos tem processadores Intel ou AMD de 64 bits, compatíveis com os antigos processadores de 32 bits; o software compilado para arquitetura “i386” então funciona. Por outro lado, este modo de compatibilidade não explora completamente as capacidades destes novos processadores. É por isto que o Debian fornece a arquitetura amd64, que funciona com chips AMD recentes. Assim como processadores “em64t” da Intel (incluindo a maioria da série Core), que são muito similares aos processadores AMD64.
@@ -261,19 +261,19 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds</code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139689825050928"></a>3.2.5. Instalando e Configurando os Serviços Selecionados</h3></div></div></div><div
+                    id="idm140625132861808"></a>3.2.5. Instalando e Configurando os Serviços Selecionados</h3></div></div></div><div
             class="para">
-				Once Debian is installed, we must install and configure one by one all of the services that this computer must host. The new configuration must take into consideration the prior one in order to ensure a smooth transition. All the information collected in the first two steps will be useful to successfully complete this part.
+				Depois do Debian instalado, devemos instalar e configurar um a um os serviços que o computador vai hospedar. A nova configuração deve levar em consideração a anterior para garantir uma transição suave. Toda a informação coletada nos primeiros dois passos serão úteis para completar com sucesso esta parte.
 			</div><div
             class="figure"><a
-              id="idm139689825049360"></a><div
+              id="idm140625132860256"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/existing-setup-4.png"
                   alt="Instalar os serviços selecionados" /></div></div><p
               class="title"><strong>Figura 3.3. Instalar os serviços selecionados</strong></p></div><div
             class="para">
-				Prior to jumping into this exercise with both feet, it is strongly recommended that you read the remainder of this book. After that you will have a more precise understanding of how to configure the expected services.
+				Antes de pular de cabeça neste exercício, é fortemente recomendado quevocê leia o restante deste livro. Depois disto, você terá um conhecimento mais preciso de como configurar os serviços esperados.
 			</div><div
             class="para">
 			</div></div></div><ul

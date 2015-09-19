@@ -79,13 +79,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="para">
 				<a
-              id="idm140241665233200"
+              id="idm139729275958736"
               class="indexterm"></a> <a
-              id="idm140241665232400"
+              id="idm139729275957936"
               class="indexterm"></a> <a
-              id="idm140241665231600"
+              id="idm139729275957136"
               class="indexterm"></a> <a
-              id="idm140241665230800"
+              id="idm139729275956336"
               class="indexterm"></a> تُصدِّر النواة العديد من التفاصيل عن العتاد الذي تعرفت عليه من خلال نظامي الملفات الوهميين <code
               class="filename">/proc/</code> و <code
               class="filename">/sys/</code>. تُلَخِّص العديد من الأدوات هذه التفاصيل. من بينها، <code
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">pcmciautils</span>) التي تسرد بطاقات PCMCIA. هذه الأدوات مفيدة جداً للتعرف على الطراز الدقيق للجهاز. بعد ذلك يمكن البحث في الوب بدقة أعلى، وبالتالي، الحصول على وثائق ذات صلة أكثر.
 			</div><div
             class="example"><a
-              id="idm140241665225088"></a><p
+              id="idm139729275950624"></a><p
               class="title"><strong>مثال B.1. مثال عن المعلومات التي يقدمها الأمر <code
                   class="command">lspci</code> والأمر <code
                   class="command">lsusb</code></strong></p><div
@@ -149,9 +149,9 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.filesystems"></a>B.4.2. نظم الملفات</h3></div></div></div><a
-            id="idm140241665211424"
+            id="idm139729275936960"
             class="indexterm"></a><a
-            id="idm140241665210464"
+            id="idm139729275936000"
             class="indexterm"></a><div
             class="para">
 				نظم الملفات هي إحدى أهم مظاهر النواة. تدمج النظم المشابهة لنظام يونكس جميع أجهزة تخزين الملفات في شجرة واحدة، والتي تسمح للمستخدمين (والتطبيقات) بالوصول إلى البيانات ببساطة بمعرفة مكانها ضمن تلك الشجرة.
@@ -170,16 +170,15 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="literal">home</code> الموجود في الجذر. تترجم النواة بين نظام التسمية هذا وبين نظام التخزين الفعلي الفيزيائي على القرص.
 			</div><div
             class="para">
-				بعكس نظم التشغيل الأخرى، توجد شجرة ملفات واحدة فقط، ويمكن لها أن تضم بيانات من أقراص متعددة. يستخدم أحد هذه الأقراص كجذر، والبقية ”تُربط mount“ بمجلدات في الشجرة (اسم الأمر في يونكس هو <code
-              class="command">mount</code>)؛ تتوفر هذه الأقراص الأخرى بعدئذ تحت ”نقاط الربط mount points“ هذه. يسمح هذا بتخزين مجلدات بيوت المستخدمين (المخزنة ضمن مجلد <code
-              class="filename">/home/</code> تقليديًا) على قرص ثان، الذي سيحوي مجلدات <code
-              class="literal">rhertzog</code> و <code
-              class="literal">rmas</code>. بمجرد ربط القرص مع <code
-              class="filename">/home/</code>، تصبح هذه المجلدات متاحة للوصول من أماكنها المعتادة، وتبقى المسارات مثل <code
-              dir="ltr"
-              class="filename">/home/rmas/Desktop/hello.txt</code> صالحة.
+				Unlike other systems, there is only one such hierarchy, and it can integrate data from several disks. One of these disks is used as the root, and the others are “mounted” on directories in the hierarchy (the Unix command is called <code
+              class="command">mount</code>); these other disks are then available under these “mount points”. This allows storing users' home directories (traditionally stored within <code
+              class="filename">/home/</code>) on a second hard disk, which will contain the <code
+              class="literal">rhertzog</code> and <code
+              class="literal">rmas</code> directories. Once the disk is mounted on <code
+              class="filename">/home/</code>, these directories become accessible at their usual locations, and paths such as <code
+              class="filename">/home/rmas/Desktop/hello.txt</code> keep working.
 			</div><a
-            id="idm140241665199152"
+            id="idm139729275925200"
             class="indexterm"></a><div
             class="para">
 				There are many filesystem formats, corresponding to many ways of physically storing data on disks. The most widely known are <span
@@ -207,7 +206,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-management"></a>B.4.4. إدارة العمليات</h3></div></div></div><a
-            id="idm140241665188128"
+            id="idm139729275914176"
             class="indexterm"></a><div
             class="para">
 				العملية هي نسخة فعالة من البرنامج. تحتاج كل عملية إلى ذاكرة لتخزين كُلٍّ من البرنامج نفسه والبيانات التي يعمل عليها. النواة مسؤولة عن إنشاء وتتبع العمليات. عند تشغيل برنامج، تخصص له النواة جزءًا من الذاكرة، ثم تُحمِّل الشفرة التنفيذية من نظام الملفات إليه، بعدها تبدأ تشغيل الشِّفرة. تحتفظ النواة بمعلومات عن هذه العملية، أكثر هذه المعلومات بيانًا للعيان هو رقم تعريف العملية الذي يعرف بالرمز <span
@@ -215,7 +214,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="emphasis"><em>مُعرِّف العملية process identifier</em></span>).
 			</div><div
             class="para">
-				Unix-like kernels (including Linux), like most other modern operating systems, are capable of “multi-tasking”. In other words, they allow running many processes “at the same time”. There's actually only one running process at any one time, but the kernel cuts time into small slices and runs each process in turn. Since these time slices are very short (in the millisecond range), they create the illusion of processes running in parallel, although they're actually only active during some time intervals and idle the rest of the time. The kernel's job is to adjust its scheduling mechanisms to keep that illusion, while maximizing the global system performance. If the time slices are too long, the application may not appear as responsive as desired. Too short, and the system loses time switching tasks too frequently. These decisions can be tweaked with process priorities. High-priority processes will run for longer and with more frequent time slices than low-priority processes.
+				Unix-like kernels (including Linux), like most other modern operating systems, are capable of “multi-tasking”. In other words, they allow running many processes “at the same time”. There is actually only one running process at any one time, but the kernel cuts time into small slices and runs each process in turn. Since these time slices are very short (in the millisecond range), they create the illusion of processes running in parallel, although they are actually only active during some time intervals and idle the rest of the time. The kernel's job is to adjust its scheduling mechanisms to keep that illusion, while maximizing the global system performance. If the time slices are too long, the application may not appear as responsive as desired. Too short, and the system loses time switching tasks too frequently. These decisions can be tweaked with process priorities. High-priority processes will run for longer and with more frequent time slices than low-priority processes.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -233,7 +232,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
                   class="title"><a
                     id="sect.permissions"></a>B.4.5. إدارة الصلاحيات</h3></div></div></div><div
             class="para">
-				Unix-like systems are also multi-user. They provide a rights management system that supports separate users and groups; it also allows control over actions based on permissions. The kernel manages data for each process, allowing it to control permissions. Most of the time, a process is identified by the user who started the process. That process is only permitted to take those actions available to its owner. For instance, trying to open a file requires the kernel to check the process identity against access permissions (for more details on this particular example, see <a
+				Unix-like systems are also multi-user. They provide a rights management system that supports separate users and groups; it also allows control over actions based on permissions. The kernel manages data for each process, allowing it to control permissions. Most of the time, a process is identified by the user who started it. That process is only permitted to take those actions available to its owner. For instance, trying to open a file requires the kernel to check the process identity against access permissions (for more details on this particular example, see <a
               class="xref"
               href="sect.rights-management.html">قسم 9.3, “إدارة الصلاحيات”</a>).
 			</div></div></div><ul

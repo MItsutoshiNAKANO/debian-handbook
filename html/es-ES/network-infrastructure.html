@@ -131,17 +131,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 			Una puerta de enlace es un sistema que enlaza varias redes. Este término usualmente se refiere al «punto de salida» de una red local en el camino obligatorio hacia las direcciones IP externas. La puerta de enlace está conectada a cada una de las redes que enlaza y actúa como router para transmitir paquetes IP entre sus varias interfaces.
 		</div><a
-            id="idm140667131162992"
+            id="idm140408385344896"
             class="indexterm"></a><a
-            id="idm140667144585344"
+            id="idm140408389166480"
             class="indexterm"></a><a
-            id="idm140667130780416"
+            id="idm140408400569664"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Paquete IP</strong></p></div></div></div><a
-              id="idm140667132261392"
+              id="idm140408397961456"
               class="indexterm"></a><div
               class="para">
 			La mayoría de las redes hoy en día utilizan el protocolo IP (protocolo de Internet: «<span
@@ -152,13 +152,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> TCP/UDP</strong></p></div></div></div><a
-              id="idm140667143766320"
+              id="idm140408395978976"
               class="indexterm"></a><a
-              id="idm140667133856608"
+              id="idm140408395977536"
               class="indexterm"></a><a
-              id="idm140667133855168"
+              id="idm140408395976096"
               class="indexterm"></a><a
-              id="idm140667133854208"
+              id="idm140408381044320"
               class="indexterm"></a><div
               class="para">
 			Muchos programas no gestionan los paquetes individuales por sí mismos aunque los datos que transmiten viajan por IP; generalmente utilizan TCP (protocolo de control de transmisión: «<span
@@ -181,15 +181,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			Cuando una red local utiliza un rango de direcciones privadas (no enrutables en Internet), la puerta de enlace necesita implementar <span
               class="emphasis"><em>enmascarado de dirección</em></span> («address masquerading») para que los equipos en la red puedan comunicarse con el mundo exterior. La operación de enmascarado es un tipo de proxy que funciona a nivel de red: se reemplaza cada conexión saliente de una máquina interna con una conexión desde la puerta de enlace misma (ya que la puerta de enlace tiene una dirección externa y enrutable), los datos que pasan a través de la conexión enmascarada son enviados a la nueva conexión y los datos recibidos en respuesta son enviados a través de la conexión enmascarada a la máquina interna. La puerta de enlace utiliza un rango de puertos TCP dedicados para este propósito, generalmente con números muy altos (mayores a 60000). Cada conexión que proviene de una máquina interna parece, para el mundo exterior, una conexión que proviene de uno de esos puertos reservados.
 		</div><a
-            id="idm140667144156080"
+            id="idm140408385839904"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> Rango de direcciones privadas</strong></p></div></div></div><a
-              id="idm140667144154032"
+              id="idm140408385837856"
               class="indexterm"></a><a
-              id="idm140667144152592"
+              id="idm140408385836416"
               class="indexterm"></a><div
               class="para">
 			El RFC 1918 define tres rangos de direcciones IPv4 que no deben ser viables en Internet sino sólo utilizadas en redes locales. El primero, <code
@@ -213,23 +213,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>NAT de origen</em></span> (SNAT), del que el <span
               class="emphasis"><em>enmascarado</em></span> es un caso particular; SNAT modifica la dirección IP de origen (y/o el puerto TCP o UDP) de una conexión (generalmente) saliente. En lo que respecta a DNAT, todos los paquetes en la conexión son gestionados de forma apropiada por el mecanismo de seguimiento de conexiones. Sepa que NAT sólo es relevante para IPv4 y su espacio de direcciones limitado; en IPv6, la amplia disponibilidad de direcciones reduce enormemente la utilidad de NAT permitiendo que todas las direcciones «internas» sean enrutables directamente en Internet (esto no implica que se pueda acceder a las máquinas internas ya que los firewalls intermedios puede filtrar el tráfico).
 		</div><a
-            id="idm140667126666368"
+            id="idm140408395967744"
             class="indexterm"></a><a
-            id="idm140667126665408"
+            id="idm140408395966784"
             class="indexterm"></a><a
-            id="idm140667126664000"
+            id="idm140408395965376"
             class="indexterm"></a><a
-            id="idm140667126663040"
+            id="idm140408395964416"
             class="indexterm"></a><a
-            id="idm140667126662080"
+            id="idm140408395963456"
             class="indexterm"></a><a
-            id="idm140667126661120"
+            id="idm140408395962496"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Redirección de puertos</strong></p></div></div></div><a
-              id="idm140667126659072"
+              id="idm140408395960448"
               class="indexterm"></a><div
               class="para">
 			Una aplicación concreta de DNAT es <span
@@ -261,8 +261,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="programlisting">
 net.ipv4.conf.default.forwarding = 1
 net.ipv4.conf.default.rp_filter = 1
-net.ipv4.tcp_syncookies = 1
-</pre></div></div><div
+net.ipv4.tcp_syncookies = 1</pre></div></div><div
             class="para">
 			Puede conseguir el mismo efecto para IPv6 simplemente reemplazando <code
               class="literal">ipv4</code> con <code

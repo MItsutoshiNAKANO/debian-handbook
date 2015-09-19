@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.ftp-file-server"></a>11.3. مخدم الملفات FTP</h2></div></div></div><a
-          id="idm140241670446000"
+          id="idm139729283651184"
           class="indexterm"></a><div
           class="para">
 			FTP‏ (<span
@@ -89,17 +89,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="pkg pkg">pyftpd</span> وغيرها). اختار مديرو النظم في شركة فلكوت <span
             class="pkg pkg">vsftpd</span> لأنهم يستخدمون مخدم FTP لتوزيع بضعة ملفات فقط (من ضمنها مستودع لحزم دبيان)؛ وبما أنهم لا يحتاجون لأي مزايا متقدمة، فقد اختاروا التركيز على النواحي الأمنية.
 		</div><a
-          id="idm140241670436592"
+          id="idm139729283641776"
           class="indexterm"></a><div
           class="para">
-			يؤدي تثبيت الحزمة لإنشاء المستخدم <code
-            class="literal">ftp</code> على النظام. يستخدم هذا الحساب دوماً مع اتصالات FTP المجهولة، ويعتبر بيته (<code
-            class="filename">/srv/ftp/</code>) جذراً لشجرة الملفات المتاحة للمستخدمين المتصلين بهذه الخدمة. الإعدادات الافتراضية (في <code
-            dir="ltr"
-            class="filename">/etc/vsftpd.conf</code>) صارمة جداً: فلا تسمح بالوصول المجهول إلا للقراءة فقط (لأن الخيارين <code
-            class="literal">write_enable</code> و<code
-            class="literal">anon_upload_enable</code> معطّلين)، ولا يستطيع المستخدمون المحليون الاتصال باستخدام أسمائهم وكلمات سرهم المعتادة للوصول إلى ملفاتهم الشخصية (بسبب خيار <code
-            class="literal">local_enable</code>). لكن هذا الإعداد الافتراضي مناسب جداً لاحتياجات شركة فلكوت.
+			Installing the package creates an <code
+            class="literal">ftp</code> system user. This account is always used for anonymous FTP connections, and its home directory (<code
+            class="filename">/srv/ftp/</code>) is the root of the tree made available to users connecting to this service. The default configuration (in <code
+            class="filename">/etc/vsftpd.conf</code>) requires some changes to cater to the simple need of making big files available for public downloads: anonymous access needs to be enabled (<code
+            class="literal">anonymous_enable=YES</code>) and read-only access of local users needs to be disabled (<code
+            class="literal">local_enable=NO</code>). The latter is particularly important since the FTP protocol doesn't use any form of encryption and the user password could be intercepted over the wire.
 		</div></div><ul
         class="docnav"><li
           class="previous"><a

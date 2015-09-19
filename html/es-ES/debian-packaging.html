@@ -28,7 +28,7 @@
         title="El libro del administrador de Debian" /><link
         rel="prev"
         href="sect.dealing-with-compromised-machine.html"
-        title="14.6. Tratamiento de una máquina comprometida" /><link
+        title="14.7. Tratamiento de una máquina comprometida" /><link
         rel="next"
         href="sect.building-first-package.html"
         title="15.2. Creación de su primer paquete" /><link
@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. Recompilación de un paquete desde sus fuentes</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140667145134240">15.1.1. Obtención de las fuentes</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140408386291632">15.1.1. Obtención de las fuentes</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140667124044128">15.1.2. Realización de cambios</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140408379129216">15.1.2. Realización de cambios</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140667123213136">15.1.3. Inicio de la recompilación</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140408376585680">15.1.3. Inicio de la recompilación</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. Creación de su primer paquete</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140667123404976">15.2.1. Metapaquetes o paquetes falsos</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140408380082192">15.2.1. Metapaquetes o paquetes falsos</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140667122723744">15.2.2. Simple compendio de archivos</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140408377684496">15.2.2. Simple compendio de archivos</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. Creación de un repositorio de paquetes para APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. Cómo convertirse en un encargado de paquetes</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140667121480128">15.4.1. Aprendizaje de creación de paquetes</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140408377978000">15.4.1. Aprendizaje de creación de paquetes</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140667121419792">15.4.2. Proceso de aceptación</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140408377917664">15.4.2. Proceso de aceptación</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		Es muy común para un administrador Debian que gestiona diariamente paquetes Debian finalmente sentir la necesidad de crear sus propios paquetes o modificar un paquete existente. Este capítulo pretende dar respuesta a las preguntas más comunes en este campo y proporcionar los elementos necesarios para aprovechar lo mejor posible la infraestructura de Debian. Con un poco de suerte, después de probar con paquetes locales, incluso puede sentir la necesidad de ir más allá y ¡unirse al proyecto Debian en sí!
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span> distribution; this operation is called “backporting”. As usual, care should be taken, before undertaking such a task, to check whether it has been done already — a quick look on the Debian Package Tracker for that package will reveal that information. <div
               class="url">→ <a
                 href="https://tracker.debian.org/">https://tracker.debian.org/</a></div> <a
-              id="idm140667144615008"
+              id="idm140408386341296"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140667145134240"></a>15.1.1. Obtención de las fuentes</h3></div></div></div><div
+                      id="idm140408386291632"></a>15.1.1. Obtención de las fuentes</h3></div></div></div><div
               class="para">
 				Rebuilding a Debian package starts with getting its source code. The easiest way is to use the <code
                 class="command">apt-get source <em
@@ -151,24 +151,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140667124044128"></a>15.1.2. Realización de cambios</h3></div></div></div><div
+                      id="idm140408379129216"></a>15.1.2. Realización de cambios</h3></div></div></div><div
               class="para">
-				The source of the package is now available in a directory named after the source package and its version (for instance, <span
-                class="emphasis"><em>samba-4.1.17+dfsg</em></span>); this is where we'll work on our local changes.
+				Ahora tiene las fuentes del paquete disponibles en un directorio cuyo nombre coincide con el paquete fuente y su versión (por ejemplo: <span
+                class="emphasis"><em>samba-4.1.17+dfsg</em></span>); allí es donde trabajaremos en nuestros cambios locales.
 			</div><div
               class="para">
-				The first thing to do is to change the package version number, so that the rebuilt packages can be distinguished from the original packages provided by Debian. Assuming the current version is <code
-                class="literal">2:4.1.17+dfsg-2</code>, we can create version <code
-                class="literal">2:4.1.17+dfsg-2falcot1</code>, which clearly indicates the origin of the package. This makes the package version number higher than the one provided by Debian, so that the package will easily install as an update to the original package. Such a change is best effected with the <code
-                class="command">dch</code> command (<span
-                class="emphasis"><em>Debian CHangelog</em></span>) from the <span
-                class="pkg pkg">devscripts</span> package, with an command such as <code
-                class="command">dch --local falcot</code>. This invokes a text editor (<code
-                class="command">sensible-editor</code> — this should be your favorite editor if it is mentioned in the <code
-                class="varname">VISUAL</code> or <code
-                class="varname">EDITOR</code> environment variables, and the default editor otherwise) to allow documenting the differences brought by this rebuild. This editor shows us that <code
-                class="command">dch</code> really did change the <code
-                class="filename">debian/changelog</code> file.
+				Lo primero que debemos hacer es cambiar el número de versión del paquete para que podamos distinguir el paquete recompilado del paquete original que provee Debian. Si asumimos que la versión actual es <code
+                class="literal">2:4.1.17+dfsg-2</code> podemos crear la versión <code
+                class="literal">2:4.1.16+dfsg2falcot1</code>, que indica claramente el origen del paquete. Esto además hace que el número de versión del paquete sea mayor al del que provee Debian para que el paquete se instalará fácilmente como una actualización al paquete original. La mejor forma de realizar dicho cambio es con el programa <code
+                class="command">dch</code> (por <span
+                class="emphasis"><em>cambios Debian</em></span>: «Debian CHangelog») del paquete <span
+                class="pkg pkg">devscripts</span> ejecutando algo similar a <code
+                class="command">dch --local falcot1</code>. Esto invoca un editor de texto (<code
+                class="command">sensible-editor</code> — este debería ser tu editor favorito si es mencionado en las variables de entorno <code
+                class="varname">VISUAL</code> o <code
+                class="varname">EDITOR</code> o el editor predeterminado de lo contrario) que nos permitirá documentar las diferencias introducidas en esta recompilación. Este editor nos mostrará que <code
+                class="command">dch</code> realmente cambió el archivo <code
+                class="filename">debian/changelog</code>.
 			</div><div
               class="para">
 				When a change in build options is required, the changes need to be made in <code
@@ -197,7 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>SUGERENCIA</em></span> Instalación de <code
                           class="literal">Build-Depends</code></strong></p></div></div></div><a
-                id="idm140667124054640"
+                id="idm140408386922816"
                 class="indexterm"></a><div
                 class="para">
 				<code
@@ -211,14 +211,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140667123213136"></a>15.1.3. Inicio de la recompilación</h3></div></div></div><div
+                      id="idm140408376585680"></a>15.1.3. Inicio de la recompilación</h3></div></div></div><div
               class="para">
 				Cuando aplicamos los cambios necesarios a las fuentes, podemos comenzar la generación del paquete binario (archivo <code
                 class="filename">.deb</code>). El programa <code
                 class="command">dpkg-buildpackage</code> gestiona todo el proceso.
 			</div><div
               class="example"><a
-                id="idm140667123210848"></a><p
+                id="idm140408376583392"></a><p
                 class="title"><strong>Ejemplo 15.1. Recompilación del paquete</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -265,7 +265,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>VISTA RÁPIDA</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140667123413056"
+                id="idm140408380090272"
                 class="indexterm"></a><div
                 class="para">
 				El programa <code
@@ -284,7 +284,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.dealing-with-compromised-machine.html"><strong>Anterior</strong>14.6. Tratamiento de una máquina comprometida</a></li><li
+            href="sect.dealing-with-compromised-machine.html"><strong>Anterior</strong>14.7. Tratamiento de una máquina comprometida</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Subir</strong></a></li><li

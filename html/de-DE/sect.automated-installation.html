@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automated-installation"></a>12.3. Automatische Installation</h2></div></div></div><a
-          id="idm140016432633456"
+          id="idm140510220836400"
           class="indexterm"></a><a
-          id="idm140016432632688"
+          id="idm140510220835440"
           class="indexterm"></a><div
           class="para">
 			Die Falcot Corp. Administratoren benötigen, wie viele Administratoren großer IT-Dienste, Werkzeuge, um ihre neuen Rechner schnell aufzusetzen (oder wieder aufzusetzen), und das möglichst automatisch.
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fai"></a>12.3.1. Fully Automatic Installer (FAI)</h3></div></div></div><a
-            id="idm140016432624240"
+            id="idm140510220826096"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -192,9 +192,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.d-i-preseeding"></a>12.3.2. Das Debian-Installationsprogramm voreinstellen</h3></div></div></div><a
-            id="idm140016432598800"
+            id="idm140510196857168"
             class="indexterm"></a><a
-            id="idm140016432598032"
+            id="idm140510196856400"
             class="indexterm"></a><div
             class="para">
 				Letzten Endes sollte das beste Werkzeug zur Installation von Debian-Systemen logischerweise das offizielle Debian-Installationsprogramm sein. Deshalb wurde das Debian-Installationsprogramm von Anfang an für den automatischen Einsatz konzipiert, indem es sich die Infrastruktur zunutze macht, die durch <span
@@ -205,7 +205,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>WEITERE SCHRITTE</em></span> Debconf mit einer zentralisierten Datenbank</strong></p></div></div></div><a
-              id="idm140016432594288"
+              id="idm140510196852656"
               class="indexterm"></a><div
               class="para">
 				Preseeding allows to provide a set of answers to Debconf questions at installation time, but these answers are static and do not evolve as time passes. Since already-installed machines may need upgrading, and new answers may become required, the <code
@@ -217,7 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140016432590240"></a>12.3.2.1. Eine Preseed-Datei verwenden</h4></div></div></div><div
+                      id="idm140510196848688"></a>12.3.2.1. Eine Preseed-Datei verwenden</h4></div></div></div><div
               class="para">
 					Es gibt mehrere Orte, an denen das Installationsprogramm eine Preseed-Datei erhalten kann:
 				</div><div
@@ -249,7 +249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140016432581312"></a>12.3.2.2. Eine Preseed-Datei erstellen</h4></div></div></div><div
+                      id="idm140510196840016"></a>12.3.2.2. Eine Preseed-Datei erstellen</h4></div></div></div><div
               class="para">
 					Eine Preseed-Datei ist eine reine Textdatei, in der jede Zeile die Antwort auf eine Debconf-Frage enthält. Eine Zeile ist über vier Felder aufgeteilt, die durch Leerraum (Leerzeichen oder Tabulatoren) getrennt sind, wie zum Beispiel in <code
                 class="literal">d-i mirror/suite string stable</code>:
@@ -292,14 +292,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140016432569952"></a>12.3.2.3. Ein angepasstes Boot-Medium erstellen</h4></div></div></div><div
+                      id="idm140510196828816"></a>12.3.2.3. Ein angepasstes Boot-Medium erstellen</h4></div></div></div><div
               class="para">
 					Zwar ist es gut zu wissen, wo die Preseed-Datei gespeichert werden sollte, aber der Ort ist nicht alles: man muss auf die eine oder andere Weise das Boot-Medium für die Installation anpassen, um die Boot-Parameter zu ändern und die Preseed-Datei hinzuzufügen.
 				</div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140016432568640"></a>12.3.2.3.1. Aus dem Netzwerk hochfahren</h5></div></div></div><div
+                        id="idm140510196827504"></a>12.3.2.3.1. Aus dem Netzwerk hochfahren</h5></div></div></div><div
                 class="para">
 						When a computer is booted from the network, the server sending the initialization elements also defines the boot parameters. Thus, the change needs to be made in the PXE configuration for the boot server; more specifically, in its <code
                   class="filename">/tftpboot/pxelinux.cfg/default</code> configuration file. Setting up network boot is a prerequisite; see the Installation Guide for details. <div
@@ -309,7 +309,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140016432565904"></a>12.3.2.3.2. Einen bootfähigen USB-Stick herstellen</h5></div></div></div><div
+                        id="idm140510196824848"></a>12.3.2.3.2. Einen bootfähigen USB-Stick herstellen</h5></div></div></div><div
                 class="para">
 						Nachdem ein bootfähiger Stick hergestellt worden ist (siehe <a
                   class="xref"
@@ -329,7 +329,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="filename">/media/usbdisk/syslinux.cfg</code> editieren und die erforderlichen Boot-Parameter hinzufügen (siehe unten stehendes Beispiel).
 							</div></li></ul></div><div
                 class="example"><a
-                  id="idm140016432561008"></a><p
+                  id="idm140510196820032"></a><p
                   class="title"><strong>Beispiel 12.2. syslinux.cfg-Datei und Preseeding-Parameter</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">default vmlinuz
@@ -338,8 +338,8 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140016432559568"></a>12.3.2.3.3. Ein CD-ROM-Abbild erstellen</h5></div></div></div><a
-                id="idm140016432558928"
+                        id="idm140510196818592"></a>12.3.2.3.3. Ein CD-ROM-Abbild erstellen</h5></div></div></div><a
+                id="idm140510196817952"
                 class="indexterm"></a><div
                 class="para">
 						Ein USB-Stick ist ein Lese- und Schreibmedium, von daher war es für uns einfach, auf ihm eine Datei hinzuzufügen und einige Parameter zu ändern. Im Falle einer CD-ROM ist dieser Vorgang komplizierter, da wir ein vollständiges ISO-Abbild neu erstellen müssen. Diese Aufgabe wird von <span
@@ -365,7 +365,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.simple-cdd"></a>12.3.3. Simple-CDD: die Komplettlösung</h3></div></div></div><a
-            id="idm140016432549328"
+            id="idm140510196808432"
             class="indexterm"></a><div
             class="para">
 				Um alle Erfordernisse zu erfüllen, die bei großen Verbreitungsaktionen auftreten, genügt es nicht, einfach eine Preseed-Datei zu verwenden. Obwohl es damit möglich ist, am Ende des normalen Installationsprozesses einige Skripten auszuführen, ist die Auswahl des zu installierenden Satzes von Paketen noch nicht sehr flexibel (im Grunde können nur „Aufgaben“ ausgewählt werden); wichtiger ist noch, dass so nur offizielle Debian-Pakete installiert werden können und lokal erstellte ausgeschlossen sind.
@@ -380,7 +380,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140016432545168"></a>12.3.3.1. Profile erstellen</h4></div></div></div><div
+                      id="idm140510196804272"></a>12.3.3.1. Profile erstellen</h4></div></div></div><div
               class="para">
 					Simple-CDD legt „Profile“ fest, die dem Konzept der „Klassen“ bei FAI entsprechen, und ein Rechner kann über mehrere Profile verfügen (die während der Installation bestimmt werden). Ein Profil wird durch einen Satz von Dateien namens <code
                 class="filename">profiles/<em
@@ -430,9 +430,9 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140016432532560"></a>12.3.3.2. <code
+                      id="idm140510196791840"></a>12.3.3.2. <code
                       class="command">build-simple-cdd</code> konfigurieren und benutzen</h4></div></div></div><a
-              id="idm140016432531664"
+              id="idm140510196790944"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -498,7 +498,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140016432514448"></a>12.3.3.3. Ein ISO-Abbild erzeugen</h4></div></div></div><div
+                      id="idm140510196773904"></a>12.3.3.3. Ein ISO-Abbild erzeugen</h4></div></div></div><div
               class="para">
 					Once we have written a configuration file and defined our profiles, the remaining step is to invoke <code
                 class="command">build-simple-cdd --conf simple-cdd.conf</code>. After a few minutes, we get the required image in <code

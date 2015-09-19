@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Configurando o carregador de boot (bootloader)</h2></div></div></div><a
-          id="idm139689823456384"
+          id="idm140625122366896"
           class="indexterm"></a><a
-          id="idm139689823454976"
+          id="idm140625122365488"
           class="indexterm"></a><div
           class="para">
 			Isso provavelmente já é funcional, mas é sempre bom saber configurar e instalar o carregador de inicialização em caso dele desaparecer da MBR (Master Boot Record). Isso pode ocorrer depois da instalação de outro sistema operacional, como o Windows. A seguinte informação pode também ajudar você a modificar a configuração do carregador de inicialização caso necessário.
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> Registro mestre de inicialização</strong></p></div></div></div><a
-            id="idm139689823452096"
+            id="idm140625122362608"
             class="indexterm"></a><a
-            id="idm139689823451136"
+            id="idm140625122361648"
             class="indexterm"></a><div
             class="para">
 			A MBR (Master Boot Record) ocupa os primeiros 512 bytes do primeiro disco rígido, e é a primeira coisa carregada pela BIOS para entregar o controle a um programa capaz de inicializar o sistema operacional desejado. Em geral, um carregador de inicialização fica instalado dentro da MBR, removendo seu conteúdo prévio.
@@ -109,9 +109,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/dev/</code> não precisa ser persistente e é portanto um sistema de arquivos em RAM que inicia vazio e contém apenas entradas relevantes.
 			</div><div
               class="para">
-				The kernel communicates lots of information about any newly added device and hands out a pair of major/minor numbers to identify it. With this <code
-                class="command">udevd</code> can create the special file under the name and with the permissions that it wants. It can also create aliases and perform additional actions (such as initialization or registration tasks). <code
-                class="command">udevd</code>'s behavior is driven by a large set of (customizable) rules.
+				O kernel comunica um monte de informação sobre qualquer novo dispositivo adicionado e define um par de números major/minor para identificá-lo. Com esse <code
+                class="command">udevd</code> é possível criar um arquivo especial sob o nome e com as permissões que ele quiser. Ele também pode criar apelidos(aliases) e realizar ações adicionais (tais como inicialização ou tarefas de registro). O comportamento do <code
+                class="command">udevd</code> é comandado por um grande conjunto de regras (customizáveis).
 			</div><div
               class="para">
 				Com nomes atribuídos dinamicamente, você pode assim manter um mesmo nome para um determinado dispositivo, independentemente do conector utilizado ou a ordem da conexão, o que é especialmente útil quando você usa vários periféricos USB. A primeira partição no primeiro disco rígido pode então ser chamada de <code
@@ -120,20 +120,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">udevd</code> pode ser configurado para automaticamente criar uma ligação simbólica.
 			</div><div
               class="para">
-				In ancient times, some kernel modules did automatically load when you tried to access the corresponding device file. This is no longer the case, and the peripheral's special file no longer exists prior to loading the module; this is no big deal, since most modules are loaded on boot thanks to automatic hardware detection. But for undetectable peripherals (such as very old disk drives or PS/2 mice), this doesn't work. Consider adding the modules, <code
+				Anteriormente, alguns módulos do kernel eram carregados automaticamente quando você tentava acessar o arquivo do dispositivo correspondente. Esse não é mais o caso, e o arquivo especial do periférico não mais existe antes do carregamento do módulo, o que não é um grande problema, já que a maioria dos módulos são carregados na inicialização, graças à detecção automática de hardware. Porém para periféricos não detectados (como drives de disco muito antigos ou mouse PS/2), isso não funciona. Considere adicionar os módulos, <code
                 class="literal">floppy</code>, <code
-                class="literal">psmouse</code> and <code
-                class="literal">mousedev</code> to <code
-                class="filename">/etc/modules</code> in order to force loading them on boot.
+                class="literal">psmouse</code> e <code
+                class="literal">mousedev</code> no <code
+                class="filename">/etc/modules</code> para forçar o carregamento deles na inicialização.
 			</div></div><a
-            id="idm139689844562032"
+            id="idm140625119986352"
             class="indexterm"></a><a
-            id="idm139689844561072"
+            id="idm140625119985392"
             class="indexterm"></a><div
             class="para">
-				Configuration of the bootloader must identify the different hard drives and their partitions. Linux uses “block” special files stored in the <code
-              class="filename">/dev/</code> directory, for this purpose. Since Debian <span
-              class="distribution distribution">Squeeze</span>, the naming scheme for hard drives has been unified by the Linux kernel, and all hard drives (IDE/PATA, SATA, SCSI, USB, IEEE 1394) are now represented by <code
+				A configuração do carregador de inicialização tem que identificar os diferentes discos rígidos e suas partições. O Linux usa arquivos especiais “block” armazenados no diretório <code
+              class="filename">/dev/</code>, para esse propósito. Desde o Debian <span
+              class="distribution distribution">Squeeze</span>, o esquema de nomeação para discos rígidos foi unificado pelo kernel Linux, e todos os discos rígidos (IDE/PATA, SATA, SCSI, USB, IEEE 1394) são agora representados por <code
               class="filename">/dev/sd*</code>.
 			</div><div
             class="para">
@@ -141,25 +141,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> é a primeira partição do primeiro disco, e <code
               class="filename">/dev/sdb3</code> é a terceira partição do segundo disco.
 			</div><a
-            id="idm139689844555712"
+            id="idm140625119979968"
             class="indexterm"></a><a
-            id="idm139689844554272"
+            id="idm140625119978528"
             class="indexterm"></a><a
-            id="idm139689844552832"
+            id="idm140625119977088"
             class="indexterm"></a><a
-            id="idm139689844551392"
+            id="idm140625119975648"
             class="indexterm"></a><div
             class="para">
-				The PC architecture (or “i386”, including its younger cousin “amd64”) has long been limited to using the “MS-DOS” partition table format, which only allows four “primary” partitions per disk. To go beyond this limitation under this scheme, one of them has to be created as an “extended” partition, and it can then contain additional “secondary” partitions. These secondary partitions are numbered from 5. Thus the first secondary partition could be <code
-              class="filename">/dev/sda5</code>, followed by <code
+				A arquitetura PC (ou “i386”, incluíndo seu primo mais moço "amd64") a muito tem sido limitada a usar o formato de tabela de partição "MS-DOS", que apenas permite quatro partições “primarias” por disco. Para ir além desta limitação, sob esse esquema, uma delas tem que ser criada como uma partição “estendida”, e assim conter partições “secundárias” adicionais. Essas partições secundárias são numeradas a partir de 5. Assim a primeira partição secundária poderia ser <code
+              class="filename">/dev/sda5</code>, seguida por <code
               class="filename">/dev/sda6</code>, etc.
 			</div><div
             class="para">
 				Another restriction of the MS-DOS partition table format is that it only allows disks up to 2 TiB in size, which is becoming a real problem with recent disks.
 			</div><a
-            id="idm139689844547408"
+            id="idm140625119971632"
             class="indexterm"></a><a
-            id="idm139689844545968"
+            id="idm140625119970224"
             class="indexterm"></a><div
             class="para">
 				A new partition table format called GPT loosens these constraints on the number of partitions (it allows up to 128 partitions when using standard settings) and on the size of the disks (up to 8 ZiB, which is more than 8 billion terabytes). If you intend to create many physical partitions on the same disk, you should therefore ensure that you are creating the partition table in the GPT format when partitioning your disk.
@@ -209,9 +209,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Configurando o LILO</h3></div></div></div><a
-            id="idm139689844535488"
+            id="idm140625119959744"
             class="indexterm"></a><a
-            id="idm139689844534528"
+            id="idm140625119958784"
             class="indexterm"></a><div
             class="para">
 				O <span
@@ -251,22 +251,21 @@ image=/vmlinuz.old
 
 # only for Linux/Windows dual boot
 other=/dev/sda1
-  label=Windows
-</pre></div></div></div><div
+  label=Windows</pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Configuração do GRUB 2</h3></div></div></div><a
-            id="idm139689844527184"
+            id="idm140625119951440"
             class="indexterm"></a><a
-            id="idm139689844526224"
+            id="idm140625119950480"
             class="indexterm"></a><div
             class="para">
 				<span
               class="emphasis"><em>GRUB</em></span> (GRand Unified Bootloader) é mais recente. Não é necessário invocá-lo após cada atualização do; o <span
               class="emphasis"><em>GRUB</em></span> sabe como ler o sistema de arquivos e achar a posição do kernel no disco por conta própria. Para instalá-lo na MBR do primeiro disco, simplesmente digite <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm139689844523264"
+              id="idm140625119947520"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -274,13 +273,13 @@ other=/dev/sda1
                     class="title"><strong><span
                         class="emphasis"><em>NOTA</em></span> Nomes dos discos para o GRUB</strong></p></div></div></div><div
               class="para">
-				GRUB can only identify hard drives based on information provided by the BIOS. <code
-                class="literal">(hd0)</code> corresponds to the first disk thus detected, <code
-                class="literal">(hd1)</code> the second, etc. In most cases, this order corresponds exactly to the usual order of disks under Linux, but problems can occur when you associate SCSI and IDE disks. GRUB stores correspondences that it detects in the file <code
-                class="filename">/boot/grub/device.map</code>. If you find errors there (because you know that your BIOS detects drives in a different order), correct them manually and run <code
-                class="command">grub-install</code> again. <code
-                class="command">grub-mkdevicemap</code> can help creating a <code
-                class="filename">device.map</code> file from which to start.
+				O GRUB pode identificar discos rígidos apenas com base em informações fornecidas pela BIOS. <code
+                class="literal">(hd0)</code> corresponde ao primeiro disco assim detectado, <code
+                class="literal">(hd1)</code> o segundo, etc. Na maioria dos casos, essa ordem corresponde exatamente a ordem usual dos discos sob o Linux, mas problemas podem ocorrer quando você associa discos SCSI e IDE. O GRUB armazena as correspondências que ele detecta no arquivo <code
+                class="filename">/boot/grub/device.map</code>. Se você encontrar erros lá (porquê você sabe que sua BIOS detecta drives em uma ordem diferente), corrija elas manualmente e execute <code
+                class="command">grub-install</code> novamente. O <code
+                class="command">grub-mkdevicemap</code> pode ajudar na criação de um arquivo <code
+                class="filename">device.map</code> a partir do qual se pode iniciar.
 			</div><div
               class="para">
 				As partições também tem um nome específico para o GRUB. Quando você usa partições “classical” no formato MS-DOS, a prrimeira partição no disco é rotulada como, <code
@@ -304,7 +303,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Para Computadores Macintosh (PowerPC): Configurando Yaboot</h3></div></div></div><a
-            id="idm139689844508736"
+            id="idm140625119932880"
             class="indexterm"></a><div
             class="para">
 				Yaboot é o carregador de boot usado por computadores Macintosh antigos que usam processadores PowerPC. Eles não iniciam como PCs, mas sim usando uma partição “bootstrap”, a partir da qual a BIOS (ou OpenFirmware) executa o carregador, e na qual o programa <code
@@ -317,7 +316,7 @@ other=/dev/sda1
 				Antes de executar o <code
               class="command">ybin</code>, você deve primeiro ter um <code
               class="filename">/etc/yaboot.conf</code> válido. O seguinte é um exemplo de uma configuração minimalista. <a
-              id="idm139689844503520"
+              id="idm140625119927664"
               class="indexterm"></a>
 			</div><div
             class="example"><a
@@ -325,39 +324,38 @@ other=/dev/sda1
               class="title"><strong>Exemplo 8.4. Arquivo de configuração Yaboot</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
-# partição bootstrap
+# bootstrap partition
 boot=/dev/sda2
-# o disco
+# the disk
 device=hd:
-# a partição Linux
+# the Linux partition
 partition=3
 root=/dev/sda3
-# inicializar após 3 segundos de inatividade
-# (tempo de espera é em décimos de segundos)
+# boot after 3 seconds of inactivity
+# (timeout is in tenths of seconds)
 timeout=30
 
 install=/usr/lib/yaboot/yaboot
 magicboot=/usr/lib/yaboot/ofboot
 enablecdboot
 
-# último kernel instalado
+# last kernel installed
 image=/vmlinux
         label=linux
         initrd=/initrd.img
         read-only
 
-# kernel antigo
+# old kernel
 image=/vmlinux.old
         label=old
         initrd=/initrd.img.old
         read-only
 
-# apenas para Linux/Mac OSX dual-boot
+# only for Linux/Mac OSX dual-boot
 macosx=/dev/sda5
 
-# bsd=/dev/sdaX e macos=/dev/sdaX
-# também são possíveis
-</pre></div></div></div></div><ul
+# bsd=/dev/sdaX and macos=/dev/sdaX
+# are also possible</pre></div></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

@@ -71,15 +71,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Samba は Linux 上で SMB プロトコル (「CIFS」としても知られています) を取り扱う一連のツールを指します。Windows はネットワーク共有と共有プリンタを使うために SMB プロトコルを使います。
 		</div><a
-          id="idm139657408835424"
+          id="idm140378076456064"
           class="indexterm"></a><a
-          id="idm139657408834656"
+          id="idm140378076455296"
           class="indexterm"></a><a
-          id="idm139657408833888"
+          id="idm140378076454528"
           class="indexterm"></a><a
-          id="idm139657408833120"
+          id="idm140378076453760"
           class="indexterm"></a><a
-          id="idm139657408832352"
+          id="idm140378076452992"
           class="indexterm"></a><div
           class="para">
 			さらに Samba は Windows ドメインコントローラとして振る舞うことも可能です。Samba は Linux サーバと Windows が実行されているオフィスデスクトップマシンを完璧に統合する卓越したツールです。
@@ -87,16 +87,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139657408830528"></a>11.5.1. Samba サーバ</h3></div></div></div><div
+                    id="idm140378076451168"></a>11.5.1. Samba サーバ</h3></div></div></div><div
             class="para">
 				<span
               class="pkg pkg">samba</span> パッケージには、Samba 4 の主要な 2 種類のサーバ <code
               class="command">smbd</code> と <code
               class="command">nmbd</code> が含まれます。
 			</div><a
-            id="idm139657408828112"
+            id="idm140378076448672"
             class="indexterm"></a><a
-            id="idm139657408827216"
+            id="idm140378076447776"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -105,9 +105,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Samba サーバは非常に細かく設定できますし、多目的に使えます。そして、全く異なる要求やネットワークアーキテクチャに応じて、さまざまな用途に使われます。本書では、Samba を主要なドメインコントローラとして使う用途に注目します。しかし、Samba をあるドメインの単純なサーバとして使ったり、主要なコントローラ (Windows サーバなど) への認証を代理するために使うことも可能です。
 			</div><a
-              id="idm139657408824480"
+              id="idm140378076445040"
               class="indexterm"></a><a
-              id="idm139657408823712"
+              id="idm140378076444272"
               class="indexterm"></a><div
               class="para">
 				<span
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Winbind を使うことで、システム管理者は Windows サーバを認証サーバとして使う選択肢を与えられます。Winbind は PAM と NSS をうまく統合します。このことにより、Windows ドメインの全ユーザが自動的にアカウントを取得できる Linux マシン群をセットアップすることが可能です。
 			</div><a
-              id="idm139657408819744"
+              id="idm140378076440208"
               class="indexterm"></a><div
               class="para">
 				より詳しい情報は <code
@@ -130,29 +130,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657408818080"></a>11.5.1.1. <code
+                      id="idm140378076438448"></a>11.5.1.1. <code
                       class="command">debconf</code> を使った設定</h4></div></div></div><div
               class="para">
-					このパッケージは最初のインストール時に尋ねた数個の Debconf 質問に対する回答に基づいた最低限の設定を行います。<code
-                class="command">dpkg-reconfigure samba-common samba</code> を使えば、後から各設定をやり直すことが可能です。
+					<span
+                class="pkg pkg">samba</span> パッケージは初回インストール時に最低限の設定を行いますが、設定を適用するには実際に <code
+                class="command">dpkg-reconfigure samba-common</code> を実行するべきです。
 				</div><div
               class="para">
-					最初の質問で、Samba サーバが所属するワークグループの名前を尋ねられます (われわれの場合、この質問に対する回答は <code
-                class="literal">FALCOTNET</code> です)。もう 1 つの質問で、パスワードを暗号化するか否かを尋ねられます。この質問には、暗号化するべきと答えます。なぜなら、最近の Windows クライアントはほとんど暗号化を要求するからです。加えて、パスワードの暗号化は安全性を高めます。パスワードの暗号化の欠点は、Samba パスワードを Unix パスワードと別に管理する必要がある点です。
+					最初の質問で、Samba サーバが所属するワークグループの名前を尋ねられます (Falcot Corp の場合、この質問に対する回答は <code
+                class="literal">FALCOTNET</code> です)。
 				</div><div
               class="para">
 					次の質問で、DHCP デーモンによって提供される情報を使って WINS サーバを識別するか否かを尋ねられます。Falcot Corp 管理者はこのオプションを拒否しました。なぜなら、管理者は Samba サーバ自体を WINS サーバとして利用する予定だからです。
 				</div><a
-              id="idm139657408814048"
+              id="idm140378076434320"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657408813152"></a>11.5.1.2. 手作業による設定</h4></div></div></div><div
+                      id="idm140378076433424"></a>11.5.1.2. 手作業による設定</h4></div></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139657408812512"></a>11.5.1.2.1. <code
+                        id="idm140378076432784"></a>11.5.1.2.1. <code
                         class="filename">smb.conf</code> の変更</h5></div></div></div><div
                 class="para">
 						Falcot の用途に対応させるためには、<code
@@ -167,9 +168,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 # Change this to the workgroup/NT-domain name your Samba server will part of
    workgroup = FALCOTNET
 
-# server string is the equivalent of the NT Description field
-   server string = %h server (Samba %v)
-
 # Windows Internet Name Serving Support Section:
 # WINS Support - Tells the NMBD component of Samba to enable its WINS Server
    wins support = yes <span
@@ -182,49 +180,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 
 ####### Authentication #######
 
+# Server role. Defines in which mode Samba will operate. Possible
+# values are "standalone server", "member server", "classic primary
+# domain controller", "classic backup domain controller", "active
+# directory domain controller". 
+#
+# Most people will want "standalone sever" or "member server".
+# Running as "active directory domain controller" will require first
+# running "samba-tool domain provision" to wipe databases and create a
+# new domain.
+   server role = standalone server
+
 # "security = user" is always a good idea. This will require a Unix account
-# in this server for every user accessing the server. See
-# /usr/share/doc/samba-doc/htmldocs/Samba3-HOWTO/ServerType.html 
-# in the samba-doc package for details.
+# in this server for every user accessing the server.
    security = user <span
                   id="smb.conf.security"><img
                     class="callout"
                     src="Common_Content/images/2.png"
                     alt="2" /></span>
 
-# You may wish to use password encryption.  See the section on
-# 'encrypt passwords' in the smb.conf(5) manpage before enabling.
-   encrypt passwords = true
-
-# If you are using encrypted passwords, Samba will need to know what
-# password database type you are using.
-   passdb backend = tdbsam
-
-[...]
-
-########## Printing ##########
-
-# If you want to automatically load your printer list rather
-# than setting them up individually then you'll need this
-   load printers = yes <span
-                  id="smb.conf.loadprinters"><img
-                    class="callout"
-                    src="Common_Content/images/3.png"
-                    alt="3" /></span>
-
-# lpr(ng) printing. You may wish to override the location of the
-# printcap file
-;   printing = bsd
-;   printcap name = /etc/printcap
-
-# CUPS printing.  See also the cupsaddsmb(8) manpage in the
-# cups-client package.
-   printing = cups <span
-                  id="smb.conf.printing"><img
-                    class="callout"
-                    src="Common_Content/images/4.png"
-                    alt="4" /></span>
-   printcap name = cups</pre><div
+[...]</pre><div
                 class="calloutlist"><table
                   border="0"
                   summary="Callout list"><tr><td
@@ -251,35 +226,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       align="left"><div
                         class="para">
 								これは security パラメータのデフォルト値です。しかしながら、security パラメータは Samba 設定の要ですから、明示的に指定することをお勧めします。各ユーザは、共有の種類に関わらず必ず共有にアクセスする前に認証を必要とします。
-							</div></td></tr><tr><td
-                      width="5%"
-                      valign="top"
-                      align="left"><p><a
-                          href="#smb.conf.loadprinters"><img
-                            class="callout"
-                            src="Common_Content/images/3.png"
-                            alt="3" /></a> </p></td><td
-                      valign="top"
-                      align="left"><div
-                        class="para">
-								Samba が CUPS 設定に存在するすべてのローカルプリンタを自動的に共有することを意味します。適切なセクションを追加すれば、これらのプリンタへのアクセスを制限することも可能です。
-							</div></td></tr><tr><td
-                      width="5%"
-                      valign="top"
-                      align="left"><p><a
-                          href="#smb.conf.printing"><img
-                            class="callout"
-                            src="Common_Content/images/4.png"
-                            alt="4" /></a> </p></td><td
-                      valign="top"
-                      align="left"><div
-                        class="para">
-								使用する印刷システムを指定します。われわれの場合、CUPS です。
 							</div></td></tr></table></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139657408801008"></a>11.5.1.2.2. ユーザの追加</h5></div></div></div><div
+                        id="idm140378076425024"></a>11.5.1.2.2. ユーザの追加</h5></div></div></div><div
                 class="para">
 						各ユーザはサーバにアカウントを必要とします。このため管理者は最初に Unix アカウントを作成し、そのアカウントを Samba のデータベースに登録する必要があります。Unix アカウントを作成する段階は通常通り行います (たとえば <code
                   class="command">adduser</code> を使います)。
@@ -301,13 +252,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139657408795408"></a>11.5.1.2.3. ドメインコントローラの切り替え</h5></div></div></div><div
+                        id="idm140378076419424"></a>11.5.1.2.3. ドメインコントローラの切り替え</h5></div></div></div><div
                 class="para">
 						この節では、Falcot 管理者がさらに行った設定について、説明しています。ここで Falcot 管理者は Samba サーバを調整し、ローミングプロファイルを提供するドメインコントローラにしています (こうすることで、接続したマシンに依存せずユーザは自分のデスクトップを見つけ出すことが可能です)。
 					</div><a
-                id="idm139657408793952"
+                id="idm140378076417968"
                 class="indexterm"></a><a
-                id="idm139657408793184"
+                id="idm140378076417200"
                 class="indexterm"></a><div
                 class="para">
 						最初に管理者は設定ファイルの <code
@@ -377,7 +328,7 @@ logon script = scripts/logon.bat <span
 								このスクリプトの中では、ネットワークドライブを自動作成したり、システム時間を同期するためのコマンドがよく使われます。
 							</div><div
                         class="example"><a
-                          id="idm139657408783600"></a><p
+                          id="idm140378076407616"></a><p
                           class="title"><strong>例11.28 <code
                               class="filename">logon.bat</code> ファイル</strong></p><div
                           class="example-contents"><pre
@@ -409,20 +360,20 @@ profile acls = Yes</pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139657408779056"></a>11.5.2. Samba クライアント</h3></div></div></div><div
+                    id="idm140378076403072"></a>11.5.2. Samba クライアント</h3></div></div></div><div
             class="para">
 				Samba のクライアント機能を使うことで、Linux マシンは Windows 共有と共有プリンタへアクセスすることが可能になります。必要なプログラムは <span
               class="pkg pkg">cifs-utils</span> と <span
               class="pkg pkg">smbclient</span> パッケージに含まれます。
 			</div><a
-            id="idm139657408776576"
+            id="idm140378076400592"
             class="indexterm"></a><a
-            id="idm139657408775680"
+            id="idm140378076399696"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657408774784"></a>11.5.2.1. <code
+                      id="idm140378076398800"></a>11.5.2.1. <code
                       class="command">smbclient</code> プログラム</h4></div></div></div><div
               class="para">
 					<code
@@ -438,19 +389,19 @@ profile acls = Yes</pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657408770272"></a>11.5.2.2. Windows 共有のマウント</h4></div></div></div><div
+                      id="idm140378076394288"></a>11.5.2.2. Windows 共有のマウント</h4></div></div></div><div
               class="para">
 					<code
                 class="command">mount</code> コマンドを使うことで、Windows 共有を Linux ファイルシステム階層にマウントすることが可能になります (<span
                 class="pkg pkg">cifs-utils</span> の提供する <code
                 class="command">mount.cifs</code> の助けを借ります)。
 				</div><a
-              id="idm139657408767696"
+              id="idm140378076391712"
               class="indexterm"></a><a
-              id="idm139657408766800"
+              id="idm140378076390816"
               class="indexterm"></a><div
               class="example"><a
-                id="idm139657408766032"></a><p
+                id="idm140378076390048"></a><p
                 class="title"><strong>例11.29 Windows 共有をマウントする</strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
@@ -486,12 +437,12 @@ password = <em
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139657408757536"></a>11.5.2.3. 共有プリンタを用いた印刷</h4></div></div></div><div
+                      id="idm140378076381552"></a>11.5.2.3. 共有プリンタを用いた印刷</h4></div></div></div><div
               class="para">
 					CUPS は Linux ワークステーションから Windows マシンによって共有されているプリンタに印刷を行う洗練された解決策です。<span
                 class="pkg pkg">smbclient</span> がインストールされている場合、CUPS を使うことで、Windows 共有プリンタを自動的にインストールすることが可能です。
 				</div><a
-              id="idm139657408755520"
+              id="idm140378076379536"
               class="indexterm"></a><div
               class="para">
 					以下に必要な各段階を示します。

@@ -63,9 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.user-space"></a>B.5. Die Anwendungsebene</h2></div></div></div><a
-          id="idm140016433911360"
+          id="idm140510220669344"
           class="indexterm"></a><a
-          id="idm140016433910400"
+          id="idm140510220668384"
           class="indexterm"></a><div
           class="para">
 			“User-space” refers to the runtime environment of normal (as opposed to kernel) processes. This does not necessarily mean these processes are actually started by users because a standard system normally has several “daemon” (or background) processes running before the user even opens a session. Daemon processes are also considered user-space processes.
@@ -74,13 +74,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-basics"></a>B.5.1. Prozess</h3></div></div></div><a
-            id="idm140016433907552"
+            id="idm140510220665536"
             class="indexterm"></a><div
             class="para">
 				When the kernel gets past its initialization phase, it starts the very first process, <code
               class="command">init</code>. Process #1 alone is very rarely useful by itself, and Unix-like systems run with many additional processes.
 			</div><a
-            id="idm140016433905408"
+            id="idm140510220663392"
             class="indexterm"></a><div
             class="para">
 				First of all, a process can clone itself (this is known as a <span
@@ -103,9 +103,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.daemons"></a>B.5.2. Hintergrundprozesse (Dämonprozesse)</h3></div></div></div><a
-            id="idm140016433896672"
+            id="idm140510220654656"
             class="indexterm"></a><a
-            id="idm140016433895712"
+            id="idm140510220653696"
             class="indexterm"></a><div
             class="para">
 				Ein „Daemon“ ist ein Prozess, der beim Hochfahren automatisch gestartet wird. Er läuft (im Hintergrund) weiter, um Verwaltungsaufgaben zu erledigen oder Dienste für andere Prozesse bereitzustellen. Diese „Hintergrundaufgabe“ ist genau genommen willkürlich und entspricht aus Sicht des Systems nichts Bestimmtem. Es sind, wie andere Prozesse auch, einfach Prozesse, die reihum laufen, wann immer ihr zugeteilter Zeitabschnitt kommt. Eine Unterscheidung gibt es nur in der menschlichen Sprache: ein Prozess, der ohne eine Interaktion mit einem Benutzer läuft (insbesondere ohne eine grafische Schnittstelle), wird als „im Hintergrund“ laufend oder als „Daemon“ bezeichnet.
@@ -115,9 +115,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>WÖRTERVERZEICHNIS</em></span> Daemon, Dämon, eine abwertende Bezeichnung?</strong></p></div></div></div><div
               class="para">
-				Obwohl die Bezeichnung <span
-                class="emphasis"><em>Daemon</em></span> ihren griechischen Ursprung mit <span
-                class="emphasis"><em>Dämon</em></span> teilt, unterstellt erstere nichts teuflisch Übles, im Gegenteil sollte sie als eine Art hilfreicher Geist verstanden werden. Diese Unterscheidung ist im Englischen bereits recht subtil, in anderen Sprachen ist es jedoch noch schlimmer, in denen dasselbe Wort in beiden Bedeutungen verwendet wird.
+				Although <span
+                class="emphasis"><em>daemon</em></span> term shares its Greek etymology with <span
+                class="emphasis"><em>demon</em></span>, the former does not imply diabolical evil, instead, it should be understood as a kind of helper spirit. This distinction is subtle enough in English; it is even worse in other languages where the same word is used for both meanings.
 			</div></div><div
             class="para">
 				Mehrere solcher Daemons sind ausführlich in <a
@@ -128,9 +128,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipc"></a>B.5.3. Interprozesskommunikationen</h3></div></div></div><a
-            id="idm140016433888528"
+            id="idm140510220646544"
             class="indexterm"></a><a
-            id="idm140016433887568"
+            id="idm140510220645584"
             class="indexterm"></a><div
             class="para">
 				Ein einzelner Prozess, ob ein Daemon oder eine interaktive Anwendung, ist selten für sich genommen nützlich. Daher gibt es verschiedene Methoden, um getrennten Prozessen die Kommunikation miteinander zu ermöglichen, entweder um Daten auszutauschen oder um sich gegenseitig zu steuern. Die allgemeine Bezeichnung hierfür lautet <span
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Das einfachste IPC-System besteht darin, Dateien zu verwenden. Der Prozess, der Daten übersenden möchte, schreibt sie in eine Datei (mit einem zuvor bekannten Namen), während der Empfänger nur die Datei zu öffnen und den Inhalt zu lesen braucht.
 			</div><a
-            id="idm140016433884704"
+            id="idm140510220642720"
             class="indexterm"></a><div
             class="para">
 				In the case where you do not wish to store data on disk, you can use a <span
@@ -204,7 +204,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.libraries"></a>B.5.4. Bibliotheken</h3></div></div></div><a
-            id="idm140016433862048"
+            id="idm140510220620064"
             class="indexterm"></a><div
             class="para">
 				Programmbibliotheken spielen in einem Unix-artigen Betriebssystem eine entscheidende Rolle. Sie sind nicht wirklich Programme, da sie für sich allein nicht ausgeführt werden können, sondern Ansammlungen von Code-Fragmenten, die von Standardprogrammen verwendet werden können. Unter den gängigen Bibliotheken sind vor allem folgende erwähnenswert:

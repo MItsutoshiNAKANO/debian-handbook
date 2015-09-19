@@ -81,24 +81,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					Servidor de filtro: si el uso del proxy es obligatorio (y se bloquean las conexiones salientes a menos que sean a través del proxy), entonces el proxy puede determinar si se permite o no el pedido.
 				</div></li></ul></div><a
-          id="idm140667122327920"
+          id="idm140408377227552"
           class="indexterm"></a><a
-          id="idm140667122327152"
+          id="idm140408377226784"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp eligió a Squid como su servidor proxy.
 		</div><a
-          id="idm140667122325920"
+          id="idm140408377225552"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667122325152"></a>11.6.1. Instalación</h3></div></div></div><div
+                    id="idm140408377224784"></a>11.6.1. Instalación</h3></div></div></div><div
             class="para">
-				The <span
-              class="pkg pkg">squid3</span> Debian package only contains the modular (caching) proxy. Turning it into a filtering server requires installing the additional <span
-              class="pkg pkg">squidguard</span> package. In addition, <span
-              class="pkg pkg">squid-cgi</span> provides a querying and administration interface for a Squid proxy.
+				El paquete Debian <span
+              class="pkg pkg">squid3</span> sólo contiene el proxy (caché) modular. Para convertirlo en un servidor de filtro necesitará instalar el paquete adicional <span
+              class="pkg pkg">squidguard</span>. Además, <span
+              class="pkg pkg">squid-cgi</span> provee una interfaz de consulta y administración para un proxy Squid.
 			</div><div
             class="para">
 				Antes de instalarlo, debe asegurarse que el sistema pueda identificar su propio nombre completo: <code
@@ -109,15 +109,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667122319872"></a>11.6.2. Configuración de un caché</h3></div></div></div><div
+                    id="idm140408377219504"></a>11.6.2. Configuración de un caché</h3></div></div></div><div
             class="para">
-				Enabling the caching server feature is a simple matter of editing the <code
-              class="filename">/etc/squid3/squid.conf</code> configuration file and allowing machines from the local network to run queries through the proxy. The following example shows the modifications made by the Falcot Corp administrators:
+				Activar la funcionalidad de servidor de caché es tan simple como editar el archivo de configuración <code
+              class="filename">/etc/squid3/squid.conf</code> y permitir que las máquinas en la red local realicen consultas a través del proxy. El siguiente ejemplo muestra las modificaciones realizadas por los administradores de Falcot Corp:
 			</div><div
             class="example"><a
-              id="idm140667122318160"></a><p
-              class="title"><strong>Ejemplo 11.30. The <code
-                  class="filename">/etc/squid3/squid.conf</code> file (excerpts)</strong></p><div
+              id="idm140408377217760"></a><p
+              class="title"><strong>Ejemplo 11.30. El archivo <code
+                  class="filename">/etc/squid3/squid.conf</code> (extractos)</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 # AGREGUE SUS PROPIAS REGLAS AQUÍ PARA PERMITIR ACCESO DE SUS CLIENTES
@@ -129,22 +129,21 @@ acl our_networks src 192.168.1.0/24 192.168.2.0/24
 http_access allow our_networks
 http_access allow localhost
 # Finalmente, negar todo otro acceso a este proxy
-http_access deny all
-</pre></div></div></div><div
+http_access deny all</pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667122316080"></a>11.6.3. Configuración de un filtro</h3></div></div></div><div
+                    id="idm140408377215680"></a>11.6.3. Configuración de un filtro</h3></div></div></div><div
             class="para">
 				<code
-              class="command">squid</code> en sí mismo no realiza el filtrado; esta acción es delegada a <code
-              class="command">squidGuard</code>. Debe configurar el primero para que interactúe con este último. Esto incluye agregar la siguiente directiva en el archivo <code
-              class="filename">/etc/squid/squid.conf</code>:
+              class="command">squid</code> itself does not perform the filtering; this action is delegated to <code
+              class="command">squidGuard</code>. The former must then be configured to interact with the latter. This involves adding the following directive to the <code
+              class="filename">/etc/squid3/squid.conf</code> file:
 			</div><a
-            id="idm140667122313680"
+            id="idm140408377213296"
             class="indexterm"></a><pre
             class="programlisting">
-redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
+url_rewrite_program /usr/bin/squidGuard -c /etc/squid3/squidGuard.conf
 </pre><div
             class="para">
 				También necesita instalar el programa CGI <code
@@ -156,11 +155,11 @@ redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
               class="varname">$redirect</code> deben apuntar a imágenes existentes que representen el rechazo de una consulta.
 			</div><div
             class="para">
-				Debe ejecutar <code
-              class="command">/etc/init.d/squid reload</code> para activar el filtro. Sin embargo, debido a que el paquete <span
-              class="pkg pkg">squidguard</span> no es un filtro de forma predeterminada, es tarea del administrador definir su política. Puede hacerlo creando el archivo <code
-              class="filename">/etc/squid/squidGuard.conf</code> (utilizando la plantilla <code
-              class="filename">/etc/squidguard/squidGuard.conf.default</code> si lo desea).
+				The filter is enabled with the <code
+              class="command">service squid3 reload</code> command. However, since the <span
+              class="pkg pkg">squidguard</span> package does no filtering by default, it is the administrator's task to define the policy. This can be done by creating the <code
+              class="filename">/etc/squid3/squidGuard.conf</code> file (using <code
+              class="filename">/etc/squidguard/squidGuard.conf.default</code> as template if required).
 			</div><div
             class="para">
 				Debe regenerar la base de datos de trabajo con <code
@@ -169,21 +168,21 @@ redirect_program /usr/bin/squidGuard -c /etc/squid/squidGuard.conf
               class="url">→ <a
                 href="http://www.squidguard.org/Doc/configure.html">http://www.squidguard.org/Doc/configure.html</a></div>
 			</div><a
-            id="idm140667122304816"
+            id="idm140408377204496"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVA</em></span> DansGuardian</strong></p></div></div></div><a
-              id="idm140667122303024"
+              id="idm140408377202704"
               class="indexterm"></a><a
-              id="idm140667122301888"
+              id="idm140408377201568"
               class="indexterm"></a><div
               class="para">
-				El paquete <span
-                class="pkg pkg">dansguardian</span> es una alternativa a <span
-                class="emphasis"><em>squidguard</em></span>. Este software no sólo gestiona una lista negra de URLs prohibidas, sino que puede aprovechar el sistema PICS (<span
-                class="emphasis"><em>plataforma para selección de contenido en Internet</em></span>: «Platform for Internet Content Selection») para decidir si una página es aceptable mediante el análisis dinámico de su contenido.
+				The <span
+                class="pkg pkg">dansguardian</span> package is an alternative to <span
+                class="emphasis"><em>squidguard</em></span>. This software does not simply handle a blacklist of forbidden URLs, but it can take advantage of the PICS system (<span
+                class="emphasis"><em>Platform for Internet Content Selection</em></span>) to decide whether a page is acceptable by dynamic analysis of its contents.
 			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

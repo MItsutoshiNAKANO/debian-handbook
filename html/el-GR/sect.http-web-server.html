@@ -72,15 +72,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			The Falcot Corp administrators decided to use the Apache HTTP server, included in Debian <span
             class="distribution distribution">Jessie</span> at version 2.4.10.
 		</div><a
-          id="idm139688084974736"
+          id="idm139819488129376"
           class="indexterm"></a><a
-          id="idm139688084973616"
+          id="idm139819488128256"
           class="indexterm"></a><a
-          id="idm139688084972176"
+          id="idm139819488126816"
           class="indexterm"></a><a
-          id="idm139688084971216"
+          id="idm139819488125856"
           class="indexterm"></a><a
-          id="idm139688084969776"
+          id="idm139819488124416"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -91,33 +91,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">nginx</span> and <span
               class="pkg pkg">lighttpd</span>, are worth investigating.
 		</div><a
-            id="idm139688084965072"
+            id="idm139819496183456"
             class="indexterm"></a><a
-            id="idm139688084963760"
+            id="idm139819496182144"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139688084962288"></a>11.2.1. Installing Apache</h3></div></div></div><div
+                    id="idm139819496180672"></a>11.2.1. Installing Apache</h3></div></div></div><div
             class="para">
-				By default, installing the <span
-              class="pkg pkg">apache2</span> package causes the <span
-              class="pkg pkg">apache2-mpm-worker</span> version of Apache to be installed too. The <span
-              class="pkg pkg">apache2</span> package is an empty shell, and it only serves to ensure that one of the Apache versions is actually installed.
+				Installing the <span
+              class="pkg pkg">apache2</span> package is all that is needed. It contains all the modules, including the <span
+              class="emphasis"><em>Multi-Processing Modules</em></span> (MPM) that affect how Apache handles parallel processing of many requests (those used to be provided in separate <span
+              class="pkg pkg">apache2-mpm-*</span> packages). It will also pull <span
+              class="pkg pkg">apache2-utils</span> containing the command line utilities that we will discover later.
 			</div><div
             class="para">
-				The differences between the variants of Apache 2 are concentrated in the policy used to handle parallel processing of many requests; this policy is implemented by an MPM (short for <span
-              class="emphasis"><em>Multi-Processing Module</em></span>). Among the available MPMs, <span
-              class="emphasis"><em>worker</em></span> uses <span
-              class="emphasis"><em>threads</em></span> (lightweight processes), whereas <span
-              class="emphasis"><em>prefork</em></span> uses a pool of processes created in advance (the traditional way, and the only one available in Apache 1.3). <span
-              class="emphasis"><em>event</em></span> also uses threads, but they are terminated earlier, when the incoming connection is only kept open by the HTTP <span
-              class="emphasis"><em>keep-alive</em></span> feature.
+				The MPM in use affects significantly the way Apache will handle concurrent requests. With the <span
+              class="emphasis"><em>worker</em></span> MPM, it uses <span
+              class="emphasis"><em>threads</em></span> (lightweight processes), whereas with the <span
+              class="emphasis"><em>prefork</em></span> MPM it uses a pool of processes created in advance. With the <span
+              class="emphasis"><em>event</em></span> MPM it also uses threads, but the inactive connections (notably those kept open by the HTTP <span
+              class="emphasis"><em>keep-alive</em></span> feature) are handed back to a dedicated management thread.
 			</div><div
             class="para">
 				The Falcot administrators also install <span
-              class="pkg pkg">libapache2-mod-php5</span> so as to include the PHP support in Apache. This causes the <span
-              class="emphasis"><em>worker</em></span> MPM to be disabled, and <span
+              class="pkg pkg">libapache2-mod-php5</span> so as to include the PHP support in Apache. This causes the default <span
+              class="emphasis"><em>event</em></span> MPM to be disabled, and <span
               class="emphasis"><em>prefork</em></span> to be used instead, since PHP only works under that particular MPM.
 			</div><div
             class="sidebar"><div
@@ -125,9 +125,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>SECURITY</em></span> Execution under the <code
                         class="literal">www-data</code> user</strong></p></div></div></div><a
-              id="idm139688087346304"
+              id="idm139819496170304"
               class="indexterm"></a><a
-              id="idm139688087345184"
+              id="idm139819496169184"
               class="indexterm"></a><div
               class="para">
 				By default, Apache handles incoming requests under the identity of the <code
@@ -140,7 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="replaceable">user</em><em
                   class="replaceable">group</em></code> directive in the Apache configuration.
 			</div><a
-              id="idm139688087340944"
+              id="idm139819496164944"
               class="indexterm"></a><div
               class="para">
 				Another possibility is to use a dedicated MPM, such as the one provided by <span
@@ -168,15 +168,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				With its default configuration, the web server listens on port 80 (as configured in <code
               class="filename">/etc/apache2/ports.conf</code>), and serves pages from the <code
               class="filename">/var/www/</code> directory (as configured in <code
-              class="filename">/etc/apache2/sites-enabled/000-default</code>).
+              class="filename">/etc/apache2/sites-enabled/000-default.conf</code>).
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>GOING FURTHER</em></span> Adding support for SSL</strong></p></div></div></div><a
-              id="idm139688087329504"
+              id="idm139819496153280"
               class="indexterm"></a><a
-              id="idm139688087328544"
+              id="idm139819496152320"
               class="indexterm"></a><div
               class="para">
 				Apache 2.4 includes the SSL module required for secure HTTP (HTTPS) out of the box. It just needs to be enabled with <code
@@ -191,16 +191,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="url">→ <a
                   href="https://wiki.mozilla.org/Security/Server_Side_TLS#Apache">https://wiki.mozilla.org/Security/Server_Side_TLS#Apache</a></div>
 			</div><a
-              id="idm139688087322528"
+              id="idm139819496146192"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139688087321088"></a>11.2.2. Configuring Virtual Hosts</h3></div></div></div><div
+                    id="idm139819496144752"></a>11.2.2. Configuring Virtual Hosts</h3></div></div></div><div
             class="para">
 				A virtual host is an extra identity for the web server.
 			</div><a
-            id="idm139688087319792"
+            id="idm139819496143456"
             class="indexterm"></a><div
             class="para">
 				Apache considers two different kinds of virtual hosts: those that are based on the IP address (or the port), and those that rely on the domain name of the web server. The first method requires allocating a different IP address (or port) for each site, whereas the second one can work on a single IP address (and port), and the sites are differentiated by the hostname sent by the HTTP client (which only works in version 1.1 of the HTTP protocol — fortunately that version is old enough that all clients use it already).
@@ -211,7 +211,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="para">
 				The default configuration for Apache 2 enables name-based virtual hosts. In addition, a default virtual host is defined in the <code
-              class="literal">/etc/apache2/sites-enabled/000-default</code> file; this virtual host will be used if no host matching the request sent by the client is found.
+              class="literal">/etc/apache2/sites-enabled/000-default.conf</code> file; this virtual host will be used if no host matching the request sent by the client is found.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -225,7 +225,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>QUICK LOOK</em></span> Apache supports SNI</strong></p></div></div></div><a
-              id="idm139688087311808"
+              id="idm139819496135472"
               class="indexterm"></a><div
               class="para">
 				The Apache server supports an SSL protocol extension called <span
@@ -247,9 +247,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">a2ensite www.falcot.org</code>.
 			</div><div
             class="example"><a
-              id="idm139688087304976"></a><p
+              id="idm139819496128640"></a><p
               class="title"><strong>Παράδειγμα 11.16. The <code
-                  class="filename">/etc/apache2/sites-available/www.falcot.org</code> file</strong></p><div
+                  class="filename">/etc/apache2/sites-available/www.falcot.org.conf</code> file</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
 &lt;VirtualHost *:80&gt;
@@ -261,15 +261,16 @@ DocumentRoot /srv/www/www.falcot.org
             class="para">
 				The Apache server, as configured so far, uses the same log files for all virtual hosts (although this could be changed by adding <code
               class="literal">CustomLog</code> directives in the definitions of the virtual hosts). It therefore makes good sense to customize the format of this log file to have it include the name of the virtual host. This can be done by creating a <code
-              class="filename">/etc/apache2/conf.d/customlog</code> file that defines a new format for all log files (with the <code
-              class="literal">LogFormat</code> directive). The <code
+              class="filename">/etc/apache2/conf-available/customlog.conf</code> file that defines a new format for all log files (with the <code
+              class="literal">LogFormat</code> directive) and by enabling it with <code
+              class="command">a2enconf customlog</code>. The <code
               class="literal">CustomLog</code> line must also be removed (or commented out) from the <code
-              class="filename">/etc/apache2/sites-available/default</code> file.
+              class="filename">/etc/apache2/sites-available/000-default.conf</code> file.
 			</div><div
             class="example"><a
-              id="idm139688087299840"></a><p
+              id="idm139819496123056"></a><p
               class="title"><strong>Παράδειγμα 11.17. The <code
-                  class="filename">/etc/apache2/conf.d/customlog</code> file</strong></p><div
+                  class="filename">/etc/apache2/conf.d/customlog.conf</code> file</strong></p><div
               class="example-contents"><pre
                 class="programlisting scale">
 # New log format including (virtual) host name
@@ -281,13 +282,13 @@ CustomLog /var/log/apache2/access.log vhost
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139688087297280"></a>11.2.3. Common Directives</h3></div></div></div><div
+                    id="idm139819496120496"></a>11.2.3. Common Directives</h3></div></div></div><div
             class="para">
 				This section briefly reviews some of the commonly-used Apache configuration directives.
 			</div><a
-            id="idm139688087295920"
+            id="idm139819496119136"
             class="indexterm"></a><a
-            id="idm139688087294960"
+            id="idm139819496118176"
             class="indexterm"></a><div
             class="para">
 				The main configuration file usually includes several <code
@@ -295,12 +296,12 @@ CustomLog /var/log/apache2/access.log vhost
               class="literal">Options</code> and <code
               class="literal">AllowOverride</code> directives.
 			</div><a
-            id="idm139688087291904"
+            id="idm139819496115120"
             class="indexterm"></a><a
-            id="idm139688087290624"
+            id="idm139819496113840"
             class="indexterm"></a><div
             class="example"><a
-              id="idm139688087289344"></a><p
+              id="idm139819496112560"></a><p
               class="title"><strong>Παράδειγμα 11.18. Directory block</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
@@ -314,7 +315,7 @@ DirectoryIndex index.php index.html index.htm
 				The <code
               class="literal">DirectoryIndex</code> directive contains a list of files to try when the client request matches a directory. The first existing file in the list is used and sent as a response.
 			</div><a
-            id="idm139688087286688"
+            id="idm139819496109904"
             class="indexterm"></a><div
             class="para">
 				The <code
@@ -329,21 +330,21 @@ DirectoryIndex index.php index.html index.htm
                   class="para">
 						<code
                     class="literal">ExecCGI</code> indicates that CGI scripts can be executed. <a
-                    id="idm139688087281648"
+                    id="idm139819496104864"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">FollowSymlinks</code> tells the server that symbolic links can be followed, and that the response should contain the contents of the target of such links. <a
-                    id="idm139688087279136"
+                    id="idm139819496102352"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">SymlinksIfOwnerMatch</code> also tells the server to follow symbolic links, but only when the link and the its target have the same owner. <a
-                    id="idm139688087276640"
+                    id="idm139819496099856"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -352,7 +353,7 @@ DirectoryIndex index.php index.html index.htm
                     class="literal">Includes</code> enables <span
                     class="emphasis"><em>Server Side Includes</em></span> (<span
                     class="emphasis"><em>SSI</em></span> for short). These are directives embedded in HTML pages and executed on the fly for each request. <a
-                    id="idm139688087273200"
+                    id="idm139819496096416"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -360,14 +361,14 @@ DirectoryIndex index.php index.html index.htm
 						<code
                     class="literal">Indexes</code> tells the server to list the contents of a directory if the HTTP request sent by the client points at a directory without an index file (ie, when no files mentioned by the <code
                     class="literal">DirectoryIndex</code> directive exists in this directory). <a
-                    id="idm139688087270192"
+                    id="idm139819496093408"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">MultiViews</code> enables content negotiation; this can be used by the server to return a web page matching the preferred language as configured in the browser. <a
-                    id="idm139688087267664"
+                    id="idm139819496090880"
                     class="indexterm"></a>
 					</div></li></ul></div><div
             class="para">
@@ -381,7 +382,7 @@ DirectoryIndex index.php index.html index.htm
 				The <code
                 class="filename">.htaccess</code> file contains Apache configuration directives enforced each time a request concerns an element of the directory where it is stored. The scope of these directives also recurses to all the subdirectories within.
 			</div><a
-              id="idm139688087262992"
+              id="idm139819496086208"
               class="indexterm"></a><div
               class="para">
 				Most of the directives that can occur in a <code
@@ -395,19 +396,19 @@ DirectoryIndex index.php index.html index.htm
               class="literal">ExecCGI</code>, so that the administrator chooses which users are allowed to run programs under the web server's identity (the <code
               class="literal">www-data</code> user).
 			</div><a
-            id="idm139688087257904"
+            id="idm139819496081120"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139688087256624"></a>11.2.3.1. Requiring Authentication</h4></div></div></div><a
-              id="idm139688087255856"
+                      id="idm139819496079840"></a>11.2.3.1. Requiring Authentication</h4></div></div></div><a
+              id="idm139819496079072"
               class="indexterm"></a><div
               class="para">
 					In some circumstances, access to part of a website needs to be restricted, so only legitimate users who provide a username and a password are granted access to the contents.
 				</div><div
               class="example"><a
-                id="idm139688087254240"></a><p
+                id="idm139819496077456"></a><p
                 class="title"><strong>Παράδειγμα 11.19. <code
                     class="filename">.htaccess</code> file requiring authentication</strong></p><div
                 class="example-contents"><pre
@@ -430,7 +431,7 @@ AuthUserFile /etc/apache2/authfiles/htpasswd-private
 					The <code
                 class="filename">/etc/apache2/authfiles/htpasswd-private</code> file contains a list of users and passwords; it is commonly manipulated with the <code
                 class="command">htpasswd</code> command. For example, the following command is used to add a user or change their password: <a
-                id="idm139688087248128"
+                id="idm139819496071344"
                 class="indexterm"></a>
 				</div><pre
               class="screen">
@@ -447,18 +448,18 @@ Adding password for user <em
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139688087244592"></a>11.2.3.2. Restricting Access</h4></div></div></div><a
-              id="idm139688087243792"
+                      id="idm139819496067808"></a>11.2.3.2. Restricting Access</h4></div></div></div><a
+              id="idm139819496067008"
               class="indexterm"></a><div
               class="para">
 					The <code
                 class="literal">Require</code> directive controls access restrictions for a directory (and its subdirectories, recursively).
 				</div><a
-              id="idm139688087241792"
+              id="idm139819496065008"
               class="indexterm"></a><a
-              id="idm139688087240832"
+              id="idm139819496064048"
               class="indexterm"></a><a
-              id="idm139688087239872"
+              id="idm139819496063088"
               class="indexterm"></a><div
               class="para">
 					It can be used to restrict access based on many criteria; we will stop at describing access restriction based on the IP address of the client, but it can be made much more powerful than that, especially when several <code
@@ -466,7 +467,7 @@ Adding password for user <em
                 class="literal">RequireAll</code> block.
 				</div><div
               class="example"><a
-                id="idm139688087236976"></a><p
+                id="idm139819496060192"></a><p
                 class="title"><strong>Παράδειγμα 11.20. Only allow from the local network</strong></p><div
                 class="example-contents"><pre
                   class="programlisting">Require ip 192.168.0.0/16
@@ -487,11 +488,11 @@ Adding password for user <em
                   class="literal">Allow from</code> and <code
                   class="literal">Deny from</code> directives control access restrictions for a directory (and its subdirectories, recursively).
 				</div><a
-                id="idm139688087229776"
+                id="idm139819496052992"
                 class="indexterm"></a><a
-                id="idm139688087228496"
+                id="idm139819496051712"
                 class="indexterm"></a><a
-                id="idm139688087227216"
+                id="idm139819496050432"
                 class="indexterm"></a><div
                 class="para">
 					The <code
@@ -515,7 +516,7 @@ Adding password for user <em
                   class="literal">all</code> keyword, designating everyone.
 				</div><div
                 class="example"><a
-                  id="idm139688087217872"></a><p
+                  id="idm139819496041088"></a><p
                   class="title"><strong>Παράδειγμα 11.21. Reject by default but allow from the local network</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">
@@ -526,7 +527,7 @@ Deny from all
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139688087215936"></a>11.2.4. Log Analyzers</h3></div></div></div><div
+                    id="idm139819496039152"></a>11.2.4. Log Analyzers</h3></div></div></div><div
             class="para">
 				A log analyzer is frequently installed on a web server; since the former provides the administrators with a precise idea of the usage patterns of the latter.
 			</div><div
@@ -535,13 +536,13 @@ Deny from all
               class="emphasis"><em>AWStats</em></span> (<span
               class="emphasis"><em>Advanced Web Statistics</em></span>) to analyze their Apache log files.
 			</div><a
-            id="idm139688087213136"
+            id="idm139819496036352"
             class="indexterm"></a><a
-            id="idm139688087212016"
+            id="idm139819496035232"
             class="indexterm"></a><a
-            id="idm139688087211056"
+            id="idm139819496034272"
             class="indexterm"></a><a
-            id="idm139688087209616"
+            id="idm139819496032832"
             class="indexterm"></a><div
             class="para">
 				The first configuration step is the customization of the <code
@@ -580,7 +581,7 @@ LoadPlugin="tooltips"
               class="filename">/etc/awstats/awstats.www.falcot.org.conf</code>.
 			</div><div
             class="example"><a
-              id="idm139688087199264"></a><p
+              id="idm139819496022480"></a><p
               class="title"><strong>Παράδειγμα 11.22. AWStats configuration file for a virtual host</strong></p><div
               class="example-contents"><pre
                 class="programlisting">
@@ -618,16 +619,18 @@ Alias /awstats-icon/ /usr/share/awstats/icon/
 $ <strong
                 class="userinput"><code>cat /etc/logrotate.d/apache2</code></strong>
 /var/log/apache2/*.log {
-  weekly
+  daily
   missingok
-  rotate 52
+  rotate 14
   compress
   delaycompress
   notifempty
   create 644 root adm
   sharedscripts
   postrotate
-    service apache2 reload &gt; /dev/null
+    if /etc/init.d/apache2 status &gt; /dev/null ; then \
+      /etc/init.d/apache2 reload &gt; /dev/null; \
+    fi;
   endscript
   prerotate
     if [ -d /etc/logrotate.d/httpd-prerotate ]; then \

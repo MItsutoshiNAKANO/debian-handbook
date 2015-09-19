@@ -79,13 +79,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="para">
 				<a
-              id="idm139913839648096"
+              id="idm139953464200336"
               class="indexterm"></a> <a
-              id="idm139913839647296"
+              id="idm139953464199536"
               class="indexterm"></a> <a
-              id="idm139913839646496"
+              id="idm139953464198736"
               class="indexterm"></a> <a
-              id="idm139913839645696"
+              id="idm139953464197936"
               class="indexterm"></a> The kernel exports many details about detected hardware through the <code
               class="filename">/proc/</code> and <code
               class="filename">/sys/</code> virtual filesystems. Several tools summarize those details. Among them, <code
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">pcmciautils</span> package) lists PCMCIA cards. These tools are very useful for identifying the exact model of a device. This identification also allows more precise searches on the web, which in turn, lead to more relevant documents.
 			</div><div
             class="example"><a
-              id="idm139913839640240"></a><p
+              id="idm139953464192480"></a><p
               class="title"><strong>
       مثال B.1. Example of information provided by <code
                   class="command">lspci</code> and <code
@@ -150,9 +150,9 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.filesystems"></a>B.4.2. Filesystems</h3></div></div></div><a
-            id="idm139913839626848"
+            id="idm139953464179088"
             class="indexterm"></a><a
-            id="idm139913839625888"
+            id="idm139953464178128"
             class="indexterm"></a><div
             class="para">
 				Filesystems are one of the most prominent aspects of the kernel. Unix systems merge all the file stores into a single hierarchy, which allows users (and applications) to access data simply by knowing its location within that hierarchy.
@@ -170,7 +170,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="literal">home</code> directory present in the root. The kernel translates between this naming system and the actual, physical storage on a disk.
 			</div><div
             class="para">
-				Unlike other systems, there's only one such hierarchy, and it can integrate data from several disks. One of these disks is used as the root, and the others are “mounted” on directories in the hierarchy (the Unix command is called <code
+				Unlike other systems, there is only one such hierarchy, and it can integrate data from several disks. One of these disks is used as the root, and the others are “mounted” on directories in the hierarchy (the Unix command is called <code
               class="command">mount</code>); these other disks are then available under these “mount points”. This allows storing users' home directories (traditionally stored within <code
               class="filename">/home/</code>) on a second hard disk, which will contain the <code
               class="literal">rhertzog</code> and <code
@@ -178,7 +178,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="filename">/home/</code>, these directories become accessible at their usual locations, and paths such as <code
               class="filename">/home/rmas/Desktop/hello.txt</code> keep working.
 			</div><a
-            id="idm139913839615712"
+            id="idm139953464167952"
             class="indexterm"></a><div
             class="para">
 				There are many filesystem formats, corresponding to many ways of physically storing data on disks. The most widely known are <span
@@ -206,7 +206,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-management"></a>B.4.4. Managing Processes</h3></div></div></div><a
-            id="idm139913839604944"
+            id="idm139953464157184"
             class="indexterm"></a><div
             class="para">
 				A process is a running instance of a program. This requires memory to store both the program itself and its operating data. The kernel is in charge of creating and tracking them. When a program runs, the kernel first sets aside some memory, then loads the executable code from the filesystem into it, and then starts the code running. It keeps information about this process, the most visible of which is an identification number known as <span
@@ -214,7 +214,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="emphasis"><em>process identifier</em></span>).
 			</div><div
             class="para">
-				Unix-like kernels (including Linux), like most other modern operating systems, are capable of “multi-tasking”. In other words, they allow running many processes “at the same time”. There's actually only one running process at any one time, but the kernel cuts time into small slices and runs each process in turn. Since these time slices are very short (in the millisecond range), they create the illusion of processes running in parallel, although they're actually only active during some time intervals and idle the rest of the time. The kernel's job is to adjust its scheduling mechanisms to keep that illusion, while maximizing the global system performance. If the time slices are too long, the application may not appear as responsive as desired. Too short, and the system loses time switching tasks too frequently. These decisions can be tweaked with process priorities. High-priority processes will run for longer and with more frequent time slices than low-priority processes.
+				Unix-like kernels (including Linux), like most other modern operating systems, are capable of “multi-tasking”. In other words, they allow running many processes “at the same time”. There is actually only one running process at any one time, but the kernel cuts time into small slices and runs each process in turn. Since these time slices are very short (in the millisecond range), they create the illusion of processes running in parallel, although they are actually only active during some time intervals and idle the rest of the time. The kernel's job is to adjust its scheduling mechanisms to keep that illusion, while maximizing the global system performance. If the time slices are too long, the application may not appear as responsive as desired. Too short, and the system loses time switching tasks too frequently. These decisions can be tweaked with process priorities. High-priority processes will run for longer and with more frequent time slices than low-priority processes.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -232,7 +232,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
                   class="title"><a
                     id="sect.permissions"></a>B.4.5. Rights Management</h3></div></div></div><div
             class="para">
-				Unix-like systems are also multi-user. They provide a rights management system that supports separate users and groups; it also allows control over actions based on permissions. The kernel manages data for each process, allowing it to control permissions. Most of the time, a process is identified by the user who started the process. That process is only permitted to take those actions available to its owner. For instance, trying to open a file requires the kernel to check the process identity against access permissions (for more details on this particular example, see <a
+				Unix-like systems are also multi-user. They provide a rights management system that supports separate users and groups; it also allows control over actions based on permissions. The kernel manages data for each process, allowing it to control permissions. Most of the time, a process is identified by the user who started it. That process is only permitted to take those actions available to its owner. For instance, trying to open a file requires the kernel to check the process identity against access permissions (for more details on this particular example, see <a
               class="xref"
               href="sect.rights-management.html">
       قسمت 9.3, “Managing Rights”

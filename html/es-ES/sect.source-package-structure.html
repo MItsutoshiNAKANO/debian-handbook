@@ -68,21 +68,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.source-package-structure"></a>5.3. Estructura de un paquete fuente</h2></div></div></div><a
-          id="idm140667129863936"
+          id="idm140408401281472"
           class="indexterm"></a><a
-          id="idm140667129862496"
+          id="idm140408401280032"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667129861056"></a>5.3.1. Formato</h3></div></div></div><a
-            id="idm140667129860256"
+                    id="idm140408401278592"></a>5.3.1. Formato</h3></div></div></div><a
+            id="idm140408401277792"
             class="indexterm"></a><a
-            id="idm140667129859296"
+            id="idm140408401276832"
             class="indexterm"></a><a
-            id="idm140667129858016"
+            id="idm140408401275552"
             class="indexterm"></a><a
-            id="idm140667129856736"
+            id="idm140408401274272"
             class="indexterm"></a><div
             class="para">
 				Un paquete fuente generalmente consiste de tres archivos: uno <code
@@ -103,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               href="sect.package-authentication.html">Sección 6.5, “Comprobación de la autenticidad de un paquete”</a> para más detalles sobre este tema.
 			</div><div
             class="example"><a
-              id="idm140667129849536"></a><p
+              id="idm140408401267072"></a><p
               class="title"><strong>Ejemplo 5.1. Un archivo <code
                   class="filename">.dsc</code></strong></p><div
               class="example-contents"><pre
@@ -147,7 +147,7 @@ oltfl05z/AI+vYsW482YrCz0fxNAKAvkyuPhDebYI8jnKWeAANoqmKpsNc/HYyvT
 edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
 =Wtoa
 -----END PGP SIGNATURE-----</pre></div></div><a
-            id="idm140667129846224"
+            id="idm140408401263760"
             class="indexterm"></a><div
             class="para">
 				Note que el paquete fuente también tiene dependencias (<code
@@ -198,9 +198,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
                   class="replaceable">component</em>.tar.gz</code> archives can be included. This is useful with software that is distributed in several upstream components but for which a single source package is desired. These archives can also be compressed with <code
                 class="command">bzip2</code> or <code
                 class="command">xz</code> rather than <code
-                class="command">gzip</code> (<code
-                class="command">lzma</code> is also supported by <code
-                class="command">dpkg-source</code> but not accepted into the official archive), which saves disk space and network resources. Finally, the monolithic patch, <code
+                class="command">gzip</code>, which saves disk space and network resources. Finally, the monolithic patch, <code
                 class="filename">.diff.gz</code> is replaced by a <code
                 class="filename">.debian.tar.gz</code> archive containing the compiling instructions and a set of upstream patches contributed by the package maintainer. These last are recorded in a format compatible with <code
                 class="command">quilt</code> — a tool that facilitates the management of a series of patches.
@@ -218,13 +216,13 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>HERRAMIENTA</em></span> Descomprimiendo un paquete fuente</strong></p></div></div></div><a
-              id="idm140667129818160"
+              id="idm140408401236800"
               class="indexterm"></a><a
-              id="idm140667129817040"
+              id="idm140408401235680"
               class="indexterm"></a><a
-              id="idm140667129816112"
+              id="idm140408401234752"
               class="indexterm"></a><a
-              id="idm140667129815184"
+              id="idm140408401233824"
               class="indexterm"></a><div
               class="para">
 				If you have a source package, you can use the <code
@@ -250,7 +248,7 @@ edtjiTJqOaFUA0x1zB/XGv5tHr1MjP8naT+kfVoVHTOox51CDbeu5D3DZY4imcY=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667129806848"></a>5.3.2. Utilización dentro de Debian</h3></div></div></div><div
+                    id="idm140408401225488"></a>5.3.2. Utilización dentro de Debian</h3></div></div></div><div
             class="para">
 				El paquete fuente es la base de todo en Debian. Todos los paquetes Debian provienen de un paquete fuente y cada modificación en un paquete Debian es la consecuencia de una modificación realizada al paquete fuente. Los desarrolladores Debian trabajan con el paquete fuente sabiendo, sin embargo, las consecuencias de sus acciones en los paquetes binarios. Los frutos de su labor se encuentran, entonces, en los paquetes fuentes disponibles desde Debian: puede volver a ellos y todo lo que generan.
 			</div><div

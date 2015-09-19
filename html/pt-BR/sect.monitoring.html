@@ -80,14 +80,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVA</em></span> Zabbix, uma ferramenta de monitoramento integrada</strong></p></div></div></div><a
-            id="idm139689845046672"
+            id="idm140625109854464"
             class="indexterm"></a><div
             class="para">
-			Although Munin and Nagios are in very common use, they are not the only players in the monitoring field, and each of them only handles half of the task (graphing on one side, alerting on the other). Zabbix, on the other hand, integrates both parts of monitoring; it also has a web interface for configuring the most common aspects. It has grown by leaps and bounds during the last few years, and can now be considered a viable contender. On the monitoring server, you would install <span
-              class="pkg pkg">zabbix-server-pgsql</span> (or <span
-              class="pkg pkg">zabbix-server-mysql</span>), possibly together with <span
-              class="pkg pkg">zabbix-frontend-php</span> to have a web interface. On the hosts to monitor you would install <span
-              class="pkg pkg">zabbix-agent</span> feeding data back to the server. <div
+			Embora o Munin e o Nagios sejam os mais populares, eles não são as únicas opções no campo de monitoramento, e cada um deles apenas lidam com metade da tarefa (gráficos de por um lado, alertas pelo outro). O Zabbix, por outro lado, integra ambas as partes de monitoramento; ele também têm uma interface web para configurar a maioria dos aspectos comuns. Ele cresceu aos tracos e barrancos durante os últimos anos, e pode agora ser considerado um concorrente viável. No servidor de monitoramento, você instalaria o <span
+              class="pkg pkg">zabbix-server-pgsql</span> (ou <span
+              class="pkg pkg">zabbix-server-mysql</span>), possivelmente junto com o <span
+              class="pkg pkg">zabbix-frontend-php</span> para ter uma interface web. Nas máquinas a serem monitoradas você instalaria <span
+              class="pkg pkg">zabbix-agent</span>, para alimentar o servidor com os dados. <div
               class="url">→ <a
                 href="http://www.zabbix.com/">http://www.zabbix.com/</a></div>
 		</div></div><div
@@ -95,7 +95,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVA</em></span> Icinga, um "fork" do Nagios</strong></p></div></div></div><a
-            id="idm139689845039472"
+            id="idm140625109848416"
             class="indexterm"></a><div
             class="para">
 			Estimulados por divergências nas opiniões que se referem ao modelo de desenvolvimento do Nagios (que é controlado por uma companhia), alguns desenvolvedores fizeram um "fork" do Nagios e usaram Icinga como seu novo nome. O Icinga ainda é compatível — até agora — com as configurações e extensões do Nagios, porém ele também adiciona funcionalidades extras. <div
@@ -106,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.munin"></a>12.4.1. Configurando o Munin</h3></div></div></div><a
-            id="idm139689845035408"
+            id="idm140625109845120"
             class="indexterm"></a><div
             class="para">
 				O propósito do Munin é monitorar muitas máquinas; logo, é bem natural que ele use uma arquitetura cliente/servidor. A máquina ("host") central — que faz o gráfico ("grapher") — coleta dados de todas as máquinas ("hosts") monitoradas, e gera gráficos com os históricos.
@@ -114,7 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139689821988208"></a>12.4.1.1. Configurando As Máquinas A Serem Monitoradas</h4></div></div></div><div
+                      id="idm140625109843664"></a>12.4.1.1. Configurando As Máquinas A Serem Monitoradas</h4></div></div></div><div
               class="para">
 					O primeiro passo é instalar o pacote <span
                 class="pkg pkg">munin-node</span>. O serviço ("daemon") instalado por esse pacote escuta na porta 4949 e envia de volta os dados coletados por todas as extensões ativas. Cada extensão é um programa simples que retorna um descrição dos dados coletados, assim como o último valor medido. As extensões são armazenadas em <code
@@ -122,19 +122,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/munin/plugins/</code> são realmente usadas.
 				</div><div
               class="para">
-					When the package is installed, a set of active plugins is determined based on the available software and the current configuration of the host. However, this autoconfiguration depends on a feature that each plugin must provide, and it is usually a good idea to review and tweak the results by hand. Browsing the <a
-                href="http://gallery.munin-monitoring.org">Plugin Gallery</a> can be interesting even though not all plugins have comprehensive documentation. However, all plugins are scripts and most are rather simple and well-commented. Browsing <code
-                class="filename">/etc/munin/plugins/</code> is therefore a good way of getting an idea of what each plugin is about and determining which should be removed. Similarly, enabling an interesting plugin found in <code
-                class="filename">/usr/share/munin/plugins/</code> is a simple matter of setting up a symbolic link with <code
+					Quando o pacote é instalado, um conjunto de extensões ativas é determinado com base nos softwares disponíveis e na configuração corrente da máquina ("host"). Contudo, essa auto configuração depende da funcionalidade que cada extensão deve fornecer, e geralmente é uma boa ideia rever e ajustar os resultados manualmente. Navegar por <a
+                href="http://gallery.munin-monitoring.org">Plugin Gallery</a> pode ser interessante mesmo que nem todas as extensões tenham uma documentação compreensível. Entretanto, todas as extensões são scripts e a maioria é bem simples e bem comentado. Navegar por <code
+                class="filename">/etc/munin/plugins/</code> é portanto uma boa maneira de se ter uma ideia sobre para que cada extensão serve e determinar quais devem ser removidas. Similarmente, habilitar uma extensão interessante encontrada em <code
+                class="filename">/usr/share/munin/plugins/</code> é uma simples questão de configurar uma ligação simbólica com <code
                 class="command">ln -sf /usr/share/munin/plugins/<em
-                  class="replaceable">plugin</em> /etc/munin/plugins/</code>. Note that when a plugin name ends with an underscore “_”, the plugin requires a parameter. This parameter must be stored in the name of the symbolic link; for instance, the “if_” plugin must be enabled with a <code
-                class="filename">if_eth0</code> symbolic link, and it will monitor network traffic on the eth0 interface.
+                  class="replaceable">extensão</em> /etc/munin/plugins/</code>. Note que quando o nome de uma extensão termina com um "underscore" - “_”, a extensão precisa de um parâmetro. Esse parâmetro tem que ser armazenados no nome da ligação simbólica; por exemplo, a extensão “if_” tem que ser habilitada como uma ligação simbólica <code
+                class="filename">if_eth0</code> para monitorar o tráfego de rede na interface eth0.
 				</div><div
               class="para">
-					Once all plugins are correctly set up, the daemon configuration must be updated to describe access control for the collected data. This involves <code
-                class="literal">allow</code> directives in the <code
-                class="filename">/etc/munin/munin-node.conf</code> file. The default configuration is <code
-                class="literal">allow ^127\.0\.0\.1$</code>, and only allows access to the local host. An administrator will usually add a similar line containing the IP address of the grapher host, then restart the daemon with <code
+					Uma vez que todas as extensões estejam configuradas corretamente, a configuração do serviço ("daemon") tem que ser atualizada para descrever o controle de acesso aos dados coletados. Isso envolve a diretiva <code
+                class="literal">allow</code> no arquivo <code
+                class="filename">/etc/munin/munin-node.conf</code>. A configuração padão é <code
+                class="literal">allow ^127\.0\.0\.1$</code>, e apenas permite acesso a máquina ("host") local. O administrador geralmente irá adicionar uma linha similar contendo o endereço IP da máquina que gera o gráfico ("grapher host"), e então reiniciar o serviço ("daemon") com <code
                 class="command">service munin-node restart</code>.
 				</div><div
               class="sidebar"><div
@@ -142,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>APROFUNDANDO</em></span> Criando extensões locais</strong></p></div></div></div><div
                 class="para">
-					Munin does include detailed documentation on how plugins should behave, and how to develop new plugins. <div
+					O Munin inclui documentação detalhada sobre como as extensões devem se comportar e como desenvolver novas extensões. <div
                   class="url">→ <a
                     href="http://munin-monitoring.org/wiki/plugins">http://munin-monitoring.org/wiki/plugins</a></div>
 				</div><div
@@ -170,7 +170,7 @@ graph_info The load average of the machine describes how many processes are in t
 load.info 5 minute load average
 </code></pre><div
                 class="para">
-					The various available fields are described by the “Plugin reference” available as part of the “Munin guide”. <div
+					Os vários campos disponíveis são descritos pela Referência das Extensões (“Plugin reference”) disponível como parte do Guia Munin (“Munin guide”). <div
                   class="url">→ <a
                     href="http://munin.readthedocs.org/en/latest/reference/plugin.html">http://munin.readthedocs.org/en/latest/reference/plugin.html</a></div>
 				</div><div
@@ -186,7 +186,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139689821969216"></a>12.4.1.2. Configurando a Máquina que faz o Gráfico ("Grapher")</h4></div></div></div><div
+                      id="idm140625109824256"></a>12.4.1.2. Configurando a Máquina que faz o Gráfico ("Grapher")</h4></div></div></div><div
               class="para">
 					O “grapher” é simplesmente o computador que agrega os dados e gera os gráficos correspondentes. O software necessário está no pacote <span
                 class="pkg pkg">munin</span>. A configuração padrão roda o <code
@@ -217,7 +217,7 @@ load.info 5 minute load average
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.nagios"></a>12.4.2. Configurando o Nagios</h3></div></div></div><a
-            id="idm139689821959872"
+            id="idm140625109814912"
             class="indexterm"></a><div
             class="para">
 				Diferentemente do Munin, o Nagios não necessariamente requer a instalação de alguma coisa nas máquinas (""hosts") monitoradas; na maioria das vezes, o Nagios é usado para conferir a disponibilidade de serviços de rede. Por exemplo, o Nagios pode se conectar em um servidor web e conferir que determinada página web pode ser obtida dentro de um determinado tempo.
@@ -225,7 +225,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139689821958320"></a>12.4.2.1. Instalando</h4></div></div></div><div
+                      id="idm140625109813360"></a>12.4.2.1. Instalando</h4></div></div></div><div
               class="para">
 					O primeiro passo na configuração do Nagios é a instalação dos pacotes <span
                 class="pkg pkg">nagios3</span>, <span
@@ -266,7 +266,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139689821946720"></a>12.4.2.2. Configurando</h4></div></div></div><div
+                      id="idm140625109801760"></a>12.4.2.2. Configurando</h4></div></div></div><div
               class="para">
 					A interface web do Nagios é bem legal, mas elas não permite configurações, nem pode ser usada para adicionar máquinas ("hosts") monitorados e serviços. Toda a configuração é gerenciada através de arquivos referenciados pelo arquivo de configuração central, <code
                 class="filename">/etc/nagios3/nagios.cfg</code>.
@@ -288,56 +288,56 @@ load.info 5 minute load average
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							a <span
-                      class="emphasis"><em>service</em></span> is a testable element related to a host or a host group. It will most often be a check for a network service, but it can also involve checking that some parameters are within an acceptable range (for instance, free disk space or processor load);
+							Um <span
+                      class="emphasis"><em>service</em></span> é um elemento testável relacionado a uma máquina ou um grupo de máquinas. Ele irá, muito fequentemente, ser uma checagem para um serviço de rede, mas ele também envolve a checagem de que algums parâmetros estão dentro de um intervalo aceitável (por exemplo, espaço livre em disco ou carga do processador);
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							a <span
-                      class="emphasis"><em>servicegroup</em></span> is a set of services that should be grouped together for display;
+							um <span
+                      class="emphasis"><em>servicegroup</em></span> é um conjunto de serviços que devem ser agrupados para exibição;
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							a <span
-                      class="emphasis"><em>contact</em></span> is a person who can receive alerts;
+							um <span
+                      class="emphasis"><em>contact</em></span> é uma pessoa que pode receber alertas;
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							a <span
-                      class="emphasis"><em>contactgroup</em></span> is a set of such contacts;
+							um <span
+                      class="emphasis"><em>contactgroup</em></span> é um grupo de tais pessoas;
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							a <span
-                      class="emphasis"><em>timeperiod</em></span> is a range of time during which some services have to be checked;
+							um <span
+                      class="emphasis"><em>timeperiod</em></span> é um intervalo de tempo durante o qual alguns serviços tem que ser checados;
 						</div></li><li
                   class="listitem"><div
                     class="para">
-							a <span
-                      class="emphasis"><em>command</em></span> is the command line invoked to check a given service.
+							um <span
+                      class="emphasis"><em>command</em></span> é a linha de comando invocada para checar um dado serviço.
 						</div></li></ul></div><div
               class="para">
-					According to its type, each object has a number of properties that can be customized. A full list would be too long to include, but the most important properties are the relations between the objects.
+					De acordo com seu tipo, cada objeto tem um número de propriedades que podem ser customizadas. Um lista completa seria muito longa para ser incluída, mas as propriedades mais importantes são as relações entre os objetos.
 				</div><div
               class="para">
-					A <span
-                class="emphasis"><em>service</em></span> uses a <span
-                class="emphasis"><em>command</em></span> to check the state of a feature on a <span
-                class="emphasis"><em>host</em></span> (or a <span
-                class="emphasis"><em>hostgroup</em></span>) within a <span
-                class="emphasis"><em>timeperiod</em></span>. In case of a problem, Nagios sends an alert to all members of the <span
-                class="emphasis"><em>contactgroup</em></span> linked to the service. Each member is sent the alert according to the channel described in the matching <span
-                class="emphasis"><em>contact</em></span> object.
+					Um <span
+                class="emphasis"><em>service</em></span> usa um <span
+                class="emphasis"><em>command</em></span> para checar o estado de uma funcionalidade em um <span
+                class="emphasis"><em>host</em></span> (ou um <span
+                class="emphasis"><em>hostgroup</em></span>) dentro de um <span
+                class="emphasis"><em>timeperiod</em></span>. Em caso de um problema, o Nagios envia um alerta para todos os membros de <span
+                class="emphasis"><em>contactgroup</em></span> ligados ao serviço. É enviado um alerta a cada membro de acordo com o canal descrito no objeto <span
+                class="emphasis"><em>contact</em></span> correspondente.
 				</div><div
               class="para">
-					An inheritance system allows easy sharing of a set of properties across many objects without duplicating information. Moreover, the initial configuration includes a number of standard objects; in many cases, defining now hosts, services and contacts is a simple matter of deriving from the provided generic objects. The files in <code
-                class="filename">/etc/nagios3/conf.d/</code> are a good source of information on how they work.
+					Um sistema de herança permite o fácil compartilhamento de um conjunto de propriedades por entre muitos objetos sem a duplicação de informação. Além disso, a configuração inicial inclui um número de objetos padrão; em muitos casos, a definição de máquinas, serviços e contatos é uma simples questão de derivação a partir dos objetos genéricos fornecidos. Os arquivos em <code
+                class="filename">/etc/nagios3/conf.d/</code> são uma boa fonte de informação sobre como eles funcionam.
 				</div><div
               class="para">
-					The Falcot Corp administrators use the following configuration:
+					Os administradores da Falcot Corp usam a seguinte configuração:
 				</div><div
               class="example"><a
-                id="idm139689821928624"></a><p
+                id="idm140625109783504"></a><p
                 class="title"><strong>Exemplo 12.3. arquivo <code
                     class="filename">/etc/nagios3/conf.d/falcot.cfg</code></strong></p><div
                 class="example-contents"><pre
@@ -429,28 +429,28 @@ define service{
     check_command         check_ftp2
 }</pre></div></div><div
               class="para">
-					This configuration file describes two monitored hosts. The first one is the web server, and the checks are made on the HTTP (80) and secure-HTTP (443) ports. Nagios also checks that an SMTP server runs on port 25. The second host is the FTP server, and the check includes making sure that a reply comes within 20 seconds. Beyond this delay, a <span
-                class="emphasis"><em>warning</em></span> is emitted; beyond 30 seconds, the alert is deemed critical. The Nagios web interface also shows that the SSH service is monitored: this comes from the hosts belonging to the <code
-                class="literal">ssh-servers</code> hostgroup. The matching standard service is defined in <code
+					Ess arquivo de configuração descreve duas máquinas monitoradas. A primeira é um servidor web, e a checagem é feita nas portas HTTP (80) e HTTP-seguro (443). O Nagios também checa se um servidor SMTP está rodando na porta 25. A segunda máquina é um servidor FTP, e a checagem inclui garantir que uma resposta venha em 20 segundos. Além desse intervalo, um <span
+                class="emphasis"><em>warning</em></span> é emitido; além de 30 segundos, o alerta é considerado crítico. A interface web do Nagios também mostra que um serviço SSH é monitorado: isso vem de máquinas pertencentes ao grupo de máquinas <code
+                class="literal">ssh-servers</code>. O serviço padrão correspondente é definido em <code
                 class="filename">/etc/nagios3/conf.d/services_nagios2.cfg</code>.
 				</div><div
               class="para">
-					Note the use of inheritance: an object is made to inherit from another object with the “use <em
-                class="replaceable">parent-name</em>”. The parent object must be identifiable, which requires giving it a “name <em
-                class="replaceable">identifier</em>” property. If the parent object is not meant to be a real object, but only to serve as a parent, giving it a “register 0” property tells Nagios not to consider it, and therefore to ignore the lack of some parameters that would otherwise be required.
+					Note o uso da herança: um objeto é feito para herdar de outro objeto através de “use <em
+                class="replaceable">parent-name</em>”. O obejto pai tem que ser identificável, o que requer dar a ele uma prorpiedade “name <em
+                class="replaceable">identifier</em>”. Se o objeto pai não se destina a ser um objeto real, mas apenas servir como um pai, dar-lhe uma propriedade “register 0” informa ao Nagios para não considerá-lo, e assim ignorar a falta de alguns parâmetros que de outra forma seriam necessários.
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
-                          class="emphasis"><em>DOCUMENTATION</em></span> List of object properties</strong></p></div></div></div><div
+                          class="emphasis"><em>DOCUMENTAÇÃO</em></span> Lista de propriedades do objeto</strong></p></div></div></div><div
                 class="para">
-					A more in-depth understanding of the various ways in which Nagios can be configured can be obtained from the documentation provided by the <span
-                  class="pkg pkg">nagios3-doc</span> package. This documentation is directly accessible from the web interface, with the “Documentation” link in the top left corner. It includes a list of all object types, with all the properties they can have. It also explains how to create new plugins.
+					Uma compreensão mais profunda das várias maneiras pelas quais o Nagios pode ser configurado pode ser obtida a partir da documentação fornecida pelo pacote <span
+                  class="pkg pkg">nagios3-doc</span>. Essa documentação é diretamente acessível pela interface web, com o link “Documentation” no topo do canto esquerdo. ela inclui uma lista de todos dos tipos de objetos, com todas as propriedades que eles podem ter. ela também explica como criar novas extensões.
 				</div></div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
-                          class="emphasis"><em>GOING FURTHER</em></span> Remote tests with NRPE</strong></p></div></div></div><div
+                          class="emphasis"><em>INDO ALÉM</em></span> Testes remotos com NRPE</strong></p></div></div></div><div
                 class="para">
 					Muitas extensões Nagios permitem conferir alguns parâmetros locais de uma máquina ("host"); se muitas máquinas precisam dessas conferências enquanto uma instalação central as reune, a extensão NRPE (<span
                   class="emphasis"><em>Nagios Remote Plugin Executor</em></span>) precisa ser implantada. O pacote <span

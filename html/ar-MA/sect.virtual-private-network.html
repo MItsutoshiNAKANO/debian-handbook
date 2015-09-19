@@ -73,11 +73,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			<span
             class="emphasis"><em>الشبكة الظاهرية الخاصة Virtual Private Network</em></span> (أو VPN اختصاراً) هي طريقة لربط شبكتين محليتين مختلفتين بوساطة نفق عبر الإنترنت؛ عادة ما يكون النفق مشفراً لضمان سرية البيانات. غالبًا ما تستخدم شبكات VPN لدمج جهاز بعيد مع الشبكة المحلية للشركة.
 		</div><a
-          id="idm140241666454688"
+          id="idm139729295192592"
           class="indexterm"></a><a
-          id="idm140241666453248"
+          id="idm139729295191152"
           class="indexterm"></a><a
-          id="idm140241666452288"
+          id="idm139729295190192"
           class="indexterm"></a><div
           class="para">
 			هناك عدة أدوات توفر هذا. OpenVPN هو حل فعال، وسهل النشر والصيانة (المتابعة)، ويعتمد على SSL/TLS. من الاحتمالات الأخرى استعمال IPsec لتشفير IP traffic بين جهازين، بأسلوب شفاف؛ أي لا توجد حاجة لتعديل التطبيقات التي تعمل على هذين الجهازين حتى تستفيد من وجود VPN. يمكن استخدام SSH أيضًا لتوفير شبكة خاصة ظاهرية، بالإضافة لمزاياه التقليدية الأخرى. أخيراً، يمكن إنشاء VPN باستخدام بروتوكول PPTP الخاص بشركة Microsoft. هناك حلول أخرى متاحة، لكنها تقع خارج مدى هذا الكتاب.
@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.openvpn"></a>10.2.1. ‏OpenVPN</h3></div></div></div><a
-            id="idm140241666449040"
+            id="idm139729295186944"
             class="indexterm"></a><div
             class="para">
 				OpenVPN هو برنامج مخصص لإنشاء الشبكات الخاصة الظاهرية. يحتاج إعداد OpenVPN إلى إنشاء واجهات شبكية ظاهرية (بطاقات شبكة ظاهرية) على مخدم VPN وعلى العميل (أو العملاء)؛ يدعم البرنامج كلاً من واجهات <code
@@ -101,33 +101,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ثقافة</em></span> SSL وTLS</strong></p></div></div></div><a
-              id="idm140241666443504"
+              id="idm139729295181408"
               class="indexterm"></a><a
-              id="idm140241666442544"
+              id="idm139729295180448"
               class="indexterm"></a><div
               class="para">
-				اخترعت Netscape بروتوكول SSL ‏(<span
-                class="emphasis"><em>Secure Socket Layer</em></span>) لتأمين الاتصالات مع مخدمات الوب. لاحقًا جعلت IETF هذا البروتوكول معياراً قياسيًا تحت اسم TLS‏ (<span
-                class="emphasis"><em>Transport Layer Security</em></span>)؛ يتشابه TLS مع SSLv3 كثيراً ولا يختلف عنه إلا ببعض التصحيحات والتحسينات.
+				The SSL protocol (<span
+                class="emphasis"><em>Secure Socket Layer</em></span>) was invented by Netscape to secure connections to web servers. It was later standardized by IETF under the acronym TLS (<span
+                class="emphasis"><em>Transport Layer Security</em></span>). Since then TLS continued to evolve and nowadays SSL is deprecated due to multiple design flaws that have been discovered.
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.easy-rsa"></a>10.2.1.1. البنية التحتية للمفاتيح العامة: <span
                       class="emphasis"><em>easy-rsa</em></span></h4></div></div></div><a
-              id="idm140241669749376"
+              id="idm139729279399728"
               class="indexterm"></a><a
-              id="idm140241669748448"
+              id="idm139729279398800"
               class="indexterm"></a><a
-              id="idm140241669747520"
+              id="idm139729279397872"
               class="indexterm"></a><a
-              id="idm140241669746560"
+              id="idm139729279396912"
               class="indexterm"></a><a
-              id="idm140241669745120"
+              id="idm139729279395472"
               class="indexterm"></a><a
-              id="idm140241669744000"
+              id="idm139729279394352"
               class="indexterm"></a><a
-              id="idm140241669743040"
+              id="idm139729279393392"
               class="indexterm"></a><div
               class="para">
 					تستخدم خوارزمية RSA كثيراً في مجال التشفير بالمفتاح العام (التشفير غير المتناظر). تحتاج عملية التشفير إلى زوج من المفاتيح، يتألف من مفتاح خاص ومفتاح عام. المفتاحان متعلقان ببعضهما، ومن خصائصهما الرياضية أن الرسالة المشفرة بالمفتاح العام لا يمكن فك تشفيرها إلا بالمفتاح الخاص، وهذا يضمن سرية البيانات. من جهة أخرى، يستطيع أي شخص يملك المفتاح العام فك تشفير الرسائل المشفرة بالمفتاح الخاص، وهذا يسمح بالتحقق من أصالة مصدر الرسالة لأنه لا يستطيع أحد توليدها ما لم يملك المفتاح الخاص. وعند اقتران هذه الطريقة مع تابع تهشير رقمي digital hash function (مثل MD5 أو SHA1، أو بديل أحدث)، ينتج عنها آلية توقيع يمكن تطبيقها على أي رسالة.
@@ -306,8 +306,7 @@ This is going to take a long time
                 class="computeroutput">$ </code><strong
                 class="userinput"><code>./build-key JoeSmith
 </code></strong><code
-                class="computeroutput">./build-key JoeSmith
-Generating a 2048 bit RSA private key
+                class="computeroutput">Generating a 2048 bit RSA private key
 ................................+++
 ..............................................+++
 writing new private key to 'JoeSmith.key'
@@ -347,7 +346,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140241669702384"></a>10.2.1.2. إعداد مخدم OpenVPN</h4></div></div></div><div
+                      id="idm139729279353008"></a>10.2.1.2. إعداد مخدم OpenVPN</h4></div></div></div><div
               class="para">
 					افتراضيًا، يحاول سكربت تهيئة OpenVPN بدء جميع الشبكات الخاصة الظاهرية المعرفة في <code
                 dir="ltr"
@@ -391,7 +390,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140241668895680"></a>10.2.1.3. إعداد عملاء OpenVPN</h4></div></div></div><div
+                      id="idm139729280549264"></a>10.2.1.3. إعداد عملاء OpenVPN</h4></div></div></div><div
               class="para">
 					لإعداد عميل VPN يجب أيضاً إنشاء ملف إعداد في المجلد <code
                 class="filename">/etc/openvpn/</code>. يمكن الاستعانة بالملف <code
@@ -420,16 +419,16 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="pkg pkg">network-manager-openvpn-gnome</span> إضافة لبرنامج إدارة الشبكة (انظر <a
                 class="xref"
                 href="sect.network-config.html#sect.roaming-network-config">قسم 8.2.4, “إعداد الشبكة الآلي للمستخدمين الرُّحَّل”</a>) تسمح بإدارة شبكات OpenVPN الخاصة الظاهرية. هذا يسمح لكل مستخدم بإعداد اتصالات OpenVPN رسوميًا والتحكم بها عبر أيقونة إدارة الشبكة. <a
-                id="idm140241668884496"
+                id="idm139729280538160"
                 class="indexterm"></a>
 				</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh-vpn"></a>10.2.2. الشبكات الخاصة الظاهرية باستخدام SSH</h3></div></div></div><a
-            id="idm140241668881952"
+            id="idm139729280535616"
             class="indexterm"></a><a
-            id="idm140241668880992"
+            id="idm139729280534656"
             class="indexterm"></a><div
             class="para">
 				في الواقع هناك طريقتين لإنشاء الشبكات الخاصة الظاهرية باستخدام SSH. الطريقة القديمة تتضمن إنشاء طبقة PPP عبر وصلة SSH. هذه الطريقة مشروحة في وثيقة HOWTO التالية: <div
@@ -460,11 +459,11 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipsec"></a>10.2.3. ‏IPsec</h3></div></div></div><a
-            id="idm140241668869808"
+            id="idm139729280523696"
             class="indexterm"></a><a
-            id="idm140241668868848"
+            id="idm139729280522736"
             class="indexterm"></a><a
-            id="idm140241668867728"
+            id="idm139729280521616"
             class="indexterm"></a><div
             class="para">
 				IPsec, despite being the standard in IP VPNs, is rather more involved in its implementation. The IPsec engine itself is integrated in the Linux kernel; the required user-space parts, the control and configuration tools, are provided by the <span
@@ -479,13 +478,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="pkg pkg">racoon</span> or <span
               class="pkg pkg">strongswan</span> makes the process much simpler by bringing administration together at a central point, and more secure by rotating the keys periodically.
 			</div><a
-            id="idm140241668859792"
+            id="idm139729280513760"
             class="indexterm"></a><a
-            id="idm140241668858832"
+            id="idm139729280512800"
             class="indexterm"></a><a
-            id="idm140241668857392"
+            id="idm139729280511360"
             class="indexterm"></a><a
-            id="idm140241668856432"
+            id="idm139729280510400"
             class="indexterm"></a><div
             class="para">
 				رغم أن IPsec هو المرجع في شبكات VPN، إلا أن تعقيد إعداده يحد من استخدامه عمليًا. الحلول التي تعتمد على OpenVPN مفضلة عموماً عندما لا تكون الأنفاق المطلوبة كثيرة العدد ولا كثيرة التغير مع الزمن.
@@ -499,9 +498,9 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="emphasis"><em>NAT-T</em></span> (اختصاراً للعبارة <span
                 class="emphasis"><em>NAT Traversal</em></span>)، التي تعمل أساساً على تغليف حزم IPsec بحزم UDP قياسية.
 			</div><a
-              id="idm140241668851520"
+              id="idm139729280505600"
               class="indexterm"></a><a
-              id="idm140241668850560"
+              id="idm139729280504640"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -510,13 +509,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="para">
 				The standard mode of operation of IPsec involves data exchanges on UDP port 500 for key exchanges (also on UDP port 4500 in the case that NAT-T is in use). Moreover, IPsec packets use two dedicated IP protocols that the firewall must let through; reception of these packets is based on their protocol numbers, 50 (ESP) and 51 (AH).
 			</div><a
-              id="idm140241668847552"
+              id="idm139729280501632"
               class="indexterm"></a><a
-              id="idm140241668846592"
+              id="idm139729280500672"
               class="indexterm"></a><a
-              id="idm140241668845632"
+              id="idm139729280499712"
               class="indexterm"></a><a
-              id="idm140241668844192"
+              id="idm139729280498272"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -527,13 +526,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="emphasis"><em>Point-to-Point Tunneling Protocol</em></span>) قناتي اتصال، واحدة لمعلومات التحكم، والأخرى لتبادل البيانات؛ تستخدم القناة الأخيرة بروتوكول GRE‏ (<span
               class="emphasis"><em>Generic Routing Encapsulation</em></span>). بعدها يتم إعداد اتصال PPP قياسي عبر قناة تبادل البيانات.
 			</div><a
-            id="idm140241668839584"
+            id="idm139729280493776"
             class="indexterm"></a><a
-            id="idm140241668838624"
+            id="idm139729280492816"
             class="indexterm"></a><a
-            id="idm140241668837696"
+            id="idm139729280491888"
             class="indexterm"></a><a
-            id="idm140241668836736"
+            id="idm139729280490928"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -545,7 +544,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="url">→ <a
                   href="http://pptpclient.sourceforge.net/howto-debian.phtml">http://pptpclient.sourceforge.net/howto-debian.phtml</a></div>
 				</div><a
-              id="idm140241668831872"
+              id="idm139729280486064"
               class="indexterm"></a><div
               class="para">
 					لقد أنشأ مديرو النظم في شركة فلكوت عدة ملفات: <code
@@ -622,9 +621,9 @@ fi
 					لتأمين PPTP يجب استخدام ميزة MPPE ‏(<span
                   class="emphasis"><em>Microsoft Point-to-Point Encryption</em></span>)، وهي متوفرة في النوى القياسية لتوزيعة دبيان بشكل وحدة.
 				</div><a
-                id="idm140241668814768"
+                id="idm139729280468960"
                 class="indexterm"></a><a
-                id="idm140241668813808"
+                id="idm139729280468000"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4

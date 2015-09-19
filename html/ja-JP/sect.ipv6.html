@@ -81,11 +81,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="pkg pkg">iputils-ping</span>、<span
             class="pkg pkg">iputils-tracepath</span> パッケージに含まれます。
 		</div><a
-          id="idm139657411276704"
+          id="idm140378094858832"
           class="indexterm"></a><a
-          id="idm139657411275744"
+          id="idm140378094857872"
           class="indexterm"></a><a
-          id="idm139657411274320"
+          id="idm140378094856448"
           class="indexterm"></a><div
           class="para">
 			IPv6 ネットワークは IPv4 と同様に <code
@@ -111,7 +111,7 @@ iface eth0 inet6 static
 		</div><div
           class="para">
 			SLAAC の挙動はプライバシーを推測される危険性をはらんでいます。たとえばラップトップでネットワークを頻繁に切り替える場合、公開 IPv6 アドレスの一部に <acronym
-            class="acronym">MAC</acronym> アドレスを含めたくないかもしれません。SLAAC のせいで、異なるネットワーク上の同じデバイスを容易に識別できるようになります。この問題に対する解決策が IPv6 プライバシー拡張です。これを使うと、インターフェースにランダムに生成されたアドレスを割り当て、定期的にこれを変更し、外部に出る接続にはこのアドレスを使う、ようになります。外部から入ってくる接続は SLAAC で生成されたアドレスを使うことも可能です。以下の例では <code
+            class="acronym">MAC</acronym> アドレスを含めたくないかもしれません。SLAAC のせいで、異なるネットワーク上の同じデバイスを容易に識別できるようになります。この問題に対する解決策が IPv6 プライバシー拡張です (初回インストール時に IPv6 接続が検出された場合、Debian は IPv6 プライバシー拡張をデフォルトで有効化します)。これを使うと、インターフェースにランダムに生成されたアドレスを割り当て、定期的にこれを変更し、外部に出る接続にはこのアドレスを使う、ようになります。外部から入ってくる接続は SLAAC で生成されたアドレスを使うことも可能です。以下の例では <code
             class="filename">/etc/network/interfaces</code> の中で IPv6 プライバシー拡張を有効化しています。
 		</div><div
           class="example"><a
@@ -132,11 +132,11 @@ iface eth0 inet6 auto
               class="url">→ <a
                 href="http://lists.debian.org/debian-ipv6/">http://lists.debian.org/debian-ipv6/</a></div>
 		</div></div><a
-          id="idm139657411259600"
+          id="idm140378094841584"
           class="indexterm"></a><a
-          id="idm139657411258672"
+          id="idm140378094840656"
           class="indexterm"></a><a
-          id="idm139657411257264"
+          id="idm140378094839248"
           class="indexterm"></a><div
           class="para">
 			IPv6 接続は IPv4 と同様の方法で制限することが可能です。すなわち 標準的な Debian カーネルは IPv6 用の <span
@@ -161,9 +161,9 @@ iface eth0 inet6 auto
               class="url">→ <a
                 href="http://www.gogo6.com/freenet6/tunnelbroker">http://www.gogo6.com/freenet6/tunnelbroker</a></div>
 			</div><a
-            id="idm139657411248896"
+            id="idm140378094830880"
             class="indexterm"></a><a
-            id="idm139657411247936"
+            id="idm140378094829920"
             class="indexterm"></a><div
             class="para">
 				Freenet6 トンネルを使うには、ウェブサイトから Freenet6 Pro アカウントを登録し、<span
@@ -194,12 +194,12 @@ if_prefix=eth0</pre><div
               class="command">ifconfig</code> コマンドの出力から <code
               class="literal">tun</code> インターフェースを含むブロックを参照します。
 			</div><a
-            id="idm139657411237200"
+            id="idm140378094819184"
             class="indexterm"></a><div
             class="para">
 				そして <code
-              class="command">/etc/init.d/gogoc restart</code> と <code
-              class="command">/etc/init.d/radvd start</code> を実行すれば、IPv6 ネットワークが使えるはずです。
+              class="command">service gogoc restart</code> と <code
+              class="command">service radvd start</code> を実行すれば、IPv6 ネットワークが使えるはずです。
 			</div></div></div><ul
         class="docnav"><li
           class="previous"><a

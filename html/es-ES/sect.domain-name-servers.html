@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dns-principe"></a>10.6.1. Principio y mecanismo</h3></div></div></div><a
-            id="idm140667124415296"
+            id="idm140408379352576"
             class="indexterm"></a><a
-            id="idm140667124414336"
+            id="idm140408379351616"
             class="indexterm"></a><div
             class="para">
 				El <span
@@ -86,9 +86,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Los registros DNS se organizan en zonas; cada zona coincide con un dominio (o subdominio) o un rango de direcciones IP (ya que generalmente se proveen direcciones IP en rangos consecutivos). Un servidor primario es autoridad sobre los contenidos de una zona; los servidores secundarios, generalmente en otras máquinas, proveen copias de la zona primaria actualizadas regularmente.
 			</div><a
-            id="idm140667124409536"
+            id="idm140408379346816"
             class="indexterm"></a><a
-            id="idm140667124408096"
+            id="idm140408379345376"
             class="indexterm"></a><div
             class="para">
 				Cada zona puede contener registros de varios tipos (<span
@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">A</code>: dirección IPv4. <a
-                    id="idm140667124404240"
+                    id="idm140408379341520"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -108,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						<code
                     class="literal">CNAME</code>: alias (<span
                     class="emphasis"><em>nombre canónico</em></span>: «canonical name»). <a
-                    id="idm140667124401680"
+                    id="idm140408379338960"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -119,7 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="xref"
                     href="network-services.html#sidebar.smtp"><span
                       class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> SMTP</a>); se contactan los demás servidores en orden decreciente de prioridad si el primero no responde. <a
-                    id="idm140667124398112"
+                    id="idm140408379335392"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -128,14 +128,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">PTR</code>: asociación de una dirección IP con un nombre. Se almacenan estos registros en una zona de «DNS inverso» cuyo nombre está basado en el rango de direcciones IP. Por ejemplo, <code
                     class="literal">1.168.192.in-addr.arpa</code> es la zona que contiene las asociaciones inversas de todas las direcciones en el rango <code
                     class="literal">192.168.1.0/24</code>. <a
-                    id="idm140667124394512"
+                    id="idm140408379331792"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">AAAA</code>: dirección IPv6. <a
-                    id="idm140667124392432"
+                    id="idm140408379329712"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -146,12 +146,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">internal.falcot.com</code>, lo que significa que otro servidor administra la zona <code
                     class="literal">internal.falcot.com</code>. Por supuesto, este servidor debe declarar una zona <code
                     class="literal">internal.falcot.com</code>. <a
-                    id="idm140667124388128"
+                    id="idm140408379325408"
                     class="indexterm"></a>
 					</div></li></ul></div><a
-            id="idm140667124387008"
+            id="idm140408379324288"
             class="indexterm"></a><a
-            id="idm140667124385568"
+            id="idm140408379322848"
             class="indexterm"></a><div
             class="para">
 				El servidor de nombres de referencia, Bind, fue desarrollado y es mantenido por ISC (<span
@@ -161,20 +161,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Lo que es más, Bind es compatible con el estándar DNSSEC para firmar (y, por lo tanto, autenticar) registros DNS, lo que permite bloquear datos apócrifos durante ataques con intermediarios («man-in-the-middle»).
 			</div><a
-            id="idm140667124381872"
+            id="idm140408379319152"
             class="indexterm"></a><a
-            id="idm140667124380448"
+            id="idm140408379317728"
             class="indexterm"></a><a
-            id="idm140667124379488"
+            id="idm140408379316768"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> DNSSEC</strong></p></div></div></div><a
-              id="idm140667124377440"
+              id="idm140408379314720"
               class="indexterm"></a><div
               class="para">
-				La normativa DNSSEC es bastante compleja; esto explica parcialmente porqué no es utilizada ampliamente aún (aún si puede coexistir perfectamente con servidores DNS que no conozcan de DNSSEC). Para entender los recovecos debería revisar el siguiente artículo. <div
+				The DNSSEC norm is quite complex; this partly explains why it is not in widespread usage yet (even if it perfectly coexists with DNS servers unaware of DNSSEC). To understand all the ins and outs, you should check the following article. <div
                 class="url">→ <a
                   href="http://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions">http://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions</a></div>
 			</div></div></div><div
@@ -195,21 +195,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>PRECAUCIÓN</em></span> Nombres de zonas inversas</strong></p></div></div></div><a
-              id="idm140667124369712"
+              id="idm140408379307024"
               class="indexterm"></a><a
-              id="idm140667124368272"
+              id="idm140408379305584"
               class="indexterm"></a><a
-              id="idm140667124367312"
+              id="idm140408379304624"
               class="indexterm"></a><a
-              id="idm140667124366192"
+              id="idm140408379303504"
               class="indexterm"></a><a
-              id="idm140667124365072"
+              id="idm140408379302384"
               class="indexterm"></a><div
               class="para">
-				Reverse zones have a particular name. The zone covering the <code
-                class="literal">192.168.0.0/16</code> network needs to be named <code
-                class="literal">168.192.in-addr.arpa</code>: the IP address components are reversed, and followed by the <code
-                class="literal">in-addr.arpa</code> suffix.
+				Las zonas inversas tiene un nombre particular. La zona que cubre la red <code
+                class="literal">192.168.0.0/16</code> necesita llamarse <code
+                class="literal">168.192.in-addr.arpa</code>: se invierten los componentes de la dirección IP seguidos del sufijo <code
+                class="literal">in-addr.arpa</code>.
 			</div><div
               class="para">
 				Para redes IPv6, el sufijo es <code
@@ -222,22 +222,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>SUGERENCIA</em></span> Pruebas del servidor DNS</strong></p></div></div></div><div
               class="para">
-				The <code
-                class="command">host</code> command (in the <span
-                class="pkg pkg">bind9-host</span> package) queries a DNS server, and can be used to test the server configuration. For example, <code
-                class="command">host machine.falcot.com localhost</code> checks the local server's reply for the <code
-                class="literal">machine.falcot.com</code> query. <code
+				El programa <code
+                class="command">host</code> (en el paquete <span
+                class="pkg pkg">bind9-host</span>) consulta un servidor DNS y puede utilizarse para probar la configuración del servidor. Por ejemplo, <code
+                class="command">host maquina.falcot.com localhost</code> revisa la respuesta del servidor local a la consulta por <code
+                class="literal">maquina.falcot.com</code>. <code
                 class="command">host <em
-                  class="replaceable">ipaddress</em> localhost</code> tests the reverse resolution.
+                  class="replaceable">direccion.ip</em> localhost</code> prueba la resolución inversa.
 			</div><a
-              id="idm140667124355264"
+              id="idm140408379292544"
               class="indexterm"></a></div><div
             class="para">
 				Los siguientes extractos de configuración, de los archivos de Falcot, pueden servirle como punto de partida para configurar un servidor DNS:
 			</div><a
-            id="idm140667124353376"
+            id="idm140408379290656"
             class="indexterm"></a><a
-            id="idm140667124352256"
+            id="idm140408379289536"
             class="indexterm"></a><div
             class="example"><a
               id="example.bind-named.conf.local"></a><p
@@ -265,8 +265,7 @@ zone "168.192.in-addr.arpa" {
         type master;
         file "/etc/bind/db.192.168";
         allow-query { 192.168.0.0/16; };
-};
-</pre></div></div><div
+};</pre></div></div><div
             class="example"><a
               id="example.bind-db.falcot.com"></a><p
               class="title"><strong>Ejemplo 10.13. Extracto de <code
@@ -299,8 +298,7 @@ mail    IN      A       212.94.201.10
 mail2   IN      A       212.94.201.11
 www     IN      A       212.94.201.11
 
-dns     IN      CNAME   ns
-</pre></div></div><div
+dns     IN      CNAME   ns</pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
@@ -336,8 +334,7 @@ $TTL    604800
 2.0     IN      PTR     neptune.internal.falcot.com.
 
 ; 192.168.3.1 -&gt; pau
-1.3     IN      PTR     pau.internal.falcot.com.
-</pre></div></div></div></div><ul
+1.3     IN      PTR     pau.internal.falcot.com.</pre></div></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"

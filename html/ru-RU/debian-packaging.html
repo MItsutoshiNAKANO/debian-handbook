@@ -75,25 +75,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. Пересборка пакета из его исходного кода</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140706562928656">15.1.1. Получение исходного кода</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140245906426704">15.1.1. Получение исходного кода</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140706560934992">15.1.2. Внесение изменений</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140245915802000">15.1.2. Внесение изменений</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140706548213472">15.1.3. Запуск пересборки</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140245899148752">15.1.3. Запуск пересборки</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. Сборка вашего первого пакета</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140706542457312">15.2.1. Метапакеты или пакеты-пустышки</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140245899058944">15.2.1. Метапакеты или пакеты-пустышки</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140706540506960">15.2.2. Простое файловое хранилище</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140245898300880">15.2.2. Простое файловое хранилище</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. Создание репозитория пакетов для APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. Как стать сопровождающим пакета</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140706541310496">15.4.1. Учимся создавать пакеты</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140245898169456">15.4.1. Учимся создавать пакеты</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140706540141728">15.4.2. Процесс принятия</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140245898105232">15.4.2. Процесс принятия</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		Нередко администратор, постоянно имеющий дело с пакетами Debian, со временем чувствует необходимость в создании своих собственных пакетов или изменении существующего пакета. Цель этой главы состоит в том, чтобы ответить на наиболее распространенные вопросы в этой области, а также предоставить необходимые базовые знания для использования инфраструктуры Debian наилучшим образом. Если повезет, после попытки приложить руку к созданию локальных пакетов вы даже можете почувствовать потребность в том, чтобы пойти дальше и присоединиться к самому Проекту Debian!
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span>; эта операция называется «бэкпортирование». Как обычно, прежде чем приступать к такой задаче, следует проверbnm, не был ли такой пакет уже создан, — для этого достаточно беглого взгляда на страницу данного пакета в Системе отслеживания пакетов. <div
               class="url">→ <a
                 href="http://packages.qa.debian.org/">http://packages.qa.debian.org/</a></div> <a
-              id="idm140706542553360"
+              id="idm140245914956256"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140706562928656"></a>15.1.1. Получение исходного кода</h3></div></div></div><div
+                      id="idm140245906426704"></a>15.1.1. Получение исходного кода</h3></div></div></div><div
               class="para">
 				Пересборка пакета Debian начинается с получения его исходного кода. Простейший способ состоит в использовании команды <code
                 class="command">apt-get source <em
@@ -151,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140706560934992"></a>15.1.2. Внесение изменений</h3></div></div></div><div
+                      id="idm140245915802000"></a>15.1.2. Внесение изменений</h3></div></div></div><div
               class="para">
 				Исходный код пакета теперь доступен в каталоге, имя которого составлено из имени пакета исходного кода и его версии (например <span
                 class="emphasis"><em>samba-3.6.16</em></span>); здесь мы будем работать над нашими локальными изменениями.
@@ -194,11 +194,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>СОВЕТ</em></span> Установка <code
                           class="literal">Build-Depends</code></strong></p></div></div></div><a
-                id="idm140706541238480"
+                id="idm140245899121248"
                 class="indexterm"></a><div
                 class="para">
 				<a
-                  id="idm140706541236880"
+                  id="idm140245899119648"
                   class="indexterm"></a> <code
                   class="command">apt-get</code> позволяет установить все пакеты, упомянутые в поле <code
                   class="literal">Build-Depends</code> исходного пакета, которые доступны в дистрибутиве, указанном в строке <code
@@ -210,14 +210,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140706548213472"></a>15.1.3. Запуск пересборки</h3></div></div></div><div
+                      id="idm140245899148752"></a>15.1.3. Запуск пересборки</h3></div></div></div><div
               class="para">
 				Когда все необходимые изменения внесены в исходный код, мы можем запустить создание собственно двоичного пакета (файл <code
                 class="filename">.deb</code>). Весь процесс управляется командой <code
                 class="command">dpkg-buildpackage</code>.
 			</div><div
               class="example"><a
-                id="idm140706548211088"></a><p
+                id="idm140245899146368"></a><p
                 class="title"><strong>Пример 15.1. Пересборка пакета</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -264,7 +264,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>КРАТКИЙ ОБЗОР</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140706542466272"
+                id="idm140245899067904"
                 class="indexterm"></a><div
                 class="para">
 				Программа <code

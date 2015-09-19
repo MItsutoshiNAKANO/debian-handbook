@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.virtualization.html#sect.lxc">12.2.2. LXC</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.virtualization.html#idm139689840991024">12.2.3. Virtualização com KVM</a></span></dt></dl></dd><dt><span
+                      href="sect.virtualization.html#idm140625120554544">12.2.3. Virtualização com KVM</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.automated-installation.html">12.3. Instalação Automatizada</a></span></dt><dd><dl><dt><span
                     class="section"><a
@@ -138,7 +138,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.raid-soft"></a>12.1.1. RAID Por Software</h3></div></div></div><a
-              id="idm139689845805456"
+              id="idm140625116227312"
               class="indexterm"></a><div
               class="para">
 				RAID significa <span
@@ -260,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><h4
                       class="title"><a
                         id="sect.raid-setup"></a>12.1.1.2. Configurando um RAID</h4></div></div></div><a
-                id="idm139689844992896"
+                id="idm140625120360768"
                 class="indexterm"></a><div
                 class="para">
 					Configurar volumes RAID requer o pacote <span
@@ -631,8 +631,7 @@ ARRAY /dev/md0 metadata=1.2 name=mirwiz:0 UUID=bb085b35:28e821bd:20d697c9:650152
 ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f67464
 
 # This configuration was auto-generated on Thu, 17 Jan 2013 16:21:01 +0100
-# by mkconf 3.2.5-3
-</pre></div></div><div
+# by mkconf 3.2.5-3</pre></div></div><div
                 class="para">
 					Um dos detalhes mais úteis é a opção <code
                   class="literal">DEVICE</code>, que lista os dispositivos aonde o sistema irá automaticamente procurar por componentes dos volumes RAID no momento da inicialização. No nosso exemplo, nós substituímos o valor padrão, <code
@@ -649,8 +648,8 @@ ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f674
                   class="computeroutput"># </code><strong
                   class="userinput"><code>mdadm --misc --detail --brief /dev/md?</code></strong>
 <code
-                  class="computeroutput">ARRAY /dev/md0 metadata=1.2 name=squeeze:0 UUID=6194b63f:69a40eb5:a79b7ad3:c91f20ee
-ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a432</code></pre><div
+                  class="computeroutput">ARRAY /dev/md0 metadata=1.2 name=mirwiz:0 UUID=bb085b35:28e821bd:20d697c9:650152bb
+ARRAY /dev/md1 metadata=1.2 name=mirwiz:1 UUID=6ec558ca:0c2c04a0:19bca283:95f67464</code></pre><div
                 class="para">
 					O conteúdo dessas duas últimas linhas não depende da lista de discos incluídos no volume. Logo, não é necessário regenerar essas linhas quando se for substituir um disco falho por um novo. Por outro lado, tem que se tomar o cuidado de atualizar o arquivo ao se criar ou remover uma array RAID.
 				</div></div></div><div
@@ -658,9 +657,9 @@ ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.lvm"></a>12.1.2. LVM</h3></div></div></div><a
-              id="idm139689843657552"
+              id="idm140625120151888"
               class="indexterm"></a><a
-              id="idm139689843656592"
+              id="idm140625120150928"
               class="indexterm"></a><div
               class="para">
 				LVM, o <span
@@ -801,7 +800,8 @@ ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a
                   class="computeroutput"># </code><strong
                   class="userinput"><code>vgdisplay</code></strong>
 <code
-                  class="computeroutput"># </code><strong
+                  class="computeroutput">  No volume groups found
+# </code><strong
                   class="userinput"><code>vgcreate vg_critical /dev/sdb2 /dev/sdf1</code></strong>
 <code
                   class="computeroutput">  Volume group "vg_critical" successfully created
@@ -810,7 +810,7 @@ ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a
 <code
                   class="computeroutput">  --- Volume group ---
   VG Name               vg_critical
-  System ID
+  System ID             
   Format                lvm2
   Metadata Areas        2
   Metadata Sequence No  1
@@ -822,12 +822,12 @@ ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a
   Max PV                0
   Cur PV                2
   Act PV                2
-  VG Size               8.14 GB
-  PE Size               4.00 MB
-  Total PE              2084
-  Alloc PE / Size       0 / 0
-  Free  PE / Size       2084 / 8.14 GB
-  VG UUID               6eG6BW-MmJE-KB0J-dsB2-52iL-N6eD-1paeo8
+  VG Size               8.09 GiB
+  PE Size               4.00 MiB
+  Total PE              2071
+  Alloc PE / Size       0 / 0   
+  Free  PE / Size       2071 / 8.09 GiB
+  VG UUID               bpq7zO-PzPD-R7HW-V8eN-c10c-S32h-f6rKqp
 
 # </code><strong
                   class="userinput"><code>vgcreate vg_normal /dev/sdc3 /dev/sdd /dev/sdf2</code></strong>
@@ -836,9 +836,10 @@ ARRAY /dev/md1 metadata=1.2 name=squeeze:1 UUID=20a8419b:41612750:b9171cfe:00d9a
 # </code><strong
                   class="userinput"><code>vgdisplay -C</code></strong>
 <code
-                  class="computeroutput">  VG          #PV #LV #SN Attr   VSize  VFree
-  vg_critical   2   0   0 wz--n-  8.14g  8.14g
-  vg_normal     3   0   0 wz--n- 12.30g 12.30g</code></pre><div
+                  class="computeroutput">  VG          #PV #LV #SN Attr   VSize  VFree 
+  vg_critical   2   0   0 wz--n-  8.09g  8.09g
+  vg_normal     3   0   0 wz--n- 12.30g 12.30g
+</code></pre><div
                 class="para">
 					Aqui novamente, os comandos são bem simples (e <code
                   class="command">vgdisplay</code> propõem dois formatos de saída). Note que é perfeitamente possível usar duas partições de um mesmo disco físico em dois VGs diferentes. Note também que nós usamos um prefixo <code
@@ -1139,7 +1140,7 @@ The filesystem on /dev/vg_critical/lv_files is now 1835008 (4k) blocks long.
                           class="emphasis"><em>NOTA</em></span> Se o desempenho importa…</strong></p></div></div></div><div
                 class="para">
 				Se a velocidade de entrada/saída é essencial, especialmente em termos de tempo de acesso, o uso do LVM e/ou RAID em uma das muitas combinações pode ter algum impacto no desempenho, e isso pode influenciar nas decisões sobre qual escolher. Contudo, essas diferenças de desempenho são realmente pequenas, e só serão mensuráveis em alguns casos de uso. Se desempenho importa, o melhor ganho a ser obtido seria no uso de mídia não rotativa (<a
-                  id="idm139689844812080"
+                  id="idm140625119427616"
                   class="indexterm"></a><span
                   class="emphasis"><em>solid-state drives</em></span> ou SSDs); seu custo por megabyte é maior que os discos rígidos padrão, e sua capacidade geralmente é menor, mas ele fornece desempenho excelente para acessos aleatórios. Se o padrão de uso inclui muitas operações de entrada/saída espalhadas por todo o sistema de arquivos, por exemplo, para bancos de dados aonde consultas complexas são executadas rotineiramente, então a vantagem de executá-las em um SSD de longe superam tudo o que pode ser ganho escolhendo LVM sobre RAID ou o contrário. Nessas situações, a escolha deveria ser determinada por outras considerações ao invés de velocidade pura, já que o aspecto desempenho é mais facilmente lidado usando SSDs.
 			</div></div><div

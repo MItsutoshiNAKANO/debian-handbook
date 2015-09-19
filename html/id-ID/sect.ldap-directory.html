@@ -68,14 +68,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.ldap-directory"></a>11.7. LDAP Directory</h2></div></div></div><a
-          id="idm139734052315584"
+          id="idm139884646712864"
           class="indexterm"></a><a
-          id="idm139734052314816"
+          id="idm139884646712096"
           class="indexterm"></a><a
-          id="idm139734052314048"
+          id="idm139884646711328"
           class="indexterm"></a><div
           class="para">
-			OpenLDAP is an implementation of the LDAP protocol; in other words, it's a special-purpose database designed for storing directories. In the most common use case, using an LDAP server allows centralizing management of user accounts and the related permissions. Moreover, an LDAP database is easily replicated, which allows setting up multiple synchronized LDAP servers. When the network and the user base grows quickly, the load can then be balanced across several servers.
+			OpenLDAP is an implementation of the LDAP protocol; in other words, it is a special-purpose database designed for storing directories. In the most common use case, using an LDAP server allows centralizing management of user accounts and the related permissions. Moreover, an LDAP database is easily replicated, which allows setting up multiple synchronized LDAP servers. When the network and the user base grows quickly, the load can then be balanced across several servers.
 		</div><div
           class="para">
 			LDAP data is structured and hierarchical. The structure is defined by “schemas” which describe the kind of objects that the database can store, with a list of all their possible attributes. The syntax used to refer to a particular object in the database is based on this structure, which explains its complexity.
@@ -83,18 +83,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139734052311680"></a>11.7.1. Installing</h3></div></div></div><div
+                    id="idm139884646708960"></a>11.7.1. Installing</h3></div></div></div><div
             class="para">
 				The <span
               class="pkg pkg">slapd</span> package contains the OpenLDAP server. The <span
               class="pkg pkg">ldap-utils</span> package includes command-line tools for interacting with LDAP servers.
 			</div><a
-            id="idm139734052309312"
+            id="idm139884646706592"
             class="indexterm"></a><div
             class="para">
 				Installing <span
-              class="pkg pkg">slapd</span> usually asks very few questions, unless you have configured debconf to display questions with lower priorities. Nevertheless, it is debconf-enabled, and thus a simple <code
-              class="command">dpkg-reconfigure slapd</code> can reconfigure the LDAP database:
+              class="pkg pkg">slapd</span> usually asks very few questions and the resulting database is unlikely to suit your needs. Fortunately a simple <code
+              class="command">dpkg-reconfigure slapd</code> will let you reconfigure the LDAP database with more details:
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
             class="itemizedlist"><ul><li
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						Database backend to use: “HDB”.
+						Database backend to use: “MDB”.
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -131,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					</div></li><li
                 class="listitem"><div
                   class="para">
-						Allow LDAPv2 protocol? No, there's no point in that. All the tools we're going to use understand the LDAPv3 protocol.
+						Allow LDAPv2 protocol? No, there is no point in that. All the tools we are going to use understand the LDAPv3 protocol.
 					</div></li></ul></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				An LDIF file (<span
                 class="emphasis"><em>LDAP Data Interchange Format</em></span>) is a portable text file describing the contents of an LDAP database (or a portion thereof); this can then be used to inject the data into any other LDAP server.
 			</div><a
-              id="idm139734052296400"
+              id="idm139884646693664"
               class="indexterm"></a></div><div
             class="para">
 				A minimal database is now configured, as demonstrated by the following query:
@@ -187,9 +187,9 @@ result: 0 Success
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139734052292624"></a>11.7.2. Filling in the Directory</h3></div></div></div><div
+                    id="idm139884646689888"></a>11.7.2. Filling in the Directory</h3></div></div></div><div
             class="para">
-				Since an empty database is not particularly useful, we're going to inject into it all the existing directories; this includes the users, groups, services and hosts databases.
+				Since an empty database is not particularly useful, we are going to inject into it all the existing directories; this includes the users, groups, services and hosts databases.
 			</div><div
             class="para">
 				The <span
@@ -199,7 +199,7 @@ result: 0 Success
               class="filename">/etc/services</code>, <code
               class="filename">/etc/hosts</code> and so on), convert this data, and inject it into the LDAP database.
 			</div><a
-            id="idm139734052288656"
+            id="idm139884646685904"
             class="indexterm"></a><div
             class="para">
 				Once the package is installed, the <code
@@ -262,9 +262,9 @@ result: 0 Success
                         class="emphasis"><em>TOOL</em></span> Browsing an LDAP directory</strong></p></div></div></div><div
               class="para">
 				The <code
-                class="command">jxplorer</code> command (in the package of the same name) is a graphical tool allowing to browse and edit an LDAP database. It's an interesting tool that provides an administrator with a good overview of the hierarchical structure of the LDAP data.
+                class="command">jxplorer</code> command (in the package of the same name) is a graphical tool allowing to browse and edit an LDAP database. It is an interesting tool that provides an administrator with a good overview of the hierarchical structure of the LDAP data.
 			</div><a
-              id="idm139734052266464"
+              id="idm139884646663712"
               class="indexterm"></a></div><div
             class="para">
 				Also note the use of the <code
@@ -275,7 +275,7 @@ result: 0 Success
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139734052263552"></a>11.7.3. Managing Accounts with LDAP</h3></div></div></div><div
+                    id="idm139884646660800"></a>11.7.3. Managing Accounts with LDAP</h3></div></div></div><div
             class="para">
 				Now the LDAP database contains some useful information, the time has come to make use of this data. This section focuses on how to configure a Linux system so that the various system directories use the LDAP database.
 			</div><div
@@ -292,7 +292,7 @@ result: 0 Success
                 class="xref"
                 href="sect.ldap-directory.html#tab-libnss-ldap">Tabel 11.2</a>.
 				</div><a
-              id="idm139734052258912"
+              id="idm139884646656160"
               class="indexterm"></a><div
               class="table"><a
                 id="tab-libnss-ldap"></a><p
@@ -332,7 +332,7 @@ result: 0 Success
                 class="command">ldap</code> module.
 				</div><div
               class="example"><a
-                id="idm139734052240528"></a><p
+                id="idm139884646637776"></a><p
                 class="title"><strong>Contoh 11.31. The <code
                     class="filename">/etc/nsswitch.conf</code> file</strong></p><div
                 class="example-contents"><pre
@@ -402,7 +402,7 @@ netgroup: ldap files
                 class="xref"
                 href="sect.ldap-directory.html#tab-libpam-ldap">Tabel 11.3</a>.
 				</div><a
-              id="idm139734052226880"
+              id="idm139884646624128"
               class="indexterm"></a><div
               class="table"><a
                 id="tab-libpam-ldap"></a><p
@@ -437,23 +437,23 @@ netgroup: ldap files
                 class="command">pam-auth-update</code> tool (provided by the <span
                 class="pkg pkg">libpam-runtime</span> package). This tool can also be run by the administrator should they wish to enable or disable PAM modules.
 				</div><a
-              id="idm139734052210960"
+              id="idm139884646608208"
               class="indexterm"></a><a
-              id="idm139734052210064"
+              id="idm139884646607312"
               class="indexterm"></a><a
-              id="idm139734052209168"
+              id="idm139884646606416"
               class="indexterm"></a><a
-              id="idm139734052208272"
+              id="idm139884646605520"
               class="indexterm"></a><a
-              id="idm139734052207376"
+              id="idm139884646604624"
               class="indexterm"></a><a
-              id="idm139734052206480"
+              id="idm139884646603728"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139734052205456"></a>11.7.3.3. Securing LDAP Data Exchanges</h4></div></div></div><a
-              id="idm139734052204816"
+                      id="idm139884646602704"></a>11.7.3.3. Securing LDAP Data Exchanges</h4></div></div></div><a
+              id="idm139884646602064"
               class="indexterm"></a><div
               class="para">
 					By default, the LDAP protocol transits on the network as cleartext; this includes the (encrypted) passwords. Since the encrypted passwords can be extracted from the network, they can be vulnerable to dictionary-type attacks. This can be avoided by using an extra encryption layer; enabling this layer is the topic of this section.
@@ -461,10 +461,10 @@ netgroup: ldap files
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139734052202928"></a>11.7.3.3.1. Configuring the Server</h5></div></div></div><a
-                id="idm139734052202288"
+                        id="idm139884646600176"></a>11.7.3.3.1. Configuring the Server</h5></div></div></div><a
+                id="idm139884646599536"
                 class="indexterm"></a><a
-                id="idm139734052201008"
+                id="idm139884646598256"
                 class="indexterm"></a><div
                 class="para">
 						The first step is to create a key pair (comprising a public key and a private key) for the LDAP server. The Falcot administrators reuse <span
@@ -507,7 +507,7 @@ Done.
                   class="command">ldapmodify</code> is thus the right tool to update the configuration:
 					</div><div
                 class="example"><a
-                  id="idm139734052190704"></a><p
+                  id="idm139884646587952"></a><p
                   class="title"><strong>Contoh 11.32. Configuring <code
                       class="command">slapd</code> for encryption</strong></p><div
                   class="example-contents"><pre
@@ -535,7 +535,7 @@ modifying entry "cn=config"
                         class="title"><strong><span
                             class="emphasis"><em>TOOL</em></span> <code
                             class="command">ldapvi</code> to edit an LDAP directory</strong></p></div></div></div><a
-                  id="idm139734052186704"
+                  id="idm139884646583952"
                   class="indexterm"></a><div
                   class="para">
 						With <code
@@ -554,7 +554,7 @@ modifying entry "cn=config"
                   class="filename">/etc/default/slapd</code> file. We'll play it safe and disable unsecured LDAP altogether.
 					</div><div
                 class="example"><a
-                  id="idm139734052181872"></a><p
+                  id="idm139884646579120"></a><p
                   class="title"><strong>Contoh 11.33. The <code
                       class="filename">/etc/default/slapd</code> file</strong></p><div
                   class="example-contents"><pre
@@ -608,7 +608,7 @@ SLAPD_OPTIONS=""
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139734052178416"></a>11.7.3.3.2. Configuring the Client</h5></div></div></div><div
+                        id="idm139884646575664"></a>11.7.3.3.2. Configuring the Client</h5></div></div></div><div
                 class="para">
 						On the client side, the configuration for the <span
                   class="emphasis"><em>libpam-ldap</em></span> and <span
@@ -637,7 +637,7 @@ done.
                   class="filename">/etc/ldap/ldap.conf</code>. This will save quite some typing.
 					</div><div
                 class="example"><a
-                  id="idm139734052171968"></a><p
+                  id="idm139884646569216"></a><p
                   class="title"><strong>Contoh 11.34. The <code
                       class="filename">/etc/ldap/ldap.conf</code> file</strong></p><div
                   class="example-contents"><pre

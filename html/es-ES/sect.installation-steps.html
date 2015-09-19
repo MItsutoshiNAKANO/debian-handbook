@@ -76,20 +76,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Una vez que el BIOS comenzó el arranque desde el CD o DVD-ROM aparecerá el menú del gestor de arranque Isolinux. En esta etapa, el núcleo Linux no está cargado aún; este menú le permite elegir el núcleo a arrancar y posiblemente ingresar los parámetros a pasarle en el proceso.
 			</div><div
             class="para">
-				For a standard installation, you only need to choose “Install” or “Graphical install” (with the arrow keys), then press the <span
-              class="keycap"><strong>Enter</strong></span> key to initiate the remainder of the installation process. If the DVD-ROM is a “Multi-arch” disk, and the machine has an Intel or AMD 64 bit processor, the menu options “64 bit install” and “64 bit graphical install” enable the installation of the 64 bit variant (<span
-              class="emphasis"><em>amd64</em></span>) instead of the default 32 bit variant (<span
-              class="emphasis"><em>i386</em></span>). In practice, the 64 bit version can almost always be used: most recent processors are 64 bit processors and the 64 bit version deals better with the large amount of RAM that new computers tend to have.
+				Para una instalación estándar sólo necesita elegir «Instalación» o «Instalación gráfica» (con las teclas de flecha), luego presionar la tecla <span
+              class="keycap"><strong>Enter</strong></span> para iniciar el resto del proceso de instalación. Si el DVD-ROM es un disco multiarquitectura y el equipo tiene un procesador Intel o AMD de 64 bits, las opciones «Instalación 64 bits» y «Instalación gráfica 64 bits» permiten instalar la variante de 64 bits (<span
+              class="emphasis"><em>amd64</em></span>) en lugar de la versión predeterminada de 32 bits (<span
+              class="emphasis"><em>i386</em></span>). En la práctica, casi siempre podrá utilizar la versión de 64 bits: los procesadores más recientes son de 64 bits y la versión de 64 bits adminstra mejor la gran cantidad de memoria RAM que suelen tener los nuevos equipos.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>YENDO MÁS ALLÁ</em></span> ¿32 o 64 bits?</strong></p></div></div></div><a
-              id="idm140667131206416"
+              id="idm140408385201936"
               class="indexterm"></a><a
-              id="idm140667131205456"
+              id="idm140408385200976"
               class="indexterm"></a><a
-              id="idm140667131204528"
+              id="idm140408385200048"
               class="indexterm"></a><div
               class="para">
 				La diferencia fundamental entre los sistemas de 32 y 64 bits es el tamaño de las direcciones de memoria. En teoría, un sistema de 32 bits no puede direccionar más de 4 GB de RAM (2<sup>32</sup> bytes). En la práctica, es posible superar esta limitación usando la variante <code
@@ -102,16 +102,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">setarch</code> o <code
                 class="command">linux32</code> (del paquete <span
                 class="pkg pkg">util-linux</span>) para engañar a la aplicación sobre la naturaleza del sistema. <a
-                id="idm140667131198784"
+                id="idm140408397904576"
                 class="indexterm"></a> <a
-                id="idm140667131197984"
+                id="idm140408397903776"
                 class="indexterm"></a>
 			</div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>EN LA PRÁCTICA</em></span> Instalación junto a un sistema Windows existente</strong></p></div></div></div><a
-              id="idm140667131195776"
+              id="idm140408397901568"
               class="indexterm"></a><div
               class="para">
 				Si el equipo ya ejecuta Windows, no es necesario eliminar el sistema para poder instalar Debian. Puede tener ambos sistemas simultáneamente, cada uno instalado en un disco o partición separado, y elegir cuál iniciar al momento de arrancar el equipo. Generalmente esta configuración es llamada «arranque dual» y el sistema de instalación de Debian puede configurarla. Esto se realiza durante la etapa de particionado del disco duro de la instalación y durante la configuración del gestor de arranque (revise los recuadros en dichas secciones).
@@ -126,12 +126,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
-                        class="emphasis"><em>BACK TO BASICS</em></span> Bootloader</strong></p></div></div></div><a
-              id="idm140667132786848"
+                        class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Gestor de arranque</strong></p></div></div></div><a
+              id="idm140408397896064"
               class="indexterm"></a><a
-              id="idm140667132785408"
+              id="idm140408397894624"
               class="indexterm"></a><a
-              id="idm140667132784448"
+              id="idm140408397893664"
               class="indexterm"></a><div
               class="para">
 				El gestor de arranque es un programa de bajo nivel que es responsable de arrancar el núcleo Linux después que el BIOS le cede el control. Para encargarse de esta tarea debe poder ubicar en el disco al kernel Linux a arrancar. Los programas más utilizados en las arquitecturas i386 y amd64 para esta tarea son LILO, el más antiguo de los dos, y GRUB su reemplazo moderno. Isolinux y Syslinux son alternativas utilizadas frecuentemente para arrancar desde medios removibles.
@@ -146,21 +146,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				El modo «experto» (disponible en el menú «Opciones avanzadas») detalla todas las posibles opciones en el proceso de instalación y permite navegar entre los varios pasos en lugar de que éstos ocurran de forma automática y secuencial. Tenga cuidado, este modo puede ser confuso debido a la cantidad de opciones de configuración que ofrece.
 			</div><div
             class="figure"><a
-              id="idm140667132778784"></a><div
+              id="idm140408397888000"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-boot.png"
                   alt="Pantalla de arranque" /></div></div><p
               class="title"><strong>Figura 4.1. Pantalla de arranque</strong></p></div><div
             class="para">
-				Once booted, the installation program guides you step by step throughout the process. This section presents each of these steps in detail. Here we follow the process of an installation from a Multi-Arch DVD-ROM (more specifically, the beta4 version of the installer for Jessie); <span
-              class="emphasis"><em>netinst</em></span> installations, as well as the final release of the installer, may look slightly different. We will also address installation in graphical mode, but the only difference from “classic” (text-mode) installation is in the visual appearance.
+				Una vez iniciado, el programa de instalación le guiará a través del proceso paso a paso. Esta sección presenta cada uno de estos pasos en detalle. Seguiremos aquí el proceso de una instalación desde un DVD-ROM multiarquitectura (más específicamente, la versión beta4 del instalador para Jessie); las instalaciones <span
+              class="emphasis"><em>netinst</em></span>, así como también la versión final del instalador pueden verse ligeramente distintas. También abordaremos la instalación en modo gráfico, pero difiere de la instalación «clásica» (modo texto) sólo en su apariencia.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-lang"></a>4.2.2. Selección del idioma</h3></div></div></div><a
-            id="idm140667132773104"
+            id="idm140408397882288"
             class="indexterm"></a><div
             class="para">
 				El programa de instalación comienza en inglés, pero en el primer paso del mismo se permite al usuario elegir el idioma que será utilizado durante el resto del proceso de instalación. Por ejemplo, al elegir el idioma francés el proceso de instalación será traducido a francés (y como resultado el sistema configurado en francés). Esta elección se utiliza para definir opciones predeterminadas más relevantes en las fases subsiguientes del proceso de instalación (como la distribución del teclado).
@@ -177,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				En el modo gráfico, puede utilizar el ratón como lo haría normalmente en un escritorio gráfico ya instalado.
 			</div></div><div
             class="figure"><a
-              id="idm140667132767664"></a><div
+              id="idm140408397876848"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-lang.png"
@@ -190,13 +190,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-country"></a>4.2.3. Selección del país</h3></div></div></div><a
-            id="idm140667132761232"
+            id="idm140408397870416"
             class="indexterm"></a><div
             class="para">
 				El segundo paso consiste en elegir su país. Combinada con el idioma, esta información le permite al programa ofrecer la distribución de teclado más apropiada. También tendrá influencia en la configuración de la zona horaria. En los Estados Unidos se sugerirá un teclado QWERTY estándar y las opciones de zonas horarias apropiadas.
 			</div><div
             class="figure"><a
-              id="idm140667132758976"></a><div
+              id="idm140408397868160"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-country.png"
@@ -209,15 +209,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-keyboard"></a>4.2.4. Selección de la distribución de teclado</h3></div></div></div><a
-            id="idm140667132752576"
+            id="idm140408397861536"
             class="indexterm"></a><a
-            id="idm140667132751648"
+            id="idm140408397860608"
             class="indexterm"></a><div
             class="para">
 				El teclado propuesto «American English» corresponde a la distribución QWERTY usual.
 			</div><div
             class="figure"><a
-              id="idm140667132750272"></a><div
+              id="idm140408397859120"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-keyboard.png"
@@ -258,9 +258,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-network-config"></a>4.2.8. Configuración de red</h3></div></div></div><a
-            id="idm140667132736144"
+            id="idm140408397843616"
             class="indexterm"></a><a
-            id="idm140667132734224"
+            id="idm140408397841696"
             class="indexterm"></a><div
             class="para">
 				Para poder automatizar el proceso tanto como sea posible, el instalador intenta configurar la red de forma automática con DHCP (para IPv4) y utilizando el descubrimiento de redes IPv6. Si eso falla ofrece más opciones: intentar nuevamente con una configuración DHCP normal, intentar una configuración DHCP declarando el nombre del equipo o configurar la red de forma estática.
@@ -288,14 +288,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667132725120"></a>4.2.9. Contraseña del administrador</h3></div></div></div><a
-            id="idm140667132724352"
+                    id="idm140408397832592"></a>4.2.9. Contraseña del administrador</h3></div></div></div><a
+            id="idm140408397831824"
             class="indexterm"></a><div
             class="para">
-				The super-user root account, reserved for the machine's administrator, is automatically created during installation; this is why a password is requested. The installer also asks for a confirmation of the password to prevent any input error which would later be difficult to amend.
+				La cuenta de superusuario «root», reservada para el administrador del equipo, será creada automáticamente durante la instalación; por ello se solicita una contraseña. El instalador la preguntará por una confirmación de la contraseña para prevenir cualquier error en la entrada que luego sería difícil de corregir.
 			</div><div
             class="figure"><a
-              id="idm140667131589680"></a><div
+              id="idm140408397829584"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-rootpw.png"
@@ -306,7 +306,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>SEGURIDAD</em></span> Contraseña del administrador</strong></p></div></div></div><div
               class="para">
-				The root user's password should be long (8 characters or more) and impossible to guess. Indeed, any computer (and a fortiori any server) connected to the Internet is regularly targeted by automated connection attempts with the most obvious passwords. Sometimes it may even be subject to dictionary attacks, in which many combinations of words and numbers are tested as password. Avoid using the names of children or parents, dates of birth, etc.: many of your co-workers might know them, and you rarely want to give them free access to the computer in question.
+				La contraseña del usuario root debería ser larga (8 caracteres o más) e imposible de adivinar. De hecho, cualquier equipo (y cualquier servidor a fortiori) conectado a internet es objetivo regular de intentos automáticos de conexión con las contraseñas más obvias. A veces inclusive será sujeto a ataques de diccionario en el que se probarán como contraseña muchas combinaciones de palabras y números. Evite utilizar nombres de hijos o padres, fechas de nacimiento, etc.: muchos de sus compañeros de trabajo podrían conocerlos y rara vez deseará proveerles acceso libre al equipo en cuestión.
 			</div><div
               class="para">
 				Estos comentarios son igualmente aplicables para contraseñas de otros usuarios, pero las consecuencias de una cuenta comprometida son menos drásticas para usuarios sin permisos de administración.
@@ -318,12 +318,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667131582688"></a>4.2.10. Creación del primer usuario</h3></div></div></div><div
+                    id="idm140408397822096"></a>4.2.10. Creación del primer usuario</h3></div></div></div><div
             class="para">
 				Debian también impone la creación de una cuenta de usuario estándar para que el administrador no adquiera el mal hábito de trabajar como root. La norma básica de precaución significa esencialmente que se realiza cada tarea con los permisos mínimos necesarios para limitar el daño que pueda causar un error humano. Es por esto que el instalador pedirá el nombre completo de su primer usuario, su nombre de usuario y su contraseña (dos veces para evitar el riesgo de entradas erróneas).
 			</div><div
             class="figure"><a
-              id="idm140667131580944"></a><div
+              id="idm140408397820352"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-username.png"
@@ -349,7 +349,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.install-partman"></a>4.2.13. Inicio de la herramienta de particionado</h3></div></div></div><a
-            id="idm140667131571936"
+            id="idm140408397811232"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -365,7 +365,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Afortunadamente, el software de particionado tiene un modo «guiado» que recomienda las particiones que debe crear el usuario — en la mayoría de los casos puede simplemente aceptar las sugerencias del software.
 			</div><div
             class="figure"><a
-              id="idm140667131567168"></a><div
+              id="idm140408397806464"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-partman.png"
@@ -375,7 +375,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				La primera pantalla en la herramienta de particionado ofrece la opción de utilizar un disco duro completo para crear varias particiones. Para un equipo (nuevo) que sólamente utilizará Linux esta es claramente la más simple, y puede elegir la opción «Guiado - utilizar todo el disco». Si el equipo tiene dos discos duros para dos sistemas operativos, definir un disco para cada uno también es una solución que facilitará el particionado. En ambos casos, la pantalla siguiente le ofrecerá elegir el disco en el que instalar Linux seleccionando la opción correspondiente (por ejemplo «SCSI1 (0,0,0) (sda) - 12.9 GB ATA VBOX HARDDISK»). Luego comenzará el particionado guiado.
 			</div><div
             class="figure"><a
-              id="idm140667131562576"></a><div
+              id="idm140408397801872"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-partman-disk.png"
@@ -391,13 +391,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.install-autopartman-mode"></a>4.2.13.1. Particionado guiado</h4></div></div></div><a
-              id="idm140667131556752"
+              id="idm140408397796048"
               class="indexterm"></a><div
               class="para">
 					La herramienta de particionado guiado ofrece tres métodos de particionado que corresponden a distintos usos.
 				</div><div
               class="figure"><a
-                id="idm140667131554720"></a><div
+                id="idm140408397794016"></a><div
                 class="figure-contents"><div
                   class="mediaobject"><img
                     src="images/inst-autopartman-mode.png"
@@ -414,24 +414,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/home/</code>).
 				</div><div
               class="para">
-					The last partitioning method, called “Separate <code
+					El último método de particionado, llamado «Particiones <code
                 class="filename">/home</code>, <code
-                class="filename">/var</code>, and <code
-                class="filename">/tmp</code> partitions”, is appropriate for servers and multi-user systems. It divides the file tree into many partitions: in addition to the root (<code
-                class="filename">/</code>) and user accounts (<code
-                class="filename">/home/</code>) partitions, it also has partitions for server software data (<code
-                class="filename">/var/</code>), and temporary files (<code
-                class="filename">/tmp/</code>). These divisions have several advantages. Users can not lock up the server by consuming all available hard drive space (they can only fill up <code
-                class="filename">/tmp/</code> and <code
-                class="filename">/home/</code>). The daemon data (especially logs) can no longer clog up the rest of the system.
+                class="filename">/var</code> y <code
+                class="filename">/tmp</code> separadas» es apropiada para servidores y sistemas multiusuario. Divide el árbol de archivos en muchas particiones: además de las particiones para la raíz (<code
+                class="filename">/</code>) y las cuentas de usuario (<code
+                class="filename">/home/</code>), también creará particiones para datos de software de servidor (<code
+                class="filename">/var/</code>), y archivos temporales (<code
+                class="filename">/tmp/</code>). Estas divisiones tiene varias ventajas. Un usuario no podrá bloquear el servidor consumiendo todo el espacio disponible en el disco duro (sólo pueden llenar <code
+                class="filename">/tmp/</code> y <code
+                class="filename">/home/</code>). Los datos de demonios (especialmente registros) tampoco podrán trabar el resto del sistema.
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Elección de un sistema de archivos</strong></p></div></div></div><a
-                id="idm140667131541744"
+                id="idm140408397780928"
                 class="indexterm"></a><a
-                id="idm140667131540304"
+                id="idm140408397779488"
                 class="indexterm"></a><div
                 class="para">
 					Un sistema de archivos define la forma en la que se organizan los datos en el disco duro. Cada sistema de archivos existente tiene sus méritos y limitaciones. Algunos son más robustos, otros más efectivos: si conoce bien sus necesidades es posible elegir el sistema de archivos más apropiado. Ya se han realizado muchas comparaciones; parecería que ReiserFS es particularmente eficiente para leer muchos archivos pequeños; <span
@@ -458,7 +458,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>ext4</em></span>) no es apropiada. En la mayoría de los casos, sin embargo, el particionado propuesto es razonable y se lo puede aceptar seleccionando la opción «Finalizar particionado y escribir cambios al disco».
 				</div><div
               class="figure"><a
-                id="idm140667131528192"></a><div
+                id="idm140408397767376"></a><div
                 class="figure-contents"><div
                   class="mediaobject"><img
                     src="images/inst-partman-validation.png"
@@ -467,8 +467,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140667131524640"></a>4.2.13.2. Particionado manual</h4></div></div></div><a
-              id="idm140667131523840"
+                      id="idm140408397763824"></a>4.2.13.2. Particionado manual</h4></div></div></div><a
+              id="idm140408397763024"
               class="indexterm"></a><div
               class="para">
 					El particionado manual provee mayor flexibilidad, permitiéndole al usuario seleccionar el propósito y tamaño de cada partición. Lo que es más, este modo es inevitable si desea utilizar RAID por software.
@@ -477,9 +477,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>EN LA PRÁCTICA</em></span> Reduciendo una partición Windows.</strong></p></div></div></div><a
-                id="idm140667131520624"
+                id="idm140408397759808"
                 class="indexterm"></a><a
-                id="idm140667131519696"
+                id="idm140408397758880"
                 class="indexterm"></a><div
                 class="para">
 					Para instalar Debian junto a un sistema operativo existente (Windows u otro), debe tener espacio disponible en el disco duro que no sea utilizado por el otro sistema para poder crear las particiones dedicadas a Debian. En la mayoría de los casos esto significa reducir una partición Windows y reutilizar el espacio liberado.
@@ -501,9 +501,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Punto de montaje</strong></p></div></div></div><a
-                id="idm140667131513552"
+                id="idm140408400828112"
                 class="indexterm"></a><a
-                id="idm140667131512592"
+                id="idm140408400827152"
                 class="indexterm"></a><div
                 class="para">
 					El punto de montaje es el árbol de directorios que albergará el contenido del sistema de archivos en la partición seleccionada. Por lo tanto, una partición montada en <code
@@ -518,13 +518,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Memoria virtual, «swap»</strong></p></div></div></div><a
-                id="idm140667131507776"
+                id="idm140408400822336"
                 class="indexterm"></a><a
-                id="idm140667131506816"
+                id="idm140408400821376"
                 class="indexterm"></a><a
-                id="idm140667131505856"
+                id="idm140408400820416"
                 class="indexterm"></a><a
-                id="idm140667131504416"
+                id="idm140408400818976"
                 class="indexterm"></a><div
                 class="para">
 					La memoria virtual le permite al núcleo Linux, cuando no tiene suficiente memoria (RAM), liberar parte de ella almacenando las partes de la RAM que han estado inactivas por un tiempo en la partición swap del disco duro.
@@ -565,11 +565,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.install-software-raid"></a>4.2.13.3. Configuración de dispositivos multidisco (RAID por software)</h4></div></div></div><a
-              id="idm140667131493488"
+              id="idm140408400808048"
               class="indexterm"></a><a
-              id="idm140667131492048"
+              id="idm140408400806608"
               class="indexterm"></a><a
-              id="idm140667131491088"
+              id="idm140408400805648"
               class="indexterm"></a><div
               class="para">
 					Algunos tipos de RAID permiten duplicar la información almacenada en los discos duros para evitar la pérdida de datos en caso de que uno de ellos sufra algún problema de hardware. RAID nivel 1 mantiene una copia simple e idéntica (réplica, «mirror») de un disco duro en otro dispositivo mientras que RAID nivel 4 divide datos redundantes en varios discos permitiendo la reconstrucción completa de un dispositivo que falle.
@@ -592,9 +592,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.install-lvm"></a>4.2.13.4. Configuración del gestor de volúmenes lógicos (LVM)</h4></div></div></div><a
-              id="idm140667131483440"
+              id="idm140408400798000"
               class="indexterm"></a><a
-              id="idm140667131482000"
+              id="idm140408400796560"
               class="indexterm"></a><div
               class="para">
 					LVM le permite crear particiones «virtuales» a través de varios discos. Los beneficios son dobles: el tamaño de las particiones no estará limitado por el tamaño de los discos individuales sino por el del conjunto completo y podrá modificar el tamaño de las particiones existentes en cualquier momento, posiblemente agregando un disco adicional cuando lo necesite.
@@ -602,13 +602,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 					LVM utiliza una terminología particular: una partición virtual es un «volúmen lógico», que es parte de un «grupo de volúmenes» o la asociación de varios «volúmenes físicos». De hecho, cada uno de esos términos se corresponde con una partición «real» (o dispositivo de RAID por software).
 				</div><a
-              id="idm140667131478960"
+              id="idm140408400793520"
               class="indexterm"></a><a
-              id="idm140667131477520"
+              id="idm140408400792080"
               class="indexterm"></a><a
-              id="idm140667131476080"
+              id="idm140408400790640"
               class="indexterm"></a><a
-              id="idm140667131474640"
+              id="idm140408400789200"
               class="indexterm"></a><div
               class="para">
 					Esta técnica funciona de una forma muy simple: se divide cada volúmen, sea lógico o físico, en bloques del mismo tamaño que LVM hace que coincidan. Agregar un nuevo disco causará la creación de un nuevo volúmen físico y sus nuevos bloques pueden ser asociados a cualquier grupo de volúmenes. Todas las particiones del grupo de volúmenes expandido tendrán espacio adicional sobre el que extenderse.
@@ -627,18 +627,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140667131469328"></a>4.2.13.5. Configuración de particiones cifradas</h4></div></div></div><a
-              id="idm140667131468560"
+                      id="idm140408400783888"></a>4.2.13.5. Configuración de particiones cifradas</h4></div></div></div><a
+              id="idm140408400783120"
               class="indexterm"></a><a
-              id="idm140667131467600"
+              id="idm140408400782160"
               class="indexterm"></a><a
-              id="idm140667131466640"
+              id="idm140408400781200"
               class="indexterm"></a><a
-              id="idm140667131465200"
+              id="idm140408400779760"
               class="indexterm"></a><a
-              id="idm140667131464240"
+              id="idm140408400778800"
               class="indexterm"></a><a
-              id="idm140667131462800"
+              id="idm140408400777360"
               class="indexterm"></a><div
               class="para">
 					Para garantizar la confidencialidad de sus datos, por ejemplo en el caso de pérdida o robo de su equipo o un disco duro, es posible cifrar los datos en algunas particiones. Se puede agregar esta funcionalidad bajo cualquier sistema de archivos ya que, como con LVM; Linux (en particular el controlador dm-crypt) utiliza el mapeador de dispositivos («Device Mapper») para crear una partición virtual (cuyo contenido es protegido) basándose en una partición subyacente que almacenará los datos en forma cifrada (gracias a LUKS, «configuración unificada de claves en Linux» por sus siglas en inglés, un formato estándar que permite almacenar tanto datos encriptados como también metainformación que indica los algoritmos de cifrado utilizados).
@@ -659,8 +659,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667131455216"></a>4.2.14. Instalación del sistema base</h3></div></div></div><a
-            id="idm140667131454448"
+                    id="idm140408400769776"></a>4.2.14. Instalación del sistema base</h3></div></div></div><a
+            id="idm140408400769008"
             class="indexterm"></a><div
             class="para">
 				Este paso, que no necesita interacción con el usuario, instala los paquetes del «sistema base» Debian. Esto incluye las herramientas <code
@@ -668,7 +668,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">apt</code> que administran los paquetes Debian, así como también los programas necesarios para iniciar el sistema y comenzar a utlizarlo.
 			</div><div
             class="figure"><a
-              id="idm140667131451328"></a><div
+              id="idm140408400765888"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-basesystem.png"
@@ -677,11 +677,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667131447776"></a>4.2.15. Configuración del gestor de paquetes (<code
+                    id="idm140408400762336"></a>4.2.15. Configuración del gestor de paquetes (<code
                     class="command">apt</code>)</h3></div></div></div><a
-            id="idm140667131446528"
+            id="idm140408400761088"
             class="indexterm"></a><a
-            id="idm140667131445088"
+            id="idm140408400759648"
             class="indexterm"></a><div
             class="para">
 				Para poder instalar software adicional, necesita configurar APT para indicarle dónde encontrar paquetes Debian. Este paso es tan automático como es posible. Comienza preguntando si debe utilizar una fuente de paquetes en la red o si sólo debe buscar paquetes en el CD-ROM.
@@ -697,7 +697,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Si se desea obtener paquetes de la red, las siguientes dos preguntas le permitirán elegir un servidor del que descargar los paquetes seleccionando primero un país y depués una réplica disponible en dicho país (una réplica es un servidor público que alberga copias de todos los archivos del archivo principal de Debian).
 			</div><div
             class="figure"><a
-              id="idm140667130381040"></a><div
+              id="idm140408400754544"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-mirror.png"
@@ -718,13 +718,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Proxy HTTP</strong></p></div></div></div><a
-              id="idm140667130373312"
+              id="idm140408400746816"
               class="indexterm"></a><a
-              id="idm140667130372352"
+              id="idm140408400745856"
               class="indexterm"></a><a
-              id="idm140667130371392"
+              id="idm140408400744896"
               class="indexterm"></a><a
-              id="idm140667130370432"
+              id="idm140408400743936"
               class="indexterm"></a><div
               class="para">
 				Un proxy HTTP es un servidor que redirige un pedido HTTP para usuarios de red. A veces ayuda a acelerar las descargas manteniendo una copia de los archivos transferidos a través de él (hablamos entonces de un «proxy/caché»). En algunos casos es el único modo de acceder un servicio web externo; en dichos casos es esencial responder la pregunta correspondiente durante la instalación para que el programa pueda descargar los paquetes Debian a través de él.
@@ -735,7 +735,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667130367632"></a>4.2.16. Concurso de popularidad de paquetes Debian</h3></div></div></div><div
+                    id="idm140408400741136"></a>4.2.16. Concurso de popularidad de paquetes Debian</h3></div></div></div><div
             class="para">
 				El sistema Debian contiene un paquete llamado <span
               class="pkg pkg">popularity-contest</span> cuyo propósito es compilar estadísticas del uso de paquetes. Cada semana, este paquete recopila información de los paquetes instalados y aquellos utilizados recientemente y envía esta información de forma anónima a los servidores del proyecto Debian. El proyecto luego puede utilizar esta información para determinar la importancia relativa de cada paquete, lo que influencia la prioridad que se le dará a cada uno. En particular, los paquetes más «populares» serán incluidos en el CD-ROM de instalación facilitando el acceso a los mismos a aquellos usuarios que no deseen descargarlos o adquirir un conjunto completo.
@@ -746,18 +746,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667130364272"></a>4.2.17. Selección de paquetes para instalación</h3></div></div></div><div
+                    id="idm140408400737776"></a>4.2.17. Selección de paquetes para instalación</h3></div></div></div><div
             class="para">
 				El próximo paso le permite elegir el propósito del equipo en términos muy generales; las diez tareas sugeridas corresponden a listas de paquetes a instalar. La lista de paquetes que será instalada realmente será adaptada y completada más adelante, pero provee un buen punto de partida de forma simple.
 			</div><div
             class="para">
-				Some packages are also automatically installed according to the hardware detected (thanks to the program <code
-              class="command">discover-pkginstall</code> from the <span
-              class="pkg pkg">discover</span> package). For instance, if a VirtualBox virtual machine is detected, the program will install the <span
-              class="pkg pkg">virtualbox-guest-dkms</span> package, allowing for better integration of the virtual machine with the host system.
+				Algunos paquetes también son instalados automáticamente según el hardware detectado (gracias al programa <code
+              class="command">discover-pkginstall</code> del paquete <span
+              class="pkg pkg">discover</span>). Por ejemplo, si se detecta una máquina virtual VirtualBox el programa instalará el paquete <span
+              class="pkg pkg">virtualbox-guest-dkms</span> que permite una mejor integración de la máquina virtual con el sistema anfitrión.
 			</div><div
             class="figure"><a
-              id="idm140667130359936"></a><div
+              id="idm140408400733440"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/inst-tasksel.png"
@@ -766,12 +766,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667130356320"></a>4.2.18. Instalación del gestor de arranque GRUB</h3></div></div></div><a
-            id="idm140667130355552"
+                    id="idm140408400729824"></a>4.2.18. Instalación del gestor de arranque GRUB</h3></div></div></div><a
+            id="idm140408400729056"
             class="indexterm"></a><a
-            id="idm140667130354112"
+            id="idm140408400727616"
             class="indexterm"></a><a
-            id="idm140667130353152"
+            id="idm140408400726656"
             class="indexterm"></a><div
             class="para">
 				El gestor de arranque es el primer progama iniciado por el BIOS. Este programa carga el núcleo Linux a la memoria y luego lo ejecuta. Generalmente ofrece un menú que le permite al usuario seleccionar el núcleo y/o sistema operativo a iniciar.
@@ -780,7 +780,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CUIDADO</em></span> El gestor de arranque e inicio dual</strong></p></div></div></div><a
-              id="idm140667130350384"
+              id="idm140408400723888"
               class="indexterm"></a><div
               class="para">
 				Esta fase en el proceso de instalación de Debian detecta los sistemas operativos que ya se encuentran instalados en el equipo y agrega los elementos correspondientes al menú de arranque, pero no todos los programas de instalación lo hacen.
@@ -807,23 +807,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CUIDADO</em></span> Gestores de arranque y arquitecturas</strong></p></div></div></div><div
               class="para">
-				LILO and GRUB, which are mentioned in this chapter, are bootloaders for <span
-                class="emphasis"><em>i386</em></span> and <span
-                class="emphasis"><em>amd64</em></span> architectures. If you install Debian on another architecture, you will need to use another bootloader. Among others, we can cite <code
-                class="command">yaboot</code> or <code
-                class="command">quik</code> for <span
+				LILO y GRUB, mencionados en este capítulo, son los gestores de arranque para las arquitecturas <span
+                class="emphasis"><em>i386</em></span> y <span
+                class="emphasis"><em>amd64</em></span>. Si instala Debian en otra arquitectura necesitará utilizar otro gestor de arranque. Entre ellos podemos citar <code
+                class="command">yaboot</code> o <code
+                class="command">quik</code> para <span
                 class="emphasis"><em>powerpc</em></span>, <code
-                class="command">silo</code> for <span
+                class="command">silo</code> para <span
                 class="emphasis"><em>sparc</em></span>, <code
-                class="command">aboot</code> for <span
+                class="command">aboot</code> para <span
                 class="emphasis"><em>alpha</em></span>, <code
-                class="command">arcboot</code> for <span
+                class="command">arcboot</code> para <span
                 class="emphasis"><em>mips</em></span>.
 			</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667130335712"></a>4.2.19. Finalización de la instalación y reiniciado</h3></div></div></div><div
+                    id="idm140408400709120"></a>4.2.19. Finalización de la instalación y reiniciado</h3></div></div></div><div
             class="para">
 				La instalación ahora está completa, el programa le invita a quitar el CD-ROM y reiniciar el equipo.
 			</div></div></div><ul

@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. Instalación de un núcleo</h2></div></div></div><a
-          id="idm140667124673936"
+          id="idm140408379613808"
           class="indexterm"></a><a
-          id="idm140667124672784"
+          id="idm140408379612656"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. Características de un paquete Debian del núcleo</h3></div></div></div><a
-            id="idm140667124670752"
+            id="idm140408379610624"
             class="indexterm"></a><div
             class="para">
 				Un paquete Debian del núcleo instala la imagen del núcleo (<code
@@ -91,11 +91,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">versión</em>/</code>.
 			</div><div
             class="para">
-				Los scripts de configuración del paquete generan automáticamente una imagen initrd, que es un minisistema diseñado para ser cargado en memoria (de allí el nombre, que significa «disco ram de inicio»: «init ramdisk») por el gestor de arranque y utilizado por el núcleo Linux sólo para cargar los módulos necesarios para acceder a los dispositivos que contienen el sistema Debian completo (por ejemplo, los controladores de discos IDE). Finalmente, los scripts postinstalación actualizan los enlaces simbólicos <code
+				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code
               class="filename">/vmlinuz</code>, <code
-              class="filename">/vmlinux.old</code>, <code
-              class="filename">/initrd.img</code> y <code
-              class="filename">/initrd.img.old</code> para que apunten a los dos últimos núcleos instalados, respectivamente, así como también a las imágenes initrd correspondientes.
+              class="filename">/vmlinuz.old</code>, <code
+              class="filename">/initrd.img</code> and <code
+              class="filename">/initrd.img.old</code> so that they point to the latest two kernels installed, respectively, as well as the corresponding initrd images.
 			</div><div
             class="para">
 				Se encargan la mayoría de estas tareas a scripts de activación en los directorios <code
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				Using <code
-              class="command">apt-get</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
+              class="command">apt</code> is so convenient that it makes it easy to forget about the lower-level tools, but the easiest way of installing a compiled kernel is to use a command such as <code
               class="command">dpkg -i <em
                 class="replaceable">package</em>.deb</code>, where <code
               class="literal"><em

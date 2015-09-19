@@ -64,9 +64,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.user-space"></a>B.5. فضاء المستخدم</h2></div></div></div><a
-          id="idm140241665175856"
+          id="idm139729275901904"
           class="indexterm"></a><a
-          id="idm140241665174928"
+          id="idm139729275900976"
           class="indexterm"></a><div
           class="para">
 			“User-space” refers to the runtime environment of normal (as opposed to kernel) processes. This does not necessarily mean these processes are actually started by users because a standard system normally has several “daemon” (or background) processes running before the user even opens a session. Daemon processes are also considered user-space processes.
@@ -75,13 +75,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-basics"></a>B.5.1. عملية</h3></div></div></div><a
-            id="idm140241665172080"
+            id="idm139729275898128"
             class="indexterm"></a><div
             class="para">
 				When the kernel gets past its initialization phase, it starts the very first process, <code
               class="command">init</code>. Process #1 alone is very rarely useful by itself, and Unix-like systems run with many additional processes.
 			</div><a
-            id="idm140241665169936"
+            id="idm139729275895984"
             class="indexterm"></a><div
             class="para">
 				First of all, a process can clone itself (this is known as a <span
@@ -104,9 +104,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.daemons"></a>B.5.2. الجن</h3></div></div></div><a
-            id="idm140241665161088"
+            id="idm139729275887136"
             class="indexterm"></a><a
-            id="idm140241665160128"
+            id="idm139729275886176"
             class="indexterm"></a><div
             class="para">
 				”الجني daemon“ هو عملية تُشغِّلها متتالية الإقلاع آلياً. يبقى نشطاً (في الخلفية) لتنفيذ مهام صيانة أو تقديم خدمات للعمليات الأخرى. هذه ”المهمة في الخلفية“ عشوائية في الحقيقة، ولا تقابل أي شيء محدد من وجهة نظر النظام. هي مجرد عمليات، شبيهة بالعمليات الأخرى تماماً، التي تعمل بدورها عندما تحين حصتها من الوقت. هذا التمييز موجود في لغة البشر فقط: أية عملية تعمل بدون أي تفاعل مع المستخدم (على الأخص، بدون واجهة رسومية) يقال أنها تعمل ”في الخلفية“ أو أنها ”جني“.
@@ -116,9 +116,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>مصطلحات</em></span> جني، شيطان، مصطلح ازدرائي؟</strong></p></div></div></div><div
               class="para">
-				بالرغم من أن مصطلح <span
-                class="emphasis"><em>daemon</em></span> (جني) يتشاطر أصله اليوناني مع <span
-                class="emphasis"><em>demon</em></span> (شيطان)، إلا أن الأول لا يتضمن شراً شيطانياً، بالعكس، يجب التفكير به على أنه نوع من الأرواح المساعدة. هذا التفريق معقّد بما يكفي في الإنكليزية، بل هو أسوأ في لغات أخرى حيث تستخدم الكلمة نفسها للدلالة على المعنيين.
+				Although <span
+                class="emphasis"><em>daemon</em></span> term shares its Greek etymology with <span
+                class="emphasis"><em>demon</em></span>, the former does not imply diabolical evil, instead, it should be understood as a kind of helper spirit. This distinction is subtle enough in English; it is even worse in other languages where the same word is used for both meanings.
 			</div></div><div
             class="para">
 				هناك شرح مفصل لمجموعة من الجن أمثال هؤلاء في <a
@@ -129,9 +129,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipc"></a>B.5.3. التواصل بين العمليات</h3></div></div></div><a
-            id="idm140241665152736"
+            id="idm139729275878896"
             class="indexterm"></a><a
-            id="idm140241665151776"
+            id="idm139729275877936"
             class="indexterm"></a><div
             class="para">
 				إن العملية المعزولة، سواء كانت خدمة أو تطبيقًا تفاعليًا، نادراً ما تكون مفيدة بحد ذاتها، وهو السبب وراء وجود العديد من أساليب التواصل بين العمليات المنفصلة، سواء لتبادل البيانات أو لتتحكم واحدتها بالأخرى. المصطلح العام للتعبير عن هذا المفهوم هو <span
@@ -140,7 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				أبسط نظام IPC هو استخدام الملفات. تكتب العملية التي ترغب بإرسال البيانات بياناتها في ملف (له اسم معروف مسبقًا)، في حين تحتاج العملية المتلقية إلى فتح الملف وقراءة محتوياته فقط.
 			</div><a
-            id="idm140241665148736"
+            id="idm139729275874896"
             class="indexterm"></a><div
             class="para">
 				In the case where you do not wish to store data on disk, you can use a <span
@@ -205,7 +205,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.libraries"></a>B.5.4. المكتبات</h3></div></div></div><a
-            id="idm140241665125568"
+            id="idm139729275851728"
             class="indexterm"></a><div
             class="para">
 				تلعب مكتبات الدوال دوراً حيويًا في نظم التشغيل المشابه لنظام يونكس. ليست هذه المكتبات برامج تامة، نظرًا لعدم إمكانية تنفيذها منفردة، لكنها مجموعة من فتات الكود التي يمكن للبرامج القياسية استخدامه. من المكتبات الشائعة، نذكر ما يلي:

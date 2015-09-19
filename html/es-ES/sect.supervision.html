@@ -30,8 +30,8 @@
         href="sect.firewall-packet-filtering.html"
         title="14.2. Firewall o el filtrado de paquetes" /><link
         rel="next"
-        href="sect.selinux.html"
-        title="14.4. Introducción a SELinux" /><link
+        href="sect.apparmor.html"
+        title="14.4. Introduction to AppArmor" /><link
         rel="canonical"
         href="http://l.github.io/debian-handbook/html/es-ES/sect.supervision.html" /></head><body
       class="draft "><noscript><iframe
@@ -63,14 +63,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="home">El libro del administrador de Debian</li><li
           class="next"><a
             accesskey="n"
-            href="sect.selinux.html"><strong>Siguiente</strong></a></li></ul><div
+            href="sect.apparmor.html"><strong>Siguiente</strong></a></li></ul><div
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.supervision"></a>14.3. Supervisión: prevención, detección, disuasión</h2></div></div></div><a
-          id="idm140667122931552"
-          class="indexterm"></a><a
-          id="idm140667122930592"
+          id="idm140408376718000"
           class="indexterm"></a><div
           class="para">
 			La monitorización es una parte integral de cualquier política de seguridad por varias razones. Entre ellas, que el objetivo de la seguridad generalmente no se limita a garantizar la confidencialidad de los datos, sino que también incluye garantizar la disponibilidad de los servicios. Por tanto, es imprescindible comprobar que todo funciona como se espera y detectar de manera oportuna cualquier desvío en la conducta o cambio en la calidad de los servicios prestados. Monitorizar la actividad puede ayudar con la detección de intentos de intrusión y permitir una reacción rápida antes que ocurran graves consecuencias. Esta sección revisa algunas de las herramientas que puede utilizar para monitorizar varios aspectos de un sistema Debian. Como tal, esto completa la sección dedicada a la monitorización genérica del sistema en el <a
@@ -82,20 +80,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.logcheck"></a>14.3.1. Monitorización de los registros con <code
                     class="command">logcheck</code></h3></div></div></div><a
-            id="idm140667122926464"
+            id="idm140408376713872"
             class="indexterm"></a><a
-            id="idm140667122925344"
+            id="idm140408376712752"
             class="indexterm"></a><a
-            id="idm140667122923904"
+            id="idm140408376711312"
             class="indexterm"></a><div
             class="para">
 				El programa <code
               class="command">logcheck</code> monitoriza los archivos de registro, de forma predeterminada, cada hora. Envía los mensajes de registro inusuales en correos electrónicos al administrador para su posterior análisis.
 			</div><div
             class="para">
-				La lista de archivos a monitorizar se almacena en <code
-              class="filename">/etc/logcheck/logcheck.logfiles</code>; los valores predeterminados funcionan bien si no modificó completamente el archivo <code
-              class="filename">/etc/syslog.conf</code>.
+				The list of monitored files is stored in <code
+              class="filename">/etc/logcheck/logcheck.logfiles</code>; the default values work fine if the <code
+              class="filename">/etc/rsyslog.conf</code> file has not been completely overhauled.
 			</div><div
             class="para">
 				<code
@@ -154,31 +152,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Siempre se indicará un evento de sistema a menos que una regla en alguno de los directorios en <code
               class="filename">/etc/logcheck/ignore.d.{paranoid,server,workstation}/</code> indique que el evento debe ser ignorado. Por supuesto, sólo se tomarán en cuenta los directorios que corresponden a los niveles de detalle igual o mayor al modo de funcionamiento seleccionado.
-			</div><div
-            class="sidebar"><div
-              class="titlepage"><div><div><p
-                    class="title"><strong><span
-                        class="emphasis"><em>SUGERENCIA</em></span> Sus registros como fondo de pantalla</strong></p></div></div></div><div
-              class="para">
-				A algunos administradores les gusta ver los mensajes de registros en tiempo real; puede utilizar la orden <code
-                class="command">root-tail</code> (contenida en el paquete <span
-                class="pkg pkg">root-tail</span>) para integrar los registros con el fondo del escritorio gráfico. El programa <code
-                class="command">xconsole</code> (contenido en el paquete <span
-                class="emphasis"><em>x11-apps</em></span>) también puede mostrarlos en una pequeña ventana. Los mensajes se obtienen directamente desde <code
-                class="command">syslogd</code> a través de la tubería con nombre <code
-                class="filename">/dev/xconsole</code>.
-			</div><a
-              id="idm140667122897792"
-              class="indexterm"></a><a
-              id="idm140667122896672"
-              class="indexterm"></a></div></div><div
+			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.monitoring-activity"></a>14.3.2. Monitorización de actividad</h3></div></div></div><a
-            id="idm140667122893984"
+            id="idm140408376688720"
             class="indexterm"></a><a
-            id="idm140667122892544"
+            id="idm140408376687280"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -195,7 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="keycap"><strong>r</strong></span> permite ejecutar <span
                 class="emphasis"><em>renice</em></span> sobre un proceso, es decir: cambiar su prioridad.
 				</div><a
-              id="idm140667122886320"
+              id="idm140408376681056"
               class="indexterm"></a><div
               class="para">
 					Cuando el sistema aparenta estar sobrecargado, <code
@@ -206,25 +187,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">top</code> es una herramienta muy flexible y su página de manual detalla cómo personalizar su presentación y adaptarla a las necesidades y hábitos particulares.
 				</div><div
               class="para">
-					Las herramientas gráficas <code
-                class="command">gnome-system-monitor</code> y <code
-                class="command">qps</code> son similares al programa <code
-                class="command">top</code> y proporcionan aproximandamente las mismas prestaciones.
+					The <code
+                class="command">gnome-system-monitor</code> graphical tool is similar to <code
+                class="command">top</code> and it provides roughly the same features.
 				</div><a
-              id="idm140667122880704"
+              id="idm140408376675968"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.monitoring-history"></a>14.3.2.2. Historial</h4></div></div></div><a
-              id="idm140667122878368"
+              id="idm140408376673632"
               class="indexterm"></a><div
               class="para">
 					La carga del procesador, el tráfico de red y el espacio libre en disco son datos que varían constantemente. A menudo es útil disponer de un historial con su evolución para determinar cómo se utiliza exáctamente la máquina.
 				</div><a
-              id="idm140667122876704"
+              id="idm140408376671968"
               class="indexterm"></a><a
-              id="idm140667122875744"
+              id="idm140408376671008"
               class="indexterm"></a><div
               class="para">
 					Existen muchas herramientas dedicadas para esta tarea. La mayoría puede obtener datos a través de SNMP (<span
@@ -244,7 +224,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>ALTERNATIVA</em></span> <code
                           class="command">mrtg</code></strong></p></div></div></div><a
-                id="idm140667122869056"
+                id="idm140408376664320"
                 class="indexterm"></a><div
                 class="para">
 					<code
@@ -258,16 +238,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140667122864288"></a>14.3.3. Detección de cambios</h3></div></div></div><div
+                    id="idm140408376659552"></a>14.3.3. Detección de cambios</h3></div></div></div><div
             class="para">
 				Una vez que el sistema está instalado y configurado, dejando al margen las actualizaciones de seguridad, normalmente no hay razón para que los archivos y directorios cambien con excepción de los datos. Por lo tanto, es interesante asegurarse que efectivamente los archivos no cambian: debería investigar cualquier cambio inesperado. Esta sección presenta algunas herramientas capaces de monitorizar archivos y advertir al administrador en caso de que se produzca algún cambio inesperado (o simplemente enumerar estos cambios).
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="sect.debsums"></a>14.3.3.1. Auditoría de paquetes: <code
-                      class="command">debsums</code> y sus límites</h4></div></div></div><a
-              id="idm140667122860976"
+                      id="sect.dpkg-verify"></a>14.3.3.1. Auditing Packages with <code
+                      class="command">dpkg --verify</code></h4></div></div></div><a
+              id="idm140408376656368"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -275,53 +255,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="emphasis"><em>YENDO MÁS ALLÁ</em></span> Protección contra los cambios de los desarrolladores originales</strong></p></div></div></div><div
                 class="para">
 					<code
-                  class="command">debsums</code> es útil para detectar cambios en los archivos que provienen de un paquete de Debian, pero es inútil si el propio paquete ha sido comprometido, por ejemplo si se comprometió la réplica Debian. Protegerse de este tipo de ataques implica utilizar del sistema de verificación de firma digital de APT (revise la <a
+                  class="command">dpkg --verify</code> is useful in detecting changes to files coming from a Debian package, but it will be useless if the package itself is compromised, for instance if the Debian mirror is compromised. Protecting against this class of attacks involves using APT's digital signature verification system (see <a
                   class="xref"
-                  href="sect.package-authentication.html">Sección 6.5, “Comprobación de la autenticidad de un paquete”</a>) y sólo instalar paquetes de un origen certificado.
+                  href="sect.package-authentication.html">Sección 6.5, “Comprobación de la autenticidad de un paquete”</a>), and taking care to only install packages from a certified origin.
 				</div></div><div
               class="para">
 					<code
-                class="command">debsums</code> es una herramienta interesante ya que permite buscar qué archivos instalados han sido modificados (potencialmente por un atacante), pero debe tratarse con prudencia. En primer lugar, porque no todos los paquetes de Debian proporcionan las huellas digitales requeridas por este programa (si existen, se encuentran en <code
+                class="command">dpkg --verify</code> (or <code
+                class="command">dpkg -V</code>) is an interesting tool since it allows finding what installed files have been modified (potentially by an attacker), but this should be taken with a grain of salt. To do its job it relies on checksums stored in dpkg's own database which is stored on the hard disk (they can be found in <code
                 class="filename">/var/lib/dpkg/info/<em
-                  class="replaceable">paquete</em>.md5sums</code>). <a
-                id="idm140667122854672"
-                class="indexterm"></a> <a
-                id="idm140667122854032"
-                class="indexterm"></a> <a
-                id="idm140667122853392"
-                class="indexterm"></a> <a
-                id="idm140667122852752"
-                class="indexterm"></a> Como recordatorio: una huella digital es un valor, a menudo un número (aunque pueda estar en notación hexadecimal), que contiene un tipo de firma de los contenidos de un archivo. Se calcula esta firma mediante un algoritmo (MD5 o SHA1 son ejemplos muy conocidos) que más o menos garantizan que incluso el cambio más pequeño en el contenido de un archivo implica un cambio en su huella digital; esto es conocido como «efecto avalancha». Esto permite que una simple huella digital numérica sirva como patrón para comprobar si se alteró el contenido de un archivo. Estos algoritmos no son reversibles; en otras palabra, para la mayoría de ellos, conocer la huella digital no permite averiguar los contenidos correspondientes. Los avances matemáticos recientes parece que debilitan la verdad absoluta de estos principios, pero por el momento su uso no se ha puesto en cuestón, ya que crear distintos contenidos que produzcan la misma huella todavía parece una tarea muy complicada.
+                  class="replaceable">package</em>.md5sums</code>); a thorough attacker will therefore update these files so they contain the new checksums for the subverted files.
 				</div><div
+              class="sidebar"><div
+                class="titlepage"><div><div><p
+                      class="title"><strong><span
+                          class="emphasis"><em>BACK TO BASICS</em></span> File fingerprint</strong></p></div></div></div><a
+                id="idm140408376647696"
+                class="indexterm"></a><a
+                id="idm140408376646736"
+                class="indexterm"></a><a
+                id="idm140408376645776"
+                class="indexterm"></a><a
+                id="idm140408376644816"
+                class="indexterm"></a><div
+                class="para">
+					As a reminder: a fingerprint is a value, often a number (even though in hexadecimal notation), that contains a kind of signature for the contents of a file. This signature is calculated with an algorithm (MD5 or SHA1 being well-known examples) that more or less guarantee that even the tiniest change in the file contents implies a change in the fingerprint; this is known as the “avalanche effect”. This allows a simple numerical fingerprint to serve as a litmus test to check whether the contents of a file have been altered. These algorithms are not reversible; in other words, for most of them, knowing a fingerprint doesn't allow finding the corresponding contents. Recent mathematical advances seem to weaken the absoluteness of these principles, but their use is not called into question so far, since creating different contents yielding the same fingerprint still seems to be quite a difficult task.
+				</div></div><div
               class="para">
-					Adicionalmente, se almacenan los archivos <code
-                class="filename">md5sums</code> en el disco duro; por lo tanto un atacante meticuloso actualizará estos archivos para que contengan las nuevas sumas de control de los archivos sustituidos.
-				</div><div
-              class="para">
-					El primer inconveniente se puede evitar haciendo que <code
-                class="command">debsums</code> base sus comprobaciones en un paquete <code
-                class="filename">.deb</code> en lugar de confiar en el archivo <code
-                class="filename">md5sums</code>. Pero esto requiere descargar previamente los archivos <code
-                class="filename">.deb</code> correspondientes:
+					Running <code
+                class="command">dpkg -V</code> will verify all installed packages and will print out a line for each file with a failing test. The output format is the same as the one of <code
+                class="command">rpm -V</code> where each character denotes a test on some specific meta-data. Unfortunately <code
+                class="command">dpkg</code> does not store the meta-data needed for most tests and will thus output question marks for them. Currently only the checksum test can yield a "5" on the third character (when it fails).
 				</div><pre
               class="screen">
 <code
                 class="computeroutput"># </code><strong
-                class="userinput"><code>apt-get --reinstall -d install `debsums -l`</code></strong>
+                class="userinput"><code>dpkg -V</code></strong>
 <code
-                class="computeroutput">[ ... ]
-# </code><strong
-                class="userinput"><code>debsums -p /var/cache/apt/archives -g</code></strong>
-</pre><div
+                class="computeroutput">??5??????   /lib/systemd/system/ssh.service
+??5?????? c /etc/libvirt/qemu/networks/default.xml
+??5?????? c /etc/lvm/lvm.conf
+??5?????? c /etc/salt/roster</code></pre><div
               class="para">
-					También conviene notar que, en su configuración predeterminada, <code
-                class="command">debsums</code> genera automáticamente los archivos <code
-                class="filename">md5sums</code> faltantes cada vez que instale un paquete utilizando APT.
+					In the sample above, dpkg reports a change to SSH's service file that the administrator made to the packaged file instead of using an appropriate <code
+                class="filename">/etc/systemd/system/ssh.service</code> override. It also lists multiple configuration files (identified by the "c" letter on the second field) that had been legitimately modified.
+				</div></div><div
+            class="section"><div
+              class="titlepage"><div><div><h4
+                    class="title"><a
+                      id="sect.debsums"></a>14.3.3.2. Auditoría de paquetes: <code
+                      class="command">debsums</code> y sus límites</h4></div></div></div><a
+              id="idm140408376635504"
+              class="indexterm"></a><div
+              class="para">
+					<code
+                class="command">debsums</code> is the ancestor of <code
+                class="command">dpkg -V</code> and is thus mostly obsolete. It suffers from the same limitations than dpkg. Fortunately, some of the limitations can be worked-around (whereas dpkg does not offer similar work-arounds).
 				</div><div
               class="para">
-					Puede evitar el otro problema de forma similar: simplemente debe basar la comprobación en un archivo <code
-                class="filename">.deb</code> impoluto. Debido a que esto implica disponer de los archivos <code
-                class="filename">.deb</code> de todos los paquetes instalados, y además estar seguros de su integridad, la forma más sencilla es obtenerlos de una réplica Debian. Esta operación puede ser lenta y tediosa y, por lo tanto, no debe considerarse como una técnica proactiva a utilizar de forma regular.
+					Since the data on the disk cannot be trusted, <code
+                class="command">debsums</code> offers to do its checks based on <code
+                class="filename">.deb</code> files instead of relying on dpkg's database. To download trusted <code
+                class="filename">.deb</code> files of all the packages installed, we can rely on APT's authenticated downloads. This operation can be slow and tedious, and should therefore not be considered a proactive technique to be used on a regular basis.
 				</div><pre
               class="screen">
 <code
@@ -330,8 +325,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 <code
                 class="computeroutput">[ ... ]
 # </code><strong
-                class="userinput"><code>debsums -p /var/cache/apt/archives --generate=all</code></strong>
-</pre><div
+                class="userinput"><code>debsums -p /var/cache/apt/archives --generate=all</code></strong></pre><div
               class="para">
 					Sepa que este ejemplo utiliza el programa <code
                 class="command">grep-status</code> del paquete <span
@@ -340,8 +334,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140667122838336"></a>14.3.3.2. Monitorización de archivos: AIDE</h4></div></div></div><a
-              id="idm140667122837568"
+                      id="idm140408376627072"></a>14.3.3.3. Monitorización de archivos: AIDE</h4></div></div></div><a
+              id="idm140408376626304"
               class="indexterm"></a><div
               class="para">
 					La herramienta AIDE (<span
@@ -391,7 +385,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="pkg pkg">checksecurity</span> y <span
                           class="pkg pkg">chkrootkit</span>/<span
                           class="pkg pkg">rkhunter</span></strong></p></div></div></div><a
-                id="idm140667122135040"
+                id="idm140408378289792"
                 class="indexterm"></a><div
                 class="para">
 					El primero de estos paquetes contiene varios scripts pequeños que realizan comprobaciones básicas en el sistema (contraseñas vacías, nuevos archivos setuid, etc.) y advierten al administrador si fuese necesario. A pesar de su nombre explícito, un administrador no debería confiar exclusivamente en él para asegurarse que un sistema Linux es seguro.
@@ -406,23 +400,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.intrusion-detection"></a>14.3.4. Detección de intrusiones (IDS/NIDS)</h3></div></div></div><a
-            id="idm140667122128464"
+            id="idm140408378283216"
             class="indexterm"></a><a
-            id="idm140667122127504"
+            id="idm140408378282256"
             class="indexterm"></a><a
-            id="idm140667122126576"
+            id="idm140408378281328"
             class="indexterm"></a><a
-            id="idm140667122125616"
+            id="idm140408378280368"
             class="indexterm"></a><a
-            id="idm140667122124688"
+            id="idm140408378279440"
             class="indexterm"></a><a
-            id="idm140667122123728"
+            id="idm140408378278480"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Denegación de servicio</strong></p></div></div></div><a
-              id="idm140667122121200"
+              id="idm140408378275952"
               class="indexterm"></a><div
               class="para">
 				Un ataque de «denegación de servicio» tiene una única finalidad: hacer que un servicio no esté disponible. El resultado es el mismo independientemente de si el ataque implica sobrecargar al servidor mediante consultas o si se aprovecha algún fallo: el servicio deja de estar operativo. Los usuarios habituales no estarán contentos y la entidad que alberga la red a la que se dirige el ataque sufre una pérdida de reputación (y posiblemente también de ingresos, por ejemplo si el servicio es un sitio de comercio electrónico).
@@ -434,18 +428,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div></div><div
             class="para">
 				<code
-              class="command">snort</code> (del paquete Debian con el mismo nombre) es un NIDS — un <span
-              class="emphasis"><em>sistema de detección de intrusiones de red</em></span> («Network Intrusion Detection System»). Su función es escuchar la red y tratar de detectar intentos de infiltración y/o actos hostiles (inclusive ataques de denegación de servicio). Todos estos eventos son registrados y diariamente se envía un email al administrador con un resumen de las últimas 24 horas.
+              class="command">suricata</code> (in the Debian package of the same name) is a NIDS — a <span
+              class="emphasis"><em>Network Intrusion Detection System</em></span>. Its function is to listen to the network and try to detect infiltration attempts and/or hostile acts (including denial of service attacks). All these events are logged in multiple files in <code
+              class="filename">/var/log/suricata</code>. There are third party tools (Kibana/logstash) to better browse all the data collected. <div
+              class="url">→ <a
+                href="http://suricata-ids.org">http://suricata-ids.org</a></div> <div
+              class="url">→ <a
+                href="https://www.elastic.co/products/kibana">https://www.elastic.co/products/kibana</a></div>
 			</div><a
-            id="idm140667122115504"
+            id="idm140408378268000"
+            class="indexterm"></a><a
+            id="idm140408378266880"
             class="indexterm"></a><div
+            class="sidebar"><div
+              class="titlepage"><div><div><p
+                    class="title"><strong><span
+                        class="emphasis"><em>PRECAUCIÓN</em></span> Rango de acción</strong></p></div></div></div><div
+              class="para">
+				The effectiveness of <code
+                class="command">suricata</code> is limited by the traffic seen on the monitored network interface. It will obviously not be able to detect anything if it cannot observe the real traffic. When plugged into a network switch, it will therefore only monitor attacks targeting the machine it runs on, which is probably not the intention. The machine hosting <code
+                class="command">suricata</code> should therefore be plugged into the “mirror” port of the switch, which is usually dedicated to chaining switches and therefore gets all the traffic.
+			</div></div><div
             class="para">
-				Su configuración requiere describir el rango de direcciones que cubre la red local. En la práctica, esto significa el conjunto de potenciales objetivos de los ataques. Se pueden configurar otros parámentros importantes mediante <code
-              class="command">dpkg-reconfigure snort</code>, incluyendo la interfaz de red a monitorizar. A menudo será <code
-              class="literal">eth0</code> para una conexión Ethernet, pero existen otras posibilidades como <code
-              class="literal">ppp0</code> para una línea ADSL o PSTN (<span
-              class="emphasis"><em>red pública de telefonía conmutada</em></span>: «Public Switched Telephone Network», es decir un confiable y antiguo módem), o incluso <code
-              class="literal">wlan0</code> para algunas tarjetas de red inalámbricas.
+				Configuring suricata involves reviewing and editing <code
+              class="filename">/etc/suricata/suricata-debian.yaml</code>, which is very long because because each parameter is abundantly commented. A minimal configuration requires describing the range of addresses that the local network covers (<code
+              class="literal">HOME_NET</code> parameter). In practice, this means the set of all potential attack targets. But getting the most of it requires reading it in full and adapting it to the local situation.
+			</div><div
+            class="para">
+				On top of this, you should also edit <code
+              class="filename">/etc/default/suricata</code> to define the network interface to monitor and to enable the init script (by setting <code
+              class="literal">RUN=yes</code>). You might also want to set <code
+              class="literal">LISTENMODE=pcap</code> because the default <code
+              class="literal">LISTENMODE=nfqueue</code> requires further configuration to work properly (the netfilter firewall must be configured to pass packets to some userspace queue handled by suricata via the <code
+              class="literal">NFQUEUE</code> target).
+			</div><div
+            class="para">
+				To detect bad behaviour, <code
+              class="command">suricata</code> needs a set of monitoring rules: you can find such rules in the <span
+              class="pkg pkg">snort-rules-default</span> package. <code
+              class="command">snort</code> is the historical reference in the IDS ecosystem and <code
+              class="command">suricata</code> is able to reuse rules written for it. Unfortunately that package is missing from <span
+              class="distribution distribution">Debian Jessie</span> and should be retrieved from another Debian release like <span
+              class="distribution distribution">Testing</span> or <span
+              class="distribution distribution">Unstable</span>.
+			</div><div
+            class="para">
+				Alternatively, <code
+              class="command">oinkmaster</code> (in the package of the same name) can be used to download Snort rulesets from external sources.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -459,35 +488,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>sensores</em></span> de diferentes tipos.
 			</div><div
               class="para">
-				Puede configurar Snort como uno de estos sensores. Otra posibilidad es <span
+				Suricata can be configured as such a sensor. Other possibilities include <span
                 class="emphasis"><em>prelude-lml</em></span> (<span
-                class="emphasis"><em>lacayo de monitorización de registros</em></span>: «Log Monitor Lackey»), que monitoriza los archivos de registro (de forma similar a como lo hace <code
-                class="command">logcheck</code>, descripto en la <a
+                class="emphasis"><em>Log Monitor Lackey</em></span>) which monitors log files (in a manner similar to <code
+                class="command">logcheck</code>, described in <a
                 class="xref"
                 href="sect.supervision.html#sect.logcheck">Sección 14.3.1, “Monitorización de los registros con <code
                   class="command">logcheck</code>”</a>).
 			</div><a
-              id="idm140667122104928"
-              class="indexterm"></a></div><div
-            class="para">
-				El archivo de configuración (<code
-              class="filename">/etc/snort/snort.conf</code>) de <code
-              class="command">snort</code> es muy largo, y los abundantes comentarios describen cada directiva de forma detallada. Para aprovecharlo al máximo, deberá leerlo completamente y adaptarlo a la situación local. Por ejemplo, al indicar qué máquina alberga qué servicio puede limitar el número de incidentes que <code
-              class="command">snort</code> reportará, puesto que un ataque de denegación de servicio a un equipo de escritorio es mucho menos crítico que uno dirigido a un servidor DNS. Otra directiva interesante permite almacenar las asociaciones entre direcciones IP y direcciones MAC (que identifican de forma unívoca a una tarjeta de red), lo que permite detectar ataques de tipo «<span
-              class="emphasis"><em>ARP spoofing</em></span>» en los que una máquina comprometida intenta suplantar la identidad de otra, por ejemplo un servidor sensible.
-			</div><div
-            class="sidebar"><div
-              class="titlepage"><div><div><p
-                    class="title"><strong><span
-                        class="emphasis"><em>PRECAUCIÓN</em></span> Rango de acción</strong></p></div></div></div><div
-              class="para">
-				La efectividad de <code
-                class="command">snort</code> está limitada por el tráfico que ve en la interfaz de red monitorizada. Obviamente no podrá detectar nada si no puede observar el tráfico real. Cuando se encuentra conectado a un switch de red sólo monitorizará los ataques que tengan como objetivo a la máquina en la que está ejecutándose, lo que probablemente no sea la intención. Por lo tanto, la máquina que ejecute <code
-                class="command">snort</code> debería conectarse a un puerto «espejo» del switch, que habitualmente se utiliza para encadenar switches y, por lo tanto, obtiene todo el tráfico.
-			</div><div
-              class="para">
-				En una pequeña red basada en un hub no existe este problema puesto que todas las máquinas reciben todo el tráfico.
-			</div></div></div></div><ul
+              id="idm140408378245632"
+              class="indexterm"></a></div></div></div><ul
         class="docnav"><li
           class="previous"><a
             accesskey="p"
@@ -500,7 +510,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             href="index.html"><strong>Inicio</strong></a></li><li
           class="next"><a
             accesskey="n"
-            href="sect.selinux.html"><strong>Siguiente</strong>14.4. Introducción a SELinux</a></li></ul><div
+            href="sect.apparmor.html"><strong>Siguiente</strong>14.4. Introduction to AppArmor</a></li></ul><div
         id="translated_pages"><ul><li><a
               href="../ar-MA/sect.supervision.html">ar-MA</a></li><li><a
               href="../da-DK/sect.supervision.html">da-DK</a></li><li><a

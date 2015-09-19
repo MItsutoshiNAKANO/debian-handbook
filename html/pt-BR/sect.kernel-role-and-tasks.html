@@ -78,13 +78,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="para">
 				<a
-              id="idm139689842421600"
+              id="idm140625108948160"
               class="indexterm"></a> <a
-              id="idm139689842420800"
+              id="idm140625108947360"
               class="indexterm"></a> <a
-              id="idm139689842420000"
+              id="idm140625108946560"
               class="indexterm"></a> <a
-              id="idm139689842419200"
+              id="idm140625108945760"
               class="indexterm"></a> O kernel exporta muitos detalhes sobre o hardware detectado através dos sistemas de arquivos virtuais <code
               class="filename">/proc/</code> e <code
               class="filename">/sys/</code>. Várias ferramentas resumem esses detalhes. Entre elas, o <code
@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">pcmciautils</span>) lista de cartões PCMCIA. Estas ferramentas são muito úteis para a identificação do modelo exato de um dispositivo. Esta identificação permite também pesquisas mais precisas na web, que por sua vez, levam a documentos mais relevantes.
 			</div><div
             class="example"><a
-              id="idm139689842413600"></a><p
+              id="idm140625108940160"></a><p
               class="title"><strong>Exemplo B.1. Exemplo de informação provida pelo <code
                   class="command">lspci</code> e <code
                   class="command">lsusb</code></strong></p><div
@@ -148,9 +148,9 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.filesystems"></a>B.4.2. Sistema de Arquivos</h3></div></div></div><a
-            id="idm139689842399984"
+            id="idm140625108926544"
             class="indexterm"></a><a
-            id="idm139689842399024"
+            id="idm140625108925584"
             class="indexterm"></a><div
             class="para">
 				Os sistemas de arquivos são um dos aspectos mais importantes do kernel. Sistemas Unix agrupam todos os arquivos que armazenam em uma hierarquia única, que permite aos usuários (e as aplicações) a acessar os dados simplesmente por saber a sua localização dentro dessa hierarquia.
@@ -168,15 +168,15 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="literal">home</code>, diretório presente na raiz. O kernel traduz entre este sistema de nomenclatura e o armazenamento real e física no disco.
 			</div><div
             class="para">
-				Ao contrário de outros sistemas, só há uma hierarquia deste tipo, e pode integrar dados de vários discos. Um desses discos é usado como a raiz, e os outros são "montados" em diretórios na hierarquia (o comando Unix é chamado <code
-              class="command">mount</code>); esses outros discos estarão disponíveis sob estes "pontos de montagem". Isso permite que os diretórios de armazenamento dos usuários (tradicionalmente armazenados dentro de <code
-              class="filename">/home/</code>) em um segundo disco rígido, que irá conter os diretórios <code
-              class="literal">rhertzog</code> e <code
-              class="literal">rmas</code>. Depois que o disco é montado em <code
-              class="filename">/home/</code>, esses diretórios estarão disponíveis a seus locais habituais e os caminhos como <code
-              class="filename">/home/rmas/Desktop/hello.txt</code> continuam funcionando.
+				Unlike other systems, there is only one such hierarchy, and it can integrate data from several disks. One of these disks is used as the root, and the others are “mounted” on directories in the hierarchy (the Unix command is called <code
+              class="command">mount</code>); these other disks are then available under these “mount points”. This allows storing users' home directories (traditionally stored within <code
+              class="filename">/home/</code>) on a second hard disk, which will contain the <code
+              class="literal">rhertzog</code> and <code
+              class="literal">rmas</code> directories. Once the disk is mounted on <code
+              class="filename">/home/</code>, these directories become accessible at their usual locations, and paths such as <code
+              class="filename">/home/rmas/Desktop/hello.txt</code> keep working.
 			</div><a
-            id="idm139689842388832"
+            id="idm140625108915392"
             class="indexterm"></a><div
             class="para">
 				Existem muitos formatos de sistemas de arquivo que corresponde a muitas formas de armazenamento físico de dados nos discos. O mais conhecido são o <span
@@ -204,7 +204,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-management"></a>B.4.4. Gerenciamento de Processos</h3></div></div></div><a
-            id="idm139689842377808"
+            id="idm140625108904368"
             class="indexterm"></a><div
             class="para">
 				Um processo é uma instância em execução de um programa. Isso requer memória para armazenar tanto o próprio programa quanto seus dados operacionais. O kernel é responsável pela criação e acompanhá-los. Quando um programa é executado, o kernel primeiro reserva alguma memória, em seguida carrega o código executável do sistema de arquivos para ele, e então começa a execução do código. Ele mantém informações sobre este processo, o mais visível é um número de identificação conhecido como <span
@@ -212,7 +212,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="emphasis"><em>process identifier</em></span> - identificador de processo).
 			</div><div
             class="para">
-				Unix-like kernels (including Linux), like most other modern operating systems, are capable of “multi-tasking”. In other words, they allow running many processes “at the same time”. There's actually only one running process at any one time, but the kernel cuts time into small slices and runs each process in turn. Since these time slices are very short (in the millisecond range), they create the illusion of processes running in parallel, although they're actually only active during some time intervals and idle the rest of the time. The kernel's job is to adjust its scheduling mechanisms to keep that illusion, while maximizing the global system performance. If the time slices are too long, the application may not appear as responsive as desired. Too short, and the system loses time switching tasks too frequently. These decisions can be tweaked with process priorities. High-priority processes will run for longer and with more frequent time slices than low-priority processes.
+				Unix-like kernels (including Linux), like most other modern operating systems, are capable of “multi-tasking”. In other words, they allow running many processes “at the same time”. There is actually only one running process at any one time, but the kernel cuts time into small slices and runs each process in turn. Since these time slices are very short (in the millisecond range), they create the illusion of processes running in parallel, although they are actually only active during some time intervals and idle the rest of the time. The kernel's job is to adjust its scheduling mechanisms to keep that illusion, while maximizing the global system performance. If the time slices are too long, the application may not appear as responsive as desired. Too short, and the system loses time switching tasks too frequently. These decisions can be tweaked with process priorities. High-priority processes will run for longer and with more frequent time slices than low-priority processes.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -230,7 +230,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
                   class="title"><a
                     id="sect.permissions"></a>B.4.5. Gerenciamento de Direitos</h3></div></div></div><div
             class="para">
-				Unix-like systems are also multi-user. They provide a rights management system that supports separate users and groups; it also allows control over actions based on permissions. The kernel manages data for each process, allowing it to control permissions. Most of the time, a process is identified by the user who started the process. That process is only permitted to take those actions available to its owner. For instance, trying to open a file requires the kernel to check the process identity against access permissions (for more details on this particular example, see <a
+				Unix-like systems are also multi-user. They provide a rights management system that supports separate users and groups; it also allows control over actions based on permissions. The kernel manages data for each process, allowing it to control permissions. Most of the time, a process is identified by the user who started it. That process is only permitted to take those actions available to its owner. For instance, trying to open a file requires the kernel to check the process identity against access permissions (for more details on this particular example, see <a
               class="xref"
               href="sect.rights-management.html">Seção 9.3, “Gerenciando Direitos”</a>).
 			</div></div></div><ul
