@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.selinux"></a>14.5. SELinux の紹介</h2></div></div></div><a
-          id="idm140378077226976"
+          id="idm139971015222432"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -95,7 +95,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>ドメイン</em></span>、によって定義されます。権限は間違いなくドメインに依存しますが、ドメイン間の遷移はそのロールによって制御されます。最後にロール間の遷移の可否は識別情報に依存します。
 			</div><div
             class="figure"><a
-              id="idm140378077217472"></a><div
+              id="idm139971015212928"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-context.png"
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">ssh_t</code> ドメインに自動的に切り替わります)。この自動ドメイン遷移メカニズムによって、それぞれのプログラムに対して必要な権限だけを認めることが可能です。これが SELinux の基本原則です。
 			</div><div
             class="figure"><a
-              id="idm140378077203040"></a><div
+              id="idm139971015198496"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-transitions.png"
@@ -140,11 +140,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>IN PRACTICE</em></span> セキュリティコンテキストの検索</strong></p></div></div></div><a
-              id="idm140378077198560"
+              id="idm139971015194016"
               class="indexterm"></a><a
-              id="idm140378077197632"
+              id="idm139971015193088"
               class="indexterm"></a><a
-              id="idm140378077196624"
+              id="idm139971015192080"
               class="indexterm"></a><div
               class="para">
 				あるプロセスのセキュリティコンテキストを見つけるには、<code
@@ -238,9 +238,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.selinux-management"></a>14.5.3. SELinux システムの管理</h3></div></div></div><a
-            id="idm140378077162912"
+            id="idm139971015158368"
             class="indexterm"></a><a
-            id="idm140378077161792"
+            id="idm139971015157248"
             class="indexterm"></a><div
             class="para">
 				SELinux ポリシーはモジュール式のルール群で、SELinux はインストール時にインストール済みのサービスに基づいて対応するモジュールを自動的に検出して有効化します。そのため、このシステムはすぐに利用できるようになります。しかしながら、SELinux ポリシーを設定した後にサービスをインストールした場合、対応するモジュールを手作業で有効化する必要があります。これを行うのが <code
@@ -273,7 +273,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140378077150304"></a>14.5.3.1. SELinux モジュールの管理</h4></div></div></div><div
+                      id="idm139971015145760"></a>14.5.3.1. SELinux モジュールの管理</h4></div></div></div><div
               class="para">
 					利用できる SELinux モジュールは <code
                 class="filename">/usr/share/selinux/default/</code> ディレクトリに保存されています。現在の設定の中で SELinux モジュールの 1 つを有効化するには、<code
@@ -337,7 +337,7 @@ acct    1.6.0
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140378074240464"></a>14.5.3.2. ユーザの身元管理</h4></div></div></div><div
+                      id="idm139971012317248"></a>14.5.3.2. ユーザの身元管理</h4></div></div></div><div
               class="para">
 					ユーザはログイン時に毎回、SELinux 識別情報を割り当てられます。SELinux 識別情報はユーザに与えるロールを定義します。2 種類 (ユーザから識別情報へ、識別情報からロールへ) の対応付けは <code
                 class="command">semanage</code> コマンドを使って設定することが可能です。
@@ -418,7 +418,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140378074220384"></a>14.5.3.3. ファイルコンテキスト、ポート、ブール値の管理</h4></div></div></div><div
+                      id="idm139971012297168"></a>14.5.3.3. ファイルコンテキスト、ポート、ブール値の管理</h4></div></div></div><div
               class="para">
 					各 SELinux モジュールには、ファイルラベル付けルール群が含まれますが、さらに SELinux モジュールは特別な場合に応じてラベル付けルールをカスタマイズすることが可能です。たとえば、ウェブサーバに <code
                 class="filename">/srv/www/</code> ファイル階層内のファイルを読むことを許可する場合、<code
@@ -490,14 +490,14 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140378074198944"></a>14.5.4.1. <code
+                      id="idm139971012275728"></a>14.5.4.1. <code
                       class="filename">.fc</code> ファイルの書き方</h4></div></div></div><div
               class="para">
 					以下の例を読めば、<code
                 class="filename">.fc</code> ファイルの構造を十分に理解することが可能です。複数のファイルおよび完全なディレクトリツリーに対して、同じセキュリティコンテキストを割り当てるために、正規表現を使うことが可能です。
 				</div><div
               class="example"><a
-                id="idm140378074196992"></a><p
+                id="idm139971012273776"></a><p
                 class="title"><strong>例14.2 <code
                     class="filename">example.fc</code> ファイル</strong></p><div
                 class="example-contents"><pre
@@ -510,7 +510,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140378074195008"></a>14.5.4.2. <code
+                      id="idm139971012271792"></a>14.5.4.2. <code
                       class="filename">.if</code> ファイルの書き方</h4></div></div></div><div
               class="para">
 					以下の例では、1 番目のインターフェース (「<code
@@ -523,7 +523,7 @@ user_u          user       SystemLow  SystemLow             user_r
                 class="literal">gen_require</code> マクロを使って) 使用するすべてのタイプを宣言し、権限を取得するために標準的な指示文を使うべきです。しかしながら、他のモジュールが提供するインターフェースを使うことが可能な点に注意してください。次の節では、これらの権限を表現する方法についてより詳しく説明します。
 				</div><div
               class="example"><a
-                id="idm140378074190880"></a><p
+                id="idm139971012267664"></a><p
                 class="title"><strong>例14.3 <code
                     class="filename">example.if</code> ファイル</strong></p><div
                 class="example-contents"><pre
@@ -591,7 +591,7 @@ interface(`myapp_read_log',`
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140378074184656"></a>14.5.4.3. <code
+                      id="idm139971012261440"></a>14.5.4.3. <code
                       class="filename">.te</code> ファイルの書き方</h4></div></div></div><div
               class="para">
 					<code
@@ -766,7 +766,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)</pre><div
 					このメッセージをより詳しく理解するために、それぞれの要素について勉強しましょう。
 				</div><div
               class="table"><a
-                id="idm140378074153136"></a><p
+                id="idm139971012229920"></a><p
                 class="title"><strong>表14.1 SELinux メッセージの解析</strong></p><div
                 class="table-contents"><table
                   xmlns:d="http://docbook.org/ns/docbook"
@@ -798,9 +798,9 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)</pre><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>COMPLEMENTS</em></span> ロールを設定されていないポリシールール</strong></p></div></div></div><a
-                id="idm140378074129488"
+                id="idm139971012206272"
                 class="indexterm"></a><a
-                id="idm140378074128720"
+                id="idm139971012205504"
                 class="indexterm"></a><div
                 class="para">
 					新しいルールを作成した際に、ロールが 1 つも設定されていないことは不思議に見えるかもしれません。SELinux は許されている操作の見つかったドメインだけを使います。ロールは、ユーザが他のドメインに切り替えることを許可することで、間接的に介在するだけです。SELinux は <span
@@ -809,7 +809,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)</pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140378074126384"></a>14.5.4.4. ファイルのコンパイル</h4></div></div></div><div
+                      id="idm139971012203168"></a>14.5.4.4. ファイルのコンパイル</h4></div></div></div><div
               class="para">
 					3 個のファイル (<code
                 class="filename">example.if</code>、<code

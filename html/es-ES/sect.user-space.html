@@ -63,9 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.user-space"></a>B.5. El espacio de usuario</h2></div></div></div><a
-          id="idm140408377803840"
+          id="idm140435435722320"
           class="indexterm"></a><a
-          id="idm140408377802880"
+          id="idm140435435721360"
           class="indexterm"></a><div
           class="para">
 			El «espacio de usuario» se refiere al entorno de ejecución de procesos normales (en contraste con el núcleo). Esto no significa necesariamente que usuarios iniciaron realmente estos procesos debido a que un sistema estándar frecuentemente posee procesos «demonio» (o en segundo plano), procesos que se ejecutan antes que el usuario inicie una sesión. Los procesos demonio son procesos considerados en espacio de usuario.
@@ -74,13 +74,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-basics"></a>B.5.1. Proceso</h3></div></div></div><a
-            id="idm140408377799968"
+            id="idm140435435718448"
             class="indexterm"></a><div
             class="para">
 				Cuando el núcleo supera su fase de inicialización, ejecuta el primer proceso: <code
               class="command">init</code>. El proceso #1 rara vez es útil por sí mismo, y los sistemas similares a Unix ejecutan con un ciclo de vida con muchos procesos adicionales.
 			</div><a
-            id="idm140408377797792"
+            id="idm140435435716272"
             class="indexterm"></a><div
             class="para">
 				Primero que nada, un proceso puede clonarse a sí mismo (esto es conocido como <span
@@ -103,9 +103,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.daemons"></a>B.5.2. Demonios</h3></div></div></div><a
-            id="idm140408377789056"
+            id="idm140435435707536"
             class="indexterm"></a><a
-            id="idm140408377788096"
+            id="idm140435435706576"
             class="indexterm"></a><div
             class="para">
 				Un «demonio» es un proceso iniciado automáticamente por la secuencia de inicio. Continúa ejecutando (en segundo plano) para realizar tareas de mantenimiento o proveer servicios a otros procesos. Esta «tarea en segundo plano» es realmente arbitraria y no tiene un rol especial desde el punto de vista del sistema. Simplemente son procesos, muy similares a otros proceso, que se ejecutarán cuando le corresponda a su división de tiempo. Esta distinción es sólo para los humanos: se dice de un proceso que ejecuta sin interacción de un usuario (en particular, sin una interfaz gráfica) que ejecuta «en segundo plano» o «como un demonio».
@@ -128,9 +128,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipc"></a>B.5.3. Comunicación entre procesos</h3></div></div></div><a
-            id="idm140408377780992"
+            id="idm140435435699472"
             class="indexterm"></a><a
-            id="idm140408377780032"
+            id="idm140435435698512"
             class="indexterm"></a><div
             class="para">
 				Un proceso aislado, sea un demonio o una aplicación interactiva, rara vez es útil por sí misma, razón por la que existen varios métodos que permiten la comunicación entre dos procesos separados, ya sea para intercambiar datos o para que se controlen entre sí. El término genérico para referirse a esto es <span
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				El sistema IPC más simple es utilizar archivos. El proceso que desea enviar datos, los escribe en un archivo (cuyo nombre ya conozca), mientras que el receptor sólo debe abrir este archivo y leer su contenido.
 			</div><a
-            id="idm140408377777216"
+            id="idm140435435695696"
             class="indexterm"></a><div
             class="para">
 				En el caso en que no deseemos almacenar datos en el disco, podemos utiliza una <span
@@ -204,7 +204,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.libraries"></a>B.5.4. Bibliotecas</h3></div></div></div><a
-            id="idm140408377754464"
+            id="idm140435435672944"
             class="indexterm"></a><div
             class="para">
 				Las bibliotecas de funciones tienen un rol crucial en un sistema operativo similar a Unix. No son programas completos ya que no se las puede ejecutar por su cuenta, sino colecciones de fragmentos de código que los programas estándar pueden utilizar. Entre las bibliotecas comunes podemos encontrar a:

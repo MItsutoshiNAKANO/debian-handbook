@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pl-PL-1.0-1" /><meta
@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="section"><a
                       href="sect.kernel-compilation.html#sect.kernel-sources">8.10.2. Getting the Sources</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.kernel-compilation.html#sect.config-noyau">8.10.3. Configuring the Kernel</a></span></dt><dt><span
+                      href="sect.kernel-compilation.html#sect.config-kernel">8.10.3. Configuring the Kernel</a></span></dt><dt><span
                     class="section"><a
                       href="sect.kernel-compilation.html#sect.kernel-build">8.10.4. Compiling and Building the Package</a></span></dt><dt><span
                     class="section"><a
@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. Konfigurowanie systemu na inny język </h2></div></div></div><a
-            id="idm139673349261696"
+            id="idm140481780152864"
             class="indexterm"></a><div
             class="para">
 			Jeśli system był zainstalowany w języku francuskim, to prawdopodobnie będzie on miał również ustawiony ten język jako domyślny po instalacji. Jednak warto wiedzieć w jaki sposób instalator ustawia język, aby później, jeśli zajdzie taka potrzeba, będziecie potrafili go zmienić.
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. Ustawianie domyślnego języka.</h3></div></div></div><a
-              id="idm139673349553088"
+              id="idm140481797612560"
               class="indexterm"></a><a
-              id="idm139673349974400"
+              id="idm140481797506848"
               class="indexterm"></a><a
-              id="idm139673344866160"
+              id="idm140481797354816"
               class="indexterm"></a><div
               class="para">
 				Lokalizacja to zestaw ustawień regionalnych. Zalicza się do nich nie tylko język tekstu, ale również format wyświetlania liczb, dat, godzin i kwot pieniężnych, a także reguły porównań alfabetycznych, które definiują alfabetyczną kolejność znaków (z uwzględnieniem znaków diakrytycznych danego języka). Mimo, że każde z tych ustawień może być definiowane niezależnie od pozostałych, na ogół używamy lokalizacji, która stanowi spójny zbiór wartości tychże ustawień, odpowiadający "regionowi" w najszerszym tego słowa znaczeniu. Lokalizacje zazwyczaj są oznaczane kodem o formacie <code
@@ -208,34 +208,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>KULTURA</em></span> Zestawy znaków</strong></p></div></div></div><a
-                id="idm139673342657520"
+                id="idm140481795491376"
                 class="indexterm"></a><a
-                id="idm139673342656560"
+                id="idm140481795490416"
                 class="indexterm"></a><a
-                id="idm139673342655600"
+                id="idm140481795489456"
                 class="indexterm"></a><a
-                id="idm139673342654640"
+                id="idm140481795488496"
                 class="indexterm"></a><a
-                id="idm139673342653680"
+                id="idm140481795487536"
                 class="indexterm"></a><a
-                id="idm139673342652720"
+                id="idm140481795486576"
                 class="indexterm"></a><div
                 class="para">
 				Historycznie, każda lokalizacja posiada powiązany z nią "zestaw znaków" (grupę wszystkich rozpoznawanych w tej lokalizacji znaków) i preferowane "kodowanie" (wewnętrzną, numeryczną reprezentację znaków w komputerze).
 			</div><div
                 class="para">
-				Najbardziej popularne kodowania dla języków wywodzących się z łaciny były ograniczone do 256 znaków, ponieważ do zapisu pojedynczego znaku używano jednego bajta. Ponieważ taka ilość znaków była niewystarczająca, żeby pokryć wszystkie europejskie języki, pojawiło się wiele oddzielnych kodowań odpowiadających różnym krajom i obszarom, między innymi kodowania od <span
-                  class="emphasis"><em>ISO-8859-1</em></span> (znane jako "Łaciński 1") aż do <span
-                  class="emphasis"><em>ISO-8859-15</em></span> (znano jako ""Łaciński 9").
+				The most popular encodings for latin-based languages were limited to 256 characters because they opted to use a single byte for each character. Since 256 characters was not enough to cover all European languages, multiple encodings were needed, and that is how we ended up with <span
+                  class="emphasis"><em>ISO-8859-1</em></span> (also known as “Latin 1”) up to <span
+                  class="emphasis"><em>ISO-8859-15</em></span> (also known as “Latin 9”), among others.
 			</div><div
                 class="para">
-				Używanie różnych języków wymagało w takiej sytuacji częstego przełączania się między różnymi kodowaniami i zestawami znaków. Co więcej, tworzenie wielojęzycznych dokumentów prowadziło do dalszych, niemal nierozwiązywalnych problemów. W odpowiedzi na te trudności stworzono Unicode, katalog znaków obejmujący niemal wszystkie systemy pisma języków całego świata. W jednym z kodowań Unicode, UTF-8, pierwsze 128 znaków ASCII (zapisywanych siedmiobitowymi kodami, odpowiadających podstawowemu alfabetowi łacińskiemu bez jakichkolwiek regionalnych znaków diakrytycznych) zostało zachowanych, ale pozostałe zdefiniowano inaczej - są poprzedzone specjalną sekwencją bitów, która pośrednio określa długość kodowania danego znaku. To pozwala na zakodowanie każdego znaku Unicode sekwencją jednego lub więcej bajtów. Standard Unicode został spopularyzowany przez fakt, że jest to domyślne kodowanie w dokumentach XML.
+				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it is the default encoding in XML documents.
 			</div><a
-                id="idm139673351512512"
+                id="idm140481796102848"
                 class="indexterm"></a><a
-                id="idm139673351511552"
+                id="idm140481796101888"
                 class="indexterm"></a><a
-                id="idm139673351510592"
+                id="idm140481796100928"
                 class="indexterm"></a><div
                 class="para">
 				Spośród wszystkich kodowań, to powinno być generalnie używane, w związku z czym stanowi ono domyślne ustawienie w systemie Debian.
@@ -252,18 +252,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">locale-gen</code> after any modifications. It will generate the necessary files for the added locales to work, and remove any obsolete files.
 			</div><div
               class="para">
-				Następne pytanie (“Default locale for the system environment”) prosi o wybór domyślnej lokalizacji. Zalecanym wyborem dla Stanów Zjednoczonych jest "<code
-                class="literal">en_US.UTF-8</code>", dla Wielkiej Brytanii “<code
-                class="literal">en_GB.UTF-8</code>”, a dla Kanady “<code
-                class="literal">en_CA.UTF-8</code>” albo “<code
-                class="literal">fr_CA.UTF-8</code>” - dla francuskojęzycznych. Plik <code
-                class="filename">/etc/default/locale</code> zostanie wówczas zmieniony, zapisując ten wybór. //dokończyć
+				The second question, entitled “Default locale for the system environment”, requests a default locale. The recommended choice in the U.S.A. is “<code
+                class="literal">en_US.UTF-8</code>”. British English speakers will prefer “<code
+                class="literal">en_GB.UTF-8</code>”, and Canadians will prefer either “<code
+                class="literal">en_CA.UTF-8</code>” or, for French, “<code
+                class="literal">fr_CA.UTF-8</code>”. The <code
+                class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it is picked up by all user sessions since PAM will inject its content in the <code
+                class="varname">LANG</code> environment variable.
 			</div><a
-              id="idm139673339657200"
+              id="idm140481778875952"
               class="indexterm"></a><a
-              id="idm139673339656240"
+              id="idm140481778874992"
               class="indexterm"></a><a
-              id="idm139673339655280"
+              id="idm140481778874032"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -286,45 +287,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   href="sect.ldap-directory.html#sect.config-pam">Sekcja 11.7.3.2, „Configuring PAM”</a>.
 			</div><div
                 class="para">
-				Plik <code
-                  class="filename">/etc/default/locale</code> działa w podobny sposób, ale zawiera wyłącznie zmienną środowiskową <code
-                  class="varname">LANG</code>. Dzięki temu podziałowi, niektórzy użytkownicy PAM mogą dziedziczyć kompletne środowisko bez ustawień regionalnych. Najczęściej nie zaleca się uruchamiania programów serwerowych z aktywowanymi ustawieniami regionalnymi, są one natomiast zalecane dla programów otwierających sesje użytkowników.
+				The <code
+                  class="filename">/etc/default/locale</code> file works in a similar manner, but contains only the <code
+                  class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it is generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
 			</div><a
-                id="idm139673338638816"
+                id="idm140481793705584"
                 class="indexterm"></a><a
-                id="idm139673338637856"
+                id="idm140481793704624"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. Konfiguracja klawiatury</h3></div></div></div><a
-              id="idm139673338635360"
+              id="idm140481793702128"
               class="indexterm"></a><a
-              id="idm139673338634400"
+              id="idm140481793701168"
               class="indexterm"></a><div
               class="para">
-				Nawet gdy zarządzanie układem klawiatury odbywa się oddzielnie dla trybu tekstowego (wiersz poleceń) i graficznego, Debian oferuje jeden wspólny interfejs służący do konfiguracji obu trybów: jest on oparty na narzędziu debconf i zaimplementowany w pakiecie <span
-                class="pkg pkg">keyboard-configuration</span>. Dzięki temu polecenie <code
-                class="command">dpkg-reconfigure keyboard-configuration</code> może zostać w każdej chwili użyte do zresetowania układu klawiatury.
+				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it is based on debconf and is implemented in the <span
+                class="pkg pkg">keyboard-configuration</span> package. Thus the <code
+                class="command">dpkg-reconfigure keyboard-configuration</code> command can be used at any time to reset the keyboard layout.
 			</div><a
-              id="idm139673338631648"
+              id="idm140481793698448"
               class="indexterm"></a><a
-              id="idm139673338630528"
+              id="idm140481793697328"
               class="indexterm"></a><a
-              id="idm139673338629408"
+              id="idm140481793696208"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm139673338627968"
+                id="idm140481793694768"
                 class="indexterm"></a>
 			</div><a
-              id="idm139673338627008"
+              id="idm140481793693808"
               class="indexterm"></a><a
-              id="idm139673338625728"
+              id="idm140481793692528"
               class="indexterm"></a><a
-              id="idm139673338624448"
+              id="idm140481793691248"
               class="indexterm"></a><a
-              id="idm139673330820432"
+              id="idm140481796913456"
               class="indexterm"></a><div
               class="para">
 				Należy mieć na uwadze, że opisana tutaj konfiguracja klawiatury dla trybu graficznego dotyczy jedynie domyślnego układu; środowiska GNOME i KDE oraz inne posiadają w swoich ustawieniach panel sterowania klawiatury umożliwiający każdemu użytkownikowi na określenie swojej własnej konfiguracji. W panelach tych są również dostępne różne dodatkowe opcje dotyczące zachowania niektórych poszczególnych klawiszy.

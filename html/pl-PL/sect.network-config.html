@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pl-PL-1.0-1" /><meta
@@ -73,36 +73,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>POWRÓT DO PODSTAW</em></span> Elementarne koncepcje związane z sieciami (Ethernet, adres IP, podsieć, nadawanie).</strong></p></div></div></div><a
-            id="idm139673338786848"
+            id="idm140481793885072"
             class="indexterm"></a><a
-            id="idm139673338785888"
+            id="idm140481793884112"
             class="indexterm"></a><a
-            id="idm139673338784928"
+            id="idm140481793883152"
             class="indexterm"></a><a
-            id="idm139673338783968"
+            id="idm140481793882192"
             class="indexterm"></a><a
-            id="idm139673338783008"
+            id="idm140481793881232"
             class="indexterm"></a><a
-            id="idm139673338782048"
+            id="idm140481793880272"
             class="indexterm"></a><a
-            id="idm139673338781088"
+            id="idm140481793879312"
             class="indexterm"></a><div
             class="para">
 			Most modern local networks use the Ethernet protocol, where data is split into small blocks called frames and transmitted on the wire one frame at a time. Data speeds vary from 10 Mb/s for older Ethernet cards to 10 Gb/s in the newest cards (with the most common rate currently growing from 100 Mb/s to 1 Gb/s). The most widely used cables are called 10BASE-T, 100BASE-T, 1000BASE-T or 10GBASE-T depending on the throughput they can reliably provide (the T stands for “twisted pair”); those cables end in an RJ45 connector. There are other cable types, used mostly for speeds of 1 Gb/s and above.
 		</div><a
-            id="idm139673338779056"
+            id="idm140481793877280"
             class="indexterm"></a><a
-            id="idm139673338778096"
+            id="idm140481793876320"
             class="indexterm"></a><div
             class="para">
 			An IP address is a number used to identify a network interface on a computer on a local network or the Internet. In the currently most widespread version of IP (IPv4), this number is encoded in 32 bits, and is usually represented as 4 numbers separated by periods (e.g. <code
               class="literal">192.168.0.1</code>), each number being between 0 and 255 (inclusive, which corresponds to 8 bits of data). The next version of the protocol, IPv6, extends this addressing space to 128 bits, and the addresses are generally represented as a series of hexadecimal numbers separated by colons (e.g., 2001:0db8:13bb:0002:0000:0000:0000:0020, or 2001:db8:13bb:2::20 for short).
 		</div><a
-            id="idm139673338775584"
+            id="idm140481793873808"
             class="indexterm"></a><a
-            id="idm139673338774624"
+            id="idm140481793872848"
             class="indexterm"></a><a
-            id="idm139673338773184"
+            id="idm140481793871408"
             class="indexterm"></a><div
             class="para">
 			Maska podsieci określa która część adresu IP odpowiada sieci, a która znajdującemu się w niej konkretnemu komputerowi, czyli hostowi. Adres IP zapisany binarnie stanowi ciąg bitów, składający się zasadniczo z dwóch nastepujących po sobie fragmentów: adresu sieci oraz liczby identyfikującej hosta w tej sieci. Maska podsieci, składająca się podobnie jak adres IP z czterech 8-bitowych liczb, określa długość tego pierwszego fragmentu. W podanym tutaj przykładzie konfigurowania statycznego adresu IPv4, maska podsieci wynosi <code
@@ -118,14 +118,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">192.168.0.255</code>. Podobny zapis stosuje się w wersji IPv6: <code
               class="literal">2001:db8:13bb:2::/64</code>.
 		</div><a
-            id="idm139673338765824"
+            id="idm140481793864048"
             class="indexterm"></a><a
-            id="idm139673338764864"
+            id="idm140481793863088"
             class="indexterm"></a><div
             class="para">
 			Router jest urządzeniem, które łączy ze sobą wiele różnych sieci, umożliwiając komunikację pomiędzy nimi. Wszystkie dane przechodzące przez router są przez niego kierowane do właściwej sieci. W tym celu router analizuje napływające dane i przekierowuje je w zależności od zawartego w nich docelowego adresu IP. Router jest często nazywany bramą (gateway) - wówczas służy jako urządzenie poprzez które komputer w sieci lokalnej może nawiązać komunikację z siecią zewnętrzną.
 		</div><a
-            id="idm139673338762928"
+            id="idm140481793861152"
             class="indexterm"></a><div
             class="para">
 			Specjalny adres rozgłoszeniowy ("broadcast") łączy wszystkie hosty w sieci, pozwalając na wysłanie danych do wszystkich komputerów w sieci poprzez pojedynczą transmisję. Prawie zawsze jest nieroutowalny (tj. nie podlega routingowi), czyli działa tylko w odniesieniu do sieci z którą jest związany. W praktyce oznacza to, że pakiet danych opatrzony rozgłoszeniowym adresem docelowym nigdy nie przejdzie przez router.
@@ -143,30 +143,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="filename">/etc/init.d/networking</code> init script. This will often be <code
             class="literal">eth0</code>, which refers to the first Ethernet card.
 		</div><a
-          id="idm139673338756672"
+          id="idm140481793854896"
           class="indexterm"></a><a
-          id="idm139673338755232"
+          id="idm140481793853456"
           class="indexterm"></a><a
-          id="idm139673338753792"
+          id="idm140481793852016"
           class="indexterm"></a><a
-          id="idm139673338752352"
+          id="idm140481793850576"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> NetworkManager</strong></p></div></div></div><a
-            id="idm139673338750112"
+            id="idm140481793848336"
             class="indexterm"></a><div
             class="para">
 			If Network Manager is particularly recommended in roaming setups (see <a
               class="xref"
-              href="sect.network-config.html#sect.roaming-network-config">Sekcja 8.2.4, „Automatic Network Configuration for Roaming Users”</a>), it's also perfectly usable as the default network management tool. You can create “System connections” that are used as soon as the computer boots either manually with a <code
+              href="sect.network-config.html#sect.roaming-network-config">Sekcja 8.2.4, „Automatic Network Configuration for Roaming Users”</a>), it is also perfectly usable as the default network management tool. You can create “System connections” that are used as soon as the computer boots either manually with a <code
               class="filename">.ini</code>-like file in <code
               class="filename">/etc/NetworkManager/system-connections/</code> or through a graphical tool (<code
               class="command">nm-connection-editor</code>). Just remember to deactivate all entries in <code
               class="filename">/etc/network/interfaces</code> if you want Network Manager to handle them. <div
               class="url">→ <a
-                href="http://wiki.gnome.org/NetworkManager/SystemSettings/jessie">http://wiki.gnome.org/NetworkManager/SystemSettings/jessie</a></div> <div
+                href="https://wiki.gnome.org/Projects/NetworkManager/SystemSettings/jessie">https://wiki.gnome.org/Projects/NetworkManager/SystemSettings/jessie</a></div> <div
               class="url">→ <a
                 href="https://developer.gnome.org/NetworkManager/0.9/ref-settings.html">https://developer.gnome.org/NetworkManager/0.9/ref-settings.html</a></div>
 		</div></div><div
@@ -178,9 +178,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Jeśli komputer jest wyposażony w kartę sieciową Ethernet, należy odpowiednio skonfigurować powiązaną z nim sieć IP korzystając z jednej z dwóch metod. Najprostszy sposób to dynamiczna konfiguracja przy użyciu protokołu DHCP; wymaga ona obecności serwera DHCP w lokalnej sieci. W jej ramach można określić pożądaną nazwę hosta, odpowiadającą ustawieniu <code
               class="literal">hostname</code> w poniższym przykładzie. Serwer DHCP odpowiada za przesłanie ustawień sieciowych dla odpowiedniej sieci.
 			</div><a
-            id="idm139673338741776"
+            id="idm140481793840000"
             class="indexterm"></a><a
-            id="idm139673338740816"
+            id="idm140481793839040"
             class="indexterm"></a><div
             class="example"><a
               id="example.config-dhcp"></a><p
@@ -221,13 +221,13 @@ iface eth0 inet static
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ppp-rtc"></a>8.2.2. Połączenie przy użyciu PPP poprzez modem PSTN.</h3></div></div></div><a
-            id="idm139673339041248"
+            id="idm140481778735824"
             class="indexterm"></a><a
-            id="idm139673339040288"
+            id="idm140481778734864"
             class="indexterm"></a><a
-            id="idm139673339039328"
+            id="idm140481778733904"
             class="indexterm"></a><a
-            id="idm139673339037888"
+            id="idm140481778732464"
             class="indexterm"></a><div
             class="para">
 				Protokół point-to-point (PPP) tworzy tymczasowe połączenie pomiędzy hostami; jest to najczęściej stosowane rozwiązanie w przypadku połączeń realizowanych poprzez modem telefoniczny (modem "PSTN" - "public switched telephone network" - jako, że połączenie odbywa się przez publiczną komutowaną sieć telefoniczną).
@@ -238,9 +238,9 @@ iface eth0 inet static
               class="literal">provider</code> (od dostawcy usług internetowych). W razie wątpliwości co do wyboru protokołu uwierzytelniania, należy wybrać <span
               class="emphasis"><em>PAP</em></span>, jako oferowany przez większość dostawców internetowych.
 			</div><a
-            id="idm139673339033344"
+            id="idm140481778728000"
             class="indexterm"></a><a
-            id="idm139673339032224"
+            id="idm140481778726880"
             class="indexterm"></a><div
             class="para">
 				Po dokonaniu konfiguracji możliwe jest nawiązanie połączenia przy użyciu polecenia <code
@@ -249,19 +249,19 @@ iface eth0 inet static
               class="command">poff</code>. Obe te polecenia mogą być wykonane z uprawnieniami roota, bądź przez jakiegokolwiek użytkownika pod warunkiem, że należy on do grupy <code
               class="literal">dip</code>.
 			</div><a
-            id="idm139673339028752"
+            id="idm140481778723408"
             class="indexterm"></a><a
-            id="idm139673339027632"
+            id="idm140481778722288"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.adsl"></a>8.2.3. Nawiązywanie połączenia poprzez modem ADSL.</h3></div></div></div><a
-            id="idm139673339025328"
+            id="idm140481778719984"
             class="indexterm"></a><a
-            id="idm139673339023888"
+            id="idm140481778718544"
             class="indexterm"></a><a
-            id="idm139673339022448"
+            id="idm140481778717104"
             class="indexterm"></a><div
             class="para">
 				Ogólna nazwa "modem ADSL" odnosi się do wielu urządzeń o różnych funkcjonalnościach. Modemy najprostsze w użyciu z systemem Linux to te, które poza interfejsem USB posiadają również interfejs Ethernet. Są one dość popularne - większość dostawców usług internetowych stosujących technologię ADSL wynajmuje bądź dzierżawi modem z portem Ethernetowym. Wymagana konfiguracja może różnić się znacznie w zależności od konkretnego typu modemu.
@@ -270,9 +270,9 @@ iface eth0 inet static
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.adsl-pppoe"></a>8.2.3.1. Modem obsługujące PPPOE</h4></div></div></div><a
-              id="idm139673339019520"
+              id="idm140481778714176"
               class="indexterm"></a><a
-              id="idm139673339018560"
+              id="idm140481778713216"
               class="indexterm"></a><div
               class="para">
 					Niektóre modemy Ethernetowe współpracują z protokołem PPPIE (Point to Point over Ethernet). Narzędzie <code
@@ -286,16 +286,16 @@ iface eth0 inet static
                 class="command">pon dsl-provider</code> oraz zakończyć je poleceniem <code
                 class="command">poff dsl-provider</code>.
 				</div><a
-              id="idm139673339013536"
+              id="idm140481778708192"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>TIP</em></span> Starting <code
                           class="command">ppp</code> at boot</strong></p></div></div></div><a
-                id="idm139673339010816"
+                id="idm140481778705472"
                 class="indexterm"></a><a
-                id="idm139673339009696"
+                id="idm140481778704352"
                 class="indexterm"></a><div
                 class="para">
 					PPP connections over ADSL are, by definition, intermittent. Since they are usually not billed according to time, there are few downsides to the temptation of keeping them always open. The standard means to do so is to use the init system.
@@ -324,7 +324,7 @@ WantedBy=multi-user.target</pre><div
                 class="para">
 					On systems not using <code
                   class="command">systemd</code> (including <span
-                  class="distribution distribution">Wheezy</span> and earlier versions of Debian), the standard SystemV init works differently. On such systems, all that's needed is to add a line such as the following at the end of the <code
+                  class="distribution distribution">Wheezy</span> and earlier versions of Debian), the standard SystemV init works differently. On such systems, all that is needed is to add a line such as the following at the end of the <code
                   class="filename">/etc/inittab</code> file; then, any time the connection is disconnected, <code
                   class="command">init</code> will reconnect it.
 				</div><pre
@@ -332,13 +332,13 @@ WantedBy=multi-user.target</pre><div
 adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
 </pre><div
                 class="para">
-					Most ADSL connections disconnect on a daily basis, but this method reduces the duration of the interruption.
+					For ADSL connections that auto-disconnect on a daily basis, this method reduces the duration of the interruption.
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.adsl-pptp"></a>8.2.3.2. Modems Supporting PPTP</h4></div></div></div><a
-              id="idm139673338998944"
+              id="idm140481778693408"
               class="indexterm"></a><div
               class="para">
 					The PPTP (Point-to-Point Tunneling Protocol) protocol was created by Microsoft. Deployed at the beginning of ADSL, it was quickly replaced by PPPOE. If this protocol is forced on you, see <a
@@ -356,7 +356,7 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> Crossover cable for a direct Ethernet connection</strong></p></div></div></div><a
-                id="idm139673338993680"
+                id="idm140481778688144"
                 class="indexterm"></a><div
                 class="para">
 					Computer network cards expect to receive data on specific wires in the cable, and send their data on others. When you connect a computer to a local network, you usually connect a cable (straight or crossover) between the network card and a repeater or switch. However, if you want to connect two computers directly (without an intermediary switch or repeater), you must route the signal sent by one card to the receiving side of the other card, and vice-versa. This is the purpose of a crossover cable, and the reason it is used.
@@ -371,9 +371,9 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.roaming-network-config"></a>8.2.4. Automatic Network Configuration for Roaming Users</h3></div></div></div><a
-            id="idm139673338988976"
+            id="idm140481778683440"
             class="indexterm"></a><a
-            id="idm139673338987664"
+            id="idm140481778682128"
             class="indexterm"></a><div
             class="para">
 				Many Falcot engineers have a laptop computer that, for professional purposes, they also use at home. The network configuration to use differs according to location. At home, it may be a wifi network (protected by a WPA key), while the workplace uses a wired network for greater security and more bandwidth.
@@ -397,7 +397,7 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> Configuration by “network profile”</strong></p></div></div></div><a
-              id="idm139673338979360"
+              id="idm140481778673824"
               class="indexterm"></a><div
               class="para">
 				More advanced users may want to try the <span

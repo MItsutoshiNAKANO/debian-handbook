@@ -71,15 +71,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Samba es un conjunto de herramientas que administran el protocolo SMB (también conocido como «CIFS») en Linux. Windows utiliza este protocolo para espacios compartidos de red e impresoras compartidas.
 		</div><a
-          id="idm140408377315456"
+          id="idm140435435281504"
           class="indexterm"></a><a
-          id="idm140408377314688"
+          id="idm140435435280736"
           class="indexterm"></a><a
-          id="idm140408377313920"
+          id="idm140435435279968"
           class="indexterm"></a><a
-          id="idm140408377313152"
+          id="idm140435435279200"
           class="indexterm"></a><a
-          id="idm140408377312384"
+          id="idm140435435278432"
           class="indexterm"></a><div
           class="para">
 			Samba también puede actuar como un controlador de dominio Windows. Esta es una herramienta sobresaliente para asegurar una integración perfecta entre servidores Linux y las máquinas de escritorios en las oficinas que todavía utilizan Windows.
@@ -87,16 +87,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140408377310576"></a>11.5.1. Servidor Samba</h3></div></div></div><div
+                    id="idm140435435276624"></a>11.5.1. Servidor Samba</h3></div></div></div><div
             class="para">
 				El paquete <span
               class="pkg pkg">samba</span> contiene los dos servidores principales de Samba 4: <code
               class="command">smbd</code> y <code
               class="command">nmbd</code>.
 			</div><a
-            id="idm140408377308160"
+            id="idm140435435274208"
             class="indexterm"></a><a
-            id="idm140408377307264"
+            id="idm140435435273312"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -105,9 +105,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				El servidor Samba es extremadamente configurable y versátil y puede adaptarse a muchos casos de uso diferentes con requisitos y arquitecturas de red muy distintas. Este libro sólo se enfocará en el caso de uso donde se utiliza Samba como el controlador de Dominio principal, pero también pueder ser un servidor simple en el dominio y delegar la autenticación al controlador principal (que puede ser un servidor Windows).
 			</div><a
-              id="idm140408377304640"
+              id="idm140435435270688"
               class="indexterm"></a><a
-              id="idm140408377303872"
+              id="idm140435435269920"
               class="indexterm"></a><div
               class="para">
 				El paquete <span
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Winbind provee a los administradores de sistemas la opción de utilizar un servidor Windows como servidor de autenticación. Winbind también se integra limpiamente con PAM y NSS. Esto permite configurar máquinas Linux en las que todos los usuarios de un dominio Windows automáticamente tienen una cuenta.
 			</div><a
-              id="idm140408377299968"
+              id="idm140435435265920"
               class="indexterm"></a><div
               class="para">
 				Puede encontrar más información en el directorio <code
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140408377298304"></a>11.5.1.1. Configuración con <code
+                      id="idm140435435264176"></a>11.5.1.1. Configuración con <code
                       class="command">debconf</code></h4></div></div></div><div
               class="para">
 					The package sets up a minimal configuration during the initial installation but you should really run <code
@@ -143,16 +143,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 					El paquete también propone identificar el servidor WINS de la información provista por el demonio DHCP. Los administradores de Falcot Corp rechazaron esta opción ya que pretenden utilizar el servidor Samba en sí como servidor WINS.
 				</div><a
-              id="idm140408377294960"
+              id="idm140435435260832"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140408377294064"></a>11.5.1.2. Configuración manual</h4></div></div></div><div
+                      id="idm140435435259936"></a>11.5.1.2. Configuración manual</h4></div></div></div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140408377293424"></a>11.5.1.2.1. Cambios en <code
+                        id="idm140435435259296"></a>11.5.1.2.1. Cambios en <code
                         class="filename">smb.conf</code></h5></div></div></div><div
                 class="para">
 						Los requisitos en Falcotr requieren modificar otras opciones en el archivo de configuración <code
@@ -230,7 +230,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140408377285968"></a>11.5.1.2.2. Añadir usuarios</h5></div></div></div><div
+                        id="idm140435435251744"></a>11.5.1.2.2. Añadir usuarios</h5></div></div></div><div
                 class="para">
 						Cada usuario Samba necesita una cuenta en el servidor; primero debe crear las cuentas Unix, luego necesita registrar el usuario en la base de datos de Samba. El paso de Unix se realiza de la forma normal (por ejemplo, utilizando <code
                   class="command">adduser</code>).
@@ -252,13 +252,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140408377280736"></a>11.5.1.2.3. Cambio a controlador de dominio</h5></div></div></div><div
+                        id="idm140435435246352"></a>11.5.1.2.3. Cambio a controlador de dominio</h5></div></div></div><div
                 class="para">
 						Esta sección documenta cómo los administradores de Falcot fueron inclusive más allá y convirtieron el servidor Samba en un controlador de dominio con perfiles móviles (que permite a los usuarios utilizar su escritorio sin importar la máquina en la que se conecten).
 					</div><a
-                id="idm140408377279408"
+                id="idm140435435245024"
                 class="indexterm"></a><a
-                id="idm140408377278640"
+                id="idm140435435244256"
                 class="indexterm"></a><div
                 class="para">
 						Primero agregaron unas pocas directivas adicionales en la sección <code
@@ -328,7 +328,7 @@ logon script = scripts/logon.bat <span
 								Los programas más utilizados en estos scripts permiten la creación automática de discos de red y sincronizar la hora del sistema.
 							</div><div
                         class="example"><a
-                          id="idm140408377269216"></a><p
+                          id="idm140435435234832"></a><p
                           class="title"><strong>Ejemplo 11.28. El archivo <code
                               class="filename">logon.bat</code></strong></p><div
                           class="example-contents"><pre
@@ -360,20 +360,20 @@ profile acls = Yes</pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140408377264752"></a>11.5.2. Cliente Samba</h3></div></div></div><div
+                    id="idm140435435230368"></a>11.5.2. Cliente Samba</h3></div></div></div><div
             class="para">
 				La funcionalidad de cliente en Samba le permite a una máquina Linux acceder a espacios e impresoras compartidas en Windows. Los programas necesarios se encuentran en los paquetes <span
               class="pkg pkg">cifs-utils</span> y <span
               class="pkg pkg">smbclient</span>.
 			</div><a
-            id="idm140408377262272"
+            id="idm140435435227888"
             class="indexterm"></a><a
-            id="idm140408377261376"
+            id="idm140435435226992"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140408377260480"></a>11.5.2.1. El programa <code
+                      id="idm140435435226096"></a>11.5.2.1. El programa <code
                       class="command">smbclient</code></h4></div></div></div><div
               class="para">
 					El programa <code
@@ -389,19 +389,19 @@ profile acls = Yes</pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140408377256080"></a>11.5.2.2. Montaje de espacios compartidos de Windows</h4></div></div></div><div
+                      id="idm140435435221696"></a>11.5.2.2. Montaje de espacios compartidos de Windows</h4></div></div></div><div
               class="para">
 					El programa <code
                 class="command">mount</code> permite montar un espacio compartido de Windows en la jerarquía del sistema de archivos de Linux (con la ayuda de <code
                 class="command">mount.cifs</code> provisto por <span
                 class="pkg pkg">cifs-utils</span>).
 				</div><a
-              id="idm140408377253536"
+              id="idm140435435219152"
               class="indexterm"></a><a
-              id="idm140408377252640"
+              id="idm140435435218256"
               class="indexterm"></a><div
               class="example"><a
-                id="idm140408377251872"></a><p
+                id="idm140435435217488"></a><p
                 class="title"><strong>Ejemplo 11.29. Montaje de un espacio compartido de Windows</strong></p><div
                 class="example-contents"><pre
                   class="programlisting">
@@ -437,12 +437,12 @@ password = <em
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140408377243776"></a>11.5.2.3. Impresión en una impresora compartida</h4></div></div></div><div
+                      id="idm140435435209392"></a>11.5.2.3. Impresión en una impresora compartida</h4></div></div></div><div
               class="para">
 					CUPS es una solución elegante para imprimir desde una estación de trabajo Linux en una impresora compartida por una máquina Windows. Cuando instale <span
                 class="pkg pkg">smbclient</span>, CUPS le permitirá instalar impresoras compartidas Windows de forma automática.
 				</div><a
-              id="idm140408377241856"
+              id="idm140435435207472"
               class="indexterm"></a><div
               class="para">
 					Los pasos necesarios son los siguientes:

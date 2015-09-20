@@ -14,12 +14,12 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pl-PL-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="The Debian Administrator's Handbook" /><link
@@ -68,34 +68,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-authentication"></a>6.5. Sprawdzanie Autentyczności Pakietów</h2></div></div></div><a
-          id="idm139673337725872"
+          id="idm140481778475088"
           class="indexterm"></a><a
-          id="idm139673337724432"
+          id="idm140481778473648"
           class="indexterm"></a><a
-          id="idm139673337722992"
+          id="idm140481778472208"
           class="indexterm"></a><a
-          id="idm139673337721552"
+          id="idm140481778470768"
           class="indexterm"></a><a
-          id="idm139673337720112"
+          id="idm140481778469328"
           class="indexterm"></a><div
           class="para">
 			Dla administratorów Falcot Corp bezpieczeństwo jest bardzo ważne. Zgodnie z tym założeniem, muszą być pewni, że instalują tylko pakiety, których pochodzenie od Debiana jest gwarantowane, które nie były zmieniane przez osoby trzecie. Włamywacz komputerowy mógłby bowiem próbować dodać szkodliwy kod do wiarygodnego pakietu. Po zainstalowaniu, taki pakiet mógłby robić cokolwiek, do czego włamywacz go zaprojektował, włączając w to na przykład kradzież haseł lub poufnych informacji. W celu przeciwdziałania takim zagrożeniom, Debian stosuje pieczęci zabezpieczające, aby zagwarantować — w czasie instalacji — że pakiet naprawdę pochodzi od jego opiekuna i nie był modyfikowany przez osoby trzecie.
 		</div><div
           class="para">
-			Wspomniana pieczęć składa się z łańcucha kryptograficznych funkcji skrótu i podpisu. Podpisanym plikiem jest plik <code
-            class="filename">Release</code>, dostarczany przez serwery lustrzane Debiana. Zawiera on listę plików <code
-            class="filename">Packages</code> (włączając ich skompresowane wersje, <code
-            class="filename">Packages.gz</code> i <code
-            class="filename">Packages.bz2</code> oraz wersje przyrostowe) razem z ich skrótami MD5, SHA1 i SHA256, które zapewniają, że pliki nie zostały zmodyfikowane. Pliki <code
-            class="filename">Packages</code> zawierają listę pakietów Debiana dostępnych na serwerze lustrzanym razem z ich skrótami, które to z kolei zapewniają, że zawartość samych pakietów również nie była zmieniana.
+			The seal works with a chain of cryptographical hashes and a signature. The signed file is the <code
+            class="filename">Release</code> file, provided by the Debian mirrors. It contains a list of the <code
+            class="filename">Packages</code> files (including their compressed forms, <code
+            class="filename">Packages.gz</code> and <code
+            class="filename">Packages.xz</code>, and the incremental versions), along with their MD5, SHA1 and SHA256 hashes, which ensures that the files haven't been tampered with. These <code
+            class="filename">Packages</code> files contain a list of the Debian packages available on the mirror, along with their hashes, which ensures in turn that the contents of the packages themselves haven't been altered either.
 		</div><a
-          id="idm139673337714240"
+          id="idm140481778463392"
           class="indexterm"></a><a
-          id="idm139673337713120"
+          id="idm140481778462272"
           class="indexterm"></a><a
-          id="idm139673337711696"
+          id="idm140481778460848"
           class="indexterm"></a><a
-          id="idm139673337710576"
+          id="idm140481778459728"
           class="indexterm"></a><div
           class="para">
 			Zarządzanie zaufanymi kluczami odbywa się przez użycie komendy <code
@@ -153,14 +153,14 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>W PRAKTYCE</em></span> Dodawanie zaufanych kluczy</strong></p></div></div></div><a
-            id="idm139673337700576"
+            id="idm140481778449728"
             class="indexterm"></a><a
-            id="idm139673337699616"
+            id="idm140481778448768"
             class="indexterm"></a><div
             class="para">
-			Kiedy do pliku <code
-              class="filename">sources.list</code> zostanie dodane źródło pakietów strony trzeciej, APT musi być poinstruowany, aby zaufać odpowiadającemu kluczowi uwierzytelniania GPG (w przeciwnym przypadku będzie narzekał, że nie może zapewnić uwierzytelnienia pakietów pochodzących z tego repozytorium). Pierwszym krokiem jest oczywiście pozyskanie klucza publicznego. Najczęściej klucz ten będzie dostarczony jako mały plik tekstowy, który w poniższym przykładzie został nazwany <code
-              class="filename">key.asc</code>.
+			When a third-party package source is added to the <code
+              class="filename">sources.list</code> file, APT needs to be told to trust the corresponding GPG authentication key (otherwise it will keep complaining that it can't ensure the authenticity of the packages coming from that repository). The first step is of course to get the public key. More often than not, the key will be provided as a small text file, which we will call <code
+              class="filename">key.asc</code> in the following examples.
 		</div><div
             class="para">
 			W celu dodania klucza do bazy zaufanych kluczy, administrator może wykonać <code
@@ -170,7 +170,7 @@ uid                  Wheezy Stable Release Key &lt;debian-release@lists.debian.o
               class="guisubmenu"><strong>Repozytoria</strong></span> daje możliwość zaimportowania klucza z pliku <code
               class="filename">key.asc</code>.
 		</div><a
-            id="idm139673337693408"
+            id="idm140481778442752"
             class="indexterm"></a><div
             class="para">
 			Dla tych, którzy potrzebowaliby osobnej aplikacji i więcej szczegółów na temat zaufanych kluczy istnieje możliwość użycia <code

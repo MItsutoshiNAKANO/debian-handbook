@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. Francisation du système</h2></div></div></div><a
-            id="idm140065026971216"
+            id="idm140534138773376"
             class="indexterm"></a><div
             class="para">
 			Il est probable que l'ordinateur fonctionne déjà en français si l'installation a été menée dans cette langue. Mais il est bon de savoir ce que l'installateur a fait à cette fin pour pouvoir le changer plus tard si le besoin s'en faisait sentir.
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. Définir la langue par défaut</h3></div></div></div><a
-              id="idm140065037333280"
+              id="idm140534138443152"
               class="indexterm"></a><a
-              id="idm140065027785584"
+              id="idm140534135368224"
               class="indexterm"></a><a
-              id="idm140065043039280"
+              id="idm140534138637360"
               class="indexterm"></a><div
               class="para">
 				Une <span
@@ -210,17 +210,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>CULTURE</em></span> Jeux de caractères</strong></p></div></div></div><a
-                id="idm140065027921632"
+                id="idm140534139391728"
                 class="indexterm"></a><a
-                id="idm140065027920672"
+                id="idm140534139390768"
                 class="indexterm"></a><a
-                id="idm140065027919712"
+                id="idm140534139389808"
                 class="indexterm"></a><a
-                id="idm140065027918752"
+                id="idm140534139388848"
                 class="indexterm"></a><a
-                id="idm140065027917792"
+                id="idm140534139387888"
                 class="indexterm"></a><a
-                id="idm140065027916832"
+                id="idm140534139386928"
                 class="indexterm"></a><div
                 class="para">
 				À chaque locale sont normalement associés un « jeu de caractères » (ensemble des caractères possibles) et un « encodage » (manière de représenter les caractères pour l'ordinateur) de prédilection.
@@ -233,11 +233,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it is the default encoding in XML documents.
 			</div><a
-                id="idm140065042447600"
+                id="idm140534134190320"
                 class="indexterm"></a><a
-                id="idm140065042446640"
+                id="idm140534134189360"
                 class="indexterm"></a><a
-                id="idm140065042445680"
+                id="idm140534134188400"
                 class="indexterm"></a><div
                 class="para">
 				Il s'agit de l'encodage généralement recommandé et de la valeur par défaut sur les systèmes Debian.
@@ -262,11 +262,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it is picked up by all user sessions since PAM will inject its content in the <code
                 class="varname">LANG</code> environment variable.
 			</div><a
-              id="idm140065030006192"
+              id="idm140534134997648"
               class="indexterm"></a><a
-              id="idm140065030005072"
+              id="idm140534134996528"
               class="indexterm"></a><a
-              id="idm140065030003952"
+              id="idm140534134995408"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -295,32 +295,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/etc/default/locale</code> file works in a similar manner, but contains only the <code
                   class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it is generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
 			</div><a
-                id="idm140065040834912"
+                id="idm140534133259344"
                 class="indexterm"></a><a
-                id="idm140065040833952"
+                id="idm140534133258384"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. Configurer le clavier</h3></div></div></div><a
-              id="idm140065040831456"
+              id="idm140534133255888"
               class="indexterm"></a><a
-              id="idm140065040830496"
+              id="idm140534133254928"
               class="indexterm"></a><div
               class="para">
 				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it is based on debconf and is implemented in the <span
                 class="pkg pkg">keyboard-configuration</span> package. Thus the <code
                 class="command">dpkg-reconfigure keyboard-configuration</code> command can be used at any time to reset the keyboard layout.
 			</div><a
-              id="idm140065040827776"
+              id="idm140534133252208"
               class="indexterm"></a><a
-              id="idm140065040826656"
+              id="idm140534133251088"
               class="indexterm"></a><a
-              id="idm140065040825536"
+              id="idm140534133249968"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm140065040824096"
+                id="idm140534133248528"
                 class="indexterm"></a> Les questions portent dans l'ordre sur l'apparence du clavier physique (un clavier de PC standard en France sera « PC générique 105 touches (intl) »), puis sur la disposition à choisir (on choisira généralement « France » sauf cas particuliers), puis sur la position de la touche AltGr. Vient enfin une question sur la position à utiliser pour la « touche Compose », qui permet de saisir des caractères spéciaux en combinant des caractères simples. Taper successivement <span
                 class="keycap"><strong>Compose</strong></span> <span
                 class="keycap"><strong>'</strong></span> <span
@@ -328,13 +328,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/usr/share/X11/locale/en_US.UTF-8/Compose</code> (ou un autre fichier, déterminé en fonction de la locale en cours par la table de correspondance décrite par <code
                 class="filename">/usr/share/X11/locale/compose.dir</code>).
 			</div><a
-              id="idm140065026315984"
+              id="idm140534147294928"
               class="indexterm"></a><a
-              id="idm140065026314704"
+              id="idm140534147293648"
               class="indexterm"></a><a
-              id="idm140065026313424"
+              id="idm140534147292368"
               class="indexterm"></a><a
-              id="idm140065026311824"
+              id="idm140534147290768"
               class="indexterm"></a><div
               class="para">
 				Il est à noter que la configuration du clavier pour le mode graphique décrite ici n'influe que sur la disposition par défaut ; les environnements de bureau GNOME et KDE, entre autres, fournissent un panneau de configuration Clavier dans leurs préférences, permettant à chaque utilisateur d'avoir sa propre disposition. Quelques options supplémentaires concernant le comportement de certaines touches particulières sont également disponibles dans ces panneaux de configuration.

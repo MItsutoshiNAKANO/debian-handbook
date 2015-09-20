@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/1999/xhtml"><head><meta
         http-equiv="Content-Type"
         content="text/html; charset=UTF-8" /><title
-        xmlns:d="http://docbook.org/ns/docbook">14.6. Dealing with a Compromised Machine</title><link
+        xmlns:d="http://docbook.org/ns/docbook">14.7. Dealing with a Compromised Machine</title><link
         rel="stylesheet"
         type="text/css"
         href="Common_Content/css/default.css" /><link
@@ -14,7 +14,7 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pl-PL-1.0-1" /><meta
@@ -28,7 +28,7 @@
         title="Rozdział 14. Security" /><link
         rel="prev"
         href="sect.other-security-considerations.html"
-        title="14.5. Other Security-Related Considerations" /><link
+        title="14.6. Other Security-Related Considerations" /><link
         rel="next"
         href="debian-packaging.html"
         title="Rozdział 15. Creating a Debian Package" /><link
@@ -67,14 +67,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         class="section"><div
           class="titlepage"><div><div><h2
                 class="title"><a
-                  id="sect.dealing-with-compromised-machine"></a>14.6. Dealing with a Compromised Machine</h2></div></div></div><div
+                  id="sect.dealing-with-compromised-machine"></a>14.7. Dealing with a Compromised Machine</h2></div></div></div><div
           class="para">
 			Despite the best intentions and however carefully designed the security policy, an administrator eventually faces an act of hijacking. This section provides a few guidelines on how to react when confronted with these unfortunate circumstances.
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139673327517648"></a>14.6.1. Detecting and Seeing the Cracker's Intrusion</h3></div></div></div><div
+                    id="idm140481772739920"></a>14.7.1. Detecting and Seeing the Cracker's Intrusion</h3></div></div></div><div
             class="para">
 				The first step of reacting to cracking is to be aware of such an act. This is not self-evident, especially without an adequate monitoring infrastructure.
 			</div><div
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139673327506464"></a>14.6.2. Putting the Server Off-Line</h3></div></div></div><div
+                    id="idm140481772728464"></a>14.7.2. Putting the Server Off-Line</h3></div></div></div><div
             class="para">
 				In any but the most exotic cases, the cracking comes from the network, and the attacker needs a working network to reach their targets (access confidential data, share illegal files, hide their identity by using the machine as a relay, and so on). Unplugging the computer from the network will prevent the attacker from reaching these targets, if they haven't managed to do so yet.
 			</div><div
@@ -133,7 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139673327503488"></a>14.6.3. Keeping Everything that Could Be Used as Evidence</h3></div></div></div><div
+                    id="idm140481772725488"></a>14.7.3. Keeping Everything that Could Be Used as Evidence</h3></div></div></div><div
             class="para">
 				Understanding the attack and/or engaging legal action against the attackers requires taking copies of all the important elements; this includes the contents of the hard disk, a list of all running processes, and a list of all open connections. The contents of the RAM could also be used, but it is rarely used in practice.
 			</div><div
@@ -164,13 +164,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139673327494832"></a>14.6.4. Re-installing</h3></div></div></div><a
-            id="idm139673327494192"
-            class="indexterm"></a><a
-            id="idm139673327493424"
+                    id="idm140481772716560"></a>14.7.4. Re-installing</h3></div></div></div><a
+            id="idm140481772715920"
             class="indexterm"></a><div
             class="para">
-				The server should not be brought back on line without a complete reinstallation. If the compromise was severe (if administrative privileges were obtained), there is almost no other way to be sure that we're rid of everything the attacker may have left behind (particularly <span
+				The server should not be brought back on line without a complete reinstallation. If the compromise was severe (if administrative privileges were obtained), there is almost no other way to be sure that we get rid of everything the attacker may have left behind (particularly <span
               class="emphasis"><em>backdoors</em></span>). Of course, all the latest security updates must also be applied so as to plug the vulnerability used by the attacker. Ideally, analyzing the attack should point at this attack vector, so one can be sure of actually fixing it; otherwise, one can only hope that the vulnerability was one of those fixed by the updates.
 			</div><div
             class="para">
@@ -179,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139673327490352"></a>14.6.5. Forensic Analysis</h3></div></div></div><div
+                    id="idm140481772712848"></a>14.7.5. Forensic Analysis</h3></div></div></div><div
             class="para">
 				Now that the service has been restored, it is time to have a closer look at the disk images of the compromised system in order to understand the attack vector. When mounting these images, care should be taken to use the <code
               class="literal">ro,nodev,noexec,noatime</code> options so as to avoid changing the contents (including timestamps of access to files) or running compromised programs by mistake.
@@ -213,27 +211,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 						special-purpose tools also allow restoring the contents of potentially deleted files, including log files that attackers often delete.
 					</div></li></ul></div><div
             class="para">
-				Some of these operations can be made easier with specialized software. In particular, <span
-              class="emphasis"><em>The Coroner Toolkit</em></span> (in the <span
-              class="pkg pkg">tct</span> package) is a collection of such tools. It includes several tools; amongst these, <code
-              class="command">grave-robber</code> can collect data from a running compromised system, <code
-              class="command">lazarus</code> extracts often interesting data from non-allocated regions on disks, and <code
-              class="command">pcat</code> can copy the memory used by a process; other data extraction tools are also included. <a
-              id="idm139673327479856"
-              class="indexterm"></a>
-			</div><div
-            class="para">
-				The <span
-              class="pkg pkg">sleuthkit</span> package provides a few other tools to analyze a filesystem. Their use is made easier by the <span
+				Some of these operations can be made easier with specialized software. In particular, the <span
+              class="pkg pkg">sleuthkit</span> package provides many tools to analyze a filesystem. Their use is made easier by the <span
               class="emphasis"><em>Autopsy Forensic Browser</em></span> graphical interface (in the <span
-              class="pkg pkg">autopsy</span> package). <a
-              id="idm139673327477216"
-              class="indexterm"></a>
-			</div></div><div
+              class="pkg pkg">autopsy</span> package).
+			</div><a
+            id="idm140481772702480"
+            class="indexterm"></a><a
+            id="idm140481772701712"
+            class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139673327476448"></a>14.6.6. Reconstituting the Attack Scenario</h3></div></div></div><div
+                    id="idm140481772700816"></a>14.7.6. Reconstituting the Attack Scenario</h3></div></div></div><div
             class="para">
 				All the elements collected during the analysis should fit together like pieces in a jigsaw puzzle; the creation of the first suspect files is often correlated with logs proving the breach. A real-world example should be more explicit than long theoretical ramblings.
 			</div><div
@@ -296,7 +286,7 @@ www.falcot.com 200.58.141.84 - - [27/Nov/2004:13:33:34 +0100] "GET /phpbb/viewto
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.other-security-considerations.html"><strong>Poprzedni</strong>14.5. Other Security-Related Considerations</a></li><li
+            href="sect.other-security-considerations.html"><strong>Poprzedni</strong>14.6. Other Security-Related Considerations</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Początek rozdziału</strong></a></li><li

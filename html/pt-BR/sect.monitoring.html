@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVA</em></span> Zabbix, uma ferramenta de monitoramento integrada</strong></p></div></div></div><a
-            id="idm140625109854464"
+            id="idm140590001901456"
             class="indexterm"></a><div
             class="para">
 			Embora o Munin e o Nagios sejam os mais populares, eles não são as únicas opções no campo de monitoramento, e cada um deles apenas lidam com metade da tarefa (gráficos de por um lado, alertas pelo outro). O Zabbix, por outro lado, integra ambas as partes de monitoramento; ele também têm uma interface web para configurar a maioria dos aspectos comuns. Ele cresceu aos tracos e barrancos durante os últimos anos, e pode agora ser considerado um concorrente viável. No servidor de monitoramento, você instalaria o <span
@@ -95,7 +95,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVA</em></span> Icinga, um "fork" do Nagios</strong></p></div></div></div><a
-            id="idm140625109848416"
+            id="idm140590001895408"
             class="indexterm"></a><div
             class="para">
 			Estimulados por divergências nas opiniões que se referem ao modelo de desenvolvimento do Nagios (que é controlado por uma companhia), alguns desenvolvedores fizeram um "fork" do Nagios e usaram Icinga como seu novo nome. O Icinga ainda é compatível — até agora — com as configurações e extensões do Nagios, porém ele também adiciona funcionalidades extras. <div
@@ -106,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.munin"></a>12.4.1. Configurando o Munin</h3></div></div></div><a
-            id="idm140625109845120"
+            id="idm140590001892112"
             class="indexterm"></a><div
             class="para">
 				O propósito do Munin é monitorar muitas máquinas; logo, é bem natural que ele use uma arquitetura cliente/servidor. A máquina ("host") central — que faz o gráfico ("grapher") — coleta dados de todas as máquinas ("hosts") monitoradas, e gera gráficos com os históricos.
@@ -114,7 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140625109843664"></a>12.4.1.1. Configurando As Máquinas A Serem Monitoradas</h4></div></div></div><div
+                      id="idm140590001890656"></a>12.4.1.1. Configurando As Máquinas A Serem Monitoradas</h4></div></div></div><div
               class="para">
 					O primeiro passo é instalar o pacote <span
                 class="pkg pkg">munin-node</span>. O serviço ("daemon") instalado por esse pacote escuta na porta 4949 e envia de volta os dados coletados por todas as extensões ativas. Cada extensão é um programa simples que retorna um descrição dos dados coletados, assim como o último valor medido. As extensões são armazenadas em <code
@@ -186,7 +186,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140625109824256"></a>12.4.1.2. Configurando a Máquina que faz o Gráfico ("Grapher")</h4></div></div></div><div
+                      id="idm140590001871248"></a>12.4.1.2. Configurando a Máquina que faz o Gráfico ("Grapher")</h4></div></div></div><div
               class="para">
 					O “grapher” é simplesmente o computador que agrega os dados e gera os gráficos correspondentes. O software necessário está no pacote <span
                 class="pkg pkg">munin</span>. A configuração padrão roda o <code
@@ -217,7 +217,7 @@ load.info 5 minute load average
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.nagios"></a>12.4.2. Configurando o Nagios</h3></div></div></div><a
-            id="idm140625109814912"
+            id="idm140590001861904"
             class="indexterm"></a><div
             class="para">
 				Diferentemente do Munin, o Nagios não necessariamente requer a instalação de alguma coisa nas máquinas (""hosts") monitoradas; na maioria das vezes, o Nagios é usado para conferir a disponibilidade de serviços de rede. Por exemplo, o Nagios pode se conectar em um servidor web e conferir que determinada página web pode ser obtida dentro de um determinado tempo.
@@ -225,7 +225,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140625109813360"></a>12.4.2.1. Instalando</h4></div></div></div><div
+                      id="idm140590001860352"></a>12.4.2.1. Instalando</h4></div></div></div><div
               class="para">
 					O primeiro passo na configuração do Nagios é a instalação dos pacotes <span
                 class="pkg pkg">nagios3</span>, <span
@@ -266,7 +266,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140625109801760"></a>12.4.2.2. Configurando</h4></div></div></div><div
+                      id="idm140590001848752"></a>12.4.2.2. Configurando</h4></div></div></div><div
               class="para">
 					A interface web do Nagios é bem legal, mas elas não permite configurações, nem pode ser usada para adicionar máquinas ("hosts") monitorados e serviços. Toda a configuração é gerenciada através de arquivos referenciados pelo arquivo de configuração central, <code
                 class="filename">/etc/nagios3/nagios.cfg</code>.
@@ -337,7 +337,7 @@ load.info 5 minute load average
 					Os administradores da Falcot Corp usam a seguinte configuração:
 				</div><div
               class="example"><a
-                id="idm140625109783504"></a><p
+                id="idm140590001830496"></a><p
                 class="title"><strong>Exemplo 12.3. arquivo <code
                     class="filename">/etc/nagios3/conf.d/falcot.cfg</code></strong></p><div
                 class="example-contents"><pre

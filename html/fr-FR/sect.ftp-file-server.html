@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.ftp-file-server"></a>11.3. Serveur de fichiers FTP</h2></div></div></div><a
-          id="idm140065038600480"
+          id="idm140534131638640"
           class="indexterm"></a><div
           class="para">
 			Le protocole de transfert de fichiers FTP (<span
@@ -89,16 +89,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="pkg pkg">pyftpd</span>, etc.). Le choix des administrateurs de Falcot SA s'est porté sur <span
             class="pkg pkg">vsftpd</span>. En effet, ils n'ont besoin du serveur FTP que pour diffuser quelques fichiers (dont un dépôt de paquets Debian) et ils n'avaient nullement besoin de pléthore de fonctionnalités. Ils ont donc privilégié l'aspect sécurité du logiciel.
 		</div><a
-          id="idm140065038591520"
+          id="idm140534131629680"
           class="indexterm"></a><div
           class="para">
-			L'installation du paquet entraîne la création d'un utilisateur système <code
-            class="literal">ftp</code>. Ce compte est systématiquement employé pour gérer les connexions FTP anonymes et son répertoire personnel (<code
-            class="filename">/srv/ftp/</code>) est la racine de l'arborescence mise à disposition des utilisateurs se connectant sur le service. La configuration par défaut (telle que détaillée dans <code
-            class="filename">/etc/vsftpd.conf</code>) est très restrictive : elle ne permet que la lecture en accès anonyme (les options <code
-            class="literal">write_enable</code> et <code
-            class="literal">anon_upload_enable</code> ne sont pas activées) et il n'est pas possible aux utilisateurs locaux de se connecter avec leur identifiant et mot de passe habituels (option <code
-            class="literal">local_enable</code>) pour accéder à leurs fichiers. Toutefois, cette configuration convient parfaitement pour l'usage de Falcot SA.
+			Installing the package creates an <code
+            class="literal">ftp</code> system user. This account is always used for anonymous FTP connections, and its home directory (<code
+            class="filename">/srv/ftp/</code>) is the root of the tree made available to users connecting to this service. The default configuration (in <code
+            class="filename">/etc/vsftpd.conf</code>) requires some changes to cater to the simple need of making big files available for public downloads: anonymous access needs to be enabled (<code
+            class="literal">anonymous_enable=YES</code>) and read-only access of local users needs to be disabled (<code
+            class="literal">local_enable=NO</code>). The latter is particularly important since the FTP protocol doesn't use any form of encryption and the user password could be intercepted over the wire.
 		</div></div><ul
         class="docnav"><li
           class="previous"><a

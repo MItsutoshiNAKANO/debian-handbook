@@ -14,12 +14,12 @@
         type="text/css" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="generator"
-        content="publican v4.3.1" /><meta
+        content="publican v4.3.2" /><meta
         xmlns:d="http://docbook.org/ns/docbook"
         name="package"
         content="Debian-debian-handbook-8-pl-PL-1.0-1" /><meta
         name="keywords"
-        content="apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
+        content="apt, apt-get, apt-cache, aptitude, synaptic, sources.list, apt-cdrom" /><link
         rel="home"
         href="index.html"
         title="The Debian Administrator's Handbook" /><link
@@ -28,7 +28,7 @@
         title="Rozdział 6. Konserwacja i aktualizacje: Narzędzia APT" /><link
         rel="prev"
         href="sect.apt-get.html"
-        title="6.2. Komendy aptitude i apt-get" /><link
+        title="6.2. aptitude, apt-get, and apt Commands" /><link
         rel="next"
         href="sect.apt-frontends.html"
         title="6.4. Interfejsy: aptitude, synaptic" /><link
@@ -69,21 +69,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.apt-cache"></a>6.3. Komenda <code
                   class="command">apt-cache</code></h2></div></div></div><a
-          id="idm139673339290112"
+          id="idm140481793965808"
           class="indexterm"></a><a
-          id="idm139673339288992"
+          id="idm140481793964688"
           class="indexterm"></a><a
-          id="idm139673339287552"
+          id="idm140481793963248"
           class="indexterm"></a><a
-          id="idm139673339286112"
+          id="idm140481793961808"
           class="indexterm"></a><a
-          id="idm139673339285152"
+          id="idm140481793960848"
           class="indexterm"></a><div
           class="para">
-			Komenda <code
-            class="command">apt-cache</code> posiada możliwość wyświetlenia wielu informacji z wewnętrznej bazy APTa. Informacje te są rodzajem pamięci podręcznej, ponieważ są zebrane z różnych źródeł zawartych w pliku <code
-            class="filename">sources.list</code>. Operacja ta wykonywana jest podczas <code
-            class="command">apt-get update</code>.
+			The <code
+            class="command">apt-cache</code> command can display much of the information stored in APT's internal database. This information is a sort of cache since it is gathered from the different sources listed in the <code
+            class="filename">sources.list</code> file. This happens during the <code
+            class="command">apt update</code> operation.
 		</div><div
           class="sidebar"><a
             id="sidebar.cache"></a><div
@@ -99,32 +99,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/var/lib/apt/lists/</code>) i wyszukiwania są wykonywane na tych lokalnych plikach. Podobnie, <code
               class="filename">/var/cache/apt/archives/</code> zawiera pamięć podręczną już pobranych pakietów, aby uniknąć ich ponownego pobierania w celu reinstalacji po usunięciu.
 		</div></div><a
-          id="idm139673339276912"
+          id="idm140481793952624"
           class="indexterm"></a><a
-          id="idm139673339275792"
+          id="idm140481793951504"
           class="indexterm"></a><a
-          id="idm139673339274672"
+          id="idm140481793950384"
           class="indexterm"></a><a
-          id="idm139673339273552"
+          id="idm140481793949264"
+          class="indexterm"></a><a
+          id="idm140481793948144"
+          class="indexterm"></a><a
+          id="idm140481793947024"
           class="indexterm"></a><div
           class="para">
-			Komenda <code
-            class="command">apt-cache</code> potrafi wyszukiwać pakiety bazując na słowach kluczowych za pomocą <code
+			The <code
+            class="command">apt-cache</code> command can do keyword-based package searches with <code
             class="command">apt-cache search <em
-              class="replaceable">słowo_kluczowe</em></code>. Może również wyświetlać nagłówki dostępnych pakietów za pomocą <code
+              class="replaceable">keyword</em></code>. It can also display the headers of the package's available versions with <code
             class="command">apt-cache show <em
-              class="replaceable">pakiet</em></code>. Komenda ta dostarcza opis pakietu, jego zależności, imię jego opiekuna, itd. Zauważ, że <code
-            class="command">aptitude search</code> i <code
-            class="command">aptitude show</code> działają w ten sam sposób.
+              class="replaceable">package</em></code>. This command provides the package's description, its dependencies, the name of its maintainer, etc. Note that <code
+            class="command">apt search</code>, <code
+            class="command">apt show</code>, <code
+            class="command">aptitude search</code>, <code
+            class="command">aptitude show</code> work in the same way.
 		</div><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATYWA</em></span> <code
                       class="command">axi-cache</code></strong></p></div></div></div><a
-            id="idm139673339267488"
+            id="idm140481793939984"
             class="indexterm"></a><a
-            id="idm139673339266368"
+            id="idm140481793938864"
             class="indexterm"></a><div
             class="para">
 			<code
@@ -140,8 +146,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">.desktop</code> ze wszystkich pakietów Debiana). Rozróżnia także znaczniki (spójrz na fiszkę <a
               class="xref"
               href="sect.package-meta-information.html#sidebar.debtags"><span
-                class="emphasis"><em>GOING FURTHER</em></span> The <code
-                class="literal">Tag</code> field</a>) i zwraca wyniki w ciągu milisekund.
+                class="emphasis"><em>IDĄC DALEJ</em></span> Pole <code
+                class="literal">Tag</code></a>) i zwraca wyniki w ciągu milisekund.
 		</div><pre
             class="screen">$ <strong
               class="userinput"><code>axi-cache search package use::searching</code></strong>
@@ -159,11 +165,11 @@ More terms: search debian searching strigi debtags bsearch libbsearch
 More tags: suite::debian works-with::software:package role::program interface::commandline implemented-in::c++ admin::package-management use::analysing
 `axi-cache more' will give more results
 </pre></div><a
-          id="idm139673339257952"
+          id="idm140481793930448"
           class="indexterm"></a><a
-          id="idm139673339256832"
+          id="idm140481793929328"
           class="indexterm"></a><a
-          id="idm139673339255712"
+          id="idm140481793928208"
           class="indexterm"></a><div
           class="para">
 			Niektóre funkcje są rzadziej używane. Na przykład <code
@@ -174,7 +180,7 @@ More tags: suite::debian works-with::software:package role::program interface::c
         class="docnav"><li
           class="previous"><a
             accesskey="p"
-            href="sect.apt-get.html"><strong>Poprzedni</strong>6.2. Komendy aptitude i apt-get</a></li><li
+            href="sect.apt-get.html"><strong>Poprzedni</strong>6.2. aptitude, apt-get, and apt Commands</a></li><li
           class="up"><a
             accesskey="u"
             href="#"><strong>Początek rozdziału</strong></a></li><li

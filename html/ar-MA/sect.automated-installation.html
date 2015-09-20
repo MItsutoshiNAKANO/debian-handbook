@@ -69,9 +69,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automated-installation"></a>12.3. التثبيت المؤتمت</h2></div></div></div><a
-          id="idm139729276498112"
+          id="idm140571472172288"
           class="indexterm"></a><a
-          id="idm139729276497344"
+          id="idm140571472171520"
           class="indexterm"></a><div
           class="para">
 			يحتاج مدراء النظم في شركة فلكوت، كما هو حال مدراء النظم في العديد من شركات الخدمات التقنية الكبيرة، لأدوات تساعدهم على تثبيت (أو إعادة تثبيت) النظام على الأجهزة الجديدة بسرعة، وبصورة آلية إذا أمكن.
@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fai"></a>12.3.1. ‏Fully Automatic Installer (FAI)‎</h3></div></div></div><a
-            id="idm139729276488320"
+            id="idm140571472162496"
             class="indexterm"></a><div
             class="para">
 				لعل <span
@@ -199,9 +199,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.d-i-preseeding"></a>12.3.2. تغذية مثبت دبيان</h3></div></div></div><a
-            id="idm139729276461008"
+            id="idm140571472134992"
             class="indexterm"></a><a
-            id="idm139729276460240"
+            id="idm140571472134224"
             class="indexterm"></a><div
             class="para">
 				في النهاية، يجب –منطقياً– أن يبقى مُثبِّت دبيان الرسمي أفضل أداة لتثبيت أنظمة دبيان. ولهذا السبب تم تصميم مثبت دبيان منذ البداية للاستخدام المؤتمت، بالاستفادة من مزايا البنية التحتية التي تقدمها <span
@@ -212,7 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>التعمق أكثر</em></span> Debconf مع قاعدة بيانات مركزية</strong></p></div></div></div><a
-              id="idm139729276456272"
+              id="idm140571472130256"
               class="indexterm"></a><div
               class="para">
 				Preseeding allows to provide a set of answers to Debconf questions at installation time, but these answers are static and do not evolve as time passes. Since already-installed machines may need upgrading, and new answers may become required, the <code
@@ -224,7 +224,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139729276452224"></a>12.3.2.1. استخدام ملف تغذية</h4></div></div></div><div
+                      id="idm140571472126208"></a>12.3.2.1. استخدام ملف تغذية</h4></div></div></div><div
               class="para">
 					يستطيع المُثبّت الحصول على ملف التغذية من العديد من الأماكن:
 				</div><div
@@ -257,7 +257,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139729276443088"></a>12.3.2.2. إنشاء ملف التغذية</h4></div></div></div><div
+                      id="idm140571472117072"></a>12.3.2.2. إنشاء ملف التغذية</h4></div></div></div><div
               class="para">
 					ملف التغذية هو ملف نصي عادي، كل سطر منه يحوي إجابة لسؤال واحد من أسئلة Debconf. يفصل السطر إلى أربعة أقسام تفصلها مسافات بيضاء (علامة مسافة space أو علامة جدولة tab)، فمثلاً <code
                 class="literal">d-i mirror/suite string stable</code>:
@@ -300,14 +300,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139729276431520"></a>12.3.2.3. إنشاء وسيط إقلاعي مخصص</h4></div></div></div><div
+                      id="idm140571472105504"></a>12.3.2.3. إنشاء وسيط إقلاعي مخصص</h4></div></div></div><div
               class="para">
 					من الجيد أن يعرف المرء مكان تخزين ملف التغذية، لكن مكان التخزين ليس كل شيء: يجب تعديل وسيط الإقلاع –بشكل أو بآخر– لتغيير متغيرات الإقلاع وإضافة ملف التغذية.
 				</div><div
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139729276430176"></a>12.3.2.3.1. الإقلاع من الشبكة</h5></div></div></div><div
+                        id="idm140571472104160"></a>12.3.2.3.1. الإقلاع من الشبكة</h5></div></div></div><div
                 class="para">
 						When a computer is booted from the network, the server sending the initialization elements also defines the boot parameters. Thus, the change needs to be made in the PXE configuration for the boot server; more specifically, in its <code
                   class="filename">/tftpboot/pxelinux.cfg/default</code> configuration file. Setting up network boot is a prerequisite; see the Installation Guide for details. <div
@@ -317,7 +317,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139729276427440"></a>12.3.2.3.2. تحضير ذاكرة USB إقلاعية</h5></div></div></div><div
+                        id="idm140571472101424"></a>12.3.2.3.2. تحضير ذاكرة USB إقلاعية</h5></div></div></div><div
                 class="para">
 						بعد تجهيز الذاكرة الإقلاعية (انظر <a
                   class="xref"
@@ -339,7 +339,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="filename">/media/usbdisk/syslinux.cfg</code> وأضف المتغيرات الإقلاعية اللازمة (انظر المثال التالي).
 							</div></li></ul></div><div
                 class="example"><a
-                  id="idm139729276422016"></a><p
+                  id="idm140571472096000"></a><p
                   class="title"><strong>مثال 12.2. ملف syslinux.cfg وبارامترات التغذية</strong></p><div
                   class="example-contents"><pre
                     class="programlisting">default vmlinuz
@@ -348,8 +348,8 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139729276420576"></a>12.3.2.3.3. إنشاء صورة CD-ROM</h5></div></div></div><a
-                id="idm139729276419936"
+                        id="idm140571472094560"></a>12.3.2.3.3. إنشاء صورة CD-ROM</h5></div></div></div><a
+                id="idm140571472093920"
                 class="indexterm"></a><div
                 class="para">
 						ذاكرة USB هي وسيط تخزين يقبل القراءة والكتابة، لذلك كانت إضافة الملف إليها وتعديل بعض المتغيرات فيها عملية سهلة. لكن في حالة استخدام CD-ROM، فالعملية معقدة أكثر، لأننا نحتاج توليد صورة ISO كاملة. هذه المهمة تحتاج الأداة <span
@@ -377,7 +377,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.simple-cdd"></a>12.3.3. ‏Simple-CDD: كل الحلول في حل واحد</h3></div></div></div><a
-            id="idm139729276409824"
+            id="idm140571472083808"
             class="indexterm"></a><div
             class="para">
 				ببساطة إن استخدام ملف التغذية لا يكفي لتلبية كافة المطالب التي قد تظهر عند النشر واسع النطاق. وبالرغم أنه يمكن تنفيذ بضعة سكربتات عند نهاية عملية التثبيت العادية، إلا أن مجموعة الحزم التي ستثبت ليست مرنة بما يكفي (أساساً لا يمكن إلا اختيار ”المهام“)؛ وأهم من هذا، لا يمكن إلا تثبيت حزم دبيان الرسمية، ولا يسمح بالحزم المولدة محليًا.
@@ -392,7 +392,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139729276405488"></a>12.3.3.1. تعريف البروفايلات</h4></div></div></div><div
+                      id="idm140571472079472"></a>12.3.3.1. تعريف البروفايلات</h4></div></div></div><div
               class="para">
 					يعرف Simple-CDD ”بروفايلات“ تقابل مفهوم ”الفئات – classes“ في FAI، ويمكن إعطاء الجهاز عدة بروفايلات (تُحدَّد أثناء التثبيت). يعرف البروفايل بمجموعة من ملفات <code
                 dir="ltr"
@@ -449,9 +449,9 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139729276391088"></a>12.3.3.2. إعداد واستخدام <code
+                      id="idm140571472065072"></a>12.3.3.2. إعداد واستخدام <code
                       class="command">build-simple-cdd</code></h4></div></div></div><a
-              id="idm139729276390192"
+              id="idm140571472064176"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -519,7 +519,7 @@ append preseed/file=/hd-media/preseed.cfg locale=en_US.UTF-8 keymap=us language=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139729276372176"></a>12.3.3.3. توليد صورة ISO</h4></div></div></div><div
+                      id="idm140571472046160"></a>12.3.3.3. توليد صورة ISO</h4></div></div></div><div
               class="para">
 					Once we have written a configuration file and defined our profiles, the remaining step is to invoke <code
                 class="command">build-simple-cdd --conf simple-cdd.conf</code>. After a few minutes, we get the required image in <code

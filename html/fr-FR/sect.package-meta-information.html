@@ -68,28 +68,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-meta-information"></a>5.2. Méta-informations d'un paquet</h2></div></div></div><a
-          id="idm140065039309056"
+          id="idm140534132990992"
           class="indexterm"></a><a
-          id="idm140065039308128"
+          id="idm140534132990064"
           class="indexterm"></a><div
           class="para">
-			The Debian package is not only an archive of files intended for installation. It is part of a larger whole, and it describes its relationship with other Debian packages (dependencies, conflicts, suggestions). It also provides scripts that enable the execution of commands at different stages in the package's lifecycle (installation, removal, upgrades). These data are used by the package management tools but are not part of the packaged software; they are, within the package, what is called its “meta-information” (information about other information).
+			Le paquet Debian n'est pas qu'une archive de fichiers destinés à l'installation. Il s'inscrit dans un ensemble plus vaste en décrivant des relations avec les autres paquets Debian (dépendances, conflits, suggestions). Il fournit également des scripts permettant d'exécuter des commandes lors des différentes étapes du parcours du paquet (installation, suppression, mise à jour). Ces données sont utilisées par les outils de gestion des paquets mais ne font pas partie du logiciel empaqueté; elles constituent, au sein du paquet, ce que l'on appelle ses « méta-informations » (informations portant sur les informations).
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.control"></a>5.2.1. Description : fichier <code
                     class="filename">control</code></h3></div></div></div><a
-            id="idm140065023575216"
+            id="idm140534132986144"
             class="indexterm"></a><a
-            id="idm140065023574288"
+            id="idm140534132985216"
             class="indexterm"></a><a
-            id="idm140065023572848"
+            id="idm140534132983776"
             class="indexterm"></a><div
             class="para">
-				This file uses a structure similar to email headers (as defined by RFC 2822). For example, for <span
-              class="pkg pkg">apt</span>, the <code
-              class="filename">control</code> file looks like the following:
+				Ce fichier utilise une structure similaire à un en-tête de courriel (défini par la RFC 2822), qui ressemble pour l'exemple d'<span
+              class="pkg pkg">apt</span> à :
 			</div><pre
             class="screen">
 <code
@@ -97,29 +96,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="userinput"><code>apt-cache show apt</code></strong>
 <code
               class="computeroutput">Package: apt
-Version: 1.0.9.6
-Installed-Size: 3788
+Version: 1.0.9.8.1
+Installed-Size: 3789
 Maintainer: APT Development Team &lt;deity@lists.debian.org&gt;
 Architecture: amd64
 Replaces: manpages-it (&lt;&lt; 2.80-4~), manpages-pl (&lt;&lt; 20060617-3~), openjdk-6-jdk (&lt;&lt; 6b24-1.11-0ubuntu1~), sun-java5-jdk (&gt;&gt; 0), sun-java6-jdk (&gt;&gt; 0)
-Depends: libapt-pkg4.12 (&gt;= 1.0.9.6), libc6 (&gt;= 2.15), libgcc1 (&gt;= 1:4.1.1), libstdc++6 (&gt;= 4.9), debian-archive-keyring, gnupg
+Depends: libapt-pkg4.12 (&gt;= 1.0.9.8.1), libc6 (&gt;= 2.15), libgcc1 (&gt;= 1:4.1.1), libstdc++6 (&gt;= 4.9), debian-archive-keyring, gnupg
 Suggests: aptitude | synaptic | wajig, dpkg-dev (&gt;= 1.17.2), apt-doc, python-apt
 Conflicts: python-apt (&lt;&lt; 0.7.93.2~)
 Breaks: manpages-it (&lt;&lt; 2.80-4~), manpages-pl (&lt;&lt; 20060617-3~), openjdk-6-jdk (&lt;&lt; 6b24-1.11-0ubuntu1~), sun-java5-jdk (&gt;&gt; 0), sun-java6-jdk (&gt;&gt; 0)
-Description-en: commandline package manager
- This package provides commandline tools for searching and
- managing as well as querying information about packages
- as a low-level access to all features of the libapt-pkg library.
+Description-fr: gestionnaire de paquets en ligne de commande
+ Ce paquet fournit des outils en ligne de commande pour la recherche, la
+ gestion ainsi que la demande d'informations à propos de paquets, le tout
+ grâce à un accès bas niveau aux fonctionnalités de la bibliothèque libapt-pkg.
  .
- These include:
-  * apt-get for retrieval of packages and information about them
-    from authenticated sources and for installation, upgrade and
-    removal of packages together with their dependencies
-  * apt-cache for querying available information about installed
-    as well as installable packages
-  * apt-cdrom to use removable media as a source for packages
-  * apt-config as an interface to the configuration settings
-  * apt-key as an interface to manage authentication keys
+ Ces outils sont :
+  * apt-get pour la récupération de paquets et d'informations à leur sujet
+     depuis des sources authentifiées et pour l'installation, la mise à
+     niveau et la suppression de paquets ainsi que leurs dépendances ;
+  * apt-cache pour consulter les informations disponibles sur les paquets
+     installés et installables ;
+  * apt-cdrom pour utiliser des médias amovibles en tant que source de
+     paquets ;
+  * apt-config qui sert d'interface pour les réglages de configuration ;
+  * apt-key qui sert d'interface pour gérer les clés d'authentification.
 Description-md5: 9fb97a88cb7383934ef963352b53b4a7
 Tag: admin::package-management, devel::lang:ruby, hardware::storage,
  hardware::storage:cd, implemented-in::c++, implemented-in::perl,
@@ -130,18 +130,18 @@ Tag: admin::package-management, devel::lang:ruby, hardware::storage,
  works-with::audio, works-with::software:package, works-with::text
 Section: admin
 Priority: important
-Filename: pool/main/a/apt/apt_1.0.9.6_amd64.deb
-Size: 1107560
-MD5sum: a325ccb14e69fef2c50da54e035a4df4
-SHA1: 635d09fcb600ec12810e3136d51e696bcfa636a6
-SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code></pre><div
+Filename: pool/main/a/apt/apt_1.0.9.8.1_amd64.deb
+Size: 1109900
+MD5sum: 52acb9bf9006c1b7fb8679f859c93fb1
+SHA1: f55b5aed9385945e9097de625d200c1c7b98f4ca
+SHA256: 16b5132418cfa8ed638bda0366dfb6f82007a9964002e979c73ddbd48b755cb8</code></pre><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> RFC — les normes d'Internet</strong></p></div></div></div><a
-              id="idm140065023565328"
+              id="idm140534132978736"
               class="indexterm"></a><a
-              id="idm140065023564368"
+              id="idm140534133079280"
               class="indexterm"></a><div
               class="para">
 				RFC abrège <span
@@ -164,20 +164,20 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140065039246544"></a>5.2.1.1. Dépendances : champ <code
+                      id="idm140534133073856"></a>5.2.1.1. Dépendances : champ <code
                       class="literal">Depends</code></h4></div></div></div><a
-              id="idm140065039245424"
+              id="idm140534133072736"
               class="indexterm"></a><a
-              id="idm140065039244464"
+              id="idm140534133071776"
               class="indexterm"></a><a
-              id="idm140065039243184"
+              id="idm140534133070496"
               class="indexterm"></a><div
               class="para">
-					The dependencies are defined in the <code
-                class="literal">Depends</code> field in the package header. This is a list of conditions to be met for the package to work correctly — this information is used by tools such as <code
-                class="command">apt</code> in order to install the required libraries, in appropriate versions fulfilling the dependencies of the package to be installed. For each dependency, it is possible to restrict the range of versions that meet that condition. In other words, it is possible to express the fact that we need the package <span
-                class="pkg pkg">libc6</span> in a version equal to or greater than “2.15” (written “<code
-                class="command">libc6 (&gt;= 2.15)</code>”). Version comparison operators are as follows:
+					Les dépendances sont définies dans le champ <code
+                class="literal">Depends</code> des en-têtes du paquet. Il s'agit d'une liste de conditions à remplir pour que le paquet fonctionne correctement, informations utilisées par des outils comme <code
+                class="command">apt</code> pour installer les versions des bibliothèques dont dépend le programme à installer. Pour chaque dépendance, il est possible de restreindre l'espace des versions qui satisfont la condition. Autrement dit, il est possible d'exprimer le fait que l'on a besoin du paquet <span
+                class="pkg pkg">libc6</span> dans une version supérieure ou égale à « 2.15 » (cela s'écrit « <code
+                class="command">libc6 (&gt;= 2.15)</code> »). Les opérateurs de comparaison de versions sont les suivants :
 				</div><div
               xmlns:d="http://docbook.org/ns/docbook"
               class="itemizedlist"><ul><li
@@ -216,15 +216,15 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                 class="url">→ <a
                   href="http://www.debian.org/doc/debian-policy/ch-relationships.html">http://www.debian.org/doc/debian-policy/ch-relationships.html</a></div>
 				</div><a
-              id="idm140065039227008"
+              id="idm140534133054416"
               class="indexterm"></a><div
               class="para">
-					The dependencies system is a good mechanism for guaranteeing the operation of a program, but it has another use with “meta-packages”. These are empty packages that only describe dependencies. They facilitate the installation of a consistent group of programs preselected by the meta-package maintainer; as such, <code
+					Le système de dépendances est un bon mécanisme pour garantir le fonctionnement d'un logiciel, mais il trouve un autre usage avec les « méta-paquets ». Il s'agit de paquets vides, décrivant uniquement des dépendances. Ils facilitent l'installation d'un ensemble cohérent de logiciels présélectionnés par le mainteneur du méta-paquet ; en effet, <code
                 class="command">apt install <em
-                  class="replaceable">meta-package</em></code> will automatically install all of these programs using the meta-package's dependencies. The <span
+                  class="replaceable">méta-paquet</em></code> installera automatiquement l'ensemble de ces logiciels grâce aux dépendances du méta-paquet. Les paquets <span
                 class="pkg pkg">gnome</span>, <span
-                class="pkg pkg">kde-full</span> and <span
-                class="pkg pkg">linux-image-amd64</span> packages are examples of meta-packages.
+                class="pkg pkg">kde</span> et <span
+                class="pkg pkg">linux-image-amd64</span> sont des exemples de méta-paquets.
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -232,9 +232,9 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                           class="emphasis"><em>CHARTE DEBIAN</em></span> <code
                           class="literal">Pre-Depends</code>, un <code
                           class="literal">Depends</code> plus exigeant</strong></p></div></div></div><a
-                id="idm140065039220432"
+                id="idm140534133047664"
                 class="indexterm"></a><a
-                id="idm140065039219152"
+                id="idm140534133046384"
                 class="indexterm"></a><div
                 class="para">
 					Des « pré-dépendances », données dans le champ « <code
@@ -254,9 +254,9 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                           class="literal">Recommends</code>, <code
                           class="literal">Suggests</code> et <code
                           class="literal">Enhances</code></strong></p></div></div></div><a
-                id="idm140065039212384"
+                id="idm140534133039616"
                 class="indexterm"></a><a
-                id="idm140065039211104"
+                id="idm140534133038336"
                 class="indexterm"></a><div
                 class="para">
 					Les champs <code
@@ -266,26 +266,30 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                 class="para">
 					Il faut systématiquement installer les paquets « recommandés », sauf si vous savez précisément pourquoi vous n'en avez pas besoin. Inversement, il est inutile d'installer les paquets « suggérés », sauf si vous savez pourquoi vous en aurez besoin.
 				</div><a
-                id="idm140065039207184"
+                id="idm140534133034416"
                 class="indexterm"></a><div
                 class="para">
-					The <code
-                  class="literal">Enhances</code> field also describes a suggestion, but in a different context. It is indeed located in the suggested package, and not in the package that benefits from the suggestion. Its interest lies in that it is possible to add a suggestion without having to modify the package that is concerned. Thus, all add-ons, plug-ins, and other extensions of a program can then appear in the list of suggestions related to the software. Although it has existed for several years, this last field is still largely ignored by programs such as <code
-                  class="command">apt</code> or <code
-                  class="command">synaptic</code>. Its purpose is for a suggestion made by the <code
-                  class="literal">Enhances</code> field to appear to the user in addition to the traditional suggestions — found in the <code
-                  class="literal">Suggests</code> field.
+					Le champ <code
+                  class="literal">Enhances</code> (améliore) décrit lui aussi une suggestion, mais dans un contexte différent. Il se situe en effet dans le paquet suggéré, et non pas dans celui qui profite de la suggestion. Son intérêt est de pouvoir ajouter une suggestion sans devoir modifier le paquet concerné par celle-ci. Ainsi, tous les <span
+                  class="foreignphrase"><em
+                    class="foreignphrase">add-ons</em></span> (ajouts), <span
+                  class="foreignphrase"><em
+                    class="foreignphrase">plug-ins</em></span> (greffons) et autres extensions d'un logiciel pourront ensuite prendre place dans la liste des suggestions liées au logiciel. Ce dernier champ, bien qu'existant depuis plusieurs années, est encore largement ignoré par des programmes comme <code
+                  class="command">apt</code> ou <code
+                  class="command">synaptic</code>. L'objectif est cependant qu'une suggestion faite par le biais d'un champ <code
+                  class="literal">Enhances</code> apparaisse à l'utilisateur en complément des suggestions traditionnelles — réalisées avec le champ <code
+                  class="literal">Suggests</code>.
 				</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140065039202256"></a>5.2.1.2. Conflits : champ <code
+                      id="idm140534133028400"></a>5.2.1.2. Conflits : champ <code
                       class="literal">Conflicts</code></h4></div></div></div><a
-              id="idm140065039201136"
+              id="idm140534133027280"
               class="indexterm"></a><a
-              id="idm140065039200176"
+              id="idm140534133026320"
               class="indexterm"></a><a
-              id="idm140065039198896"
+              id="idm140534133025040"
               class="indexterm"></a><div
               class="para">
 					Le champ <code
@@ -293,20 +297,20 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
 				</div><div
               class="para">
 					<code
-                class="command">dpkg</code> will refuse to install a package if it triggers a conflict with an already installed package, except if the new package specifies that it will “replace” the installed package, in which case <code
-                class="command">dpkg</code> will choose to replace the old package with the new one. <code
-                class="command">apt</code> always follows your instructions: if you choose to install a new package, it will automatically offer to uninstall the package that poses a problem.
+                class="command">dpkg</code> refusera d'installer un paquet s'il déclenche un conflit avec un autre paquet déjà présent, sauf si le nouveau paquet précise qu'il « remplace » le paquet installé — auquel cas <code
+                class="command">dpkg</code> choisira de remplacer l'ancien par le nouveau. <code
+                class="command">apt</code> suit toujours vos instructions : si vous choisissez d'installer le nouveau paquet, il proposera automatiquement de désinstaller celui qui pose problème.
 				</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140065039193760"></a>5.2.1.3. Incompatibilités : champ <code
+                      id="idm140534133019984"></a>5.2.1.3. Incompatibilités : champ <code
                       class="literal">Breaks</code></h4></div></div></div><a
-              id="idm140065039192672"
+              id="idm140534133018896"
               class="indexterm"></a><a
-              id="idm140065039191712"
+              id="idm140534136852240"
               class="indexterm"></a><a
-              id="idm140065039190432"
+              id="idm140534136850960"
               class="indexterm"></a><div
               class="para">
 					Le champ <code
@@ -316,8 +320,8 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
 				</div><div
               class="para">
 					<code
-                class="command">dpkg</code> will refuse to install a package that breaks an already installed package, and <code
-                class="command">apt</code> will try to resolve the problem by updating the package that would be broken to a newer version (which is assumed to be fixed and, thus, compatible again).
+                class="command">dpkg</code> refusera d'installer un paquet qui casse un paquet déjà installé et <code
+                class="command">apt</code> essaiera de résoudre le problème en mettant à jour le paquet qui serait cassé par une version plus récente (que l'on suppose corrigée pour être à nouveau compatible).
 				</div><div
               class="para">
 					Ce genre de situations peut se rencontrer dans le cas de mises à jour sans compatibilité ascendante : c'est le cas si la nouvelle version ne fonctionne plus comme l'ancienne et entraîne un dysfonctionnement d'un autre logiciel en l'absence de dispositions particulières. Le champ <code
@@ -326,9 +330,9 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140065039183808"></a>5.2.1.4. Éléments fournis : champ <code
+                      id="idm140534136844320"></a>5.2.1.4. Éléments fournis : champ <code
                       class="literal">Provides</code></h4></div></div></div><a
-              id="idm140065039492464"
+              id="idm140534136843232"
               class="indexterm"></a><div
               class="para">
 					Ce champ introduit le concept très intéressant de « paquet virtuel ». Il a de nombreux rôles, mais on en distingue deux principaux. Le premier consiste à utiliser un paquet virtuel pour lui associer un service générique (le paquet « fournit » le service). Le second indique qu'un paquet en remplace complètement un autre et qu'à ce titre il peut également satisfaire les dépendances déclarées sur celui-ci. Il est ainsi possible de créer un paquet de substitution sans avoir de contrainte sur son nom.
@@ -337,11 +341,11 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULAIRE</em></span> Méta-paquet et paquet virtuel</strong></p></div></div></div><a
-                id="idm140065039489104"
+                id="idm140534136839872"
                 class="indexterm"></a><a
-                id="idm140065039488144"
+                id="idm140534136838912"
                 class="indexterm"></a><a
-                id="idm140065039486704"
+                id="idm140534136837472"
                 class="indexterm"></a><div
                 class="para">
 					Distinguons bien les méta-paquets des paquets virtuels. Les premiers sont des paquets réels (dotés de fichiers <code
@@ -353,23 +357,23 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140065039483728"></a>5.2.1.4.1. La fourniture d'un « service »</h5></div></div></div><div
+                        id="idm140534136834496"></a>5.2.1.4.1. La fourniture d'un « service »</h5></div></div></div><div
                 class="para">
-						Let us discuss the first case in greater detail with an example: all mail servers, such as <span
-                  class="pkg pkg">postfix</span> or <span
-                  class="pkg pkg">sendmail</span> are said to “provide” the <span
-                  class="pkg pkg">mail-transport-agent</span> virtual package. Thus, any package that needs this service to be functional (e.g. a mailing list manager, such as <span
-                  class="pkg pkg">smartlist</span> or <span
-                  class="pkg pkg">sympa</span>) simply states in its dependencies that it requires a <span
-                  class="pkg pkg">mail-transport-agent</span> instead of specifying a large yet incomplete list of possible solutions (e.g. <code
-                  class="command">postfix | sendmail | exim4 | …</code>). Furthermore, it is useless to install two mail servers on the same machine, which is why each of these packages declares a conflict with the <span
-                  class="pkg pkg">mail-transport-agent</span> virtual package. A conflict between a package and itself is ignored by the system, but this technique will prohibit the installation of two mail servers side by side.
+						Détaillons le premier cas par un exemple : tous les serveurs de courrier électronique tels que <span
+                  class="pkg pkg">postfix</span> ou <span
+                  class="pkg pkg">sendmail</span> déclarent « fournir » le paquet virtuel <span
+                  class="pkg pkg">mail-transport-agent</span>. Ainsi, tout paquet qui a besoin de ce service pour fonctionner (ce peut être un gestionnaire de listes de diffusion, comme <span
+                  class="pkg pkg">smartlist</span> ou <span
+                  class="pkg pkg">sympa</span>) se contentera de déclarer dans ses dépendances <span
+                  class="pkg pkg">mail-transport-agent</span> au lieu d'y préciser une grande liste de choix toujours incomplète (<code
+                  class="command">postfix | sendmail | exim4 | ...</code>). Par ailleurs, il ne sert à rien d'installer deux serveurs de courrier électronique ; c'est pourquoi chacun de ces paquets déclare un conflit avec le paquet virtuel <span
+                  class="pkg pkg">mail-transport-agent</span>. Un conflit entre un paquet et lui-même est ignoré par le système, mais cette technique interdira d'installer de concert deux serveurs de courrier électronique.
 					</div><div
                 class="sidebar"><div
                   class="titlepage"><div><div><p
                         class="title"><strong><span
                             class="emphasis"><em>CHARTE DEBIAN</em></span> Liste des paquets virtuels</strong></p></div></div></div><a
-                  id="idm140065039475984"
+                  id="idm140534136826496"
                   class="indexterm"></a><div
                   class="para">
 						Pour que les paquets virtuels soient utiles, il faut que tout le monde s'entende sur leur nom. C'est pourquoi ils sont standardisés par la charte Debian. La liste comprend entre autres <span
@@ -390,18 +394,18 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140065039467488"></a>5.2.1.4.2. L'interchangeabilité avec un autre paquet</h5></div></div></div><div
+                        id="idm140534136818000"></a>5.2.1.4.2. L'interchangeabilité avec un autre paquet</h5></div></div></div><div
                 class="para">
-						The <code
-                  class="literal">Provides</code> field is also interesting when the content of a package is included in a larger package. For example, the <span
-                  class="pkg pkg">libdigest-md5-perl</span> Perl module was an optional module in Perl 5.6, and has been integrated as standard in Perl 5.8 (and later versions, such as 5.20 present in <span
-                  class="distribution distribution">Jessie</span>). As such, the package <span
-                  class="pkg pkg">perl</span> has since version 5.8 declared <code
-                  class="literal">Provides: libdigest-md5-perl</code> so that the dependencies on this package are met if the user has Perl 5.8 (or newer). The <span
-                  class="pkg pkg">libdigest-md5-perl</span> package itself has eventually been deleted, since it no longer had any purpose when old Perl versions were removed.
+						Le champ <code
+                  class="literal">Provides</code> s'avère aussi intéressant lorsque le contenu d'un paquet est intégré dans un paquet plus vaste. Ainsi, le module Perl <span
+                  class="pkg pkg">libdigest-md5-perl</span> était un module facultatif en Perl 5.6, qui a été intégré en standard dans Perl 5.8 (et les versions suivantes, comme la version 5.14 présente dans <span
+                  class="distribution distribution">Jessie</span>). Le paquet <span
+                  class="pkg pkg">perl</span> déclare donc depuis sa version 5.8 <code
+                  class="literal">Provides: libdigest-md5-perl</code> afin que les dépendances sur ce paquet soient satisfaites si l'utilisateur dispose de Perl 5.8 ou plus récent. Le paquet <span
+                  class="pkg pkg">libdigest-md5-perl</span> lui-même a ainsi pu être supprimé, n'ayant plus de raison d'être.
 					</div><div
                 class="figure"><a
-                  id="idm140065039462384"></a><div
+                  id="idm140534136812832"></a><div
                   class="figure-contents"><div
                     class="mediaobject"><img
                       src="images/virtual-package.png"
@@ -415,9 +419,9 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                   class="titlepage"><div><div><p
                         class="title"><strong><span
                             class="emphasis"><em>B.A.-BA</em></span> Perl, un langage de programmation</strong></p></div></div></div><a
-                  id="idm140065039457360"
+                  id="idm140534136807808"
                   class="indexterm"></a><a
-                  id="idm140065039456400"
+                  id="idm140534136806848"
                   class="indexterm"></a><div
                   class="para">
 						Perl (<span
@@ -436,32 +440,32 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140065039451456"></a>5.2.1.4.3. Past Limitations</h5></div></div></div><div
+                        id="idm140534136801904"></a>5.2.1.4.3. Anciennes limitations</h5></div></div></div><div
                 class="para">
-						Virtual packages used to suffer from some limitations, the most significant of which was the absence of a version number. To return to the previous example, a dependency such as <code
-                  class="literal">Depends: libdigest-md5-perl (&gt;= 1.6)</code>, despite the presence of Perl 5.10, would never be considered as satisfied by the packaging system — while in fact it most likely is satisfied. Unaware of this, the package system chose the least risky option, assuming that the versions do not match.
+						Les paquets virtuels souffraient de quelques limitations, dont la plus importante était l'absence de numéro de version. Pour reprendre l'exemple précédent, une dépendance <code
+                  class="literal">Depends: libdigest-md5-perl (&gt;= 1.6)</code> n'était donc jamais satisfaite, pour le système de paquetage, par la présence de Perl 5.10 — bien qu'en réalité elle l'était probablement. Ne le sachant pas, le système de paquetage optait pour une politique du moindre risque en supposant que les versions ne correspondaient pas.
 					</div><div
                 class="para">
-						This limitation has been lifted in <span
-                  class="pkg pkg">dpkg</span> 1.17.11, and is no longer relevant in Jessie. Packages can assign a version to the virtual packages they provide with a dependency such as <code
+						Cette limitation a été levée avec <span
+                  class="pkg pkg">dpkg</span> 1.17.11, et n'existe plus dans Jessie. Les paquets peuvent assigner une version aux paquets virtules qu'ils fournissent avec une dépendance telle que <code
                   class="literal">Provides: libdigest-md5-perl (= 1.8)</code>.
 					</div></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140065039447296"></a>5.2.1.5. Remplacements : champ <code
+                      id="idm140534136797712"></a>5.2.1.5. Remplacements : champ <code
                       class="literal">Replaces</code></h4></div></div></div><a
-              id="idm140065039446176"
+              id="idm140534136796592"
               class="indexterm"></a><a
-              id="idm140065039445216"
+              id="idm140534136795632"
               class="indexterm"></a><a
-              id="idm140065039443936"
+              id="idm140534136794352"
               class="indexterm"></a><div
               class="para">
-					The <code
-                class="literal">Replaces</code> field indicates that the package contains files that are also present in another package, but that the package is legitimately entitled to replace them. Without this specification, <code
-                class="command">dpkg</code> fails, stating that it can not overwrite the files of another package (technically, it is possible to force it to do so with the <code
-                class="literal">--force-overwrite</code> option, but that is not considered standard operation). This allows identification of potential problems and requires the maintainer to study the matter prior to choosing whether to add such a field.
+					Le champ <code
+                class="literal">Replaces</code> indique que le paquet contient des fichiers également présents dans un autre paquet, mais qu'il a légitimement le droit de les remplacer. En l'absence de cette précision, <code
+                class="command">dpkg</code> échoue en précisant qu'il ne peut pas écraser les fichiers d'un autre paquet (en fait, il est possible de lui forcer la main avec l'option <code
+                class="literal">--force-overwrite</code>, mais ce n'est pas considéré comme une opération standard). Cela permet d'identifier les problèmes potentiels et contraint le mainteneur à étudier la question avant de choisir d'ajouter ou non ce champ.
 				</div><div
               class="para">
 					L'emploi de ce champ se justifie dans le cas de changements de noms de paquets ou lorsqu'un paquet est intégré dans un autre. Cela se produit également quand le mainteneur a décidé de répartir différemment les fichiers entre divers paquets binaires produits depuis le même paquet source : un fichier remplacé n'appartient plus à l'ancien paquet, mais uniquement au nouveau.
@@ -488,16 +492,16 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140065039432112"></a>5.2.2. Scripts de configuration</h3></div></div></div><a
-            id="idm140065039431344"
+                    id="idm140534136782512"></a>5.2.2. Scripts de configuration</h3></div></div></div><a
+            id="idm140534136781744"
             class="indexterm"></a><a
-            id="idm140065039430224"
+            id="idm140534136780624"
             class="indexterm"></a><a
-            id="idm140065039429104"
+            id="idm140534136779504"
             class="indexterm"></a><a
-            id="idm140065039427984"
+            id="idm140534136778384"
             class="indexterm"></a><a
-            id="idm140065039426864"
+            id="idm140534136777264"
             class="indexterm"></a><div
             class="para">
 				En plus du fichier <code
@@ -511,9 +515,9 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                     class="title"><strong><span
                         class="emphasis"><em>POUR ALLER PLUS LOIN</em></span> Base de données de <code
                         class="command">dpkg</code></strong></p></div></div></div><a
-              id="idm140065039421616"
+              id="idm140534136772016"
               class="indexterm"></a><a
-              id="idm140065039420496"
+              id="idm140534136770896"
               class="indexterm"></a><div
               class="para">
 				Tous les scripts de configuration des paquets installés sont stockés dans le répertoire <code
@@ -548,18 +552,18 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                     class="title"><strong><span
                         class="emphasis"><em>ASTUCE</em></span> Diagrammes d'états</strong></p></div></div></div><div
               class="para">
-				Manoj Srivastava made these diagrams explaining how the configuration scripts are called by <code
-                class="command">dpkg</code>. Similar diagrams have also been developed by the Debian Women project; they are a bit simpler to understand, but less complete. <div
+				Manoj Srivastava a réalisé des diagrammes expliquant comment les scripts de configuration sont appelés par <code
+                class="command">dpkg</code>. Des diagrammes similaires avaient également été développés par le projet Debian Women ; ils sont un peu plus simples à comprendre mais moins complets. <div
                 class="url">→ <a
-                  href="https://people.debian.org/~srivasta/MaintainerScripts.html">https://people.debian.org/~srivasta/MaintainerScripts.html</a></div> <div
+                  href="http://people.debian.org/~srivasta/MaintainerScripts.html">http://people.debian.org/~srivasta/MaintainerScripts.html</a></div> <div
                 class="url">→ <a
                   href="https://wiki.debian.org/MaintainerScripts">https://wiki.debian.org/MaintainerScripts</a></div>
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140065039405536"></a>5.2.2.1. Installation et mise à jour</h4></div></div></div><a
-              id="idm140065039404768"
+                      id="idm140534136755776"></a>5.2.2.1. Installation et mise à jour</h4></div></div></div><a
+              id="idm140534136755008"
               class="indexterm"></a><div
               class="para">
 					Voici les étapes d'une installation (ou mise à jour) :
@@ -615,7 +619,7 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140065039387200"></a>5.2.2.2. Suppression de paquet</h4></div></div></div><div
+                      id="idm140534136737440"></a>5.2.2.2. Suppression de paquet</h4></div></div></div><div
               class="para">
 					Voici les étapes pour une suppression de paquet :
 				</div><div
@@ -654,7 +658,7 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULAIRE</em></span> La purge, une suppression complète</strong></p></div></div></div><a
-                id="idm140065039374064"
+                id="idm140534136724304"
                 class="indexterm"></a><div
                 class="para">
 					Lorsqu'un paquet Debian est supprimé, les fichiers de configuration sont conservés afin de faciliter une éventuelle réinstallation. De même, les données gérées par un démon (comme le contenu de l'annuaire d'un serveur LDAP, ou le contenu de la base de données pour un serveur SQL) sont habituellement conservées.
@@ -669,12 +673,12 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                     class="replaceable">paquet</em></code>.
 				</div><div
                 class="para">
-					Given the definitive nature of such data removals, a purge should not be taken lightly.
+					Étant donné le caractère définitif de cette suppression de données, on prendra garde de ne pas utiliser la purge à la légère.
 				</div></div><a
-              id="idm140065039368720"
+              id="idm140534136718800"
               class="indexterm"></a><div
               class="para">
-					Les 4 scripts évoqués ci-dessus sont complétés par un script <code
+					Les quatre scripts évoqués ci-dessus sont complétés par un script <code
                 class="filename">config</code>, fourni par les paquets utilisant <code
                 class="command">debconf</code> pour obtenir de l'utilisateur des informations de configuration. Lors de l'installation, ce script définit en détail les questions posées par <code
                 class="command">debconf</code>. Les réponses sont enregistrées dans la base de données de <code
@@ -686,7 +690,7 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
                       class="title"><strong><span
                           class="emphasis"><em>OUTIL</em></span> <code
                           class="command">debconf</code></strong></p></div></div></div><a
-                id="idm140065039362448"
+                id="idm140534136712528"
                 class="indexterm"></a><div
                 class="para">
 					<code
@@ -705,25 +709,25 @@ SHA256: 371a559ce741394b59dbc6460470a9399be5245356a9183bbeea0f89ecaabb03</code><
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.conffiles"></a>5.2.3. Sommes de contrôle, liste des fichiers de configuration</h3></div></div></div><a
-            id="idm140065039354000"
+            id="idm140534136605824"
             class="indexterm"></a><a
-            id="idm140065039352880"
+            id="idm140534136604704"
             class="indexterm"></a><a
-            id="idm140065039351760"
+            id="idm140534136603584"
             class="indexterm"></a><a
-            id="idm140065039350800"
+            id="idm140534136602624"
             class="indexterm"></a><a
-            id="idm140065039349360"
+            id="idm140534136601184"
             class="indexterm"></a><div
             class="para">
-				In addition to the maintainer scripts and control data already mentioned in the previous sections, the <code
-              class="filename">control.tar.gz</code> archive of a Debian package may contain other interesting files. The first, <code
-              class="filename">md5sums</code>, contains the MD5 checksums for all of the package's files. Its main advantage is that it allows <code
-              class="command">dpkg --verify</code> (which we will study in <a
+				En plus des données de contrôle et des scripts de configuration déjà cités dans les sections précédentes, l'archive <code
+              class="filename">control.tar.gz</code> d'un paquet Debian en contient d'autres. Le premier, <code
+              class="filename">md5sums</code>, contient la liste des empreintes numériques de tous les fichiers du paquet. Son principal avantage est de permettre à <code
+              class="command">dpkg --verify</code> (que nous étudierons dans la <a
               class="xref"
               href="sect.supervision.html#sect.dpkg-verify">Section 14.3.3.1, « Auditing Packages with <code
-                class="command">dpkg --verify</code> »</a>) to check if these files have been modified since their installation. Note that when this file doesn't exist, <code
-              class="command">dpkg</code> will generate it dynamically at installation time (and store it in the dpkg database just like other control files).
+                class="command">dpkg --verify</code> »</a>) de vérifier que ces fichiers n'ont pas été modifiés depuis leur installation. Vous pouvez noter que lorsque ce fichier n'existe pas, <code
+              class="command">dpkg</code> le génère dynamiquement au moment de l'installation (et l'enregistre dans la base de données dpkg comme les autres fichiers de contrôle).
 			</div><div
             class="para">
 				<code

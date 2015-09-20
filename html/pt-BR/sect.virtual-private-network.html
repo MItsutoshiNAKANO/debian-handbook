@@ -72,11 +72,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			Uma <span
             class="emphasis"><em>Rede Privada Virtual</em></span> (ou VPN, de Virtual Private Network) é uma forma de conectar duas redes locais diferentes através de um túnel pela internet; o túnel é normalmente criptografado para confidencialidade. VPNs são em geral usadas para integrar uma máquina remota numa rede local de uma empresa.
 		</div><a
-          id="idm140625130461392"
+          id="idm140590008902496"
           class="indexterm"></a><a
-          id="idm140625130459952"
+          id="idm140590005517152"
           class="indexterm"></a><a
-          id="idm140625130458992"
+          id="idm140590005516192"
           class="indexterm"></a><div
           class="para">
 			Várias ferramentas fornecem isto. O OpenVPN é uma solução eficiente, fácil de publicar e manter, baseado em SSL/TLS. Outra possibilidade é usar o IPsec para criptografar o tráfego IP entre duas máquinas; esta criptografia é transparente, o que significa que aplicações rodando nestas máquinas não precisam ser modificadas para serem compatíveis com VPN. SSH também pode ser usado para fornecer uma VPN, adicionalmente às suas funcionalidades mais convencionais. Finalmente, uma VPN pode ser estabelecida usando o protocolo PPTP da Microsoft. Outras soluções existem, mas estão além do escopo deste livro.
@@ -85,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.openvpn"></a>10.2.1. OpenVPN</h3></div></div></div><a
-            id="idm140625130455888"
+            id="idm140590005513088"
             class="indexterm"></a><div
             class="para">
 				O OpenVPN é um pedaço de software dedicado a criar redes virtuais privadas. Sua configuração envolve a criação de interfaces de rede virtual em um servidor VPN e no(s) cliente(s); ambas interfaces <code
@@ -100,9 +100,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURA</em></span> SSL e TLS</strong></p></div></div></div><a
-              id="idm140625130450656"
+              id="idm140590005507856"
               class="indexterm"></a><a
-              id="idm140625130449696"
+              id="idm140590005506896"
               class="indexterm"></a><div
               class="para">
 				The SSL protocol (<span
@@ -114,19 +114,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><a
                       id="sect.easy-rsa"></a>10.2.1.1. Infraestrutura de Chaves Públicas: <span
                       class="emphasis"><em>easy-rsa</em></span></h4></div></div></div><a
-              id="idm140625130445600"
+              id="idm140590005502800"
               class="indexterm"></a><a
-              id="idm140625119157792"
+              id="idm140590005501872"
               class="indexterm"></a><a
-              id="idm140625119156864"
+              id="idm140590005500944"
               class="indexterm"></a><a
-              id="idm140625119155904"
+              id="idm140590005499984"
               class="indexterm"></a><a
-              id="idm140625119154464"
+              id="idm140590005498544"
               class="indexterm"></a><a
-              id="idm140625119153344"
+              id="idm140590005497424"
               class="indexterm"></a><a
-              id="idm140625119152384"
+              id="idm140590005496464"
               class="indexterm"></a><div
               class="para">
 					O algorítimo RSA é amplamente usado em criptografia de chave pública. Trata-se de um “par de chaves”, composto de uma chave privada e uma chave pública. As duas chaves são intimamente ligadas uma a outra, e suas propriedades matemáticas são tais que uma mensagem criptografada com a chave pública só pode ser descriptografada por alguém que conhece a chave privada, o que garante confidencialidade. Na direção oposta, uma mensagem criptografada com a chave privada pode ser descriptografada por qualquer um que saiba a chave pública, o que permite autenticar a origem da mensagem já que apenas alguém com acesso a chave privada poderia gerá-la. Quando associada a uma função digital hash (MD5, SHA1, ou uma variante mais recente), isso leva a um mecanismo de assinatura que pode ser aplicado a qualquer mensagem.
@@ -341,7 +341,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140625119113280"></a>10.2.1.2. Configurando o Servidor OpenVPN</h4></div></div></div><div
+                      id="idm140590005457120"></a>10.2.1.2. Configurando o Servidor OpenVPN</h4></div></div></div><div
               class="para">
 					Por padrão, o script de inicialização do OpenVPN tenta iniciar todas as redes virtuais privadas definidas em <code
                 class="filename">/etc/openvpn/*.conf</code>. A configuração de um servidor VPN é portanto uma questão de armazenar o arquivo de configuração correspondente neste diretório. Um bom ponto de partida é o <code
@@ -378,7 +378,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140625119098768"></a>10.2.1.3. Configurando o Cliente OpenVPN</h4></div></div></div><div
+                      id="idm140590004731232"></a>10.2.1.3. Configurando o Cliente OpenVPN</h4></div></div></div><div
               class="para">
 					Configurar um cliente OpenVPN também requer a criação de um arquivo de configuração em <code
                 class="filename">/etc/openvpn/</code>. Uma configuração padrão pode ser obtida usando <code
@@ -406,16 +406,16 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="pkg pkg">network-manager-openvpn-gnome</span> contém uma extensão para o Network Manager (see <a
                 class="xref"
                 href="sect.network-config.html#sect.roaming-network-config">Seção 8.2.4, “Configuração Automática de Rede para Usuários em Roaming”</a>) que permite o gerenciamento de redes virtuais privadas OpenVPN. Isso permite que todo usuário configure e controle as conexões OpenVPN graficamente através do ícone de gerenciamento de redes. <a
-                id="idm140625118520496"
+                id="idm140590004720400"
                 class="indexterm"></a>
 				</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh-vpn"></a>10.2.2. Rede Privada Virtual com SSH</h3></div></div></div><a
-            id="idm140625118518032"
+            id="idm140590004717936"
             class="indexterm"></a><a
-            id="idm140625118517072"
+            id="idm140590004716976"
             class="indexterm"></a><div
             class="para">
 				Existem, na verdade, duas maneiras de criar uma rede virtual privada com SSH. A mais antiga envolve estabelecer uma camada PPP sobre uma ligação SSH. Esse método é descrito em um documento HOWTO: <div
@@ -443,11 +443,11 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipsec"></a>10.2.3. IPsec</h3></div></div></div><a
-            id="idm140625118507296"
+            id="idm140590004707200"
             class="indexterm"></a><a
-            id="idm140625118506336"
+            id="idm140590004706240"
             class="indexterm"></a><a
-            id="idm140625118505216"
+            id="idm140590004705120"
             class="indexterm"></a><div
             class="para">
 				IPsec, despite being the standard in IP VPNs, is rather more involved in its implementation. The IPsec engine itself is integrated in the Linux kernel; the required user-space parts, the control and configuration tools, are provided by the <span
@@ -462,13 +462,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="pkg pkg">racoon</span> or <span
               class="pkg pkg">strongswan</span> makes the process much simpler by bringing administration together at a central point, and more secure by rotating the keys periodically.
 			</div><a
-            id="idm140625118497360"
+            id="idm140590004697264"
             class="indexterm"></a><a
-            id="idm140625118496400"
+            id="idm140590004696304"
             class="indexterm"></a><a
-            id="idm140625118494960"
+            id="idm140590004694864"
             class="indexterm"></a><a
-            id="idm140625118494000"
+            id="idm140590004693904"
             class="indexterm"></a><div
             class="para">
 				Apesar do seu status como referência, a complexidade de criação de IPsec restringe seu uso na prática. As soluções baseadas em OpenVPN irão geralmente ser preferidas quando os necessários túneis não forem muitos ou não forem muito dinâmicos.
@@ -482,9 +482,9 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="emphasis"><em>NAT-T</em></span> (para <span
                 class="emphasis"><em>NAT Traversal</em></span>), o que basicamente encapsula o pacote IPsec dentro de um pacote UDP padrão.
 			</div><a
-              id="idm140625118489344"
+              id="idm140590004689248"
               class="indexterm"></a><a
-              id="idm140625118488384"
+              id="idm140590004688288"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -493,13 +493,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="para">
 				The standard mode of operation of IPsec involves data exchanges on UDP port 500 for key exchanges (also on UDP port 4500 in the case that NAT-T is in use). Moreover, IPsec packets use two dedicated IP protocols that the firewall must let through; reception of these packets is based on their protocol numbers, 50 (ESP) and 51 (AH).
 			</div><a
-              id="idm140625118485344"
+              id="idm140590004685248"
               class="indexterm"></a><a
-              id="idm140625118484384"
+              id="idm140590004684288"
               class="indexterm"></a><a
-              id="idm140625118483424"
+              id="idm140590004683328"
               class="indexterm"></a><a
-              id="idm140625118481984"
+              id="idm140590004681888"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -510,13 +510,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="emphasis"><em>Point-to-Point Tunneling Protocol</em></span>) usa dois canais de comunicação, um para controlar dados e um para dados de carga útil (payload); o último usa o protocolo GRE (<span
               class="emphasis"><em>Generic Routing Encapsulation</em></span>). Um link PPP padrão é então configurado sobre o canal de troca de dados.
 			</div><a
-            id="idm140625118477712"
+            id="idm140590004677616"
             class="indexterm"></a><a
-            id="idm140625118476752"
+            id="idm140590004676656"
             class="indexterm"></a><a
-            id="idm140625118475824"
+            id="idm140590004675728"
             class="indexterm"></a><a
-            id="idm140625118474864"
+            id="idm140590004674768"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -528,7 +528,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="url">→ <a
                   href="http://pptpclient.sourceforge.net/howto-debian.phtml">http://pptpclient.sourceforge.net/howto-debian.phtml</a></div>
 				</div><a
-              id="idm140625118470432"
+              id="idm140590004670336"
               class="indexterm"></a><div
               class="para">
 					Os administradores da Falcot criaram vários arquivos: <code
@@ -597,9 +597,9 @@ fi
 					A segurança do PPTP envolve o uso do recurso MPPE (<span
                   class="emphasis"><em>Microsoft Point-to-Point Encryption</em></span>), o qual está disponível nos núcleos oficiais Debian como módulo.
 				</div><a
-                id="idm140625118698656"
+                id="idm140590004656384"
                 class="indexterm"></a><a
-                id="idm140625118697696"
+                id="idm140590004655424"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
