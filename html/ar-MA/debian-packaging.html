@@ -76,25 +76,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="debian-packaging.html#sect.rebuilding-package">15.1. إعادة بناء حزمة من المصدر</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140571477281936">15.1.1. الحصول على المصادر</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140482087931664">15.1.1. الحصول على المصادر</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140571495405744">15.1.2. إجراء التغييرات</a></span></dt><dt><span
+                      href="debian-packaging.html#idm140482080368384">15.1.2. إجراء التغييرات</a></span></dt><dt><span
                     class="section"><a
-                      href="debian-packaging.html#idm140571472439888">15.1.3. بدء إعادة البناء</a></span></dt></dl></dd><dt><span
+                      href="debian-packaging.html#idm140482092121344">15.1.3. بدء إعادة البناء</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.building-first-package.html">15.2. بناء حزمتك الأولى</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140571495275024">15.2.1. الحزم الفوقية أو الحزم الزائفة</a></span></dt><dt><span
+                      href="sect.building-first-package.html#idm140482090876288">15.2.1. الحزم الفوقية أو الحزم الزائفة</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.building-first-package.html#idm140571472423088">15.2.2. أرشيف ملفات بسيط</a></span></dt></dl></dd><dt><span
+                      href="sect.building-first-package.html#idm140482078486704">15.2.2. أرشيف ملفات بسيط</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.setup-apt-package-repository.html">15.3. إنشاء مستودع حزم للأداة APT</a></span></dt><dt><span
                 class="section"><a
                   href="sect.becoming-package-maintainer.html">15.4. كيف تصبح مشرف حزم</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140571472304688">15.4.1. تعلم إنشاء الحزم</a></span></dt><dt><span
+                      href="sect.becoming-package-maintainer.html#idm140482078368304">15.4.1. تعلم إنشاء الحزم</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.becoming-package-maintainer.html#idm140571473645232">15.4.2. عملية القبول</a></span></dt></dl></dd></dl></div><div
+                      href="sect.becoming-package-maintainer.html#idm140482078306912">15.4.2. عملية القبول</a></span></dt></dl></dd></dl></div><div
           class="highlights"><div
             class="para">
 		من الشائع جداً، بين مديري النظم الذين يتعاملون مع حزم جبيان بشكل منتظم، أن يصلوا إلى مرحلة يحتاجون فيها لإنشاء حزم خاصة بهم، أو لتعديل حزمة سابقة. يهدف هذا الفصل للإجابة عن أكثر الأسئلة شيوعاً في هذا المجال، وتقديم العناصر اللازمة للاستفادة من بنية دبيان التحتية بأفضل طريقة ممكنة. ومع بعض الحظ، قد تشعر ‒بعد تجربة مهاراتك في الحزم المحلية‒ بالحاجة للغوص أكثر من ذلك وتنضم لمشروع دبيان نفسه!
@@ -110,13 +110,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="distribution distribution">Stable</span> distribution; this operation is called “backporting”. As usual, care should be taken, before undertaking such a task, to check whether it has been done already — a quick look on the Debian Package Tracker for that package will reveal that information. <div
               class="url">→ <a
                 href="https://tracker.debian.org/">https://tracker.debian.org/</a></div> <a
-              id="idm140571492346944"
+              id="idm140482087015712"
               class="indexterm"></a>
 		</div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140571477281936"></a>15.1.1. الحصول على المصادر</h3></div></div></div><div
+                      id="idm140482087931664"></a>15.1.1. الحصول على المصادر</h3></div></div></div><div
               class="para">
 				Rebuilding a Debian package starts with getting its source code. The easiest way is to use the <code
                 class="command">apt-get source <em
@@ -152,7 +152,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140571495405744"></a>15.1.2. إجراء التغييرات</h3></div></div></div><div
+                      id="idm140482080368384"></a>15.1.2. إجراء التغييرات</h3></div></div></div><div
               class="para">
 				The source of the package is now available in a directory named after the source package and its version (for instance, <span
                 class="emphasis"><em>samba-4.1.17+dfsg</em></span>); this is where we'll work on our local changes.
@@ -198,7 +198,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>تلميح</em></span> تثبيت <code
                           class="literal">Build-Depends</code></strong></p></div></div></div><a
-                id="idm140571472444592"
+                id="idm140482092126048"
                 class="indexterm"></a><div
                 class="para">
 				<code
@@ -212,7 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
-                      id="idm140571472439888"></a>15.1.3. بدء إعادة البناء</h3></div></div></div><div
+                      id="idm140482092121344"></a>15.1.3. بدء إعادة البناء</h3></div></div></div><div
               class="para">
 				بعد تطبيق كل التغييرات التي تحتاجها إلى الكود المصدري، يمكننا توليد الحزمة الثنائية (ملف <code
                 dir="ltr"
@@ -220,7 +220,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">dpkg-buildpackage</code> العملية كلها.
 			</div><div
               class="example"><a
-                id="idm140571471033904"></a><p
+                id="idm140482078738048"></a><p
                 class="title"><strong>مثال 15.1. إعادة بناء حزمة</strong></p><div
                 class="example-contents"><pre
                   class="screen">
@@ -268,7 +268,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>نظرة سريعة</em></span> <code
                           class="command">pbuilder</code></strong></p></div></div></div><a
-                id="idm140571495283344"
+                id="idm140482090884608"
                 class="indexterm"></a><div
                 class="para">
 				يسمح البرنامج <code

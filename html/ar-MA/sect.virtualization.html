@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.virtualization"></a>12.2. الحوسبة الظاهرية</h2></div></div></div><a
-          id="idm140571495235792"
+          id="idm140482091974784"
           class="indexterm"></a><div
           class="para">
 			Virtualization is one of the most major advances in the recent years of computing. The term covers various abstractions and techniques simulating virtual computers with a variable degree of independence on the actual hardware. One physical server can then host several systems working at the same time and in isolation. Applications are many, and often derive from this isolation: test environments with varying configurations for instance, or separation of hosted services across different virtual machines for security.
@@ -77,17 +77,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			هناك الكثير من حلول الحوسبة الظاهرية، لكل منها ميزاته وعيوبه. يركز هذا الكتاب على Xen، و LXC، وKVM، لكن هناك حلول أخرى تستحق الذكر منها:
 		</div><a
-          id="idm140571495233136"
+          id="idm140482091972672"
           class="indexterm"></a><a
-          id="idm140571495232016"
+          id="idm140482091971552"
           class="indexterm"></a><a
-          id="idm140571495230896"
+          id="idm140482091970432"
           class="indexterm"></a><a
-          id="idm140571495229776"
+          id="idm140482091969312"
           class="indexterm"></a><a
-          id="idm140571495228656"
+          id="idm140482091968192"
           class="indexterm"></a><a
-          id="idm140571495227536"
+          id="idm140482091967072"
           class="indexterm"></a><div
           xmlns:d="http://docbook.org/ns/docbook"
           class="itemizedlist"><ul><li
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     id="sect.xen"></a>12.2.1. ‏Xen</h3></div></div></div><div
             class="para">
 				Xen<a
-              id="idm140571495215648"
+              id="idm140482091955184"
               class="indexterm"></a> هو حل محاكاة ”شبه ظاهرية – paravirtualization“. يقدم Xen طبقة عزل رقيقة، تدعى ”المشرف – hypervisor“، بين العتاد والأنظمة العليا؛ تعمل بمثابة مرجع يتحكم بالوصول للعتاد من الحواسيب الظاهرية. لكنها تعالج عدداً قليلاً من التعليمات، أما البقية فتنفذ مباشرة على العتاد بالنيابة عن الأنظمة الظاهرية. الميزة الأساسية هي أن مستوى الأداء لا ينخفض، والنظم تعمل بسرعات تقترب من السرعة الأصلية؛ لكن نقطة الضعف هي أن نوى نظم التشغيل التي يمكن استخدامها مع مشرف Xen يجب تعديلها لتناسب العمل على Xen.
 			</div><div
             class="para">
@@ -380,9 +380,9 @@ testxen                                      1   128     1     -b----      1.1</
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>TOOL</em></span> Choice of toolstacks to manage Xen VM</strong></p></div></div></div><a
-              id="idm140571495134768"
+              id="idm140482091874304"
               class="indexterm"></a><a
-              id="idm140571495133648"
+              id="idm140482091873184"
               class="indexterm"></a><div
               class="para">
 				In Debian 7 and older releases, <code
@@ -478,7 +478,7 @@ testxen login: </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.lxc"></a>12.2.2. ‏LXC </h3></div></div></div><a
-            id="idm140571495100320"
+            id="idm140482091839856"
             class="indexterm"></a><div
             class="para">
 				Even though it is used to build “virtual machines”, LXC is not, strictly speaking, a virtualization system, but a system to isolate groups of processes from each other even though they all run on the same host. It takes advantage of a set of recent evolutions in the Linux kernel, collectively known as <span
@@ -500,12 +500,6 @@ testxen login: </code></pre><div
               class="itemizedlist"><ul><li
                   class="listitem"><div
                     class="para">
-						the <span
-                      class="distribution distribution">Jessie</span> standard kernel does not allow limiting the amount of memory available to a container; the feature exists, and is built in the kernel, but it is disabled by default because it has a (slight) cost on overall system performance; however, enabling it is a simple matter of setting the <code
-                      class="command">cgroup_enable=memory</code> kernel command-line option at boot time;
-					</div></li><li
-                  class="listitem"><div
-                    class="para">
 						بما أن النواة مشتركة بين النظام المستضيف والحاويات، فإن العمليات المحجوزة في الحاويات ستبقى تصل لرسائل النواة، ما قد يؤدي لتسرب المعلومات إذا بثت الحاوية الرسائل؛
 					</div></li><li
                   class="listitem"><div
@@ -517,12 +511,12 @@ testxen login: </code></pre><div
 						في نظام الملفات، تتحقق النواة من الصلاحيات وفقاً للمعرفات العددية للمستخدمين والمجموعات؛ وربما كانت هذه المعرفات تشير لمستخدمين ومجموعات مختلفة حسب الحاوية، ويجب أخذ هذا بعين الاعتبار عند مشاركة أجزاء قابلة للكتابة من نظام الملفات بين عدد من الحاويات.
 					</div></li></ul></div></div><div
             class="para">
-				بما أننا نتعامل مع تقنية عزل وليست محاكاة وحسب، فإن إعداد حاويات LXC أعقد من تشغيل مثبت دبيان على جهاز ظاهري. سوف نشرح بعض المتطلبات الأولية، ثم نتجه إلى إعداد الشبكة؛ وبعدها سوف نتمكن من إنشاء النظام الذي سيعمل ضمن الحاوية.
+				Since we are dealing with isolation and not plain virtualization, setting up LXC containers is more complex than just running debian-installer on a virtual machine. We will describe a few prerequisites, then go on to the network configuration; we will then be able to actually create the system to be run in the container.
 			</div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571495085360"></a>12.2.2.1. الخطوات الأولية</h4></div></div></div><div
+                      id="idm140482091827440"></a>12.2.2.1. الخطوات الأولية</h4></div></div></div><div
               class="para">
 					تحوي الحزمة <span
                 class="pkg pkg">lxc</span> الأدوات اللازمة لتشغيل LXC، ويجب تثبيتها إذن.
@@ -596,7 +590,7 @@ iface br0 inet static
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571495066368"></a>12.2.2.3. إعداد النظام</h4></div></div></div><div
+                      id="idm140482091808448"></a>12.2.2.3. إعداد النظام</h4></div></div></div><div
               class="para">
 					دعنا الآن نضبط نظام الملفات الذي ستستخدمه الحاوية. بما أن هذا ”الجهاز الظاهري“ لن يعمل على العتاد مباشرة، فيجب إجراء بعض التعديلات على نظام الملفات حتى يتناسب مع تنظيم أنظمة الملفات القياسية، خصوصاً بالنسبة للنواة والأجهزة والطرفيات. لحسن الحظ، تحوي <span
                 class="pkg pkg">lxc</span> سكربتات تؤتمت معظم عملية الضبط هذه. مثلاً، يمكن استخدام الأوامر التالية (التي تحتاج الحزمتين <span
@@ -654,7 +648,7 @@ lxc.network.hwaddr = 4a:49:43:49:79:20
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571495051296"></a>12.2.2.4. تشغيل الحاوية</h4></div></div></div><div
+                      id="idm140482091793472"></a>12.2.2.4. تشغيل الحاوية</h4></div></div></div><div
               class="para">
 					الآن وبعد أن أصبحت صورة الجهاز الظاهري جاهزة، دعنا نشغل الحاوية:
 				</div><pre
@@ -749,8 +743,8 @@ root@testlxc:~# </code></pre><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140571495024192"></a>12.2.3. المحاكاة في KVM</h3></div></div></div><a
-            id="idm140571495023424"
+                    id="idm140482091766752"></a>12.2.3. المحاكاة في KVM</h3></div></div></div><a
+            id="idm140482091765984"
             class="indexterm"></a><div
             class="para">
 				KVM، التي ترمز إلى <span
@@ -768,16 +762,16 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571495018304"></a>12.2.3.1. الخطوات الأولية</h4></div></div></div><a
-              id="idm140571495017536"
+                      id="idm140482091760864"></a>12.2.3.1. الخطوات الأولية</h4></div></div></div><a
+              id="idm140482091760096"
               class="indexterm"></a><div
               class="para">
 					بعكس الأدوات الأخرى مثل VirtualBox، لا تقدم KVM نفسها أي واجهة للمستخدم لإنشاء وإدارة الحواسيب الظاهرية. تقدم حزمة <span
                 class="pkg pkg">qemu-kvm</span> برنامجاً تنفيذيًا قادراً على تشغيل حاسوب ظاهري، بالإضافة إلى سكربت تهيئة يحمل وحدات النواة المناسبة.
 				</div><a
-              id="idm140571495014784"
+              id="idm140482091757344"
               class="indexterm"></a><a
-              id="idm140571495013824"
+              id="idm140482091756384"
               class="indexterm"></a><div
               class="para">
 					لحسن الحظ، توفر Red Hat أيضًا مجموعة أخرى من الأدوات لمعالجة هذه المشكلة، من خلال تطوير المكتبة <span
@@ -785,7 +779,7 @@ root@testlxc:~# </code></pre><div
                 class="emphasis"><em>virtual machine manager</em></span> المقترنة بها. تسمح libvirt بإدارة الحواسيب الظاهرية بأسلوب قياسي، بغض النظر عن نظام المحاكاة المستخدم وراء الكواليس (حاليًا هناك دعم لنظم QEMU، وKVM، وXen، وLXC، وOpenVZ، وVirtualBox، وVMWare وأيضاً UML). ‏<code
                 class="command">virtual-manager</code> هي واجهة رسومية تعتمد على libvirt لإنشاء وإدارة الحواسيب الظاهرية.
 				</div><a
-              id="idm140571495009888"
+              id="idm140482091752448"
               class="indexterm"></a><div
               class="para">
 					سوف نثبت الحزم المطلوبة أولاً، بالأمر <code
@@ -804,7 +798,7 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571495001968"></a>12.2.3.2. إعداد الشبكة</h4></div></div></div><div
+                      id="idm140482091744624"></a>12.2.3.2. إعداد الشبكة</h4></div></div></div><div
               class="para">
 					كما في Xen و LXC، أكثر الخيارات شيوعاً عند إعداد الشبكة هو استخدام جسر يجمع الواجهات الشبكية لعدة حواسيب ظاهرية (انظر <a
                 class="xref"
@@ -821,9 +815,9 @@ root@testlxc:~# </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571494997344"></a>12.2.3.3. التثبيت باستخدام <code
+                      id="idm140482091740000"></a>12.2.3.3. التثبيت باستخدام <code
                       class="command">virt-install</code></h4></div></div></div><a
-              id="idm140571472249024"
+              id="idm140482091738912"
               class="indexterm"></a><div
               class="para">
 					يشبه إنشاء حاسب ظاهري تثبيت النظم العادية كثيراً، عدا أن مواصفات الحواسب الظاهري تُحدَّد في أمر طويل جداً.
@@ -1086,9 +1080,9 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571472203840"></a>12.2.3.4. إدارة الأجهزة باستخدام <code
+                      id="idm140482078230224"></a>12.2.3.4. إدارة الأجهزة باستخدام <code
                       class="command">virsh</code></h4></div></div></div><a
-              id="idm140571472202944"
+              id="idm140482078229328"
               class="indexterm"></a><div
               class="para">
 					بعد أن انتهينا من التثبيت، دعنا نرى كيف ندير الأجهزة الظاهرية المتوفرة. أول شيئ سنجربه هو طلب قائمة بالأجهزة التي تديرها <code
@@ -1169,7 +1163,7 @@ root@server's password: </code></pre><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140571472185136"></a>12.2.3.5. تثبيت نظام مبني على RPM في دبيان باستخدام yum</h4></div></div></div><div
+                      id="idm140482078212000"></a>12.2.3.5. تثبيت نظام مبني على RPM في دبيان باستخدام yum</h4></div></div></div><div
               class="para">
 					إذا كان الجهاز الظاهري سيعمل بنظام دبيان (أو أحد مشتقاته)، يمكن تهيئة النظام باستخدام <code
                 class="command">debootstrap</code>، كما شرحناه سابقًا. أما إذا كان الجهاز الظاهري سيعمل بنظام مبني على RPM (مثل فيدورا، أو CentOS أو Scientific Linux)، يجب إتمام التثبيت باستخدام أداة <code

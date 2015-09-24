@@ -68,13 +68,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.supervision"></a>14.3. Supervision : prévention, détection, dissuasion</h2></div></div></div><a
-          id="idm140534125716928"
+          id="idm140256395036640"
           class="indexterm"></a><div
           class="para">
 			La supervision fait partie intégrante d'une politique de sécurité. Elle est nécessaire à plusieurs titres : l'objectif de la sécurité n'est pas uniquement de garantir la confidentialité des données, mais aussi d'assurer le bon fonctionnement des services. Il est donc impératif de veiller à ce que tout fonctionne comme prévu et de détecter au plus tôt les comportements inhabituels et les changements dans la qualité du service fourni. Surveiller l'activité peut permettre de détecter des tentatives d'intrusion et donc de s'en protéger avant que cela ne porte à conséquences. Ce chapitre va passer en revue des outils servant à surveiller différents aspects d'un système Debian. Il complète la section dédiée à la supervision du <a
             class="xref"
             href="advanced-administration.html">Chapitre 12, <em>Administration avancée</em></a>.<a
-            id="idm140534125714384"
+            id="idm140256395034096"
             class="indexterm"></a>
 		</div><div
           class="section"><div
@@ -82,11 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.logcheck"></a>14.3.1. Surveillance des logs avec <code
                     class="command">logcheck</code></h3></div></div></div><a
-            id="idm140534125712080"
+            id="idm140256395031792"
             class="indexterm"></a><a
-            id="idm140534125710960"
+            id="idm140256395030672"
             class="indexterm"></a><a
-            id="idm140534125709520"
+            id="idm140256395029232"
             class="indexterm"></a><div
             class="para">
 				Le programme <code
@@ -163,9 +163,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.monitoring-activity"></a>14.3.2. Surveillance de l'activité</h3></div></div></div><a
-            id="idm140534125687088"
+            id="idm140256395006800"
             class="indexterm"></a><a
-            id="idm140534125685648"
+            id="idm140256395005360"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -185,7 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="foreignphrase"><em
                   class="foreignphrase">renice</em></span>) change la priorité d'un processus.
 				</div><a
-              id="idm140534125678848"
+              id="idm140256394998560"
               class="indexterm"></a><div
               class="para">
 					Si le processeur semble être surchargé, il est ainsi possible d'observer quels processus se battent pour son contrôle ou consomment toute la mémoire disponible. Il est intéressant en particulier de vérifier si les processus qui consomment des ressources correspondent effectivement aux services réels que la machine héberge. Un processus au nom inconnu tournant sous l'utilisateur <code
@@ -200,20 +200,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="command">gnome-system-monitor</code> graphical tool is similar to <code
                 class="command">top</code> and it provides roughly the same features.
 				</div><a
-              id="idm140534125673712"
+              id="idm140256394993424"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.monitoring-history"></a>14.3.2.2. Historique</h4></div></div></div><a
-              id="idm140534125671376"
+              id="idm140256394991088"
               class="indexterm"></a><div
               class="para">
 					La charge du processeur, le trafic réseau et l'espace disque disponible sont des informations qui varient en permanence. Il est souvent intéressant de garder une trace de leur évolution pour mieux cerner l'usage qui est fait de l'ordinateur.
 				</div><a
-              id="idm140534125669696"
+              id="idm140256394989408"
               class="indexterm"></a><a
-              id="idm140534125668736"
+              id="idm140256394988448"
               class="indexterm"></a><div
               class="para">
 					Il existe de nombreux outils dédié à cette tâche. La plupart peuvent récupérer des données via SNMP (<span
@@ -234,7 +234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="title"><strong><span
                           class="emphasis"><em>ALTERNATIVE</em></span> <code
                           class="command">mrtg</code></strong></p></div></div></div><a
-                id="idm140534125661984"
+                id="idm140256394981696"
                 class="indexterm"></a><div
                 class="para">
 					<code
@@ -250,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140534125656800"></a>14.3.3. Détection des changements</h3></div></div></div><div
+                    id="idm140256394976512"></a>14.3.3. Détection des changements</h3></div></div></div><div
             class="para">
 				Une fois le système installé et configuré, l'état de la majorité des fichiers et répertoires (hors données) n'a pas de raison d'évoluer (sauf mises à jour de sécurité). Il est donc intéressant de s'assurer que c'est bien le cas : tout changement inattendu est alors suspect. Les outils présentés dans cette section permettent de surveiller tous les fichiers et de prévenir les administrateurs en cas d'altération inattendue, ou alors simplement de diagnostiquer l'étendue des altérations.
 			</div><div
@@ -259,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><a
                       id="sect.dpkg-verify"></a>14.3.3.1. Auditing Packages with <code
                       class="command">dpkg --verify</code></h4></div></div></div><a
-              id="idm140534125653680"
+              id="idm140256394973392"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
@@ -282,13 +282,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>BACK TO BASICS</em></span> File fingerprint</strong></p></div></div></div><a
-                id="idm140534125645088"
+                id="idm140256394964800"
                 class="indexterm"></a><a
-                id="idm140534125644128"
+                id="idm140256394963840"
                 class="indexterm"></a><a
-                id="idm140534125643168"
+                id="idm140256394962880"
                 class="indexterm"></a><a
-                id="idm140534125642208"
+                id="idm140256394961920"
                 class="indexterm"></a><div
                 class="para">
 					As a reminder: a fingerprint is a value, often a number (even though in hexadecimal notation), that contains a kind of signature for the contents of a file. This signature is calculated with an algorithm (MD5 or SHA1 being well-known examples) that more or less guarantee that even the tiniest change in the file contents implies a change in the fingerprint; this is known as the “avalanche effect”. This allows a simple numerical fingerprint to serve as a litmus test to check whether the contents of a file have been altered. These algorithms are not reversible; in other words, for most of them, knowing a fingerprint doesn't allow finding the corresponding contents. Recent mathematical advances seem to weaken the absoluteness of these principles, but their use is not called into question so far, since creating different contents yielding the same fingerprint still seems to be quite a difficult task.
@@ -317,7 +317,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><a
                       id="sect.debsums"></a>14.3.3.2. Audit des paquets : l'outil <code
                       class="command">debsums</code> et ses limites</h4></div></div></div><a
-              id="idm140534125632896"
+              id="idm140256394952608"
               class="indexterm"></a><div
               class="para">
 					<code
@@ -346,8 +346,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140534125624464"></a>14.3.3.3. Surveillance des fichiers : AIDE</h4></div></div></div><a
-              id="idm140534125623696"
+                      id="idm140256394944176"></a>14.3.3.3. Surveillance des fichiers : AIDE</h4></div></div></div><a
+              id="idm140256394943408"
               class="indexterm"></a><div
               class="para">
 					AIDE (<span
@@ -401,7 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                           class="pkg pkg">checksecurity</span> et <span
                           class="pkg pkg">chkrootkit</span>/<span
                           class="pkg pkg">rkhunter</span></strong></p></div></div></div><a
-                id="idm140534125603296"
+                id="idm140256405833728"
                 class="indexterm"></a><div
                 class="para">
 					Le premier paquet contient plusieurs petits scripts qui effectuent des vérifications de base sur le système (mot de passe vide, détection de nouveaux fichiers setuid, etc.) et alertent l'administrateur si nécessaire. Malgré son nom explicite, il ne faut pas se fier seulement à ce paquet pour vérifier la sécurité d'un système Linux.
@@ -417,23 +417,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.intrusion-detection"></a>14.3.4. Détection d'intrusion (IDS/NIDS)</h3></div></div></div><a
-            id="idm140534126337248"
+            id="idm140256405827168"
             class="indexterm"></a><a
-            id="idm140534126336320"
+            id="idm140256405826240"
             class="indexterm"></a><a
-            id="idm140534126335360"
+            id="idm140256405825280"
             class="indexterm"></a><a
-            id="idm140534126334400"
+            id="idm140256405824320"
             class="indexterm"></a><a
-            id="idm140534126333312"
+            id="idm140256405823232"
             class="indexterm"></a><a
-            id="idm140534126332352"
+            id="idm140256405822272"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> Dénis de service</strong></p></div></div></div><a
-              id="idm140534126329472"
+              id="idm140256405819392"
               class="indexterm"></a><div
               class="para">
 				Une attaque de type « déni de service » a pour seul objectif de rendre un service réseau inexploitable. Que cela soit en surchargeant le serveur de requêtes ou en exploitant un bogue de celui-ci, le résultat est toujours le même : le service en question n'est plus fonctionnel, les utilisateurs habituels sont mécontents et l'hébergeur du service réseau visé s'est fait une mauvaise publicité (en plus d'avoir éventuellement perdu des ventes, s'il s'agit par exemple d'un site de commerce en ligne).
@@ -455,9 +455,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="url">→ <a
                 href="https://www.elastic.co/products/kibana">https://www.elastic.co/products/kibana</a></div>
 			</div><a
-            id="idm140534126321856"
+            id="idm140256405811136"
             class="indexterm"></a><a
-            id="idm140534126320736"
+            id="idm140256405810016"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -517,7 +517,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 href="sect.supervision.html#sect.logcheck">Section 14.3.1, « Surveillance des logs avec <code
                   class="command">logcheck</code> »</a>).
 			</div><a
-              id="idm140534126299888"
+              id="idm140256405789056"
               class="indexterm"></a></div></div></div><ul
         class="docnav"><li
           class="previous"><a

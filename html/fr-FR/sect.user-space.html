@@ -63,9 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.user-space"></a>B.5. L'espace utilisateur</h2></div></div></div><a
-          id="idm140534127664240"
+          id="idm140256393832752"
           class="indexterm"></a><a
-          id="idm140534127663280"
+          id="idm140256393831792"
           class="indexterm"></a><div
           class="para">
 			“User-space” refers to the runtime environment of normal (as opposed to kernel) processes. This does not necessarily mean these processes are actually started by users because a standard system normally has several “daemon” (or background) processes running before the user even opens a session. Daemon processes are also considered user-space processes.
@@ -74,13 +74,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-basics"></a>B.5.1. Processus</h3></div></div></div><a
-            id="idm140534127660432"
+            id="idm140256393828944"
             class="indexterm"></a><div
             class="para">
 				When the kernel gets past its initialization phase, it starts the very first process, <code
               class="command">init</code>. Process #1 alone is very rarely useful by itself, and Unix-like systems run with many additional processes.
 			</div><a
-            id="idm140534127658288"
+            id="idm140256393826800"
             class="indexterm"></a><div
             class="para">
 				First of all, a process can clone itself (this is known as a <span
@@ -102,9 +102,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.daemons"></a>B.5.2. Démons</h3></div></div></div><a
-            id="idm140534127650128"
+            id="idm140256393818640"
             class="indexterm"></a><a
-            id="idm140534127649168"
+            id="idm140256393817680"
             class="indexterm"></a><div
             class="para">
 				Un démon est un processus lancé automatiquement au démarrage et qui fonctionne en tâche de fond pour accomplir certaines tâches de maintenance ou fournir des services aux autres processus. Cette notion de « tâche de fond » est arbitraire et ne correspond à rien de particulier du point de vue du système : ce sont des processus comme les autres, qui sont exécutés chacun à son tour pendant un bref intervalle de temps de la même manière que les applications visibles. La distinction est simplement humaine : un processus qui fonctionne sans interaction avec l'utilisateur (sans interface graphique, notamment) est dit fonctionner en tâche de fond ou en tant que démon.
@@ -127,9 +127,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipc"></a>B.5.3. Communications entre processus</h3></div></div></div><a
-            id="idm140534127642016"
+            id="idm140256393810528"
             class="indexterm"></a><a
-            id="idm140534127641056"
+            id="idm140256393809568"
             class="indexterm"></a><div
             class="para">
 				Qu'il s'agisse de démons ou d'applications interactives, un processus isolé n'est souvent pas très utile. Il existe donc différentes méthodes permettant à des processus séparés de communiquer entre eux, soit pour s'échanger des données soit pour se contrôler l'un l'autre. Le terme générique les désignant est <span
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Le système le plus simple est le fichier : le processus qui souhaite émettre des données les écrit dans un fichier dont le nom est convenu à l'avance ; le processus destinataire n'a alors qu'à lire ce fichier pour y récupérer les données.
 			</div><a
-            id="idm140534127638192"
+            id="idm140256405446032"
             class="indexterm"></a><div
             class="para">
 				In the case where you do not wish to store data on disk, you can use a <span
@@ -207,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.libraries"></a>B.5.4. Bibliothèques</h3></div></div></div><a
-            id="idm140534127616688"
+            id="idm140256405424528"
             class="indexterm"></a><div
             class="para">
 				Les bibliothèques de fonctions jouent un rôle crucial dans le fonctionnement d'un système d'exploitation Unix. Ce ne sont pas à proprement parler des programmes, puisqu'elles ne s'exécutent pas indépendamment, mais des collections de fragments de programmes qui sont utilisés par des programmes classiques. Parmi les bibliothèques les plus courantes, citons par exemple :
