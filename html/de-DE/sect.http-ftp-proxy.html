@@ -81,19 +81,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					Filter-Server: falls die Benutzung des Proxy vorgeschrieben ist (und ausgehende Verbindungen gesperrt werden, wenn sie nicht über den Proxy laufen), kann der Proxy bestimmen, ob die Anfrage erlaubt wird oder nicht.
 				</div></li></ul></div><a
-          id="idm139994050132176"
+          id="idm140470085183680"
           class="indexterm"></a><a
-          id="idm139994050131216"
+          id="idm140470085182720"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp. hat Squid als ihren Proxy-Server ausgewählt.
 		</div><a
-          id="idm139994050129728"
+          id="idm140470085181232"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139994050128768"></a>11.6.1. Installieren</h3></div></div></div><div
+                    id="idm140470085180272"></a>11.6.1. Installieren</h3></div></div></div><div
             class="para">
 				The <span
               class="pkg pkg">squid3</span> Debian package only contains the modular (caching) proxy. Turning it into a filtering server requires installing the additional <span
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139994050122656"></a>11.6.2. Einen Cache konfigurieren</h3></div></div></div><div
+                    id="idm140470085173968"></a>11.6.2. Einen Cache konfigurieren</h3></div></div></div><div
             class="para">
 				Enabling the caching server feature is a simple matter of editing the <code
               class="filename">/etc/squid3/squid.conf</code> configuration file and allowing machines from the local network to run queries through the proxy. The following example shows the modifications made by the Falcot Corp administrators:
 			</div><div
             class="example"><a
-              id="idm139994050120784"></a><p
+              id="idm140470085172000"></a><p
               class="title"><strong>Beispiel 11.30. The <code
                   class="filename">/etc/squid3/squid.conf</code> file (excerpts)</strong></p><div
               class="example-contents"><pre
@@ -134,14 +134,14 @@ http_access deny all
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139994050118240"></a>11.6.3. Einen Filter konfigurieren</h3></div></div></div><div
+                    id="idm140470085169456"></a>11.6.3. Einen Filter konfigurieren</h3></div></div></div><div
             class="para">
 				<code
               class="command">squid</code> itself does not perform the filtering; this action is delegated to <code
               class="command">squidGuard</code>. The former must then be configured to interact with the latter. This involves adding the following directive to the <code
               class="filename">/etc/squid3/squid.conf</code> file:
 			</div><a
-            id="idm139994050115408"
+            id="idm140470085166624"
             class="indexterm"></a><pre
             class="programlisting">
 url_rewrite_program /usr/bin/squidGuard -c /etc/squid3/squidGuard.conf
@@ -169,15 +169,15 @@ url_rewrite_program /usr/bin/squidGuard -c /etc/squid3/squidGuard.conf
               class="url">→ <a
                 href="http://www.squidguard.org/Doc/configure.html">http://www.squidguard.org/Doc/configure.html</a></div>
 			</div><a
-            id="idm139994050105248"
+            id="idm140470085156272"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> DansGuardian</strong></p></div></div></div><a
-              id="idm139994050103008"
+              id="idm140470085154032"
               class="indexterm"></a><a
-              id="idm139994050101584"
+              id="idm140470085152608"
               class="indexterm"></a><div
               class="para">
 				The <span

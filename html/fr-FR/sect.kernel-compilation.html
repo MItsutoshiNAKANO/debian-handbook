@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-compilation"></a>8.10. Compilation d'un noyau</h2></div></div></div><a
-          id="idm140256395385392"
+          id="idm140272099714848"
           class="indexterm"></a><a
-          id="idm140256395383952"
+          id="idm140272099713408"
           class="indexterm"></a><div
           class="para">
 			Les noyaux fournis par Debian intègrent le plus grand nombre possible de fonctionnalités ainsi qu'un maximum de pilotes, afin de couvrir le plus grand spectre de configurations matérielles existantes. C'est pourquoi certains utilisateurs préfèrent recompiler le noyau pour n'y inclure que le strict nécessaire. Il existe deux raisons à ce choix. Premièrement, cela peut être pour optimiser la consommation de mémoire, puisque le code du noyau, même s'il n'est jamais utilisé, occupe de la mémoire pour rien (et ne « descend » jamais sur l'espace d'échange, donc c'est de vraie mémoire vive qu'il s'agit), ce qui peut diminuer les performances globales du système. Il peut également s'agir de limiter le risque de failles de sécurité (le code compilé portant alors sur une fraction plus faible du code existant).
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>POUR ALLER PLUS LOIN</em></span> Le Manuel du noyau Debian</strong></p></div></div></div><a
-            id="idm140256395377440"
+            id="idm140272099706896"
             class="indexterm"></a><div
             class="para">
 			L'équipe en charge du noyau dans Debian maintient le « Manuel du noyau Debian » (également disponible dans le paquet <span
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Le bon vieux temps de <span
                         class="pkg pkg">kernel-package</span></strong></p></div></div></div><a
-              id="idm140256395366688"
+              id="idm140272099696144"
               class="indexterm"></a><div
               class="para">
 				À l'époque où le système de compilation du noyau Linux ne permettait pas encore de créer directement des paquets Debian, la manière recommandée de créer ces paquets était d'utiliser l'outil <code
@@ -128,11 +128,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-sources"></a>8.10.2. Récupérer les sources</h3></div></div></div><a
-            id="idm140256395361840"
+            id="idm140272099691296"
             class="indexterm"></a><a
-            id="idm140256395360880"
+            id="idm140272099690336"
             class="indexterm"></a><a
-            id="idm140256395359440"
+            id="idm140272099688896"
             class="indexterm"></a><div
             class="para">
 				Comme tout ce qui peut être utile sur un système Debian, les sources du noyau Linux sont disponibles en paquet. Pour les récupérer, il faudra donc installer un paquet <span
@@ -176,11 +176,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-kernel"></a>8.10.3. Configuration du noyau</h3></div></div></div><a
-            id="idm140256395342448"
+            id="idm140272099671904"
             class="indexterm"></a><a
-            id="idm140256395341008"
+            id="idm140272099670464"
             class="indexterm"></a><a
-            id="idm140256395339568"
+            id="idm140272099669024"
             class="indexterm"></a><div
             class="para">
 				La prochaine étape consiste à configurer le noyau conformément à ses besoins. Le mode opératoire dépend des objectifs.
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-build"></a>8.10.4. Compilation et génération du paquet</h3></div></div></div><a
-            id="idm140256395315856"
+            id="idm140272099645312"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -298,11 +298,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.modules-build"></a>8.10.5. Compilation de modules externes</h3></div></div></div><a
-            id="idm140256395295456"
+            id="idm140272099624912"
             class="indexterm"></a><a
-            id="idm140256395294016"
+            id="idm140272099623472"
             class="indexterm"></a><a
-            id="idm140256395292576"
+            id="idm140272099622032"
             class="indexterm"></a><div
             class="para">
 				Certains modules sont gérés en dehors du noyau Linux officiel. Pour les employer, il faut les compiler de concert avec le noyau correspondant. Debian fournit les sources d'un certain nombre de modules externes, tels que <span
@@ -363,7 +363,7 @@ description:    Xtables: per-IP accounting for large prefixes
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> module-assistant</strong></p></div></div></div><a
-              id="idm140256395277088"
+              id="idm140272099606544"
               class="indexterm"></a><div
               class="para">
 				Avant l'apparition de DKMS, la solution la plus simple pour construire et déployer des modules du noyau était <span
@@ -375,9 +375,9 @@ description:    Xtables: per-IP accounting for large prefixes
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-patch"></a>8.10.6. Emploi d'un patch sur le noyau</h3></div></div></div><a
-            id="idm140256395271664"
+            id="idm140272099601120"
             class="indexterm"></a><a
-            id="idm140256395270224"
+            id="idm140272099599680"
             class="indexterm"></a><div
             class="para">
 				Certaines fonctionnalités ne sont pas intégrées au noyau standard faute de stabilité ou d'accord des mainteneurs du noyau. Dans ce cas, il arrive qu'elles soient diffusées sous la forme de correctif (ou patch), que chacun est alors libre d'appliquer sur les sources du noyau.

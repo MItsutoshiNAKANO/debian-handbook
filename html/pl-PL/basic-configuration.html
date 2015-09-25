@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. Konfigurowanie systemu na inny język </h2></div></div></div><a
-            id="idm140506051358144"
+            id="idm140507730592160"
             class="indexterm"></a><div
             class="para">
 			Jeśli system był zainstalowany w języku francuskim, to prawdopodobnie będzie on miał również ustawiony ten język jako domyślny po instalacji. Jednak warto wiedzieć w jaki sposób instalator ustawia język, aby później, jeśli zajdzie taka potrzeba, będziecie potrafili go zmienić.
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. Ustawianie domyślnego języka.</h3></div></div></div><a
-              id="idm140506042458832"
+              id="idm140507728779504"
               class="indexterm"></a><a
-              id="idm140506041897456"
+              id="idm140507720399376"
               class="indexterm"></a><a
-              id="idm140506053709584"
+              id="idm140507719625616"
               class="indexterm"></a><div
               class="para">
 				Lokalizacja to zestaw ustawień regionalnych. Zalicza się do nich nie tylko język tekstu, ale również format wyświetlania liczb, dat, godzin i kwot pieniężnych, a także reguły porównań alfabetycznych, które definiują alfabetyczną kolejność znaków (z uwzględnieniem znaków diakrytycznych danego języka). Mimo, że każde z tych ustawień może być definiowane niezależnie od pozostałych, na ogół używamy lokalizacji, która stanowi spójny zbiór wartości tychże ustawień, odpowiadający "regionowi" w najszerszym tego słowa znaczeniu. Lokalizacje zazwyczaj są oznaczane kodem o formacie <code
@@ -208,17 +208,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>KULTURA</em></span> Zestawy znaków</strong></p></div></div></div><a
-                id="idm140506048540752"
+                id="idm140507731114512"
                 class="indexterm"></a><a
-                id="idm140506048539792"
+                id="idm140507731113552"
                 class="indexterm"></a><a
-                id="idm140506048538832"
+                id="idm140507731112592"
                 class="indexterm"></a><a
-                id="idm140506048537872"
+                id="idm140507731111632"
                 class="indexterm"></a><a
-                id="idm140506048536912"
+                id="idm140507731110672"
                 class="indexterm"></a><a
-                id="idm140506048535952"
+                id="idm140507731109712"
                 class="indexterm"></a><div
                 class="para">
 				Historycznie, każda lokalizacja posiada powiązany z nią "zestaw znaków" (grupę wszystkich rozpoznawanych w tej lokalizacji znaków) i preferowane "kodowanie" (wewnętrzną, numeryczną reprezentację znaków w komputerze).
@@ -231,11 +231,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it is the default encoding in XML documents.
 			</div><a
-                id="idm140506050466176"
+                id="idm140507732189776"
                 class="indexterm"></a><a
-                id="idm140506050465216"
+                id="idm140507732188816"
                 class="indexterm"></a><a
-                id="idm140506050464256"
+                id="idm140507732187856"
                 class="indexterm"></a><div
                 class="para">
 				Spośród wszystkich kodowań, to powinno być generalnie używane, w związku z czym stanowi ono domyślne ustawienie w systemie Debian.
@@ -260,11 +260,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it is picked up by all user sessions since PAM will inject its content in the <code
                 class="varname">LANG</code> environment variable.
 			</div><a
-              id="idm140506037785184"
+              id="idm140507727904160"
               class="indexterm"></a><a
-              id="idm140506037784224"
+              id="idm140507727903200"
               class="indexterm"></a><a
-              id="idm140506037783264"
+              id="idm140507727902240"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -291,41 +291,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/etc/default/locale</code> file works in a similar manner, but contains only the <code
                   class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it is generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
 			</div><a
-                id="idm140506053005088"
+                id="idm140507717962768"
                 class="indexterm"></a><a
-                id="idm140506053004128"
+                id="idm140507717961808"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. Konfiguracja klawiatury</h3></div></div></div><a
-              id="idm140506053001632"
+              id="idm140507717959312"
               class="indexterm"></a><a
-              id="idm140506053000672"
+              id="idm140507717958352"
               class="indexterm"></a><div
               class="para">
 				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it is based on debconf and is implemented in the <span
                 class="pkg pkg">keyboard-configuration</span> package. Thus the <code
                 class="command">dpkg-reconfigure keyboard-configuration</code> command can be used at any time to reset the keyboard layout.
 			</div><a
-              id="idm140506052997952"
+              id="idm140507717955552"
               class="indexterm"></a><a
-              id="idm140506052996832"
+              id="idm140507717954432"
               class="indexterm"></a><a
-              id="idm140506052995712"
+              id="idm140507717953312"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm140506052994272"
+                id="idm140507717951872"
                 class="indexterm"></a>
 			</div><a
-              id="idm140506052993312"
+              id="idm140507717950912"
               class="indexterm"></a><a
-              id="idm140506052992032"
+              id="idm140507717949632"
               class="indexterm"></a><a
-              id="idm140506052990752"
+              id="idm140507717948352"
               class="indexterm"></a><a
-              id="idm140506052949888"
+              id="idm140507727447216"
               class="indexterm"></a><div
               class="para">
 				Należy mieć na uwadze, że opisana tutaj konfiguracja klawiatury dla trybu graficznego dotyczy jedynie domyślnego układu; środowiska GNOME i KDE oraz inne posiadają w swoich ustawieniach panel sterowania klawiatury umożliwiający każdemu użytkownikowi na określenie swojej własnej konfiguracji. W panelach tych są również dostępne różne dodatkowe opcje dotyczące zachowania niektórych poszczególnych klawiszy.

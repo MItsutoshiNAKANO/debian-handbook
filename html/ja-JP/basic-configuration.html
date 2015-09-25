@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. 他の言語用にシステムを設定</h2></div></div></div><a
-            id="idm140241093640256"
+            id="idm140508263807376"
             class="indexterm"></a><div
             class="para">
 			フランス語を使ってシステムをインストールした場合、既にフランス語がデフォルト言語になっているかもしれません。しかし、インストーラが言語を設定する際にやっていることを知っておくべきです。こうしておくことで、後から必要になった際に言語を切り替えることが可能になります。
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. デフォルト言語の設定</h3></div></div></div><a
-              id="idm140241090591488"
+              id="idm140508261555840"
               class="indexterm"></a><a
-              id="idm140241094583424"
+              id="idm140508260927552"
               class="indexterm"></a><a
-              id="idm140241094582464"
+              id="idm140508260926592"
               class="indexterm"></a><div
               class="para">
 				ロケールとは地域に関する設定項目のグループです。設定内容にはテキストの言語だけではなく、番号の表示書式、日付、時間、通貨、アルファベット比較則 (アクセント付き文字を使う言語では適切な設定が必要) が含まれます。各パラメータは独立に設定できますが、通常は同じロケールを使います。ロケールとは広い意味で「地域」に関連するパラメータの値の組のことです。ロケールは通常 <code
@@ -208,17 +208,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>CULTURE</em></span> 文字セット</strong></p></div></div></div><a
-                id="idm140241093015920"
+                id="idm140508263863152"
                 class="indexterm"></a><a
-                id="idm140241093014960"
+                id="idm140508263862192"
                 class="indexterm"></a><a
-                id="idm140241093014032"
+                id="idm140508263861264"
                 class="indexterm"></a><a
-                id="idm140241093013072"
+                id="idm140508263860304"
                 class="indexterm"></a><a
-                id="idm140241093012112"
+                id="idm140508263859344"
                 class="indexterm"></a><a
-                id="idm140241093011152"
+                id="idm140508263858384"
                 class="indexterm"></a><div
                 class="para">
 				歴史的に言って、各ロケールは関連する「文字セット」(既知の文字のグループ) と推奨される「エンコーディング」(コンピュータにおける文字の内部表現) を持っていました。
@@ -231,11 +231,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				外国語を使って仕事することは、日常的に複数のエンコーディングと文字セットを切り替えること、を意味していました。さらに、多言語文書を書くことはさらに難しく、ほとんど処理できない問題でした。この問題に対処するために Unicode (全世界の言語のほぼすべての表記体系の巨大なカタログ) が作られました。Unicode エンコーディングの 1 つである UTF-8 は 128 ASCII 文字 (7 ビットコード) と互換性を保ちながら、他の文字を別のやり方で取り扱います。非 ASCII 文字は数ビットの特殊なエスケープシーケンスで始まり、このエスケープシーケンスが文字の長さを暗黙のうちに定義します。このことにより、1 バイトから数バイトのシーケンスで全 Unicode 文字の符号化が可能になります。UTF-8 は XML 文書のデフォルトエンコーディングだったため広く使われています。
 			</div><a
-                id="idm140241105031600"
+                id="idm140508265721600"
                 class="indexterm"></a><a
-                id="idm140241105030640"
+                id="idm140508265720640"
                 class="indexterm"></a><a
-                id="idm140241105029680"
+                id="idm140508265719680"
                 class="indexterm"></a><div
                 class="para">
 				通常のエンコーディングは UTF-8 を使うべきで、Debian システムではこれをデフォルトとしています。
@@ -263,11 +263,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="varname">LANG</code> 環境変数内に <code
                 class="filename">/etc/default/locale</code> ファイルの内容を代入するからです。
 			</div><a
-              id="idm140241092886992"
+              id="idm140508260695600"
               class="indexterm"></a><a
-              id="idm140241092886032"
+              id="idm140508260694640"
               class="indexterm"></a><a
-              id="idm140241092885072"
+              id="idm140508260693680"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -294,32 +294,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/etc/default/locale</code> ファイルも同様に働きますが、ファイルには <code
                   class="varname">LANG</code> 環境変数だけが含まれます。このようにファイルを分離しているおかげで、一部の PAM ユーザは地域化せずに完全な環境を継承できます。実際のところ、サーバプログラムを地域化した状態で実行することは推奨されません。その一方で、ユーザセッションを開くプログラムが地域化と地域設定を担うことを推奨します。
 			</div><a
-                id="idm140241091382320"
+                id="idm140508258413792"
                 class="indexterm"></a><a
-                id="idm140241091381360"
+                id="idm140508258412832"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. キーボードの設定</h3></div></div></div><a
-              id="idm140241091378896"
+              id="idm140508258410368"
               class="indexterm"></a><a
-              id="idm140241091377968"
+              id="idm140508258409440"
               class="indexterm"></a><div
               class="para">
 				キーボードレイアウトの管理方法がコンソールとグフラフィカルモードで違っていたとしても、Debian には両方を設定できる単一の設定インターフェースが提供されています。すなわち、そのインターフェースは debconf に基づいており、<span
                 class="pkg pkg">keyboard-configuration</span> パッケージで実装されています。キーボードレイアウトをリセットする際には、<code
                 class="command">dpkg-reconfigure keyboard-configuration</code> を使います。
 			</div><a
-              id="idm140241091375040"
+              id="idm140508258406512"
               class="indexterm"></a><a
-              id="idm140241091373920"
+              id="idm140508258405392"
               class="indexterm"></a><a
-              id="idm140241091372800"
+              id="idm140508258404272"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm140241091371360"
+                id="idm140508258402832"
                 class="indexterm"></a>質問に関連する要素は、物理キーボードレイアウト (アメリカ合衆国で使われる一般的な PC キーボードの場合「Generic 104 key」)、選択したレイアウト (通常「US」)、AltGr (右 Alt) キーの場所です。最後に「Compose キー」として使うキーが質問されます。このキーはキーストロークを組み合わせて特殊文字を入力する際に使われます。<span
                 class="keycap"><strong>Compose</strong></span> <span
                 class="keycap"><strong>'</strong></span> <span
@@ -327,13 +327,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/usr/share/X11/locale/en_US.UTF-8/Compose</code> ファイル (または、<code
                 class="filename">/usr/share/X11/locale/compose.dir</code> に書かれた現在のロケールに従って定義された別ファイル) に記述されています。
 			</div><a
-              id="idm140241106781280"
+              id="idm140508258505696"
               class="indexterm"></a><a
-              id="idm140241106780000"
+              id="idm140508258504416"
               class="indexterm"></a><a
-              id="idm140241106778720"
+              id="idm140508258503136"
               class="indexterm"></a><a
-              id="idm140241106777120"
+              id="idm140508258501536"
               class="indexterm"></a><div
               class="para">
 				ここで述べたグラフィカルモードのキーボード設定によって影響を受けるのはデフォルトレイアウトだけです。さらに GNOME と KDE 環境では、環境設定の中にキーボードコントロールパネルがあり、これを使うことで各ユーザが固有のキーボードを設定することが可能です。特別なキーの挙動に関する追加的オプションをこのコントロールパネルから設定できます。

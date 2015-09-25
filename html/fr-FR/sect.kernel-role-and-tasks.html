@@ -81,13 +81,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><div
             class="para">
 				<a
-              id="idm140256393889120"
+              id="idm140272095151120"
               class="indexterm"></a> <a
-              id="idm140256393888320"
+              id="idm140272095150320"
               class="indexterm"></a> <a
-              id="idm140256393887520"
+              id="idm140272095149520"
               class="indexterm"></a> <a
-              id="idm140256393886720"
+              id="idm140272095148720"
               class="indexterm"></a> Le noyau exporte de nombreuses informations sur le matériel qu'il a détecté par l'intermédiaire des systèmes de fichiers virtuels <code
               class="filename">/proc/</code> et <code
               class="filename">/sys/</code>. Plusieurs utilitaires synthétisent certaines de ces informations : citons <code
@@ -99,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="pkg pkg">pcmciautils</span>) pour les cartes PCMCIA. Ces programmes sont très utiles quand il faut pouvoir identifier de manière certaine le modèle d'un périphérique. En outre, cette identification unique permet de mieux cibler les recherches sur Internet et de trouver plus facilement des documents pertinents.
 			</div><div
             class="example"><a
-              id="idm140256393881040"></a><p
+              id="idm140272095143040"></a><p
               class="title"><strong>Exemple B.1. Exemple d'informations fournies par <code
                   class="command">lspci</code> et <code
                   class="command">lsusb</code></strong></p><div
@@ -150,9 +150,9 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.filesystems"></a>B.4.2. Systèmes de fichiers</h3></div></div></div><a
-            id="idm140256393867472"
+            id="idm140272095129472"
             class="indexterm"></a><a
-            id="idm140256393866512"
+            id="idm140272095128512"
             class="indexterm"></a><div
             class="para">
 				Un des aspects les plus visibles du noyau est celui des systèmes de fichiers. Les systèmes Unix intègrent en effet les différentes méthodes de stockage de fichiers dans une arborescence unique, ce qui permet aux utilisateurs (et aux applications) de stocker ou retrouver des données simplement grâce à leur emplacement dans cette arborescence.
@@ -170,30 +170,31 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
               class="literal">home</code> présent à la racine. Le noyau fait alors la traduction entre ce système de nommage de fichiers et leur format de stockage physique sur disque.
 			</div><div
             class="para">
-				Unlike other systems, there is only one such hierarchy, and it can integrate data from several disks. One of these disks is used as the root, and the others are “mounted” on directories in the hierarchy (the Unix command is called <code
-              class="command">mount</code>); these other disks are then available under these “mount points”. This allows storing users' home directories (traditionally stored within <code
-              class="filename">/home/</code>) on a second hard disk, which will contain the <code
-              class="literal">rhertzog</code> and <code
-              class="literal">rmas</code> directories. Once the disk is mounted on <code
-              class="filename">/home/</code>, these directories become accessible at their usual locations, and paths such as <code
-              class="filename">/home/rmas/Desktop/hello.txt</code> keep working.
+				Contrairement à d'autres systèmes, cette arborescence est unique et peut intégrer les données de plusieurs disques. L'un de ces disques est alors utilisé comme racine, les autres étant « montés » dans des répertoires de l'arborescence (la commande Unix qui réalise cela est <code
+              class="command">mount</code>) ; ces autres disques sont alors accessibles sous ces « points de montage ». On peut ainsi déporter sur un deuxième disque dur les données personnelles des utilisateurs (qui sont traditionnellement stockées dans <code
+              class="filename">/home/</code>). Ce disque contiendra alors les répertoires <code
+              class="literal">rhertzog</code> et <code
+              class="literal">rmas</code>. Une fois le disque monté dans <code
+              class="filename">/home/</code>, ces répertoires deviendront accessibles aux emplacements habituels, et on pourra retrouver <code
+              class="filename">/home/rmas/Bureau/hello.txt</code>.
 			</div><a
-            id="idm140256393856000"
+            id="idm140272095117872"
             class="indexterm"></a><div
             class="para">
-				There are many filesystem formats, corresponding to many ways of physically storing data on disks. The most widely known are <span
+				Il existe différents systèmes de fichiers, qui correspondent à différentes manières de stocker physiquement les données sur les disques. Les plus connus sont <span
               class="emphasis"><em>ext2</em></span>, <span
-              class="emphasis"><em>ext3</em></span> and <span
-              class="emphasis"><em>ext4</em></span>, but others exist. For instance, <span
-              class="emphasis"><em>vfat</em></span> is the system that was historically used by DOS and Windows operating systems, which allows using hard disks under Debian as well as under Windows. In any case, a filesystem must be prepared on a disk before it can be mounted and this operation is known as “formatting”. Commands such as <code
-              class="command">mkfs.ext3</code> (where <code
-              class="command">mkfs</code> stands for <span
-              class="emphasis"><em>MaKe FileSystem</em></span>) handle formatting. These commands require, as a parameter, a device file representing the partition to be formatted (for instance, <code
-              class="filename">/dev/sda1</code>). This operation is destructive and should only be run once, except if one deliberately wishes to wipe a filesystem and start afresh.
+              class="emphasis"><em>ext3</em></span> et <span
+              class="emphasis"><em>ext4</em></span>, mais il en existe d'autres. Par exemple, <span
+              class="emphasis"><em>vfat</em></span> est le système historiquement utilisé par les systèmes de type DOS et Windows et permet donc d'utiliser des disques durs sous Debian autant que sous Windows. Dans tous les cas, il faut préparer le système de fichiers avant de pouvoir le monter ; cette opération, fréquemment appelée formatage, est effectuée par le biais de commandes comme <code
+              class="command">mkfs.ext3</code> (<code
+              class="command">mkfs</code> étant une abréviation de <span
+              class="foreignphrase"><em
+                class="foreignphrase">MaKe FileSystem</em></span>). Ces commandes prennent en paramètre le fichier de périphérique représentant la partition à formater (par exemple <code
+              class="filename">/dev/hda1</code>). Cette opération destructrice n'est à exécuter qu'une seule fois, sauf si l'on souhaite délibérément vider le contenu du système de fichiers et repartir de zéro.
 			</div><div
             class="para">
-				There are also network filesystems, such as <acronym
-              class="acronym">NFS</acronym>, where data is not stored on a local disk. Instead, data is transmitted through the network to a server that stores and retrieves them on demand. The filesystem abstraction shields users from having to care: files remain accessible in their usual hierarchical way.
+				Il existe aussi des systèmes de fichiers réseau, comme <acronym
+              class="acronym">NFS</acronym>, où les données ne sont pas stockées sur un disque local ; elles sont en effet transmises à un serveur sur le réseau, qui les stockera lui-même et les restituera à la demande ; l'abstraction du système de fichiers permet aux utilisateurs de ne pas avoir à s'en soucier : les fichiers resteront accessibles par leurs emplacements dans l'arborescence.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -206,7 +207,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-management"></a>B.4.4. Gestion des processus</h3></div></div></div><a
-            id="idm140256393845040"
+            id="idm140272095106704"
             class="indexterm"></a><div
             class="para">
 				Un processus correspond à un programme en cours d'exécution. Ceci inclut une zone de mémoire dans laquelle est stocké le programme lui-même, mais également l'ensemble des données sur lesquelles le programme travaille. Le noyau est responsable de la création des processus et de leur suivi : lorsqu'un programme est lancé, le noyau met de côté cette zone de mémoire qu'il réserve au processus, y charge (depuis le disque) le code du programme et lance l'exécution. Il garde également des informations qui concernent ce processus, notamment un numéro d'identification (<span
@@ -216,15 +217,17 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
                 class="foreignphrase">process identifier</em></span>).
 			</div><div
             class="para">
-				Unix-like kernels (including Linux), like most other modern operating systems, are capable of “multi-tasking”. In other words, they allow running many processes “at the same time”. There is actually only one running process at any one time, but the kernel cuts time into small slices and runs each process in turn. Since these time slices are very short (in the millisecond range), they create the illusion of processes running in parallel, although they are actually only active during some time intervals and idle the rest of the time. The kernel's job is to adjust its scheduling mechanisms to keep that illusion, while maximizing the global system performance. If the time slices are too long, the application may not appear as responsive as desired. Too short, and the system loses time switching tasks too frequently. These decisions can be tweaked with process priorities. High-priority processes will run for longer and with more frequent time slices than low-priority processes.
+				Les noyaux de type Unix (dont fait partie Linux), comme la plupart des systèmes d'exploitation modernes, sont dits « multi-tâches », c'est-à-dire qu'ils permettent l'exécution « simultanée » de nombreux processus. En réalité, un seul processus peut fonctionner à un instant donné ; le noyau découpe alors le fil du temps en fines tranches et exécute les différents processus à tour de rôle. Comme ces intervalles de temps ont des durées très courtes (de l'ordre de la milliseconde), l'utilisateur a l'illusion de programmes s'exécutant en parallèle, alors qu'ils ne sont en réalité actifs que pendant certains intervalles et suspendus le reste du temps. La tâche du noyau est d'ajuster ses mécanismes d'ordonnancement pour parfaire cette illusion tout en maximisant les performances globales du système : si les intervalles sont trop longs, l'application manquera de réactivité vis-à-vis de l'utilisateur ; s'ils sont trop courts, le système perdra du temps à basculer d'une tâche à l'autre trop souvent. Ces décisions peuvent être influencées par des notions de priorités affectées à un processus ; un processus de haute priorité bénéficiera pour s'exécuter d'intervalles de temps plus longs et plus fréquents qu'un processus de basse priorité.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>NOTE</em></span> Systèmes multi-processeurs et assimilés</strong></p></div></div></div><div
               class="para">
-				The limitation described above of only one process being able to run at a time, doesn't always apply. The actual restriction is that there can only be one running process <span
-                class="emphasis"><em>per processor core</em></span> at a time. Multi-processor, multi-core or “hyper-threaded” systems allow several processes to run in parallel. The same time-slicing system is still used, though, so as to handle cases where there are more active processes than available processor cores. This is far from unusual: a basic system, even a mostly idle one, almost always has tens of running processes.
+				La limitation évoquée ci-dessus d'un seul processus pouvant fonctionner à la fois, ne s'applique pas systématiquement. La réelle restriction est qu'il ne peut s'exécuter à un instant donné qu'un processus <span
+                class="emphasis"><em>par cœur de processeur</em></span>. Les systèmes multi-processeurs, multi-cœurs ou proposant de l'<span
+                class="foreignphrase"><em
+                  class="foreignphrase">hyperthreading</em></span> permettent en effet à plusieurs processus d'être exécutés simultanément. Le même principe de découpage du temps en intervalles attribués à tour de rôle aux processus actifs reste appliqué, afin de pouvoir traiter le cas où le nombre de processus en cours est supérieur à celui des cœurs disponibles. Cette situation est loin d'être exceptionnelle : un système de base, même peu actif, a presque toujours quelques dizaines de processus en cours d'exécution.
 			</div></div><div
             class="para">
 				Bien entendu, le noyau autorise l'exécution en parallèle de plusieurs processus correspondant au même programme : chacun dispose alors de ses propres intervalles de temps pour s'exécuter, ainsi que de sa zone de mémoire réservée. Comme un processus n'a accès qu'à sa propre zone de mémoire, les données de chacun restent indépendantes.
@@ -234,7 +237,7 @@ Bus 002 Device 004: ID 413c:8103 Dell Computer Corp. Wireless 350 Bluetooth
                   class="title"><a
                     id="sect.permissions"></a>B.4.5. Gestion des permissions</h3></div></div></div><div
             class="para">
-				Unix-like systems are also multi-user. They provide a rights management system that supports separate users and groups; it also allows control over actions based on permissions. The kernel manages data for each process, allowing it to control permissions. Most of the time, a process is identified by the user who started it. That process is only permitted to take those actions available to its owner. For instance, trying to open a file requires the kernel to check the process identity against access permissions (for more details on this particular example, see <a
+				Les systèmes de type Unix sont également multi-utilisateurs. Ils intègrent une notion de droits séparant les utilisateurs et les groupes d'utilisateurs entre eux; ils autorisent ou non certaines actions en fonction de l'ensemble de droits dont on dispose. Le noyau gère donc, pour chaque processus, un ensemble de données qui vérifient les permissions de ce processus. En règle générale, il s'agit de « l'identité » sous laquelle tourne le processus, qui correspond le plus souvent au compte utilisateur qui a déclenché son exécution. Beaucoup d'actions ne pourront être menées à bien par le processus que s'il dispose des permissions requises. Par exemple, l'opération d'ouverture d'un fichier est subordonnée à une vérification de la compatibilité entre les permissions du fichier et l'identité du processus (cet exemple particulier est détaillé dans la <a
               class="xref"
               href="sect.rights-management.html">Section 9.3, « Gestion des droits »</a>).
 			</div></div></div><ul

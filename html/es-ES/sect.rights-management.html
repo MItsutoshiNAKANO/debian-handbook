@@ -71,17 +71,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Linux es definitivamente un sistema multiusuario por lo que necesita proveer un sistema de permisos para controlar el conjunto de operaciones autorizadas sobre archivos y directorios, lo que incluye todos los recursos del sistema y los dispositivos (en un sistema Unix cualquier dispositivo es representado por un archivo o un directorio). Este principio es común a todos los sistemas Unix pero siempre es útil recordarlo, especialmente porque existen algunos usos avanzados interesantes y relativamente desconocidos.
 		</div><a
-          id="idm139924868098096"
+          id="idm139627323624176"
           class="indexterm"></a><a
-          id="idm139924868097136"
+          id="idm139627323623216"
           class="indexterm"></a><a
-          id="idm139924868096176"
+          id="idm139627323622256"
           class="indexterm"></a><a
-          id="idm139924868094736"
+          id="idm139627323620816"
           class="indexterm"></a><a
-          id="idm139924868093296"
+          id="idm139627323619376"
           class="indexterm"></a><a
-          id="idm139924868091856"
+          id="idm139627323617936"
           class="indexterm"></a><div
           class="para">
 			Cada archivo o directorio tiene permisos específicos para tres categorías de usuarios:
@@ -123,13 +123,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 					ejecución (representado con <code
                   class="literal">x</code> por «eXecute»: ejecutar).
 				</div></li></ul></div><a
-          id="idm139924868080048"
+          id="idm139627323606128"
           class="indexterm"></a><a
-          id="idm139924868079088"
+          id="idm139627323605168"
           class="indexterm"></a><a
-          id="idm139924868078128"
+          id="idm139627323604208"
           class="indexterm"></a><a
-          id="idm139924868077168"
+          id="idm139627323603248"
           class="indexterm"></a><div
           class="para">
 			In the case of a file, these rights are easily understood: read access allows reading the content (including copying), write access allows changing it, and execute access allows you to run it (which will only work if it is a program).
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">setuid</code> y <code
               class="literal">setgid</code> (representados con la letra «s»). Sepa que frecuentemente haremos referencias a «bits» ya que cada uno de estos valores booleanos pueden representarse con un 0 o un 1. Estos dos permisos le permiten a cualquier usuario ejecutar el programa con los permisos del dueño o del grupo respectivamente. Este mecanismo provee acceso a funcionalidades que necesitan más permisos de los que tendría normalmente.
 		</div><a
-            id="idm139924868071776"
+            id="idm139627323597856"
             class="indexterm"></a><a
-            id="idm139924868070496"
+            id="idm139627323596576"
             class="indexterm"></a><div
             class="para">
 			Dado que un programa cuyo dueño es root con <code
@@ -164,14 +164,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>SEGURIDAD</em></span> Directorios <code
                       class="literal">setgid</code> y el <span
                       class="emphasis"><em>bit «sticky»</em></span> (pegajoso)</strong></p></div></div></div><a
-            id="idm139924868063968"
+            id="idm139627323590048"
             class="indexterm"></a><div
             class="para">
 			El bit <code
               class="literal">setgid</code> también funciona en directorios. Cualquier elemento creado en tales directorios serán asignados automáticamente al grupo dueño del directorio padre en lugar de heredar el grupo principal de su creador como es usual. Esta configuración evita que el usuario tenga que cambiar su grupo principal (con el programa <code
               class="command">newgrp</code>) cuando trabaje en un árbol de archivos compartidos entre varios usuarios del mismo grupo dedicado.
 		</div><a
-            id="idm139924868060848"
+            id="idm139627323586928"
             class="indexterm"></a><div
             class="para">
 			El bit «sticky» (representado por la letra «t») es un permiso que sólo es util en directorios. Es utilizado especialmente en directorios temporales a los que todos tienen permisos de escritura (como <code
@@ -216,15 +216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="literal">a</code> (por «all», todos) incluye las tres categorías de usuarios, por lo que <code
             class="literal">a=rx</code> otorga los mismos permisos (lecutra y ejecución, pero no escritura) a las tres categorías de usuario.
 		</div><a
-          id="idm139924868044960"
+          id="idm139627323571040"
           class="indexterm"></a><a
-          id="idm139924868043840"
+          id="idm139627323569920"
           class="indexterm"></a><a
-          id="idm139924868042720"
+          id="idm139627323568800"
           class="indexterm"></a><a
-          id="idm139924868041600"
+          id="idm139627323567680"
           class="indexterm"></a><a
-          id="idm139924868040672"
+          id="idm139627323566752"
           class="indexterm"></a><div
           class="para">
 			La representación numérica (octal) asocia cada permiso con un valor: 4 para lectura, 2 para escritura y 1 para ejecución. Asociamos cada combinación de permisos con la suma de dichos valores. Se asigna cada valor a las diferentes categorías de usuarios uniéndolos en el orden usual (dueño, grupo, otros).
@@ -287,11 +287,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">umask</code> en una consola; verá una máscara como <code
               class="computeroutput">0022</code>. Ésta es simplemente una representación octal de los permisos que serán eliminados sitemáticamente (en este caso, el permiso de escritura para el grupo y otros usuarios).
 		</div><a
-            id="idm139924868018816"
+            id="idm139627323544896"
             class="indexterm"></a><a
-            id="idm139924868017856"
+            id="idm139627323543936"
             class="indexterm"></a><a
-            id="idm139924868016416"
+            id="idm139627323542496"
             class="indexterm"></a><div
             class="para">
 			Si provee un nuevo valor octal, el programa <code

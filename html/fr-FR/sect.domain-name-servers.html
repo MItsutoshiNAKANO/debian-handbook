@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.dns-principe"></a>10.6.1. Principe et fonctionnement</h3></div></div></div><a
-            id="idm140256406723776"
+            id="idm140272100678752"
             class="indexterm"></a><a
-            id="idm140256406722816"
+            id="idm140272100677792"
             class="indexterm"></a><div
             class="para">
 				Le service de gestion des noms (<span
@@ -86,9 +86,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Les informations DNS sont regroupées par zones, correspondant chacune à un domaine ou à une plage d'adresses IP (les adresses IP sont généralement allouées par blocs d'adresses consécutives). Un serveur primaire fait autorité sur le contenu d'une zone ; un serveur secondaire, normalement hébergé sur une autre machine, se contente de proposer une copie de la zone primaire, qu'il met à jour régulièrement.
 			</div><a
-            id="idm140256406718496"
+            id="idm140272100673472"
             class="indexterm"></a><a
-            id="idm140256406717056"
+            id="idm140272100672032"
             class="indexterm"></a><div
             class="para">
 				Chaque zone peut contenir différents types d'enregistrements (<span
@@ -101,14 +101,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">A</code> : attribution d'une adresse IPv4. <a
-                    id="idm140256406713200"
+                    id="idm140272100668176"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">CNAME</code> : définition d'un alias. <a
-                    id="idm140256406711152"
+                    id="idm140272100666128"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="xref"
                     href="network-services.html#sidebar.smtp"><span
                       class="emphasis"><em>B.A.-BA</em></span> SMTP</a>). S'il ne répond pas, le deuxième serveur sera contacté, etc. <a
-                    id="idm140256406708080"
+                    id="idm140272100663056"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -127,14 +127,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">PTR</code> : correspondance adresse IP vers nom. Elle est stockée dans une zone dédiée à la résolution inverse, nommée en fonction de la plage d'adresses IP : par exemple <code
                     class="literal">1.168.192.in-addr.arpa</code> pour toutes les adresses du réseau <code
                     class="literal">192.168.1.0/24</code>. <a
-                    id="idm140256406704592"
+                    id="idm140272100659568"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
                   class="para">
 						<code
                     class="literal">AAAA</code> : correspondance nom vers adresse IPv6. <a
-                    id="idm140256406702544"
+                    id="idm140272100657520"
                     class="indexterm"></a>
 					</div></li><li
                 class="listitem"><div
@@ -143,12 +143,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">NS</code> : correspondance nom vers serveur de noms. Chaque domaine doit compter au moins un enregistrement NS. Tous ces enregistrements pointent sur un serveur DNS capable de répondre aux requêtes portant sur ce domaine ; ils signaleront les serveurs primaires et secondaires du domaine concerné. Ces enregistrements permettent aussi de mettre en place une délégation DNS. On pourra ainsi indiquer que le domaine <code
                     class="literal">interne.falcot.com</code> est géré par un autre serveur de noms et déléguer ainsi une partie du service. Évidemment, le serveur concerné devra déclarer une zone <code
                     class="literal">interne.falcot.com</code>. <a
-                    id="idm140256406699008"
+                    id="idm140272100653984"
                     class="indexterm"></a>
 					</div></li></ul></div><a
-            id="idm140256406697888"
+            id="idm140272100652864"
             class="indexterm"></a><a
-            id="idm140256406696448"
+            id="idm140272100651424"
             class="indexterm"></a><div
             class="para">
 				Le logiciel serveur de nom de référence, Bind, est développé par l'ISC (<span
@@ -159,17 +159,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				D'autre part, elle prend en charge DNSSEC, norme qui permet de signer et donc d'authentifier les enregistrements DNS, interdisant ainsi toute falsification de ces données, par exemple par des intermédiaires mal intentionnés.
 			</div><a
-            id="idm140256406692352"
+            id="idm140272100647328"
             class="indexterm"></a><a
-            id="idm140256406690928"
+            id="idm140272100645904"
             class="indexterm"></a><a
-            id="idm140256406689968"
+            id="idm140272100644944"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> DNSSEC</strong></p></div></div></div><a
-              id="idm140256406687760"
+              id="idm140272100642736"
               class="indexterm"></a><div
               class="para">
 				The DNSSEC norm is quite complex; this partly explains why it is not in widespread usage yet (even if it perfectly coexists with DNS servers unaware of DNSSEC). To understand all the ins and outs, you should check the following article. <div
@@ -193,21 +193,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ATTENTION</em></span> Noms des zones inverses</strong></p></div></div></div><a
-              id="idm140256406680064"
+              id="idm140272100635040"
               class="indexterm"></a><a
-              id="idm140256406678624"
+              id="idm140272100633600"
               class="indexterm"></a><a
-              id="idm140256406677664"
+              id="idm140272100632640"
               class="indexterm"></a><a
-              id="idm140256406676544"
+              id="idm140272100631520"
               class="indexterm"></a><a
-              id="idm140256406675424"
+              id="idm140272100630400"
               class="indexterm"></a><div
               class="para">
-				Reverse zones have a particular name. The zone covering the <code
-                class="literal">192.168.0.0/16</code> network needs to be named <code
-                class="literal">168.192.in-addr.arpa</code>: the IP address components are reversed, and followed by the <code
-                class="literal">in-addr.arpa</code> suffix.
+				Une zone inverse porte un nom particulier. La zone couvrant le réseau <code
+                class="literal">192.168.0.0/16</code> s'appellera ainsi <code
+                class="literal">168.192.in-addr.arpa</code> : les composants de l'adresse IP sont inversés et suivis du suffixe <code
+                class="literal">in-addr.arpa</code>.
 			</div><div
               class="para">
 				Pour les réseaux IPv6, le suffixe est <code
@@ -220,22 +220,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>ASTUCE</em></span> Tester le serveur DNS</strong></p></div></div></div><div
               class="para">
-				The <code
-                class="command">host</code> command (in the <span
-                class="pkg pkg">bind9-host</span> package) queries a DNS server, and can be used to test the server configuration. For example, <code
-                class="command">host machine.falcot.com localhost</code> checks the local server's reply for the <code
-                class="literal">machine.falcot.com</code> query. <code
+				La commande <code
+                class="command">host</code> (du paquet <span
+                class="pkg pkg">bind9-host</span>) interroge un serveur DNS, par exemple celui qu'on vient de configurer. La commande <code
+                class="command">host machine.falcot.com localhost</code> contrôlera donc la réponse du serveur DNS local pour la requête <code
+                class="literal">machine.falcot.com</code>. La commande <code
                 class="command">host <em
-                  class="replaceable">ipaddress</em> localhost</code> tests the reverse resolution.
+                  class="replaceable">adresseip</em> localhost</code> testera la résolution inverse.
 			</div><a
-              id="idm140256406665568"
+              id="idm140272100620624"
               class="indexterm"></a></div><div
             class="para">
 				On pourra configurer un serveur DNS en s'inspirant des extraits suivants, issus des fichiers de configuration de la société Falcot.
 			</div><a
-            id="idm140256406663680"
+            id="idm140272100618736"
             class="indexterm"></a><a
-            id="idm140256406662560"
+            id="idm140272100617616"
             class="indexterm"></a><div
             class="example"><a
               id="example.bind-named.conf.local"></a><p

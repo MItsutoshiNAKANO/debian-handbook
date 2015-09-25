@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.netstat"></a>10.8.1. Diagnostic local : <code
                     class="command">netstat</code></h3></div></div></div><a
-            id="idm140256406616576"
+            id="idm140272100571632"
             class="indexterm"></a><div
             class="para">
 				Citons tout d'abord la commande <code
@@ -134,8 +134,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="computeroutput"># </code><strong
               class="userinput"><code>netstat -tupan</code></strong>
 <code
-              class="computeroutput">Active Internet connections (servers and established)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+              class="computeroutput">Connexions Internet actives (serveurs et établies)
+Proto Recv-Q Send-Q Adresse locale          Adresse distante        Etat        PID/Program name
 tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      397/rpcbind     
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      431/sshd        
 tcp        0      0 0.0.0.0:36568           0.0.0.0:*               LISTEN      407/rpc.statd   
@@ -178,7 +178,7 @@ udp6       0      0 :::5353                 :::*                                
                   class="title"><a
                     id="sect.nmap"></a>10.8.2. Diagnostic distant : <code
                     class="command">nmap</code></h3></div></div></div><a
-            id="idm140256406590480"
+            id="idm140272100545536"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -244,11 +244,11 @@ OS and Service detection performed. Please report any incorrect results at http:
 Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
 </code></pre><div
             class="para">
-				As expected, the SSH and Exim4 applications are listed. Note that not all applications listen on all IP addresses; since Exim4 is only accessible on the <code
-              class="literal">lo</code> loopback interface, it only appears during an analysis of <code
-              class="literal">localhost</code> and not when scanning <code
-              class="literal">mirtuel</code> (which maps to the <code
-              class="literal">eth0</code> interface on the same machine).
+				On retrouve bien les applications SSH et Exim4. Notez que toutes les applications n'écoutent pas sur toutes les adresses IP ; ainsi, comme Exim4 n'est accessible que sur l'interface de boucle locale <code
+              class="literal">lo</code>, il n'apparaît que lors d'une analyse de <code
+              class="literal">localhost</code> et non de <code
+              class="literal">mirtuel</code> (l'interface réseau <code
+              class="literal">eth0</code> de la même machine).
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -263,19 +263,18 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
               class="foreignphrase"><em
                 class="foreignphrase">sniffer</em></span> (renifleur). Cet outil scrute tous les paquets qui atteignent une interface réseau et les affiche de manière plus lisible à l'utilisateur.
 			</div><a
-            id="idm140256405937104"
+            id="idm140272095641040"
             class="indexterm"></a><div
             class="para">
 				L'ancêtre dans ce domaine est sans conteste <code
               class="command">tcpdump</code> (dans le paquet du même nom). Il est disponible en standard sur un très grand nombre de plateformes et permet toutes sortes de captures de trafic réseau, mais la représentation de ce trafic reste assez obscure. Nous ne nous étendrons par conséquent pas dessus.
 			</div><a
-            id="idm140256405934800"
+            id="idm140272095639088"
             class="indexterm"></a><div
             class="para">
-				A more recent (and more modern) tool, <code
-              class="command">wireshark</code> (in the <span
-              class="pkg pkg">wireshark</span> package), has become the new reference in network traffic analysis due to its many decoding modules that allow for a simplified analysis of the captured packets. The packets are displayed graphically with an organization based on the protocol layers. This allows a user to visualize all protocols involved in a packet. For example, given a packet containing an HTTP request, <code
-              class="command">wireshark</code> displays, separately, the information concerning the physical layer, the Ethernet layer, the IP packet information, the TCP connection parameters, and finally the HTTP request itself.
+				Plus récent et plus moderne, l'outil <code
+              class="command">wireshark</code> (paquet <span
+              class="pkg pkg">wireshark</span>) est devenu la référence dans l'analyse de trafic réseau, notamment grâce à ses nombreux modules de décodage qui permettent une analyse simplifiée des paquets capturés. La représentation graphique des paquets est en effet organisée par couches successives, ce qui permet de visualiser chacun des protocoles impliqués dans un paquet. Par exemple, pour un paquet correspondant à une requête HTTP, on verra de manière séparée les informations correspondant à la couche physique, la couche Ethernet, les informations du paquet IP, puis celles de la connexion TCP, puis enfin la requête HTTP en tant que telle. On pourra ainsi se focaliser sur une couche particulière.
 			</div><div
             class="figure"><a
               id="figure.wireshark"></a><div
@@ -295,7 +294,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.54 seconds
                         class="emphasis"><em>ASTUCE</em></span> <code
                         class="command">wireshark</code> sans interface graphique : <code
                         class="command">tshark</code></strong></p></div></div></div><a
-              id="idm140256405923920"
+              id="idm140272095630416"
               class="indexterm"></a><div
               class="para">
 				Lorsque l'on ne souhaite pas lancer d'interface graphique, ou que c'est impossible pour une raison ou une autre, on peut utiliser une version en texte seul de <code

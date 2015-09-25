@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Making backups is one of the main responsibilities of any administrator, but it is a complex subject, involving powerful tools which are often difficult to master.
 		</div><a
-          id="idm140174151014432"
+          id="idm140060849827696"
           class="indexterm"></a><a
-          id="idm140174151013472"
+          id="idm140060849826928"
           class="indexterm"></a><div
           class="para">
 			Many programs exist, such as <code
@@ -83,11 +83,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="command">BackupPC</code>. Those are client/server system featuring many options, whose configuration is rather difficult. Some of them provide user-friendly web interfaces to mitigate this. But Debian contains dozens of other backup software covering all possible use cases, as you can easily confirm with <code
             class="command">apt-cache search backup</code>.
 		</div><a
-          id="idm140174151009872"
+          id="idm140060849823936"
           class="indexterm"></a><a
-          id="idm140174151008752"
+          id="idm140060849823040"
           class="indexterm"></a><a
-          id="idm140174151007632"
+          id="idm140060849822144"
           class="indexterm"></a><div
           class="para">
 			Rather than detailing some of them, this section will present the thoughts of the Falcot Corp administrators when they defined their backup strategy.
@@ -98,7 +98,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140174151005248"></a>9.10.1. Backing Up with <code
+                    id="idm140060849820112"></a>9.10.1. Backing Up with <code
                     class="command">rsync</code></h3></div></div></div><div
             class="para">
 				Backups on tape having been deemed too slow and costly, data will be backed up on hard drives on a dedicated server, on which the use of software RAID (see <a
@@ -108,15 +108,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
     </a>) will protect the data from hard drive failure. Desktop computers are not backed up individually, but users are advised that their personal account on their department's file server will be backed up. The <code
               class="command">rsync</code> command (from the package of the same name) is used daily to back up these different servers.
 			</div><a
-            id="idm140174151002128"
+            id="idm140060849817440"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> The hard link, a second name for the file</strong></p></div></div></div><a
-              id="idm140174150999920"
+              id="idm140060849815648"
               class="indexterm"></a><a
-              id="idm140174150998480"
+              id="idm140060849814496"
               class="indexterm"></a><div
               class="para">
 				A hard link, as opposed to a symbolic link, cannot be differentiated from the linked file. Creating a hard link is essentially the same as giving an existing file a second name. This is why the deletion of a hard link only removes one of the names associated with the file. As long as another name is still assigned to the file, the data therein remain present on the filesystem. It is interesting to note that, unlike a copy, the hard link does not take up additional space on the hard drive.
@@ -134,11 +134,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">rsync</code> command is preceded by a duplication of the content of the previous backup with hard links, which prevents usage of too much hard drive space. The <code
               class="command">rsync</code> process then only replaces files that have been modified since the last backup. With this mechanism a great number of backups can be kept in a small amount of space. Since all backups are immediately available and accessible (for example, in different directories of a given share on the network), you can quickly make comparisons between two given dates.
 			</div><a
-            id="idm140174150991632"
+            id="idm140060849808576"
             class="indexterm"></a><a
-            id="idm140174150990672"
+            id="idm140060849807808"
             class="indexterm"></a><a
-            id="idm140174150989232"
+            id="idm140060849806656"
             class="indexterm"></a><div
             class="para">
 				This backup mechanism is easily implemented with the <code
@@ -244,7 +244,7 @@ exclude:
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140174150960576"></a>9.10.2. Restoring Machines without Backups</h3></div></div></div><div
+                    id="idm140060849782160"></a>9.10.2. Restoring Machines without Backups</h3></div></div></div><div
             class="para">
 				Desktop computers, which are not backed up, will be easy to reinstall from custom DVD-ROMs prepared with <span
               class="emphasis"><em>Simple-CDD</em></span> (see <a
@@ -272,22 +272,22 @@ exclude:
                   class="replaceable">file_from_today</em></code>. The <code
                 class="command">xdelta</code> program produces incremental differences from binary dumps.
 			</div><a
-              id="idm140174150952000"
+              id="idm140060849774768"
               class="indexterm"></a><a
-              id="idm140174150950880"
+              id="idm140060849773872"
               class="indexterm"></a><a
-              id="idm140174150949760"
+              id="idm140060849772976"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> <span
                         class="emphasis"><em>TAR</em></span>, the standard for tape backups</strong></p></div></div></div><a
-              id="idm140174150947072"
+              id="idm140060849770800"
               class="indexterm"></a><a
-              id="idm140174150945632"
+              id="idm140060849769648"
               class="indexterm"></a><a
-              id="idm140174150944672"
+              id="idm140060849768880"
               class="indexterm"></a><div
               class="para">
 				Historically, the simplest means of making a backup on Unix was to store a <span

@@ -69,11 +69,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.ldap-directory"></a>11.7. دليل LDAP</h2></div></div></div><a
-          id="idm140482078969824"
+          id="idm140045488970224"
           class="indexterm"></a><a
-          id="idm140482078969056"
+          id="idm140045488969456"
           class="indexterm"></a><a
-          id="idm140482078968288"
+          id="idm140045488968688"
           class="indexterm"></a><div
           class="para">
 			OpenLDAP is an implementation of the LDAP protocol; in other words, it is a special-purpose database designed for storing directories. In the most common use case, using an LDAP server allows centralizing management of user accounts and the related permissions. Moreover, an LDAP database is easily replicated, which allows setting up multiple synchronized LDAP servers. When the network and the user base grows quickly, the load can then be balanced across several servers.
@@ -84,13 +84,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140482078965696"></a>11.7.1. التثبيت</h3></div></div></div><div
+                    id="idm140045488966096"></a>11.7.1. التثبيت</h3></div></div></div><div
             class="para">
 				تحوي الحزمة <span
               class="pkg pkg">slapd</span> مخدم OpenLDAP. وتتضمن الحزمة <span
               class="pkg pkg">ldap-utils</span> أدوات نصية للتعامل مع مخدمات LDAP.
 			</div><a
-            id="idm140482078963344"
+            id="idm140045488963744"
             class="indexterm"></a><div
             class="para">
 				Installing <span
@@ -142,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				ملف LDIF ‏(<span
                 class="emphasis"><em>LDAP Data Interchange Format</em></span>) هو ملف نصي محمول يصف محتويات قاعدة بيانات LDAP (أو جزءاً منها)؛ يمكن استخدامه لاحقاً لحقن البيانات في أي مخدم LDAP آخر.
 			</div><a
-              id="idm140482078950096"
+              id="idm140045488950496"
               class="indexterm"></a></div><div
             class="para">
 				أُعدَّت الآن قاعدة بيانات مصغرة، كما يوضح لنا الاستعلام التالي:
@@ -188,7 +188,7 @@ result: 0 Success
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140482078946256"></a>11.7.2. تعبئة الدليل</h3></div></div></div><div
+                    id="idm140045488946656"></a>11.7.2. تعبئة الدليل</h3></div></div></div><div
             class="para">
 				Since an empty database is not particularly useful, we are going to inject into it all the existing directories; this includes the users, groups, services and hosts databases.
 			</div><div
@@ -204,7 +204,7 @@ result: 0 Success
               dir="ltr"
               class="filename">/etc/hosts</code> وغيرها)، وتحويل هذه البيانات وحقنها في قاعدة بيانات LDAP.
 			</div><a
-            id="idm140482078941248"
+            id="idm140045488941648"
             class="indexterm"></a><div
             class="para">
 				بعد تثبيت الحزمة، يجب تحرير <code
@@ -272,7 +272,7 @@ result: 0 Success
 				The <code
                 class="command">jxplorer</code> command (in the package of the same name) is a graphical tool allowing to browse and edit an LDAP database. It is an interesting tool that provides an administrator with a good overview of the hierarchical structure of the LDAP data.
 			</div><a
-              id="idm140482078918000"
+              id="idm140045488918400"
               class="indexterm"></a></div><div
             class="para">
 				لاحظ أيضاً استخدام الخيار <code
@@ -285,7 +285,7 @@ result: 0 Success
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140482078914560"></a>11.7.3. إدارة الحسابات باستخدام LDAP</h3></div></div></div><div
+                    id="idm140045488914960"></a>11.7.3. إدارة الحسابات باستخدام LDAP</h3></div></div></div><div
             class="para">
 				بعد أن حَوَت قاعدة بيانات LDAP الآن بعض المعلومات المفيدة. آن اوان استخدام هذه البيانات. يركز هذا القسم على طريقة إعداد نظام لينكس بحيث تَستخدِم أدلة النظام المتنوعة قاعدة بيانات LDAP بشكل شفاف.
 			</div><div
@@ -302,7 +302,7 @@ result: 0 Success
                 class="xref"
                 href="sect.ldap-directory.html#tab-libnss-ldap">جدول 11.2</a>.
 				</div><a
-              id="idm140482078909728"
+              id="idm140045488910128"
               class="indexterm"></a><div
               class="table"><a
                 id="tab-libnss-ldap"></a><p
@@ -343,7 +343,7 @@ result: 0 Success
                 class="command">ldap</code> المُثبّتة حديثاً.
 				</div><div
               class="example"><a
-                id="idm140482078891760"></a><p
+                id="idm140045488892160"></a><p
                 class="title"><strong>مثال 11.31. ملف <code
                     dir="ltr"
                     class="filename">/etc/nsswitch.conf</code></strong></p><div
@@ -415,7 +415,7 @@ netgroup: ldap files
                 class="xref"
                 href="sect.ldap-directory.html#tab-libpam-ldap">جدول 11.3</a>.
 				</div><a
-              id="idm140482078877888"
+              id="idm140045488878288"
               class="indexterm"></a><div
               class="table"><a
                 id="tab-libpam-ldap"></a><p
@@ -450,23 +450,23 @@ netgroup: ldap files
                 class="command">pam-auth-update</code> (التي توفرها الحزمة <span
                 class="pkg pkg">libpam-runtime</span>). كما يستطيع مدير النظام أيضاً تشغيل هذه الأداة إذا أراد تفعيل او تعطيل وحدات PAM.
 				</div><a
-              id="idm140482078861440"
+              id="idm140045488861840"
               class="indexterm"></a><a
-              id="idm140482078860544"
+              id="idm140045488860944"
               class="indexterm"></a><a
-              id="idm140482078859648"
+              id="idm140045488860048"
               class="indexterm"></a><a
-              id="idm140482078858752"
+              id="idm140045488859152"
               class="indexterm"></a><a
-              id="idm140482078857856"
+              id="idm140045488858256"
               class="indexterm"></a><a
-              id="idm140482078856960"
+              id="idm140045488857360"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140482078855936"></a>11.7.3.3. تأمين تبادلات بيانات LDAP</h4></div></div></div><a
-              id="idm140482078855296"
+                      id="idm140045488856336"></a>11.7.3.3. تأمين تبادلات بيانات LDAP</h4></div></div></div><a
+              id="idm140045488855696"
               class="indexterm"></a><div
               class="para">
 					افتراضياً، ينقل LDAP البيانات عبر الشبكة بشكلها الصريح؛ وهذا يشمل كلمات السر (المشفرة). بما أنه يمكن استخلاص كلمات السر المشفرة من الشبكة، فقد تتعرض لهجمات القواميس (Dictionary attacks). يمكن تفادي هذا باستخدام طبقة تشفير إضافية، يتحدث هذا القسم عن تفعيل هذه الطبقة.
@@ -474,10 +474,10 @@ netgroup: ldap files
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140482078853264"></a>11.7.3.3.1. إعداد المخدم</h5></div></div></div><a
-                id="idm140482078852624"
+                        id="idm140045488853664"></a>11.7.3.3.1. إعداد المخدم</h5></div></div></div><a
+                id="idm140045488853024"
                 class="indexterm"></a><a
-                id="idm140482078851344"
+                id="idm140045488851744"
                 class="indexterm"></a><div
                 class="para">
 						الخطوة الأولى هي إنشاء زوج من المفاتيح (يتألف من مفتاح عام ومفتاح خاص) لمخدم LDAP. عاد مديرو النظم في فلكوت لاستخدام <span
@@ -522,7 +522,7 @@ Done.
                   class="command">ldapmodify</code> هي الأداة الصحيحة لتحديث الإعدادات:
 					</div><div
                 class="example"><a
-                  id="idm140482078839872"></a><p
+                  id="idm140045488840272"></a><p
                   class="title"><strong>مثال 11.32. إعداد <code
                       class="command">slapd</code> لاستخدام التشفير</strong></p><div
                   class="example-contents"><pre
@@ -550,7 +550,7 @@ modifying entry "cn=config"
                         class="title"><strong><span
                             class="emphasis"><em>أدوات</em></span> تحرير مجلد LDAP باستخدام <code
                             class="command">ldapvi</code></strong></p></div></div></div><a
-                  id="idm140482078836000"
+                  id="idm140045488836400"
                   class="indexterm"></a><div
                   class="para">
 						يمكنك استخدام <code
@@ -570,7 +570,7 @@ modifying entry "cn=config"
                   class="filename">/etc/default/slapd</code> . حتى نتفادى أي مخاطرات، سوف نعطّل LDAP غير المؤمن كله.
 					</div><div
                 class="example"><a
-                  id="idm140482078830768"></a><p
+                  id="idm140045488831168"></a><p
                   class="title"><strong>مثال 11.33. الملف <code
                       dir="ltr"
                       class="filename">/etc/default/slapd</code></strong></p><div
@@ -625,7 +625,7 @@ SLAPD_OPTIONS=""
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm140482078827200"></a>11.7.3.3.2. إعداد العميل</h5></div></div></div><div
+                        id="idm140045488827600"></a>11.7.3.3.2. إعداد العميل</h5></div></div></div><div
                 class="para">
 						عند جهة العميل، يجب تعديل إعدادات الوحدتين <span
                   class="emphasis"><em>libpam-ldap</em></span> و<span
@@ -657,7 +657,7 @@ done.
                   class="filename">/etc/ldap/ldap.conf</code>. هذا سيوفر طباعة هذه المتغيرات كلما استدعينا أحد هذه الأوامر.
 					</div><div
                 class="example"><a
-                  id="idm140482078819488"></a><p
+                  id="idm140045488819888"></a><p
                   class="title"><strong>مثال 11.34. الملف <code
                       dir="ltr"
                       class="filename">/etc/ldap/ldap.conf</code></strong></p><div

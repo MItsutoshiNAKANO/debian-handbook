@@ -75,24 +75,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>B.A.-BA</em></span> Client, serveur</strong></p></div></div></div><a
-            id="idm140256395846896"
+            id="idm140272100169008"
             class="indexterm"></a><a
-            id="idm140256395845488"
+            id="idm140272100167600"
             class="indexterm"></a><div
             class="para">
 			Lorsqu'un système comporte plusieurs mécanismes qui communiquent entre eux, on emploie souvent la métaphore client/serveur. Le serveur désigne alors le programme qui attend des requêtes en provenance d'un client, puis les exécute. C'est le client qui dirige les opérations, le serveur ne prenant pas d'initiatives de lui-même.
 		</div></div><a
-          id="idm140256395843120"
+          id="idm140272100165232"
           class="indexterm"></a><a
-          id="idm140256395841680"
+          id="idm140272100163792"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh"></a>9.2.1. Connexion à distance sécurisée : SSH</h3></div></div></div><a
-            id="idm140256395839696"
+            id="idm140272100161808"
             class="indexterm"></a><a
-            id="idm140256395838736"
+            id="idm140272100160848"
             class="indexterm"></a><div
             class="para">
 				Le protocole <span
@@ -104,9 +104,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> Telnet et RSH sont obsolètes</strong></p></div></div></div><a
-              id="idm140256395834896"
+              id="idm140272100157008"
               class="indexterm"></a><a
-              id="idm140256395833776"
+              id="idm140272100155888"
               class="indexterm"></a><div
               class="para">
 				Avant l'apparition de SSH, <span
@@ -137,9 +137,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">ftp</code>. Ainsi, une même session <code
               class="command">sftp</code> peut transférer plusieurs fichiers et il est possible d'y manipuler les fichiers distants (supprimer, changer leur nom ou leurs droits, etc.).
 			</div><a
-            id="idm140256395823296"
+            id="idm140272100145408"
             class="indexterm"></a><a
-            id="idm140256395822176"
+            id="idm140272100144288"
             class="indexterm"></a><div
             class="para">
 				Debian emploie OpenSSH, version libre de SSH maintenue par le projet <code
@@ -147,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="foreignphrase"><em
                 class="foreignphrase">fork</em></span> du logiciel SSH originel développé par la société finlandaise SSH Communications Security Corp. Celle-ci, qui en avait débuté le développement sous la forme d'un logiciel libre, avait en effet décidé de le poursuivre sous une licence propriétaire. Le projet OpenBSD créa donc OpenSSH pour maintenir une version libre de SSH.
 			</div><a
-            id="idm140256395819360"
+            id="idm140272100141472"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -155,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="emphasis"><em>B.A.-BA</em></span> <span
                         class="foreignphrase"><em
                           class="foreignphrase">Fork</em></span></strong></p></div></div></div><a
-              id="idm140256395816960"
+              id="idm140272100139072"
               class="indexterm"></a><div
               class="para">
 				Le terme <span
@@ -174,10 +174,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="foreignphrase">fork</em></span> quand elles font ce constat amer.
 			</div></div><div
             class="para">
-				OpenSSH is split into two packages: the client part is in the <span
-              class="pkg pkg">openssh-client</span> package, and the server is in the <span
-              class="pkg pkg">openssh-server</span> package. The <span
-              class="pkg pkg">ssh</span> meta-package depends on both parts and facilitates installation of both (<code
+				OpenSSH est séparé en deux paquets. La partie cliente est dans le paquet <span
+              class="pkg pkg">openssh-client</span>, le serveur dans <span
+              class="pkg pkg">openssh-server</span>. Le méta-paquet <span
+              class="pkg pkg">ssh</span> dépend des deux parties et facilite leur installation conjointe (<code
               class="command">apt install ssh</code>).
 			</div><div
             class="section"><div
@@ -233,11 +233,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="command">ssh-vulnkey</code> permet d'identifier d'éventuelles clés compromises présentes sur le système.
 				</div><div
                 class="para">
-					A more thorough analysis of this incident brings to light that it is the result of multiple (small) problems, both within the OpenSSL project and with the Debian package maintainer. A widely used library like OpenSSL should — without modifications — not generate warnings when tested by <code
-                  class="command">valgrind</code>. Furthermore, the code (especially the parts as sensitive as the RNG) should be better commented to prevent such errors. On Debian's side, the maintainer wanted to validate the modifications with the OpenSSL developers, but simply explained the modifications without providing the corresponding patch to review and failed to mention his role within Debian. Finally, the maintenance choices were sub-optimal: the changes made to the original code were not clearly documented; all the modifications were effectively stored in a Subversion repository, but they ended up all lumped into one single patch during creation of the source package.
+					Une analyse plus poussée de cet incident permet de se rendre compte que c'est le fruit de multiples (petits) problèmes tant au niveau du projet OpenSSL que du mainteneur du paquet Debian. Une bibliothèque aussi largement employée que OpenSSL devrait — sans modifications — ne pas générer d'avertissements lorsque scrutée par <code
+                  class="command">valgrind</code>. En outre, le code (en particulier des parties aussi sensibles que le RNG) mériterait d'être mieux commenté pour éviter de telles erreurs. De son côté, le mainteneur Debian, en voulant faire valider sa modification par les développeurs d'OpenSSL, s'est contenté d'expliquer la modification sans fournir de patch à relire, et a négligé de préciser son rôle au sein de Debian. Enfin, ses choix de maintenance n'étaient pas optimaux : les changements effectués par rapport au logiciel original n'étaient pas clairement documentés ; toutes les modifications étaient certes stockées dans un dépôt Subversion mais elles se retrouvaient agglomérées en un seul patch lors de la création du paquet source.
 				</div><div
                 class="para">
-					It is difficult under such conditions to find the corrective measures to prevent such incidents from recurring. The lesson to be learned here is that every divergence Debian introduces to upstream software must be justified, documented, submitted to the upstream project when possible, and widely publicized. It is from this perspective that the new source package format (“3.0 (quilt)”) and the Debian sources webservice were developed. <div
+					Difficile dans ces conditions de trouver des mesures correctives pour éviter que de tels incidents ne se reproduisent. La leçon retenue est que chaque divergence introduite par Debian par rapport au logiciel amont doit être justifiée, documentée, soumise au projet amont lorsque possible et largement publiée. C'est dans cette optique qu'ont été développés le nouveau format de paquet source ("3.0 (quilt)") et le service web de consultation des sources Debian. <div
                   class="url">→ <a
                     href="http://sources.debian.net">http://sources.debian.net</a></div>
 				</div></div></div><div
@@ -260,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       id="sect.ssh-port-forwarding"></a>9.2.1.3. Créer des tunnels chiffrés avec le <span
                       class="foreignphrase"><em
                         class="foreignphrase">port forwarding</em></span></h4></div></div></div><a
-              id="idm140256395779888"
+              id="idm140272100101808"
               class="indexterm"></a><div
               class="para">
 					Ses options <code
@@ -275,9 +275,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOCABULAIRE</em></span> Tunnel</strong></p></div></div></div><a
-                id="idm140256395775136"
+                id="idm140272100097056"
                 class="indexterm"></a><a
-                id="idm140256395773216"
+                id="idm140272100095136"
                 class="indexterm"></a><div
                 class="para">
 					Le réseau Internet et la plupart des réseaux locaux qui y sont raccordés fonctionnent en mode paquet et non en mode connecté, c'est-à-dire qu'un paquet émis depuis un ordinateur en direction d'un autre va s'arrêter sur plusieurs routeurs intermédiaires pour être acheminé jusqu'à sa destination. On peut néanmoins simuler un fonctionnement connecté, selon lequel le flux est encapsulé dans des paquets IP normaux ; ces paquets suivent leur chemin habituel, mais le flux est restitué tel quel à destination. On parle alors de « tunnel », par analogie avec un tunnel routier, dans lequel les véhicules roulent directement de l'entrée à la sortie sans rencontrer de carrefours, par opposition au trajet en surface qui impliquerait des intersections et des changements de direction.
@@ -336,55 +336,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="foreignphrase"><em
                 class="foreignphrase">Virtual Network Computing</em></span>, ou informatique en réseau virtuel) permet d'accéder à distance à des bureaux graphiques.
 			</div><a
-            id="idm140256395750032"
+            id="idm140272100071840"
             class="indexterm"></a><a
-            id="idm140256395749072"
+            id="idm140272100070880"
             class="indexterm"></a><a
-            id="idm140256395747984"
+            id="idm140272100069792"
             class="indexterm"></a><a
-            id="idm140256395746544"
+            id="idm140272100068352"
             class="indexterm"></a><a
-            id="idm140256395745616"
+            id="idm140272100067424"
             class="indexterm"></a><div
             class="para">
 				Cet outil sert principalement en assistance technique : l'administrateur peut constater les erreurs de l'utilisateur et lui montrer la bonne manipulation sans devoir se déplacer à ses côtés.
 			</div><a
-            id="idm140256395744016"
+            id="idm140272100065824"
             class="indexterm"></a><a
-            id="idm140256395742592"
+            id="idm140272100064400"
             class="indexterm"></a><a
-            id="idm140256395741168"
+            id="idm140272100062976"
             class="indexterm"></a><div
             class="para">
-				First, the user must authorize sharing their session. The GNOME graphical desktop environment in <span
-              class="distribution distribution">Jessie</span> includes that option in its configuration panel (contrary to previous versions of Debian, where the user had to install and run <code
-              class="command">vino</code>). KDE still requires using <code
-              class="command">krfb</code> to allow sharing an existing session over VNC. For other graphical desktop environments, the <code
-              class="command">x11vnc</code> command (from the Debian package of the same name) serves the same purpose; you can make it available to the user with an explicit icon.
+				Il faut tout d'abord que l'utilisateur autorise le partage de sa session. Dans <span
+              class="distribution distribution">Jessie</span>, l'environnement de bureau GNOME inclut cette option dans son panneau de configuration (contrairement aux versions précédents où il était nécessaire d'installer vino). En ce qui concerne KDE, il faut exécuter <code
+              class="command">krfb</code> pour pouvoir partager le bureau actif via VNC. Pour les autres environnements bureautiques, la commande <code
+              class="command">x11vnc</code> (du paquet Debian éponyme) a le même effet ; on pourra la rendre disponible à l'utilisateur via une icône explicite.
 			</div><a
-            id="idm140256395736672"
+            id="idm140272100058944"
             class="indexterm"></a><a
-            id="idm140256395735248"
+            id="idm140272100057520"
             class="indexterm"></a><a
-            id="idm140256395733824"
+            id="idm140272099561232"
             class="indexterm"></a><a
-            id="idm140256395732400"
+            id="idm140272099559808"
             class="indexterm"></a><div
             class="para">
-				When the graphical session is made available by VNC, the administrator must connect to it with a VNC client. GNOME has <code
-              class="command">vinagre</code> and <code
-              class="command">remmina</code> for that, while KDE includes <code
-              class="command">krdc</code> (in the menu at <span
+				Lorsque la session graphique est rendue disponible par VNC, l'administrateur doit s'y connecter à l'aide d'un client VNC. GNOME propose pour cela <code
+              class="command">vinagre</code> et <code
+              class="command">remmina</code>, et KDE inclut <code
+              class="command">krdc</code> (dans le menu <span
               class="guimenu"><strong>K</strong></span> → <span
               class="guisubmenu"><strong>Internet</strong></span> → <span
-              class="guimenuitem"><strong>Remote Desktop Client</strong></span>). There are other VNC clients that use the command line, such as <code
-              class="command">xvnc4viewer</code> in the Debian package of the same name. Once connected, the administrator can see what is going on, work on the machine remotely, and show the user how to proceed.
+              class="guimenuitem"><strong>Krdc Connexion à un bureau distant</strong></span>). Il existe aussi des clients VNC qui s'invoquent en ligne de commande, comme <code
+              class="command">xvnc4viewer</code>, du paquet Debian éponyme. Une fois connecté, il peut examiner ce qui se passe, voire intervenir et montrer à l'utilisateur comment procéder.
 			</div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>SÉCURITÉ</em></span> VNC sur SSH</strong></p></div></div></div><a
-              id="idm140256396616112"
+              id="idm140272099552896"
               class="indexterm"></a><div
               class="para">
 				Si l'on souhaite se connecter par VNC et si on ne veut pas que les données circulent en clair sur le réseau, il est possible de les encapsuler dans un tunnel SSH (voir <a
@@ -411,24 +410,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>B.A.-BA</em></span> Gestionnaire d'écran</strong></p></div></div></div><a
-              id="idm140256396606992"
+              id="idm140272099543856"
               class="indexterm"></a><a
-              id="idm140256396605872"
+              id="idm140272099542736"
               class="indexterm"></a><a
-              id="idm140256396604752"
+              id="idm140272099541616"
               class="indexterm"></a><a
-              id="idm140256396603632"
+              id="idm140272099540496"
               class="indexterm"></a><a
-              id="idm140256396602512"
+              id="idm140272099539376"
               class="indexterm"></a><a
-              id="idm140256396601072"
+              id="idm140272099537936"
               class="indexterm"></a><div
               class="para">
 				<code
                 class="command">gdm3</code>, <code
                 class="command">kdm</code>, <code
-                class="command">lightdm</code>, and <code
-                class="command">xdm</code> are Display Managers. They take control of the graphical interface shortly after boot in order to provide the user a login screen. Once the user has logged in, they execute the programs needed to start a graphical work session.
+                class="command">lightdm</code> et <code
+                class="command">xdm</code> sont des gestionnaires d'écran (<span
+                class="foreignphrase"><em
+                  class="foreignphrase">Display Manager</em></span>). Ils prennent le contrôle de l'interface graphique peu après son initialisation afin de proposer à l'utilisateur un écran d'identification. Une fois ce dernier authentifié, il exécute les programmes requis pour démarrer une session de travail graphique.
 			</div></div><div
             class="para">
 				VNC sert aussi aux utilisateurs nomades, ou responsables d'entreprises, ayant des besoins ponctuels de connexion depuis chez eux, qui retrouvent ainsi à distance un bureau similaire à celui qu'ils ont au travail. La configuration d'un tel service est plus compliquée : il faut d'abord installer le paquet <span
@@ -444,14 +445,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 5950  stream  tcp  nowait  nobody.tty  /usr/bin/Xvnc Xvnc -inetd -query localhost -once -geometry 1024x768 -depth 16 securitytypes=none
 </pre><div
             class="para">
-				Redirecting incoming connections to the display manager solves the problem of authentication, because only users with local accounts will pass the <code
-              class="command">gdm3</code> login screen (or equivalent <code
+				Rediriger les connexions entrantes vers un gestionnaire d'écran résout le problème de l'authentification, puisque seuls les utilisateurs disposant de comptes locaux passeront le cap de la connexion via <code
+              class="command">gdm3</code> (ou les équivalents <code
               class="command">kdm</code>, <code
-              class="command">xdm</code>, etc.). As this operation allows multiple simultaneous logins without any problem (provided the server is powerful enough), it can even be used to provide complete desktops for mobile users (or for less powerful desktop systems, configured as thin clients). Users simply login to the server's screen with <code
+              class="command">xdm</code>, etc.). Comme ce fonctionnement permet sans problème plusieurs connexions simultanées (à condition que le serveur soit suffisamment puissant), il peut même être utilisé pour offrir des bureaux complets à différents utilisateurs itinérants (voire à des postes bureautiques peu puissants, configurés en clients légers). Les utilisateurs doivent simplement se connecter au 51ème écran du serveur (<code
               class="command">vncviewer <em
-                class="replaceable">server</em>:50</code>, because the port used is 5950.
+                class="replaceable">serveur</em>:50</code>) parce que le port employé est le 5950.
 			</div><a
-            id="idm140256396589040"
+            id="idm140272099525232"
             class="indexterm"></a></div></div><ul
         class="docnav"><li
           class="previous"><a

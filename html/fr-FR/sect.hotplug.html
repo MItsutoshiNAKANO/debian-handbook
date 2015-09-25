@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140256406216096"></a>9.11.1. Introduction</h3></div></div></div><div
+                    id="idm140272095796160"></a>9.11.1. Introduction</h3></div></div></div><div
             class="para">
 				Le sous-système <span
               class="emphasis"><em>hotplug</em></span> du noyau permet de charger les pilotes des périphériques et de créer les fichiers de périphériques correspondants (avec l'aide d'<code
@@ -83,22 +83,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> afin que celui-ci puisse créer l'entrée correspondante dans <code
               class="filename">/dev/</code>.
 			</div><a
-            id="idm140256406211632"
+            id="idm140272095792304"
             class="indexterm"></a><a
-            id="idm140256406210512"
+            id="idm140272095791408"
             class="indexterm"></a><a
-            id="idm140256406209552"
+            id="idm140272095790640"
             class="indexterm"></a><a
-            id="idm140256406208592"
+            id="idm140272095789872"
             class="indexterm"></a><a
-            id="idm140256406207632"
+            id="idm140272095789104"
             class="indexterm"></a><a
-            id="idm140256406206672"
+            id="idm140272095788336"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140256406205552"></a>9.11.2. La problématique du nommage</h3></div></div></div><div
+                    id="idm140272095787440"></a>9.11.2. La problématique du nommage</h3></div></div></div><div
             class="para">
 				Avant l'introduction des branchements à chaud, il était simple de donner un nom fixe à un périphérique. On se basait simplement sur le positionnement des périphériques dans leur bus respectif. Mais si les périphériques apparaissent et disparaissent sur le bus, ce n'est plus possible. L'exemple typique est l'emploi d'un appareil photo numérique et d'une clé USB : tous les deux apparaissent comme des disques, le premier branché pourra être <code
               class="filename">/dev/sdb</code> et le second <code
@@ -117,9 +117,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>EN PRATIQUE</em></span> Gestion des cartes réseau</strong></p></div></div></div><div
               class="para">
-				Many computers have multiple network cards (sometimes two wired interfaces and a wifi interface), and with <span
-                class="emphasis"><em>hotplug</em></span> support on most bus types, the Linux kernel does not guarantee fixed naming of network interfaces. But a user who wants to configure their network in <code
-                class="filename">/etc/network/interfaces</code> needs a fixed name!
+				De nombreux ordinateurs intègrent plusieurs cartes réseau (parfois deux interfaces filaires et une interface wifi) et avec la prise en charge de <span
+                class="emphasis"><em>hotplug</em></span> sur la plupart des types de bus, le noyau Linux n'offre pas de garantie de nommage fixe sur ces interfaces réseau. Pourtant l'utilisateur qui veut configurer son réseau dans <code
+                class="filename">/etc/network/interfaces</code> a besoin d'un nom fixe !
 			</div><div
               class="para">
 				Il serait pénible de demander à chaque utilisateur de se créer ses propres règles <span
@@ -128,20 +128,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/udev/rules.d/70-persistent-net.rules</code>.
 			</div><div
               class="para">
-				This mechanism has some side effects that you should know about. Let's consider the case of a computer that has only one PCI network card. The network interface is named <code
-                class="literal">eth0</code>, logically. Now say the card breaks down, and the administrator replaces it; the new card will have a new MAC address. Since the old card was assigned the name, <code
-                class="literal">eth0</code>, the new one will be assigned <code
-                class="literal">eth1</code>, even though the <code
-                class="literal">eth0</code> card is gone for good (and the network will not be functional because <code
-                class="filename">/etc/network/interfaces</code> likely configures an <code
-                class="literal">eth0</code> interface). In this case, it is enough to simply delete the <code
-                class="filename">/etc/udev/rules.d/70-persistent-net.rules</code> file before rebooting the computer. The new card will then be given the expected <code
-                class="literal">eth0</code> name.
+				Ce mécanisme a des effets de bord qu'il est bon de connaître. Considérons le cas d'un ordinateur qui n'a qu'une seule carte réseau PCI. L'interface réseau se nomme logiquement <code
+                class="literal">eth0</code>. La carte tombe en panne et l'administrateur la remplace, la nouvelle carte a donc une nouvelle adresse MAC. Puisque l'ancienne carte avait reçu le nom <code
+                class="literal">eth0</code>, la nouvelle se verra attribuer le nom <code
+                class="literal">eth1</code> alors même que la carte <code
+                class="literal">eth0</code> ne réapparaîtra jamais (et le réseau ne sera pas fonctionnel car <code
+                class="filename">/etc/network/interfaces</code> configure vraisemblablement une interface <code
+                class="literal">eth0</code>). Dans ces cas il suffit de supprimer le fichier <code
+                class="filename">/etc/udev/rules.d/70-persistent-net.rules</code> avant de redémarrer l'ordinateur et la nouvelle carte recevra le nom <code
+                class="literal">eth0</code> attendu.
 			</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140256406190640"></a>9.11.3. Fonctionnement de udev</h3></div></div></div><div
+                    id="idm140272095774448"></a>9.11.3. Fonctionnement de udev</h3></div></div></div><div
             class="para">
 				Lorsqu'<span
               class="emphasis"><em>udev</em></span> est informé par le noyau de l'apparition d'un nouveau périphérique, il récupère de nombreuses informations sur le périphérique en question en consultant les entrées correspondantes dans <code
@@ -191,10 +191,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="para">
 						<code
                     class="literal">ATTR{<em
-                      class="replaceable">attribute</em>}</code>: file contents of the <em
-                    class="replaceable">attribute</em> file in the <code
+                      class="replaceable">attribut</em>}</code> : contenu du fichier <em
+                    class="replaceable">attribut</em> dans le répertoire <code
                     class="filename">/sys/<em
-                      class="replaceable">$devpath</em>/</code> directory of the device. This is where you find the MAC address and other bus specific identifiers;
+                      class="replaceable">$devpath</em>/</code> du périphérique. C'est ici que l'on va trouver les adresses MAC et autres identifiants spécifiques à chaque bus ;
 					</div></li><li
                 class="listitem"><div
                   class="para">
@@ -316,14 +316,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="literal">$$</code> pour les caractères pourcent et dollar respectivement.
 					</div></li></ul></div><div
             class="para">
-				The above lists are not complete (they include only the most important parameters), but the <span
+				Les listes ci-dessus ne sont pas exhaustives (elles reprennent les paramètres les plus importants) mais la page de manuel <span
               class="citerefentry"><span
-                class="refentrytitle">udev</span>(7)</span> manual page should be exhaustive.
+                class="refentrytitle">udev</span>(7)</span> devrait l'être.
 			</div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140256406129552"></a>9.11.4. Cas pratique</h3></div></div></div><div
+                    id="idm140272095723584"></a>9.11.4. Cas pratique</h3></div></div></div><div
             class="para">
 				Prenons le cas d'une simple clé USB et essayons de lui affecter un nom fixe. Il faut d'abord trouver les éléments qui vont permettre de l'identifier de manière unique. Pour cela, on la branche et on exécute <code
               class="command">udevadm info -a -n /dev/sdc</code> (en remplaçant évidemment <em
@@ -402,11 +402,11 @@ KERNEL=="sd?[0-9]", SUBSYSTEM=="block", ATTRS{serial}=="M004021000001", SYMLINK+
                         class="emphasis"><em>POUR ALLER PLUS LOIN</em></span> Déboguer la configuration de <span
                         class="emphasis"><em>udev</em></span></strong></p></div></div></div><div
               class="para">
-				Like many daemons, <code
-                class="command">udevd</code> stores logs in <code
-                class="filename">/var/log/daemon.log</code>. But it is not very verbose by default, and it is usually not enough to understand what is happening. The <code
-                class="command">udevadm control --log-priority=info</code> command increases the verbosity level and solves this problem. <code
-                class="command">udevadm control --log-priority=err</code> returns to the default verbosity level.
+				Comme beaucoup de démons, <code
+                class="command">udevd</code> enregistre des traces dans <code
+                class="filename">/var/log/daemon.log</code>. Mais il n'est pas très verbeux par défaut et cela ne permet que rarement de comprendre ce qu'il fait. La commande <code
+                class="command">sudo udevadm control --log-priority=info</code> augmente le niveau de verbosité courant et résout ce problème. <code
+                class="command">udevadm control --log-priority=err</code> remet en place le niveau par défaut.
 			</div></div></div></div><ul
         class="docnav"><li
           class="previous"><a

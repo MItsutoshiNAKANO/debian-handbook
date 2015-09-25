@@ -75,18 +75,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.timezone"></a>8.9.1. Zonawaktu</h3></div></div></div><a
-            id="idm140585254294640"
+            id="idm140297521130800"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.symbolic-link"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>KEMBALI KE DASAR</em></span> Tautan simbolis</strong></p></div></div></div><a
-              id="idm140585254292192"
+              id="idm140297521128352"
               class="indexterm"></a><a
-              id="idm140585254290752"
+              id="idm140297521126912"
               class="indexterm"></a><a
-              id="idm140585254289792"
+              id="idm140297521125952"
               class="indexterm"></a><div
               class="para">
 				Tautan simbolis adalah penunjuk ke berkas lain. Ketika Anda mengaksesnya, berkas yang ditunjuk dibuka. Penghapusan tautan tidak akan menyebabkan penghapusan berkas yang ditunjuk. Sebaliknya, dia tidak memiliki set hak aksesnya sendiri, namun menggunakan hak akses targetnya. Akhirnya, dia dapat menunjuk ke berbagai tipe berkas: direktori, berkas khusus (socket, named pipes, berkas perangkat, dll.), bahkan tautan simbolis lain.
@@ -110,23 +110,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/usr/share/zoneinfo</code> directory is copied into <code
               class="filename">/etc/localtime</code>; this file contains the rules governing the dates where daylight saving time is active, for countries that use it.
 			</div><a
-            id="idm140585254280576"
+            id="idm140297521116736"
             class="indexterm"></a><a
-            id="idm140585254279456"
+            id="idm140297521115616"
             class="indexterm"></a><a
-            id="idm140585254278336"
+            id="idm140297521114496"
             class="indexterm"></a><a
-            id="idm140585254277216"
+            id="idm140297521113376"
             class="indexterm"></a><a
-            id="idm140585254276096"
+            id="idm140297521112256"
             class="indexterm"></a><a
-            id="idm140585254275136"
+            id="idm140297521111296"
             class="indexterm"></a><div
             class="para">
 				Ketika Anda perlu mengubah zonawaktu sementara, gunakan variabel lingkungan <code
               class="varname">TZ</code>, yang mana diprioritaskan daripada sistem standar yang terkonfigurasi:
 			</div><a
-            id="idm140585254273280"
+            id="idm140297521109440"
             class="indexterm"></a><a
             id="screen.tz"></a><pre
             class="screen">
@@ -161,9 +161,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.time-synchronization"></a>8.9.2. Sinkronisasi Waktu</h3></div></div></div><a
-            id="idm140585254261200"
+            id="idm140297521097360"
             class="indexterm"></a><a
-            id="idm140585254260240"
+            id="idm140297521096400"
             class="indexterm"></a><div
             class="para">
 				Sinkronisasi waktu, yang mungkin nampak mubadzir pada sebuah komputer, sangat penting dalam sebuah jaringan. Karena pengguna tidak memiliki hak akses yang mengizinkan mereka mengubah tanggal dan waktu, hal ini penting agar informasi ini jelas untuk mencegah kebingunan. Lebih jauh, jika seluruh komputer dalam sebuah jaringan tersinkronisasi memungkinkan referensi-silang informasi yang lebih baik dari log pada mesin yang berbeda. Nah, pada saat terjadi serangan, akan mudah untuk merekonstruksi kronologi urutan aksi pada berbagai mesin yang terlibat kompromi. Data yang dikumpulkan beberapa mesin untuk tujuan statistik tidak akan bermanfaat jika mereka tidak tersinkronisasi.
@@ -172,9 +172,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>KEMBALI KE DASAR</em></span> NTP</strong></p></div></div></div><a
-              id="idm140585254256528"
+              id="idm140297521092688"
               class="indexterm"></a><a
-              id="idm140585254255568"
+              id="idm140297521091728"
               class="indexterm"></a><div
               class="para">
 				NTP (Protokol Waktu Jaringan) memungkinkan sebuah mesin tersinkronisasi dengan lainnya secara akurat, memertimbangkan penundaan yang disebabkan oleh transfer informasi melalui jaringan dan offset lain yang mungkin.
@@ -197,9 +197,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="pkg pkg">ntpdate</span>. Anda dapat mengubah server NTP yang digunakan jika diperlukan dengan memodifikasi berkas <code
                 class="filename">/etc/default/ntpdate</code>.
 				</div><a
-              id="idm140585254247088"
+              id="idm140297521083248"
               class="indexterm"></a><a
-              id="idm140585254245968"
+              id="idm140297521082128"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -211,19 +211,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>pool.ntp.org</em></span> dan menyediakan waktu sebagai respon dari permintaan yang datang dari jaringan lokal. Anda dapat mengonfigurasinya dengan menyunting berkas <code
                 class="filename">/etc/ntp.conf</code>, alternatif yang paling signifikan menjadi server NTP untuk yang mengacunya. Jika jaringan memilik banyak server, ini mungkin akan menarik jika memiliki satu server waktu lokal yang tersinkronisasi dengan server publik dan digunakan sebagai sumber waktu dengan server lain dalam jaringan.
 				</div><a
-              id="idm140585254240640"
+              id="idm140297521076800"
               class="indexterm"></a><a
-              id="idm140585254239216"
+              id="idm140297521075376"
               class="indexterm"></a><a
-              id="idm140585254237776"
+              id="idm140297521073936"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>LEBIH JAUH</em></span> Modul GPS dan sumber waktu lain</strong></p></div></div></div><a
-                id="idm140585254235248"
+                id="idm140297521071408"
                 class="indexterm"></a><a
-                id="idm140585254234288"
+                id="idm140297521070448"
                 class="indexterm"></a><div
                 class="para">
 					Jika sinkronisasi waktu seringkali krusial pada jaringan Anda, sangat mungkin untuk melengkapi sebuah server dengan modul GPS (yang akan menggunakan waktu dari satelit GPS) atau modul DCF-77 (yang akan menyinkronkan waktu dengan jam atomik di dekat frankfurt, Jerman). Dalam kasus ini, konfigurasi srver NTP menjadi lebih rumit, dan setelah mengacu ke dokumentasi sangat diperlukan.
@@ -232,13 +232,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.rotation-logs"></a>8.9.3. Rotasi Berkas Log</h3></div></div></div><a
-            id="idm140585254230816"
+            id="idm140297521066976"
             class="indexterm"></a><a
-            id="idm140585254229376"
+            id="idm140297521065536"
             class="indexterm"></a><a
-            id="idm140585254227936"
+            id="idm140297521064096"
             class="indexterm"></a><a
-            id="idm140585254226976"
+            id="idm140297521063136"
             class="indexterm"></a><div
             class="para">
 				Berkas log dapat tumbuh, cepat, dan perlu untuk mengarsipnya. Skema yang paling umum adalah merotasi arsip: berkas log diarsipkan secara reguler, dan hanya arsip <em
@@ -262,11 +262,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.sharing-admin-rights"></a>8.9.4. Berbagi Hak Akses Administrator</h3></div></div></div><a
-            id="idm140585254218528"
+            id="idm140297521054688"
             class="indexterm"></a><a
-            id="idm140585254217088"
+            id="idm140297521053248"
             class="indexterm"></a><a
-            id="idm140585254216128"
+            id="idm140297521052288"
             class="indexterm"></a><div
             class="para">
 				Seringkali, beberapa administrator bekerja pada jaringan yang sama. Berbagi password root sangatlah tidak elegan, dan membuka kran fitnah karena anonimitas pembuat yang dibagi. Solusi untuk masalah ini adalah program <code
@@ -286,11 +286,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal"><em
                 class="replaceable">namapengguna</em> ALL=(ALL) ALL</code> mengizinkan pengguna yang dimaksud menjalankan perintah sebagai root.
 			</div><a
-            id="idm140585254208000"
+            id="idm140297521044160"
             class="indexterm"></a><a
-            id="idm140585254206880"
+            id="idm140297521043040"
             class="indexterm"></a><a
-            id="idm140585254205760"
+            id="idm140297521041920"
             class="indexterm"></a><div
             class="para">
 				Konfigurasi yang lebih canggih mengizinkan otorisasi hanya pada perintah tertentu ke pengguna tertentu. Seluruh rincian berbagai kemungkinan diberikan pada man page <span
@@ -301,9 +301,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fstab-mount-points"></a>8.9.5. Daftar Titik Kait</h3></div></div></div><a
-            id="idm140585254201552"
+            id="idm140297521037712"
             class="indexterm"></a><a
-            id="idm140585254200592"
+            id="idm140297521036752"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -315,7 +315,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/home/</code>. Sistemberkas root selalu dimount ketika boot oleh kernel; perangkat lain seringkali dimout kemudian selama proses startup atau secara manual dengan perintah <code
                 class="command">mount</code>.
 			</div><a
-              id="idm140585254195984"
+              id="idm140297521032144"
               class="indexterm"></a><div
               class="para">
 				Beberapa perangkat mudahlepas dimount secara otomatis ketika terhubung, khususnya ketika menggunakan GNOME, KDE atau lingkungan desktop lain. Lainnya harus dimount secara manual oleh pengguna. Begitupula, mereka harus meng-unmount (hapus dari pohon berkas). Pengguna biasa biasanya tidak memiliki hak akses untuk mengeksekusi perintah <code
@@ -338,9 +338,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Berkas <code
               class="filename">/etc/fstab</code> memberikan daftar seluruh kaitan yang mungkin terjadi entah itu secara otomatis ketika booting atau secara manual untuk perangkat storage mudahlepas. Setiap titik kait dideskripsikan dengan beberapa field yang dipisahkan oleh spasi: <a
-              id="idm140585254186032"
+              id="idm140297521022192"
               class="indexterm"></a> <a
-              id="idm140585254185232"
+              id="idm140297521021392"
               class="indexterm"></a>
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
@@ -486,15 +486,15 @@ arrakis:/shared /shared         nfs     defaults        0       0
                 class="emphasis"><em>am-utils</em></span> menyediakan utilitas mount-otomatis <code
                 class="command">amd</code>, dapat mengait media mudahlepas secara on demand ketika seorang pengguna hendak mengakses titik kait biasanya. Utilitas ini akan meng-unmount perangkat ini ketika tidak ada proses yang mengaksesnya lagi.
 			</div><a
-              id="idm140585254136896"
+              id="idm140297520973056"
               class="indexterm"></a><a
-              id="idm140585254135776"
+              id="idm140297520971936"
               class="indexterm"></a><a
-              id="idm140585254134656"
+              id="idm140297520970816"
               class="indexterm"></a><a
-              id="idm140585254133536"
+              id="idm140297520969696"
               class="indexterm"></a><a
-              id="idm140585254132416"
+              id="idm140297520968576"
               class="indexterm"></a><div
               class="para">
 				Utilitas mount-otomatis lain jugaada, seperti <code
@@ -511,11 +511,11 @@ arrakis:/shared /shared         nfs     defaults        0       0
                     id="sect.locate-updatedb"></a>8.9.6. <code
                     class="command">locate</code> dan <code
                     class="command">updatedb</code></h3></div></div></div><a
-            id="idm140585254126912"
+            id="idm140297520963072"
             class="indexterm"></a><a
-            id="idm140585254125792"
+            id="idm140297520961952"
             class="indexterm"></a><a
-            id="idm140585254124672"
+            id="idm140297520960832"
             class="indexterm"></a><div
             class="para">
 				Perintah <code

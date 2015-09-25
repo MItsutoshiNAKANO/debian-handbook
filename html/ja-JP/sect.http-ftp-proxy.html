@@ -81,19 +81,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 					サーバのフィルタリング。これはプロキシの利用が強制されている場合 (そしてプロキシを介さない外部への接続がブロックされる場合)、プロキシは接続要求を許可するか否かを決定することが可能です。
 				</div></li></ul></div><a
-          id="idm140241086107024"
+          id="idm140508254657808"
           class="indexterm"></a><a
-          id="idm140241086106256"
+          id="idm140508254656848"
           class="indexterm"></a><div
           class="para">
 			Falcot Corp はプロキシサーバとして Squid を選びました。
 		</div><a
-          id="idm140241086105008"
+          id="idm140508254655472"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140241086104240"></a>11.6.1. インストール</h3></div></div></div><div
+                    id="idm140508254654512"></a>11.6.1. インストール</h3></div></div></div><div
             class="para">
 				<span
               class="pkg pkg">squid3</span> Debian パッケージには、モジュール式 (キャッシュ) プロキシだけが含まれます。Squid をフィルタリングサーバとして使うには、追加で <span
@@ -109,13 +109,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140241086098672"></a>11.6.2. キャッシュの設定</h3></div></div></div><div
+                    id="idm140508254648208"></a>11.6.2. キャッシュの設定</h3></div></div></div><div
             class="para">
 				キャッシュサーバを有効化するには、<code
               class="filename">/etc/squid3/squid.conf</code> 設定ファイルを編集し、ローカルネットワークからのマシンがプロキシを介して問い合わせを実行することを許可するだけで簡単に可能です。以下の例は Falcot Corp 管理者の行った変更を表しています。
 			</div><div
             class="example"><a
-              id="idm140241086096896"></a><p
+              id="idm140508254646176"></a><p
               class="title"><strong>例11.30 <code
                   class="filename">/etc/squid3/squid.conf</code> ファイル (抜粋)</strong></p><div
               class="example-contents"><pre
@@ -133,7 +133,7 @@ http_access deny all</pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140241086094960"></a>11.6.3. フィルタの設定</h3></div></div></div><div
+                    id="idm140508254643888"></a>11.6.3. フィルタの設定</h3></div></div></div><div
             class="para">
 				<code
               class="command">squid</code> 自身はフィルタリングを実行しません。このためフィルタリング作業は <code
@@ -142,7 +142,7 @@ http_access deny all</pre></div></div></div><div
               class="command">squidGuard</code> と協力するようにしなければいけません。これを行うには、以下の指示文を <code
               class="filename">/etc/squid3/squid.conf</code> ファイルに追加します。
 			</div><a
-            id="idm140241086091776"
+            id="idm140508254640096"
             class="indexterm"></a><pre
             class="programlisting">
 url_rewrite_program /usr/bin/squidGuard -c /etc/squid3/squidGuard.conf</pre><div
@@ -169,15 +169,15 @@ url_rewrite_program /usr/bin/squidGuard -c /etc/squid3/squidGuard.conf</pre><div
               class="url">→ <a
                 href="http://www.squidguard.org/Doc/configure.html">http://www.squidguard.org/Doc/configure.html</a></div>
 			</div><a
-            id="idm140241086082720"
+            id="idm140508254629568"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVE</em></span> DansGuardian</strong></p></div></div></div><a
-              id="idm140241086080928"
+              id="idm140508254627328"
               class="indexterm"></a><a
-              id="idm140241086079792"
+              id="idm140508254625904"
               class="indexterm"></a><div
               class="para">
 				<span

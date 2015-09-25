@@ -73,11 +73,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="foreignphrase"><em
               class="foreignphrase">Virtual Private Network</em></span>, ou VPN) est un moyen de relier par Internet deux réseaux locaux distants via un tunnel (généralement chiffré pour des raisons de confidentialité). Souvent, cette technique sert simplement à intégrer une machine distante au sein du réseau local de l'entreprise.
 		</div><a
-          id="idm140256395678656"
+          id="idm140272101262592"
           class="indexterm"></a><a
-          id="idm140256395677216"
+          id="idm140272101261152"
           class="indexterm"></a><a
-          id="idm140256395676256"
+          id="idm140272101260192"
           class="indexterm"></a><div
           class="para">
 			Il y a plusieurs manières d'obtenir ce résultat. OpenVPN est une solution efficace et facile à déployer et maintenir, s'appuyant sur SSL/TLS. On peut également employer IPsec qui permet de chiffrer les communications IP entre deux hôtes, de manière transparente — c'est-à-dire que les applications fonctionnant sur ces hôtes n'ont pas besoin d'être modifiées pour tenir compte de l'existence du réseau privé virtuel. SSH offre également une fonctionnalité de VPN bien que cela ne soit pas son rôle premier. Enfin, il est possible de recourir au protocole PPTP de Microsoft. Ce livre négligera les autres solutions.
@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.openvpn"></a>10.2.1. OpenVPN</h3></div></div></div><a
-            id="idm140256395672976"
+            id="idm140272101256912"
             class="indexterm"></a><div
             class="para">
 				Logiciel dédié à la création de réseaux privés virtuels, sa mise en œuvre implique la création d'interfaces réseau virtuelles à la fois sur le serveur VPN et sur le (ou les) client(s). Il gère aussi bien les interfaces <code
@@ -103,33 +103,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>CULTURE</em></span> SSL et TLS</strong></p></div></div></div><a
-              id="idm140256395667264"
+              id="idm140272101251200"
               class="indexterm"></a><a
-              id="idm140256395666304"
+              id="idm140272101250240"
               class="indexterm"></a><div
               class="para">
-				The SSL protocol (<span
-                class="emphasis"><em>Secure Socket Layer</em></span>) was invented by Netscape to secure connections to web servers. It was later standardized by IETF under the acronym TLS (<span
-                class="emphasis"><em>Transport Layer Security</em></span>). Since then TLS continued to evolve and nowadays SSL is deprecated due to multiple design flaws that have been discovered.
+				SSL (<span
+                class="foreignphrase"><em
+                  class="foreignphrase">Secure Socket Layer</em></span>) est un protocole inventé par Netscape pour sécuriser les connexions aux serveurs Web. Plus tard il a été standardisé par l'IETF sous le nom de TLS (<span
+                class="foreignphrase"><em
+                  class="foreignphrase">Transport Layer Security</em></span>). Depuis lors TLS a continué d'évoluer et de nos jours SSL est obsolète à cause de multiples problèmes de conception récemment découverts.
 			</div></div><div
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.easy-rsa"></a>10.2.1.1. Infrastructure de clés publiques <span
                       class="emphasis"><em>easy-rsa</em></span></h4></div></div></div><a
-              id="idm140256407032256"
+              id="idm140272116042368"
               class="indexterm"></a><a
-              id="idm140256407031328"
+              id="idm140272116041440"
               class="indexterm"></a><a
-              id="idm140256407030400"
+              id="idm140272116040512"
               class="indexterm"></a><a
-              id="idm140256407029440"
+              id="idm140272116039552"
               class="indexterm"></a><a
-              id="idm140256407028480"
+              id="idm140272116038592"
               class="indexterm"></a><a
-              id="idm140256407027360"
+              id="idm140272116037472"
               class="indexterm"></a><a
-              id="idm140256407026400"
+              id="idm140272116036512"
               class="indexterm"></a><div
               class="para">
 					L'algorithme RSA est très employé en cryptographie à clé publique. Il permet de générer deux clés (une privée, une publique) étroitement liées dont les propriétés mathématiques sont telles qu'un message chiffré avec la clé publique ne peut être déchiffré que par le détenteur de la clé privée (on assure ainsi la confidentialité). Inversement, un message chiffré avec la clé privée peut être déchiffré par tout possesseur de la clé publique. Cela permet d'authentifier la provenance d'un message, on sait alors que ce dernier a été expédié par le propriétaire de la clé privée. Associé à une empreinte (MD5, SHA1 ou une variante plus récente), on obtient un mécanisme de signature d'un message quelconque. Une paire de clés (une privée et la publique correspondante) est appelée « biclé ».
@@ -140,26 +142,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="foreignphrase">Certificate Authority</em></span>) a été créé par le standard X.509. Il s'agit d'une entité disposant d'une biclé de confiance que l'on nomme « certificat racine ». Ce certificat va seulement être employé pour signer d'autres certificats après avoir vérifié l'identité qui y est inscrite. Toute application exploitant des certificats X.509 doit disposer d'un ou plusieurs certificats racines de confiance pour valider l'authenticité des certificats qui lui sont présentés.
 				</div><div
               class="para">
-					OpenVPN follows this rule. Since public CAs only emit certificates in exchange for a (hefty) fee, it is also possible to create a private certification authority within the company. The <span
-                class="pkg pkg">easy-rsa</span> package provides tools to serve as an X.509 certification infrastructure, implemented as a set of scripts using the <code
-                class="command">openssl</code> command.
+					OpenVPN ne fait pas exception à la règle. Pour éviter de payer (cher) les services d'une autorité de certification, il est possible de créer sa propre autorité de certification, interne à l'entreprise. Le paquet <span
+                class="pkg pkg">easy-rsa</span> peut être employé comme infrastructure de gestion de certificats X.509, il s'appuie sur un ensemble de scripts utilisant la commande <code
+                class="command">openssl</code>.
 				</div><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>NOTE</em></span> <span
-                          class="emphasis"><em>easy-rsa</em></span> before <span
+                          class="emphasis"><em>easy-rsa</em></span> avant <span
                           class="distribution distribution">Jessie</span></strong></p></div></div></div><div
                 class="para">
-					In versions of Debian up to <span
+					Jusqu'à <span
                   class="distribution distribution">Wheezy</span>, <span
-                  class="emphasis"><em>easy-rsa</em></span> was distributed as part of the <span
-                  class="pkg pkg">openvpn</span> package, and its scripts were to be found under <code
-                  class="filename">/usr/share/doc/openvpn/examples/easy-rsa/2.0/</code>. Setting up a CA involved copying that directory, instead of using the <code
-                  class="command">make-cadir</code> command as documented here.
+                  class="emphasis"><em>easy-rsa</em></span> faisait partie du paquet <span
+                  class="pkg pkg">openvpn</span> et les scripts se trouvaient dans <code
+                  class="filename">/usr/share/doc/openvpn/examples/easy-rsa/2.0/</code>. Pour mettre en place une autorité de certification il fallait copier ce répertoire, la commande <code
+                  class="command">make-cadir</code> documentée ici n'existant pas encore.
 				</div></div><div
               class="para">
-					The Falcot Corp administrators use this tool to create the required certificates, both for the server and the clients. This allows the configuration of all clients to be similar since they will only have to be set up so as to trust certificates coming from Falcot's local CA. This CA is the first certificate to create; to this end, the administrators set up a directory with the files required for the CA in an appropriate location, preferably on a machine not connected to the network in order to mitigate the risk of the CA's private key being stolen.
+					Les administrateurs de Falcot décident de l'employer pour créer les certificats nécessaires, à la fois pour le serveur et pour les clients. La configuration de tous les clients sera ainsi a priori identique puisqu'il suffira de préciser à chacun qu'il ne doit accorder confiance qu'aux certificats signés par l'autorité de certification locale, celle de Falcot. Ils commencent par créer cette dernière ; pour cela, ils mettent en place un répertoire contenant les fichiers nécessaires à l'autorité de certification à un emplacement qu'ils contrôlent, et de préférence sur une machine non connectée au réseau afin de limiter les risques de vol de la clé privée de l'autorité de certification.
 				</div><pre
               class="screen">
 <code
@@ -234,10 +236,10 @@ Name [Certificate authority for Falcot Corp]:
 Email Address [admin@falcot.com]:
 </code></pre><div
               class="para">
-					The certificate for the VPN server can now be created, as well as the Diffie-Hellman parameters required for the server side of an SSL/TLS connection. The VPN server is identified by its DNS name <code
-                class="literal">vpn.falcot.com</code>; this name is re-used for the generated key files (<code
-                class="filename">keys/vpn.falcot.com.crt</code> for the public certificate, <code
-                class="filename">keys/vpn.falcot.com.key</code> for the private key):
+					On peut alors créer un certificat pour le serveur VPN ainsi que les paramètres Diffie-Hellman nécessaires pour le côté serveur d'une connexion SSL/TLS. Le serveur VPN est identifié par son nom DNS <code
+                class="literal">vpn.falcot.com</code> ; ce nom est employé dans les fichiers de clés générés (<code
+                class="filename">keys/vpn.falcot.com.crt</code> pour le certificat public et <code
+                class="filename">keys/vpn.falcot.com.key</code> pour la clé privée) :
 				</div><pre
               class="screen">
 <code
@@ -305,12 +307,12 @@ This is going to take a long time
               class="screen">
 <code
                 class="computeroutput">$ </code><strong
-                class="userinput"><code>./build-key JoeSmith
+                class="userinput"><code>./build-key PierreDurand
 </code></strong><code
                 class="computeroutput">Generating a 2048 bit RSA private key
 ................................+++
 ..............................................+++
-writing new private key to 'JoeSmith.key'
+writing new private key to 'PierreDurand.key'
 -----
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
@@ -322,12 +324,12 @@ If you enter '.', the field will be left blank.
 Country Name (2 letter code) [FR]:
 State or Province Name (full name) [Loire]:
 Locality Name (eg, city) [Saint-Étienne]:
-Organization Name (eg, company) [Falcot Corp]:
+Organization Name (eg, company) [Falcot SA]:
 Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="userinput"><code>Development unit
 </code></strong><code
-                class="computeroutput">Common Name (eg, your name or your server's hostname) [JoeSmith]:</code><strong
-                class="userinput"><code>Joe Smith
+                class="computeroutput">Common Name (eg, your name or your server's hostname) [PierreDurand]:</code><strong
+                class="userinput"><code>Pierre Durand
 </code></strong><code
                 class="computeroutput">[…]</code></pre><div
               class="para">
@@ -344,7 +346,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140256406987888"></a>10.2.1.2. Configuration du serveur OpenVPN</h4></div></div></div><div
+                      id="idm140272115998000"></a>10.2.1.2. Configuration du serveur OpenVPN</h4></div></div></div><div
               class="para">
 					Par défaut, le script d'initialisation d'OpenVPN tente de démarrer tous les réseaux privés virtuels définis dans <code
                 class="filename">/etc/openvpn/*.conf</code>. Pour mettre en place un serveur VPN, il suffit donc de déposer le fichier de configuration correspondant dans ce répertoire. On peut s'inspirer de <code
@@ -381,7 +383,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140256406973216"></a>10.2.1.3. Configuration du client OpenVPN</h4></div></div></div><div
+                      id="idm140272115983328"></a>10.2.1.3. Configuration du client OpenVPN</h4></div></div></div><div
               class="para">
 					Pour mettre en place un client OpenVPN, il faut également déposer un fichier de configuration dans <code
                 class="filename">/etc/openvpn/</code>. On pourra s'inspirer de <code
@@ -392,33 +394,33 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="literal">key</code> doivent aussi être modifiées pour indiquer l'emplacement des différentes clés.
 				</div><div
               class="para">
-					If the VPN should not be started automatically on boot, set the <code
-                class="literal">AUTOSTART</code> directive to <code
-                class="literal">none</code> in the <code
-                class="filename">/etc/default/openvpn</code> file. Starting or stopping a given VPN connection is always possible with the commands <code
+					Si l'on ne veut pas que la connexion au VPN soit automatiquement mise en place au démarrage, on peut positionner <code
+                class="literal">AUTOSTART</code> à <code
+                class="literal">none</code> dans <code
+                class="filename">/etc/default/openvpn</code>. On peut toujours démarrer/stopper une connexion VPN spécifique avec <code
                 class="command">service openvpn@<em
-                  class="replaceable">name</em> start</code> and <code
+                  class="replaceable">nom</em> start</code> et <code
                 class="command">service openvpn@<em
-                  class="replaceable">name</em> stop</code> (where the connection <em
-                class="replaceable">name</em> matches the one defined in <code
+                  class="replaceable">nom</em> stop</code> (la connexion <em
+                class="replaceable">nom</em> correspond à celle définie dans <code
                 class="filename">/etc/openvpn/<em
-                  class="replaceable">name</em>.conf</code>).
+                  class="replaceable">nom</em>.conf</code>).
 				</div><div
               class="para">
 					Le paquet <span
                 class="pkg pkg">network-manager-openvpn-gnome</span> est une extension de Network Manager (voir <a
                 class="xref"
                 href="sect.network-config.html#sect.roaming-network-config">Section 8.2.4, « Configuration réseau itinérante »</a>) lui permettant de gérer des réseaux privés virtuels OpenVPN. Chaque utilisateur peut ainsi configurer graphiquement une connexion à un VPN OpenVPN et la contrôler depuis l'icône de gestion du réseau. <a
-                id="idm140256406962160"
+                id="idm140272096418192"
                 class="indexterm"></a>
 				</div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ssh-vpn"></a>10.2.2. Réseau privé virtuel avec SSH</h3></div></div></div><a
-            id="idm140256406959696"
+            id="idm140272096415728"
             class="indexterm"></a><a
-            id="idm140256406958736"
+            id="idm140272096414768"
             class="indexterm"></a><div
             class="para">
 				Il existe en réalité deux méthodes pour établir un réseau privé virtuel à l'aide de SSH. La première, historique, consiste à établir une couche PPP au-dessus du lien SSH. Elle est documentée dans un HOWTO : <div
@@ -448,32 +450,37 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipsec"></a>10.2.3. IPsec</h3></div></div></div><a
-            id="idm140256406948480"
+            id="idm140272096404512"
             class="indexterm"></a><a
-            id="idm140256406947520"
+            id="idm140272096403552"
             class="indexterm"></a><a
-            id="idm140256406946400"
+            id="idm140272096402432"
             class="indexterm"></a><div
             class="para">
-				IPsec, despite being the standard in IP VPNs, is rather more involved in its implementation. The IPsec engine itself is integrated in the Linux kernel; the required user-space parts, the control and configuration tools, are provided by the <span
-              class="pkg pkg">ipsec-tools</span> package. In concrete terms, each host's <code
-              class="filename">/etc/ipsec-tools.conf</code> contains the parameters for <span
-              class="emphasis"><em>IPsec tunnels</em></span> (or <span
-              class="emphasis"><em>Security Associations</em></span>, in the IPsec terminology) that the host is concerned with; the <code
-              class="command">/etc/init.d/setkey</code> script provides a way to start and stop a tunnel (each tunnel is a secure link to another host connected to the virtual private network). This file can be built by hand from the documentation provided by the <span
+				IPsec, le standard en matière de réseau privé virtuel IP, est nettement plus difficile à mettre en œuvre. Il est intégré au noyau Linux et, pour l'employer sous Debian, il suffit d'installer le paquet <span
+              class="pkg pkg">ipsec-tools</span> recelant des outils complémentaires et de paramétrage. Sur le plan pratique, le fichier <code
+              class="filename">/etc/ipsec-tools.conf</code> de chaque hôte abrite les paramètres de « tunnels <span
+              class="emphasis"><em>IPsec</em></span> » (ou <span
+              class="foreignphrase"><em
+                class="foreignphrase">Security Association</em></span> dans le vocabulaire <span
+              class="emphasis"><em>IPsec</em></span>) le concernant et le script <code
+              class="command">/etc/init.d/setkey</code> offre le moyen d'établir (paramètre <code
+              class="literal">start</code>) ou de stopper (<code
+              class="literal">stop</code>) un tunnel. Chaque tunnel est une liaison sûre avec un autre hôte connecté au réseau privé virtuel. On peut constituer ce fichier manuellement en s'aidant de la page de manuel <span
               class="citerefentry"><span
-                class="refentrytitle">setkey</span>(8)</span> manual page. However, explicitly writing the parameters for all hosts in a non-trivial set of machines quickly becomes an arduous task, since the number of tunnels grows fast. Installing an IKE daemon (for <span
-              class="emphasis"><em>IPsec Key Exchange</em></span>) such as <span
-              class="pkg pkg">racoon</span> or <span
-              class="pkg pkg">strongswan</span> makes the process much simpler by bringing administration together at a central point, and more secure by rotating the keys periodically.
+                class="refentrytitle">setkey</span>(8)</span>. Mais administrer un parc étoffé ainsi, en paramétrant explicitement, devient difficile car le nombre de tunnels augmente vite. L'installation d'un démon IKE (<span
+              class="foreignphrase"><em
+                class="foreignphrase">IPsec Key Exchange</em></span>, échange de clés IPsec) comme <span
+              class="pkg pkg">racoon</span> ou <span
+              class="pkg pkg">strongswan</span> simplifie tout cela en centralisant l'administration et améliore la sécurité en organisant une rotation des clés employées.
 			</div><a
-            id="idm140256406938544"
+            id="idm140272096393408"
             class="indexterm"></a><a
-            id="idm140256406937584"
+            id="idm140272096392448"
             class="indexterm"></a><a
-            id="idm140256406936144"
+            id="idm140272096391008"
             class="indexterm"></a><a
-            id="idm140256406935184"
+            id="idm140272096390048"
             class="indexterm"></a><div
             class="para">
 				Malgré son statut de référence, sa complexité de mise en œuvre restreint considérablement l'usage d'IPsec dans la pratique. On préférera généralement une solution à base d'OpenVPN lorsque les tunnels VPN nécessaires sont peu nombreux et n'évoluent pas régulièrement.
@@ -495,9 +502,9 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                   class="foreignphrase">NAT Traversal</em></span>, ou traversée de NAT), qui consiste à encapsuler le paquet <span
                 class="emphasis"><em>IPsec</em></span> dans un paquet UDP.
 			</div><a
-              id="idm140256406927872"
+              id="idm140272096382736"
               class="indexterm"></a><a
-              id="idm140256406926912"
+              id="idm140272096381776"
               class="indexterm"></a></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -505,15 +512,17 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                         class="emphasis"><em>SÉCURITÉ</em></span> <span
                         class="emphasis"><em>IPsec</em></span> et pare-feu</strong></p></div></div></div><div
               class="para">
-				The standard mode of operation of IPsec involves data exchanges on UDP port 500 for key exchanges (also on UDP port 4500 in the case that NAT-T is in use). Moreover, IPsec packets use two dedicated IP protocols that the firewall must let through; reception of these packets is based on their protocol numbers, 50 (ESP) and 51 (AH).
+				Le fonctionnement d'<span
+                class="emphasis"><em>IPsec</em></span> induit des échanges de données sur le port UDP 500 pour les échanges de clés (et aussi sur le port UDP 4 500 si NAT-T est employé). De plus, les paquets <span
+                class="emphasis"><em>IPsec</em></span> utilisent deux protocoles IP dédiés que le pare-feu doit aussi laisser passer : les protocoles numérotés 50 (ESP) et 51 (AH).
 			</div><a
-              id="idm140256406923232"
+              id="idm140272096377232"
               class="indexterm"></a><a
-              id="idm140256406922272"
+              id="idm140272096376272"
               class="indexterm"></a><a
-              id="idm140256406921312"
+              id="idm140272096375312"
               class="indexterm"></a><a
-              id="idm140256406919872"
+              id="idm140272096373872"
               class="indexterm"></a></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -526,13 +535,13 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
               class="foreignphrase"><em
                 class="foreignphrase">Generic Routing Encapsulation</em></span>, ou encapsulation de routage générique). Une connexion PPP standard s'établit sur le canal d'échange de données.
 			</div><a
-            id="idm140256406915376"
+            id="idm140272096369376"
             class="indexterm"></a><a
-            id="idm140256406914416"
+            id="idm140272096368416"
             class="indexterm"></a><a
-            id="idm140256406913328"
+            id="idm140272096367328"
             class="indexterm"></a><a
-            id="idm140256406912368"
+            id="idm140272096366368"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -544,7 +553,7 @@ Organizational Unit Name (eg, section) [Certificate authority]:</code><strong
                 class="url">→ <a
                   href="http://pptpclient.sourceforge.net/howto-debian.phtml">http://pptpclient.sourceforge.net/howto-debian.phtml</a></div>
 				</div><a
-              id="idm140256406907952"
+              id="idm140272096361952"
               class="indexterm"></a><div
               class="para">
 					Les administrateurs de Falcot ont créé plusieurs fichiers : <code
@@ -614,9 +623,9 @@ fi
                   class="foreignphrase"><em
                     class="foreignphrase">Microsoft Point-to-Point Encryption</em></span>, ou chiffrement point à point de Microsoft), fonctionnalité intégrée sous forme de module dans les noyaux Debian officiels.
 				</div><a
-                id="idm140256406894064"
+                id="idm140272096348064"
                 class="indexterm"></a><a
-                id="idm140256406893104"
+                id="idm140272096347104"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h4

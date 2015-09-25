@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="para">
 			Inetd (souvent appelé « super-serveur Internet ») est en réalité un serveur de serveurs, employé pour invoquer à la demande les serveurs rarement employés qui ne fonctionnent donc pas en permanence.
 		</div><a
-          id="idm140256406501728"
+          id="idm140272096034640"
           class="indexterm"></a><a
-          id="idm140256406500608"
+          id="idm140272096033744"
           class="indexterm"></a><div
           class="para">
 			Le fichier <code
@@ -87,9 +87,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>CHARTE DEBIAN</em></span> Enregistrer un service dans <code
                       class="filename">inetd.conf</code></strong></p></div></div></div><div
             class="para">
-			Packages frequently want to register a new server in the <code
-              class="filename">/etc/inetd.conf</code> file, but Debian Policy prohibits any package from modifying a configuration file that it doesn't own. This is why the <code
-              class="command">update-inetd</code> script (in the package with the same name) was created: It manages the configuration file, and other packages can thus use it to register a new server to the super-server's configuration.
+			Les paquets souhaiteraient parfois enregistrer un nouveau serveur dans le fichier <code
+              class="filename">/etc/inetd.conf</code>, mais la charte Debian interdit à tout paquet de modifier un fichier de configuration qui ne relève pas de lui. C'est pourquoi le script <code
+              class="command">update-inetd</code> (du paquet éponyme) a été créé : il a à sa charge le fichier de configuration et les autres paquets peuvent ainsi l'employer pour demander au super-serveur de prendre en compte un nouveau serveur.
 		</div></div><div
           class="para">
 			Chaque ligne significative du fichier <code
@@ -150,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 finger stream tcp nowait  nobody     /usr/sbin/tcpd     in.fingerd
 ident  stream tcp nowait  nobody     /usr/sbin/identd   identd -i
 </pre></div></div><a
-          id="idm140256406477248"
+          id="idm140272096014640"
           class="indexterm"></a><div
           class="para">
 			Le programme <code
@@ -167,9 +167,9 @@ ident  stream tcp nowait  nobody     /usr/sbin/identd   identd -i
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>COMMUNAUTÉ</em></span> Wietse Venema</strong></p></div></div></div><a
-            id="idm140256406470416"
+            id="idm140272096009120"
             class="indexterm"></a><a
-            id="idm140256406469456"
+            id="idm140272096008352"
             class="indexterm"></a><div
             class="para">
 			Wietse Venema, dont les compétences en matière de sécurité en font un programmeur réputé, est l'auteur du programme <code
@@ -196,11 +196,11 @@ ident  stream tcp nowait  nobody     /usr/sbin/identd   identd -i
               class="filename">/etc/xinetd.d/</code>), ce qui peut faciliter la vie des administrateurs.
 		</div><div
             class="para">
-			Last but not least, it is even possible to emulate <code
-              class="command">inetd</code>'s behaviour with <code
-              class="command">systemd</code>'s socket-activation mechanism (see <a
+			Enfin, il est également possible d'émuler le comportement d'<code
+              class="command">inetd</code> avec le mécanisme d'activation de socket de <code
+              class="command">systemd</code> (voir <a
               class="xref"
-              href="unix-services.html#sect.systemd">Section 9.1.1, « The systemd init system »</a>).
+              href="unix-services.html#sect.systemd">Section 9.1.1, « Le système d'initialisation systemd »</a>).
 		</div></div></div><ul
         class="docnav"><li
           class="previous"><a
