@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140575199756624"></a>15.2.1. Meta-Packages or Fake Packages</h3></div></div></div><div
+                    id="idm140641861061248"></a>15.2.1. Meta-Packages or Fake Packages</h3></div></div></div><div
             class="para">
 				Fake packages and meta-packages are similar, in that they are empty shells that only exist for the effects their meta-data have on the package handling stack.
 			</div><div
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">equivs-build</code>, and they will not be kept in the headers of the generated package.
 			</div><div
             class="example"><a
-              id="idm140575199747232"></a><p
+              id="idm140641861051856"></a><p
               class="title"><strong>Example 15.2. Header file of the <span
                   class="emphasis"><em>libxml-libxml-perl</em></span> fake package</strong></p><div
               class="example-contents"><pre
@@ -127,7 +127,7 @@ Description: Fake package - module manually installed in site_perl
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140575199743296"></a>15.2.2. Simple File Archive</h3></div></div></div><div
+                    id="idm140641861047920"></a>15.2.2. Simple File Archive</h3></div></div></div><div
             class="para">
 				The Falcot Corp administrators need to create a Debian package in order to ease deployment of a set of documents on a large number of machines. The administrator in charge of this task first reads the “New Maintainer's Guide”, then starts working on their first package. <div
               class="url">→ <a
@@ -176,9 +176,9 @@ $</code></pre><div
               class="emphasis"><em>single binary</em></span> acts as a counterpart, and leads to a single binary package that is dependent on the target architecture (<code
               class="literal">Architecture: any</code>). In this case, the former choice is more relevant since the package only contains documents and no binary programs, so it can be used similarly on computers of all architectures.
 			</div><a
-            id="idm140575199730688"
+            id="idm140641861035312"
             class="indexterm"></a><a
-            id="idm140575199729728"
+            id="idm140641861034352"
             class="indexterm"></a><div
             class="para">
 				The <span
@@ -222,7 +222,8 @@ export DEBFULLNAME="Raphael Hertzog"
               class="filename">changelog</code> file is generally appropriate; replacing the “Initial release” with a more verbose explanation and changing the distribution from <code
               class="literal">unstable</code> to <code
               class="literal">internal</code> is enough. The <code
-              class="filename">control file</code> was also updated: the section has been changed to <span
+              class="filename">control</code> file was also updated: the <code
+              class="literal">Section</code> field has been changed to <span
               class="emphasis"><em>misc</em></span> and the <code
               class="literal">Homepage</code>, <code
               class="literal">Vcs-Git</code> and <code
@@ -231,7 +232,7 @@ export DEBFULLNAME="Raphael Hertzog"
               class="literal">iceweasel | www-browser</code> so as to ensure the availability of a web browser able to display the documents in the package.
 			</div><div
             class="example"><a
-              id="idm140575199709856"></a><p
+              id="idm140641861013792"></a><p
               class="title"><strong>Example 15.3. The <code
                   class="filename">control</code> file</strong></p><div
               class="example-contents"><pre
@@ -256,7 +257,7 @@ Description: Internal Falcot Corp Documentation
  Their use is INTERNAL ONLY.
 </pre></div></div><div
             class="example"><a
-              id="idm140575199707408"></a><p
+              id="idm140641861011344"></a><p
               class="title"><strong>Example 15.4. The <code
                   class="filename">changelog</code> file</strong></p><div
               class="example-contents"><pre
@@ -271,7 +272,7 @@ falcot-data (1.0) internal; urgency=low
  -- Raphael Hertzog &lt;hertzog@debian.org&gt;  Fri, 04 Sep 2015 12:09:39 -0400
 </pre></div></div><div
             class="example"><a
-              id="idm140575199705264"></a><p
+              id="idm140641861009200"></a><p
               class="title"><strong>Example 15.5. The <code
                   class="filename">copyright</code> file</strong></p><div
               class="example-contents"><pre
@@ -289,7 +290,7 @@ License:
                     class="title"><strong><span
                         class="emphasis"><em>BACK TO BASICS</em></span> <code
                         class="filename">Makefile</code> file</strong></p></div></div></div><a
-              id="idm140575199701584"
+              id="idm140641861005520"
               class="indexterm"></a><div
               class="para">
 				A <code
@@ -340,7 +341,7 @@ data/* usr/share/falcot-data/
               class="filename">debian/falcot-data.install</code>.
 			</div><div
             class="example"><a
-              id="idm140575201395792"></a><p
+              id="idm140641860989136"></a><p
               class="title"><strong>Example 15.6. The <code
                   class="filename">falcot-data.desktop</code> file</strong></p><div
               class="example-contents"><pre

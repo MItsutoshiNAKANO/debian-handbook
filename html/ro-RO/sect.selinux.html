@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.selinux"></a>14.5. Introduction to SELinux</h2></div></div></div><a
-          id="idm140463055572208"
+          id="idm140519630151536"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>domain</em></span> that the user carried at that time. The rights really depend on the domain, but the transitions between domains are controlled by the roles. Finally, the possible transitions between roles depend on the identity.
 			</div><div
             class="figure"><a
-              id="idm140463055563312"></a><div
+              id="idm140519630142640"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-context.png"
@@ -127,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">ssh_t</code> domain). This automatic domain transition mechanism makes it possible to grant only the rights required by each program. It is a fundamental principle of SELinux.
 			</div><div
             class="figure"><a
-              id="idm140463055550752"></a><div
+              id="idm140519630130080"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-transitions.png"
@@ -137,11 +137,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>IN PRACTICE</em></span> Finding the security context</strong></p></div></div></div><a
-              id="idm140463055546272"
+              id="idm140519630125600"
               class="indexterm"></a><a
-              id="idm140463055545312"
+              id="idm140519630124640"
               class="indexterm"></a><a
-              id="idm140463055544384"
+              id="idm140519630123712"
               class="indexterm"></a><div
               class="para">
 				To find the security context of a given process, you should use the <code
@@ -197,7 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Unfortunately the maintainers of the <span
                 class="pkg pkg">refpolicy</span> source package did not handle release critical bugs on their package and the package got removed from jessie. This means that the <span
-                class="pkg pkg">selinux-policy-*</span> packages are currently not installable in jessie and needs to be fetched from another place. Hopefully they will come back in one of the point releases or in jessie-backports. In the mean time, you can grab them from unstable.
+                class="pkg pkg">selinux-policy-*</span> packages are currently not installable in jessie and needs to be fetched from another place. Hopefully they will come back in one of the point releases or in jessie-backports. In the meantime, you can grab them from unstable.
 			</div><div
               class="para">
 				This sad situation at least proves that SELinux is not very popular in the set of users/developers who are running the development versions of Debian. Thus, if you opt to use SELinux, you should expect the default policy to not work perfectly and you will have to invest quite some time to make it suitable to your specific needs.
@@ -229,9 +229,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.selinux-management"></a>14.5.3. Managing an SELinux System</h3></div></div></div><a
-            id="idm140463055515920"
+            id="idm140519630095248"
             class="indexterm"></a><a
-            id="idm140463055514800"
+            id="idm140519630094128"
             class="indexterm"></a><div
             class="para">
 				The SELinux policy is a modular set of rules, and its installation detects and enables automatically all the relevant modules based on the already installed services. The system is thus immediately operational. However, when a service is installed after the SELinux policy, you must be able to manually enable the corresponding module. That is the purpose of the <code
@@ -262,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140463055504704"></a>14.5.3.1. Managing SELinux Modules</h4></div></div></div><div
+                      id="idm140519630084032"></a>14.5.3.1. Managing SELinux Modules</h4></div></div></div><div
               class="para">
 					Available SELinux modules are stored in the <code
                 class="filename">/usr/share/selinux/default/</code> directory. To enable one of these modules in the current configuration, you should use <code
@@ -325,7 +325,7 @@ acct    1.6.0
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140463055487952"></a>14.5.3.2. Managing Identities</h4></div></div></div><div
+                      id="idm140519630067280"></a>14.5.3.2. Managing Identities</h4></div></div></div><div
               class="para">
 					Every time that a user logs in, they get assigned an SELinux identity. This identity defines the roles that they will be able to endorse. Those two mappings (from the user to the identity and from this identity to roles) are configurable with the <code
                 class="command">semanage</code> command.
@@ -406,7 +406,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140463055465168"></a>14.5.3.3. Managing File Contexts, Ports and Booleans</h4></div></div></div><div
+                      id="idm140519630044496"></a>14.5.3.3. Managing File Contexts, Ports and Booleans</h4></div></div></div><div
               class="para">
 					Each SELinux module provides a set of file labeling rules, but it is also possible to add custom labeling rules to cater to a specific case. For example, if you want the web server to be able to read files within the <code
                 class="filename">/srv/www/</code> file hierarchy, you could execute <code
@@ -477,13 +477,13 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140463052630432"></a>14.5.4.1. Writing a <code
+                      id="idm140519627272288"></a>14.5.4.1. Writing a <code
                       class="filename">.fc</code> file</h4></div></div></div><div
               class="para">
 					Reading the below example should be sufficient to understand the structure of such a file. You can use regular expressions to assign the same security context to multiple files, or even an entire directory tree.
 				</div><div
               class="example"><a
-                id="idm140463052628784"></a><p
+                id="idm140519627270640"></a><p
                 class="title"><strong>Exemplu 14.2. <code
                     class="filename">example.fc</code> file</strong></p><div
                 class="example-contents"><pre
@@ -497,7 +497,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140463052626800"></a>14.5.4.2. Writing a <code
+                      id="idm140519627268656"></a>14.5.4.2. Writing a <code
                       class="filename">.if</code> File</h4></div></div></div><div
               class="para">
 					In the sample below, the first interface (“<code
@@ -510,7 +510,7 @@ user_u          user       SystemLow  SystemLow             user_r
                 class="literal">gen_require</code> macro), and use standard directives to grant rights. Note, however, that you can use interfaces provided by other modules. The next section will give more explanations about how to express those rights.
 				</div><div
               class="example"><a
-                id="idm140463052623248"></a><p
+                id="idm140519627265104"></a><p
                 class="title"><strong>Exemplu 14.3. <code
                     class="filename">example.if</code> File</strong></p><div
                 class="example-contents"><pre
@@ -579,7 +579,7 @@ interface(`myapp_read_log',`
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140463052617424"></a>14.5.4.3. Writing a <code
+                      id="idm140519627259280"></a>14.5.4.3. Writing a <code
                       class="filename">.te</code> File</h4></div></div></div><div
               class="para">
 					Have a look at the <code
@@ -753,7 +753,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
 					To better understand this message, let us study it piece by piece.
 				</div><div
               class="table"><a
-                id="idm140463052589424"></a><p
+                id="idm140519627231280"></a><p
                 class="title"><strong>Tabel 14.1. Analysis of an SELinux trace</strong></p><div
                 class="table-contents"><table
                   xmlns:d="http://docbook.org/ns/docbook"
@@ -785,9 +785,9 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>COMPLEMENTS</em></span> No roles in policy rules</strong></p></div></div></div><a
-                id="idm140463052564704"
+                id="idm140519627206560"
                 class="indexterm"></a><a
-                id="idm140463052563936"
+                id="idm140519627205792"
                 class="indexterm"></a><div
                 class="para">
 					It might seem weird that roles do not appear at all when creating new rules. SELinux uses only the domains to find out which operations are allowed. The role intervenes only indirectly by allowing the user to switch to another domain. SELinux is based on a theory known as <span
@@ -796,7 +796,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140463052561856"></a>14.5.4.4. Compiling the Files</h4></div></div></div><div
+                      id="idm140519627203712"></a>14.5.4.4. Compiling the Files</h4></div></div></div><div
               class="para">
 					Once the 3 files (<code
                 class="filename">example.if</code>, <code

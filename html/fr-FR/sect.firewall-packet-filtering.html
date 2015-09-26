@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. Pare-feu ou filtre de paquets</h2></div></div></div><a
-          id="idm140272105673184"
+          id="idm140090002038896"
           class="indexterm"></a><a
-          id="idm140272105672224"
+          id="idm140090003286640"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>B.A.-BA</em></span> Pare-feu</strong></p></div></div></div><a
-            id="idm140272103967120"
+            id="idm140090003284560"
             class="indexterm"></a><div
             class="para">
 			Un pare-feu (<span
@@ -90,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			L'absence de configuration standard explique qu'il n'y ait pas de solution prête à l'emploi. Des outils permettent en revanche de simplifier la configuration du pare-feu netfilter en visualisant graphiquement les règles définies. L'un des meilleurs est sans doute <code
             class="command">fwbuilder</code>.
 		</div><a
-          id="idm140272103962496"
+          id="idm140090003279936"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -100,13 +100,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			Un pare-feu peut limiter son action à une seule machine (et non pas un réseau local complet) ; son rôle principal est alors de refuser ou limiter l'accès à certains services, voire de se prémunir contre l'établissement de connexions sortantes par des logiciels indésirables que l'utilisateur pourrait avoir installés (volontairement ou pas).
 		</div></div><div
           class="para">
-			Le noyau Linux intègre le pare-feu netfilter ; les outils <code
-            class="command">iptables</code> et <code
-            class="command">ip6tables</code> permettent de le configurer. La différence entre ces deux outils se limite à ce que le premier agit sur le réseau IPv4 alors que le second intervient sur le réseau IPv6. Les deux piles réseau étant amenées à cohabiter pendant de nombreuses années, il faudra faire usage des deux outils en parallèle.
+			The Linux kernel embeds the <span
+            class="emphasis"><em>netfilter</em></span> firewall. It can be controlled from user space with the <code
+            class="command">iptables</code> and <code
+            class="command">ip6tables</code> commands. The difference between these two commands is that the former acts on the IPv4 network, whereas the latter acts on IPv6. Since both network protocol stacks will probably be around for many years, both tools will need to be used in parallel.
 		</div><a
-          id="idm140272102278320"
+          id="idm140090016809184"
           class="indexterm"></a><a
-          id="idm140272102277200"
+          id="idm140090016808064"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -142,9 +143,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Chaque table contient des listes de règles appelées chaînes ; les chaînes standards servent au pare-feu pour traiter les paquets dans différentes circonstances prédéfinies. L'administrateur peut créer d'autres chaînes, qui ne seront employées que si l'une des chaînes standard les appelle.
 			</div><a
-            id="idm140272102266848"
+            id="idm140090016797712"
             class="indexterm"></a><a
-            id="idm140272102265888"
+            id="idm140090017197328"
             class="indexterm"></a><div
             class="para">
 				La table <code
@@ -220,15 +221,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Rappelons qu'un tampon de réception est une petite zone mémoire contenant les données reçues par le réseau avant qu'elles ne soient traitées par le noyau. Si cette zone est pleine, il est alors impossible de recevoir d'autres données et ICMP signale le problème de sorte que le correspondant réduise la vitesse de transfert pour essayer d'atteindre un équilibre.
 			</div><a
-              id="idm140272096086288"
+              id="idm140089996344416"
               class="indexterm"></a><a
-              id="idm140272096085328"
+              id="idm140089996343456"
               class="indexterm"></a><a
-              id="idm140272096084240"
+              id="idm140089996342368"
               class="indexterm"></a><a
-              id="idm140272096083280"
+              id="idm140089996341408"
               class="indexterm"></a><a
-              id="idm140272096082320"
+              id="idm140089996340448"
               class="indexterm"></a><div
               class="para">
 				Alors qu'un réseau IPv4 peut fonctionner sans ICMP, ICMPv6 est absolument indispensable dans le cadre d'un réseau IPv6 car il combine des fonctions jusqu'alors partagées entre ICMPv4, IGMP (<span
@@ -336,9 +337,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> indique la table sur laquelle opérer (par défaut, c'est <code
               class="literal">filter</code>).
 			</div><a
-            id="idm140272093870800"
+            id="idm140089994203056"
             class="indexterm"></a><a
-            id="idm140272093869680"
+            id="idm140089994201936"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -376,7 +377,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. Les règles</h4></div></div></div><a
-              id="idm140272093855088"
+              id="idm140089994187264"
               class="indexterm"></a><div
               class="para">
 					Chaque règle s'exprime sous la forme <code
@@ -523,7 +524,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="Fwbuilder en action" /></div></div><p
               class="title"><strong>Figure 14.2. Fwbuilder en action</strong></p></div><a
-            id="idm140272094117184"
+            id="idm140090017046544"
             class="indexterm"></a><div
             class="para">
 				<code

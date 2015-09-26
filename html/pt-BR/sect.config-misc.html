@@ -75,18 +75,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.timezone"></a>8.9.1. Região</h3></div></div></div><a
-            id="idm140651237148592"
+            id="idm140156033857216"
             class="indexterm"></a><div
             class="sidebar"><a
               id="sidebar.symbolic-link"></a><div
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> Links simbólicos</strong></p></div></div></div><a
-              id="idm140651237146144"
+              id="idm140156033854768"
               class="indexterm"></a><a
-              id="idm140651237144704"
+              id="idm140156033853328"
               class="indexterm"></a><a
-              id="idm140651237143744"
+              id="idm140156033852368"
               class="indexterm"></a><div
               class="para">
 				Uma ligação simbólica é um ponteiro para outro arquivo. Quando você a acessa, o arquivo para o qual ela aponta é aberto. A remoção da ligação não irá causar o apagar do arquivo para o qual ela aponta. Da mesma forma, ela não tem sua própria configuração de permissões, mas mantém as permissões de seu alvo. Finalmente, ela pode apontar para qualquer tipo de arquivo: diretórios, arquivos especiais (sockets, named pipes, device files, etc.), e até mesmo outras ligações simbólicas.
@@ -110,23 +110,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/usr/share/zoneinfo</code> é copiado para <code
               class="filename">/etc/localtime</code>; esse arquivo contém as regras que governam as datas aonde o horário de verão é ativado, para países que o usam.
 			</div><a
-            id="idm140651237134288"
+            id="idm140156033842912"
             class="indexterm"></a><a
-            id="idm140651237133168"
+            id="idm140156033841792"
             class="indexterm"></a><a
-            id="idm140651237132048"
+            id="idm140156033840672"
             class="indexterm"></a><a
-            id="idm140651237130928"
+            id="idm140156033839552"
             class="indexterm"></a><a
-            id="idm140651237129808"
+            id="idm140156033838432"
             class="indexterm"></a><a
-            id="idm140651237128848"
+            id="idm140156033837472"
             class="indexterm"></a><div
             class="para">
 				Quando você precisar alterar temporariamente o fuso-horário (timezone), use a variável de ambiente <code
               class="varname">TZ</code>, a qual tem prioridade sobre a configuração padrão do sistema:
 			</div><a
-            id="idm140651237126784"
+            id="idm140156033835408"
             class="indexterm"></a><a
             id="screen.tz"></a><pre
             class="screen">
@@ -161,9 +161,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.time-synchronization"></a>8.9.2. Sincronização de Tempo</h3></div></div></div><a
-            id="idm140651237114544"
+            id="idm140156033823168"
             class="indexterm"></a><a
-            id="idm140651237113616"
+            id="idm140156033822240"
             class="indexterm"></a><div
             class="para">
 				A sincronização de horário, o que pode parecer supérfluo em um computador, é muito importante em uma rede. Como os usuários não tem permissão de modificar a data e horário, é importante que essa informação seja precisa para prevenir confusão. Além do mais, ter todos os computadores em uma rede sincronizados permite melhor cruzamento de referencias de informação a partir dos logs de diferentes máquinas. Assim, em um eventual ataque, é mais fácil reconstruir a sequência cronológica das ações nas várias máquinas envolvidas no compromisso. Os dados coletados nas várias máquinas, para propósitos de estatística, não farão muito sentido se eles não estiverem sincronizados.
@@ -172,9 +172,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>DE VOLTA AO BÁSICO</em></span> NTP</strong></p></div></div></div><a
-              id="idm140651237109872"
+              id="idm140156033818496"
               class="indexterm"></a><a
-              id="idm140651237108912"
+              id="idm140156033817536"
               class="indexterm"></a><div
               class="para">
 				O NTP (Network Time Protocol) permite que uma máquina sincronize com outras com razoável precisão, levando em consideração os atrasos induzidos pela transferência de informação pela rede e outros possíveis desvios.
@@ -197,9 +197,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="pkg pkg">ntpdate</span>. Você pode alterar o servidor NTP usado, se necessário, modificando o arquivo <code
                 class="filename">/etc/default/ntpdate</code>.
 				</div><a
-              id="idm140651237100464"
+              id="idm140156033809088"
               class="indexterm"></a><a
-              id="idm140651237099344"
+              id="idm140156033807968"
               class="indexterm"></a></div><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -211,19 +211,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="emphasis"><em>pool.ntp.org</em></span> e prover o horário em resposta as requisições vindas da rede local. Você pode configurá-lo editando o arquivo <code
                 class="filename">/etc/ntp.conf</code>, sendo a mais significante alteração o servidor NTP ao qual ele se refere. Se a rede tem vários servidores, pode ser interessante ter um servidor local de horário o qual faz a sincronização com servidores públicos e é usado como fonte de horário para outros servidores na rede.
 				</div><a
-              id="idm140651237094016"
+              id="idm140156033802640"
               class="indexterm"></a><a
-              id="idm140651237092592"
+              id="idm140156033801216"
               class="indexterm"></a><a
-              id="idm140651237091152"
+              id="idm140156033799776"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>APROFUNDANDO</em></span> Módulos GPS e outros recursos de tempo</strong></p></div></div></div><a
-                id="idm140651237088624"
+                id="idm140156033797248"
                 class="indexterm"></a><a
-                id="idm140651237087664"
+                id="idm140156033796288"
                 class="indexterm"></a><div
                 class="para">
 					Se a sincronização do horário for particularmente crucial para sua rede, é possível equipar um servidor com o módulo GPS (o qual irá usar o horário a partir de satélites GPS) ou o módulo DCF-77 (o qual irá sincronizar o horário com um relógio atômico perto de Frankfurt, Alemanha). Neste caso, a configuração do servidor NTP é um pouco mais complicada e uma consulta prévia à documentação é absolutamente necessária.
@@ -232,13 +232,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.rotation-logs"></a>8.9.3. Rotação de Arquivos de Log</h3></div></div></div><a
-            id="idm140651237084176"
+            id="idm140156033792800"
             class="indexterm"></a><a
-            id="idm140651237082736"
+            id="idm140156033791360"
             class="indexterm"></a><a
-            id="idm140651237081296"
+            id="idm140156033789920"
             class="indexterm"></a><a
-            id="idm140651237080368"
+            id="idm140156033788992"
             class="indexterm"></a><div
             class="para">
 				Arquivos de log podem crescer rapidamente e é necessário arquivá-los. O esquema mais comum é a rotação dos arquivos: o arquivo de log é arquivado regularmente, e apenas os últimos <em
@@ -262,11 +262,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.sharing-admin-rights"></a>8.9.4. Compartilhando Direitos Administrativos</h3></div></div></div><a
-            id="idm140651237071856"
+            id="idm140156033780480"
             class="indexterm"></a><a
-            id="idm140651237070416"
+            id="idm140156033779040"
             class="indexterm"></a><a
-            id="idm140651237069456"
+            id="idm140156033778080"
             class="indexterm"></a><div
             class="para">
 				Frequentemente, vários administradores trabalham na mesma rede. O compartilhamento da senha do root não é muito elegante, e abre brecha para abusos devido ao anonimato que tal prática cria. A solução para esse problema é o programa <code
@@ -286,11 +286,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal"><em
                 class="replaceable">usuário</em> ALL=(ALL) ALL</code> permite que o usuário em questão executar qualquer comando como root.
 			</div><a
-            id="idm140651237061152"
+            id="idm140156033769776"
             class="indexterm"></a><a
-            id="idm140651237060032"
+            id="idm140156033768656"
             class="indexterm"></a><a
-            id="idm140651237058912"
+            id="idm140156033767536"
             class="indexterm"></a><div
             class="para">
 				Configurações mais sofisticadas permitem autorizar apenas comandos específicos para usuários específicos. Todos os detalhes das variadas possibilidades são dados pela página de manual <span
@@ -301,9 +301,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.fstab-mount-points"></a>8.9.5. Lista de Pontos de Montagem</h3></div></div></div><a
-            id="idm140651237054720"
+            id="idm140156033763344"
             class="indexterm"></a><a
-            id="idm140651237053760"
+            id="idm140156033762384"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -315,7 +315,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/home/</code>. O sistema de arquivos raiz é sempre montado na inicialização, pelo kernel; outros dispositivos são geralmente montados mais tarde, durante a sequência de inicialização ou manualmente com o comando <code
                 class="command">mount</code> command.
 			</div><a
-              id="idm140651237049040"
+              id="idm140156033757664"
               class="indexterm"></a><div
               class="para">
 				Alguns dispositivos removíveis são montados automaticamente quando conectados, especialmente quando se está usando GNOME, KDE ou outro ambiente gráfico de trabalho. Outros tem que ser montados manualmente pelo usuário. Sendo assim, eles tem que ser desmontados (removidos da árvore de arquivos). Usuários comuns geralmente não tem permissões para executar os comandos <code
@@ -338,9 +338,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				O arquivo <code
               class="filename">/etc/fstab</code> dá uma lista de todas as possíveis montagens que acontecem tanto automaticamente na inicialização quanto manualmente para dispositivos de armazenamento removíveis. Cada ponto de montagem é descrito em uma linha com vários campos separados por espaço: <a
-              id="idm140651237038880"
+              id="idm140156033747504"
               class="indexterm"></a> <a
-              id="idm140651237038080"
+              id="idm140156033746704"
               class="indexterm"></a>
 			</div><div
             xmlns:d="http://docbook.org/ns/docbook"
@@ -485,15 +485,15 @@ arrakis:/shared /shared         nfs     defaults        0       0</pre></div></d
                 class="emphasis"><em>am-utils</em></span> provê o utilitário de auto montagem <code
                 class="command">amd</code>, capaz de montar mídias removíveis por demanda, quando um usuário tenta acessar seus pontos de montagem usuais. Ele irá desmontar esses dispositivos quando nenhum processo estiver mais acessando eles.
 			</div><a
-              id="idm140651236989232"
+              id="idm140156033697856"
               class="indexterm"></a><a
-              id="idm140651236988112"
+              id="idm140156033696736"
               class="indexterm"></a><a
-              id="idm140651236986992"
+              id="idm140156033695616"
               class="indexterm"></a><a
-              id="idm140651236985872"
+              id="idm140156033694496"
               class="indexterm"></a><a
-              id="idm140651236984752"
+              id="idm140156033693376"
               class="indexterm"></a><div
               class="para">
 				Outros utilitários de auto montagem existem, como o <code
@@ -510,11 +510,11 @@ arrakis:/shared /shared         nfs     defaults        0       0</pre></div></d
                     id="sect.locate-updatedb"></a>8.9.6. <code
                     class="command">locate</code> e <code
                     class="command">updatedb</code></h3></div></div></div><a
-            id="idm140651236979152"
+            id="idm140156033687776"
             class="indexterm"></a><a
-            id="idm140651236978032"
+            id="idm140156033686656"
             class="indexterm"></a><a
-            id="idm140651236976912"
+            id="idm140156033685536"
             class="indexterm"></a><div
             class="para">
 				O comando <code

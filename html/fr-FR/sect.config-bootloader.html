@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.config-bootloader"></a>8.8. Configuration du chargeur d'amorçage</h2></div></div></div><a
-          id="idm140272101377360"
+          id="idm140090000494592"
           class="indexterm"></a><a
-          id="idm140272101375920"
+          id="idm140089994986960"
           class="indexterm"></a><div
           class="para">
 			Il est probablement déjà fonctionnel, mais il est toujours bon de savoir configurer et installer un chargeur d'amorçage au cas où celui-ci disparaîtrait du <span
@@ -83,9 +83,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                       class="emphasis"><em>B.A.-BA</em></span> <span
                       class="foreignphrase"><em
                         class="foreignphrase">Master Boot Record</em></span></strong></p></div></div></div><a
-            id="idm140272099982880"
+            id="idm140089994983216"
             class="indexterm"></a><a
-            id="idm140272099981920"
+            id="idm140089994982256"
             class="indexterm"></a><div
             class="para">
 			Le <span
@@ -132,9 +132,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="literal">mousedev</code> dans <code
                 class="filename">/etc/modules</code> afin de forcer leur chargement au démarrage.
 			</div></div><a
-            id="idm140272099964784"
+            id="idm140089994965120"
             class="indexterm"></a><a
-            id="idm140272099963824"
+            id="idm140089994964160"
             class="indexterm"></a><div
             class="para">
 				La configuration du chargeur d'amorçage doit identifier les différents disques et leurs partitions. Linux emploie pour cela un système de fichiers spéciaux (dits en mode « bloc »), stockés dans le répertoire <code
@@ -147,13 +147,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="filename">/dev/sda1</code> est donc la première partition du premier disque et <code
               class="filename">/dev/sdb3</code> la troisième partition du deuxième disque.
 			</div><a
-            id="idm140272099958368"
+            id="idm140089994958704"
             class="indexterm"></a><a
-            id="idm140272099956928"
+            id="idm140089994957264"
             class="indexterm"></a><a
-            id="idm140272099955488"
+            id="idm140089994955824"
             class="indexterm"></a><a
-            id="idm140272099954048"
+            id="idm140089994954384"
             class="indexterm"></a><div
             class="para">
 				L'architecture PC (ou « i386 », y compris son jeune cousin « amd64 ») est limitée à quatre partitions « primaires » par disque. Pour outrepasser cette limitation, l'une d'entre elles sera créée comme une partition « étendue » et pourra alors contenir des partitions « secondaires ». Ces dernières portent toujours un numéro supérieur ou égal à 5. La première partition secondaire pourra donc être <code
@@ -163,9 +163,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Une autre restriction de la table de partition MS-DOS est qu'elle ne supporte pas des disques de plus de 2 To, ce qui devient un vrai problème avec les disques récents.
 			</div><a
-            id="idm140272099950112"
+            id="idm140089994950448"
             class="indexterm"></a><a
-            id="idm140272099948704"
+            id="idm140089994949040"
             class="indexterm"></a><div
             class="para">
 				Un nouveau format de table de partition nommé GPT permet de dépasser ces contraintes sur le nombre de partitions (il supporte jusqu'à 128 partitions) et sur la taille des disques (qui peuvent aller jusqu'à 8 zétaoctets, ce qui représente plus de 8 milliards de téraoctets). Ainsi, si l'on prévoit de créer de nombreuses partitions physiques sur le même disque, il convient de créer une table de partition au format GPT lors de l'étape du partitionnement.
@@ -215,9 +215,9 @@ mirexpress:/dev/disk/by-id# </code></pre><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-lilo"></a>8.8.2. Configuration de LILO</h3></div></div></div><a
-            id="idm140272099938288"
+            id="idm140089994938464"
             class="indexterm"></a><a
-            id="idm140272099937328"
+            id="idm140089994937504"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -265,9 +265,9 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-grub"></a>8.8.3. Configuration de GRUB 2</h3></div></div></div><a
-            id="idm140272099929216"
+            id="idm140089994929392"
             class="indexterm"></a><a
-            id="idm140272099928256"
+            id="idm140089994928432"
             class="indexterm"></a><div
             class="para">
 				<span
@@ -275,7 +275,7 @@ other=/dev/sda1
               class="foreignphrase"><em
                 class="foreignphrase">GRand Unified Bootloader</em></span>, ou grand chargeur d'amorçage unifié) est plus récent. Il n'est pas nécessaire de l'invoquer après chaque mise à jour du noyau puisqu'il sait lire les systèmes de fichiers et retrouver tout seul la position du noyau sur le disque. Pour l'installer dans le MBR du premier disque, on saisira simplement <code
               class="command">grub-install /dev/sda</code>. <a
-              id="idm140272099925280"
+              id="idm140089994925456"
               class="indexterm"></a>
 			</div><div
             class="sidebar"><div
@@ -313,7 +313,7 @@ other=/dev/sda1
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.config-yaboot"></a>8.8.4. Cas des Macintosh (PowerPC) : configuration de Yaboot</h3></div></div></div><a
-            id="idm140272099910640"
+            id="idm140089994910816"
             class="indexterm"></a><div
             class="para">
 				Yaboot est le chargeur de démarrage employé par les anciens Macintosh utilisant des processeurs PowerPC. Ils n'amorcent pas comme les PC, mais recourent à une partition d'amorçage (<span
@@ -332,7 +332,7 @@ other=/dev/sda1
 				Avant d'exécuter <code
               class="command">ybin</code>, il faut disposer d'un fichier <code
               class="filename">/etc/yaboot.conf</code> valide. L'exemple ci-dessous pourrait constituer un fichier minimal. <a
-              id="idm140272099904160"
+              id="idm140089994904336"
               class="indexterm"></a>
 			</div><div
             class="example"><a

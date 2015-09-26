@@ -63,24 +63,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.user-space"></a>B.5. L'espace utilisateur</h2></div></div></div><a
-          id="idm140272095093184"
+          id="idm140089993697024"
           class="indexterm"></a><a
-          id="idm140272095092224"
+          id="idm140089993696064"
           class="indexterm"></a><div
           class="para">
-			On appelle espace utilisateur l'environnement d'exécution des processus normaux, par opposition aux processus qui font partie du noyau. Cela ne signifie pas pour autant que tous ces processus soient réellement lancés directement par l'utilisateur : un système normal exécute un certain nombre de « démons » (ou processus d'arrière plan) avant même que l'utilisateur ouvre une session de travail. Les « démons » sont alors considérés comme des processus de l'espace utilisateur.
+			“User space” refers to the runtime environment of normal (as opposed to kernel) processes. This does not necessarily mean these processes are actually started by users because a standard system normally has several “daemon” (or background) processes running before the user even opens a session. Daemon processes are also considered user-space processes.
 		</div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.process-basics"></a>B.5.1. Processus</h3></div></div></div><a
-            id="idm140272095089232"
+            id="idm140089993693216"
             class="indexterm"></a><div
             class="para">
 				Lorsque le noyau a terminé son initialisation, il lance le tout premier processus, <code
               class="command">init</code>, qui n'est généralement pas utile par lui-même. Les systèmes Unix fonctionnent donc avec de nombreux processus supplémentaires.
 			</div><a
-            id="idm140272095087056"
+            id="idm140089993691040"
             class="indexterm"></a><div
             class="para">
 				Tout d'abord, un processus peut se dupliquer (on parle de <span
@@ -104,9 +104,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.daemons"></a>B.5.2. Démons</h3></div></div></div><a
-            id="idm140272095079184"
+            id="idm140089993683168"
             class="indexterm"></a><a
-            id="idm140272095078224"
+            id="idm140089993682208"
             class="indexterm"></a><div
             class="para">
 				Un démon est un processus lancé automatiquement au démarrage et qui fonctionne en tâche de fond pour accomplir certaines tâches de maintenance ou fournir des services aux autres processus. Cette notion de « tâche de fond » est arbitraire et ne correspond à rien de particulier du point de vue du système : ce sont des processus comme les autres, qui sont exécutés chacun à son tour pendant un bref intervalle de temps de la même manière que les applications visibles. La distinction est simplement humaine : un processus qui fonctionne sans interaction avec l'utilisateur (sans interface graphique, notamment) est dit fonctionner en tâche de fond ou en tant que démon.
@@ -135,9 +135,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ipc"></a>B.5.3. Communications entre processus</h3></div></div></div><a
-            id="idm140272095070096"
+            id="idm140089993674080"
             class="indexterm"></a><a
-            id="idm140272095069136"
+            id="idm140089993673120"
             class="indexterm"></a><div
             class="para">
 				Qu'il s'agisse de démons ou d'applications interactives, un processus isolé n'est souvent pas très utile. Il existe donc différentes méthodes permettant à des processus séparés de communiquer entre eux, soit pour s'échanger des données soit pour se contrôler l'un l'autre. Le terme générique les désignant est <span
@@ -147,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				Le système le plus simple est le fichier : le processus qui souhaite émettre des données les écrit dans un fichier dont le nom est convenu à l'avance ; le processus destinataire n'a alors qu'à lire ce fichier pour y récupérer les données.
 			</div><a
-            id="idm140272095066272"
+            id="idm140089993670256"
             class="indexterm"></a><div
             class="para">
 				Pour éviter que les données soient stockées sur un disque dur, on peut également utiliser un tuyau ou tube (<span
@@ -218,7 +218,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.libraries"></a>B.5.4. Bibliothèques</h3></div></div></div><a
-            id="idm140272095044432"
+            id="idm140089993648416"
             class="indexterm"></a><div
             class="para">
 				Les bibliothèques de fonctions jouent un rôle crucial dans le fonctionnement d'un système d'exploitation Unix. Ce ne sont pas à proprement parler des programmes, puisqu'elles ne s'exécutent pas indépendamment, mais des collections de fragments de programmes qui sont utilisés par des programmes classiques. Parmi les bibliothèques les plus courantes, citons par exemple :

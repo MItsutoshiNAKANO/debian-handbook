@@ -82,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> Zabbix, un système de supervision intégré</strong></p></div></div></div><a
-            id="idm140272093639472"
+            id="idm140089994323280"
             class="indexterm"></a><div
             class="para">
 			Although Munin and Nagios are in very common use, they are not the only players in the monitoring field, and each of them only handles half of the task (graphing on one side, alerting on the other). Zabbix, on the other hand, integrates both parts of monitoring; it also has a web interface for configuring the most common aspects. It has grown by leaps and bounds during the last few years, and can now be considered a viable contender. On the monitoring server, you would install <span
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVE</em></span> Icinga, un fork de Nagios</strong></p></div></div></div><a
-            id="idm140272093633488"
+            id="idm140089994317296"
             class="indexterm"></a><div
             class="para">
 			Suite à des divergences d'opinion concernant le développement de Nagios (qui est contrôlé par une entreprise), un certain nombre de développeurs ont créé Icinga en repartant de Nagios. Le logiciel reste compatible — pour le moment — avec les configurations et greffons Nagios, mais ajoute des fonctionnalités supplémentaires. <div
@@ -108,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.munin"></a>12.4.1. Mise en œuvre de Munin</h3></div></div></div><a
-            id="idm140272093630240"
+            id="idm140089994314048"
             class="indexterm"></a><div
             class="para">
 				Ce logiciel permet de superviser de nombreuses machines ; il emploie donc fort logiquement une architecture client/serveur. Une machine centrale — le grapheur — va collecter les données exportées par tous les hôtes à superviser, pour en faire des graphiques historiques.
@@ -116,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140272093628784"></a>12.4.1.1. Configuration des hôtes à superviser</h4></div></div></div><div
+                      id="idm140089994312592"></a>12.4.1.1. Configuration des hôtes à superviser</h4></div></div></div><div
               class="para">
 					La première étape consiste à installer le paquet <span
                 class="pkg pkg">munin-node</span>. Ce dernier contient un démon qui écoute sur le port 4949 et qui renvoie toutes les valeurs collectées par l'ensemble des greffons actifs. Chaque greffon est un simple programme qui peut renvoyer une description des informations qu'il collecte ainsi que la dernière valeur constatée. Ils sont placés dans <code
@@ -188,7 +188,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140272093609696"></a>12.4.1.2. Configuration du grapheur</h4></div></div></div><div
+                      id="idm140089994293504"></a>12.4.1.2. Configuration du grapheur</h4></div></div></div><div
               class="para">
 					Par grapheur, on entend simplement la machine qui va collecter les données et générer les graphiques correspondants. Le paquet correspondant à installer est <span
                 class="pkg pkg">munin</span>. La configuration initiale du paquet lance <code
@@ -222,7 +222,7 @@ load.info 5 minute load average
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.nagios"></a>12.4.2. Mise en œuvre de Nagios</h3></div></div></div><a
-            id="idm140272093600288"
+            id="idm140089994284096"
             class="indexterm"></a><div
             class="para">
 				Contrairement à Munin, Nagios ne nécessite pas forcément d'installer quoi que ce soit sur les machines à superviser. En effet, il est fréquemment employé simplement pour vérifier la disponibilité de certains services réseau. Par exemple, Nagios peut se connecter à un serveur web et vérifier qu'il peut récupérer une page web donnée dans un certain délai.
@@ -230,7 +230,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140272093598736"></a>12.4.2.1. Installation</h4></div></div></div><div
+                      id="idm140089994282544"></a>12.4.2.1. Installation</h4></div></div></div><div
               class="para">
 					La première étape est donc d'installer les paquets <span
                 class="pkg pkg">nagios3</span>, <span
@@ -271,7 +271,7 @@ load.info 5 minute load average
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140272093586976"></a>12.4.2.2. Configuration</h4></div></div></div><div
+                      id="idm140089994270784"></a>12.4.2.2. Configuration</h4></div></div></div><div
               class="para">
 					L'interface web de Nagios est relativement plaisante, mais elle ne permet pas de le configurer. Il n'est pas possible d'ajouter des hôtes et des services à surveiller. Toute la configuration de ce logiciel s'effectue par un ensemble de fichiers référencés par le fichier de configuration central <code
                 class="filename">/etc/nagios3/nagios.cfg</code>.
@@ -350,7 +350,7 @@ load.info 5 minute load average
 					Voici la configuration employée par les administrateurs de Falcot :
 				</div><div
               class="example"><a
-                id="idm140272093568576"></a><p
+                id="idm140089994252384"></a><p
                 class="title"><strong>Exemple 12.3. Fichier <code
                     class="filename">/etc/nagios3/conf.d/falcot.cfg</code></strong></p><div
                 class="example-contents"><pre

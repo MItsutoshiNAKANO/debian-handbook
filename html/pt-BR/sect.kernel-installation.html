@@ -68,27 +68,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. Instalando o Núcleo</h2></div></div></div><a
-          id="idm140651236840544"
+          id="idm140156033549168"
           class="indexterm"></a><a
-          id="idm140651236839104"
+          id="idm140156033547728"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. Características do Pacote de Núcleo do Debian</h3></div></div></div><a
-            id="idm140651236836528"
+            id="idm140156033545152"
             class="indexterm"></a><div
             class="para">
-				Um pacote Debian do núcleo instala uma imagem do núcleo (<code
+				A Debian kernel package installs the kernel image (<code
               class="filename">vmlinuz-<em
-                class="replaceable">versão</em></code>), sua configuração (<code
+                class="replaceable">version</em></code>), its configuration (<code
               class="filename">config-<em
-                class="replaceable">versão</em></code>) e sua tabela de símbolos (<code
+                class="replaceable">version</em></code>) and its symbols table (<code
               class="filename">System.map-<em
-                class="replaceable">versão</em></code>) em <code
-              class="filename">/boot/</code>. A tabela de símbolos ajuda os desenvolvedores entender o significado de uma mensagem de erro do núcleo; sem isso, um “oopses” do núcleo (um “oops” é equivalente, no caso do núcleo, a uma falha de segmentação para programas em espaço do usuário, em outras palavras, mensagem gerada na sequência de uma deferência de um ponteiro inválido) apenas contém números de endereços de memória, o que é informação inútil sem uma tabela mapeando esses endereços para símbolos e nomes de funções. Os módulos são instalados no diretório <code
+                class="replaceable">version</em></code>) in <code
+              class="filename">/boot/</code>. The symbols table helps developers understand the meaning of a kernel error message; without it, kernel “oopses” (an “oops” is the kernel equivalent of a segmentation fault for user-space programs, in other words messages generated following an invalid pointer dereference) only contain numeric memory addresses, which is useless information without the table mapping these addresses to symbols and function names. The modules are installed in the <code
               class="filename">/lib/modules/<em
-                class="replaceable">versão</em>/</code>.
+                class="replaceable">version</em>/</code> directory.
 			</div><div
             class="para">
 				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code

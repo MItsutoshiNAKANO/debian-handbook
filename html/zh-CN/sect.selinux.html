@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.selinux"></a>14.5. SELinux 简介</h2></div></div></div><a
-          id="idm139955395594896"
+          id="idm139956020323408"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>域</em></span>。权限实际上取决于域，但是在域之间转换由角色控制。角色之间的转换取决于身份。
 			</div><div
             class="figure"><a
-              id="idm139955395586352"></a><div
+              id="idm139956020314864"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-context.png"
@@ -127,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">ssh_t</code> domain). This automatic domain transition mechanism makes it possible to grant only the rights required by each program. It is a fundamental principle of SELinux.
 			</div><div
             class="figure"><a
-              id="idm139955395574016"></a><div
+              id="idm139956020302528"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-transitions.png"
@@ -137,11 +137,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>实践</em></span>找到安全上下文</strong></p></div></div></div><a
-              id="idm139955395569504"
+              id="idm139956020298016"
               class="indexterm"></a><a
-              id="idm139955395568544"
+              id="idm139956020297056"
               class="indexterm"></a><a
-              id="idm139955395567616"
+              id="idm139956020296128"
               class="indexterm"></a><div
               class="para">
 				要找到指定进程的安全上下文，就要在 <code
@@ -197,7 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Unfortunately the maintainers of the <span
                 class="pkg pkg">refpolicy</span> source package did not handle release critical bugs on their package and the package got removed from jessie. This means that the <span
-                class="pkg pkg">selinux-policy-*</span> packages are currently not installable in jessie and needs to be fetched from another place. Hopefully they will come back in one of the point releases or in jessie-backports. In the mean time, you can grab them from unstable.
+                class="pkg pkg">selinux-policy-*</span> packages are currently not installable in jessie and needs to be fetched from another place. Hopefully they will come back in one of the point releases or in jessie-backports. In the meantime, you can grab them from unstable.
 			</div><div
               class="para">
 				This sad situation at least proves that SELinux is not very popular in the set of users/developers who are running the development versions of Debian. Thus, if you opt to use SELinux, you should expect the default policy to not work perfectly and you will have to invest quite some time to make it suitable to your specific needs.
@@ -229,9 +229,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.selinux-management"></a>14.5.3. 管理 SELinux 系统</h3></div></div></div><a
-            id="idm139955395539472"
+            id="idm139956020267984"
             class="indexterm"></a><a
-            id="idm139955395538352"
+            id="idm139956020266864"
             class="indexterm"></a><div
             class="para">
 				SELinux 策略是一系列的模块化规则集合，安装时它会基于已经安装的服务自动探测并启用相关模块。系统立即可操作。然而，如果一个服务是在 SELinux 策略之后安装的，就要手动启用相应模块了。<code
@@ -262,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139955395528768"></a>14.5.3.1. 管理 SELinux 模块</h4></div></div></div><div
+                      id="idm139956020257280"></a>14.5.3.1. 管理 SELinux 模块</h4></div></div></div><div
               class="para">
 					Available SELinux modules are stored in the <code
                 class="filename">/usr/share/selinux/default/</code> directory. To enable one of these modules in the current configuration, you should use <code
@@ -325,7 +325,7 @@ acct    1.6.0
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139955395512192"></a>14.5.3.2. 管理身份</h4></div></div></div><div
+                      id="idm139956020240704"></a>14.5.3.2. 管理身份</h4></div></div></div><div
               class="para">
 					每次用户登录，就会被赋予一个 SELinux 身份。该身份定义了他们可以使用的角色。这两种映射（从用户到身份，从该身份到角色）使用 <code
                 class="command">semanage</code> 命令配置。
@@ -406,7 +406,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139955395489552"></a>14.5.3.3. 管理文件上下文，端口和布尔值</h4></div></div></div><div
+                      id="idm139956020218064"></a>14.5.3.3. 管理文件上下文，端口和布尔值</h4></div></div></div><div
               class="para">
 					每个 SELinux 模块提供了一套标识规则，但是也可以添加定制的标识规则来满足特殊情况。例如，如果想要网页服务器能读取 <code
                 class="filename">/srv/www/</code> 里面的文件，就要执行 <code
@@ -477,13 +477,13 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139955395466992"></a>14.5.4.1. 写一个 <code
+                      id="idm139956015198928"></a>14.5.4.1. 写一个 <code
                       class="filename">.fc</code> 文件</h4></div></div></div><div
               class="para">
 					阅读下面的例子足可以理解此类文件的结构。可以使用正则表达式给多个文件，甚至是整个目录树赋予相同的安全上下文。
 				</div><div
               class="example"><a
-                id="idm139955395465072"></a><p
+                id="idm139956015197328"></a><p
                 class="title"><strong>例 14.2. <code
                     class="filename">example.fc</code> 文件</strong></p><div
                 class="example-contents"><pre
@@ -497,7 +497,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139955371851680"></a>14.5.4.2. 写一个 <code
+                      id="idm139956015195344"></a>14.5.4.2. 写一个 <code
                       class="filename">.if</code> 文件</h4></div></div></div><div
               class="para">
 					在下面的例子中，第一个接口（<code
@@ -510,7 +510,7 @@ user_u          user       SystemLow  SystemLow             user_r
                 class="literal">gen_require</code> 宏），并使用标准指令授予权限。也可以使用其他模块提供的接口。如何表示这些权限将在下节给出更详细的解释。
 				</div><div
               class="example"><a
-                id="idm139955371848176"></a><p
+                id="idm139956015191840"></a><p
                 class="title"><strong>例 14.3. <code
                     class="filename">example.if</code> 文件</strong></p><div
                 class="example-contents"><pre
@@ -578,7 +578,7 @@ interface(`myapp_read_log',`
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139955371842608"></a>14.5.4.3. 写一个 <code
+                      id="idm139956015186272"></a>14.5.4.3. 写一个 <code
                       class="filename">.te</code> 文件</h4></div></div></div><div
               class="para">
 					看一看 <code
@@ -752,7 +752,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
 					为了更好的理解这条信息，我们逐一分析。
 				</div><div
               class="table"><a
-                id="idm139955371815488"></a><p
+                id="idm139956015159152"></a><p
                 class="title"><strong>表 14.1. SELinux 追踪记录分析</strong></p><div
                 class="table-contents"><table
                   xmlns:d="http://docbook.org/ns/docbook"
@@ -784,9 +784,9 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>补充</em></span>无角色的策略规则</strong></p></div></div></div><a
-                id="idm139955371793552"
+                id="idm139956015137216"
                 class="indexterm"></a><a
-                id="idm139955371792784"
+                id="idm139956015136448"
                 class="indexterm"></a><div
                 class="para">
 					It might seem weird that roles do not appear at all when creating new rules. SELinux uses only the domains to find out which operations are allowed. The role intervenes only indirectly by allowing the user to switch to another domain. SELinux is based on a theory known as <span
@@ -795,7 +795,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139955371790704"></a>14.5.4.4. 编译文件</h4></div></div></div><div
+                      id="idm139956015134368"></a>14.5.4.4. 编译文件</h4></div></div></div><div
               class="para">
 					Once the 3 files (<code
                 class="filename">example.if</code>, <code

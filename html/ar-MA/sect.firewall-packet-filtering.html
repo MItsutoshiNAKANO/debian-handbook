@@ -69,15 +69,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. الجدار الناري أو ترشيح الرزم</h2></div></div></div><a
-          id="idm140045507047040"
+          id="idm140534145831088"
           class="indexterm"></a><a
-          id="idm140045507046080"
+          id="idm140534148973664"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>أساسيات</em></span> الجدار الناري</strong></p></div></div></div><a
-            id="idm140045507044032"
+            id="idm140534148971616"
             class="indexterm"></a><div
             class="para">
 			<span
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span>، مع تمثيل رسومي لقواعد الترشيح. <code
             class="command">fwbuilder</code> هي إحدى أفضل هذه الأدوات بلا شك.
 		</div><a
-          id="idm140045494302304"
+          id="idm140534148966352"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -101,14 +101,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			يمكن أن ينحصر مدى الجدار الناري بجهاز واحد بعينه (بدلاً من حماية شبكة كاملة)، وفي تلك الحالة يتمثل دوره بترشيح أو تقييد الوصول إلى بعض الخدمات، أو ربما منع الاتصالات الصادرة الناتجة عن برمجيات خبيثة التي قد يُثبِّتها المستخدم –بدراية او عن غير قصد–.
 		</div></div><div
           class="para">
-			تتضمن النواة لينكس الجدار الناري <span
-            class="emphasis"><em>netfilter</em></span>. يمكن التحكم به من ساحة المستخدم عبر الأمرين <code
-            class="command">iptables</code> و <code
-            class="command">ip6tables</code>. الفرق بين هذين الأمرين هو أن الأول يعمل مع شبكات IPv4، بينما يعمل الثاني مع شبكات IPv6. بما أن كلاً من هذين البروتوكولين سيبقى لعديد من السنوات القادمة على الأغلب، فيجب استخدام الأداتين على التوازي.
+			The Linux kernel embeds the <span
+            class="emphasis"><em>netfilter</em></span> firewall. It can be controlled from user space with the <code
+            class="command">iptables</code> and <code
+            class="command">ip6tables</code> commands. The difference between these two commands is that the former acts on the IPv4 network, whereas the latter acts on IPv6. Since both network protocol stacks will probably be around for many years, both tools will need to be used in parallel.
 		</div><a
-          id="idm140045494296816"
+          id="idm140534160497376"
           class="indexterm"></a><a
-          id="idm140045494295696"
+          id="idm140534160496256"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -145,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				يحوي كل جدول قوائم من القواعد تدعى <span
               class="emphasis"><em>السلاسل chains</em></span>. يستخدم الجدار الناري السلاسل القياسية لمعالجة الرزم بناء على حالات معرّفة مسبقاً. يستطيع مدير النظام إنشاء سلاسل أخرى، تُستَخدم فقط إذا أشارت لها إحدى السلاسل القياسية (إما بشكل مباشر أو غير مباشر).
 			</div><a
-            id="idm140045507473904"
+            id="idm140534159636368"
             class="indexterm"></a><a
-            id="idm140045507472944"
+            id="idm140534159635408"
             class="indexterm"></a><div
             class="para">
 				يحوي الجدول <code
@@ -222,15 +222,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				تذكر أن buffer الاستقبال هو منطقة صغيرة من الذاكرة تُخزِّن البيانات عند وصولها من الشبكة وأثناء معالجة النواة للبيانات. إذا امتلأت المنطقة، لا يمكن استقبال بيانات جديدة، ويشير ICMP للمشكلة، بحيث يخفف المرسل من معدل الإرسال (الذي يجب أن يتوازن نظرياً بعد بعض الوقت).
 			</div><a
-              id="idm140045494359072"
+              id="idm140534138000448"
               class="indexterm"></a><a
-              id="idm140045494358112"
+              id="idm140534137999488"
               class="indexterm"></a><a
-              id="idm140045494357184"
+              id="idm140534137998560"
               class="indexterm"></a><a
-              id="idm140045494356224"
+              id="idm140534137997600"
               class="indexterm"></a><a
-              id="idm140045494354784"
+              id="idm140534137996160"
               class="indexterm"></a><div
               class="para">
 				لاحظ أنه بالرغم من إمكانية تشغيل شبكات IPv4 دون ICMP، إلا أن ICMP6 ضروري حتماً لشبكات IPv6، لأنه يجمع وظائف عديدة كانت، في زمن IPv4، متفرقة بين ICMPv4، وIGMP‏ (<span
@@ -339,9 +339,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">table</em></code> التابع لهما إلى الجدول الذي ستجرى التعديلات عليه (<code
               class="literal">filter</code> افتراضياً).
 			</div><a
-            id="idm140045493310880"
+            id="idm140534137959008"
             class="indexterm"></a><a
-            id="idm140045493309760"
+            id="idm140534137957888"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -388,7 +388,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. القواعد</h4></div></div></div><a
-              id="idm140045493293504"
+              id="idm140534137941632"
               class="indexterm"></a><div
               class="para">
 					تُمثَّل كل قاعدة بالشكل: <code
@@ -553,7 +553,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="نافذة fwbuilder الرئيسية" /></div></div><p
               class="title"><strong>شكل 14.2. نافذة fwbuilder الرئيسية</strong></p></div><a
-            id="idm140045488486000"
+            id="idm140534138454032"
             class="indexterm"></a><div
             class="para">
 				يمكن بعدها أن يولّد <code

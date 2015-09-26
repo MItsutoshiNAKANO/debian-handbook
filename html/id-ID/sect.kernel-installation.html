@@ -68,27 +68,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.kernel-installation"></a>8.11. Menginstall sebuah Kernel</h2></div></div></div><a
-          id="idm140297520824592"
+          id="idm139697334143840"
           class="indexterm"></a><a
-          id="idm140297520823152"
+          id="idm139697334142400"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.kernel-package"></a>8.11.1. Fitur sebuah Paket Kernel Debian</h3></div></div></div><a
-            id="idm140297520820576"
+            id="idm139697334139824"
             class="indexterm"></a><div
             class="para">
-				Paket kernel Debian menginstall image kernel (<code
+				A Debian kernel package installs the kernel image (<code
               class="filename">vmlinuz-<em
-                class="replaceable">versi</em></code>), konfigurasinya (<code
+                class="replaceable">version</em></code>), its configuration (<code
               class="filename">config-<em
-                class="replaceable">versi</em></code>) dan tabel simbolnya (<code
+                class="replaceable">version</em></code>) and its symbols table (<code
               class="filename">System.map-<em
-                class="replaceable">versi</em></code>) dalam <code
-              class="filename">/boot/</code>. Tabel simbol membantu pengembang untuk memahami makna pesan kesalahan kernel; tanpanya, kernel “oopses” (sebuah “oops” adalah sama dengan segmentasi gagal untuk program level pengguna, dengan kata lain pesan yang dihasilkan menyusul pointer dereference tidak valid) hanya berisi alamat numerik memori, yang merupakan informasi yang tidak berguna tanpa pemetaan tabel alamat ini ke simbol dan nama fungsi. Modul diinstall dalam direktori <code
+                class="replaceable">version</em></code>) in <code
+              class="filename">/boot/</code>. The symbols table helps developers understand the meaning of a kernel error message; without it, kernel “oopses” (an “oops” is the kernel equivalent of a segmentation fault for user-space programs, in other words messages generated following an invalid pointer dereference) only contain numeric memory addresses, which is useless information without the table mapping these addresses to symbols and function names. The modules are installed in the <code
               class="filename">/lib/modules/<em
-                class="replaceable">version</em>/</code>.
+                class="replaceable">version</em>/</code> directory.
 			</div><div
             class="para">
 				The package's configuration scripts automatically generate an initrd image, which is a mini-system designed to be loaded in memory (hence the name, which stands for “init ramdisk”) by the bootloader, and used by the Linux kernel solely for loading the modules needed to access the devices containing the complete Debian system (for example, the driver for SATA disks). Finally, the post-installation scripts update the symbolic links <code

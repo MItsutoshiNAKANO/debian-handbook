@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.apparmor"></a>14.4. Introduction to AppArmor</h2></div></div></div><a
-          id="idm139973129667024"
+          id="idm140253686159296"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -79,9 +79,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>Mandatory Access Control</em></span> (MAC) system built on Linux's LSM (<span
               class="emphasis"><em>Linux Security Modules</em></span>) interface. In practice, the kernel queries AppArmor before each system call to know whether the process is authorized to do the given operation. Through this mechanism, AppArmor confines programs to a limited set of resources.
 			</div><a
-            id="idm139973129663392"
+            id="idm140253686155664"
             class="indexterm"></a><a
-            id="idm139973129662304"
+            id="idm140253686154576"
             class="indexterm"></a><div
             class="para">
 				AppArmor applies a set of rules (known as “profile”) on each program. The profile applied by the kernel depends on the installation path of the program being executed. Contrary to SELinux (discussed in <a
@@ -149,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="para">
 				The state of each profile can be switched between enforcing and complaining with calls to <code
               class="command">aa-enforce</code> and <code
-              class="command">aa-complain</code> giving as parameter either the path of the executable or the patch to the policy file. Additionaly a profile can be entirely disabled with <code
+              class="command">aa-complain</code> giving as parameter either the path of the executable or the path to the policy file. Additionaly a profile can be entirely disabled with <code
               class="command">aa-disable</code> or put in audit mode (to log accepted system calls too) with <code
               class="command">aa-audit</code>.
 			</div><pre
@@ -201,7 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			</div><pre
             class="screen">
 <code
-              class="computeroutput">#</code><strong
+              class="computeroutput"># </code><strong
               class="userinput"><code>aa-genprof dhclient</code></strong>
 <code
               class="computeroutput">Writing updated profile for /sbin/dhclient.

@@ -68,15 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.firewall-packet-filtering"></a>14.2. Firewall ou Filtragem de pacotes</h2></div></div></div><a
-          id="idm140651234940784"
+          id="idm140156011939104"
           class="indexterm"></a><a
-          id="idm140651234939824"
+          id="idm140156011938144"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>DE VOLTA AO BASICO</em></span> Firewall</strong></p></div></div></div><a
-            id="idm140651242628912"
+            id="idm140156017881648"
             class="indexterm"></a><div
             class="para">
 			Um <span
@@ -90,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="emphasis"><em>netfilter</em></span>, com uma representação gráfica das regras de filtragem. <code
             class="command">fwbuilder</code> está, sem dúvida entre os melhores delas.
 		</div><a
-          id="idm140651242623904"
+          id="idm140156017876640"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
@@ -100,14 +100,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 			Um firewall pode ser restrito a uma determinada máquina (em oposição a uma rede completa), caso em que seu papel é o de filtrar ou restringir o acesso a alguns serviços, ou possivelmente para evitar que as conexões de saída por softwares maliciosos que um usuário poderia, por vontade própria ou não, ter instalado.
 		</div></div><div
           class="para">
-			O kernel do Linux incorpora o firewall <span
-            class="emphasis"><em>netfilter</em></span>. Ele pode ser controlado a partir do espaço do usuário com os comandos <code
-            class="command">iptables</code> e <code
-            class="command">ip6tables</code>. A diferença entre estes dois comandos é que o primeiro atua sobre rede IPv4, enquanto que o último sobre o IPv6. Uma vez que ambas pilhas de protocolo de rede provavelmente estarão circulando por muitos anos, ambas as ferramentas serão utilizadas em paralelo.
+			The Linux kernel embeds the <span
+            class="emphasis"><em>netfilter</em></span> firewall. It can be controlled from user space with the <code
+            class="command">iptables</code> and <code
+            class="command">ip6tables</code> commands. The difference between these two commands is that the former acts on the IPv4 network, whereas the latter acts on IPv6. Since both network protocol stacks will probably be around for many years, both tools will need to be used in parallel.
 		</div><a
-          id="idm140651237309760"
+          id="idm140156012931840"
           class="indexterm"></a><a
-          id="idm140651237308640"
+          id="idm140156012930720"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -144,9 +144,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Cada tabela contém listas das chamadas regras <span
               class="emphasis"><em>cadeias</em></span>. O firewall usa padrão para lidar com cadeias de pacotes com base em circunstâncias pré-definidas. O administrador pode criar outras cadeias, o que só será usado quando referido por uma das cadeias padrão.
 			</div><a
-            id="idm140651237387120"
+            id="idm140156010659984"
             class="indexterm"></a><a
-            id="idm140651237386160"
+            id="idm140156010659024"
             class="indexterm"></a><div
             class="para">
 				A tabela <code
@@ -220,15 +220,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="para">
 				Para referência, um buffer de recepção é uma pequena região de memória para armazenamento de dados entre o tempo que chega na rede e o tempo que o kernel o manipula. Se esta regiao está cheia, os novos dados não podem ser recebidos, e o ICMP sinaliza o problema, de modo que o emissor possa abrandar a sua taxa de transferência (que devem, idealmente, chegar a um equilíbrio após algum tempo).
 			</div><a
-              id="idm140651237452176"
+              id="idm140156011020208"
               class="indexterm"></a><a
-              id="idm140651237451216"
+              id="idm140156011019248"
               class="indexterm"></a><a
-              id="idm140651237450288"
+              id="idm140156011018320"
               class="indexterm"></a><a
-              id="idm140651237449328"
+              id="idm140156011017360"
               class="indexterm"></a><a
-              id="idm140651237447888"
+              id="idm140156011015920"
               class="indexterm"></a><div
               class="para">
 				Observe que, embora uma rede IPv4 possa funcionar sem ICMP, ICMPv6 é estritamente necessário para uma rede IPv6, uma vez que combina várias funções que eram, no mundo IPv4, espalhados por ICMPv4, IGMP (<span
@@ -334,9 +334,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="replaceable">tabela</em> -t</code> indica em qual tabela operar (por padrão, <code
               class="literal">filtro</code>).
 			</div><a
-            id="idm140651232800976"
+            id="idm140156011160368"
             class="indexterm"></a><a
-            id="idm140651232799856"
+            id="idm140156011159248"
             class="indexterm"></a><div
             class="section"><div
               class="titlepage"><div><div><h4
@@ -374,7 +374,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.iptables-rules"></a>14.2.2.2. Regras</h4></div></div></div><a
-              id="idm140651232785216"
+              id="idm140156011144608"
               class="indexterm"></a><div
               class="para">
 					Cada regra é expressa como <code
@@ -521,7 +521,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   src="images/fwbuilder.png"
                   alt="janela principal do Fwbuilder" /></div></div><p
               class="title"><strong>Figura 14.2. janela principal do Fwbuilder</strong></p></div><a
-            id="idm140651232249744"
+            id="idm140156011407040"
             class="indexterm"></a><div
             class="para">
 				<code

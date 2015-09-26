@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="title"><a
                   id="sect.manipulating-packages-with-dpkg"></a>5.4. Работа с пакетами при помощи <code
                   class="command">dpkg</code></h2></div></div></div><a
-          id="idm139899824713392"
+          id="idm139663648493824"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -92,10 +92,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139899824705696"></a>5.4.1. Установка пакетов</h3></div></div></div><a
-            id="idm139899824704928"
+                    id="idm139663648486128"></a>5.4.1. Установка пакетов</h3></div></div></div><a
+            id="idm139663648485360"
             class="indexterm"></a><a
-            id="idm139899824703520"
+            id="idm139663648483952"
             class="indexterm"></a><div
             class="para">
 				<code
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">--install</code>.
 			</div><div
             class="example"><a
-              id="idm139899824699904"></a><p
+              id="idm139663648480336"></a><p
               class="title"><strong>Пример 5.2. Установка пакета при помощи <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -125,7 +125,7 @@ Building database of manual pages ... </code></pre></div></div><div
               class="command">dpkg</code> (каждый такой запрос является дорогостоящей операцией из-за необходимости загрузки в память базы данных, включая весь список уже установленных файлов).
 			</div><div
             class="example"><a
-              id="idm139899824693952"></a><p
+              id="idm139663648474384"></a><p
               class="title"><strong>Пример 5.3. Раздельная распаковка и настройка</strong></p><div
               class="example-contents"><pre
                 class="screen scale">
@@ -141,9 +141,9 @@ Building database of manual pages ... </code></pre></div></div><div
 <code
                   class="computeroutput">Настраивается пакет man-db (2.6.2-1) …
 Building database of manual pages ...</code></pre></div></div><a
-            id="idm139899824689888"
+            id="idm139663648470320"
             class="indexterm"></a><a
-            id="idm139899824688448"
+            id="idm139663648468880"
             class="indexterm"></a><div
             class="para">
 				Иногда <code
@@ -172,7 +172,7 @@ dpkg: ошибка при обработке параметра /var/cache/apt/a
                     class="title"><strong><span
                         class="emphasis"><em>ВНИМАНИЕ</em></span> Эффективное использование <code
                         class="literal">--force-*</code></strong></p></div></div></div><a
-              id="idm139899824677440"
+              id="idm139663648457872"
               class="indexterm"></a><div
               class="para">
 				Если вы не будете осторожны, использование опции <code
@@ -205,14 +205,14 @@ E: Unmet dependencies. Try using -f.
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139899824666544"></a>5.4.2. Удаление пакета</h3></div></div></div><a
-            id="idm139899824665776"
+                    id="idm139663648446976"></a>5.4.2. Удаление пакета</h3></div></div></div><a
+            id="idm139663648446208"
             class="indexterm"></a><a
-            id="idm139899824664848"
+            id="idm139663648445280"
             class="indexterm"></a><a
-            id="idm139899824663920"
+            id="idm139663648444352"
             class="indexterm"></a><a
-            id="idm139899824662480"
+            id="idm139663648442912"
             class="indexterm"></a><div
             class="para">
 				Запуск <code
@@ -223,7 +223,7 @@ E: Unmet dependencies. Try using -f.
               class="literal">--purge</code>, сопровождающаяся именем пакета.
 			</div><div
             class="example"><a
-              id="idm139899824657296"></a><p
+              id="idm139663648437728"></a><p
               class="title"><strong>Пример 5.4. Полное удаление пакета <span
                   class="emphasis"><em>debian-cd</em></span></strong></p><div
               class="example-contents"><pre
@@ -231,25 +231,25 @@ E: Unmet dependencies. Try using -f.
                   class="computeroutput"># </code><strong
                   class="userinput"><code>dpkg -r debian-cd</code></strong>
 <code
-                  class="computeroutput">(Чтение базы данных … на данный момент установлено 97747 файлов и каталогов.)
-Удаляется пакет debian-cd …
+                  class="computeroutput">(Reading database ... 97747 files and directories currently installed.)
+Removing debian-cd (3.1.17) ...
 # </code><strong
                   class="userinput"><code>dpkg -P debian-cd</code></strong>
 <code
-                  class="computeroutput">(Чтение базы данных … на данный момент установлен 97401 файл и каталог.)
-Удаляется пакет debian-cd …
-Вычищаются файлы настройки пакета debian-cd …</code></pre></div></div></div><div
+                  class="computeroutput">(Reading database ... 97401 files and directories currently installed.)
+Removing debian-cd (3.1.17) ...
+Purging configuration files for debian-cd (3.1.17) ...</code></pre></div></div></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139899824653248"></a>5.4.3. Запросы к базе данных <code
+                    id="idm139663648433840"></a>5.4.3. Запросы к базе данных <code
                     class="command">dpkg</code> и анализ файлов <code
                     class="filename">.deb</code></h3></div></div></div><a
-            id="idm139899824651712"
+            id="idm139663648432304"
             class="indexterm"></a><a
-            id="idm139899824650272"
+            id="idm139663648430864"
             class="indexterm"></a><a
-            id="idm139899824648864"
+            id="idm139663648429456"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -280,7 +280,7 @@ E: Unmet dependencies. Try using -f.
               class="literal">-I</code>) показывает информацию о пакете Debian.
 			</div><div
             class="example"><a
-              id="idm139899824636304"></a><p
+              id="idm139663648416896"></a><p
               class="title"><strong>Пример 5.5. Получение информации с помощью <code
                   class="command">dpkg</code></strong></p><div
               class="example-contents"><pre
@@ -418,9 +418,9 @@ $ </code><strong
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>УГЛУБЛЯЕМСЯ</em></span> Сравнение версий</strong></p></div></div></div><a
-              id="idm139899824622432"
+              id="idm139663648403024"
               class="indexterm"></a><a
-              id="idm139899824621504"
+              id="idm139663648402096"
               class="indexterm"></a><div
               class="para">
 				Так как <code
@@ -479,7 +479,7 @@ $ </code><strong
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139899824602400"></a>5.4.4. Файл журнала <code
+                    id="idm139663648382992"></a>5.4.4. Файл журнала <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				<code
@@ -492,9 +492,9 @@ $ </code><strong
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.multi-arch"></a>5.4.5. Поддержка мультиархитектуры</h3></div></div></div><a
-            id="idm139899824596768"
+            id="idm139663648377360"
             class="indexterm"></a><a
-            id="idm139899824595840"
+            id="idm139663648376432"
             class="indexterm"></a><div
             class="para">
 				Все пакеты Debian имеют поле <code
@@ -509,7 +509,7 @@ $ </code><strong
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139899824590432"></a>5.4.5.1. Включение мультиархитектуры</h4></div></div></div><div
+                      id="idm139663648371024"></a>5.4.5.1. Включение мультиархитектуры</h4></div></div></div><div
               class="para">
 					<code
                 class="command">dpkg</code>'s multi-arch support allows users to define “foreign architectures” that can be installed on the current system. This is simply done with <code
@@ -585,7 +585,7 @@ armel
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139899824571392"></a>5.4.5.2. Изменения, связанные с мультиархитектурой</h4></div></div></div><div
+                      id="idm139663644003312"></a>5.4.5.2. Изменения, связанные с мультиархитектурой</h4></div></div></div><div
               class="para">
 					To make multi-arch actually useful and usable, libraries had to be repackaged and moved to an architecture-specific directory so that multiple copies (targeting different architectures) can be installed alongside. Such updated packages contain the “<code
                 class="literal">Multi-Arch: same</code>” header field to tell the packaging system that the various architectures of the package can be safely co-installed (and that those packages can only satisfy dependencies of packages of the same architecture). Since multi-arch made its debut in Debian <span

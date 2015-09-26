@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140272095796160"></a>9.11.1. Introduction</h3></div></div></div><div
+                    id="idm140090018820912"></a>9.11.1. Introduction</h3></div></div></div><div
             class="para">
 				Le sous-système <span
               class="emphasis"><em>hotplug</em></span> du noyau permet de charger les pilotes des périphériques et de créer les fichiers de périphériques correspondants (avec l'aide d'<code
@@ -83,22 +83,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="command">udevd</code> afin que celui-ci puisse créer l'entrée correspondante dans <code
               class="filename">/dev/</code>.
 			</div><a
-            id="idm140272095792304"
+            id="idm140090018816448"
             class="indexterm"></a><a
-            id="idm140272095791408"
+            id="idm140090018815328"
             class="indexterm"></a><a
-            id="idm140272095790640"
+            id="idm140090018814368"
             class="indexterm"></a><a
-            id="idm140272095789872"
+            id="idm140090018813408"
             class="indexterm"></a><a
-            id="idm140272095789104"
+            id="idm140090018812448"
             class="indexterm"></a><a
-            id="idm140272095788336"
+            id="idm140090018811488"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140272095787440"></a>9.11.2. La problématique du nommage</h3></div></div></div><div
+                    id="idm140090018810368"></a>9.11.2. La problématique du nommage</h3></div></div></div><div
             class="para">
 				Avant l'introduction des branchements à chaud, il était simple de donner un nom fixe à un périphérique. On se basait simplement sur le positionnement des périphériques dans leur bus respectif. Mais si les périphériques apparaissent et disparaissent sur le bus, ce n'est plus possible. L'exemple typique est l'emploi d'un appareil photo numérique et d'une clé USB : tous les deux apparaissent comme des disques, le premier branché pourra être <code
               class="filename">/dev/sdb</code> et le second <code
@@ -117,9 +117,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                     class="title"><strong><span
                         class="emphasis"><em>EN PRATIQUE</em></span> Gestion des cartes réseau</strong></p></div></div></div><div
               class="para">
-				De nombreux ordinateurs intègrent plusieurs cartes réseau (parfois deux interfaces filaires et une interface wifi) et avec la prise en charge de <span
-                class="emphasis"><em>hotplug</em></span> sur la plupart des types de bus, le noyau Linux n'offre pas de garantie de nommage fixe sur ces interfaces réseau. Pourtant l'utilisateur qui veut configurer son réseau dans <code
-                class="filename">/etc/network/interfaces</code> a besoin d'un nom fixe !
+				Many computers have multiple network cards (sometimes two wired interfaces and a wifi interface), and with <span
+                class="emphasis"><em>hotplug</em></span> support on most bus types, the Linux kernel does not guarantee fixed naming of network interfaces. But users who want to configure their network in <code
+                class="filename">/etc/network/interfaces</code> need a fixed name!
 			</div><div
               class="para">
 				Il serait pénible de demander à chaque utilisateur de se créer ses propres règles <span
@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140272095774448"></a>9.11.3. Fonctionnement de udev</h3></div></div></div><div
+                    id="idm140090018795472"></a>9.11.3. Fonctionnement de udev</h3></div></div></div><div
             class="para">
 				Lorsqu'<span
               class="emphasis"><em>udev</em></span> est informé par le noyau de l'apparition d'un nouveau périphérique, il récupère de nombreuses informations sur le périphérique en question en consultant les entrées correspondantes dans <code
@@ -323,7 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140272095723584"></a>9.11.4. Cas pratique</h3></div></div></div><div
+                    id="idm140090018734496"></a>9.11.4. Cas pratique</h3></div></div></div><div
             class="para">
 				Prenons le cas d'une simple clé USB et essayons de lui affecter un nom fixe. Il faut d'abord trouver les éléments qui vont permettre de l'identifier de manière unique. Pour cela, on la branche et on exécute <code
               class="command">udevadm info -a -n /dev/sdc</code> (en remplaçant évidemment <em
