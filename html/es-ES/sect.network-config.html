@@ -73,36 +73,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Conceptos de red esenciales (Ethernet, dirección IP, subred, difusión).</strong></p></div></div></div><a
-            id="idm140061903956144"
+            id="idm140114211258672"
             class="indexterm"></a><a
-            id="idm140061903955184"
+            id="idm140114211257712"
             class="indexterm"></a><a
-            id="idm140061903954224"
+            id="idm140114211256752"
             class="indexterm"></a><a
-            id="idm140061903953264"
+            id="idm140114211255792"
             class="indexterm"></a><a
-            id="idm140061903952304"
+            id="idm140114211254832"
             class="indexterm"></a><a
-            id="idm140061903951344"
+            id="idm140114211253872"
             class="indexterm"></a><a
-            id="idm140061903950384"
+            id="idm140114211252912"
             class="indexterm"></a><div
             class="para">
 			La mayoría de las redes modernas locales utilizan el protocolo Ethernet, en el que se dividen los datos en pequeños bloques llamados tramas («frames») y se transmite en el cable una trama a la vez. La velocidad de datos varía desde 10 Mb/s en tarjetas Ethernet antiguas hasta 10 Gb/s en las tarjetas más recientes (la tasa más común está creciendo actualmente de 100 Mb/s a 1 Gb/s). Los cables más utilizados son llamados 10BASE-T, 100BASE-T, 1000BASE-T o 10GBASE-T según el rendimiento que pueden proveer de forma confiable (la letra T es por «par trenzado», «twisted pair» en inglés); éstos cables finalizan en un conector RJ45. Hay otros tipos de cables, generalmente utilizados para velocidades de 1 Gb/s en adelante.
 		</div><a
-            id="idm140061903948208"
+            id="idm140114211250736"
             class="indexterm"></a><a
-            id="idm140061903947248"
+            id="idm140114211249776"
             class="indexterm"></a><div
             class="para">
 			Una dirección IP es un número utilizado para identificar una interfaz de red de un equipo en una red local o Internet. En la versión de IP más utilizada actualmente (IPv4) se codifica este número en 32 bits y generalmente se lo representa por 4 números separados por puntos (por ejemplo: <code
               class="literal">192.168.0.1</code>), cada número entre 0 y 255 (inclusive, correspondiendo a 8 bits de datos). La siguiente versión del protocolo, IPv6, extiende este espacio de direcciones a 128 bits y las direcciones se representan generalmente por una serie de números hexadecimales separados por dos puntos (por ejemplo: 2001:0db8:13bb:0002:0000:0000:0000:0020 o su versión corta 2001:db8:13bb:2::20).
 		</div><a
-            id="idm140061903944672"
+            id="idm140114211247200"
             class="indexterm"></a><a
-            id="idm140061903943712"
+            id="idm140114211246240"
             class="indexterm"></a><a
-            id="idm140061903942272"
+            id="idm140114211244800"
             class="indexterm"></a><div
             class="para">
 			Una máscara de subred (máscara de red) define en su código binario qué porción de una dirección IP corresponde a la red, el resto especifica el equipo. En el ejemplo de configuración de una dirección IPv4 estática dado, la máscara de red <code
@@ -117,14 +117,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">192.168.0.0/24</code>. La sintaxis es similar en IPv6: <code
               class="literal">2001:db8:13bb:2::/64</code>.
 		</div><a
-            id="idm140061903935728"
+            id="idm140114211238256"
             class="indexterm"></a><a
-            id="idm140061903934768"
+            id="idm140114211237296"
             class="indexterm"></a><div
             class="para">
 			Un enrutador («router») es una máquina que conecta varias redes entre sí. Se guía todo el tráfico a través de un enrutador a la red correcta. Para hacerlo, el enrutador analiza los paquetes entrantes y los redirecciona según su dirección IP de destino. Generalmente se conoce al enrutador como puerta de enlace («gateway»); en esta configuración trabaja como una máquina que ayuda a alcanzar el exterior de la red local (hacia una red extendida, como Internet).
 		</div><a
-            id="idm140061903932864"
+            id="idm140114211235392"
             class="indexterm"></a><div
             class="para">
 			La dirección especial de difusión conecta todas las estaciones en una red. Casi nunca es «enrutada», sólo funciona en la red en cuestión. Específicamente, significa que un paquete de datos direccionado a difusión nunca pasará a través del enrutador.
@@ -142,19 +142,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="filename">/etc/init.d/networking</code>. Éstas generalmente incluyen <code
             class="literal">eth0</code> que se refiere a la primera tarjeta Ethernet.
 		</div><a
-          id="idm140061903926992"
+          id="idm140114211229520"
           class="indexterm"></a><a
-          id="idm140061903925552"
+          id="idm140114211228080"
           class="indexterm"></a><a
-          id="idm140061903924112"
+          id="idm140114211226640"
           class="indexterm"></a><a
-          id="idm140061903922672"
+          id="idm140114211225200"
           class="indexterm"></a><div
           class="sidebar"><div
             class="titlepage"><div><div><p
                   class="title"><strong><span
                       class="emphasis"><em>ALTERNATIVA</em></span> NetworkManager</strong></p></div></div></div><a
-            id="idm140061903920432"
+            id="idm140114211222960"
             class="indexterm"></a><div
             class="para">
 			If Network Manager is particularly recommended in roaming setups (see <a
@@ -177,9 +177,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 				Si el equipo tienen una tarjeta Ethernet, se debe configurar la red IP a la que está asociada eligiendo uno de dos métodos posibles. El método más simple es utilizar una configuración dinámica con DHCP, lo que necesita un servidor DHCP en la red local. Puede indicar un nombre de equipo deseado que corresponde a la configuración <code
               class="literal">hostname</code> en el ejemplo a continuación. El servidor DHCP luego envía la configuración para la red apropiada.
 			</div><a
-            id="idm140061903912144"
+            id="idm140114211214672"
             class="indexterm"></a><a
-            id="idm140061903911184"
+            id="idm140114211213712"
             class="indexterm"></a><div
             class="example"><a
               id="example.config-dhcp"></a><p
@@ -220,13 +220,13 @@ iface eth0 inet static
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.ppp-rtc"></a>8.2.2. Conexión con PPP a través de un módem PSTN</h3></div></div></div><a
-            id="idm140061903804080"
+            id="idm140114211578720"
             class="indexterm"></a><a
-            id="idm140061903803120"
+            id="idm140114211577760"
             class="indexterm"></a><a
-            id="idm140061903802160"
+            id="idm140114211576800"
             class="indexterm"></a><a
-            id="idm140061903800720"
+            id="idm140114211575360"
             class="indexterm"></a><div
             class="para">
 				Una conexión punto a punto (PPP) establece una conexión intermitente; esta es la solución más común para conexiones realizadas con un teléfono módem («módem PSTN» ya que se realiza la conexión a través de la red pública conmutada de teléfonos: «Public Switched Telephone Network»).
@@ -237,9 +237,9 @@ iface eth0 inet static
               class="literal">provider</code> («proveedor» en inglés). En caso de dudas sobre el protocolo de autenticación, utilice <span
               class="emphasis"><em>PAP</em></span>: la mayoría de los proveedores de servicios de Internet lo ofrecen.
 			</div><a
-            id="idm140061903796432"
+            id="idm140114211571392"
             class="indexterm"></a><a
-            id="idm140061903795312"
+            id="idm140114211570272"
             class="indexterm"></a><div
             class="para">
 				Después de la configuración, es posible conectarse utilizando la orden <code
@@ -248,19 +248,19 @@ iface eth0 inet static
               class="command">poff</code>. Ambos puede ser ejecutados por el usuario root o cualquier otro usuario siempre que pertenezcan al grupo <code
               class="literal">dip</code>.
 			</div><a
-            id="idm140061903791872"
+            id="idm140114211566832"
             class="indexterm"></a><a
-            id="idm140061903790752"
+            id="idm140114211565712"
             class="indexterm"></a></div><div
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.adsl"></a>8.2.3. Conexión a través de un módem ADSL</h3></div></div></div><a
-            id="idm140061903788448"
+            id="idm140114211563408"
             class="indexterm"></a><a
-            id="idm140061903787040"
+            id="idm140114211562000"
             class="indexterm"></a><a
-            id="idm140061903785600"
+            id="idm140114211560560"
             class="indexterm"></a><div
             class="para">
 				El término genérico «módem ADSL» cubre una multitud de dispositivos con funcionalidades muy diferentes. Los módems más sencillos de utilizar con Linux son aquellos con una interfaz Ethernet (y no sólo una interfaz USB). Tienden a ser populares, la mayoría de los proveedores de servicios de Internet ADSL prestan (o alquilan) una «caja» con interfaces Ethernet. La configuración puede variar enormemente dependiendo del tipo de módem.
@@ -269,9 +269,9 @@ iface eth0 inet static
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.adsl-pppoe"></a>8.2.3.1. Módems compatibles con PPPOE</h4></div></div></div><a
-              id="idm140061903782688"
+              id="idm140114211557648"
               class="indexterm"></a><a
-              id="idm140061903781728"
+              id="idm140114211556688"
               class="indexterm"></a><div
               class="para">
 					Algunos módems Ethernet funcionan con el protocolo PPPOE (punto a punto sobre Ethernet: «Point to Point Protocol Over Ethernet»). La herramienta <code
@@ -285,16 +285,16 @@ iface eth0 inet static
                 class="command">pon dsl-provider</code> y desconectarla con <code
                 class="command">poff dsl-provider</code>.
 				</div><a
-              id="idm140061903776704"
+              id="idm140114211551664"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>SUGERENCIA</em></span> Iniciando <code
                           class="command">ppp</code> en el arranque</strong></p></div></div></div><a
-                id="idm140061903773984"
+                id="idm140114211548944"
                 class="indexterm"></a><a
-                id="idm140061903772864"
+                id="idm140114211547824"
                 class="indexterm"></a><div
                 class="para">
 					Las conexiones PPP sobre ADSL son, por definición, intermitentes. Ya que generalmente no son cobradas por tiempo existen pocas desventajas a la tentación de mantenerlas siempre encendidas. El modo estándar de hacerlo es utilizar el sistema init.
@@ -337,7 +337,7 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
               class="titlepage"><div><div><h4
                     class="title"><a
                       id="sect.adsl-pptp"></a>8.2.3.2. Módems compatibles con PPTP</h4></div></div></div><a
-              id="idm140061903761872"
+              id="idm140114211536832"
               class="indexterm"></a><div
               class="para">
 					El protocolo PPTP (protocolo de túnel punto a punto: «Point-to-Point Tunneling Protocol») fue creado por Microsoft. Desplegado al principio de ADSL fue reemplazado rápidamente por PPPOE. Si le fuerzan a utilizar este protocolo, revise el <a
@@ -355,7 +355,7 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>VOLVER A LOS CIMIENTOS</em></span> Cable cruzado para una conexión Ethernet directa</strong></p></div></div></div><a
-                id="idm140061903756544"
+                id="idm140114211531504"
                 class="indexterm"></a><div
                 class="para">
 					Las tarjetas de red esperan recibir datos en hilos específicos del cable y enviar sus datos en otros. Cuando conecta un equipo a una red local generalmente conecta un cable (recto o cruzado) entre la tarjeta de red y un repetidor o conmutador. Sin embargo, si desea conectar dos equipos directamente (sin un conmutador o repetidor intermedio) debe enrutar la señal enviada por una tarjeta al lado receptor de la otra tarjeta y viceversa. Éste es el propósito de un cable cruzado y la razón por la que se lo utiliza.
@@ -370,9 +370,9 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.roaming-network-config"></a>8.2.4. Configuración de red automática para usuarios errantes</h3></div></div></div><a
-            id="idm140061903751728"
+            id="idm140114211526688"
             class="indexterm"></a><a
-            id="idm140061903750416"
+            id="idm140114211525376"
             class="indexterm"></a><div
             class="para">
 				Many Falcot engineers have a laptop computer that, for professional purposes, they also use at home. The network configuration to use differs according to location. At home, it may be a wifi network (protected by a WPA key), while the workplace uses a wired network for greater security and more bandwidth.
@@ -396,7 +396,7 @@ adsl:2345:respawn:/usr/sbin/pppd call dsl-provider
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>ALTERNATIVA</em></span> Configuración por «perfil de red»</strong></p></div></div></div><a
-              id="idm140061903741920"
+              id="idm140114211516880"
               class="indexterm"></a><div
               class="para">
 				Usuarios más avanzados podrían desear probar el paquete <span

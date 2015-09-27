@@ -174,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. Konfigurasi Sistem untuk Bahasa yang Berbeda</h2></div></div></div><a
-            id="idm139697336310880"
+            id="idm140060089582368"
             class="indexterm"></a><div
             class="para">
 			Jika sistem terinstall menggunakan Bahasa Indonesia, mungkin mesin telah memiliki Bahasa Indonesia sebagai bahasa bawaan. Namun perlu diketahui bahwa installer mengatur bahasa, jadi di lain waktu, jika suatu saat diperlukan, Anda dapat mengubahnya.
@@ -192,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. Mengatur Bahasa Standar</h3></div></div></div><a
-              id="idm139697326382432"
+              id="idm140060089393920"
               class="indexterm"></a><a
-              id="idm139697326940240"
+              id="idm140060082955024"
               class="indexterm"></a><a
-              id="idm139697341338464"
+              id="idm140060082793824"
               class="indexterm"></a><div
               class="para">
 				Sebuah locale ialah sekelompok pengaturan regional. Termasuk tidak hanya bahasa untuk teks, tetapi juga format untuk menampilkan angka, tanggal, waktu, dan penjumlahan keuangan, sebagaimana peraturan perbandingan alfabet (untuk menangani karakter beraksen dengan tepat). Meskipun setiap parameter ini dapat ditentukan secara independen satu sama lain, umumnya kita menggunakan sebuah locale, yang merupakan seperangkat nilai koheren untuk parameter ini sesuai dengan “region” dalam arti luas. Locale ini biasanya ditentukan dalam bentuk, <code
@@ -208,17 +208,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>KULTUR</em></span> Set karakter</strong></p></div></div></div><a
-                id="idm139697335973280"
+                id="idm140060097764176"
                 class="indexterm"></a><a
-                id="idm139697335972320"
+                id="idm140060097763216"
                 class="indexterm"></a><a
-                id="idm139697335971360"
+                id="idm140060097762256"
                 class="indexterm"></a><a
-                id="idm139697335970400"
+                id="idm140060097761296"
                 class="indexterm"></a><a
-                id="idm139697335969440"
+                id="idm140060097760336"
                 class="indexterm"></a><a
-                id="idm139697335968480"
+                id="idm140060097759376"
                 class="indexterm"></a><div
                 class="para">
 				Sejarahnya, setiap lokal memiliki “set karakter” yang sesuai (sekelompok karakter yang diketahui) dan disebut pula “encoding” (representasi internal untuk karakter dalam komputer).
@@ -231,11 +231,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it is the default encoding in XML documents.
 			</div><a
-                id="idm139697340625200"
+                id="idm140060088682064"
                 class="indexterm"></a><a
-                id="idm139697340624240"
+                id="idm140060088681104"
                 class="indexterm"></a><a
-                id="idm139697340623280"
+                id="idm140060088680144"
                 class="indexterm"></a><div
                 class="para">
 				Encoding inilah yang secara umum digunakan, dan merupakan standar pada sistem Debian.
@@ -260,11 +260,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it is picked up by all user sessions since PAM will inject its content in the <code
                 class="varname">LANG</code> environment variable.
 			</div><a
-              id="idm139697326451072"
+              id="idm140060082091184"
               class="indexterm"></a><a
-              id="idm139697326450112"
+              id="idm140060082090224"
               class="indexterm"></a><a
-              id="idm139697326449152"
+              id="idm140060082089264"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -291,32 +291,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/etc/default/locale</code> file works in a similar manner, but contains only the <code
                   class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it is generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
 			</div><a
-                id="idm139697330529392"
+                id="idm140060080054032"
                 class="indexterm"></a><a
-                id="idm139697330528432"
+                id="idm140060080053072"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. Mengatur Papan ketik</h3></div></div></div><a
-              id="idm139697330525936"
+              id="idm140060080050576"
               class="indexterm"></a><a
-              id="idm139697330524976"
+              id="idm140060080049616"
               class="indexterm"></a><div
               class="para">
 				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it is based on debconf and is implemented in the <span
                 class="pkg pkg">keyboard-configuration</span> package. Thus the <code
                 class="command">dpkg-reconfigure keyboard-configuration</code> command can be used at any time to reset the keyboard layout.
 			</div><a
-              id="idm139697330522256"
+              id="idm140060080046896"
               class="indexterm"></a><a
-              id="idm139697330521136"
+              id="idm140060080045776"
               class="indexterm"></a><a
-              id="idm139697330520016"
+              id="idm140060080044656"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm139697330518576"
+                id="idm140060080043216"
                 class="indexterm"></a>Pertanyaannya sesuai dengan tata letak papan ketik fisik (papan ketik standar PC di US berupa “Generic 104 key”), kemudian tata letak yang dipilih (umumnya “US”), dan kemudian posisi tombol AltGr (Alt kanan). Akhirnya pertanyaan tombol yang digunakan untuk “Compose key”, yang memungkinkan untuk memasukkan karakter khusus dengan kombinasi penekanan tombol. Keberhasilan mengetik <span
                 class="keycap"><strong>Compose</strong></span> <span
                 class="keycap"><strong>'</strong></span> <span
@@ -324,13 +324,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/usr/share/X11/locale/en_US.UTF-8/Compose</code> (atau berkas lain, ditentukan berdasarkan kondisi locale terkini ditunjukkan oleh <code
                 class="filename">/usr/share/X11/locale/compose.dir</code>).
 			</div><a
-              id="idm139697330514928"
+              id="idm140060080039568"
               class="indexterm"></a><a
-              id="idm139697336297536"
+              id="idm140060080038288"
               class="indexterm"></a><a
-              id="idm139697336296256"
+              id="idm140060089331600"
               class="indexterm"></a><a
-              id="idm139697336294656"
+              id="idm140060089330000"
               class="indexterm"></a><div
               class="para">
 				Catat bahwa konfigurasi papan ketik untuk mode grafis yang dijelaskan di sini hanya berlaku untuk tata letak standar; lingkungan GNOME dan KDE, antara lain, menyediakan panel kontrol papan ketik dalam preferensi mereka yang memungkinkan setiap pengguna memiliki konfigurasi mereka sendiri. Beberapa pilihan tambahan terkait tingkah laku beberapa kunci juga tersedia di panel kontrol ini.

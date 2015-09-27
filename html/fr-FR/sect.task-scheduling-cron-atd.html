@@ -70,13 +70,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   id="sect.task-scheduling-cron-atd"></a>9.7. Planification de tâches : <code
                   class="command">cron</code> et <code
                   class="command">atd</code></h2></div></div></div><a
-          id="idm140090019061584"
+          id="idm140684264365856"
           class="indexterm"></a><a
-          id="idm140090019060464"
+          id="idm140684264364960"
           class="indexterm"></a><a
-          id="idm140090019059344"
+          id="idm140684264364064"
           class="indexterm"></a><a
-          id="idm140090019058384"
+          id="idm140684264363296"
           class="indexterm"></a><div
           class="para">
 			<code
@@ -168,7 +168,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.format-crontab"></a>9.7.1. Format d'un fichier <code
                     class="filename">crontab</code></h3></div></div></div><a
-            id="idm140090019031024"
+            id="idm140684264340784"
             class="indexterm"></a><div
             class="sidebar"><div
               class="titlepage"><div><div><p
@@ -309,9 +309,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                         class="command">cron</code> avec <code
                         class="command">systemd</code></strong></p></div></div></div><div
               class="para">
-				It is possible to emulate part of <code
-                class="command">cron</code>'s behaviour with <code
-                class="command">systemd</code>'s timer mechanism (see <a
+				Il est possible d'émuler un partie du comportement de <code
+                class="command">cron</code> avec le système de minuterie (<span
+                class="foreignphrase"><em
+                  class="foreignphrase">timer</em></span>) de <code
+                class="command">systemd</code> (voir <a
                 class="xref"
                 href="unix-services.html#sect.systemd">Section 9.1.1, « Le système d'initialisation systemd »</a>).
 			</div></div></div><div
@@ -320,24 +322,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.at-command"></a>9.7.2. Emploi de la commande <code
                     class="command">at</code></h3></div></div></div><a
-            id="idm140090018986784"
+            id="idm140684264303616"
             class="indexterm"></a><div
             class="para">
-				The <code
-              class="command">at</code> executes a command at a specified moment in the future. It takes the desired time and date as command-line parameters, and the command to be executed in its standard input. The command will be executed as if it had been entered in the current shell. <code
-              class="command">at</code> even takes care to retain the current environment, in order to reproduce the same conditions when it executes the command. The time is indicated by following the usual conventions: <code
-              class="literal">16:12</code> or <code
-              class="literal">4:12pm</code> represents 4:12 pm. The date can be specified in several European and Western formats, including <code
-              class="literal">DD.MM.YY</code> (<code
-              class="literal">27.07.15</code> thus representing 27 July 2015), <code
-              class="literal">YYYY-MM-DD</code> (this same date being expressed as <code
-              class="literal">2015-07-27</code>), <code
-              class="literal">MM/DD/[CC]YY</code> (ie., <code
-              class="literal">12/25/15</code> or <code
-              class="literal">12/25/2015</code> will be December 25, 2015), or simple <code
-              class="literal">MMDD[CC]YY</code> (so that <code
-              class="literal">122515</code> or <code
-              class="literal">12252015</code> will, likewise, represent December 25, 2015). Without it, the command will be executed as soon as the clock reaches the time indicated (the same day, or tomorrow if that time has already passed on the same day). You can also simply write “today” or “tomorrow”, which is self-explanatory.
+				La commande <code
+              class="command">at</code> prévoit l'exécution d'une commande à un moment ultérieur. Elle prend l'horaire et la date prévus en paramètres sur sa ligne de commande, et la commande à exécuter sur son entrée standard. La commande sera exécutée comme si elle avait été saisie dans un interpréteur de commandes. <code
+              class="command">at</code> conserve d'ailleurs l'environnement courant afin de pouvoir travailler exactement dans les mêmes conditions que celles de la planification. L'horaire est indiqué en suivant les conventions habituelles : <code
+              class="literal">16:12</code> représente 16 h 12. La date peut être précisée au format <code
+              class="literal">JJ.MM.AA</code> (<code
+              class="literal">27.07.15</code> représentant ainsi 27 juillet 2015) ou <code
+              class="literal">AAAA-MM-JJ</code> (cette même date étant alors représentée par <code
+              class="literal">2015-07-27</code>). En son absence, la commande sera exécutée dès que l'horloge atteindra l'heure signalée (le jour même ou le lendemain). On peut encore écrire explicitement <span
+              class="foreignphrase"><em
+                class="foreignphrase">today</em></span> (aujourd'hui) ou <span
+              class="foreignphrase"><em
+                class="foreignphrase">tomorrow</em></span> (demain).
 			</div><pre
             class="screen">
 <code
@@ -378,9 +377,9 @@ job 31 at Mon Jul 27 09:00:00 2015</code></pre><div
               class="command">at</code> lors de la planification mais on pourra le retrouver grâce à la commande <code
               class="command">atq</code>, qui donne la liste des commandes actuellement planifiées.
 			</div><a
-            id="idm140090018964960"
+            id="idm140684264287216"
             class="indexterm"></a><a
-            id="idm140090018963840"
+            id="idm140684264286320"
             class="indexterm"></a></div></div><ul
         class="docnav"><li
           class="previous"><a

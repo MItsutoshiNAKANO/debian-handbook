@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automatic-upgrades"></a>6.8. Aggiornamenti automatici</h2></div></div></div><a
-          id="idm140253688837360"
+          id="idm140132945082976"
           class="indexterm"></a><a
-          id="idm140253688836208"
+          id="idm140132945081568"
           class="indexterm"></a><div
           class="para">
 			Visto che Falcot Corp ha molti computer ma una manodopera limitata, i suoi amministrazioni cercano di rendere gli aggiornamenti il più automatici possibili. I programmi incaricati di tali processi devono perciò essere eseguiti senza intervento umano.
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140253688834784"></a>6.8.1. Configurare <code
+                    id="idm140132945079920"></a>6.8.1. Configurare <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				Come è stato già detto (vedere il riquadro <a
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140253688831344"></a>6.8.2. Configurare APT</h3></div></div></div><div
+                    id="idm140132945075904"></a>6.8.2. Configurare APT</h3></div></div></div><div
             class="para">
 				Nel caso di APT è semplice: l'opzione <code
               class="literal">-y</code> (o <code
@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140253688829328"></a>6.8.3. Configurare <code
+                    id="idm140132945073568"></a>6.8.3. Configurare <code
                     class="command">debconf</code></h3></div></div></div><div
             class="para">
 				Il caso di <code
@@ -125,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140253688821856"></a>6.8.4. Gestire interazioni a riga di comando</h3></div></div></div><div
+                    id="idm140132945064752"></a>6.8.4. Gestire interazioni a riga di comando</h3></div></div></div><div
             class="para">
 				L'ultima sorgente di interazioni, e la più difficile da eliminare, sono gli script di configurazione eseguiti da <code
               class="command">dpkg</code>. Sfortunatamente non c'è una soluzione standard, e non c'è alcuna risposta nettamente migliore di un'altra.
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm140253688818288"></a>6.8.5. La combinazione miracolosa</h3></div></div></div><div
+                    id="idm140132945060608"></a>6.8.5. La combinazione miracolosa</h3></div></div></div><div
             class="para">
 				Combinando gli elementi precedenti, è possibile progettare un piccolo ma piuttosto affidabile script che può gestire gli aggiornamenti automatici.
 			</div><div
@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="title"><strong>Esempio 6.4. Script di aggiornamento non interattivo</strong></p><div
               class="example-contents"><pre
                 class="programlisting">export DEBIAN_FRONTEND=noninteractive
-yes '' | apt-get -y -o DPkg::options="--force-confdef" -o DPkg::options="--force-confold" dist-upgrade
+yes '' | apt-get -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" dist-upgrade
 </pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p

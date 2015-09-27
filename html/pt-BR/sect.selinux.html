@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.selinux"></a>14.5. Introducao ao SELinux</h2></div></div></div><a
-          id="idm140156032267696"
+          id="idm139843630338512"
           class="indexterm"></a><div
           class="section"><div
             class="titlepage"><div><div><h3
@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="emphasis"><em>domínio</em></span> que o usuário realizada naquele momento. Os direitos realmente dependem do domínio, mas transições entre os domínios são controladas pelos papéis. Finalmente, as transições possíveis entre os papéis dependem da identidade.
 			</div><div
             class="figure"><a
-              id="idm140156032258928"></a><div
+              id="idm139843630329744"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-context.png"
@@ -127,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="literal">ssh_t</code>). Este mecanismo de transição automática de domínio torna possível conceder apenas os direitos necessários para cada programa. É um princípio fundamental do SELinux.
 			</div><div
             class="figure"><a
-              id="idm140156032246176"></a><div
+              id="idm139843630316992"></a><div
               class="figure-contents"><div
                 class="mediaobject"><img
                   src="images/selinux-transitions.png"
@@ -137,11 +137,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>NA PRATICA</em></span> Encontrar o contexto de segunranca</strong></p></div></div></div><a
-              id="idm140156032241696"
+              id="idm139843630312512"
               class="indexterm"></a><a
-              id="idm140156032240736"
+              id="idm139843630311552"
               class="indexterm"></a><a
-              id="idm140156032239808"
+              id="idm139843630310624"
               class="indexterm"></a><div
               class="para">
 				Para encontrar o contexto de segurança de um determinado processo, você deve usar a opção <code
@@ -229,9 +229,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.selinux-management"></a>14.5.3. Gerenciando um Sistema SELinux</h3></div></div></div><a
-            id="idm140156032211184"
+            id="idm139843630282000"
             class="indexterm"></a><a
-            id="idm140156032210064"
+            id="idm139843630280880"
             class="indexterm"></a><div
             class="para">
 				A política do SELinux é um conjunto modular de regras, e sua instalação detecta e permite automaticamente todos os módulos relevantes com base nos serviços já instalados. O sistema é assim imediatamente operacional. No entanto, quando um serviço é instalado após a política do SELinux, você deve ser capaz de habilitar manualmente o módulo correspondente. Esse é o propósito do comando <code
@@ -262,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140156032199936"></a>14.5.3.1. Gerenciando Modulos SELinux</h4></div></div></div><div
+                      id="idm139843630270752"></a>14.5.3.1. Gerenciando Modulos SELinux</h4></div></div></div><div
               class="para">
 					Available SELinux modules are stored in the <code
                 class="filename">/usr/share/selinux/default/</code> directory. To enable one of these modules in the current configuration, you should use <code
@@ -325,7 +325,7 @@ acct    1.6.0
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140156032183264"></a>14.5.3.2. Gerenciando Identidades</h4></div></div></div><div
+                      id="idm139843630254080"></a>14.5.3.2. Gerenciando Identidades</h4></div></div></div><div
               class="para">
 					Toda vez que um usuário faz logon, eles se atribui uma identidade SELinux. Esta identidade define os papéis que eles serão capazes de endossar. Estes dois mapeamentos (do usuário para a identidade e de esta identidade para papéis) são configuráveis com o comando <code
                 class="command">semanage</code>.
@@ -406,7 +406,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140156032160272"></a>14.5.3.3. Gerenciamento de arquivos Contextos, Portas e booleanos</h4></div></div></div><div
+                      id="idm139843630231088"></a>14.5.3.3. Gerenciamento de arquivos Contextos, Portas e booleanos</h4></div></div></div><div
               class="para">
 					Cada módulo SELinux fornece um conjunto de regras de rotulagem de arquivos, mas também é possível adicionar regras de rotulagem personalizadas para atender a um caso específico. Por exemplo, se você deseja que o servidor web para seja capaz de ler arquivos dentro da hierarquia de arquivos <code
                 class="filename">/srv/www/</code>, você pode executar semanage <code
@@ -477,13 +477,13 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140156009715648"></a>14.5.4.1. Escrevendo um arquivo <code
+                      id="idm139843627643712"></a>14.5.4.1. Escrevendo um arquivo <code
                       class="filename">.fc</code></h4></div></div></div><div
               class="para">
 					Lendo o exemplo a seguir deve ser suficiente para compreender a estrutura de tal arquivo. Você pode usar expressões regulares para atribuir o mesmo contexto de segurança de vários arquivos, ou até mesmo uma árvore de diretórios.
 				</div><div
               class="example"><a
-                id="idm140156009714112"></a><p
+                id="idm139843627642176"></a><p
                 class="title"><strong>Exemplo 14.2. arquivo <code
                     class="filename">example.fc</code></strong></p><div
                 class="example-contents"><pre
@@ -497,7 +497,7 @@ user_u          user       SystemLow  SystemLow             user_r
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140156009712128"></a>14.5.4.2. Escrevendo um arquivo <code
+                      id="idm139843627640192"></a>14.5.4.2. Escrevendo um arquivo <code
                       class="filename">.if</code></h4></div></div></div><div
               class="para">
 					No exemplo abaixo, a primeira interface ("<code
@@ -510,7 +510,7 @@ user_u          user       SystemLow  SystemLow             user_r
                 class="literal">gen_require</code>), e usar diretivas padrão de concessão de direitos. Note, no entanto, que você pode usar interfaces fornecidas por outros módulos. A próxima seção irá dar mais explicações sobre a forma de expressar esses direitos.
 				</div><div
               class="example"><a
-                id="idm140156009708576"></a><p
+                id="idm139843627636640"></a><p
                 class="title"><strong>Exemplo 14.3. Arquivo <code
                     class="filename">example.if</code></strong></p><div
                 class="example-contents"><pre
@@ -579,7 +579,7 @@ interface(`myapp_read_log',`
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140156009702688"></a>14.5.4.3. Escrevendo um Arquivo <code
+                      id="idm139843627630752"></a>14.5.4.3. Escrevendo um Arquivo <code
                       class="filename">.te</code></h4></div></div></div><div
               class="para">
 					De uma olhada no arquivo <code
@@ -753,7 +753,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
 					Para melhor entender esta mensagem, vamos estudá la peça por peça.
 				</div><div
               class="table"><a
-                id="idm140156009674320"></a><p
+                id="idm139843627602752"></a><p
                 class="title"><strong>Tabela 14.1. Análise de um rastreamento SELinux</strong></p><div
                 class="table-contents"><table
                   xmlns:d="http://docbook.org/ns/docbook"
@@ -785,9 +785,9 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>COMPLEMENTOS</em></span> Nao ha papeis nas regras de politicas</strong></p></div></div></div><a
-                id="idm140156009651712"
+                id="idm139843627580320"
                 class="indexterm"></a><a
-                id="idm140156009650944"
+                id="idm139843627579552"
                 class="indexterm"></a><div
                 class="para">
 					It might seem weird that roles do not appear at all when creating new rules. SELinux uses only the domains to find out which operations are allowed. The role intervenes only indirectly by allowing the user to switch to another domain. SELinux is based on a theory known as <span
@@ -796,7 +796,7 @@ files_tmp_filetrans(myapp_t,myapp_tmp_t,file)
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm140156009648768"></a>14.5.4.4. Compilando os Arquivos</h4></div></div></div><div
+                      id="idm139843627577376"></a>14.5.4.4. Compilando os Arquivos</h4></div></div></div><div
               class="para">
 					Once the 3 files (<code
                 class="filename">example.if</code>, <code

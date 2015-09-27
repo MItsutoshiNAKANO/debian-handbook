@@ -178,7 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.config-language-support"></a>8.1. تعريب النظام</h2></div></div></div><a
-            id="idm140534163198736"
+            id="idm140201221705888"
             class="indexterm"></a><div
             class="para">
 			إذا اخترت تثبيت النظام باللغة العربية، فالأغلب أن اللغة العريبة قد أصبحت الافتراضية على الجهاز بالفعل. لكن من المفيد معرفة ما يفعله المثبّت لضبط اللغة، حتى تتمكن من تغييرها لاحقاً إذا دعت الحاجة.
@@ -196,11 +196,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.default-language"></a>8.1.1. ضبط اللغة الافتراضية</h3></div></div></div><a
-              id="idm140534147056752"
+              id="idm140201221675984"
               class="indexterm"></a><a
-              id="idm140534144139280"
+              id="idm140201229831120"
               class="indexterm"></a><a
-              id="idm140534144138320"
+              id="idm140201229830160"
               class="indexterm"></a><div
               class="para">
 				تشير كلمة locale إلى مجموعة من الإعدادات الإقليمية. لا تقتصر هذه المجموعة على لغة النص فقط، بل تشمل أيضاً صيغة عرض الأرقام، والتاريخ، والساعة، والمبالغ المالية، بالإضافة إلى قواعد المقارنة الأبجدية (لمعاملة الحروف ذات الحركات – é مثلاً – بشكل صحيح). رغم أنه يمكن تحديد كل من هذه البارامترات بشكل منفصل، إلا أننا نستخدم locale عموماً، وهي مجموعة متناسقة من القيم التي تعطى لهذه البارامترات بحيث توافق ”إقليماً“ ما بشكل عام. تحدد هذه locales عادة بالصيغة <code
@@ -212,17 +212,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>ثقافة</em></span> مجموعة المحارف</strong></p></div></div></div><a
-                id="idm140534142941264"
+                id="idm140201230096272"
                 class="indexterm"></a><a
-                id="idm140534142940336"
+                id="idm140201230095344"
                 class="indexterm"></a><a
-                id="idm140534142939376"
+                id="idm140201230094384"
                 class="indexterm"></a><a
-                id="idm140534142938416"
+                id="idm140201230093424"
                 class="indexterm"></a><a
-                id="idm140534142937456"
+                id="idm140201230092464"
                 class="indexterm"></a><a
-                id="idm140534162340704"
+                id="idm140201230091504"
                 class="indexterm"></a><div
                 class="para">
 				تاريخياً، كان لكل locale مجموعة محارف مرتبطة معها (مجموعة المحارف المعرّفة) وترميز مفضّل (التمثيل الداخلي للمحارف في الحاسوب).
@@ -235,11 +235,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="para">
 				Working with foreign languages often implied regular switches between various encodings and character sets. Furthermore, writing multilingual documents led to further, almost intractable problems. Unicode (a super-catalog of nearly all writing systems from all of the world's languages) was created to work around this problem. One of Unicode's encodings, UTF-8, retains all 128 ASCII symbols (7-bit codes), but handles other characters differently. Those are preceded by a specific escape sequence of a few bits, which implicitly defines the length of the character. This allows encoding all Unicode characters on a sequence of one or more bytes. Its use has been popularized by the fact that it is the default encoding in XML documents.
 			</div><a
-                id="idm140534162336176"
+                id="idm140201231409296"
                 class="indexterm"></a><a
-                id="idm140534162335216"
+                id="idm140201231408336"
                 class="indexterm"></a><a
-                id="idm140534162334256"
+                id="idm140201231407376"
                 class="indexterm"></a><div
                 class="para">
 				يجب استخدام هذا الترميز عموماً، ولذلك فهو الترميز الافتراضي في نظم دبيان.
@@ -264,11 +264,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="filename">/etc/default/locale</code> file will then be modified to store this choice. From there, it is picked up by all user sessions since PAM will inject its content in the <code
                 class="varname">LANG</code> environment variable.
 			</div><a
-              id="idm140534147408208"
+              id="idm140201225051456"
               class="indexterm"></a><a
-              id="idm140534147407248"
+              id="idm140201225050496"
               class="indexterm"></a><a
-              id="idm140534147406288"
+              id="idm140201225049536"
               class="indexterm"></a><div
               class="sidebar"><a
                 id="sidebar.intro-pam"></a><div
@@ -298,32 +298,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/etc/default/locale</code> file works in a similar manner, but contains only the <code
                   class="varname">LANG</code> environment variable. Thanks to this split, some PAM users can inherit a complete environment without localization. Indeed, it is generally discouraged to run server programs with localization enabled; on the other hand, localization and regional settings are recommended for programs that open user sessions.
 			</div><a
-                id="idm140534145440640"
+                id="idm140201241370352"
                 class="indexterm"></a><a
-                id="idm140534145439680"
+                id="idm140201241369392"
                 class="indexterm"></a></div></div><div
             class="section"><div
               class="titlepage"><div><div><h3
                     class="title"><a
                       id="sect.keyboard-config"></a>8.1.2. ضبط لوحة المفاتيح</h3></div></div></div><a
-              id="idm140534145437216"
+              id="idm140201241366928"
               class="indexterm"></a><a
-              id="idm140534145436288"
+              id="idm140201241366000"
               class="indexterm"></a><div
               class="para">
 				Even if the keyboard layout is managed differently in console and graphical mode, Debian offers a single configuration interface that works for both: it is based on debconf and is implemented in the <span
                 class="pkg pkg">keyboard-configuration</span> package. Thus the <code
                 class="command">dpkg-reconfigure keyboard-configuration</code> command can be used at any time to reset the keyboard layout.
 			</div><a
-              id="idm140534145433600"
+              id="idm140201241363312"
               class="indexterm"></a><a
-              id="idm140534145432480"
+              id="idm140201241362192"
               class="indexterm"></a><a
-              id="idm140534145431360"
+              id="idm140201241361072"
               class="indexterm"></a><div
               class="para">
 				<a
-                id="idm140534145429920"
+                id="idm140201241359632"
                 class="indexterm"></a>تتعلق الأسئلة بالتخطيط الفيزيائي للوحة المفاتيح (أغلب لوحات المفاتيح القياسية في الحواسيب الشخصية هي ”Generic 104 key“)، بعدها التخطيط الذي سنختاره (”US“ بشكل عام)، وبعدها موقع مفتاح AltGr (غالباً بدون، أو ربما Alt اليمين). أخيراً يأتي سؤال عن المفتاح الذي سيستخدم كمفتاح ”تجميع“ (compose)، الذي يسمح بإدخال محارف خاصة عبر دمج ضغطات المفاتيح. مثلاً إذا طبعت (<span
                 class="keycap"><strong>تجميع</strong></span> <span
                 class="keycap"><strong>'</strong></span> <span
@@ -333,13 +333,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 dir="ltr"
                 class="filename">/usr/share/X11/locale/compose.dir</code>).
 			</div><a
-              id="idm140534147733536"
+              id="idm140201217798864"
               class="indexterm"></a><a
-              id="idm140534147732256"
+              id="idm140201217797584"
               class="indexterm"></a><a
-              id="idm140534147730976"
+              id="idm140201217796304"
               class="indexterm"></a><a
-              id="idm140534147729376"
+              id="idm140201217794704"
               class="indexterm"></a><div
               class="para">
 				لاحظ أن ضبط لوحة المفاتيح بهذه الطريقة سيؤثر فقط على التخطيط الافتراضي في الوضع الرسومي؛ إذ توفر بيئات GNOME و KDE وغيرهما خيارات للتحكم بلوحة المفاتيح في لوحات التحكم الخاصة بهذه البيئات، وبذلك تسمح لكل مستخدم بتطبيق إعداداته الخاصة. كما تتيح لوحات التحكم هذه بعض الخيارات الإضافية التي تتعلق بسلوك بعض المفاتيح الخاصة أيضاً.

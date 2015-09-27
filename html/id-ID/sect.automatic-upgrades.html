@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.automatic-upgrades"></a>6.8. Pembaharuan Otomatis</h2></div></div></div><a
-          id="idm139697323685472"
+          id="idm140060095017536"
           class="indexterm"></a><a
-          id="idm139697323684064"
+          id="idm140060095016128"
           class="indexterm"></a><div
           class="para">
 			Karena Falcot Cort memiliki banyak komputer namun hanya terbatas kekuatan orang, administratornya mencoba untuk membuat upgrade seotomatis mungkin. Program yang bertugas pada proses ini harus dijalankan tanpa intervensi manusia.
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139697323682400"></a>6.8.1. Mengonfigurasi <code
+                    id="idm140060095014464"></a>6.8.1. Mengonfigurasi <code
                     class="command">dpkg</code></h3></div></div></div><div
             class="para">
 				Seperti yang telah kita sebutkan (lihat bilah tepi <a
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139697323678432"></a>6.8.2. Mengonfigurasi APT</h3></div></div></div><div
+                    id="idm140060095010496"></a>6.8.2. Mengonfigurasi APT</h3></div></div></div><div
             class="para">
 				Kasus APT ini sederhana: pilihan <code
               class="literal">-y</code> (atau <code
@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139697323676096"></a>6.8.3. Mengonfigurasi <code
+                    id="idm140060095008160"></a>6.8.3. Mengonfigurasi <code
                     class="command">debconf</code></h3></div></div></div><div
             class="para">
 				Kasus <code
@@ -125,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139697323667424"></a>6.8.4. Menangani Interaksi Baris Perintah</h3></div></div></div><div
+                    id="idm140060094999488"></a>6.8.4. Menangani Interaksi Baris Perintah</h3></div></div></div><div
             class="para">
 				Sumber interaksi terakhir, dan yang paling sulit ditangani, adalah skrip konfigurasi dijalankan oleh <code
               class="command">dpkg</code>. Sayangnya tidak ada solusi standar, dan tidak ada jawaban yang meliputi lebih baik dari lainnya.
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139697323663296"></a>6.8.5. Kombinasi Ajaib</h3></div></div></div><div
+                    id="idm140060094995360"></a>6.8.5. Kombinasi Ajaib</h3></div></div></div><div
             class="para">
 				Dengan mengombinasikan elemen sebelumnya, memungkinkan untuk mendesain skrip kecil yang lebih handal yang dapat menangani upgrade otomatis.
 			</div><div
@@ -148,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
               class="title"><strong>Contoh 6.4. Skrip pembaharuan non-interaktif</strong></p><div
               class="example-contents"><pre
                 class="programlisting">export DEBIAN_FRONTEND=noninteractive
-yes '' | apt-get -y -o DPkg::options="--force-confdef" -o DPkg::options="--force-confold" dist-upgrade
+yes '' | apt-get -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" dist-upgrade
 </pre></div></div><div
             class="sidebar"><div
               class="titlepage"><div><div><p

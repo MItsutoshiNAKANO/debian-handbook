@@ -68,9 +68,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
           class="titlepage"><div><div><h2
                 class="title"><a
                   id="sect.package-meta-information"></a>5.2. Метаинформация пакета</h2></div></div></div><a
-          id="idm139663647509968"
+          id="idm139833757417456"
           class="indexterm"></a><a
-          id="idm139663647509040"
+          id="idm139833757416528"
           class="indexterm"></a><div
           class="para">
 			Пакет Debian является не только архивом файлов, предназначенных для установки. Он является частью системы, и в нём описаны взаимоотношения с другими пакетами Debian (зависимости, конфликты, предложения). Он также содержит сценарии, которые выполняются на различных этапах жизненного цикла пакета (при установке, удалении, обновлении). Эти данные, используемые инструментами управления пакетами, не являются частью упакованного программного обеспечения, но содержатся внутри пакета и называются «метаинформацией» (информацией о другой информации).
@@ -80,11 +80,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="title"><a
                     id="sect.control"></a>5.2.1. Описание: файл <code
                     class="filename">control</code></h3></div></div></div><a
-            id="idm139663654889472"
+            id="idm139833763893408"
             class="indexterm"></a><a
-            id="idm139663654888544"
+            id="idm139833763892480"
             class="indexterm"></a><a
-            id="idm139663654887136"
+            id="idm139833763891072"
             class="indexterm"></a><div
             class="para">
 				Структура этого файла похожа на заголовки e-mail (как они определены в RFC 2822). Например, для <span
@@ -139,9 +139,9 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
               class="titlepage"><div><div><p
                     class="title"><strong><span
                         class="emphasis"><em>К ОСНОВАМ</em></span> RFC — стандарты Интернета</strong></p></div></div></div><a
-              id="idm139663654879184"
+              id="idm139833763883040"
               class="indexterm"></a><a
-              id="idm139663654878224"
+              id="idm139833763882080"
               class="indexterm"></a><div
               class="para">
 				RFC — это аббревиатура, означающая «Request For Comments» или, по-русски, «Рабочее предложение». RFC представляет собой технический документ, в котором описано, чему предстоит стать стандартом Интернета. Перед окончательным утверждением и прекращением внесения изменений стандарты публикуются для общественного рассмотрения (отсюда их название). IETF (Internet Engineering Task Force) принимает решение о статусе этих документов (предлагаемый стандарт, проект стандарта или стандарт).
@@ -154,13 +154,13 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139663642228112"></a>5.2.1.1. Зависимости: поле <code
+                      id="idm139833758016352"></a>5.2.1.1. Зависимости: поле <code
                       class="literal">Depends</code></h4></div></div></div><a
-              id="idm139663642227024"
+              id="idm139833758015264"
               class="indexterm"></a><a
-              id="idm139663642226064"
+              id="idm139833758014304"
               class="indexterm"></a><a
-              id="idm139663642224816"
+              id="idm139833758013056"
               class="indexterm"></a><div
               class="para">
 					Зависимости определяются в поле <code
@@ -206,7 +206,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                 class="url">→ <a
                   href="http://www.debian.org/doc/debian-policy/ch-relationships.html">http://www.debian.org/doc/debian-policy/ch-relationships.html</a></div>
 				</div><a
-              id="idm139663642207760"
+              id="idm139833757996000"
               class="indexterm"></a><div
               class="para">
 					The dependencies system is a good mechanism for guaranteeing the operation of a program, but it has another use with “meta-packages”. These are empty packages that only describe dependencies. They facilitate the installation of a consistent group of programs preselected by the meta-package maintainer; as such, <code
@@ -222,9 +222,9 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                           class="emphasis"><em>ПОЛИТИКА DEBIAN</em></span> <code
                           class="literal">Pre-Depends</code>,более требовательное <code
                           class="literal">Depends</code></strong></p></div></div></div><a
-                id="idm139663642201376"
+                id="idm139833757989616"
                 class="indexterm"></a><a
-                id="idm139663642200128"
+                id="idm139833757988368"
                 class="indexterm"></a><div
                 class="para">
 					«Предварительные зависимости», перечисленные в поле «<code
@@ -244,9 +244,9 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                           class="literal">Recommends</code>, <code
                           class="literal">Suggests</code> и <code
                           class="literal">Enhances</code></strong></p></div></div></div><a
-                id="idm139663642192880"
+                id="idm139833757981120"
                 class="indexterm"></a><a
-                id="idm139663642191632"
+                id="idm139833757979872"
                 class="indexterm"></a><div
                 class="para">
 					В полях <code
@@ -256,7 +256,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                 class="para">
 					Следует всегда устанавливать «рекомендуемые» пакеты, если вы только не знаете абсолютно точно, почему они вам не нужны. И наоборот, нет смысла устанавливать «предлагаемые» пакеты, если вы не знаете, зачем они вам нужны.
 				</div><a
-                id="idm139663642187280"
+                id="idm139833757975520"
                 class="indexterm"></a><div
                 class="para">
 					The <code
@@ -269,13 +269,13 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139663642182384"></a>5.2.1.2. Конфликты: поле <code
+                      id="idm139833757970624"></a>5.2.1.2. Конфликты: поле <code
                       class="literal">Conflicts</code></h4></div></div></div><a
-              id="idm139663642181296"
+              id="idm139833757969536"
               class="indexterm"></a><a
-              id="idm139663642180336"
+              id="idm139833757968576"
               class="indexterm"></a><a
-              id="idm139663642179088"
+              id="idm139833757967328"
               class="indexterm"></a><div
               class="para">
 					Поле <code
@@ -290,13 +290,13 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139663642173728"></a>5.2.1.3. Несовместимость: поле <code
+                      id="idm139833757961968"></a>5.2.1.3. Несовместимость: поле <code
                       class="literal">Breaks</code></h4></div></div></div><a
-              id="idm139663642172640"
+              id="idm139833757960880"
               class="indexterm"></a><a
-              id="idm139663642171712"
+              id="idm139833757959952"
               class="indexterm"></a><a
-              id="idm139663642170464"
+              id="idm139833757958704"
               class="indexterm"></a><div
               class="para">
 					По своему действию поля <code
@@ -316,9 +316,9 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139663641005040"></a>5.2.1.4. Предоставляемое пакетом: поле <code
+                      id="idm139833757808096"></a>5.2.1.4. Предоставляемое пакетом: поле <code
                       class="literal">Provides</code></h4></div></div></div><a
-              id="idm139663641003872"
+              id="idm139833757806928"
               class="indexterm"></a><div
               class="para">
 					Это поле вводит очень интересную концепцию «виртуального пакета». Она имеет много применений, два из которых особенно важны. Первое состоит в использовании виртуального пакета, чтобы привязать к нему общее название сервиса (пакет «предоставляет» сервис). Вторая показывает, что пакет полностью заменяет другой, и что при этом он может удовлетворять зависимости, которые удовлетворил бы другой. Таким образом, можно создать замену пакета без необходимости использовать то же самое имя пакета.
@@ -327,11 +327,11 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>СЛОВАРЬ</em></span> Метапакет и виртуальный пакет</strong></p></div></div></div><a
-                id="idm139663641000080"
+                id="idm139833757803136"
                 class="indexterm"></a><a
-                id="idm139663640999120"
+                id="idm139833757802176"
                 class="indexterm"></a><a
-                id="idm139663640997712"
+                id="idm139833757800768"
                 class="indexterm"></a><div
                 class="para">
 					Очень важно четко понимать различие между метапакетами и виртуальными пакетами. Первые являются настоящими пакетами (то есть файлами <code
@@ -343,7 +343,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139663640994336"></a>5.2.1.4.1. Предоставление «сервиса»</h5></div></div></div><div
+                        id="idm139833757797392"></a>5.2.1.4.1. Предоставление «сервиса»</h5></div></div></div><div
                 class="para">
 						Давайте рассмотрим первый случай более подробно на примере: все почтовые серверы, такие как <span
                   class="pkg pkg">postfix</span> или <span
@@ -359,7 +359,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                   class="titlepage"><div><div><p
                         class="title"><strong><span
                             class="emphasis"><em>ПОЛИТИКА DEBIAN</em></span> Список виртуальных пакетов</strong></p></div></div></div><a
-                  id="idm139663640985792"
+                  id="idm139833757789056"
                   class="indexterm"></a><div
                   class="para">
 						Чтобы от виртуального пакета была польза, все должны прийти к соглашению о его имени. Именно поэтому имена стандартизированы в политике Debian. Список, помимо всего прочего, включает в себя <span
@@ -380,7 +380,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139663640977088"></a>5.2.1.4.2. Взаимозаменяемость другим пакетом</h5></div></div></div><div
+                        id="idm139833757780352"></a>5.2.1.4.2. Взаимозаменяемость другим пакетом</h5></div></div></div><div
                 class="para">
 						Поле <code
                   class="literal">Provides</code> также полезно в случаях, когда содержание пакета включается в состав другого, более крупного пакета. Например модуль Perl <span
@@ -391,7 +391,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                   class="pkg pkg">libdigest-md5-perl</span> в конечном итоге был удален, поскольку после удаления старых версий Perl в нём не стало смысла.
 					</div><div
                 class="figure"><a
-                  id="idm139663640971408"></a><div
+                  id="idm139833757774672"></a><div
                   class="figure-contents"><div
                     class="mediaobject"><img
                       src="images/virtual-package.png"
@@ -405,9 +405,9 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                   class="titlepage"><div><div><p
                         class="title"><strong><span
                             class="emphasis"><em>К ОСНОВАМ</em></span> Perl, язык программирования</strong></p></div></div></div><a
-                  id="idm139663640966272"
+                  id="idm139833757769536"
                   class="indexterm"></a><a
-                  id="idm139663640965312"
+                  id="idm139833757768576"
                   class="indexterm"></a><div
                   class="para">
 						Perl (<span
@@ -426,7 +426,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
               class="section"><div
                 class="titlepage"><div><div><h5
                       class="title"><a
-                        id="idm139663640959984"></a>5.2.1.4.3. Текущие ограничения</h5></div></div></div><div
+                        id="idm139833757763248"></a>5.2.1.4.3. Текущие ограничения</h5></div></div></div><div
                 class="para">
 						Виртуальные пакеты имеют некоторые ограничения, cамым значительным из которых является отсутствие номера версии. Вернемся к предыдущему примеру: зависимость, такая как <code
                   class="literal">Depends: libdigest-md5-perl (&gt;= 1.6)</code>, несмотря на наличие Perl 5.10, никогда не будет считаться удовлетворённой системой управления пакетами — в то время как на самом деле она скорее всего удовлетворена. Не зная этого, пакетная система выбирает наименее опасный путь, предполагая, что версии не соответствуют.
@@ -439,13 +439,13 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139663640955376"></a>5.2.1.5. Замена файлов: поле <code
+                      id="idm139833757758752"></a>5.2.1.5. Замена файлов: поле <code
                       class="literal">Replaces</code></h4></div></div></div><a
-              id="idm139663640954288"
+              id="idm139833757757664"
               class="indexterm"></a><a
-              id="idm139663640953328"
+              id="idm139833757756704"
               class="indexterm"></a><a
-              id="idm139663640952080"
+              id="idm139833757755456"
               class="indexterm"></a><div
               class="para">
 					The <code
@@ -478,16 +478,16 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
           class="section"><div
             class="titlepage"><div><div><h3
                   class="title"><a
-                    id="idm139663640939040"></a>5.2.2. Сценарии настройки</h3></div></div></div><a
-            id="idm139663640938272"
+                    id="idm139833757742976"></a>5.2.2. Сценарии настройки</h3></div></div></div><a
+            id="idm139833757742208"
             class="indexterm"></a><a
-            id="idm139663640937152"
+            id="idm139833757741088"
             class="indexterm"></a><a
-            id="idm139663640936032"
+            id="idm139833757739968"
             class="indexterm"></a><a
-            id="idm139663640934912"
+            id="idm139833757738848"
             class="indexterm"></a><a
-            id="idm139663640933792"
+            id="idm139833757737728"
             class="indexterm"></a><div
             class="para">
 				Кроме файла <code
@@ -501,9 +501,9 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                     class="title"><strong><span
                         class="emphasis"><em>УГЛУБЛЯЕМСЯ</em></span> База данных <code
                         class="command">dpkg</code></strong></p></div></div></div><a
-              id="idm139663640928064"
+              id="idm139833757732000"
               class="indexterm"></a><a
-              id="idm139663640926944"
+              id="idm139833757730880"
               class="indexterm"></a><div
               class="para">
 				Все сценарии настройки для установленных пакетов храняться в каталоге <code
@@ -548,8 +548,8 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139663640910480"></a>5.2.2.1. Установка и обновление</h4></div></div></div><a
-              id="idm139663640909712"
+                      id="idm139833757715088"></a>5.2.2.1. Установка и обновление</h4></div></div></div><a
+              id="idm139833757714320"
               class="indexterm"></a><div
               class="para">
 					Вот что происходит во время установки пакета (или его обновления):
@@ -605,7 +605,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="section"><div
               class="titlepage"><div><div><h4
                     class="title"><a
-                      id="idm139663640891584"></a>5.2.2.2. Удаление пакета</h4></div></div></div><div
+                      id="idm139833757696304"></a>5.2.2.2. Удаление пакета</h4></div></div></div><div
               class="para">
 					Вот что происходит во время удаления пакета:
 				</div><div
@@ -644,7 +644,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>СЛОВАРЬ</em></span> Purge, полное удаление</strong></p></div></div></div><a
-                id="idm139663640878080"
+                id="idm139833757682800"
                 class="indexterm"></a><div
                 class="para">
 					При удалении пакета Debian конфигурационные файлы сохраняются в целях облегчения возможной повторной установки. Кроме того, сохраняется данные, созданные демонами (например содержимое каталога сервера LDAP или содержимое базы данных SQL-сервера).
@@ -663,7 +663,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                 class="para">
 					Учитывая необратимую природу такого удаления, не следует относиться к нему легкомысленно.
 				</div></div><a
-              id="idm139663640871968"
+              id="idm139833757676688"
               class="indexterm"></a><div
               class="para">
 					Четыре сценария, описанные выше, дополняются сценарием <code
@@ -678,7 +678,7 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
                       class="title"><strong><span
                           class="emphasis"><em>ИНСТРУМЕНТ</em></span> <code
                           class="command">debconf</code></strong></p></div></div></div><a
-                id="idm139663640865152"
+                id="idm139833757669872"
                 class="indexterm"></a><div
                 class="para">
 					<code
@@ -696,15 +696,15 @@ SHA256: 8f2ada8ed29831ae97264d5ce51410755b25f940c277eacacfe6803cc3ae7540</code><
             class="titlepage"><div><div><h3
                   class="title"><a
                     id="sect.conffiles"></a>5.2.3. Контрольные суммы, список конфигурационных файлов</h3></div></div></div><a
-            id="idm139663648596384"
+            id="idm139833758320912"
             class="indexterm"></a><a
-            id="idm139663648595264"
+            id="idm139833758319792"
             class="indexterm"></a><a
-            id="idm139663648594144"
+            id="idm139833758318672"
             class="indexterm"></a><a
-            id="idm139663648593216"
+            id="idm139833758317744"
             class="indexterm"></a><a
-            id="idm139663648591808"
+            id="idm139833758316336"
             class="indexterm"></a><div
             class="para">
 				In addition to the maintainer scripts and control data already mentioned in the previous sections, the <code

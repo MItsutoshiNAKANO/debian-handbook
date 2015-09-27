@@ -122,21 +122,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="section"><a
                   href="sect.backup.html">9.10. Sauvegarde</a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm140090018891328">9.10.1. Sauvegarde avec <code
+                      href="sect.backup.html#idm140684264225360">9.10.1. Sauvegarde avec <code
                         class="command">rsync</code></a></span></dt><dt><span
                     class="section"><a
-                      href="sect.backup.html#idm140090018843600">9.10.2. Restauration des machines non sauvegardées</a></span></dt></dl></dd><dt><span
+                      href="sect.backup.html#idm140684264184384">9.10.2. Restauration des machines non sauvegardées</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.hotplug.html">9.11. Branchements « à chaud » : <span
                     class="emphasis"><em>hotplug</em></span></a></span></dt><dd><dl><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140090018820912">9.11.1. Introduction</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm140684264165568">9.11.1. Introduction</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140090018810368">9.11.2. La problématique du nommage</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm140684264156848">9.11.2. La problématique du nommage</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140090018795472">9.11.3. Fonctionnement de udev</a></span></dt><dt><span
+                      href="sect.hotplug.html#idm140684264143856">9.11.3. Fonctionnement de udev</a></span></dt><dt><span
                     class="section"><a
-                      href="sect.hotplug.html#idm140090018734496">9.11.4. Cas pratique</a></span></dt></dl></dd><dt><span
+                      href="sect.hotplug.html#idm140684264092992">9.11.4. Cas pratique</a></span></dt></dl></dd><dt><span
                 class="section"><a
                   href="sect.power-management.html">9.12. Gestion de l'énergie : Advanced Configuration and Power Interface (ACPI)</a></span></dt></dl></div><div
           class="highlights"><div
@@ -147,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             class="titlepage"><div><div><h2
                   class="title"><a
                     id="sect.system-boot"></a>9.1. Démarrage du système</h2></div></div></div><a
-            id="idm140090006981808"
+            id="idm140684274436432"
             class="indexterm"></a><div
             class="para">
 			Lorsque l'ordinateur démarre, les messages défilant sur la console révèlent de nombreuses initialisations et configurations automatiques. Parfois, il est souhaitable de modifier légèrement le déroulement de cette étape, ce qui implique de bien la comprendre. C'est l'objet de cette section.
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>B.A.-BA</em></span> Le processus, une invocation de programme</strong></p></div></div></div><a
-                id="idm140089999023696"
+                id="idm140684274919120"
                 class="indexterm"></a><div
                 class="para">
 				Un processus est la représentation en mémoire d'un programme qui s'exécute. Il regroupe toutes les informations nécessaires au bon déroulement du logiciel (le code lui-même, mais aussi les données qu'il a en mémoire, la liste des fichiers qu'il a ouverts, des connexions réseau qu'il a établies, etc.). Un même programme peut faire l'objet de plusieurs processus, y compris sous le même identifiant utilisateur.
@@ -258,7 +258,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
                   class="filename">/lib/systemd/systemd</code>). Toutefois, il est possible de passer au noyau une option <code
                   class="literal">init</code> indiquant un autre programme.
 			</div><a
-                id="idm140089999018160"
+                id="idm140684274913584"
                 class="indexterm"></a><div
                 class="para">
 				Toute personne capable d'accéder à l'ordinateur pourra appuyer sur le bouton <span
@@ -380,8 +380,8 @@ Mar 31 10:09:32 mirtuel sshd[1151]: pam_unix(sshd:session): session opened for u
                   class="replaceable">fichier</em></code>).
 			</div><div
               class="para">
-				If a service doesn't seem to be working as expected, the first step to solve the problem is to check that the service is actually running with <code
-                class="command">systemctl status</code>; if it is not, and the messages given by the first command are not enough to diagnose the problem, check the logs gathered by journald about that service. For instance, assume the SSH server doesn't work:
+				Lorsqu'un service n'a pas l'air de fonctionner correctement, la première étape pour résoudre le problème est de vérifier si le service est lancé avec <code
+                class="command">systemctl status</code> ; si ce n'est pas le cas, et si les messages affichés par cette première commande ne suffisent pas à identifier le problème, il convient alors de consulter les messages que journald a collecté au sujet de ce service. Prenons le cas d'un serveur SSH qui ne fonctionne pas:
 			</div><pre
               class="screen"><code
                 class="computeroutput"># </code><strong
@@ -489,13 +489,13 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="emphasis"><em>sysinit</em></span>) est <code
                 class="command">/etc/init.d/rcS</code>, script qui exécute tous les programmes du répertoire <code
                 class="filename">/etc/rcS.d/</code>. <a
-                id="idm140089994542416"
+                id="idm140684275795488"
                 class="indexterm"></a> <a
-                id="idm140089994541616"
+                id="idm140684275794688"
                 class="indexterm"></a> <a
-                id="idm140089994540816"
+                id="idm140684275793888"
                 class="indexterm"></a> <a
-                id="idm140089994540016"
+                id="idm140684275793088"
                 class="indexterm"></a>
 			</div><div
               class="para">
@@ -532,7 +532,7 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>B.A.-BA</em></span> Modules du noyau et options</strong></p></div></div></div><a
-                id="idm140089994530560"
+                id="idm140684275783632"
                 class="indexterm"></a><div
                 class="para">
 				Les modules du noyau disposent eux aussi d'options qu'on peut paramétrer en plaçant des fichiers dans <code
@@ -547,9 +547,9 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                   class="command">modprobe</code> — le programme permettant de charger un module noyau avec ses dépendances (les modules peuvent en effet faire appel à d'autres modules). Ce dernier est fourni par le paquet <span
                   class="pkg pkg">kmod</span>.
 			</div><a
-                id="idm140089994524608"
+                id="idm140684275777680"
                 class="indexterm"></a><a
-                id="idm140089994523488"
+                id="idm140684275776560"
                 class="indexterm"></a></div><div
               class="para">
 				Après cette phase, <code
@@ -567,9 +567,9 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
               class="para">
 				Ce système de démarrage par dépendances permet d'automatiser des renumérotations qui pourraient s'avérer fastidieuses si elles devaient être faites manuellement et il prévient les erreurs humaines, puisque l'ordonnancement se fait en fonction des contraintes exprimées. Il présente également l'avantage supplémentaire de permettre le démarrage de plusieurs services en parallèle, si plusieurs scripts sont indépendants entre eux, ce qui peut accélérer la séquence de démarrage.
 			</div><a
-              id="idm140089994515520"
+              id="idm140684275768592"
               class="indexterm"></a><a
-              id="idm140089994514400"
+              id="idm140684275767472"
               class="indexterm"></a><div
               class="para">
 				<code
@@ -623,7 +623,7 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                     src="images/startup-sysvinit.png"
                     alt="Étapes du démarrage d'un ordinateur sous Linux avec le système d'initialisation System V" /></div></div><p
                 class="title"><strong>Figure 9.2. Étapes du démarrage d'un ordinateur sous Linux avec le système d'initialisation System V</strong></p></div><a
-              id="idm140089995932912"
+              id="idm140684276157664"
               class="indexterm"></a><div
               class="para">
 				Tous les scripts contenus dans les différents répertoires <code
@@ -639,17 +639,17 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="command">rcconf</code> (du paquet <span
                 class="pkg pkg">rcconf</span>) pour se voir présenter une interface plus simple à manipuler.
 			</div><a
-              id="idm140089995925280"
+              id="idm140684276150032"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
                       class="title"><strong><span
                           class="emphasis"><em>CHARTE DEBIAN</em></span> Redémarrage des services</strong></p></div></div></div><a
-                id="idm140089995923072"
+                id="idm140684276147824"
                 class="indexterm"></a><a
-                id="idm140089995921952"
+                id="idm140684276146704"
                 class="indexterm"></a><a
-                id="idm140089995920512"
+                id="idm140684276145264"
                 class="indexterm"></a><div
                 class="para">
 				Les scripts de configuration des paquets Debian redémarrent parfois certains services pour assurer leur disponibilité ou leur faire prendre en compte certaines nouvelles options. La commande de manipulation d'un service <code
@@ -666,7 +666,7 @@ Mar 31 17:30:36 mirtuel systemd[1]: Unit ssh.service entered failed state.
                 class="command">login <em
                   class="replaceable">utilisateur</em></code> pour démarrer une session.
 			</div><a
-              id="idm140089995913920"
+              id="idm140684276138672"
               class="indexterm"></a><div
               class="sidebar"><div
                 class="titlepage"><div><div><p
